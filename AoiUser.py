@@ -1,4 +1,4 @@
-class User:
+class AoiUser:
     """
     Class supporting the User data structure of SIMPAT-BRAVE PROJECT
     Represents a user in an Area of Interest (AOI)

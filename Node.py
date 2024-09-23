@@ -1,5 +1,5 @@
 from typing import List
-from User import User
+from AoiUser import AoiUser
 
 class Node:
     """

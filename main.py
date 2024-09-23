@@ -3,7 +3,7 @@ import jax.numpy as jnp
 from jax import random
 from Graph import Graph
 from Node import Node
-from User import User
+from AoiUser import AoiUser
 
 # def selu(x, alpha=1.67, lmbda=1.05):
 #   return lmbda * jnp.where(x > 0, x, alpha * jnp.exp(x) - alpha)
