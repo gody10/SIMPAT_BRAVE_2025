@@ -2,27 +2,40 @@ import jax
 import jax.numpy as jnp
 from jax import random
 from Graph import Graph
+from Edge import Edge
 from Node import Node
 from AoiUser import AoiUser
+from Uav import Uav
 
-# def selu(x, alpha=1.67, lmbda=1.05):
-#   return lmbda * jnp.where(x > 0, x, alpha * jnp.exp(x) - alpha)
+# Create a random key
+key = random.PRNGKey(10)
 
-# x = jnp.arange(5.0)
-# print(selu(x))
+# Create N nodes with U users in them
+N = 10
+U = 20
 
-# key = random.key(10)
-# x = random.normal(key, (1000000,))
+nodes = []
+for i in range(N):
+    users = []
+    for j in range(U):
+        users.append(AoiUser(user_id= j, data_in_bits= random.uniform(random.key(j), (1,))[0]))
+    nodes.append(Node(node_id= i, users= users))
 
-# print(key)
-# print(x)
+# Create edges between all nodes with random weights
+edges = []
+for i in range(N):
+    for j in range(i+1, N):
+        edges.append(Edge(nodes[i].user_list[0], nodes[j].user_list[0], random.normal(key, (1,))))
+        
+# Create the graph
+graph = Graph(nodes= nodes, edges= edges)
 
-# Create dummy examples for all classes just to see they are imported correctly
-user1 = User(1, "John", 30)
-user2 = User(2, "Jane", 25)
-user3 = User(3, "Joe", 35)
-node1 = Node([user1, user2])
-node2 = Node([user3])
-graph = Graph([node1, node2], [(node1, node2)])
-print(graph)
+# Get number of nodes and edges
+print(f"Number of Nodes: {graph.get_num_nodes()}")
+print(f"Number of Edges: {graph.get_num_edges()}")
+print(f"Number of Users: {graph.get_num_users()}")
+
+# Create a UAV
+uav = Uav(uav_id= 1, energy_level= 100, initial_node_id= 0, final_node_id= 9, total_data_processing_capacity= 1000)
+
 

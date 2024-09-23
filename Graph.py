@@ -4,15 +4,19 @@ from Node import Node
 class Graph:
     """
     Class supporting the Graph data structure of SIMPAT-BRAVE PROJECT
-    
-    Attributes:
-    nodes : list
-        List of nodes in the graph
-    edges : list
-        List of edges in the graph
+    Represents the graph of the project where the UAV will navigate
     """
     
     def __init__(self, nodes : List[Node], edges : List) -> None:
+        """
+        Initialize the graph
+        
+        Parameters:
+        nodes : list
+            List of nodes in the graph
+        edges : list
+            List of edges in the graph
+        """
         self.nodes = nodes
         self.edges = edges
     
@@ -35,6 +39,39 @@ class Graph:
             Edge to be added to the graph
         """
         self.edges.append(edge)
+        
+    def get_num_nodes(self)->int:
+        """
+        Get the number of nodes in the graph
+        
+        Returns:
+        int
+            Number of nodes in the graph
+        """
+        return len(self.nodes)
+    
+    def get_num_edges(self)->int:
+        """
+        Get the number of edges in the graph
+        
+        Returns:
+        int
+            Number of edges in the graph
+        """
+        return len(self.edges)
+    
+    def get_num_users(self)->int:
+        """
+        Get the number of users in the graph
+        
+        Returns:
+        int
+            Number of users in the graph
+        """
+        num_users = 0
+        for node in self.nodes:
+            num_users += len(node.user_list)
+        return num_users
         
     def __str__(self)->str:
         return f"Nodes: {self.nodes}\nEdges: {self.edges}"
