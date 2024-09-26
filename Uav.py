@@ -1,4 +1,5 @@
 from Node import Node
+import jax.numpy as jnp
 
 class Uav:
     """
@@ -6,7 +7,7 @@ class Uav:
     Represents the UAV that will navigate itself in the graph and process user data
     """
     
-    def __init__(self, uav_id: int, initial_node_id: int, final_node_id: int, energy_level: float = 100, total_data_processing_capacity: float = 1000)->None:
+    def __init__(self, uav_id: int, initial_node: Node, final_node: Node, energy_level: float = 100, total_data_processing_capacity: float = 1000, velocity : float = 1, uav_system_bandwidth: float = 0.9, cpu_frequency: float = 2)->None:
         """
         Initialize the UAV
         
@@ -24,13 +25,48 @@ class Uav:
         """
         self.uav_id = uav_id
         self.energy_level = energy_level
-        self.initial_node_id = initial_node_id
-        self.final_node_id = final_node_id
+        self.initial_node = initial_node
+        self.final_node = final_node
         self.total_data_processing_capacity = total_data_processing_capacity
+        self.uav_system_bandwidth = uav_system_bandwidth
+        self.velocity = velocity
+        self.cpu_frequency = cpu_frequency
+        self.finished_business_in_node = False
         self.visited_nodes = []
+        self.update_visited_nodes(self.initial_node)
+        self.set_current_coordinates(self.initial_node.get_coordinates())
         
+    def set_finished_business_in_node(self, finished: bool)->None:
+        """
+        Set the finished business in the node
         
-    def adjust_energy(self, energy_used: float)->None:
+        Parameters:
+        finished : bool
+            True if the business is finished, False otherwise
+        """
+        self.finished_business_in_node = finished
+        
+    def get_uav_bandwidth(self)->float:
+        """
+        Get the UAV bandwidth
+        
+        Returns:
+        float
+            UAV bandwidth
+        """
+        return self.uav_system_bandwidth
+    
+    def get_uav_cpu_frequency(self)->float:
+        """
+        Get the UAV CPU frequency
+        
+        Returns:
+        float
+            UAV CPU frequency
+        """
+        return self.cpu_frequency
+        
+    def adjust_energy(self, energy_used: float)->bool:
         """
         Adjust the energy level of the UAV
         
@@ -40,8 +76,10 @@ class Uav:
         """
         if self.energy_level - energy_used < 0:
             print("Energy level goes under 0 - Action not allowed")
+            return False
         else:
             self.energy_level -= energy_used
+            return True
             
     def get_energy_level(self)->float:
         """
@@ -65,7 +103,7 @@ class Uav:
         bool
             True if the UAV is in the initial node, False otherwise
         """
-        return node.node_id == self.initial_node_id
+        return node.node_id == self.initial_node
     
     def check_if_final_node(self, node: Node)->bool:
         """
@@ -79,7 +117,7 @@ class Uav:
         bool
             True if the UAV is in the final node, False otherwise
         """
-        return node.node_id == self.final_node_id
+        return node.node_id == self.final_node
     
     def update_visited_nodes(self, node: Node)->None:
         """
@@ -89,8 +127,103 @@ class Uav:
         node : Node
             Node to be added to the list of visited nodes
         """
-        self.visited_nodes.append(node.get_node_id())
+        self.visited_nodes.append(node)
+        
+    def get_visited_nodes(self)->list:
+        """
+        Get the list of visited nodes
+        
+        Returns:
+        list
+            List of visited nodes
+        """
+        return self.visited_nodes
+    
+    def get_current_coordinates(self)->tuple:
+        """
+        Get the current coordinates of the UAV
+        
+        Returns:
+        tuple
+            Current coordinates of the UAV
+        """
+        return self.current_coordinates
+    
+    def set_current_coordinates(self, coordinates: tuple)->None:
+        """
+        Set the current coordinates of the UAV
+        
+        Parameters:
+        coordinates : tuple
+            Coordinates to be set
+        """
+        self.current_coordinates = coordinates
+        
+    def travel_to_node(self, node: Node)->bool:
+        """
+        Travel to a node
+        
+        Parameters:
+        node : Node
+            Node to travel to
+        """
+        
+        if not self.finished_business_in_node:
+            print("UAV has to first process the data in the node before moving to another node")
+            return False
+        
+        # Calculate the distance between the current node and the next node and the time to travel from one to the other
+        distance = jnp.sqrt((self.current_coordinates[0] - node.get_coordinates()[0])**2 + (self.current_coordinates[1] - node.get_coordinates()[1])**2 + (self.current_coordinates[2] - node.get_coordinates()[2])**2)
+        time_travel = distance / self.velocity
+        
+        # Calculate the Energy wasted to travel from one node to the other
+        energy_travel = (308.709 * time_travel) - 0.85
+        
+        # Adjust the energy level of the UAV
+        
+        if not self.adjust_energy(energy_travel):
+            return False
+        
+        self.set_current_coordinates(node.get_coordinates())
+        self.update_visited_nodes(node)
+        self.set_finished_business_in_node(False)
+        
+    def hover_over_node(self, time_hover: float, height: float = 100)->bool:
+        """
+        Hover over a node
+        
+        Parameters:
+        time_hover : float
+            Time to hover over the node
+        height : float
+            Height to hover over the node in meters
+        """
+        # Calculate the energy wasted to hover over the node
+        energy_hover = ((4.917 * height) - 275.204)*time_hover
+        
+        # Adjust the energy level of the UAV
+        if not self.adjust_energy(energy_hover):
+            print("Energy level goes under 0 - Action not allowed")
+            return False
 
+    def process_data(self, energy_coefficient: float, cpu_frequency: float, phi: list, strategy: list, bits: list)->bool:
+        """
+        Process data
+        
+        Parameters:
+        data : float
+            Data to be processed
+        """
+        # Calculate the energy wasted to process the data
+        energy_process = energy_coefficient * cpu_frequency * jnp.sum(jnp.multiply(phi, strategy, bits))
+        
+        # Adjust the energy level of the UAV
+        if not self.adjust_energy(energy_process):
+            print("Energy level goes under 0 - Action not allowed")
+            return False
+        else:
+            self.set_finished_business_in_node(True)
+            
         
     def __str__(self)->str:
         return f"UAV ID: {self.uav_id}, Energy Level: {self.energy_level}"

@@ -1,6 +1,5 @@
-from typing import List
+from typing import List, Tuple
 from AoiUser import AoiUser
-from Edge import Edge
 
 class Node:
     """
@@ -8,7 +7,7 @@ class Node:
     This is also known as Area of Interest (AOI) in the writeup
     """
     
-    def __init__(self, node_id : int, users = List[AoiUser]) -> None:
+    def __init__(self, node_id : int, users = List[AoiUser], coordinates : Tuple = (0,0,0)) -> None:
         """
         Initialize the node
         
@@ -17,9 +16,12 @@ class Node:
             List of users in the node
         node_id : int
             ID of the node
+        coordinates : Tuple
+            Coordinates of the node
         """
         self.user_list = users
         self.node_id = node_id
+        self.coordinates = coordinates
         
         self.total_bit_data = 0
         for user in self.user_list:
@@ -54,6 +56,16 @@ class Node:
             ID of the node
         """
         return self.node_id
+    
+    def get_coordinates(self)->Tuple:
+        """
+        Get the coordinates of the node
+        
+        Returns:
+        Tuple
+            Coordinates of the node
+        """
+        return self.coordinates
         
     def __str__(self)->str:
         return f"Users: {self.user_list}"
