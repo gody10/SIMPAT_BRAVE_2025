@@ -22,7 +22,7 @@ logging.basicConfig(
 
 # Create N nodes with U users in them
 N = 1
-U = 20
+U = 10
 NODE_RADIUS = 2
 MIN_DISTANCE_BETWEEN_NODES = 10  # Minimum distance to maintain between nodes
 UAV_HEIGHT = 100

@@ -311,23 +311,17 @@ class AoiUser:
        # Define your variable
         percentage_offloaded = cp.Variable((1, 1), nonneg=True)
 
-        # Define your parameter (the only value that will change)
-        sum_other_strategies_param = cp.Parameter(nonneg=True)
-
         # Define the objective function with constants and parameter
         objective = cp.Maximize(
-            -((b * cp.exp(percentage_offloaded / sum_other_strategies_param)) 
+            -((b * cp.exp(percentage_offloaded / cp.sum(other_people_strategies))) 
             - (c * cp.exp(self.get_current_total_overhead())))
         )
 
         # Define constraints
-        constraints = [percentage_offloaded >= 0, percentage_offloaded <= 1]
+        constraints = [percentage_offloaded >= 0.1, percentage_offloaded <= 1]
 
         # Create the problem
         prob = cp.Problem(objective, constraints)
-
-        # Set the value for the parameter
-        sum_other_strategies_param.value = float(jnp.sum(other_people_strategies))
 
         # Solve the problem
         solution = prob.solve(verbose=False)
