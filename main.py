@@ -132,10 +132,14 @@ while(not break_flag):
                     
                 else:
                     # Play the submodular game
-                    maximized_utility, percentage_offloaded = user.play_submodular_game_scipy(other_user_strategies, 1, 1)
+                    maximized_utility, percentage_offloaded = user.play_submodular_game_scipy(other_user_strategies, 1, 1, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
+                                                                                            uav_cpu_frequency, uav_total_data_processing_capacity, 2, uav.get_current_coordinates(), uav.get_height())
                     
                     # Update the user's strategy
                     user_strategies = user_strategies.at[idx].set(percentage_offloaded[0])
+                    
+                    # Update user's channel gain
+                    user_channel_gains = user_channel_gains.at[idx].set(user.get_channel_gain())
 
             # Check how different the strategies are from the previous iteration    
             strategy_difference = jnp.linalg.norm(user_strategies - previous_strategies)
