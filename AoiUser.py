@@ -1,6 +1,7 @@
 import jax.numpy as jnp
 import cvxpy as cp
 from typing import Tuple
+import logging
 from scipy.optimize import minimize
 
 class AoiUser:
@@ -156,7 +157,7 @@ class AoiUser:
             Energy level to be adjusted
         """
         if self.energy_level - energy_used < 0:
-            print("Energy level goes under 0 - Action not allowed")
+            logging.info("Energy level goes under 0 - Action not allowed")
             return False
         else:
             self.energy_level -= energy_used
@@ -293,14 +294,28 @@ class AoiUser:
         self.calculate_consumed_energy()
         #print("Consumed Energy: ", self.get_current_consumed_energy())
 
-        # Set the objective function and the constraints
-        objective = cp.Maximize(-((b * cp.exp(percentage_offloaded/jnp.sum(other_people_strategies))) - (c*cp.exp(self.get_current_total_overhead()))))
-        constraints = [percentage_offloaded >=0 , percentage_offloaded <= 1]
+       # Define your variable
+        percentage_offloaded = cp.Variable((1, 1), nonneg=True)
 
-        # Create Problem
+        # Define your parameter (the only value that will change)
+        sum_other_strategies_param = cp.Parameter(nonneg=True)
+
+        # Define the objective function with constants and parameter
+        objective = cp.Maximize(
+            -((b * cp.exp(percentage_offloaded / sum_other_strategies_param)) 
+            - (c * cp.exp(self.get_current_total_overhead())))
+        )
+
+        # Define constraints
+        constraints = [percentage_offloaded >= 0, percentage_offloaded <= 1]
+
+        # Create the problem
         prob = cp.Problem(objective, constraints)
 
-        # Solve the problem and get the solution which is the maximum utility of the user
+        # Set the value for the parameter
+        sum_other_strategies_param.value = float(jnp.sum(other_people_strategies))
+
+        # Solve the problem
         solution = prob.solve(verbose=False)
         
         # Update user energy

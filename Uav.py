@@ -1,7 +1,7 @@
 from Node import Node
 import jax.numpy as jnp
-from jax import random
 import jax
+import logging
 
 class Uav:
     """
@@ -9,15 +9,15 @@ class Uav:
     Represents the UAV that will navigate itself in the graph and process user data
     """
     
-    def __init__(self, uav_id: int, initial_node: Node, final_node: Node, energy_level: float = 100, total_data_processing_capacity: float = 1000, velocity : float = 1, uav_system_bandwidth: float = 0.9, cpu_frequency: float = 2, height: float = 100)->None:
+    def __init__(self, uav_id: int, initial_node: Node, final_node: Node, capacity: float = 100, total_data_processing_capacity: float = 1000, velocity : float = 1, uav_system_bandwidth: float = 0.9, cpu_frequency: float = 2, height: float = 100)->None:
         """
         Initialize the UAV
         
         Parameters:
         uav_id : int
             ID of the UAV
-        energy_level : float
-            Energy level of the UAV
+        capacity : float
+            Total Capacity of the UAV
         initial_node_id : int
             ID of the initial node
         final_node_id : int
@@ -26,7 +26,7 @@ class Uav:
             Total data processing capacity of the UAV
         """
         self.uav_id = uav_id
-        self.energy_level = energy_level
+        self.energy_level = capacity * 11.1 * 3.6
         self.initial_node = initial_node
         self.final_node = final_node
         self.total_data_processing_capacity = total_data_processing_capacity
@@ -108,7 +108,7 @@ class Uav:
             Energy level to be adjusted
         """
         if self.energy_level - energy_used < 0:
-            print("Energy level goes under 0 - Action not allowed")
+            logging.info("Energy level goes under 0 - Action not allowed")
             return False
         else:
             self.energy_level -= energy_used
@@ -150,7 +150,7 @@ class Uav:
         bool
             True if the UAV is in the final node, False otherwise
         """
-        return node.node_id == self.final_node
+        return node.get_node_id() == self.final_node.get_node_id()
     
     def update_visited_nodes(self, node: Node)->None:
         """
@@ -212,7 +212,7 @@ class Uav:
         """
         
         if not self.finished_business_in_node:
-            print("UAV has to first process the data in the node before moving to another node")
+            logging.info("UAV has to first process the data in the node before moving to another node")
             return False
         
         # Calculate the distance between the current node and the next node and the time to travel from one to the other
@@ -225,14 +225,15 @@ class Uav:
         # Adjust the energy level of the UAV
         
         if not self.adjust_energy(energy_travel):
-            print(f"Available energy level: {self.energy_level} - while energy needed: {energy_travel}")
+            logging.info(f"Available energy level: {self.energy_level} - while energy needed: {energy_travel}")
             return False
         
         self.set_current_coordinates(node.get_coordinates())
         self.update_visited_nodes(node)
         self.set_finished_business_in_node(False)
+        return True
         
-    def hover_over_node(self, time_hover: float, height: float = 100)->bool:
+    def hover_over_node(self, time_hover: float)->bool:
         """
         Hover over a node
         
@@ -243,11 +244,11 @@ class Uav:
             Height to hover over the node in meters
         """
         # Calculate the energy wasted to hover over the node
-        energy_hover = ((4.917 * height) - 275.204)*time_hover
+        energy_hover = ((4.917 * self.get_height()) - 275.204)*time_hover
         
         # Adjust the energy level of the UAV
         if not self.adjust_energy(energy_hover):
-            print("Energy level goes under 0 - Action not allowed")
+            logging.info("Energy level goes under 0 - Action not allowed")
             return False
 
     def process_data(self, energy_coefficient: float, cpu_frequency: float, phi: list, strategy: list, bits: list)->bool:
@@ -263,7 +264,7 @@ class Uav:
         
         # Adjust the energy level of the UAV
         if not self.adjust_energy(energy_process):
-            print("Energy level goes under 0 - Action not allowed")
+            logging.info("Energy level goes under 0 - Action not allowed")
             return False
         else:
             self.set_finished_business_in_node(True)
@@ -287,7 +288,7 @@ class Uav:
         
         # Check if there are any unvisited nodes left
         if not unvisited_nodes:
-            return None  # or raise an exception, or handle as appropriate
+            return None
         
         # Generate a random index using jax
         idx = jax.random.randint(key, shape=(), minval=0, maxval=len(unvisited_nodes))

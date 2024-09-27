@@ -1,0 +1,8 @@
+2024-09-27 14:06:34,598 - INFO - Number of Nodes: 1
+2024-09-27 14:06:34,598 - INFO - Number of Edges: 0
+2024-09-27 14:06:34,598 - INFO - Number of Users: 20
+2024-09-27 14:06:35,509 - INFO - The UAV has finished its business in the current node
+2024-09-27 14:06:35,509 - INFO - Converged with strategy difference: 7.919454247939939e-08 in 2 iterations
+2024-09-27 14:06:35,509 - INFO - The UAV has reached the final node and has finished its business
+2024-09-27 14:06:35,509 - INFO - The UAV trajectory is: [0]
+2024-09-27 14:06:35,509 - INFO - Algorithm has successfully reached the final node!
