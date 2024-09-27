@@ -63,6 +63,16 @@ class AoiUser:
         """
         return self.carrier_frequency
     
+    def get_user_id(self)->int:
+        """
+        Get the ID of the user
+        
+        Returns:
+        int
+            ID of the user
+        """
+        return self.user_id
+    
     def get_task_intensity(self)->float:
         """
         Get the task intensity of the user
@@ -117,6 +127,7 @@ class AoiUser:
         pl = pr_loss * pl_loss + (1 - pr_loss) * pl_nloss
         
         self.channel_gain = 1/(10**(pl/10))
+        logging.info(f"User {self.get_user_id()} has Channel Gain {self.channel_gain}")
     
     def get_coordinates(self)->Tuple:
         """
@@ -226,7 +237,7 @@ class AoiUser:
             Data rate of the user
         """
         self.current_data_rate = uav_bandwidth* jnp.log(1 + ((self.transmit_power * self.get_channel_gain()) / (self.white_noise + jnp.sum(other_users_transmit_powers * other_users_channel_gains))))
-        #print(self.current_data_rate)
+        logging.info(f"User {self.get_user_id()} has Current data rate {self.current_data_rate}")
     
     def calculate_time_overhead(self, other_user_strategies: list, other_user_bits: list, uav_total_capacity: float, uav_cpu_frequency: float)->None:
         """
@@ -243,12 +254,14 @@ class AoiUser:
         
         self.current_time_overhead = (self.data_in_bits * self.get_user_strategy()) / self.get_current_data_rate() + ((self.get_task_intensity() * self.get_user_strategy() *self.data_in_bits) 
                                                                                                    / ((1 - (jnp.sum(other_user_strategies * other_user_bits)/ uav_total_capacity)) * uav_cpu_frequency))
+        logging.info(f"User {self.get_user_id()} has Current time overhead {self.current_time_overhead}")
     
     def calculate_consumed_energy(self)->None:
         """
         Calculate the consumed energy of the user during the offloading process
         """
         self.current_consumed_energy = ((self.get_user_strategy() * self.get_user_bits())/self.get_current_data_rate()) * self.get_transmit_power()
+        logging.info(f"User {self.get_user_id()} has Current consumed energy {self.current_consumed_energy}")
     
     def calculate_total_overhead(self, T: float)->None:
         """
@@ -259,6 +272,7 @@ class AoiUser:
             Time that that timeslot t lasted
         """
         self.current_total_overhead = (self.current_time_overhead/T) + (self.current_consumed_energy/self.energy_level)
+        logging.info(f"User {self.get_user_id()} has Current total overhead {self.current_total_overhead}")
         
     def play_submodular_game_cvxpy(self, other_people_strategies: list, c: float, b: float, uav_bandwidth: float, other_users_transmit_powers: list, other_users_channel_gains: list, 
                                    other_user_data_in_bits: list, uav_cpu_frequency: float, uav_total_data_processing_capacity: float, T: float, uav_coordinates: Tuple, uav_height: float)->float:

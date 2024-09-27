@@ -1,8 +1,208 @@
-2024-09-27 14:06:34,598 - INFO - Number of Nodes: 1
-2024-09-27 14:06:34,598 - INFO - Number of Edges: 0
-2024-09-27 14:06:34,598 - INFO - Number of Users: 20
-2024-09-27 14:06:35,509 - INFO - The UAV has finished its business in the current node
-2024-09-27 14:06:35,509 - INFO - Converged with strategy difference: 7.919454247939939e-08 in 2 iterations
-2024-09-27 14:06:35,509 - INFO - The UAV has reached the final node and has finished its business
-2024-09-27 14:06:35,509 - INFO - The UAV trajectory is: [0]
-2024-09-27 14:06:35,509 - INFO - Algorithm has successfully reached the final node!
+2024-09-27 14:15:52,444 - INFO - Number of Nodes: 1
+2024-09-27 14:15:52,445 - INFO - Number of Edges: 0
+2024-09-27 14:15:52,445 - INFO - Number of Users: 20
+2024-09-27 14:15:52,703 - INFO - User 0 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:52,739 - INFO - User 0 has Current data rate 71.37686157226562
+2024-09-27 14:15:52,740 - INFO - User 0 has Current time overhead 2.508840799331665
+2024-09-27 14:15:52,740 - INFO - User 0 has Current total overhead 1.2544203996658325
+2024-09-27 14:15:52,740 - INFO - User 0 has Current consumed energy 0.12325094640254974
+2024-09-27 14:15:52,767 - INFO - User 1 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:52,767 - INFO - User 1 has Current data rate 6.546186923980713
+2024-09-27 14:15:52,767 - INFO - User 1 has Current time overhead 1.7400636672973633
+2024-09-27 14:15:52,768 - INFO - User 1 has Current total overhead 0.8700318336486816
+2024-09-27 14:15:52,768 - INFO - User 1 has Current consumed energy 0.40930840373039246
+2024-09-27 14:15:52,803 - INFO - User 2 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:52,803 - INFO - User 2 has Current data rate 1.976731777191162
+2024-09-27 14:15:52,803 - INFO - User 2 has Current time overhead 1.0565266609191895
+2024-09-27 14:15:52,803 - INFO - User 2 has Current total overhead 0.5282633304595947
+2024-09-27 14:15:52,803 - INFO - User 2 has Current consumed energy 0.2150404304265976
+2024-09-27 14:15:52,836 - INFO - User 3 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:52,836 - INFO - User 3 has Current data rate 2.6199862957000732
+2024-09-27 14:15:52,837 - INFO - User 3 has Current time overhead 1.433825969696045
+2024-09-27 14:15:52,837 - INFO - User 3 has Current total overhead 0.7169129848480225
+2024-09-27 14:15:52,837 - INFO - User 3 has Current consumed energy 0.3876464068889618
+2024-09-27 14:15:52,872 - INFO - User 4 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:52,872 - INFO - User 4 has Current data rate 4.37161111831665
+2024-09-27 14:15:52,873 - INFO - User 4 has Current time overhead 2.5066213607788086
+2024-09-27 14:15:52,873 - INFO - User 4 has Current total overhead 1.2533106803894043
+2024-09-27 14:15:52,873 - INFO - User 4 has Current consumed energy 1.0355560779571533
+2024-09-27 14:15:52,905 - INFO - User 5 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:52,906 - INFO - User 5 has Current data rate 1.424255132675171
+2024-09-27 14:15:52,906 - INFO - User 5 has Current time overhead 1.614048719406128
+2024-09-27 14:15:52,906 - INFO - User 5 has Current total overhead 0.807024359703064
+2024-09-27 14:15:52,906 - INFO - User 5 has Current consumed energy 0.49337971210479736
+2024-09-27 14:15:52,939 - INFO - User 6 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:52,939 - INFO - User 6 has Current data rate 0.5607250928878784
+2024-09-27 14:15:52,939 - INFO - User 6 has Current time overhead 1.2811663150787354
+2024-09-27 14:15:52,939 - INFO - User 6 has Current total overhead 0.6405831575393677
+2024-09-27 14:15:52,939 - INFO - User 6 has Current consumed energy 0.22158381342887878
+2024-09-27 14:15:52,971 - INFO - User 7 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:52,971 - INFO - User 7 has Current data rate 0.3284634053707123
+2024-09-27 14:15:52,971 - INFO - User 7 has Current time overhead 1.1970558166503906
+2024-09-27 14:15:52,971 - INFO - User 7 has Current total overhead 0.5985279083251953
+2024-09-27 14:15:52,971 - INFO - User 7 has Current consumed energy 0.1377173215150833
+2024-09-27 14:15:53,003 - INFO - User 8 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,003 - INFO - User 8 has Current data rate 3.0140902996063232
+2024-09-27 14:15:53,003 - INFO - User 8 has Current time overhead 2.920123338699341
+2024-09-27 14:15:53,003 - INFO - User 8 has Current total overhead 1.4600616693496704
+2024-09-27 14:15:53,003 - INFO - User 8 has Current consumed energy 1.5844444036483765
+2024-09-27 14:15:53,039 - INFO - User 9 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,039 - INFO - User 9 has Current data rate 1.1740018129348755
+2024-09-27 14:15:53,040 - INFO - User 9 has Current time overhead 2.108250617980957
+2024-09-27 14:15:53,040 - INFO - User 9 has Current total overhead 1.0541253089904785
+2024-09-27 14:15:53,040 - INFO - User 9 has Current consumed energy 0.8135952353477478
+2024-09-27 14:15:53,054 - INFO - User 10 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,054 - INFO - User 10 has Current data rate 2.815521240234375
+2024-09-27 14:15:53,054 - INFO - User 10 has Current time overhead 3.668064832687378
+2024-09-27 14:15:53,054 - INFO - User 10 has Current total overhead 1.834032416343689
+2024-09-27 14:15:53,054 - INFO - User 10 has Current consumed energy 2.5518767833709717
+2024-09-27 14:15:53,069 - INFO - User 11 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,070 - INFO - User 11 has Current data rate 2.6124627590179443
+2024-09-27 14:15:53,070 - INFO - User 11 has Current time overhead 4.196286201477051
+2024-09-27 14:15:53,070 - INFO - User 11 has Current total overhead 2.0981431007385254
+2024-09-27 14:15:53,070 - INFO - User 11 has Current consumed energy 3.398834228515625
+2024-09-27 14:15:53,084 - INFO - User 12 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,084 - INFO - User 12 has Current data rate 1.5428528785705566
+2024-09-27 14:15:53,085 - INFO - User 12 has Current time overhead 3.686189651489258
+2024-09-27 14:15:53,085 - INFO - User 12 has Current total overhead 1.843094825744629
+2024-09-27 14:15:53,085 - INFO - User 12 has Current consumed energy 2.64361572265625
+2024-09-27 14:15:53,099 - INFO - User 13 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,099 - INFO - User 13 has Current data rate 1.3549491167068481
+2024-09-27 14:15:53,099 - INFO - User 13 has Current time overhead 3.837918996810913
+2024-09-27 14:15:53,099 - INFO - User 13 has Current total overhead 1.9189594984054565
+2024-09-27 14:15:53,099 - INFO - User 13 has Current consumed energy 2.8158512115478516
+2024-09-27 14:15:53,113 - INFO - User 14 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,113 - INFO - User 14 has Current data rate 0.6145607829093933
+2024-09-27 14:15:53,113 - INFO - User 14 has Current time overhead 3.186906337738037
+2024-09-27 14:15:53,113 - INFO - User 14 has Current total overhead 1.5934531688690186
+2024-09-27 14:15:53,113 - INFO - User 14 has Current consumed energy 1.4555968046188354
+2024-09-27 14:15:53,128 - INFO - User 15 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,128 - INFO - User 15 has Current data rate 0.20975764095783234
+2024-09-27 14:15:53,128 - INFO - User 15 has Current time overhead 2.7652058601379395
+2024-09-27 14:15:53,128 - INFO - User 15 has Current total overhead 1.3826029300689697
+2024-09-27 14:15:53,128 - INFO - User 15 has Current consumed energy 0.5248157978057861
+2024-09-27 14:15:53,144 - INFO - User 16 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,144 - INFO - User 16 has Current data rate 0.16573560237884521
+2024-09-27 14:15:53,144 - INFO - User 16 has Current time overhead 2.7437829971313477
+2024-09-27 14:15:53,144 - INFO - User 16 has Current total overhead 1.3718914985656738
+2024-09-27 14:15:53,144 - INFO - User 16 has Current consumed energy 0.42517897486686707
+2024-09-27 14:15:53,159 - INFO - User 17 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,159 - INFO - User 17 has Current data rate 0.5266647934913635
+2024-09-27 14:15:53,159 - INFO - User 17 has Current time overhead 3.277935743331909
+2024-09-27 14:15:53,159 - INFO - User 17 has Current total overhead 1.6389678716659546
+2024-09-27 14:15:53,159 - INFO - User 17 has Current consumed energy 1.4150681495666504
+2024-09-27 14:15:53,174 - INFO - User 18 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,174 - INFO - User 18 has Current data rate 0.27395084500312805
+2024-09-27 14:15:53,175 - INFO - User 18 has Current time overhead 3.0280442237854004
+2024-09-27 14:15:53,175 - INFO - User 18 has Current total overhead 1.5140221118927002
+2024-09-27 14:15:53,175 - INFO - User 18 has Current consumed energy 0.776361346244812
+2024-09-27 14:15:53,189 - INFO - User 19 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,189 - INFO - User 19 has Current data rate 1.6454129219055176
+2024-09-27 14:15:53,189 - INFO - User 19 has Current time overhead 5.174635887145996
+2024-09-27 14:15:53,189 - INFO - User 19 has Current total overhead 2.587317943572998
+2024-09-27 14:15:53,189 - INFO - User 19 has Current consumed energy 5.304702281951904
+2024-09-27 14:15:53,223 - INFO - User 0 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,223 - INFO - User 0 has Current data rate 1.652258276939392
+2024-09-27 14:15:53,249 - INFO - User 0 has Current time overhead [[2.1539027e-07]]
+2024-09-27 14:15:53,264 - INFO - User 0 has Current total overhead [[3.0920433e-05]]
+2024-09-27 14:15:53,265 - INFO - User 0 has Current consumed energy [[2.2125772e-07]]
+2024-09-27 14:15:53,272 - INFO - User 1 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,272 - INFO - User 1 has Current data rate 0.8892714977264404
+2024-09-27 14:15:53,272 - INFO - User 1 has Current time overhead [[1.1149744e-07]]
+2024-09-27 14:15:53,272 - INFO - User 1 has Current total overhead [[0.00010238]]
+2024-09-27 14:15:53,273 - INFO - User 1 has Current consumed energy [[7.990171e-08]]
+2024-09-27 14:15:53,280 - INFO - User 2 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,280 - INFO - User 2 has Current data rate 0.34790948033332825
+2024-09-27 14:15:53,281 - INFO - User 2 has Current time overhead [[4.2369823e-08]]
+2024-09-27 14:15:53,281 - INFO - User 2 has Current total overhead [[5.3781292e-05]]
+2024-09-27 14:15:53,281 - INFO - User 2 has Current consumed energy [[1.4882272e-08]]
+2024-09-27 14:15:53,288 - INFO - User 3 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,288 - INFO - User 3 has Current data rate 0.5412323474884033
+2024-09-27 14:15:53,288 - INFO - User 3 has Current time overhead [[3.1194892e-07]]
+2024-09-27 14:15:53,288 - INFO - User 3 has Current total overhead [[9.7067576e-05]]
+2024-09-27 14:15:53,289 - INFO - User 3 has Current consumed energy [[1.5648276e-07]]
+2024-09-27 14:15:53,295 - INFO - User 4 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,295 - INFO - User 4 has Current data rate 1.1665143966674805
+2024-09-27 14:15:53,295 - INFO - User 4 has Current time overhead [[3.0991646e-07]]
+2024-09-27 14:15:53,295 - INFO - User 4 has Current total overhead [[0.00025904]]
+2024-09-27 14:15:53,295 - INFO - User 4 has Current consumed energy [[2.6340908e-07]]
+2024-09-27 14:15:53,303 - INFO - User 5 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,303 - INFO - User 5 has Current data rate 0.4488179683685303
+2024-09-27 14:15:53,303 - INFO - User 5 has Current time overhead [[1.9334033e-07]]
+2024-09-27 14:15:53,303 - INFO - User 5 has Current total overhead [[0.00012344]]
+2024-09-27 14:15:53,303 - INFO - User 5 has Current consumed energy [[8.371639e-08]]
+2024-09-27 14:15:53,310 - INFO - User 6 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,310 - INFO - User 6 has Current data rate 0.18709082901477814
+2024-09-27 14:15:53,310 - INFO - User 6 has Current time overhead [[2.044396e-07]]
+2024-09-27 14:15:53,311 - INFO - User 6 has Current total overhead [[5.5498174e-05]]
+2024-09-27 14:15:53,311 - INFO - User 6 has Current consumed energy [[4.1677552e-08]]
+2024-09-27 14:15:53,317 - INFO - User 7 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,317 - INFO - User 7 has Current data rate 0.11260812729597092
+2024-09-27 14:15:53,317 - INFO - User 7 has Current time overhead [[8.112749e-08]]
+2024-09-27 14:15:53,318 - INFO - User 7 has Current total overhead [[3.4469893e-05]]
+2024-09-27 14:15:53,318 - INFO - User 7 has Current consumed energy [[1.03311075e-08]]
+2024-09-27 14:15:53,324 - INFO - User 8 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,325 - INFO - User 8 has Current data rate 1.1994130611419678
+2024-09-27 14:15:53,325 - INFO - User 8 has Current time overhead [[1.1145718e-07]]
+2024-09-27 14:15:53,325 - INFO - User 8 has Current total overhead [[0.00039617]]
+2024-09-27 14:15:53,325 - INFO - User 8 has Current consumed energy [[9.6297356e-08]]
+2024-09-27 14:15:53,331 - INFO - User 9 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,331 - INFO - User 9 has Current data rate 0.5245842337608337
+2024-09-27 14:15:53,332 - INFO - User 9 has Current time overhead [[5.3528467e-08]]
+2024-09-27 14:15:53,332 - INFO - User 9 has Current total overhead [[0.00020343]]
+2024-09-27 14:15:53,332 - INFO - User 9 has Current consumed energy [[2.62116e-08]]
+2024-09-27 14:15:53,339 - INFO - User 10 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,339 - INFO - User 10 has Current data rate 1.4850285053253174
+2024-09-27 14:15:53,339 - INFO - User 10 has Current time overhead [[5.0435048e-08]]
+2024-09-27 14:15:53,339 - INFO - User 10 has Current total overhead [[0.00063799]]
+2024-09-27 14:15:53,340 - INFO - User 10 has Current consumed energy [[4.906766e-08]]
+2024-09-27 14:15:53,346 - INFO - User 11 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,346 - INFO - User 11 has Current data rate 1.6603875160217285
+2024-09-27 14:15:53,347 - INFO - User 11 has Current time overhead [[1.6686386e-07]]
+2024-09-27 14:15:53,347 - INFO - User 11 has Current total overhead [[0.00084979]]
+2024-09-27 14:15:53,347 - INFO - User 11 has Current consumed energy [[1.7182458e-07]]
+2024-09-27 14:15:53,353 - INFO - User 12 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,353 - INFO - User 12 has Current data rate 1.1050055027008057
+2024-09-27 14:15:53,354 - INFO - User 12 has Current time overhead [[1.1621126e-07]]
+2024-09-27 14:15:53,354 - INFO - User 12 has Current total overhead [[0.00066096]]
+2024-09-27 14:15:53,354 - INFO - User 12 has Current consumed energy [[9.5610865e-08]]
+2024-09-27 14:15:53,361 - INFO - User 13 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,361 - INFO - User 13 has Current data rate 1.0674114227294922
+2024-09-27 14:15:53,361 - INFO - User 13 has Current time overhead [[9.1455234e-08]]
+2024-09-27 14:15:53,362 - INFO - User 13 has Current total overhead [[0.00070401]]
+2024-09-27 14:15:53,362 - INFO - User 13 has Current consumed energy [[7.366529e-08]]
+2024-09-27 14:15:53,368 - INFO - User 14 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,368 - INFO - User 14 has Current data rate 0.507378339767456
+2024-09-27 14:15:53,369 - INFO - User 14 has Current time overhead [[5.2851316e-08]]
+2024-09-27 14:15:53,369 - INFO - User 14 has Current total overhead [[0.00036393]]
+2024-09-27 14:15:53,369 - INFO - User 14 has Current consumed energy [[2.5217318e-08]]
+2024-09-27 14:15:53,375 - INFO - User 15 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,376 - INFO - User 15 has Current data rate 0.17604058980941772
+2024-09-27 14:15:53,376 - INFO - User 15 has Current time overhead [[3.6750105e-08]]
+2024-09-27 14:15:53,376 - INFO - User 15 has Current total overhead [[0.00013122]]
+2024-09-27 14:15:53,376 - INFO - User 15 has Current consumed energy [[7.087841e-09]]
+2024-09-27 14:15:53,383 - INFO - User 16 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,383 - INFO - User 16 has Current data rate 0.14067992568016052
+2024-09-27 14:15:53,383 - INFO - User 16 has Current time overhead [[1.8836138e-08]]
+2024-09-27 14:15:53,383 - INFO - User 16 has Current total overhead [[0.0001063]]
+2024-09-27 14:15:53,383 - INFO - User 16 has Current consumed energy [[2.9545675e-09]]
+2024-09-27 14:15:53,391 - INFO - User 17 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,392 - INFO - User 17 has Current data rate 0.4624210298061371
+2024-09-27 14:15:53,392 - INFO - User 17 has Current time overhead [[3.0957565e-08]]
+2024-09-27 14:15:53,392 - INFO - User 17 has Current total overhead [[0.00035378]]
+2024-09-27 14:15:53,392 - INFO - User 17 has Current consumed energy [[1.3728411e-08]]
+2024-09-27 14:15:53,398 - INFO - User 18 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,398 - INFO - User 18 has Current data rate 0.24525509774684906
+2024-09-27 14:15:53,399 - INFO - User 18 has Current time overhead [[1.678615e-08]]
+2024-09-27 14:15:53,399 - INFO - User 18 has Current total overhead [[0.0001941]]
+2024-09-27 14:15:53,399 - INFO - User 18 has Current consumed energy [[4.361277e-09]]
+2024-09-27 14:15:53,407 - INFO - User 19 has Channel Gain 6.160644261399284e-08
+2024-09-27 14:15:53,407 - INFO - User 19 has Current data rate 1.6454129219055176
+2024-09-27 14:15:53,407 - INFO - User 19 has Current time overhead [[0.]]
+2024-09-27 14:15:53,407 - INFO - User 19 has Current total overhead [[0.00132618]]
+2024-09-27 14:15:53,407 - INFO - User 19 has Current consumed energy [[0.]]
+2024-09-27 14:15:53,413 - INFO - The UAV has finished its business in the current node
+2024-09-27 14:15:53,413 - INFO - Converged with strategy difference: 7.919454247939939e-08 in 2 iterations
+2024-09-27 14:15:53,413 - INFO - The UAV has reached the final node and has finished its business
+2024-09-27 14:15:53,413 - INFO - The UAV trajectory is: [0]
+2024-09-27 14:15:53,413 - INFO - Algorithm has successfully reached the final node!
