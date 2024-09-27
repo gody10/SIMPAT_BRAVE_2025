@@ -1,5 +1,7 @@
 from Node import Node
 import jax.numpy as jnp
+from jax import random
+import jax
 
 class Uav:
     """
@@ -7,7 +9,7 @@ class Uav:
     Represents the UAV that will navigate itself in the graph and process user data
     """
     
-    def __init__(self, uav_id: int, initial_node: Node, final_node: Node, energy_level: float = 100, total_data_processing_capacity: float = 1000, velocity : float = 1, uav_system_bandwidth: float = 0.9, cpu_frequency: float = 2)->None:
+    def __init__(self, uav_id: int, initial_node: Node, final_node: Node, energy_level: float = 100, total_data_processing_capacity: float = 1000, velocity : float = 1, uav_system_bandwidth: float = 0.9, cpu_frequency: float = 2, height: float = 100)->None:
         """
         Initialize the UAV
         
@@ -30,6 +32,7 @@ class Uav:
         self.total_data_processing_capacity = total_data_processing_capacity
         self.uav_system_bandwidth = uav_system_bandwidth
         self.velocity = velocity
+        self.height = height
         self.cpu_frequency = cpu_frequency
         self.finished_business_in_node = False
         self.visited_nodes = []
@@ -45,6 +48,36 @@ class Uav:
             True if the business is finished, False otherwise
         """
         self.finished_business_in_node = finished
+    
+    def get_finished_business_in_node(self)->bool:
+        """
+        Get the finished business in the node
+        
+        Returns:
+        bool
+            True if the business is finished, False otherwise
+        """
+        return self.finished_business_in_node
+        
+    def get_total_data_processing_capacity(self)->float:
+        """
+        Get the total data processing capacity of the UAV
+        
+        Returns:
+        float
+            Total data processing capacity of the UAV
+        """
+        return self.total_data_processing_capacity
+        
+    def get_height(self)->float:
+        """
+        Get the height of the UAV
+        
+        Returns:
+        float
+            Height of the UAV
+        """
+        return self.height
         
     def get_uav_bandwidth(self)->float:
         """
@@ -56,7 +89,7 @@ class Uav:
         """
         return self.uav_system_bandwidth
     
-    def get_uav_cpu_frequency(self)->float:
+    def get_cpu_frequency(self)->float:
         """
         Get the UAV CPU frequency
         
@@ -159,6 +192,16 @@ class Uav:
         """
         self.current_coordinates = coordinates
         
+    def get_current_node(self)->Node:
+        """
+        Get the current node of the UAV
+        
+        Returns:
+        Node
+            Current node of the UAV
+        """
+        return self.visited_nodes[-1]
+        
     def travel_to_node(self, node: Node)->bool:
         """
         Travel to a node
@@ -182,6 +225,7 @@ class Uav:
         # Adjust the energy level of the UAV
         
         if not self.adjust_energy(energy_travel):
+            print(f"Available energy level: {self.energy_level} - while energy needed: {energy_travel}")
             return False
         
         self.set_current_coordinates(node.get_coordinates())
@@ -223,6 +267,31 @@ class Uav:
             return False
         else:
             self.set_finished_business_in_node(True)
+            
+    
+            
+    def get_random_unvisited_next_node(self, nodes: list, key)->Node:
+        """
+        Get a random unvisited next node
+        
+        Parameters:
+        nodes : list
+            List of nodes
+        
+        Returns:
+        Node
+            Random unvisited next node
+        """
+        # Get all nodes that haven't been visited yet
+        unvisited_nodes = [node for node in nodes if node not in self.get_visited_nodes()]
+        
+        # Check if there are any unvisited nodes left
+        if not unvisited_nodes:
+            return None  # or raise an exception, or handle as appropriate
+        
+        # Generate a random index using jax
+        idx = jax.random.randint(key, shape=(), minval=0, maxval=len(unvisited_nodes))
+        return unvisited_nodes[idx]
             
         
     def __str__(self)->str:

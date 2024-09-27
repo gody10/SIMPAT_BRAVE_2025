@@ -7,7 +7,7 @@ class Node:
     This is also known as Area of Interest (AOI) in the writeup
     """
     
-    def __init__(self, node_id : int, users = List[AoiUser], coordinates : Tuple = (0,0,0)) -> None:
+    def __init__(self, node_id : int, users = List[AoiUser], coordinates : Tuple = (0,0,0), radius: float = 2) -> None:
         """
         Initialize the node
         
@@ -18,10 +18,13 @@ class Node:
             ID of the node
         coordinates : Tuple
             Coordinates of the node
+        radius : float
+            radius of the node
         """
         self.user_list = users
         self.node_id = node_id
         self.coordinates = coordinates
+        self.radius = radius
         
         self.total_bit_data = 0
         for user in self.user_list:
@@ -36,6 +39,16 @@ class Node:
             User to be added to the node
         """
         self.user_list.append(user)
+        
+    def get_radius(self)->float:
+        """
+        Get the radius of the node
+        
+        Returns:
+        float
+            Radius of the node
+        """
+        return self.radius
         
     def get_node_total_data(self)->float:
         """
@@ -66,6 +79,16 @@ class Node:
             Coordinates of the node
         """
         return self.coordinates
+    
+    def get_user_list(self)->List[AoiUser]:
+        """
+        Get the list of users in the node
+        
+        Returns:
+        List[User]
+            List of users in the node
+        """
+        return self.user_list
         
     def __str__(self)->str:
         return f"Users: {self.user_list}"

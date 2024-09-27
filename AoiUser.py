@@ -1,5 +1,7 @@
 import jax.numpy as jnp
 import cvxpy as cp
+from typing import Tuple
+from scipy.optimize import minimize
 
 class AoiUser:
     """
@@ -7,7 +9,7 @@ class AoiUser:
     Represents a user in an Area of Interest (AOI)
     """
 
-    def __init__(self, user_id:int, data_in_bits : float, transmit_power: float, channel_gain: float, energy_level: float)->None:
+    def __init__(self, user_id:int, data_in_bits : float, transmit_power: float, energy_level: float, task_intensity: float, coordinates: Tuple = (0,0,0), carrier_frequency: float = 5)->None:
         """
         Initialize the user
         
@@ -22,12 +24,17 @@ class AoiUser:
             Channel gain of the user
         total_energy_capacity : float
             Total energy capacity of the user
+        task_intensity : float
+            Task intensity of the user
         """
         self.user_id = user_id
         self.data_in_bits = data_in_bits
         self.transmit_power = transmit_power
-        self.channel_gain = channel_gain
+        self.channel_gain = 0
         self.energy_level = energy_level
+        self.task_intensity = task_intensity
+        self.coordinates = coordinates
+        self.carrier_frequency = carrier_frequency
         self.white_noise = 1e-9
         self.current_strategy = 0
         self.current_data_rate = 0
@@ -44,6 +51,26 @@ class AoiUser:
             Amount of data in bits of the user
         """
         return self.data_in_bits
+    
+    def get_carrier_frequency(self)->float:
+        """
+        Get the carrier frequency of the user
+        
+        Returns:
+        float
+            Carrier frequency of the user
+        """
+        return self.carrier_frequency
+    
+    def get_task_intensity(self)->float:
+        """
+        Get the task intensity of the user
+        
+        Returns:
+        float
+            Task intensity of the user
+        """
+        return self.task_intensity
     
     def get_transmit_power(self)->float:
         """
@@ -63,7 +90,42 @@ class AoiUser:
         float
             Channel gain of the user
         """
-        return self.channel_gain
+        return self.channel_gain 
+    
+    def calculate_channel_gain(self, uav_coordinates: Tuple, uav_height: float)->None:
+        """
+        Calculate the channel gain of the user
+        
+        Parameters:
+        uav_coordinates : Tuple
+            Coordinates of the UAV
+        uav_height : float
+            Height of the UAV
+        
+        Returns:
+        float
+            Channel gain of the user
+        """
+        distance = jnp.sqrt((self.coordinates[0] - uav_coordinates[0])**2 + (self.coordinates[1] - uav_coordinates[1])**2 + (self.coordinates[2] - uav_coordinates[2])**2)
+        pl_loss = 20*jnp.log(distance) + 20 * jnp.log (self.get_carrier_frequency()) + 2*jnp.log((4*jnp.pi)/ 3 * 10*18) + 2
+        pl_nloss = 20*jnp.log(distance) + 20 * jnp.log (self.get_carrier_frequency()) + 2*jnp.log((4*jnp.pi)/ 3 * 10*18) + 21
+        #theta = jnp.arcsin(uav_height/distance)
+        theta = jnp.arcsin(jnp.clip(uav_height / distance, -1, 1))
+
+        pr_loss = 1 / (1 + 0.136 * (jnp.exp(-11.95 * (theta * -0.136))))
+        pl = pr_loss * pl_loss + (1 - pr_loss) * pl_nloss
+        
+        self.channel_gain = 1/(10**(pl/10))
+    
+    def get_coordinates(self)->Tuple:
+        """
+        Get the coordinates of the user
+        
+        Returns:
+        Tuple
+            Coordinates of the user
+        """
+        return self.coordinates
     
     def set_user_strategy(self, strategy: float)->None:
         """
@@ -162,9 +224,10 @@ class AoiUser:
         float
             Data rate of the user
         """
-        self.current_data_rate = uav_bandwidth* jnp.log(1 + ((self.transmit_power * self.channel_gain) / (self.white_noise + jnp.sum(other_users_transmit_powers * other_users_channel_gains))))
+        self.current_data_rate = uav_bandwidth* jnp.log(1 + ((self.transmit_power * self.get_channel_gain()) / (self.white_noise + jnp.sum(other_users_transmit_powers * other_users_channel_gains))))
+        #print(self.current_data_rate)
     
-    def calculate_time_overhead(self, data_rate: float, phi: list, other_user_strategies: list, other_user_bits: list, uav_total_capacity: float, uav_cpu_frequency: float)->None:
+    def calculate_time_overhead(self, other_user_strategies: list, other_user_bits: list, uav_total_capacity: float, uav_cpu_frequency: float)->None:
         """
         Calculate the time overhead of the user
         
@@ -173,17 +236,18 @@ class AoiUser:
             Data rate of the user
         user_strategy : float
             User strategy that shows the percentage of data that the user will offload to the UAV
+        phi : list # Task intensity of the user
+            List of the strategies of the other users
         """
         
-        self.current_time_overhead = (self.data_in_bits * self.get_user_strategy()) / data_rate + ((phi* self.get_user_strategy() *self.data_in_bits) / ((1 - (jnp.sum(other_user_strategies * other_user_bits)/ uav_total_capacity)) * uav_cpu_frequency))
+        self.current_time_overhead = (self.data_in_bits * self.get_user_strategy()) / self.get_current_data_rate() + ((self.get_task_intensity() * self.get_user_strategy() *self.data_in_bits) 
+                                                                                                   / ((1 - (jnp.sum(other_user_strategies * other_user_bits)/ uav_total_capacity)) * uav_cpu_frequency))
     
     def calculate_consumed_energy(self)->None:
         """
         Calculate the consumed energy of the user during the offloading process
         """
-        self.current_consumed_energy = ((self.get_user_strategy() * self.get_user_bits())/self.calculate_data_rate) * self.transmit_power
-        self.adjust_energy(self.current_consumed_energy)
-
+        self.current_consumed_energy = ((self.get_user_strategy() * self.get_user_bits())/self.get_current_data_rate()) * self.get_transmit_power()
     
     def calculate_total_overhead(self, T: float)->None:
         """
@@ -195,13 +259,42 @@ class AoiUser:
         """
         self.current_total_overhead = (self.current_time_overhead/T) + (self.current_consumed_energy/self.energy_level)
         
-    def play_submodular_game(self, other_people_strategies: list, cost: float)->float:
+    def play_submodular_game_cvxpy(self, other_people_strategies: list, c: float, b: float, uav_bandwidth: float, other_users_transmit_powers: list, other_users_channel_gains: list, 
+                                   other_user_data_in_bits: list, uav_cpu_frequency: float, uav_total_data_processing_capacity: float, T: float, uav_coordinates: Tuple, uav_height: float)->float:
+        """
+        Define the submodular game that the user will play with the other users
+        
+        Parameters:
+        other_people_strategies : list
+            List of the strategies of the other users
+        c : float
+        """
         
         # Set as Variable the bits that the user will send to each MEC server
         percentage_offloaded = cp.Variable((1, 1), name = 'percentage_offloaded', nonneg=True)
+        
+        # Calculate channel gain of the user
+        self.calculate_channel_gain(uav_coordinates= uav_coordinates, uav_height= uav_height)
+        #print("Channel Gain: ", self.get_channel_gain())
+        
+        # Calculate the data rate of the user
+        self.calculate_data_rate(uav_bandwidth, other_users_transmit_powers, other_users_channel_gains)
+        #print("Data Rate: ", self.get_current_data_rate())
+        
+        # Calculate the time overhead of the user
+        self.calculate_time_overhead(other_people_strategies, other_user_data_in_bits, uav_total_data_processing_capacity, uav_cpu_frequency)
+        #print("Time Overhead: ", self.get_current_time_overhead())
+        
+        # Calculate the total overhead of the user
+        self.calculate_total_overhead(T)
+        #print(" Total Overhead: ", self.get_current_total_overhead())
+        
+        # Calculate the consumed energy of the user
+        self.calculate_consumed_energy()
+        #print("Consumed Energy: ", self.get_current_consumed_energy())
 
         # Set the objective function and the constraints
-        objective = cp.Maximize((self.get_user_bits() * jnp.exp(percentage_offloaded/jnp.sum(other_people_strategies))) - (cost*jnp.exp(self.get_current_total_overhead)))
+        objective = cp.Maximize(-((b * cp.exp(percentage_offloaded/jnp.sum(other_people_strategies))) - (c*cp.exp(self.get_current_total_overhead()))))
         constraints = [percentage_offloaded >=0 , percentage_offloaded <= 1]
 
         # Create Problem
@@ -210,7 +303,82 @@ class AoiUser:
         # Solve the problem and get the solution which is the maximum utility of the user
         solution = prob.solve(verbose=False)
         
+        # Update user energy
+        self.set_user_strategy(percentage_offloaded.value)
+        
         return (solution, percentage_offloaded.value)
         
+    def play_submodular_game_scipy(self, other_people_strategies: list, c: float, b: float, uav_bandwidth: float, other_users_transmit_powers: list, other_users_channel_gains: list, 
+                                   other_user_data_in_bits: list, uav_cpu_frequency: float, uav_total_data_processing_capacity: float, T: float, uav_coordinates: Tuple, uav_height: float)->float:
+        """
+        Define the submodular game that the user will play with the other users
+        
+        Parameters:
+        other_people_strategies : list
+            List of the strategies of the other users
+        c : float
+        """
+        
+        # Calculate channel gain of the user
+        self.calculate_channel_gain(uav_coordinates= uav_coordinates, uav_height= uav_height)
+        #print("Channel Gain: ", self.get_channel_gain())
+        
+        # Calculate the data rate of the user
+        self.calculate_data_rate(uav_bandwidth, other_users_transmit_powers, other_users_channel_gains)
+        #print("Data Rate: ", self.get_current_data_rate())
+        
+        # Calculate the time overhead of the user
+        self.calculate_time_overhead(other_people_strategies, other_user_data_in_bits, uav_total_data_processing_capacity, uav_cpu_frequency)
+        #print("Time Overhead: ", self.get_current_time_overhead())
+        
+        # Calculate the total overhead of the user
+        self.calculate_total_overhead(T)
+        #print(" Total Overhead: ", self.get_current_total_overhead())
+        
+        # Calculate the consumed energy of the user
+        self.calculate_consumed_energy()
+        #print("Consumed Energy: ", self.get_current_consumed_energy())
+        
+        def constraint_positive(percentage_offloaded):
+            return percentage_offloaded  # Each value should be >= 0
+    
+        def constraint_upper_bound(percentage_offloaded):
+            return 1 - percentage_offloaded  # Each value should be <= 1
+        
+        constraints = [
+            {'type': 'ineq', 'fun': constraint_positive},  # percentage_offloaded >= 0
+            {'type': 'ineq', 'fun': constraint_upper_bound}  # percentage_offloaded <= 1
+        ]
+        
+        # Objective function to maximize (but converted to a minimization problem)
+        def objective_function(percentage_offloaded):
+            # Reshape to match expected shape (if necessary)
+            percentage_offloaded = jnp.array(percentage_offloaded).reshape(-1, 1)
+            # Calculate terms based on the provided expression
+            term1 = b * jnp.exp(percentage_offloaded / jnp.sum(other_people_strategies))
+            term2 = c * jnp.exp(self.get_current_total_overhead())
+            return -(term1 - term2)  # Negate for minimization
+
+        # Solve the optimization problem using SLSQP
+        result = minimize(objective_function, self.get_user_strategy(), constraints=constraints, method='SLSQP')
+        
+        # Extract the solution
+        solution = result.x
+        solution = jnp.maximum(solution, 0)  # Ensure solution is non-negative
+        
+         # Update user strategy
+        self.set_user_strategy(solution)
+
+        # Calculate the consumed energy of the user
+        self.calculate_consumed_energy()
+        
+        # Adjust the energy level of the user
+        self.adjust_energy(self.get_current_consumed_energy())
+        
+        # The maximum utility achieved (negated to reverse minimization)
+        maximized_utility = -result.fun
+        
+        return (maximized_utility, solution)
+        
     def __str__(self)->str:
-        return f"User ID: {self.user_id}"
+        return f"User ID: {self.user_id}, Data in Bits: {self.data_in_bits}, Transmit Power: {self.transmit_power}, Energy Level: {self.energy_level}, Task Intensity: {self.task_intensity}, Coordinates: {self.coordinates}, Carrier Frequency: {self.carrier_frequency}"

@@ -50,6 +50,16 @@ class Graph:
         """
         return len(self.nodes)
     
+    def get_nodes(self)->List[Node]:
+        """
+        Get the nodes in the graph
+        
+        Returns:
+        list
+            List of nodes in the graph
+        """
+        return self.nodes
+    
     def get_num_edges(self)->int:
         """
         Get the number of edges in the graph
