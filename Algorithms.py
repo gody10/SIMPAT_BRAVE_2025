@@ -208,6 +208,13 @@ class Algorithms:
                         for idx, user in enumerate(uav.get_current_node().get_user_list()):
                             user.calculate_consumed_energy()
                             user.adjust_energy(user.get_current_consumed_energy())
+                        
+                        # Adjust UAV energy for hovering over the node
+                        uav.hover_over_node(time_hover= T)
+                        
+                        # Adjust UAV energy for processing the offloaded data
+                        uav.energy_to_process_data(energy_coefficient= 0.1)
+                        
                         done = True
                         
                 uav.set_finished_business_in_node(True)
@@ -364,6 +371,13 @@ class Algorithms:
                         for idx, user in enumerate(uav.get_current_node().get_user_list()):
                             user.calculate_consumed_energy()
                             user.adjust_energy(user.get_current_consumed_energy())
+                            
+                        # Adjust UAV energy for hovering over the node
+                        uav.hover_over_node(time_hover= T)
+                        
+                        # Adjust UAV energy for processing the offloaded data
+                        uav.energy_to_process_data(energy_coefficient= 0.1)
+                        
                         done = True
                         
                 uav.set_finished_business_in_node(True)

@@ -285,8 +285,10 @@ class Uav:
         if not self.adjust_energy(energy_hover):
             logging.info("Energy level goes under 0 - Action not allowed")
             return False
+        logging.info(f"Energy level is now: {self.energy_level} and the energy wasted to hover over the node is: {energy_hover}")
+        return True
 
-    def process_data(self, energy_coefficient: float, cpu_frequency: float, phi: list, strategy: list, bits: list)->bool:
+    def energy_to_process_data(self, energy_coefficient: float)->bool:
         """
         Process data
         
@@ -294,17 +296,21 @@ class Uav:
         data : float
             Data to be processed
         """
+        # Calculate the total bits based on the strategy that the node's users have chosen
+        node_total_bits_based_on_strategy = 0
+        for user in self.get_current_node().get_user_list():
+            node_total_bits_based_on_strategy += user.get_user_bits() * user.get_user_strategy()
+        
         # Calculate the energy wasted to process the data
-        energy_process = energy_coefficient * cpu_frequency * jnp.sum(jnp.multiply(phi, strategy, bits))
+        energy_process = energy_coefficient * self.get_cpu_frequency() * node_total_bits_based_on_strategy
         
         # Adjust the energy level of the UAV
         if not self.adjust_energy(energy_process):
             logging.info("Energy level goes under 0 - Action not allowed")
             return False
         else:
+            logging.info(f"Energy level is now: {self.energy_level} and the energy wasted to process the data is: {energy_process}")
             self.set_finished_business_in_node(True)
-            
-    
             
     def get_random_unvisited_next_node(self, nodes: list, key)->Node:
         """

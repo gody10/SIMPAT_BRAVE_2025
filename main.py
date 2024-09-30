@@ -86,18 +86,22 @@ uav = Uav(uav_id= 1, initial_node= nodes[0], final_node= nodes[len(nodes)-1], ca
 # Create the algorithm object
 algorithm = Algorithms(number_of_users= U, number_of_nodes= N, uav= uav, graph= graph, key= key, convergence_threshold= CONVERGENCE_THRESHOLD)
 
-# Run the Random Walk Algorithm
+# # Run the Random Walk Algorithm
 # success_random_walk = algorithm.run_random_walk_algorithm(solving_method= "scipy")
+
+# logging.info("The UAV energy level is: %s", uav.get_energy_level())
 
 # if success_random_walk:
 #     logging.info("Random Walk Algorithm has successfully reached the final node!")
 # else:
 #     logging.info("Random Walk Algorithm failed to reach the final node!")
 
-# Run the Random Walk Algorithm
+# Run the Brave Greedy Algorithm
 success_brave_greedy = algorithm.brave_greedy(solving_method= "scipy")
 
+logging.info("The UAV energy level is: %s", uav.get_energy_level())
+
 if success_brave_greedy:
-    logging.info("Random Walk Algorithm has successfully reached the final node!")
+    logging.info("Brave Greedy Algorithm has successfully reached the final node!")
 else:
-    logging.info("Random Walk Algorithm failed to reach the final node!")
+    logging.info("Brave Greedy Algorithm failed to reach the final node!")
