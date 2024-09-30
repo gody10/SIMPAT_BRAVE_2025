@@ -27,8 +27,10 @@ class Algorithms:
         self.number_of_users = number_of_users
         self.number_of_nodes = number_of_nodes
         self.graph = graph
+        self.saved_graph_version = graph
         self.key = key
         self.uav = uav
+        self.saved_uav_version = uav
         
     def get_uav(self)->Uav:
         """
@@ -89,7 +91,13 @@ class Algorithms:
             Key
         """
         return self.key
-        
+    
+    def reset(self)->None:
+        """
+        Reset the algorithm to the initial state
+        """
+        self.uav = self.saved_uav_version
+        self.graph = self.saved_graph_version   
         
     def run_random_walk_algorithm(self, solving_method: str)->bool:
         """
