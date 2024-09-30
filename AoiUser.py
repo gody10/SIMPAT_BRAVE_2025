@@ -245,12 +245,14 @@ class AoiUser:
         Calculate the time overhead of the user
         
         Parameters:
-        data_rate : float
-            Data rate of the user
-        user_strategy : float
-            User strategy that shows the percentage of data that the user will offload to the UAV
-        phi : list # Task intensity of the user
+        other_user_strategies : list
             List of the strategies of the other users
+        other_user_bits : list
+            List of the bits of the other users
+        uav_total_capacity : float
+            Total capacity of the UAV
+        uav_cpu_frequency : float
+            CPU frequency of the UAV
         """
         
         self.current_time_overhead = (self.data_in_bits * self.get_user_strategy()) / self.get_current_data_rate() + ((self.get_task_intensity() * self.get_user_strategy() *self.data_in_bits) 
@@ -259,11 +261,17 @@ class AoiUser:
     
     def calculate_consumed_energy(self)->None:
         """
-        Calculate the consumed energy of the user during the offloading process
+        Calculate the consumed energy of the user during the offloading process based on the current strategy
         """
-        self.current_consumed_energy = ((self.get_user_strategy() * self.get_user_bits())/self.get_current_data_rate()) * self.get_transmit_power()
+        self.current_consumed_energy = ((self.get_user_strategy() * self.get_user_bits())/(self.get_current_data_rate()+ 1)) * self.get_transmit_power()
         logging.info(f"User {self.get_user_id()} has Current consumed energy {self.current_consumed_energy}")
-    
+        
+    def calculate_total_consumed_energy(self)->float:
+        """
+        Calculate the total consumed energy of the user during the offloading process
+        """
+        return ((self.get_user_bits())/(self.get_current_data_rate()+1)) * self.get_transmit_power()
+        
     def calculate_total_overhead(self, T: float)->None:
         """
         Calculate the total overhead of the user during the offloading process over a period T
@@ -272,7 +280,7 @@ class AoiUser:
         T : float
             Time that that timeslot t lasted
         """
-        self.current_total_overhead = (self.current_time_overhead/T) + (self.current_consumed_energy/self.energy_level)
+        self.current_total_overhead = (self.current_time_overhead/T) + (self.current_consumed_energy/(self.energy_level + 1))
         logging.info(f"User {self.get_user_id()} has Current total overhead {self.current_total_overhead}")
         
     def play_submodular_game_cvxpy(self, other_people_strategies: list, c: float, b: float, uav_bandwidth: float, other_users_transmit_powers: list, other_users_channel_gains: list, 
@@ -396,7 +404,7 @@ class AoiUser:
             return -(term1 - term2_clipped)  # Negate for minimization
 
         # Solve the optimization problem using SLSQP
-        result = minimize(fun =objective_function, x0= float(self.get_user_strategy()), constraints=constraints, method='SLSQP')
+        result = minimize(fun= objective_function, x0= float(self.get_user_strategy()), constraints= constraints, method='SLSQP')
         
         # Extract the solution
         solution = result.x
@@ -409,11 +417,8 @@ class AoiUser:
         # Calculate the consumed energy of the user
         #self.calculate_consumed_energy()
         
-        # Adjust the energy level of the user
-        #self.adjust_energy(self.get_current_consumed_energy())
-        
         # The maximum utility achieved (negated to reverse minimization)
-        maximized_utility = -result.fun
+        maximized_utility= -result.fun
         
         return (maximized_utility, solution)
         

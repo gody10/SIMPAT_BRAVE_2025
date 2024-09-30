@@ -141,9 +141,15 @@ class Algorithms:
                     user_transmit_powers = user_transmit_powers.at[idx].set(user.get_transmit_power())
                     user_data_in_bits = user_data_in_bits.at[idx].set(user.get_user_bits())
                     user.set_user_strategy(user_strategies[idx])
+                    c = 0.08
+                    b = 0.4
                     
-                c = 0.08
-                b = 0.4
+                    # Initialize data rate, current strategy, channel gain, time overhead, current consumed energy and total overhead for each user
+                    user.calculate_data_rate(uav_bandwidth, user_channel_gains[idx], user_transmit_powers[idx])
+                    user.calculate_channel_gain(uav.get_current_coordinates(), uav.get_height())
+                    user.calculate_time_overhead(other_user_strategies= user_strategies, other_user_bits= user_data_in_bits, uav_total_capacity= uav_total_data_processing_capacity, uav_cpu_frequency= uav_cpu_frequency)
+                    user.calculate_consumed_energy()
+                    user.calculate_total_overhead(2)
                     
                 iteration_counter = 0
                 while(not done):

@@ -89,6 +89,19 @@ class Node:
             List of users in the node
         """
         return self.user_list
+    
+    def calculate_total_energy_for_all_user_data_processing(self)->float:
+        """
+        Calculate the total energy for all users data processing
+        
+        Returns:
+        float
+            Total energy for all users data processing
+        """
+        total_energy = 0
+        for user in self.get_user_list():
+            total_energy += user.calculate_total_consumed_energy()
+        return total_energy
         
     def __str__(self)->str:
         return f"Users: {self.user_list}"

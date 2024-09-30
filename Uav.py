@@ -264,6 +264,7 @@ class Uav:
         
         self.set_current_coordinates(node.get_coordinates())
         self.update_visited_nodes(node)
+        print("Updated Visited Nodes")
         self.set_finished_business_in_node(False)
         return True
         
@@ -355,25 +356,28 @@ class Uav:
             unvisited_nodes = [node for node in unvisited_nodes if node.get_node_id() != self.final_node.get_node_id()]
         
         # Calculate the total bits available in each unvisited node
-        total_bits = [node.get_total_bits() for node in unvisited_nodes]
+        total_bits = [node.get_node_total_data() for node in unvisited_nodes]
         
         # Order the nodes by the total bits available
-        unvisited_nodes = [node for _, node in sorted(zip(total_bits, unvisited_nodes), reverse=True)]
+        unvisited_nodes = [node for _, node in sorted(zip(total_bits, unvisited_nodes), key=lambda pair: pair[0], reverse=True)]
         
         # Calculate the energy needed to travel to each unvisited node
         energy_travel = jnp.array([308.709 * self.calculate_time_to_travel(node_to_start= self.get_current_node(), node_to_end_up= node) - 0.85 for node in unvisited_nodes])
-        energy_process = jnp.array([self.get_cpu_frequency() * jnp.sum(jnp.multiply(node.get_phi(), node.get_strategy(), node.get_bits())) for node in unvisited_nodes])
+        
+        energy_process = jnp.array([node.calculate_total_energy_for_all_user_data_processing() for node in unvisited_nodes])
+        
         energy_hover = jnp.array([(4.917 * self.get_height() - 275.204) * 1 for node in unvisited_nodes])
-        energy_to_travel_to_final_node = jnp.array([308.709 * self.calculate_time_to_travel(node_to_start= node, node_to_end_up= self.final_node) - 0.85 for node in unvisited_nodes])
+        energy_to_travel_to_final_node = jnp.array([308.709 * self.calculate_time_to_travel(node_to_start= node, node_to_end_up= self.get_final_node()) - 0.85 for node in unvisited_nodes])
+        
+        # Print all the energies
+        print(f"Energy Travel: {energy_travel}")
+        print(f"Energy Process: {energy_process}")
+        print(f"Energy Hover: {energy_hover}")
+        print(f"Energy to Travel to Final Node: {energy_to_travel_to_final_node}")
+        print(f"Total Bits: {total_bits}")
         
         # Calculate the total energy needed to travel to each unvisited node
         total_energy = jnp.add(energy_travel, jnp.add(energy_process, energy_hover))
-        
-        # Decide greedily which node to go to by maximizing the total bits that the UAV can process while also being able to travel to the node and then travel to the final node with the remaining energy
-        # for i in range(len(unvisited_nodes)):
-        #     if total_energy[i] + energy_to_travel_to_final_node[i] < self.get_energy_level():
-        #         next_node = unvisited_nodes[i]
-        #         break
             
         # Do the same with enumerate instead of iterate
         chosen_a_node_to_go = False
@@ -382,6 +386,8 @@ class Uav:
                 next_node = node
                 chosen_a_node_to_go = True
                 break
+            else:
+                print(f"The energy needed to go to the node {node.get_node_id()} is {total_energy[i] + energy_to_travel_to_final_node[i]}, but the available energy is {self.get_energy_level()}")
         if not chosen_a_node_to_go:
             return self.get_final_node()
 

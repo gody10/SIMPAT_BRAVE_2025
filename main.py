@@ -52,11 +52,11 @@ for i in range(N):
         
         users.append(AoiUser(
             user_id=j,
-            data_in_bits=random.uniform(random.split(key + j)[0], (1,))[0] * 1000,
-            transmit_power= random.uniform(random.split(key + j)[0], (1,))[0] * 100,
+            data_in_bits= random.uniform(random.split(key + i + j)[0], (1,))[0] * 1000,
+            transmit_power= random.uniform(random.split(key + i + j)[0], (1,))[0] * 100,
             energy_level= 4000,
-            task_intensity= random.uniform(random.split(key + j)[0], (1,))[0] * 100,
-            carrier_frequency= random.uniform(random.split(key + j)[0], (1,))[0] * 100,
+            task_intensity= random.uniform(random.split(key + i + j)[0], (1,))[0] * 100,
+            carrier_frequency= random.uniform(random.split(key + i + j)[0], (1,))[0] * 100,
             coordinates=user_coords
         ))
     
@@ -81,18 +81,18 @@ logging.info("Number of Edges: %s", graph.get_num_edges())
 logging.info("Number of Users: %s", graph.get_num_users())
 
 # Create a UAV
-uav = Uav(uav_id= 1, initial_node= nodes[0], final_node= nodes[len(nodes)-1], capacity= 10000, total_data_processing_capacity= 1000, velocity= 1, uav_system_bandwidth= 15, cpu_frequency= 2, height= UAV_HEIGHT)
+uav = Uav(uav_id= 1, initial_node= nodes[0], final_node= nodes[len(nodes)-1], capacity= 100000000, total_data_processing_capacity= 1000, velocity= 1, uav_system_bandwidth= 15, cpu_frequency= 2, height= UAV_HEIGHT)
 
 # Create the algorithm object
 algorithm = Algorithms(number_of_users= U, number_of_nodes= N, uav= uav, graph= graph, key= key, convergence_threshold= CONVERGENCE_THRESHOLD)
 
 # Run the Random Walk Algorithm
-success_random_walk = algorithm.run_random_walk_algorithm(solving_method= "scipy")
+# success_random_walk = algorithm.run_random_walk_algorithm(solving_method= "scipy")
 
-if success_random_walk:
-    logging.info("Random Walk Algorithm has successfully reached the final node!")
-else:
-    logging.info("Random Walk Algorithm failed to reach the final node!")
+# if success_random_walk:
+#     logging.info("Random Walk Algorithm has successfully reached the final node!")
+# else:
+#     logging.info("Random Walk Algorithm failed to reach the final node!")
 
 # Run the Random Walk Algorithm
 success_brave_greedy = algorithm.brave_greedy(solving_method= "scipy")
