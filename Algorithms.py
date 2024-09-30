@@ -188,10 +188,16 @@ class Algorithms:
                     
                     # Check if the strategies have converged
                     if strategy_difference < convergence_threshold:
+                        # Calculate the consumed energy for all users based on the strategies they have chosen and adjust the energy
+                        for idx, user in enumerate(uav.get_current_node().get_user_list()):
+                            user.calculate_consumed_energy()
+                            user.adjust_energy(user.get_current_consumed_energy())
                         done = True
+                        
                 uav.set_finished_business_in_node(True)
                 uav.hover_over_node(time_hover= T)
                 logging.info("The UAV has finished its business in the current node")
+                logging.info(f"The strategies have converged to: {user_strategies}")
                 logging.info(f"Converged with strategy difference: {strategy_difference} in {iteration_counter} iterations")
                 
                 if (uav_has_reached_final_node):

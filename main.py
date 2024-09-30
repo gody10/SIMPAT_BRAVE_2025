@@ -22,7 +22,7 @@ logging.basicConfig(
 
 # Create N nodes with U users in them
 N = 1
-U = 10
+U = 5
 NODE_RADIUS = 2
 MIN_DISTANCE_BETWEEN_NODES = 10  # Minimum distance to maintain between nodes
 UAV_HEIGHT = 100
@@ -50,11 +50,11 @@ for i in range(N):
         
         users.append(AoiUser(
             user_id=j,
-            data_in_bits=random.uniform(random.split(key + j)[0], (1,))[0] * 10,
-            transmit_power= random.uniform(random.split(key + j)[0], (1,))[0] * 2,
+            data_in_bits=random.uniform(random.split(key + j)[0], (1,))[0] * 100,
+            transmit_power= random.uniform(random.split(key + j)[0], (1,))[0] * 10,
             energy_level= 4000,
-            task_intensity= 1,
-            carrier_frequency= 5,
+            task_intensity= random.uniform(random.split(key + j)[0], (1,))[0] * 10,
+            carrier_frequency= random.uniform(random.split(key + j)[0], (1,))[0] * 10,
             coordinates=user_coords
         ))
     
@@ -85,7 +85,7 @@ uav = Uav(uav_id= 1, initial_node= nodes[0], final_node= nodes[len(nodes)-1], ca
 algorithm = Algorithms(number_of_users= U, number_of_nodes= N, uav= uav, graph= graph, key= key, convergence_threshold= CONVERGENCE_THRESHOLD)
 
 # Run the Random Walk Algorithm
-success_var = algorithm.run_random_walk_algorithm(solving_method= "cvxpy")
+success_var = algorithm.run_random_walk_algorithm(solving_method= "scipy")
 
 if success_var:
     logging.info("Algorithm has successfully reached the final node!")

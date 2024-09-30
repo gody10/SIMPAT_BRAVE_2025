@@ -3,6 +3,7 @@ import cvxpy as cp
 from typing import Tuple
 import logging
 from scipy.optimize import minimize
+import numpy as np
 
 class AoiUser:
     """
@@ -313,8 +314,8 @@ class AoiUser:
 
         # Define the objective function with constants and parameter
         objective = cp.Maximize(
-            -((b * cp.exp(percentage_offloaded / cp.sum(other_people_strategies))) 
-            - (c * cp.exp(self.get_current_total_overhead())))
+            (b * cp.exp(percentage_offloaded / cp.sum(other_people_strategies))) 
+            - (c * cp.exp(self.get_current_total_overhead()))
         )
 
         # Define constraints
@@ -324,7 +325,7 @@ class AoiUser:
         prob = cp.Problem(objective, constraints)
 
         # Solve the problem
-        solution = prob.solve(verbose=False)
+        solution = prob.solve(verbose= True, qcp=True)
         
         # Update user energy
         self.set_user_strategy(percentage_offloaded.value)
@@ -363,7 +364,7 @@ class AoiUser:
         #print("Consumed Energy: ", self.get_current_consumed_energy())
         
         def constraint_positive(percentage_offloaded):
-            return percentage_offloaded  # Each value should be >= 0
+            return percentage_offloaded + 0.01  # Each value should be >= 0
     
         def constraint_upper_bound(percentage_offloaded):
             return 1 - percentage_offloaded  # Each value should be <= 1
@@ -376,14 +377,15 @@ class AoiUser:
         # Objective function to maximize (but converted to a minimization problem)
         def objective_function(percentage_offloaded):
             # Reshape to match expected shape (if necessary)
-            percentage_offloaded = jnp.array(percentage_offloaded).reshape(-1, 1)
+            percentage_offloaded = np.array(percentage_offloaded).reshape(-1, 1)
             # Calculate terms based on the provided expression
-            term1 = b * jnp.exp(percentage_offloaded / jnp.sum(other_people_strategies))
-            term2 = c * jnp.exp(self.get_current_total_overhead())
-            return -(term1 - term2)  # Negate for minimization
+            term1 = b * np.exp(percentage_offloaded / np.sum(other_people_strategies))
+            term2 = c * np.exp(self.get_current_total_overhead())
+            term2_clipped = np.clip(term2, 0, 1e6)  # Clip to avoid numerical issues
+            return -(term1 - term2_clipped)  # Negate for minimization
 
         # Solve the optimization problem using SLSQP
-        result = minimize(objective_function, self.get_user_strategy(), constraints=constraints, method='SLSQP')
+        result = minimize(fun =objective_function, x0= 0.5, constraints=constraints, method='SLSQP')
         
         # Extract the solution
         solution = result.x
@@ -393,10 +395,10 @@ class AoiUser:
         self.set_user_strategy(solution)
 
         # Calculate the consumed energy of the user
-        self.calculate_consumed_energy()
+        #self.calculate_consumed_energy()
         
         # Adjust the energy level of the user
-        self.adjust_energy(self.get_current_consumed_energy())
+        #self.adjust_energy(self.get_current_consumed_energy())
         
         # The maximum utility achieved (negated to reverse minimization)
         maximized_utility = -result.fun
