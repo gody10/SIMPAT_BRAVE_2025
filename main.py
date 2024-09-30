@@ -21,7 +21,7 @@ logging.basicConfig(
 )
 
 # Create N nodes with U users in them
-N = 3
+N = 5
 #U = 100
 # Generate random user number for each node
 U = random.randint(key, (N,), 50, 250)
@@ -87,9 +87,17 @@ uav = Uav(uav_id= 1, initial_node= nodes[0], final_node= nodes[len(nodes)-1], ca
 algorithm = Algorithms(number_of_users= U, number_of_nodes= N, uav= uav, graph= graph, key= key, convergence_threshold= CONVERGENCE_THRESHOLD)
 
 # Run the Random Walk Algorithm
-success_var = algorithm.run_random_walk_algorithm(solving_method= "scipy")
+success_random_walk = algorithm.run_random_walk_algorithm(solving_method= "scipy")
 
-if success_var:
-    logging.info("Algorithm has successfully reached the final node!")
+if success_random_walk:
+    logging.info("Random Walk Algorithm has successfully reached the final node!")
 else:
-    logging.info("Algorithm failed to reach the final node!")
+    logging.info("Random Walk Algorithm failed to reach the final node!")
+
+# Run the Random Walk Algorithm
+success_brave_greedy = algorithm.brave_greedy(solving_method= "scipy")
+
+if success_brave_greedy:
+    logging.info("Random Walk Algorithm has successfully reached the final node!")
+else:
+    logging.info("Random Walk Algorithm failed to reach the final node!")

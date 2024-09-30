@@ -152,6 +152,16 @@ class Uav:
         """
         return node.get_node_id() == self.final_node.get_node_id()
     
+    def get_final_node(self)->Node:
+        """
+        Get the final node
+        
+        Returns:
+        Node
+            Final node
+        """
+        return self.final_node
+    
     def update_visited_nodes(self, node: Node)->None:
         """
         Update the list of visited nodes
@@ -201,6 +211,31 @@ class Uav:
             Current node of the UAV
         """
         return self.visited_nodes[-1]
+    
+    def get_velocity(self)->float:
+        """
+        Get the velocity of the UAV
+        
+        Returns:
+        float
+            Velocity of the UAV
+        """
+        return self.velocity
+    
+    def calculate_time_to_travel(self, node_to_start: Node, node_to_end_up: Node)->float:
+        """
+        Calculate the time to travel from the current node to the next node
+        
+        Parameters:
+        node : Node
+            Node to travel to
+        
+        Returns:
+        float
+            Time to travel from the current node to the next node
+        """
+        distance = jnp.sqrt((node_to_start.get_coordinates()[0] - node_to_end_up.get_coordinates()[0])**2 + (node_to_start.get_coordinates()[1] - node_to_end_up.get_coordinates()[1])**2 + (node_to_start.get_coordinates()[2] - node_to_end_up.get_coordinates()[2])**2)
+        return distance / self.get_velocity()
         
     def travel_to_node(self, node: Node)->bool:
         """
@@ -215,9 +250,8 @@ class Uav:
             logging.info("UAV has to first process the data in the node before moving to another node")
             return False
         
-        # Calculate the distance between the current node and the next node and the time to travel from one to the other
-        distance = jnp.sqrt((self.current_coordinates[0] - node.get_coordinates()[0])**2 + (self.current_coordinates[1] - node.get_coordinates()[1])**2 + (self.current_coordinates[2] - node.get_coordinates()[2])**2)
-        time_travel = distance / self.velocity
+        # Calculate the time to travel from the current node to the next node
+        time_travel = self.calculate_time_to_travel(node_to_start= self.get_current_node(), node_to_end_up= node)
         
         # Calculate the Energy wasted to travel from one node to the other
         energy_travel = (308.709 * time_travel) - 0.85
@@ -298,6 +332,60 @@ class Uav:
         # Generate a random index using jax
         idx = jax.random.randint(key, shape=(), minval=0, maxval=len(unvisited_nodes))
         return unvisited_nodes[idx]
+    
+    def get_brave_greedy_next_node(self, nodes: list, key)->Node:
+        """
+        Get the next node using the Brave Greedy algorithm
+        
+        Parameters:
+        nodes : list
+            List of nodes
+        
+        Returns:
+        Node
+            Next node using the Brave Greedy algorithm
+        """
+        next_node = None
+        
+        # Get all nodes that haven't been visited yet
+        unvisited_nodes = [node for node in nodes if node not in self.get_visited_nodes()]
+        
+        # Remove the final node from the list of unvisited nodes if there are more than one unvisited nodes
+        if len(unvisited_nodes) > 1:
+            unvisited_nodes = [node for node in unvisited_nodes if node.get_node_id() != self.final_node.get_node_id()]
+        
+        # Calculate the total bits available in each unvisited node
+        total_bits = [node.get_total_bits() for node in unvisited_nodes]
+        
+        # Order the nodes by the total bits available
+        unvisited_nodes = [node for _, node in sorted(zip(total_bits, unvisited_nodes), reverse=True)]
+        
+        # Calculate the energy needed to travel to each unvisited node
+        energy_travel = jnp.array([308.709 * self.calculate_time_to_travel(node_to_start= self.get_current_node(), node_to_end_up= node) - 0.85 for node in unvisited_nodes])
+        energy_process = jnp.array([self.get_cpu_frequency() * jnp.sum(jnp.multiply(node.get_phi(), node.get_strategy(), node.get_bits())) for node in unvisited_nodes])
+        energy_hover = jnp.array([(4.917 * self.get_height() - 275.204) * 1 for node in unvisited_nodes])
+        energy_to_travel_to_final_node = jnp.array([308.709 * self.calculate_time_to_travel(node_to_start= node, node_to_end_up= self.final_node) - 0.85 for node in unvisited_nodes])
+        
+        # Calculate the total energy needed to travel to each unvisited node
+        total_energy = jnp.add(energy_travel, jnp.add(energy_process, energy_hover))
+        
+        # Decide greedily which node to go to by maximizing the total bits that the UAV can process while also being able to travel to the node and then travel to the final node with the remaining energy
+        # for i in range(len(unvisited_nodes)):
+        #     if total_energy[i] + energy_to_travel_to_final_node[i] < self.get_energy_level():
+        #         next_node = unvisited_nodes[i]
+        #         break
+            
+        # Do the same with enumerate instead of iterate
+        chosen_a_node_to_go = False
+        for i, node in enumerate(unvisited_nodes):
+            if total_energy[i] + energy_to_travel_to_final_node[i] < self.get_energy_level():
+                next_node = node
+                chosen_a_node_to_go = True
+                break
+        if not chosen_a_node_to_go:
+            return self.get_final_node()
+
+        return next_node
             
         
     def __str__(self)->str:
