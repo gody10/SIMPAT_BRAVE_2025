@@ -21,12 +21,14 @@ logging.basicConfig(
 )
 
 # Create N nodes with U users in them
-N = 1
-U = 5
+N = 3
+#U = 100
+# Generate random user number for each node
+U = random.randint(key, (N,), 50, 250)
 NODE_RADIUS = 2
-MIN_DISTANCE_BETWEEN_NODES = 10  # Minimum distance to maintain between nodes
+MIN_DISTANCE_BETWEEN_NODES = 20  # Minimum distance to maintain between nodes
 UAV_HEIGHT = 100
-CONVERGENCE_THRESHOLD = 0.01
+CONVERGENCE_THRESHOLD = 1e-15
 
 nodes = []
 for i in range(N):
@@ -34,7 +36,7 @@ for i in range(N):
     node_coords = generate_node_coordinates(key, nodes, MIN_DISTANCE_BETWEEN_NODES)
     
     users = []
-    for j in range(U):
+    for j in range(U[N]):
         # Generate random polar coordinates (r, theta, phi) within the radius of the node
         r = NODE_RADIUS * random.uniform(random.split(key)[0], (1,))[0]  # distance from the center within radius
         theta = random.uniform(random.split(key)[0], (1,))[0] * 2 * jnp.pi  # azimuthal angle (0 to 2*pi)
@@ -50,11 +52,11 @@ for i in range(N):
         
         users.append(AoiUser(
             user_id=j,
-            data_in_bits=random.uniform(random.split(key + j)[0], (1,))[0] * 100,
-            transmit_power= random.uniform(random.split(key + j)[0], (1,))[0] * 10,
+            data_in_bits=random.uniform(random.split(key + j)[0], (1,))[0] * 1000,
+            transmit_power= random.uniform(random.split(key + j)[0], (1,))[0] * 100,
             energy_level= 4000,
-            task_intensity= random.uniform(random.split(key + j)[0], (1,))[0] * 10,
-            carrier_frequency= random.uniform(random.split(key + j)[0], (1,))[0] * 10,
+            task_intensity= random.uniform(random.split(key + j)[0], (1,))[0] * 100,
+            carrier_frequency= random.uniform(random.split(key + j)[0], (1,))[0] * 100,
             coordinates=user_coords
         ))
     
@@ -63,7 +65,7 @@ for i in range(N):
         users=users,
         coordinates=node_coords
     ))
-
+    
 # Create edges between all nodes with random weights
 edges = []
 for i in range(N):

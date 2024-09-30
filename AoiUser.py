@@ -376,20 +376,32 @@ class AoiUser:
         
         # Objective function to maximize (but converted to a minimization problem)
         def objective_function(percentage_offloaded):
+            
+            # Set an extremely small value to avoid overflow in the exponential
+            overflow_avoidance_factor = 1e-60
+            
+            # Set the weight for the x/sum(other_strategies) term
+            w_s = 700
+            
+            #Clip total overhead to avoid numerical issues
+            self.current_total_overhead = np.clip(self.current_total_overhead, 3, 16)
+            
             # Reshape to match expected shape (if necessary)
-            percentage_offloaded = np.array(percentage_offloaded).reshape(-1, 1)
+            #percentage_offloaded = np.array(percentage_offloaded).reshape(-1, 1)
+            
             # Calculate terms based on the provided expression
-            term1 = b * np.exp(percentage_offloaded / np.sum(other_people_strategies))
+            term1 = b * np.exp( w_s * (percentage_offloaded / np.sum(other_people_strategies)))
             term2 = c * np.exp(self.get_current_total_overhead())
             term2_clipped = np.clip(term2, 0, 1e6)  # Clip to avoid numerical issues
             return -(term1 - term2_clipped)  # Negate for minimization
 
         # Solve the optimization problem using SLSQP
-        result = minimize(fun =objective_function, x0= 0.5, constraints=constraints, method='SLSQP')
+        result = minimize(fun =objective_function, x0= float(self.get_user_strategy()), constraints=constraints, method='SLSQP')
         
         # Extract the solution
         solution = result.x
         solution = jnp.maximum(solution, 0)  # Ensure solution is non-negative
+        solution = jnp.minimum(solution, 1)  # Ensure solution is at most 1
         
          # Update user strategy
         self.set_user_strategy(solution)

@@ -286,9 +286,14 @@ class Uav:
         # Get all nodes that haven't been visited yet
         unvisited_nodes = [node for node in nodes if node not in self.get_visited_nodes()]
         
+        # Remove the final node from the list of unvisited nodes if there are more than one unvisited nodes
+        if len(unvisited_nodes) > 1:
+            unvisited_nodes = [node for node in unvisited_nodes if node.get_node_id() != self.final_node.get_node_id()]
+        
         # Check if there are any unvisited nodes left
         if not unvisited_nodes:
             return None
+        
         
         # Generate a random index using jax
         idx = jax.random.randint(key, shape=(), minval=0, maxval=len(unvisited_nodes))

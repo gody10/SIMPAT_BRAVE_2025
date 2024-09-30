@@ -60,13 +60,13 @@ class Algorithms:
         """
         return self.convergence_threshold
     
-    def get_number_of_users(self)->float:
+    def get_number_of_users(self)->list:
         """
         Get the number of users
         
         Returns:
-        float
-            Number of users
+        list
+            Number of users for each node
         """
         return self.number_of_users
     
@@ -124,14 +124,15 @@ class Algorithms:
             if(not uav.get_finished_business_in_node()):
                 # Start playing the game inside the current node
                 done = False
-                user_strategies = jnp.ones(U) * 0.5  # Strategies for all users
+                temp_U = U[uav.get_current_node().get_node_id()]
+                user_strategies = jnp.ones(temp_U) * 0.1  # Strategies for all users
                 uav_bandwidth = uav.get_uav_bandwidth()
                 uav_cpu_frequency = uav.get_cpu_frequency()
                 uav_total_data_processing_capacity = uav.get_total_data_processing_capacity()
 
-                user_channel_gains = jnp.zeros(U)
-                user_transmit_powers = jnp.zeros(U)
-                user_data_in_bits = jnp.zeros(U)
+                user_channel_gains = jnp.zeros(temp_U)
+                user_transmit_powers = jnp.zeros(temp_U)
+                user_data_in_bits = jnp.zeros(temp_U)
 
                 for idx, user in enumerate(uav.get_current_node().get_user_list()):
                     # Assing the channel gain and transmit power to the user
@@ -140,6 +141,8 @@ class Algorithms:
                     user_data_in_bits = user_data_in_bits.at[idx].set(user.get_user_bits())
                     user.set_user_strategy(user_strategies[idx])
                     
+                c = 0.08
+                b = 0.4
                     
                 iteration_counter = 0
                 while(not done):
@@ -163,8 +166,11 @@ class Algorithms:
                         
                         if solving_method == "cvxpy":
                             # Play the submodular game
-                            maximized_utility, percentage_offloaded = user.play_submodular_game_cvxpy(other_user_strategies, 1, 1, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
+                            maximized_utility, percentage_offloaded = user.play_submodular_game_cvxpy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
                                                                                                     uav_cpu_frequency, uav_total_data_processing_capacity, T, uav.get_current_coordinates(), uav.get_height())
+                            
+                            logging.info(f"User {idx} has offloaded {percentage_offloaded[0]} of its data")
+                            logging.info(f"User {idx} has maximized its utility to {maximized_utility}")
                             
                             # Update the user's strategy
                             user_strategies = user_strategies.at[idx].set(percentage_offloaded[0][0])
@@ -172,10 +178,13 @@ class Algorithms:
                             # Update user's channel gain
                             user_channel_gains = user_channel_gains.at[idx].set(user.get_channel_gain())
                             
-                        else:
+                        elif solving_method == "scipy":
                             # Play the submodular game
-                            maximized_utility, percentage_offloaded = user.play_submodular_game_scipy(other_user_strategies, 1, 1, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
+                            maximized_utility, percentage_offloaded = user.play_submodular_game_scipy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
                                                                                                     uav_cpu_frequency, uav_total_data_processing_capacity, 2, uav.get_current_coordinates(), uav.get_height())
+    
+                            logging.info(f"User {idx} has offloaded {percentage_offloaded[0]} of its data")
+                            logging.info(f"User {idx} has maximized its utility to {maximized_utility}")
                             
                             # Update the user's strategy
                             user_strategies = user_strategies.at[idx].set(percentage_offloaded[0])
@@ -197,7 +206,7 @@ class Algorithms:
                 uav.set_finished_business_in_node(True)
                 uav.hover_over_node(time_hover= T)
                 logging.info("The UAV has finished its business in the current node")
-                logging.info(f"The strategies have converged to: {user_strategies}")
+                logging.info(f"The strategies at node {uav.get_current_node().get_node_id()} have converged to: {user_strategies}")
                 logging.info(f"Converged with strategy difference: {strategy_difference} in {iteration_counter} iterations")
                 
                 if (uav_has_reached_final_node):
