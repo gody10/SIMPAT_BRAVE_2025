@@ -99,12 +99,25 @@ algorithm = Algorithms(number_of_users= U, number_of_nodes= N, uav= uav, graph= 
 # # Reset the Algorithm object
 # algorithm.reset()
 
-# Run the Brave Greedy Algorithm
-success_brave_greedy = algorithm.brave_greedy(solving_method= "scipy")
+# # Run the Brave Greedy Algorithm
+# success_brave_greedy = algorithm.brave_greedy(solving_method= "scipy")
+
+# logging.info("The UAV energy level is: %s", uav.get_energy_level())
+
+# if success_brave_greedy:
+#     logging.info("Brave Greedy Algorithm has successfully reached the final node!")
+# else:
+#     logging.info("Brave Greedy Algorithm failed to reach the final node!")
+    
+# Reset the Algorithm object
+algorithm.reset()
+
+# Run the Q-Brave Algorithm
+success_q_brave_ = algorithm.q_brave(solving_method= "scipy")
 
 logging.info("The UAV energy level is: %s", uav.get_energy_level())
 
-if success_brave_greedy:
-    logging.info("Brave Greedy Algorithm has successfully reached the final node!")
+if success_q_brave_:
+    logging.info("Q-Brave Algorithm has successfully reached the final node!")
 else:
-    logging.info("Brave Greedy Algorithm failed to reach the final node!")
+    logging.info("Q-Brave Algorithm failed to reach the final node!")
