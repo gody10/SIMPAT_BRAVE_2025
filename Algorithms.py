@@ -92,6 +92,21 @@ class Algorithms:
         """
         return self.key
     
+    def sort_nodes_based_on_total_bits(self)->list:
+        """
+        Sort the nodes based on the total bits of data they have
+        
+        Returns:
+        list
+            Sorted nodes
+        """
+        nodes = self.graph.get_nodes()
+        sorted_nodes = sorted(nodes, key= lambda x: x.get_node_total_data(), reverse= True)
+        logging.info("The nodes have been sorted based on the total bits of data they have")
+        for node in sorted_nodes:
+            logging.info(f"Node {node.get_node_id()} has {node.get_node_total_data()} bits of data")
+        return sorted_nodes
+    
     def reset(self)->None:
         """
         Reset the algorithm to the initial state

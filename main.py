@@ -112,6 +112,9 @@ algorithm = Algorithms(number_of_users= U, number_of_nodes= N, uav= uav, graph= 
 # Reset the Algorithm object
 algorithm.reset()
 
+# Sort the Nodes based on total bits and log the data
+sorted_nodes = algorithm.sort_nodes_based_on_total_bits()
+
 # Run the Q-Brave Algorithm
 success_q_brave_ = algorithm.q_brave(solving_method= "scipy")
 
