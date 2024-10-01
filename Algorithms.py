@@ -311,8 +311,8 @@ class Algorithms:
                             maximized_utility, percentage_offloaded = user.play_submodular_game_scipy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
                                                                                                     uav_cpu_frequency, uav_total_data_processing_capacity, 2, uav.get_current_coordinates(), uav.get_height())
     
-                            logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
-                            logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
+                            # logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
+                            # logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
                             
                             # Update the user's strategy
                             user_strategies = user_strategies.at[idx].set(percentage_offloaded[0])
@@ -326,12 +326,9 @@ class Algorithms:
                     # Check if the strategies have converged
                     if strategy_difference < convergence_threshold:
                         # Calculate the consumed energy for all users based on the strategies they have chosen and adjust the energy
-                        for idx, user in enumerate(uav.get_current_node().get_user_list()):
-                            user.calculate_consumed_energy()
-                            user.adjust_energy(user.get_current_consumed_energy())
-                        
-                        # Adjust UAV energy for hovering over the node
-                        uav.hover_over_node(time_hover= T)
+                        # for idx, user in enumerate(uav.get_current_node().get_user_list()):
+                        #     user.calculate_consumed_energy()
+                        #     user.adjust_energy(user.get_current_consumed_energy())
                         
                         # Adjust UAV energy for processing the offloaded data
                         uav.energy_to_process_data(energy_coefficient= 0.1)
@@ -474,8 +471,8 @@ class Algorithms:
                             maximized_utility, percentage_offloaded = user.play_submodular_game_scipy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
                                                                                                     uav_cpu_frequency, uav_total_data_processing_capacity, 2, uav.get_current_coordinates(), uav.get_height())
     
-                            logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
-                            logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
+                            # logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
+                            # logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
                             
                             # Update the user's strategy
                             user_strategies = user_strategies.at[idx].set(percentage_offloaded[0])
@@ -489,12 +486,9 @@ class Algorithms:
                     # Check if the strategies have converged
                     if strategy_difference < convergence_threshold:
                         # Calculate the consumed energy for all users based on the strategies they have chosen and adjust the energy
-                        for idx, user in enumerate(uav.get_current_node().get_user_list()):
-                            user.calculate_consumed_energy()
-                            user.adjust_energy(user.get_current_consumed_energy())
-                            
-                        # Adjust UAV energy for hovering over the node
-                        uav.hover_over_node(time_hover= T)
+                        # for idx, user in enumerate(uav.get_current_node().get_user_list()):
+                        #     user.calculate_consumed_energy()
+                        #     user.adjust_energy(user.get_current_consumed_energy())
                         
                         # Adjust UAV energy for processing the offloaded data
                         uav.energy_to_process_data(energy_coefficient= 0.1)

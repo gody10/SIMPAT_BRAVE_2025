@@ -249,6 +249,7 @@ class Uav:
         # Log the UAV energy level
         logging.info("UAV Energy Level before travelling: %s", self.energy_level)
         
+        
         if not self.finished_business_in_node:
             logging.info("UAV has to first process the data in the node before moving to another node")
             return False
@@ -258,6 +259,8 @@ class Uav:
         
         # Calculate the Energy wasted to travel from one node to the other
         energy_travel = (308.709 * time_travel) - 0.85
+        
+        logging.info("Travelling to node %s and needing energy %f", node.get_node_id(), energy_travel)
         
         # Adjust the energy level of the UAV
         
@@ -358,20 +361,27 @@ class Uav:
         print(f"Energy Hover: {energy_hover}")
         print(f"Energy to Travel to Final Node: {energy_to_travel_to_final_node}")
         print(f"Total Bits: {total_bits}")
+        print(f"Total Energy: {jnp.add(energy_travel, jnp.add(energy_process, energy_hover))}")
         
         # Calculate the total energy needed to travel to each unvisited node
         total_energy = jnp.add(energy_travel, jnp.add(energy_process, energy_hover))
         
         # Remove from unvisited nodes the ones that the energy needed to travel to them and then to the final node is higher than the available energy of the UAV
-        unvisited_nodes = [node for i, node in enumerate(unvisited_nodes) if total_energy[i] + energy_to_travel_to_final_node[i] < self.get_energy_level()]
+        unvisited_nodes_final = []
+        for i, node in enumerate(unvisited_nodes):
+            if total_energy[i] + energy_to_travel_to_final_node[i] < self.get_energy_level():
+                unvisited_nodes_final.append(node)
+            else:
+                print(f"The energy needed to go to the node {node.get_node_id()} is {total_energy[i]} and to go to the final node {energy_to_travel_to_final_node[i]}, but the available energy is {self.get_energy_level()}")
+                logging.info("The energy needed to go to the node %s is %s and to go to the final node %s, but the available energy is %s", node.get_node_id(), total_energy[i], energy_to_travel_to_final_node[i], self.get_energy_level())
         
         # Check if there arent any unvisited nodes left except the final node
-        if not unvisited_nodes:
+        if not unvisited_nodes_final:
             return self.get_final_node()
         
         # Generate a random index using jax
-        idx = jax.random.randint(key, shape=(), minval=0, maxval=len(unvisited_nodes))
-        return unvisited_nodes[idx]
+        idx = jax.random.randint(key, shape=(), minval=0, maxval=len(unvisited_nodes_final))
+        return unvisited_nodes_final[idx]
     
     def get_brave_greedy_next_node(self, nodes: list)->Node:
         """
@@ -414,6 +424,7 @@ class Uav:
         print(f"Energy Hover: {energy_hover}")
         print(f"Energy to Travel to Final Node: {energy_to_travel_to_final_node}")
         print(f"Total Bits: {total_bits}")
+        print(f"Total Energy: {jnp.add(energy_travel, jnp.add(energy_process, energy_hover))}")
         
         # Calculate the total energy needed to travel to each unvisited node
         total_energy = jnp.add(energy_travel, jnp.add(energy_process, energy_hover))
@@ -427,6 +438,7 @@ class Uav:
                 break
             else:
                 print(f"The energy needed to go to the node {node.get_node_id()} is {total_energy[i]} and to go to the final node {energy_to_travel_to_final_node[i]}, but the available energy is {self.get_energy_level()}")
+                logging.info("The energy needed to go to the node %s is %s and to go to the final node %s, but the available energy is %s", node.get_node_id(), total_energy[i], energy_to_travel_to_final_node[i], self.get_energy_level())
         if not chosen_a_node_to_go:
             return self.get_final_node()
 
