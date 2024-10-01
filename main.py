@@ -1,12 +1,5 @@
-import jax.numpy as jnp
 import logging
 from jax import random
-from Utility_functions import generate_node_coordinates
-from Graph import Graph
-from Edge import Edge
-from Node import Node
-from AoiUser import AoiUser
-from Uav import Uav
 from Algorithms import Algorithms
 
 # Create a random key
@@ -30,97 +23,46 @@ MIN_DISTANCE_BETWEEN_NODES = 20  # Minimum distance to maintain between nodes
 UAV_HEIGHT = 100
 CONVERGENCE_THRESHOLD = 1e-15
 
-nodes = []
-for i in range(N):
-    # Generate random center coordinates for the node
-    node_coords = generate_node_coordinates(key, nodes, MIN_DISTANCE_BETWEEN_NODES)
-    
-    users = []
-    for j in range(U[N]):
-        # Generate random polar coordinates (r, theta, phi) within the radius of the node
-        r = NODE_RADIUS * random.uniform(random.split(key)[0], (1,))[0]  # distance from the center within radius
-        theta = random.uniform(random.split(key)[0], (1,))[0] * 2 * jnp.pi  # azimuthal angle (0 to 2*pi)
-        phi = random.uniform(random.split(key)[0], (1,))[0] * jnp.pi  # polar angle (0 to pi)
-        
-        # Convert spherical coordinates (r, theta, phi) to Cartesian coordinates (x, y, z)
-        x = r * jnp.sin(phi) * jnp.cos(theta)
-        y = r * jnp.sin(phi) * jnp.sin(theta)
-        z = r * jnp.cos(phi)
-        
-        # User coordinates relative to the node center
-        user_coords = (node_coords[0] + x, node_coords[1] + y, node_coords[2] + z)
-        
-        users.append(AoiUser(
-            user_id=j,
-            data_in_bits= random.uniform(random.split(key + i + j)[0], (1,))[0] * 1000,
-            transmit_power= random.uniform(random.split(key + i + j)[0], (1,))[0] * 100,
-            energy_level= 4000,
-            task_intensity= random.uniform(random.split(key + i + j)[0], (1,))[0] * 100,
-            carrier_frequency= random.uniform(random.split(key + i + j)[0], (1,))[0] * 100,
-            coordinates=user_coords
-        ))
-    
-    nodes.append(Node(
-        node_id=i,
-        users=users,
-        coordinates=node_coords
-    ))
-    
-# Create edges between all nodes with random weights
-edges = []
-for i in range(N):
-    for j in range(i+1, N):
-        edges.append(Edge(nodes[i].user_list[0], nodes[j].user_list[0], random.normal(key, (1,))))
-        
-# Create the graph
-graph = Graph(nodes= nodes, edges= edges)
-
-# Get number of nodes and edges
-logging.info("Number of Nodes: %s", graph.get_num_nodes())
-logging.info("Number of Edges: %s", graph.get_num_edges())
-logging.info("Number of Users: %s", graph.get_num_users())
-
-# Create a UAV
-uav = Uav(uav_id= 1, initial_node= nodes[0], final_node= nodes[len(nodes)-1], capacity= 100000000, total_data_processing_capacity= 1000, velocity= 1, uav_system_bandwidth= 15, cpu_frequency= 2, height= UAV_HEIGHT)
-
 # Create the algorithm object
-algorithm = Algorithms(number_of_users= U, number_of_nodes= N, uav= uav, graph= graph, key= key, convergence_threshold= CONVERGENCE_THRESHOLD)
+algorithm = Algorithms(convergence_threshold= CONVERGENCE_THRESHOLD)
 
-# # Run the Random Walk Algorithm
-# success_random_walk = algorithm.run_random_walk_algorithm(solving_method= "scipy")
+algorithm.setup_experiment(number_of_nodes= N, number_of_users= U, node_radius= NODE_RADIUS, key= key, min_distance_between_nodes= MIN_DISTANCE_BETWEEN_NODES, uav_height= UAV_HEIGHT)
 
-# logging.info("The UAV energy level is: %s", uav.get_energy_level())
+# Run the Random Walk Algorithm
+success_random_walk = algorithm.run_random_walk_algorithm(solving_method= "scipy")
 
-# if success_random_walk:
-#     logging.info("Random Walk Algorithm has successfully reached the final node!")
-# else:
-#     logging.info("Random Walk Algorithm failed to reach the final node!")
+logging.info("The UAV energy level is: %s", algorithm.get_uav().get_energy_level())
 
-# # Reset the Algorithm object
-# algorithm.reset()
+if success_random_walk:
+    logging.info("Random Walk Algorithm has successfully reached the final node!")
+else:
+    logging.info("Random Walk Algorithm failed to reach the final node!")
 
-# # Run the Brave Greedy Algorithm
-# success_brave_greedy = algorithm.brave_greedy(solving_method= "scipy")
-
-# logging.info("The UAV energy level is: %s", uav.get_energy_level())
-
-# if success_brave_greedy:
-#     logging.info("Brave Greedy Algorithm has successfully reached the final node!")
-# else:
-#     logging.info("Brave Greedy Algorithm failed to reach the final node!")
-    
 # Reset the Algorithm object
 algorithm.reset()
 
-# Sort the Nodes based on total bits and log the data
-sorted_nodes = algorithm.sort_nodes_based_on_total_bits()
+# Run the Brave Greedy Algorithm
+success_brave_greedy = algorithm.brave_greedy(solving_method= "scipy")
 
-# Run the Q-Brave Algorithm
-success_q_brave_ = algorithm.q_brave(solving_method= "scipy")
+logging.info("The UAV energy level is: %s", algorithm.get_uav().get_energy_level())
 
-logging.info("The UAV energy level is: %s", uav.get_energy_level())
-
-if success_q_brave_:
-    logging.info("Q-Brave Algorithm has successfully reached the final node!")
+if success_brave_greedy:
+    logging.info("Brave Greedy Algorithm has successfully reached the final node!")
 else:
-    logging.info("Q-Brave Algorithm failed to reach the final node!")
+    logging.info("Brave Greedy Algorithm failed to reach the final node!")
+    
+# # Reset the Algorithm object
+# algorithm.reset()
+
+# # Sort the Nodes based on total bits and log the data
+# sorted_nodes = algorithm.sort_nodes_based_on_total_bits()
+
+# # Run the Q-Brave Algorithm
+# success_q_brave_ = algorithm.q_brave(solving_method= "scipy")
+
+# logging.info("The UAV energy level is: %s", algorithm.get_uav().get_energy_level())
+
+# if success_q_brave_:
+#     logging.info("Q-Brave Algorithm has successfully reached the final node!")
+# else:
+#     logging.info("Q-Brave Algorithm failed to reach the final node!")

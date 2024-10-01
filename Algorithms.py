@@ -3,13 +3,18 @@ from Graph import Graph
 import logging
 import jax
 import jax.numpy as jnp
+from jax import random
+from Utility_functions import generate_node_coordinates
+from AoiUser import AoiUser
+from Edge import Edge
+from Node import Node
 
 class Algorithms:
     """
     Class that contains the algorithms to be used by the UAV to navigate through the graph
     """
 
-    def __init__(self, number_of_users: float, number_of_nodes: float, uav: Uav, graph: Graph, key: jax.random.PRNGKey, convergence_threshold: float = 1e-3)->None:
+    def __init__(self, convergence_threshold: float = 1e-3)->None:
         """
         Initialize the algorithms class
         
@@ -24,13 +29,14 @@ class Algorithms:
             Convergence threshold for the algorithms
         """
         self.convergence_threshold = convergence_threshold
-        self.number_of_users = number_of_users
-        self.number_of_nodes = number_of_nodes
-        self.graph = graph
-        self.saved_graph_version = graph
-        self.key = key
-        self.uav = uav
-        self.saved_uav_version = uav
+        self.graph = None
+        self.uav = None
+        self.number_of_users = None
+        self.number_of_nodes = None
+        self.key = None
+        self.uav_height = None
+        self.min_distance_between_nodes = None
+        self.node_radius = None
         
     def get_uav(self)->Uav:
         """
@@ -107,12 +113,91 @@ class Algorithms:
             logging.info("Node %s has %s bits of data", node.get_node_id(), node.get_node_total_data())
         return sorted_nodes
     
+    def setup_experiment(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float)->None:
+        """
+        Setup the experiment
+        
+        Parameters:
+        number_of_users : float
+            Number of users in the system
+        number_of_nodes : float
+            Number of nodes in the system
+        key : jax.random.PRNGKey
+            Key for random number generation
+        uav_height : float
+            Height of the UAV
+        min_distance_between_nodes : float
+            Minimum distance between nodes
+        node_radius : float
+            Radius of the node
+        """
+        self.number_of_users = number_of_users
+        self.number_of_nodes = number_of_nodes
+        self.key = key
+        self.uav_height = uav_height
+        self.min_distance_between_nodes = min_distance_between_nodes
+        self.node_radius = node_radius
+        
+        nodes = []
+        for i in range(number_of_nodes):
+            # Generate random center coordinates for the node
+            node_coords = generate_node_coordinates(key, nodes, min_distance_between_nodes)
+            
+            users = []
+            for j in range(number_of_users[number_of_nodes]):
+                # Generate random polar coordinates (r, theta, phi) within the radius of the node
+                r = node_radius * random.uniform(random.split(key)[0], (1,))[0]  # distance from the center within radius
+                theta = random.uniform(random.split(key)[0], (1,))[0] * 2 * jnp.pi  # azimuthal angle (0 to 2*pi)
+                phi = random.uniform(random.split(key)[0], (1,))[0] * jnp.pi  # polar angle (0 to pi)
+                
+                # Convert spherical coordinates (r, theta, phi) to Cartesian coordinates (x, y, z)
+                x = r * jnp.sin(phi) * jnp.cos(theta)
+                y = r * jnp.sin(phi) * jnp.sin(theta)
+                z = r * jnp.cos(phi)
+                
+                # User coordinates relative to the node center
+                user_coords = (node_coords[0] + x, node_coords[1] + y, node_coords[2] + z)
+                
+                users.append(AoiUser(
+                    user_id=j,
+                    data_in_bits= random.uniform(random.split(key + i + j)[0], (1,))[0] * 1000,
+                    transmit_power= random.uniform(random.split(key + i + j)[0], (1,))[0] * 100,
+                    energy_level= 4000,
+                    task_intensity= random.uniform(random.split(key + i + j)[0], (1,))[0] * 100,
+                    carrier_frequency= random.uniform(random.split(key + i + j)[0], (1,))[0] * 100,
+                    coordinates=user_coords
+                ))
+            
+            nodes.append(Node(
+                node_id=i,
+                users=users,
+                coordinates=node_coords
+            ))
+            
+        # Create edges between all nodes with random weights
+        edges = []
+        for i in range(number_of_nodes):
+            for j in range(i+1, number_of_nodes):
+                edges.append(Edge(nodes[i].user_list[0], nodes[j].user_list[0], random.normal(key, (1,))))
+                
+        # Create the graph
+        self.graph = Graph(nodes= nodes, edges= edges)
+
+        # Get number of nodes and edges
+        logging.info("Number of Nodes: %s", self.graph.get_num_nodes())
+        logging.info("Number of Edges: %s", self.graph.get_num_edges())
+        logging.info("Number of Users: %s", self.graph.get_num_users())
+
+        # Create a UAV
+        self.uav = Uav(uav_id= 1, initial_node= nodes[0], final_node= nodes[len(nodes)-1], capacity= 100000000, total_data_processing_capacity= 1000, velocity= 1, uav_system_bandwidth= 15, cpu_frequency= 2, height= uav_height)
+        
     def reset(self)->None:
         """
-        Reset the algorithm to the initial state
+        Reset the experiment so that it can be run again by the same or a different algorithm
         """
-        self.uav = self.saved_uav_version
-        self.graph = self.saved_graph_version   
+        self.graph = None
+        self.uav = None
+        self.setup_experiment(number_of_users= self.number_of_users, number_of_nodes= self.number_of_nodes, key= self.key, uav_height= self.uav_height, min_distance_between_nodes= self.min_distance_between_nodes, node_radius= self.node_radius)
         
     def run_random_walk_algorithm(self, solving_method: str)->bool:
         """
