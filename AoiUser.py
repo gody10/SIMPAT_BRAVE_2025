@@ -389,7 +389,7 @@ class AoiUser:
             #overflow_avoidance_factor = 1e-60
             
             # Set the weight for the x/sum(other_strategies) term
-            w_s = 700
+            w_s = 300
             
             #Clip total overhead to avoid numerical issues
             self.current_total_overhead = np.clip(self.current_total_overhead, 3, 16)
