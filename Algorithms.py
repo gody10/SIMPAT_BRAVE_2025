@@ -37,6 +37,11 @@ class Algorithms:
         self.uav_height = None
         self.min_distance_between_nodes = None
         self.node_radius = None
+        self.uav_energy_capacity = None
+        self.uav_cpu_frequency = None
+        self.uav_bandwidth = None
+        self.uav_processing_capacity = None
+        self.uav_velocity = None
         
     def get_uav(self)->Uav:
         """
@@ -113,7 +118,8 @@ class Algorithms:
             logging.info("Node %s has %s bits of data", node.get_node_id(), node.get_node_total_data())
         return sorted_nodes
     
-    def setup_experiment(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float)->None:
+    def setup_experiment(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float, uav_energy_capacity: float, 
+                         uav_bandwidth: float, uav_processing_capacity: float, uav_cpu_frequency: float, uav_velocity: float)->None:
         """
         Setup the experiment
         
@@ -137,6 +143,11 @@ class Algorithms:
         self.uav_height = uav_height
         self.min_distance_between_nodes = min_distance_between_nodes
         self.node_radius = node_radius
+        self.uav_energy_capacity = uav_energy_capacity
+        self.uav_bandwidth = uav_bandwidth
+        self.uav_processing_capacity = uav_processing_capacity
+        self.uav_cpu_frequency = uav_cpu_frequency
+        self.uav_velocity = uav_velocity
         
         nodes = []
         for i in range(number_of_nodes):
@@ -189,7 +200,8 @@ class Algorithms:
         logging.info("Number of Users: %s", self.graph.get_num_users())
 
         # Create a UAV
-        self.uav = Uav(uav_id= 1, initial_node= nodes[0], final_node= nodes[len(nodes)-1], capacity= 100000000, total_data_processing_capacity= 1000, velocity= 1, uav_system_bandwidth= 15, cpu_frequency= 2, height= uav_height)
+        self.uav = Uav(uav_id= 1, initial_node= nodes[0], final_node= nodes[len(nodes)-1], capacity= self.uav_energy_capacity, total_data_processing_capacity= self.uav_processing_capacity, 
+                       velocity= self.uav_velocity, uav_system_bandwidth= self.uav_bandwidth, cpu_frequency= self.uav_cpu_frequency, height= uav_height)
         
     def reset(self)->None:
         """
@@ -197,7 +209,8 @@ class Algorithms:
         """
         self.graph = None
         self.uav = None
-        self.setup_experiment(number_of_users= self.number_of_users, number_of_nodes= self.number_of_nodes, key= self.key, uav_height= self.uav_height, min_distance_between_nodes= self.min_distance_between_nodes, node_radius= self.node_radius)
+        self.setup_experiment(number_of_users= self.number_of_users, number_of_nodes= self.number_of_nodes, key= self.key, uav_height= self.uav_height, min_distance_between_nodes= self.min_distance_between_nodes, node_radius= self.node_radius,
+                              uav_energy_capacity= self.uav_energy_capacity, uav_bandwidth= self.uav_bandwidth, uav_processing_capacity= self.uav_processing_capacity, uav_cpu_frequency= self.uav_cpu_frequency, uav_velocity= self.uav_velocity)
         
     def run_random_walk_algorithm(self, solving_method: str)->bool:
         """
@@ -346,6 +359,7 @@ class Algorithms:
                 if (next_node is not None):
                     if (uav.travel_to_node(next_node)):
                         logging.info("The UAV has reached the next node")
+                        logging.info("The UAV energy level is: %s after going to the next node", uav.get_energy_level())
                         # Check if the UAV has reached the final node
                         if uav.check_if_final_node(uav.get_current_node()):
                             logging.info("The UAV has reached the final node")
@@ -386,7 +400,6 @@ class Algorithms:
         uav = self.get_uav()
         graph = self.get_graph()
         U = self.get_number_of_users()
-        key = self.get_key()
         convergence_threshold = self.get_convergence_threshold()
         T = 2
         
@@ -505,7 +518,7 @@ class Algorithms:
                 #print(f"Final Strategies: {user_strategies}")
             else:
                 # Decide to which node to move next randomly from the ones availalbe that are not visited
-                next_node = uav.get_brave_greedy_next_node(nodes= graph.get_nodes(), key= key)
+                next_node = uav.get_brave_greedy_next_node(nodes= graph.get_nodes())
                 if (next_node is not None):
                     if (uav.travel_to_node(next_node)):
                         logging.info("The UAV has reached the next node")
@@ -551,7 +564,6 @@ class Algorithms:
         uav = self.get_uav()
         graph = self.get_graph()
         U = self.get_number_of_users()
-        key = self.get_key()
         convergence_threshold = self.get_convergence_threshold()
         T = 2
         
@@ -670,7 +682,7 @@ class Algorithms:
                 #print(f"Final Strategies: {user_strategies}")
             else:
                 # Decide to which node to move next randomly from the ones availalbe that are not visited
-                next_node = uav.get_brave_greedy_next_node(nodes= graph.get_nodes(), key= key)
+                next_node = uav.get_brave_greedy_next_node(nodes= graph.get_nodes())
                 if (next_node is not None):
                     if (uav.travel_to_node(next_node)):
                         logging.info("The UAV has reached the next node")

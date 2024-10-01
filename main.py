@@ -22,16 +22,22 @@ NODE_RADIUS = 2
 MIN_DISTANCE_BETWEEN_NODES = 20  # Minimum distance to maintain between nodes
 UAV_HEIGHT = 100
 CONVERGENCE_THRESHOLD = 1e-15
+UAV_ENERGY_CAPACITY = 198000
+UAV_BANDWIDTH = 15
+UAV_PROCESSING_CAPACITY = 1000
+UAV_CPU_FREQUENCY = 2
+UAV_VELOCITY = 1
 
 # Create the algorithm object
 algorithm = Algorithms(convergence_threshold= CONVERGENCE_THRESHOLD)
 
-algorithm.setup_experiment(number_of_nodes= N, number_of_users= U, node_radius= NODE_RADIUS, key= key, min_distance_between_nodes= MIN_DISTANCE_BETWEEN_NODES, uav_height= UAV_HEIGHT)
+algorithm.setup_experiment(number_of_nodes= N, number_of_users= U, node_radius= NODE_RADIUS, key= key, min_distance_between_nodes= MIN_DISTANCE_BETWEEN_NODES, uav_height= UAV_HEIGHT, 
+                           uav_energy_capacity=UAV_ENERGY_CAPACITY, uav_bandwidth= UAV_BANDWIDTH, uav_processing_capacity= UAV_PROCESSING_CAPACITY, uav_cpu_frequency= UAV_CPU_FREQUENCY, uav_velocity= UAV_VELOCITY)
 
 # Run the Random Walk Algorithm
 success_random_walk = algorithm.run_random_walk_algorithm(solving_method= "scipy")
 
-logging.info("The UAV energy level is: %s", algorithm.get_uav().get_energy_level())
+logging.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
 
 if success_random_walk:
     logging.info("Random Walk Algorithm has successfully reached the final node!")
@@ -44,7 +50,7 @@ algorithm.reset()
 # Run the Brave Greedy Algorithm
 success_brave_greedy = algorithm.brave_greedy(solving_method= "scipy")
 
-logging.info("The UAV energy level is: %s", algorithm.get_uav().get_energy_level())
+logging.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
 
 if success_brave_greedy:
     logging.info("Brave Greedy Algorithm has successfully reached the final node!")
