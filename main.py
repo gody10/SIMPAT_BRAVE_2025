@@ -34,41 +34,41 @@ algorithm = Algorithms(convergence_threshold= CONVERGENCE_THRESHOLD)
 algorithm.setup_experiment(number_of_nodes= N, number_of_users= U, node_radius= NODE_RADIUS, key= key, min_distance_between_nodes= MIN_DISTANCE_BETWEEN_NODES, uav_height= UAV_HEIGHT, 
                            uav_energy_capacity=UAV_ENERGY_CAPACITY, uav_bandwidth= UAV_BANDWIDTH, uav_processing_capacity= UAV_PROCESSING_CAPACITY, uav_cpu_frequency= UAV_CPU_FREQUENCY, uav_velocity= UAV_VELOCITY)
 
-# Run the Random Walk Algorithm
-success_random_walk = algorithm.run_random_walk_algorithm(solving_method= "scipy")
+# # Run the Random Walk Algorithm
+# success_random_walk = algorithm.run_random_walk_algorithm(solving_method= "scipy")
 
-logging.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
+# logging.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
 
-if success_random_walk:
-    logging.info("Random Walk Algorithm has successfully reached the final node!")
-else:
-    logging.info("Random Walk Algorithm failed to reach the final node!")
+# if success_random_walk:
+#     logging.info("Random Walk Algorithm has successfully reached the final node!")
+# else:
+#     logging.info("Random Walk Algorithm failed to reach the final node!")
 
-# Reset the Algorithm object
-algorithm.reset()
+# # Reset the Algorithm object
+# algorithm.reset()
 
-# Run the Brave Greedy Algorithm
-success_brave_greedy = algorithm.brave_greedy(solving_method= "scipy")
+# # Run the Brave Greedy Algorithm
+# success_brave_greedy = algorithm.brave_greedy(solving_method= "scipy")
 
-logging.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
+# logging.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
 
-if success_brave_greedy:
-    logging.info("Brave Greedy Algorithm has successfully reached the final node!")
-else:
-    logging.info("Brave Greedy Algorithm failed to reach the final node!")
+# if success_brave_greedy:
+#     logging.info("Brave Greedy Algorithm has successfully reached the final node!")
+# else:
+#     logging.info("Brave Greedy Algorithm failed to reach the final node!")
     
 # # Reset the Algorithm object
 # algorithm.reset()
 
-# # Sort the Nodes based on total bits and log the data
-# sorted_nodes = algorithm.sort_nodes_based_on_total_bits()
+# Sort the Nodes based on total bits and log the data
+sorted_nodes = algorithm.sort_nodes_based_on_total_bits()
 
-# # Run the Q-Brave Algorithm
-# success_q_brave_ = algorithm.q_brave(solving_method= "scipy")
+# Run the Q-Brave Algorithm
+success_q_brave_ = algorithm.q_brave(solving_method= "scipy")
 
-# logging.info("The UAV energy level is: %s", algorithm.get_uav().get_energy_level())
+logging.info("The UAV energy level is: %s", algorithm.get_uav().get_energy_level())
 
-# if success_q_brave_:
-#     logging.info("Q-Brave Algorithm has successfully reached the final node!")
-# else:
-#     logging.info("Q-Brave Algorithm failed to reach the final node!")
+if success_q_brave_:
+    logging.info("Q-Brave Algorithm has successfully reached the final node!")
+else:
+    logging.info("Q-Brave Algorithm failed to reach the final node!")

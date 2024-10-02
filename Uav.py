@@ -26,7 +26,7 @@ class Uav:
             Total data processing capacity of the UAV
         """
         self.uav_id = uav_id
-        self.energy_level = capacity #* 11.1 * 3.6
+        self.energy_level = capacity * 11.1 * 3.6
         self.initial_node = initial_node
         self.final_node = final_node
         self.total_data_processing_capacity = total_data_processing_capacity
@@ -137,6 +137,16 @@ class Uav:
             True if the UAV is in the initial node, False otherwise
         """
         return node.node_id == self.initial_node
+    
+    def get_initial_node(self)->Node:
+        """
+        Get the initial node
+        
+        Returns:
+        Node
+            Initial node
+        """
+        return self.initial_node
     
     def check_if_final_node(self, node: Node)->bool:
         """

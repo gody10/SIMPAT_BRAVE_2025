@@ -8,6 +8,8 @@ from Utility_functions import generate_node_coordinates
 from AoiUser import AoiUser
 from Edge import Edge
 from Node import Node
+from Qenv import Qenv
+from tqdm import tqdm
 
 class Algorithms:
     """
@@ -561,143 +563,80 @@ class Algorithms:
         convergence_threshold = self.get_convergence_threshold()
         T = 2
         
-        uav_has_reached_final_node = False
-        break_flag = False
-
-        while(not break_flag):
-            
-            if(uav.check_if_final_node(uav.get_current_node())):
-                uav_has_reached_final_node = True
-            
-            # Check if the game has been played in the current node
-            if(not uav.get_finished_business_in_node()):
-                # Start playing the game inside the current node
-                done = False
-                temp_U = U[uav.get_current_node().get_node_id()]
-                user_strategies = jnp.ones(temp_U) * 0.1  # Strategies for all users
-                uav_bandwidth = uav.get_uav_bandwidth()
-                uav_cpu_frequency = uav.get_cpu_frequency()
-                uav_total_data_processing_capacity = uav.get_total_data_processing_capacity()
-
-                user_channel_gains = jnp.zeros(temp_U)
-                user_transmit_powers = jnp.zeros(temp_U)
-                user_data_in_bits = jnp.zeros(temp_U)
-
-                for idx, user in enumerate(uav.get_current_node().get_user_list()):
-                    # Assing the channel gain and transmit power to the user
-                    user_channel_gains = user_channel_gains.at[idx].set(user.get_channel_gain())
-                    user_transmit_powers = user_transmit_powers.at[idx].set(user.get_transmit_power())
-                    user_data_in_bits = user_data_in_bits.at[idx].set(user.get_user_bits())
-                    user.set_user_strategy(user_strategies[idx])
-                    
-                c = 0.08
-                b = 0.4
-                    
-                iteration_counter = 0
-                while(not done):
-                    
-                    iteration_counter += 1
-                    previous_strategies = user_strategies
-
-                    # Iterate over users and pass the other users' strategies
-                    for idx, user in enumerate(uav.get_current_node().get_user_list()):
-                        # Exclude the current user's strategy
-                        #print("Playing game with user: ", idx)
-                        
-                        # Exclude the current user's strategy
-                        other_user_strategies = jnp.concatenate([user_strategies[:idx], user_strategies[idx+1:]])
-                        
-                        # Exclude the current user's channel gain, transmit power and data in bits
-                        other_user_channel_gains = jnp.concatenate([user_channel_gains[:idx], user_channel_gains[idx+1:]])
-                        other_user_transmit_powers = jnp.concatenate([user_transmit_powers[:idx], user_transmit_powers[idx+1:]])
-                        other_user_data_in_bits = jnp.concatenate([user_data_in_bits[:idx], user_data_in_bits[idx+1:]])
-                        
-                        
-                        if solving_method == "cvxpy":
-                            # Play the submodular game
-                            maximized_utility, percentage_offloaded = user.play_submodular_game_cvxpy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
-                                                                                                    uav_cpu_frequency, uav_total_data_processing_capacity, T, uav.get_current_coordinates(), uav.get_height())
-                            
-                            logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
-                            logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
-                            
-                            # Update the user's strategy
-                            user_strategies = user_strategies.at[idx].set(percentage_offloaded[0][0])
-                            
-                            # Update user's channel gain
-                            user_channel_gains = user_channel_gains.at[idx].set(user.get_channel_gain())
-                            
-                        elif solving_method == "scipy":
-                            # Play the submodular game
-                            maximized_utility, percentage_offloaded = user.play_submodular_game_scipy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
-                                                                                                    uav_cpu_frequency, uav_total_data_processing_capacity, 2, uav.get_current_coordinates(), uav.get_height())
-
-                            logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
-                            logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
-                            
-                            # Update the user's strategy
-                            user_strategies = user_strategies.at[idx].set(percentage_offloaded[0])
-                            
-                            # Update user's channel gain
-                            user_channel_gains = user_channel_gains.at[idx].set(user.get_channel_gain())
-
-                    # Check how different the strategies are from the previous iteration    
-                    strategy_difference = jnp.linalg.norm(user_strategies - previous_strategies)
-                    
-                    # Check if the strategies have converged
-                    if strategy_difference < convergence_threshold:
-                        # Calculate the consumed energy for all users based on the strategies they have chosen and adjust the energy
-                        for idx, user in enumerate(uav.get_current_node().get_user_list()):
-                            user.calculate_consumed_energy()
-                            user.adjust_energy(user.get_current_consumed_energy())
-                            
-                        # Adjust UAV energy for hovering over the node
-                        uav.hover_over_node(time_hover= T)
-                        
-                        # Adjust UAV energy for processing the offloaded data
-                        uav.energy_to_process_data(energy_coefficient= 0.1)
-                        
-                        done = True
-                        
-                uav.set_finished_business_in_node(True)
-                uav.hover_over_node(time_hover= T)
-                logging.info("The UAV has finished its business in the current node")
-                logging.info("The strategies at node %s have converged to: %s", uav.get_current_node().get_node_id(), user_strategies)
-                # Log the task_intensity of the users
-                task_intensities = []
-                for user in uav.get_current_node().get_user_list():
-                    task_intensities.append(user.get_task_intensity())
-                logging.info("The task intensities of the users at node %s are: %s", uav.get_current_node().get_node_id(), task_intensities)
-                logging.info("Converged with strategy difference: %s in %d iterations", strategy_difference, iteration_counter)
-                
-                if (uav_has_reached_final_node):
-                    logging.info("The UAV has reached the final node and has finished its business")
-                    break_flag = True
-                #print(f"Final Strategies: {user_strategies}")
-            else:
-                # Decide to which node to move next randomly from the ones availalbe that are not visited
-                next_node = uav.get_brave_greedy_next_node(nodes= graph.get_nodes())
-                if (next_node is not None):
-                    if (uav.travel_to_node(next_node)):
-                        logging.info("The UAV has reached the next node")
-                        # Check if the UAV has reached the final node
-                        if uav.check_if_final_node(uav.get_current_node()):
-                            logging.info("The UAV has reached the final node")
-                            uav_has_reached_final_node = True
-                    else:
-                        logging.info("The UAV has not reached the next node because it has not enough energy")
-                        break_flag = True
-                else:
-                    logging.info("The UAV has visited all the nodes")
-                    break_flag = True
-        trajectory = uav.get_visited_nodes()
-        trajectory_ids = []
-        for node in trajectory:
-            trajectory_ids.append(node.get_node_id())
-            
-        logging.info("The UAV trajectory is: %s", trajectory_ids)
+        n_observations = len(graph.get_nodes()) # The State resembles a node in the graph. Therefore, the number of observations is equal to the number of nodes
+        n_actions = n_observations # The Uav can travel to any node from any node (including itself)
+        Q_table = jnp.zeros((n_observations,n_actions)) # Initialize the Q-table with zeros for all state-action pairs
+        action_node_list = [node for node in graph.get_nodes()]
         
-        if uav_has_reached_final_node:
-            return True
-        else:
-            return False
+        #number of episode we will run
+        n_episodes = 100
+
+        #maximum of iteration per episode
+        max_iter_episode = 100
+
+        #initialize the exploration probability to 1
+        exploration_proba = 1
+
+        #exploartion decreasing decay for exponential decreasing
+        exploration_decreasing_decay = 0.001
+
+        # minimum of exploration proba
+        min_exploration_proba = 0.01
+
+        #discounted factor
+        gamma = 0.99
+
+        #learning rate
+        lr = 0.1
+        
+        env = Qenv(graph= graph, uav= uav, number_of_users= U, convergence_threshold= convergence_threshold,
+                   n_actions= n_actions, n_observations= n_observations, solving_method= solving_method)
+        
+        rewards_per_episode = []
+        #we iterate over episodes
+        for e in tqdm(range(n_episodes), desc= "Running Q-Brave Algorithm"):
+            #we initialize the first state of the episode
+            current_state = env.reset()
+            current_state = current_state.get_node_id()
+            done = False
+            
+            #sum the rewards that the agent gets from the environment
+            total_episode_reward = 0
+            
+            for i in range(max_iter_episode): 
+                # we sample a float from a uniform distribution over 0 and 1
+                # if the sampled flaot is less than the exploration probability
+                #     then the agent selects a random action
+                # else
+                #     he exploits his knowledge using the bellman equation  
+                
+                if random.uniform(random.split(self.key)[0], (1,))[0] < exploration_proba:
+                    action = env.action_space.sample()
+                else:
+                    action = jnp.argmax(Q_table[current_state,:])
+                
+                action_node = action_node_list[action]
+                # The environment runs the chosen action and returns
+                # the next state, a reward and true if the epiosed is ended.
+                returns = env.step(action_node)
+                next_state, reward, done, _ = returns
+                next_state = next_state.get_node_id()
+                
+                # We update our Q-table using the Q-learning iteration
+                #Q_table[current_state, action] = (1-lr) * Q_table[current_state, action] +lr*(reward + gamma*max(Q_table[next_state,:]))
+                Q_table.at[current_state, action].set((1-lr) * Q_table[current_state, action] +lr*(reward + gamma*max(Q_table[next_state,:])))
+                total_episode_reward = total_episode_reward + reward
+                # If the episode is finished, we leave the for loop
+                if done:
+                    break
+                current_state = next_state
+            #We update the exploration proba using exponential decay formula
+            exploration_proba = max(min_exploration_proba, jnp.exp(-exploration_decreasing_decay*e))
+            rewards_per_episode.append(total_episode_reward)
+            
+        print("The Q-table is: ", Q_table)
+        print("The rewards per episode are: ", rewards_per_episode)
+        logging.info("The rewards per episode are: %s", rewards_per_episode)
+        logging.info("Q Table is: %s", Q_table)
+            
+        return True
