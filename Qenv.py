@@ -69,7 +69,7 @@ class Qenv(gym.Env):
             self.done = True
             
         # Check if the UAV has enough energy to continue travelling
-        if (self.uav.get_energy_level() < 0):
+        if (self.uav.get_energy_level() <= 0):
             self.done = True
             logging.info("The UAV has run out of energy!")
             
@@ -179,12 +179,14 @@ class Qenv(gym.Env):
         for idx, user in enumerate(self.uav.get_current_node().get_user_list()):
             user.set_user_strategy(user_strategies[idx])
             user.calculate_remaining_data() # Calculate the remaining data for the user
-                
+        self.uav.get_current_node().calculate_total_bit_data()
+        
         # Calculate total data in bits processed by the UAV in this node
         total_data_processed = 0
         for user in self.uav.get_current_node().get_user_list():
             total_data_processed += user.get_current_strategy() * user.get_user_bits()
         
+        self.uav.update_total_processed_data(total_data_processed)
         # Calculate the reward
         temp_reward = total_data_processed                             
         

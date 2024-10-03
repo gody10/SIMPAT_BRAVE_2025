@@ -18,8 +18,9 @@ def generate_node_coordinates(key, existing_nodes, min_distance_between_nodes=50
     key = random.PRNGKey(10)
     # Generate random coordinates until we find one that is sufficiently far from all existing nodes
     while True:
-        new_coords = (random.uniform(key, (1,))[0] * 100, 
-                      random.uniform(key, (1,))[0] * 100, 
+        key += 1
+        new_coords = (random.uniform(key, (1,))[0] * 1000, 
+                      random.uniform(key, (1,))[0] * 1000, 
                       random.uniform(key, (1,))[0] * 100)
         
         # Check the distance with all existing nodes

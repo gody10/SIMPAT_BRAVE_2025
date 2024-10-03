@@ -40,6 +40,19 @@ class Node:
         """
         self.user_list.append(user)
         
+    def calculate_total_bit_data(self)->None:
+        """
+        Calculate the total data in bits of the node
+        
+        Returns:
+        float
+            Total data in bits of the node
+        """
+        self.total_bit_data = 0
+        for user in self.user_list:
+            self.total_bit_data += user.get_user_bits()
+        
+        
     def get_radius(self)->float:
         """
         Get the radius of the node

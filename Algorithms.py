@@ -214,7 +214,150 @@ class Algorithms:
         self.setup_experiment(number_of_users= self.number_of_users, number_of_nodes= self.number_of_nodes, key= self.key, uav_height= self.uav_height, min_distance_between_nodes= self.min_distance_between_nodes, node_radius= self.node_radius,
                               uav_energy_capacity= self.uav_energy_capacity, uav_bandwidth= self.uav_bandwidth, uav_processing_capacity= self.uav_processing_capacity, uav_cpu_frequency= self.uav_cpu_frequency, uav_velocity= self.uav_velocity)
         
-    def run_random_walk_algorithm(self, solving_method: str)->bool:
+    def run_single_submodular_game(self, solving_method: str)->None:
+        """
+        Run a single submodular game
+        
+        Parameters:
+        solving_method : str
+            Solving method to be used for the submodular game (cvxpy or scipy)
+        """
+        logging.info("Running a Single Submodular Game")
+        uav = self.get_uav()
+        graph = self.get_graph()
+        U = self.get_number_of_users()
+        key = self.get_key()
+        convergence_threshold = self.get_convergence_threshold()
+        T = 2
+        
+        # Start playing the game inside the current node
+        done = False
+        temp_U = U[uav.get_current_node().get_node_id()]
+        user_strategies = jnp.ones(temp_U) * 0.1  # Strategies for all users
+        uav_bandwidth = uav.get_uav_bandwidth()
+        uav_cpu_frequency = uav.get_cpu_frequency()
+        uav_total_data_processing_capacity = uav.get_total_data_processing_capacity()
+        
+        user_channel_gains = jnp.zeros(temp_U)
+        user_transmit_powers = jnp.zeros(temp_U)
+        user_data_in_bits = jnp.zeros(temp_U)
+        
+        convergence_history = []
+        convergence_counter = 0
+        convergence_counter += 5
+        convergence_history.append(convergence_counter/1)
+        
+        for idx, user in enumerate(uav.get_current_node().get_user_list()):
+            # Assing the channel gain and transmit power to the user
+            user_channel_gains = user_channel_gains.at[idx].set(user.get_channel_gain())
+            user_transmit_powers = user_transmit_powers.at[idx].set(user.get_transmit_power())
+            user_data_in_bits = user_data_in_bits.at[idx].set(user.get_user_bits())
+            user.set_user_strategy(user_strategies[idx])
+            
+        c = 0.08
+        b = 0.4
+        
+        iteration_counter = 1
+        
+        while(not done):
+            iteration_counter += 1
+            previous_strategies = user_strategies
+            
+            # Iterate over users and pass the other users' strategies
+            for idx, user in enumerate(uav.get_current_node().get_user_list()):
+                # Exclude the current user's strategy
+                #print("Playing game with user: ", idx)
+                
+                # Exclude the current user's strategy
+                other_user_strategies = jnp.concatenate([user_strategies[:idx], user_strategies[idx+1:]])
+                
+                # Exclude the current user's channel gain, transmit power and data in bits
+                other_user_channel_gains = jnp.concatenate([user_channel_gains[:idx], user_channel_gains[idx+1:]])
+                other_user_transmit_powers = jnp.concatenate([user_transmit_powers[:idx], user_transmit_powers[idx+1:]])
+                other_user_data_in_bits = jnp.concatenate([user_data_in_bits[:idx], user_data_in_bits[idx+1:]])
+                
+                
+                if solving_method == "cvxpy":
+                        # Play the submodular game
+                        maximized_utility, percentage_offloaded = user.play_submodular_game_cvxpy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
+                                                                                                uav_cpu_frequency, uav_total_data_processing_capacity, T, uav.get_current_coordinates(), uav.get_height())
+                        
+                        logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
+                        logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
+                        
+                        # Update the user's strategy
+                        user_strategies = user_strategies.at[idx].set(percentage_offloaded[0][0])
+                        
+                        # Update user's channel gain
+                        user_channel_gains = user_channel_gains.at[idx].set(user.get_channel_gain())
+                        
+                elif solving_method == "scipy":
+                    # Play the submodular game
+                    maximized_utility, percentage_offloaded = user.play_submodular_game_scipy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
+                                                                                            uav_cpu_frequency, uav_total_data_processing_capacity, 2, uav.get_current_coordinates(), uav.get_height())
+
+                    # logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
+                    # logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
+                    
+                    # Update the user's strategy
+                    user_strategies = user_strategies.at[idx].set(percentage_offloaded[0])
+                    
+                    # Update user's channel gain
+                    user_channel_gains = user_channel_gains.at[idx].set(user.get_channel_gain())
+
+            # Check how different the strategies are from the previous iteration    
+            strategy_difference = jnp.linalg.norm(user_strategies - previous_strategies)
+            
+            convergence_counter += strategy_difference
+            convergence_history.append(convergence_counter/iteration_counter)
+                
+            # Check if the strategies have converged
+            if strategy_difference < convergence_threshold:
+                # Calculate the consumed energy for all users based on the strategies they have chosen and adjust the energy
+                # for idx, user in enumerate(uav.get_current_node().get_user_list()):
+                #     user.calculate_consumed_energy()
+                #     user.adjust_energy(user.get_current_consumed_energy())
+                
+                # Adjust UAV energy for processing the offloaded data
+                uav.energy_to_process_data(energy_coefficient= 0.1)
+                
+                # Decreases the user data in bits based on the offloaded data
+                for idx, user in enumerate(uav.get_current_node().get_user_list()):
+                    user.set_user_strategy(user_strategies[idx])
+                    user.calculate_remaining_data()
+                uav.get_current_node().calculate_total_bit_data()
+                done = True
+                    
+        # Calculate total data in bits processed by the UAV in this node
+        total_data_processed = 0
+        for user in self.uav.get_current_node().get_user_list():
+            total_data_processed += user.get_current_strategy() * user.get_user_bits()
+        
+        self.uav.update_total_processed_data(total_data_processed)
+        
+        uav.set_finished_business_in_node(True)
+        uav.hover_over_node(time_hover= T)
+        logging.info("The UAV has finished its business in the current node")
+        logging.info("The strategies at node %s have converged to: %s", uav.get_current_node().get_node_id(), user_strategies)
+        # Log the task_intensity of the users
+        task_intensities = []
+        for user in uav.get_current_node().get_user_list():
+            task_intensities.append(user.get_task_intensity())
+        logging.info("The task intensities of the users at node %s are: %s", uav.get_current_node().get_node_id(), task_intensities)
+        logging.info("Converged with strategy difference: %s in %d iterations", strategy_difference, iteration_counter)
+        
+        # Keep adding to the convergence history for 10 more iterations
+        for i in range(100):
+            convergence_counter += strategy_difference
+            iteration_counter += 1
+            print(strategy_difference)
+            convergence_history.append(convergence_counter/iteration_counter)
+                
+        return convergence_history
+                        
+
+        
+    def run_random_walk_algorithm(self, solving_method: str, max_iter: int)->bool:
         """
         Algorithm that makes the UAV navigate through the graph randomly
         Every time it needs to move from one node to another, it will randomly choose the next node from a set of unvisited nodes
@@ -222,6 +365,8 @@ class Algorithms:
         Parameters:
         solving_method : str
             Solving method to be used for the submodular game (cvxpy or scipy)
+        max_iter : int
+            Maximum number of iterations to run the algorithm
         
         Returns:
             bool
@@ -335,8 +480,20 @@ class Algorithms:
                         # Adjust UAV energy for processing the offloaded data
                         uav.energy_to_process_data(energy_coefficient= 0.1)
                         
+                        # Decreases the user data in bits based on the offloaded data
+                        for idx, user in enumerate(uav.get_current_node().get_user_list()):
+                            user.set_user_strategy(user_strategies[idx])
+                            user.calculate_remaining_data()
+                        uav.get_current_node().calculate_total_bit_data()
                         done = True
                         
+                # Calculate total data in bits processed by the UAV in this node
+                total_data_processed = 0
+                for user in self.uav.get_current_node().get_user_list():
+                    total_data_processed += user.get_current_strategy() * user.get_user_bits()
+                    
+                self.uav.update_total_processed_data(total_data_processed)
+                
                 uav.set_finished_business_in_node(True)
                 uav.hover_over_node(time_hover= T)
                 logging.info("The UAV has finished its business in the current node")
@@ -354,7 +511,7 @@ class Algorithms:
                 #print(f"Final Strategies: {user_strategies}")
             else:
                 # Decide to which node to move next randomly from the ones availalbe that are not visited
-                next_node = uav.get_random_unvisited_next_node(nodes= graph.get_nodes(), key= key)
+                next_node = uav.get_random_unvisited_next_node(nodes= graph.get_nodes(), key= key, max_iter= max_iter)
                 if (next_node is not None):
                     if (uav.travel_to_node(next_node)):
                         logging.info("The UAV has reached the next node")
@@ -381,7 +538,7 @@ class Algorithms:
         else:
             return False
         
-    def brave_greedy(self, solving_method:str)->bool:
+    def brave_greedy(self, solving_method:str, max_iter: int)->bool:
         """
         Algorithm that makes the UAV navigate through the graph by selecting the Area of Interest (AoI) with the highest amount of data to offload
         Every time it needs to move from one node to another, it will choose the node that has the highest amount of data to offload
@@ -495,8 +652,21 @@ class Algorithms:
                         # Adjust UAV energy for processing the offloaded data
                         uav.energy_to_process_data(energy_coefficient= 0.1)
                         
-                        done = True
+                        # Decreases the user data in bits based on the offloaded data
+                        for idx, user in enumerate(uav.get_current_node().get_user_list()):
+                            user.set_user_strategy(user_strategies[idx])
+                            user.calculate_remaining_data()
+                        uav.get_current_node().calculate_total_bit_data()
                         
+                        done = True
+                    
+                # Calculate total data in bits processed by the UAV in this node
+                total_data_processed = 0
+                for user in self.uav.get_current_node().get_user_list():
+                    total_data_processed += user.get_current_strategy() * user.get_user_bits()
+                    
+                self.uav.update_total_processed_data(total_data_processed)
+                
                 uav.set_finished_business_in_node(True)
                 uav.hover_over_node(time_hover= T)
                 logging.info("The UAV has finished its business in the current node")
@@ -514,7 +684,7 @@ class Algorithms:
                 #print(f"Final Strategies: {user_strategies}")
             else:
                 # Decide to which node to move next randomly from the ones availalbe that are not visited
-                next_node = uav.get_brave_greedy_next_node(nodes= graph.get_nodes())
+                next_node = uav.get_brave_greedy_next_node(nodes= graph.get_nodes(), max_iter= max_iter)
                 if (next_node is not None):
                     if (uav.travel_to_node(next_node)):
                         logging.info("The UAV has reached the next node")
@@ -587,6 +757,7 @@ class Algorithms:
                    n_actions= n_actions, n_observations= n_observations, solving_method= solving_method, T= T)
         
         rewards_per_episode = []
+        total_bits_processed_per_episode = []
         #we iterate over episodes
         for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Algorithm"):
             
@@ -630,6 +801,7 @@ class Algorithms:
             #We update the exploration proba using exponential decay formula
             exploration_proba = max(min_exploration_proba, jnp.exp(-exploration_decreasing_decay*e))
             rewards_per_episode.append(total_episode_reward)
+            total_bits_processed_per_episode.append(self.get_uav().get_total_processed_data())
             logging.info("The reward for episode %d is: %s", e, total_episode_reward)
             print("EPISODE END")
             
@@ -641,5 +813,6 @@ class Algorithms:
         logging.info("Q Table is: %s", Q_table)
         logging.info("Mean reward per episode: %s", jnp.mean(jnp.array(rewards_per_episode)))
         logging.info("Max reward: %s", jnp.max(jnp.array(rewards_per_episode)))
+        self.most_processed_bits = jnp.max(jnp.array(total_bits_processed_per_episode))
             
         return True
