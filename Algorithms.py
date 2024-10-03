@@ -540,7 +540,7 @@ class Algorithms:
         else:
             return False
         
-    def q_brave(self, solving_method:str)->bool:
+    def q_brave(self, solving_method:str, number_of_episodes: int, max_travels_per_episode: int)->bool:
         """
         Algorithm that makes the UAV navigate through the graph by using Q-Learning to select the next node to visit
         The decision-making process of the RL agent, i.e., UAV, for data collection and processing is represented using a Markov decision process (MDP)
@@ -567,12 +567,6 @@ class Algorithms:
         n_actions = n_observations # The Uav can travel to any node from any node (including itself)
         Q_table = jnp.zeros((n_observations,n_actions)) # Initialize the Q-table with zeros for all state-action pairs
         action_node_list = [node for node in graph.get_nodes()]
-        
-        #number of episode we will run
-        n_episodes = 100
-
-        #maximum of iteration per episode
-        max_iter_episode = 100
 
         #initialize the exploration probability to 1
         exploration_proba = 1
@@ -590,20 +584,24 @@ class Algorithms:
         lr = 0.1
         
         env = Qenv(graph= graph, uav= uav, number_of_users= U, convergence_threshold= convergence_threshold,
-                   n_actions= n_actions, n_observations= n_observations, solving_method= solving_method)
+                   n_actions= n_actions, n_observations= n_observations, solving_method= solving_method, T= T)
         
         rewards_per_episode = []
         #we iterate over episodes
-        for e in tqdm(range(n_episodes), desc= "Running Q-Brave Algorithm"):
+        for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Algorithm"):
+            
             #we initialize the first state of the episode
-            current_state = env.reset()
+            print("\nEPISODE START")
+            logging.info("EPISODE START")
+            self.reset()
+            current_state = env.reset(graph= self.get_graph(), uav= self.get_uav(),)
             current_state = current_state.get_node_id()
             done = False
             
             #sum the rewards that the agent gets from the environment
             total_episode_reward = 0
             
-            for i in range(max_iter_episode): 
+            for i in range(max_travels_per_episode):
                 # we sample a float from a uniform distribution over 0 and 1
                 # if the sampled flaot is less than the exploration probability
                 #     then the agent selects a random action
@@ -623,8 +621,7 @@ class Algorithms:
                 next_state = next_state.get_node_id()
                 
                 # We update our Q-table using the Q-learning iteration
-                #Q_table[current_state, action] = (1-lr) * Q_table[current_state, action] +lr*(reward + gamma*max(Q_table[next_state,:]))
-                Q_table.at[current_state, action].set((1-lr) * Q_table[current_state, action] +lr*(reward + gamma*max(Q_table[next_state,:])))
+                Q_table = Q_table.at[current_state, action].set((1-lr) * Q_table[current_state, action] +lr*(reward + gamma*max(Q_table[next_state,:])))
                 total_episode_reward = total_episode_reward + reward
                 # If the episode is finished, we leave the for loop
                 if done:
@@ -633,10 +630,16 @@ class Algorithms:
             #We update the exploration proba using exponential decay formula
             exploration_proba = max(min_exploration_proba, jnp.exp(-exploration_decreasing_decay*e))
             rewards_per_episode.append(total_episode_reward)
+            logging.info("The reward for episode %d is: %s", e, total_episode_reward)
+            print("EPISODE END")
             
         print("The Q-table is: ", Q_table)
         print("The rewards per episode are: ", rewards_per_episode)
+        print("Mean reward per episode: ", jnp.mean(jnp.array(rewards_per_episode)))
+        print("Max reward: ", jnp.max(jnp.array(rewards_per_episode)))
         logging.info("The rewards per episode are: %s", rewards_per_episode)
         logging.info("Q Table is: %s", Q_table)
+        logging.info("Mean reward per episode: %s", jnp.mean(jnp.array(rewards_per_episode)))
+        logging.info("Max reward: %s", jnp.max(jnp.array(rewards_per_episode)))
             
         return True

@@ -64,7 +64,7 @@ algorithm.setup_experiment(number_of_nodes= N, number_of_users= U, node_radius= 
 sorted_nodes = algorithm.sort_nodes_based_on_total_bits()
 
 # Run the Q-Brave Algorithm
-success_q_brave_ = algorithm.q_brave(solving_method= "scipy")
+success_q_brave_ = algorithm.q_brave(solving_method= "scipy", number_of_episodes= 10, max_travels_per_episode= 10)
 
 logging.info("The UAV energy level is: %s", algorithm.get_uav().get_energy_level())
 

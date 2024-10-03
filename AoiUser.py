@@ -104,6 +104,12 @@ class AoiUser:
         """
         return self.channel_gain 
     
+    def calculate_remaining_data(self)->None:
+        """
+        Calculate the remaining data of the user
+        """
+        self.data_in_bits = self.data_in_bits * (1 - self.current_strategy)
+    
     def calculate_channel_gain(self, uav_coordinates: Tuple, uav_height: float)->None:
         """
         Calculate the channel gain of the user
@@ -174,6 +180,16 @@ class AoiUser:
         else:
             self.energy_level -= energy_used
             return True
+        
+    def get_current_strategy(self)->float:
+        """
+        Get the current strategy of the user
+        
+        Returns:
+        float
+            Current strategy of the user
+        """
+        return self.current_strategy
         
     def get_current_energy_level(self)->float:
         """

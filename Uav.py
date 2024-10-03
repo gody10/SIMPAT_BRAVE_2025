@@ -26,7 +26,7 @@ class Uav:
             Total data processing capacity of the UAV
         """
         self.uav_id = uav_id
-        self.energy_level = capacity * 11.1 * 3.6
+        self.energy_level = capacity #* 11.1 * 3.6
         self.initial_node = initial_node
         self.final_node = final_node
         self.total_data_processing_capacity = total_data_processing_capacity
@@ -36,6 +36,7 @@ class Uav:
         self.cpu_frequency = cpu_frequency
         self.finished_business_in_node = False
         self.visited_nodes = []
+        self.number_of_actions = 0
         self.update_visited_nodes(self.initial_node)
         self.set_current_coordinates(self.initial_node.get_coordinates())
         
@@ -58,6 +59,16 @@ class Uav:
             True if the business is finished, False otherwise
         """
         return self.finished_business_in_node
+    
+    def get_number_of_actions(self)->int:
+        """
+        Get the number of actions
+        
+        Returns:
+        int
+            Number of actions
+        """
+        return self.number_of_actions
         
     def get_total_data_processing_capacity(self)->float:
         """
@@ -283,6 +294,7 @@ class Uav:
         
         self.set_current_coordinates(node.get_coordinates())
         self.update_visited_nodes(node)
+        self.number_of_actions += 1
         print("Updated Visited Nodes")
         self.set_finished_business_in_node(False)
         return True
