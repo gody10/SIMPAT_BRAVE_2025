@@ -28,7 +28,7 @@ data_dict = {}
 algorithm = Algorithms(convergence_threshold= CONVERGENCE_THRESHOLD)
 
 algorithm.setup_experiment(number_of_nodes= N, number_of_users= U, node_radius= NODE_RADIUS, key= key, min_distance_between_nodes= MIN_DISTANCE_BETWEEN_NODES, uav_height= UAV_HEIGHT, 
-                           uav_energy_capacity=UAV_ENERGY_CAPACITY, uav_bandwidth= UAV_BANDWIDTH, uav_processing_capacity= UAV_PROCESSING_CAPACITY, uav_cpu_frequency= UAV_CPU_FREQUENCY, uav_velocity= UAV_VELOCITY)
+						   uav_energy_capacity=UAV_ENERGY_CAPACITY, uav_bandwidth= UAV_BANDWIDTH, uav_processing_capacity= UAV_PROCESSING_CAPACITY, uav_cpu_frequency= UAV_CPU_FREQUENCY, uav_velocity= UAV_VELOCITY)
 
 # Run the Submodular Game Algorithm
 convergence_history = algorithm.run_single_submodular_game(solving_method= "scipy")
@@ -36,4 +36,4 @@ print(convergence_history)
 
 # Dump the convergence history to a pickle file
 with open('convergence_history.pkl', 'wb') as handle:
-    pickle.dump(convergence_history, handle)
+	pickle.dump(convergence_history, handle)

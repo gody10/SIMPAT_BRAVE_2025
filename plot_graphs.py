@@ -10,7 +10,7 @@ os.makedirs(folder_to_save_plots, exist_ok=True)
 
 # Read the data dictionary from pickle
 with open('data_dict.pkl', 'rb') as handle:
-    data_dict = pickle.load(handle)
+	data_dict = pickle.load(handle)
 
 # Extract the keys and values
 algorithms = list(data_dict.keys())
@@ -21,7 +21,7 @@ algorithms = [algorithm.replace("Total Bits", "") for algorithm in algorithms]
 bits_processed = list(data_dict.values())
 
 # Define colors for each bar (for visualization purposes)
-colors = ['blue', 'green', 'orange']  # Customize colors as needed
+colors = ['blue', 'green', 'orange', 'grey']  # Customize colors as needed
 
 # Create the figure
 plt.figure(figsize=(12, 8))
@@ -37,16 +37,16 @@ plt.yticks(fontsize=14, fontweight='bold')
 
 # Loop over the bars to place text within each bar
 for bar, algorithm in zip(bars, algorithms):
-    height = bar.get_height()
-    plt.text(
-        bar.get_x() + bar.get_width() / 2,  # X position (center of the bar)
-        height / 2,                        # Y position (half the height of the bar)
-        algorithm,                   # Display the name of the algorithm
-        ha='center', va='center',          # Centered horizontally and vertically
-        fontsize=22, fontweight='bold',    # Customize font size and weight
-        color='black',                     # Set text color
-        rotation=90                        # Rotate text 90 degrees
-    )
+	height = bar.get_height()
+	plt.text(
+		bar.get_x() + bar.get_width() / 2,  # X position (center of the bar)
+		height / 2,                        # Y position (half the height of the bar)
+		algorithm,                   # Display the name of the algorithm
+		ha='center', va='center',          # Centered horizontally and vertically
+		fontsize=22, fontweight='bold',    # Customize font size and weight
+		color='black',                     # Set text color
+		rotation=90                        # Rotate text 90 degrees
+	)
 
 # Remove the x-axis ticks and labels for a clean look
 plt.xticks([])
@@ -72,8 +72,8 @@ plt.savefig(os.path.join(folder_to_save_plots, "total_bits_processed.png"), bbox
 
 ##################### GAME CONVERGENCE PLOT #####################
 with open('convergence_history.pkl', 'rb') as handle:
-    convergence_history = pickle.load(handle)
-    
+	convergence_history = pickle.load(handle)
+	
 # Create the figure
 plt.figure(figsize=(12, 8))
 
