@@ -637,7 +637,7 @@ class Algorithms:
 				True if the UAV has reached the final node, False otherwise
 		"""
 
-		logging.info("Running the Random Walk Algorithm")
+		logging.info("Running the Proportional Fairness Algorithm")
 		uav = self.get_uav()
 		graph = self.get_graph()
 		U = self.get_number_of_users()

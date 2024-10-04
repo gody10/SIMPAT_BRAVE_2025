@@ -84,9 +84,9 @@ success_random_walk = algorithm.run_random_proportional_fairness_algorithm(solvi
 logging.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
 
 if success_random_walk:
-	logging.info("Random Walk Algorithm has successfully reached the final node!")
+	logging.info("Proportional Fairness Algorithm has successfully reached the final node!")
 else:
-	logging.info("Random Walk Algorithm failed to reach the final node!")
+	logging.info("Proportional Fairness Algorithm failed to reach the final node!")
 	
 logging.info("The UAV processed in total: %s bits", algorithm.get_uav().get_total_processed_data())
 algorithms_total_bits["Proportional Fairness Total Bits"] = algorithm.get_uav().get_total_processed_data()
