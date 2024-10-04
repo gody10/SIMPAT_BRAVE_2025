@@ -28,7 +28,8 @@ UAV_BANDWIDTH = 15
 UAV_PROCESSING_CAPACITY = 1000
 UAV_CPU_FREQUENCY = 2
 UAV_VELOCITY = 1
-MAX_ITER = 10
+MAX_ITER = 100
+NUMBER_OF_EPISODES = 100
 
 algorithms_total_bits = {}
 algorithms_expended_energy = {}
@@ -95,7 +96,7 @@ algorithms_total_visited_nodes["Brave Greedy Total Visited Nodes"] = len(algorit
 algorithm.reset()
 
 # Run the Q-Brave Algorithm
-success_q_brave_ = algorithm.q_brave(solving_method= "scipy", number_of_episodes= 5, max_travels_per_episode= MAX_ITER)
+success_q_brave_ = algorithm.q_brave(solving_method= "scipy", number_of_episodes= NUMBER_OF_EPISODES, max_travels_per_episode= MAX_ITER)
 
 logging.info("The UAV energy level is: %s", algorithm.get_uav().get_energy_level())
 logging.info("The UAV processed in total: %s bits", algorithm.most_processed_bits)
