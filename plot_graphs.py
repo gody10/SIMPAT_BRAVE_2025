@@ -1,6 +1,7 @@
 import pickle
 import matplotlib.pyplot as plt
 import os
+import jax.numpy as jnp
 
 # Specify the folder to save the plot
 folder_to_save_plots = "plots"
@@ -100,6 +101,235 @@ plt.yticks(fontsize=30, fontweight='bold')
 
 # Save the figure
 plt.savefig(os.path.join(folder_to_save_plots, "convergence_history.png"), bbox_inches='tight')
+
+# Show the plot
+#plt.show()
+
+
+##################### USER DATA PLOT #####################
+with open('user_data_dict.pkl', 'rb') as handle:
+	user_data_dict = pickle.load(handle)
+ 
+# Extract the keys and values
+user_ids = user_data_dict["User IDs"]
+user_bits = user_data_dict["User Total Bits"]
+user_time_overhead = user_data_dict["User Time Overhead"]
+user_total_overhead = user_data_dict["User Total Overhead"]
+user_consumed_energy = user_data_dict["User Consumed Energy"]
+user_utility = user_data_dict["User Utility"]
+
+user_time_overhead_temp = []
+for time_overhead in user_time_overhead:
+    # Check for infinity
+    if time_overhead == float('inf'):
+        user_time_overhead_temp.append(float(1000000000))
+    else:
+        # Check if it's an array and if so, convert to a scalar
+        if isinstance(time_overhead, jnp.ndarray):
+            # Flatten to make sure it's 1D and extract the first element as a scalar
+            time_overhead_scalar = time_overhead.flatten()[0]
+            user_time_overhead_temp.append(float(time_overhead_scalar))
+        else:
+            # If it's already a scalar, append directly
+            user_time_overhead_temp.append(float(time_overhead))
+            
+user_total_overhead_temp = []
+for time_overhead in user_total_overhead:
+    # Check for infinity
+    if time_overhead == float('inf'):
+        user_total_overhead_temp.append(float(1000000000))
+    else:
+        # Check if it's an array and if so, convert to a scalar
+        if isinstance(time_overhead, jnp.ndarray):
+            # Flatten to make sure it's 1D and extract the first element as a scalar
+            total_overhead_scalar = time_overhead.flatten()[0]
+            user_total_overhead_temp.append(float(time_overhead_scalar))
+        else:
+            # If it's already a scalar, append directly
+            user_total_overhead_temp.append(float(time_overhead))
+            
+user_consumed_energy_temp = []
+for time_overhead in user_consumed_energy:
+    # Check for infinity
+    if time_overhead == float('inf'):
+        user_consumed_energy_temp.append(float(1000000000))
+    else:
+        # Check if it's an array and if so, convert to a scalar
+        if isinstance(time_overhead, jnp.ndarray):
+            # Flatten to make sure it's 1D and extract the first element as a scalar
+            consumed_energy_scalar = time_overhead.flatten()[0]
+            user_consumed_energy_temp.append(float(time_overhead_scalar))
+        else:
+            # If it's already a scalar, append directly
+            user_consumed_energy_temp.append(float(time_overhead))
+            
+# Create the figure for user total bits
+plt.figure(figsize=(12, 8))
+
+# Plot the total bits of each user
+plt.bar(user_ids, user_bits, color='blue', label='Total Bits')
+
+# Add a legend to the plot
+plt.legend(fontsize=20, loc='upper right')
+
+# Add a grid behind the bars
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+# Set the x-axis label
+plt.xlabel('User IDs', fontsize=25, fontweight='bold')
+
+# Set the y-axis label
+plt.ylabel('Total Bits', fontsize=25, fontweight='bold')
+
+# Set the plot title
+plt.title('User Total Bits', fontsize=32, fontweight='bold')
+
+# Set the x-ticks
+plt.xticks(fontsize=20, fontweight='bold')
+
+# Set the y-ticks
+plt.yticks(fontsize=20, fontweight='bold')
+
+# Save the figure
+plt.savefig(os.path.join(folder_to_save_plots, "user_total_bits.png"), bbox_inches='tight')
+
+# Show the plot
+#plt.show()
+
+# Create the figure for user time overhead
+plt.figure(figsize=(12, 8))
+
+# Replace inf values in user_time_overhead with 1000000000 for visualization purposes
+user_time_overhead = [jnp.array([1000000000]) if time_overhead == float('inf') else time_overhead for time_overhead in user_time_overhead]
+
+# Log scale for better visualization
+plt.yscale('log')
+
+# Plot the time overhead of each user
+plt.bar(user_ids, user_time_overhead_temp, color='green', label='Time Overhead')
+
+# Add a legend to the plot
+plt.legend(fontsize=20, loc='upper right')
+
+# Add a grid behind the bars
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+# Set the x-axis label
+plt.xlabel('User IDs', fontsize=25, fontweight='bold')
+
+# Set the y-axis label
+plt.ylabel('Time Overhead', fontsize=25, fontweight='bold')
+
+# Set the plot title
+plt.title('User Time Overhead', fontsize=32, fontweight='bold')
+
+# Set the x-ticks
+plt.xticks(fontsize=20, fontweight='bold')
+
+# Set the y-ticks
+plt.yticks(fontsize=20, fontweight='bold')
+
+# Save the figure
+plt.savefig(os.path.join(folder_to_save_plots, "user_time_overhead.png"), bbox_inches='tight')
+
+# Show the plot
+#plt.show()
+
+# Create the figure for user total overhead
+plt.figure(figsize=(12, 8))
+
+# Plot the total overhead of each user
+plt.bar(user_ids, user_total_overhead_temp, color='orange', label='Total Overhead')
+
+# Add a legend to the plot
+plt.legend(fontsize=20, loc='upper right')
+
+# Add a grid behind the bars
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+# Set the x-axis label
+plt.xlabel('User IDs', fontsize=25, fontweight='bold')
+
+# Set the y-axis label
+plt.ylabel('Total Overhead', fontsize=25, fontweight='bold')
+
+# Set the plot title
+plt.title('User Total Overhead', fontsize=32, fontweight='bold')
+
+# Set the x-ticks
+plt.xticks(fontsize=20, fontweight='bold')
+
+# Set the y-ticks
+plt.yticks(fontsize=20, fontweight='bold')
+
+# Save the figure
+plt.savefig(os.path.join(folder_to_save_plots, "user_total_overhead.png"), bbox_inches='tight')
+
+# Show the plot
+#plt.show()
+
+# Create the figure for user consumed energy
+plt.figure(figsize=(12, 8))
+
+# Plot the consumed energy of each user
+plt.bar(user_ids, user_consumed_energy_temp, color='grey', label='Consumed Energy')
+
+# Add a legend to the plot
+plt.legend(fontsize=20, loc='upper right')
+
+# Add a grid behind the bars
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+# Set the x-axis label
+plt.xlabel('User IDs', fontsize=25, fontweight='bold')
+
+# Set the y-axis label
+plt.ylabel('Consumed Energy', fontsize=25, fontweight='bold')
+
+# Set the plot title
+plt.title('User Consumed Energy', fontsize=32, fontweight='bold')
+
+# Set the x-ticks
+plt.xticks(fontsize=20, fontweight='bold')
+
+# Set the y-ticks
+plt.yticks(fontsize=20, fontweight='bold')
+
+# Save the figure
+plt.savefig(os.path.join(folder_to_save_plots, "user_consumed_energy.png"), bbox_inches='tight')
+
+# Show the plot
+#plt.show()
+
+# Create the figure for user utility
+plt.figure(figsize=(12, 8))
+
+# Plot the utility of each user
+plt.bar(user_ids, user_utility, color='purple', label='Utility')
+
+# Add a legend to the plot
+plt.legend(fontsize=20, loc='upper right')
+
+# Add a grid behind the bars
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+# Set the x-axis label
+plt.xlabel('User IDs', fontsize=25, fontweight='bold')
+
+# Set the y-axis label
+plt.ylabel('Utility', fontsize=25, fontweight='bold')
+
+# Set the plot title
+plt.title('User Utility', fontsize=32, fontweight='bold')
+
+# Set the x-ticks
+plt.xticks(fontsize=20, fontweight='bold')
+
+# Set the y-ticks
+plt.yticks(fontsize=20, fontweight='bold')
+
+# Save the figure
+plt.savefig(os.path.join(folder_to_save_plots, "user_utility.png"), bbox_inches='tight')
 
 # Show the plot
 #plt.show()

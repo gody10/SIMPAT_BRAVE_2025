@@ -29,6 +29,16 @@ class Node:
 		self.total_bit_data = 0
 		for user in self.user_list:
 			self.total_bit_data += user.get_user_bits()
+   
+	def get_user_ids(self)->List[int]:
+		"""
+		Get the IDs of the users in the node
+
+		Returns:
+		List[int]
+			IDs of the users in the node
+		"""
+		return [user.get_user_id() for user in self.user_list]
 		
 	def add_user(self, user : AoiUser)->None:
 		"""

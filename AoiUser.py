@@ -43,6 +43,7 @@ class AoiUser:
 		self.current_time_overhead = 0
 		self.current_consumed_energy = 0
 		self.current_total_overhead = 0
+		self.user_utility = 0
 
 	def get_user_bits(self)->float:
 		"""
@@ -93,6 +94,26 @@ class AoiUser:
 			Transmit power of the user
 		"""
 		return self.transmit_power
+
+	def get_user_utility(self)->float:
+		"""
+		Get the utility of the user
+		
+		Returns:
+		float
+			Utility of the user
+		"""
+		return self.user_utility
+
+	def set_user_utility(self, utility: float)->None:
+		"""
+		Set the utility of the user
+		
+		Parameters:
+		utility : float
+			Utility of the user
+		"""
+		self.user_utility = utility
 	
 	def get_channel_gain(self)->float:
 		"""
@@ -435,6 +456,9 @@ class AoiUser:
 		
 		# The maximum utility achieved (negated to reverse minimization)
 		maximized_utility= -result.fun
+  
+		# Set the user utility obtained
+		self.set_user_utility(maximized_utility)
 		
 		return (maximized_utility, solution)
 		

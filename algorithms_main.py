@@ -51,6 +51,7 @@ else:
 logging.info("The UAV processed in total: %s bits", algorithm.get_uav().get_total_processed_data())
 data_dict["Random Walk Total Bits"] = algorithm.get_uav().get_total_processed_data()
 
+
 # Reset the Algorithm object
 algorithm.reset()
 

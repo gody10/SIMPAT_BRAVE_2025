@@ -350,7 +350,6 @@ class Algorithms:
 		for i in range(100):
 			convergence_counter += strategy_difference
 			iteration_counter += 1
-			print(strategy_difference)
 			convergence_history.append(convergence_counter/iteration_counter)
 				
 		return convergence_history
