@@ -44,6 +44,10 @@ class Algorithms:
 		self.uav_bandwidth = None
 		self.uav_processing_capacity = None
 		self.uav_velocity = None
+		self.trajectory = []
+		self.expended_energy = 0
+		self.visited_nodes = 0
+		self.most_processed_bits = 0
 		
 	def get_uav(self)->Uav:
 		"""
@@ -104,6 +108,86 @@ class Algorithms:
 			Key
 		"""
 		return self.key
+
+	def get_trajectory(self)->list:
+		"""
+		Get the UAV trajectory
+		
+		Returns:
+		list
+			UAV trajectory
+		"""
+		return self.trajectory
+
+	def set_trajectory(self, trajectory: list)->None:
+		"""
+		Set the UAV trajectory
+		
+		Parameters:
+		trajectory : list
+			UAV trajectory
+		"""
+		self.trajectory = trajectory
+  
+	def get_most_processed_bits(self)->float:
+		"""
+		Get the most processed bits
+		
+		Returns:
+		float
+			Most processed bits
+		"""
+		return self.most_processed_bits
+
+	def get_most_expended_energy(self)->float:
+		"""
+		Get the expended energy
+		
+		Returns:
+		float
+			Expended energy
+		"""
+		return self.expended_energy
+
+	def get_most_visited_nodes(self)->int:
+		"""
+		Get the total visited nodes
+		
+		Returns:
+		int
+			Total visited nodes
+		"""
+		return self.visited_nodes
+
+	def set_most_processed_bits(self, most_processed_bits: float)->None:
+		"""
+		Set the most processed bits
+		
+		Parameters:
+		most_processed_bits : float
+			Most processed bits
+		"""
+		self.most_processed_bits = most_processed_bits
+  
+	def set_most_energy_expended(self, expended_energy: float)->None:
+		"""
+		Set the expended energy
+		
+		Parameters:
+		expended_energy : float
+			Expended energy
+		"""
+		self.expended_energy = expended_energy
+  
+	def set_most_visited_nodes(self, visited_nodes: int)->None:
+		"""
+		Set the total visited nodes
+		
+		Parameters:
+		visited_nodes : int
+			Total visited nodes
+		"""
+		self.visited_nodes = visited_nodes
 	
 	def sort_nodes_based_on_total_bits(self)->list:
 		"""
@@ -531,6 +615,7 @@ class Algorithms:
 			trajectory_ids.append(node.get_node_id())
 			
 		logging.info("The UAV trajectory is: %s", trajectory_ids)
+		self.set_trajectory(trajectory_ids)
 		
 		if uav_has_reached_final_node:
 			return True
@@ -711,6 +796,7 @@ class Algorithms:
 			trajectory_ids.append(node.get_node_id())
 			
 		logging.info("The UAV trajectory is: %s", trajectory_ids)
+		self.set_trajectory(trajectory_ids)
 		
 		if uav_has_reached_final_node:
 			return True
@@ -883,6 +969,7 @@ class Algorithms:
 			trajectory_ids.append(node.get_node_id())
 			
 		logging.info("The UAV trajectory is: %s", trajectory_ids)
+		self.set_trajectory(trajectory_ids)
 		
 		if uav_has_reached_final_node:
 			return True
@@ -937,6 +1024,8 @@ class Algorithms:
 		
 		rewards_per_episode = []
 		total_bits_processed_per_episode = []
+		energy_expended_per_episode = []
+		uav_visited_nodes_per_episode = []
 		#we iterate over episodes
 		for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Algorithm"):
 			
@@ -981,6 +1070,12 @@ class Algorithms:
 			exploration_proba = max(min_exploration_proba, jnp.exp(-exploration_decreasing_decay*e))
 			rewards_per_episode.append(total_episode_reward)
 			total_bits_processed_per_episode.append(self.get_uav().get_total_processed_data())
+			energy_expended_per_episode.append(self.get_uav().get_total_energy_level() - self.get_uav().get_energy_level())
+			trajectory = uav.get_visited_nodes()
+			trajectory_ids = []
+			for node in trajectory:
+				trajectory_ids.append(node.get_node_id())
+			uav_visited_nodes_per_episode.append(len(trajectory_ids))
 			logging.info("The reward for episode %d is: %s", e, total_episode_reward)
 			print("EPISODE END")
 			
@@ -992,6 +1087,13 @@ class Algorithms:
 		logging.info("Q Table is: %s", Q_table)
 		logging.info("Mean reward per episode: %s", jnp.mean(jnp.array(rewards_per_episode)))
 		logging.info("Max reward: %s", jnp.max(jnp.array(rewards_per_episode)))
-		self.most_processed_bits = jnp.max(jnp.array(total_bits_processed_per_episode))
+  
+		# Find at which episode the Q-Learning algorithm had the best reward
+		best_episode = jnp.argmax(jnp.array(rewards_per_episode))
+  
+		# Set the Information used for the plots by getting the information on the best episode
+		self.set_most_processed_bits(total_bits_processed_per_episode[best_episode])
+		self.set_most_energy_expended(energy_expended_per_episode[best_episode])
+		self.set_most_visited_nodes(uav_visited_nodes_per_episode[best_episode])
 			
 		return True

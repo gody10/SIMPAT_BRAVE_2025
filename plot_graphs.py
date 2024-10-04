@@ -7,10 +7,10 @@ import jax.numpy as jnp
 folder_to_save_plots = "plots"
 os.makedirs(folder_to_save_plots, exist_ok=True)
 
-##################### COMPARATIVE PLOT #####################
+##################### COMPARATIVE PLOT FOR BITS #####################
 
 # Read the data dictionary from pickle
-with open('data_dict.pkl', 'rb') as handle:
+with open('algorithms_total_bits.pkl', 'rb') as handle:
 	data_dict = pickle.load(handle)
 
 # Extract the keys and values
@@ -70,6 +70,186 @@ plt.savefig(os.path.join(folder_to_save_plots, "total_bits_processed.png"), bbox
 # Show the plot
 # plt.show()
 
+##################### COMPARATIVE PLOT FOR ENERGY #####################
+# Read the data dictionary from pickle
+with open('algorithms_expended_energy.pkl', 'rb') as handle:
+	data_dict = pickle.load(handle)
+ 
+# Extract the keys and values
+algorithms = list(data_dict.keys())
+
+# Remove total bits from the name of algorithms
+algorithms = [algorithm.replace("Total Bits", "") for algorithm in algorithms]
+
+energy = list(data_dict.values())
+
+energy = [float(e[0]) for e in energy]
+
+# Define colors for each bar (for visualization purposes)
+colors = ['blue', 'green', 'orange', 'grey']  # Customize colors as needed
+
+# Create the figure
+plt.figure(figsize=(12, 8))
+
+# Create a bar plot with colored bars
+bars = plt.bar(algorithms, energy, color=colors)
+
+# Add a grid behind the bars
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+# Set the y-tick parameters
+plt.yticks(fontsize=14, fontweight='bold')
+
+# Loop over the bars to place text within each bar
+for bar, algorithm in zip(bars, algorithms):
+	height = bar.get_height()
+	plt.text(
+		bar.get_x() + bar.get_width() / 2,  # X position (center of the bar)
+		height / 2,                        # Y position (half the height of the bar)
+		algorithm,                   # Display the name of the algorithm
+		ha='center', va='center',          # Centered horizontally and vertically
+		fontsize=22, fontweight='bold',    # Customize font size and weight
+		color='black',                     # Set text color
+		rotation=90                        # Rotate text 90 degrees
+	)
+
+# Remove the x-axis ticks and labels for a clean look
+plt.xticks([])
+
+# Y-ticks
+plt.yticks(fontsize=20, fontweight='bold')
+
+# Set the y-axis label with appropriate formatting
+plt.ylabel('Energy Expended', fontsize=25, fontweight='bold')
+
+# Set the plot title
+plt.title('Energy Expended by each Algorithm', fontsize=32, fontweight='bold')
+
+# Tight layout for better spacing
+plt.tight_layout()
+
+# Save the figure
+plt.savefig(os.path.join(folder_to_save_plots, "energy_expended.png"), bbox_inches='tight')
+
+# Show the plot
+# plt.show()
+
+##################### COMPARATIVE PLOT FOR TOTAL VISITED NODES #####################
+# Read the data dictionary from pickle
+with open('algorithms_total_visited_nodes.pkl', 'rb') as handle:
+	data_dict = pickle.load(handle)
+ 
+# Extract the keys and values
+algorithms = list(data_dict.keys())
+
+# Remove total bits from the name of algorithms
+algorithms = [algorithm.replace("Total Bits", "") for algorithm in algorithms]
+
+visited_nodes = list(data_dict.values())
+
+# Define colors for each bar (for visualization purposes)
+colors = ['blue', 'green', 'orange', 'grey']  # Customize colors as needed
+
+# Create the figure
+plt.figure(figsize=(12, 8))
+
+# Create a bar plot with colored bars
+bars = plt.bar(algorithms, visited_nodes, color=colors)
+
+# Add a grid behind the bars
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+# Set the y-tick parameters
+plt.yticks(fontsize=14, fontweight='bold')
+
+# Loop over the bars to place text within each bar
+for bar, algorithm in zip(bars, algorithms):
+	height = bar.get_height()
+	plt.text(
+		bar.get_x() + bar.get_width() / 2,  # X position (center of the bar)
+		height / 2,                        # Y position (half the height of the bar)
+		algorithm,                   # Display the name of the algorithm
+		ha='center', va='center',          # Centered horizontally and vertically
+		fontsize=22, fontweight='bold',    # Customize font size and weight
+		color='black',                     # Set text color
+		rotation=90                        # Rotate text 90 degrees
+	)
+
+# Remove the x-axis ticks and labels for a clean look
+plt.xticks([])
+
+# Y-ticks
+plt.yticks(fontsize=20, fontweight='bold')
+
+# Set the y-axis label with appropriate formatting
+plt.ylabel('Total Visited Nodes', fontsize=25, fontweight='bold')
+
+# Set the plot title
+plt.title('Total Visited Nodes by each Algorithm', fontsize=32, fontweight='bold')
+
+# Tight layout for better spacing
+plt.tight_layout()
+
+# Save the figure
+plt.savefig(os.path.join(folder_to_save_plots, "total_visited_nodes.png"), bbox_inches='tight')
+
+# Show the plot
+# plt.show()
+
+##################### PURE LEARNING PROPORTIONAL PLOT #####################
+# Read the data dictionary from pickle
+algorithms = ["Random Walk", "Proportional Fairness", "Brave Greedy", "Q-Brave"]
+
+values = [(total_bits_processed * total_nodes_visited)/energy_expended for total_bits_processed, total_nodes_visited, energy_expended in zip(bits_processed, visited_nodes, energy)]
+
+# Define colors for each bar (for visualization purposes)
+colors = ['blue', 'green', 'orange', 'grey']  # Customize colors as needed
+
+# Create the figure
+plt.figure(figsize=(12, 8))
+
+# Create a bar plot with colored bars
+bars = plt.bar(algorithms, visited_nodes, color=colors)
+
+# Add a grid behind the bars
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+# Set the y-tick parameters
+plt.yticks(fontsize=14, fontweight='bold')
+
+#Loop over the bars to place text within each bar
+for bar, algorithm in zip(bars, algorithms):
+	height = bar.get_height()
+	plt.text(
+		bar.get_x() + bar.get_width() / 2,  # X position (center of the bar)
+		height / 2,                        # Y position (half the height of the bar)
+		algorithm,                   # Display the name of the algorithm
+		ha='center', va='center',          # Centered horizontally and vertically
+		fontsize=22, fontweight='bold',    # Customize font size and weight
+		color='black',                     # Set text color
+		rotation=90                        # Rotate text 90 degrees
+	)
+
+# Remove the x-axis ticks and labels for a clean look
+plt.xticks([])
+
+# Y-ticks
+plt.yticks(fontsize=20, fontweight='bold')
+
+# Set the y-axis label with appropriate formatting
+plt.ylabel('(B*AoI)/E', fontsize=25, fontweight='bold')
+
+# Set the plot title
+plt.title('Custom Metric', fontsize=32, fontweight='bold')
+
+# Tight layout for better spacing
+plt.tight_layout()
+
+# Save the figure
+plt.savefig(os.path.join(folder_to_save_plots, "custom_metric.png"), bbox_inches='tight')
+
+# Show the plot
+# plt.show()
 
 ##################### GAME CONVERGENCE PLOT #####################
 with open('convergence_history.pkl', 'rb') as handle:

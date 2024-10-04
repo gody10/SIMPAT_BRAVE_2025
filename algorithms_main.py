@@ -30,7 +30,9 @@ UAV_CPU_FREQUENCY = 2
 UAV_VELOCITY = 1
 MAX_ITER = 10
 
-data_dict = {}
+algorithms_total_bits = {}
+algorithms_expended_energy = {}
+algorithms_total_visited_nodes = {}
 
 # Create the algorithm object
 algorithm = Algorithms(convergence_threshold= CONVERGENCE_THRESHOLD)
@@ -49,8 +51,9 @@ else:
 	logging.info("Random Walk Algorithm failed to reach the final node!")
 	
 logging.info("The UAV processed in total: %s bits", algorithm.get_uav().get_total_processed_data())
-data_dict["Random Walk Total Bits"] = algorithm.get_uav().get_total_processed_data()
-
+algorithms_total_bits["Random Walk Total Bits"] = algorithm.get_uav().get_total_processed_data()
+algorithms_expended_energy["Random Walk Energy Level"] = algorithm.get_uav().get_total_energy_level() - algorithm.get_uav().get_energy_level()
+algorithms_total_visited_nodes["Random Walk Total Visited Nodes"] = len(algorithm.get_trajectory())
 
 # Reset the Algorithm object
 algorithm.reset()
@@ -66,7 +69,9 @@ else:
 	logging.info("Random Walk Algorithm failed to reach the final node!")
 	
 logging.info("The UAV processed in total: %s bits", algorithm.get_uav().get_total_processed_data())
-data_dict["Proportional Fairness Total Bits"] = algorithm.get_uav().get_total_processed_data()
+algorithms_total_bits["Proportional Fairness Total Bits"] = algorithm.get_uav().get_total_processed_data()
+algorithms_expended_energy["Proportional Fairness Energy Level"] = algorithm.get_uav().get_total_energy_level() - algorithm.get_uav().get_energy_level()
+algorithms_total_visited_nodes["Proportional Fairness Total Visited Nodes"] = len(algorithm.get_trajectory())
 
 # Reset the Algorithm object
 algorithm.reset()
@@ -82,7 +87,9 @@ else:
 	logging.info("Brave Greedy Algorithm failed to reach the final node!")
 	
 logging.info("The UAV processed in total: %s bits", algorithm.get_uav().get_total_processed_data())
-data_dict["Brave Greedy Total Bits"] = algorithm.get_uav().get_total_processed_data()
+algorithms_total_bits["Brave Greedy Total Bits"] = algorithm.get_uav().get_total_processed_data()
+algorithms_expended_energy["Brave Greedy Energy Level"] = algorithm.get_uav().get_total_energy_level() - algorithm.get_uav().get_energy_level()
+algorithms_total_visited_nodes["Brave Greedy Total Visited Nodes"] = len(algorithm.get_trajectory())
 	
 # Reset the Algorithm object
 algorithm.reset()
@@ -92,7 +99,9 @@ success_q_brave_ = algorithm.q_brave(solving_method= "scipy", number_of_episodes
 
 logging.info("The UAV energy level is: %s", algorithm.get_uav().get_energy_level())
 logging.info("The UAV processed in total: %s bits", algorithm.most_processed_bits)
-data_dict["Q-Brave Total Bits"] = algorithm.most_processed_bits
+algorithms_total_bits["Q-Brave Total Bits"] = algorithm.get_most_processed_bits()
+algorithms_expended_energy["Q-Brave Energy Level"] = algorithm.get_most_expended_energy()
+algorithms_total_visited_nodes["Q-Brave Total Visited Nodes"] = algorithm.get_most_visited_nodes()
 
 if success_q_brave_:
 	logging.info("Q-Brave Algorithm has successfully reached the final node!")
@@ -101,10 +110,16 @@ else:
 
 
 # Save the data dictionary as a pickle file
-with open("data_dict.pkl", "wb") as file:
-	pickle.dump(data_dict, file)
+with open("algorithms_total_bits.pkl", "wb") as file:
+	pickle.dump(algorithms_total_bits, file)
+
+with open("algorithms_expended_energy.pkl", "wb") as file:
+	pickle.dump(algorithms_expended_energy, file)
+ 
+with open("algorithms_total_visited_nodes.pkl", "wb") as file:
+	pickle.dump(algorithms_total_visited_nodes, file)
 	
-logging.info("Data dictionary has been saved as a pickle file!")
+logging.info("Data dictionaries has been saved as a pickle file!")
 
 # Sort the Nodes based on total bits and log the data
 sorted_nodes = algorithm.sort_nodes_based_on_total_bits()

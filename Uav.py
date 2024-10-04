@@ -27,6 +27,7 @@ class Uav:
 		"""
 		self.uav_id = uav_id
 		self.energy_level = capacity #* 11.1 * 3.6
+		self.total_energy_level = self.energy_level
 		self.initial_node = initial_node
 		self.final_node = final_node
 		self.total_data_processing_capacity = total_data_processing_capacity
@@ -41,7 +42,6 @@ class Uav:
 		self.set_current_coordinates(self.initial_node.get_coordinates())
 		self.total_processed_data = 0
 		
-		
 	def set_finished_business_in_node(self, finished: bool)->None:
 		"""
 		Set the finished business in the node
@@ -51,6 +51,16 @@ class Uav:
 			True if the business is finished, False otherwise
 		"""
 		self.finished_business_in_node = finished
+  
+	def get_total_energy_level(self)->float:
+		"""
+		Get the total energy level of the UAV
+		
+		Returns:
+		float
+			Total energy level of the UAV
+		"""
+		return self.total_energy_level
 	
 	def get_finished_business_in_node(self)->bool:
 		"""
