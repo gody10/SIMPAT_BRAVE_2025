@@ -4,8 +4,13 @@ import os
 import jax.numpy as jnp
 
 # Specify the folder to save the plot
-folder_to_save_plots = "plots"
-os.makedirs(folder_to_save_plots, exist_ok=True)
+basic_folder = "plots"
+folder_for_pure_learning = "plots/pure_learning"
+folder_for_pure_game = "plots/pure_game"
+
+os.makedirs(basic_folder, exist_ok=True)
+os.makedirs(folder_for_pure_learning, exist_ok=True)
+os.makedirs(folder_for_pure_game, exist_ok=True)
 
 ##################### COMPARATIVE PLOT FOR BITS #####################
 
@@ -65,7 +70,7 @@ plt.title('Total Bits Processed by each Algorithm', fontsize=32, fontweight='bol
 plt.tight_layout()
 
 # Save the figure
-plt.savefig(os.path.join(folder_to_save_plots, "total_bits_processed.png"), bbox_inches='tight')
+plt.savefig(os.path.join(folder_for_pure_learning, "total_bits_processed.png"), bbox_inches='tight')
 
 # Show the plot
 # plt.show()
@@ -129,7 +134,7 @@ plt.title('Energy Expended by each Algorithm', fontsize=32, fontweight='bold')
 plt.tight_layout()
 
 # Save the figure
-plt.savefig(os.path.join(folder_to_save_plots, "energy_expended.png"), bbox_inches='tight')
+plt.savefig(os.path.join(folder_for_pure_learning, "energy_expended.png"), bbox_inches='tight')
 
 # Show the plot
 # plt.show()
@@ -191,7 +196,7 @@ plt.title('Total Visited Nodes by each Algorithm', fontsize=32, fontweight='bold
 plt.tight_layout()
 
 # Save the figure
-plt.savefig(os.path.join(folder_to_save_plots, "total_visited_nodes.png"), bbox_inches='tight')
+plt.savefig(os.path.join(folder_for_pure_learning, "total_visited_nodes.png"), bbox_inches='tight')
 
 # Show the plot
 # plt.show()
@@ -246,7 +251,7 @@ plt.title('Custom Metric', fontsize=32, fontweight='bold')
 plt.tight_layout()
 
 # Save the figure
-plt.savefig(os.path.join(folder_to_save_plots, "custom_metric.png"), bbox_inches='tight')
+plt.savefig(os.path.join(folder_for_pure_learning, "custom_metric.png"), bbox_inches='tight')
 
 # Show the plot
 # plt.show()
@@ -280,7 +285,7 @@ plt.xticks(fontsize=30, fontweight='bold')
 plt.yticks(fontsize=30, fontweight='bold')
 
 # Save the figure
-plt.savefig(os.path.join(folder_to_save_plots, "convergence_history.png"), bbox_inches='tight')
+plt.savefig(os.path.join(folder_for_pure_game, "convergence_history.png"), bbox_inches='tight')
 
 # Show the plot
 #plt.show()
@@ -371,7 +376,7 @@ plt.xticks(fontsize=20, fontweight='bold')
 plt.yticks(fontsize=20, fontweight='bold')
 
 # Save the figure
-plt.savefig(os.path.join(folder_to_save_plots, "user_total_bits.png"), bbox_inches='tight')
+plt.savefig(os.path.join(folder_for_pure_game, "user_total_bits.png"), bbox_inches='tight')
 
 # Show the plot
 #plt.show()
@@ -410,7 +415,7 @@ plt.xticks(fontsize=20, fontweight='bold')
 plt.yticks(fontsize=20, fontweight='bold')
 
 # Save the figure
-plt.savefig(os.path.join(folder_to_save_plots, "user_time_overhead.png"), bbox_inches='tight')
+plt.savefig(os.path.join(folder_for_pure_game, "user_time_overhead.png"), bbox_inches='tight')
 
 # Show the plot
 #plt.show()
@@ -443,7 +448,7 @@ plt.xticks(fontsize=20, fontweight='bold')
 plt.yticks(fontsize=20, fontweight='bold')
 
 # Save the figure
-plt.savefig(os.path.join(folder_to_save_plots, "user_total_overhead.png"), bbox_inches='tight')
+plt.savefig(os.path.join(folder_for_pure_game, "user_total_overhead.png"), bbox_inches='tight')
 
 # Show the plot
 #plt.show()
@@ -476,7 +481,7 @@ plt.xticks(fontsize=20, fontweight='bold')
 plt.yticks(fontsize=20, fontweight='bold')
 
 # Save the figure
-plt.savefig(os.path.join(folder_to_save_plots, "user_consumed_energy.png"), bbox_inches='tight')
+plt.savefig(os.path.join(folder_for_pure_game, "user_consumed_energy.png"), bbox_inches='tight')
 
 # Show the plot
 #plt.show()
@@ -509,7 +514,7 @@ plt.xticks(fontsize=20, fontweight='bold')
 plt.yticks(fontsize=20, fontweight='bold')
 
 # Save the figure
-plt.savefig(os.path.join(folder_to_save_plots, "user_utility.png"), bbox_inches='tight')
+plt.savefig(os.path.join(folder_for_pure_game, "user_utility.png"), bbox_inches='tight')
 
 # Show the plot
 #plt.show()
