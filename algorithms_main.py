@@ -2,6 +2,13 @@ import logging
 from jax import random
 from Algorithms import Algorithms
 import pickle
+import time
+
+# Initialize timers for each method
+random_walk_time = 0
+proportional_fairness_time = 0
+brave_greedy_time = 0
+q_brave_time = 0
 
 # Create a random key
 key = random.PRNGKey(20)
@@ -34,12 +41,16 @@ NUMBER_OF_EPISODES = 100
 algorithms_total_bits = {}
 algorithms_expended_energy = {}
 algorithms_total_visited_nodes = {}
+timer_dict = {}
 
 # Create the algorithm object
 algorithm = Algorithms(convergence_threshold= CONVERGENCE_THRESHOLD)
 
 algorithm.setup_experiment(number_of_nodes= N, number_of_users= U, node_radius= NODE_RADIUS, key= key, min_distance_between_nodes= MIN_DISTANCE_BETWEEN_NODES, uav_height= UAV_HEIGHT, 
 						   uav_energy_capacity=UAV_ENERGY_CAPACITY, uav_bandwidth= UAV_BANDWIDTH, uav_processing_capacity= UAV_PROCESSING_CAPACITY, uav_cpu_frequency= UAV_CPU_FREQUENCY, uav_velocity= UAV_VELOCITY)
+
+# Start the timer for Random Walk Algorithm
+start_time = time.time()
 
 # Run the Random Walk Algorithm
 success_random_walk = algorithm.run_random_walk_algorithm(solving_method= "scipy", max_iter= MAX_ITER)
@@ -56,8 +67,16 @@ algorithms_total_bits["Random Walk Total Bits"] = algorithm.get_uav().get_total_
 algorithms_expended_energy["Random Walk Energy Level"] = algorithm.get_uav().get_total_energy_level() - algorithm.get_uav().get_energy_level()
 algorithms_total_visited_nodes["Random Walk Total Visited Nodes"] = len(algorithm.get_trajectory())
 
+# End the timer for Random Walk Algorithm
+random_walk_time = time.time() - start_time
+logging.info("Random Walk Algorithm took: %s seconds", random_walk_time)
+timer_dict["Random Walk Time"] = random_walk_time
+
 # Reset the Algorithm object
 algorithm.reset()
+
+# Begin the timer for Proportional Fairness Algorithm
+start_time = time.time()
 
 # Run the Proportional Fairness Algorithm
 success_random_walk = algorithm.run_random_proportional_fairness_algorithm(solving_method= "scipy", max_iter= MAX_ITER)
@@ -74,8 +93,16 @@ algorithms_total_bits["Proportional Fairness Total Bits"] = algorithm.get_uav().
 algorithms_expended_energy["Proportional Fairness Energy Level"] = algorithm.get_uav().get_total_energy_level() - algorithm.get_uav().get_energy_level()
 algorithms_total_visited_nodes["Proportional Fairness Total Visited Nodes"] = len(algorithm.get_trajectory())
 
+# End the timer for Proportional Fairness Algorithm
+proportional_fairness_time = time.time() - start_time
+logging.info("Proportional Fairness Algorithm took: %s seconds", proportional_fairness_time)
+timer_dict["Proportional Fairness Time"] = proportional_fairness_time
+
 # Reset the Algorithm object
 algorithm.reset()
+
+# Start the timer for Brave Greedy Algorithm
+start_time = time.time()
 
 # Run the Brave Greedy Algorithm
 success_brave_greedy = algorithm.brave_greedy(solving_method= "scipy", max_iter= MAX_ITER)
@@ -92,8 +119,16 @@ algorithms_total_bits["Brave Greedy Total Bits"] = algorithm.get_uav().get_total
 algorithms_expended_energy["Brave Greedy Energy Level"] = algorithm.get_uav().get_total_energy_level() - algorithm.get_uav().get_energy_level()
 algorithms_total_visited_nodes["Brave Greedy Total Visited Nodes"] = len(algorithm.get_trajectory())
 	
+# End the timer for Brave Greedy Algorithm
+brave_greedy_time = time.time() - start_time
+logging.info("Brave Greedy Algorithm took: %s seconds", brave_greedy_time)
+timer_dict["Brave Greedy Time"] = brave_greedy_time
+ 
 # Reset the Algorithm object
 algorithm.reset()
+
+# Start the timer for Q-Brave Algorithm
+start_time = time.time()
 
 # Run the Q-Brave Algorithm
 success_q_brave_ = algorithm.q_brave(solving_method= "scipy", number_of_episodes= NUMBER_OF_EPISODES, max_travels_per_episode= MAX_ITER)
@@ -104,13 +139,18 @@ algorithms_total_bits["Q-Brave Total Bits"] = algorithm.get_most_processed_bits(
 algorithms_expended_energy["Q-Brave Energy Level"] = algorithm.get_most_expended_energy()
 algorithms_total_visited_nodes["Q-Brave Total Visited Nodes"] = algorithm.get_most_visited_nodes()
 
+# End the timer for Q-Brave Algorithm
+q_brave_time = time.time() - start_time
+logging.info("Q-Brave Algorithm took: %s seconds", q_brave_time)
+timer_dict["Q-Brave Time"] = q_brave_time
+
 if success_q_brave_:
 	logging.info("Q-Brave Algorithm has successfully reached the final node!")
 else:
 	logging.info("Q-Brave Algorithm failed to reach the final node!")
 
 
-# Save the data dictionary as a pickle file
+# Save the data dictionaries as a pickle files
 with open("algorithms_total_bits.pkl", "wb") as file:
 	pickle.dump(algorithms_total_bits, file)
 
@@ -119,9 +159,13 @@ with open("algorithms_expended_energy.pkl", "wb") as file:
  
 with open("algorithms_total_visited_nodes.pkl", "wb") as file:
 	pickle.dump(algorithms_total_visited_nodes, file)
+ 
+with open("timer_dict.pkl", "wb") as file:
+	pickle.dump(timer_dict, file)
 	
 logging.info("Data dictionaries has been saved as a pickle file!")
 
 # Sort the Nodes based on total bits and log the data
 sorted_nodes = algorithm.sort_nodes_based_on_total_bits()
 logging.info("The sorted nodes based on total bits are: %s", sorted_nodes)
+
