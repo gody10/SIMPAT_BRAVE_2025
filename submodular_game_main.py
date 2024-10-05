@@ -1,6 +1,7 @@
 from jax import random
 from Algorithms import Algorithms
 import pickle
+import jax.numpy as jnp
 
 # Create a random key
 key = random.PRNGKey(20)
@@ -26,7 +27,7 @@ data_dict = {}
 # Create the algorithm object
 algorithm = Algorithms(convergence_threshold= CONVERGENCE_THRESHOLD)
 
-algorithm.setup_experiment(number_of_nodes= N, number_of_users= U, node_radius= NODE_RADIUS, key= key, min_distance_between_nodes= MIN_DISTANCE_BETWEEN_NODES, uav_height= UAV_HEIGHT, 
+algorithm.setup__singlular_experiment(number_of_nodes= N, number_of_users= U, node_radius= NODE_RADIUS, key= key, min_distance_between_nodes= MIN_DISTANCE_BETWEEN_NODES, uav_height= UAV_HEIGHT, 
 						   uav_energy_capacity=UAV_ENERGY_CAPACITY, uav_bandwidth= UAV_BANDWIDTH, uav_processing_capacity= UAV_PROCESSING_CAPACITY, uav_cpu_frequency= UAV_CPU_FREQUENCY, uav_velocity= UAV_VELOCITY)
 
 # Get User IDs
@@ -50,6 +51,15 @@ data_dict["User Consumed Energy"] = [user.get_current_consumed_energy() for user
 
 # Get utility of each user 
 data_dict["User Utility"] = [user.get_user_utility() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
+
+# Get the distance of each user from the Node
+distance_from_node = []
+node = algorithm.get_graph().get_nodes()[0]
+for user in node.get_user_list():
+	dist = jnp.sqrt( (node.get_coordinates()[0] - user.get_coordinates()[0])**2 + (node.get_coordinates()[1] - user.get_coordinates()[1])**2 + (node.get_coordinates()[2] - user.get_coordinates()[2])**2)
+	print(dist)
+	distance_from_node.append(dist)
+data_dict["User Distance from Node"] = distance_from_node
 
 # Dump the data dictionary to a pickle file
 with open('user_data_dict.pkl', 'wb') as handle:

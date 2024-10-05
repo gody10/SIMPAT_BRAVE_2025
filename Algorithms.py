@@ -289,6 +289,98 @@ class Algorithms:
 		self.uav = Uav(uav_id= 1, initial_node= nodes[0], final_node= nodes[len(nodes)-1], capacity= self.uav_energy_capacity, total_data_processing_capacity= self.uav_processing_capacity, 
 					   velocity= self.uav_velocity, uav_system_bandwidth= self.uav_bandwidth, cpu_frequency= self.uav_cpu_frequency, height= uav_height)
 		
+	def setup__singlular_experiment(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float, uav_energy_capacity: float, 
+                         uav_bandwidth: float, uav_processing_capacity: float, uav_cpu_frequency: float, uav_velocity: float)->None:
+		"""
+		Setup the experiment
+		
+		Parameters:
+		number_of_users : float
+			Number of users in the system
+		number_of_nodes : float
+			Number of nodes in the system
+		key : jax.random.PRNGKey
+			Key for random number generation
+		uav_height : float
+			Height of the UAV
+		min_distance_between_nodes : float
+			Minimum distance between nodes
+		node_radius : float
+			Radius of the node
+		"""
+		self.number_of_users = number_of_users
+		self.number_of_nodes = number_of_nodes
+		self.key = key
+		self.uav_height = uav_height
+		self.min_distance_between_nodes = min_distance_between_nodes
+		self.node_radius = node_radius
+		self.uav_energy_capacity = uav_energy_capacity
+		self.uav_bandwidth = uav_bandwidth
+		self.uav_processing_capacity = uav_processing_capacity
+		self.uav_cpu_frequency = uav_cpu_frequency
+		self.uav_velocity = uav_velocity
+		
+		nodes = []
+		for i in range(number_of_nodes):
+			# Generate random center coordinates for the node
+			node_coords = generate_node_coordinates(key, nodes, min_distance_between_nodes)
+			
+			users = []
+			for j in range(number_of_users[number_of_nodes]):
+				# Calculate a radius that decreases as j increases, ensuring a smooth approach to zero
+				r_scale = (number_of_users[number_of_nodes] - j) / number_of_users[number_of_nodes]  # Smoother scale towards zero
+				r = r_scale * node_radius  # Remove randomness to ensure smooth trend towards zero	
+				
+				theta = random.uniform(random.split(key)[0], (1,))[0] * 2 * jnp.pi  # azimuthal angle (0 to 2*pi)
+				phi = random.uniform(random.split(key)[0], (1,))[0] * jnp.pi  # polar angle (0 to pi)
+				
+				# Convert spherical coordinates (r, theta, phi) to Cartesian coordinates (x, y, z)
+				x = r * jnp.sin(phi) * jnp.cos(theta)
+				y = r * jnp.sin(phi) * jnp.sin(theta)
+				z = r * jnp.cos(phi)
+				
+				# User coordinates relative to the node center
+				user_coords = (node_coords[0] + x, node_coords[1] + y, node_coords[2] + z)
+				
+				# Strictly increasing data bits for each subsequent user
+				base_data_in_bits = 1000  # Set a base value for data bits
+				data_in_bits = base_data_in_bits + j * (500 / number_of_users[number_of_nodes])  # Strictly increasing data bits
+				
+				users.append(AoiUser(
+					user_id=j,
+					data_in_bits=data_in_bits,
+					transmit_power=random.uniform(random.split(key + i + j)[0], (1,))[0] * 100,
+					energy_level=4000,
+					task_intensity=random.uniform(random.split(key + i + j)[0], (1,))[0] * 100,
+					carrier_frequency=random.uniform(random.split(key + i + j)[0], (1,))[0] * 100,
+					coordinates=user_coords
+				))
+			
+			nodes.append(Node(
+				node_id=i,
+				users=users,
+				coordinates=node_coords
+			))
+			
+		# Create edges between all nodes with random weights
+		edges = []
+		for i in range(number_of_nodes):
+			for j in range(i+1, number_of_nodes):
+				edges.append(Edge(nodes[i].user_list[0], nodes[j].user_list[0], random.normal(key, (1,))))
+				
+		# Create the graph
+		self.graph = Graph(nodes=nodes, edges=edges)
+
+		# Get number of nodes and edges
+		logging.info("Number of Nodes: %s", self.graph.get_num_nodes())
+		logging.info("Number of Edges: %s", self.graph.get_num_edges())
+		logging.info("Number of Users: %s", self.graph.get_num_users())
+
+		# Create a UAV
+		self.uav = Uav(uav_id=1, initial_node=nodes[0], final_node=nodes[len(nodes)-1], capacity=self.uav_energy_capacity, total_data_processing_capacity=self.uav_processing_capacity, 
+					velocity=self.uav_velocity, uav_system_bandwidth=self.uav_bandwidth, cpu_frequency=self.uav_cpu_frequency, height=uav_height)
+
+
 	def reset(self)->None:
 		"""
 		Reset the experiment so that it can be run again by the same or a different algorithm
