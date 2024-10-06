@@ -56,8 +56,8 @@ data_dict["User Utility"] = [user.get_user_utility() for user in algorithm.get_g
 distance_from_node = []
 node = algorithm.get_graph().get_nodes()[0]
 for user in node.get_user_list():
-	dist = jnp.sqrt( (node.get_coordinates()[0] - user.get_coordinates()[0])**2 + (node.get_coordinates()[1] - user.get_coordinates()[1])**2 + (node.get_coordinates()[2] - user.get_coordinates()[2])**2)
-	print(dist)
+	dist = jnp.sqrt( (node.get_coordinates()[0] - user.get_coordinates()[0])**2 + (node.get_coordinates()[1] - user.get_coordinates()[1])**2 + 
+						(node.get_coordinates()[2] - user.get_coordinates()[2])**2)
 	distance_from_node.append(dist)
 data_dict["User Distance from Node"] = distance_from_node
 
