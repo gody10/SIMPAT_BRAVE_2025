@@ -325,11 +325,11 @@ class Algorithms:
 			# Generate random center coordinates for the node
 			node_coords = generate_node_coordinates(key, nodes, min_distance_between_nodes)
 
-			max_bits = 2000  # Maximum bits for the highest user ID
+			max_bits = 2000 # Maximum bits for the highest user ID 900000000
 			min_bits = 500  # Minimum bits for the lowest user ID
 			bit_range = max_bits - min_bits
 
-			max_distance = 10  # Set maximum distance to 10
+			#max_distance = 2  # Set maximum distance to 10
 
 			users = []
 			for j in range(number_of_users[number_of_nodes]):
@@ -340,8 +340,8 @@ class Algorithms:
 
 				# Sharpen the decrease in `r` to make higher ID users much closer to the center
 				r_scale = ((number_of_users[number_of_nodes] - j) / number_of_users[number_of_nodes]) ** 2  # Exponential decrease for sharper differences
-				r = r_scale * max_distance  # Scale `r` to reach the maximum distance of 10
-				
+				#r = r_scale * max_distance  # Scale `r` to reach the maximum distance of 10
+				r = r_scale
 				theta = random.uniform(random.split(key)[0], (1,))[0] * 2 * jnp.pi  # azimuthal angle (0 to 2*pi)
 				phi = random.uniform(random.split(key)[0], (1,))[0] * jnp.pi  # polar angle (0 to pi)
 				
@@ -362,7 +362,7 @@ class Algorithms:
 					user_id=j,
 					data_in_bits=data_in_bits,
 					transmit_power=5,
-					energy_level=4000,
+					energy_level=4000000,
 					task_intensity=1,
 					carrier_frequency=2,
 					coordinates=user_coords
@@ -421,7 +421,8 @@ class Algorithms:
 		# Start playing the game inside the current node
 		done = False
 		temp_U = U[uav.get_current_node().get_node_id()]
-		user_strategies = jnp.ones(temp_U) * 0.1  # Strategies for all users
+		user_strategies = jnp.ones(temp_U) * 0.001  # Strategies for all users
+		#user_strategies = random.uniform(key, shape=(temp_U,1), minval=0.001, maxval=1.0)
 		uav_bandwidth = uav.get_uav_bandwidth()
 		uav_cpu_frequency = uav.get_cpu_frequency()
 		uav_total_data_processing_capacity = uav.get_total_data_processing_capacity()
@@ -515,6 +516,7 @@ class Algorithms:
 				for idx, user in enumerate(uav.get_current_node().get_user_list()):
 					user.set_user_strategy(user_strategies[idx])
 					user.calculate_remaining_data()
+					user.calculate_consumed_energy()
 				uav.get_current_node().calculate_total_bit_data()
 				done = True
 					

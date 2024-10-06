@@ -2,6 +2,15 @@ from jax import random
 from Algorithms import Algorithms
 import pickle
 import jax.numpy as jnp
+import logging
+
+# Setup logging
+logging.basicConfig(
+	filename='single_game.log',  # Log file name
+	filemode='w',            # Mode: 'w' for overwrite, 'a' for append
+	level=logging.INFO,      # Logging level
+	format='%(asctime)s - %(levelname)s - %(message)s'  # Format of the log messages
+)
 
 # Create a random key
 key = random.PRNGKey(20)
@@ -47,7 +56,7 @@ data_dict["User Time Overhead"] = [user.get_current_time_overhead() for user in 
 data_dict["User Total Overhead"] = [user.get_current_total_overhead() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
 
 # Get consumed Energy of each user
-data_dict["User Consumed Energy"] = [user.get_current_consumed_energy() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
+data_dict["User Consumed Energy"] = [(user.get_total_capacity() - user.get_current_consumed_energy()) for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
 
 # Get utility of each user 
 data_dict["User Utility"] = [user.get_user_utility() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]

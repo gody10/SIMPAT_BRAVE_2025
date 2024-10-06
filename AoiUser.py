@@ -34,6 +34,7 @@ class AoiUser:
 		self.transmit_power = transmit_power
 		self.channel_gain = 0
 		self.energy_level = energy_level
+		self.total_capacity = energy_level
 		self.task_intensity = task_intensity
 		self.coordinates = coordinates
 		self.carrier_frequency = carrier_frequency
@@ -54,6 +55,16 @@ class AoiUser:
 			Amount of data in bits of the user
 		"""
 		return self.data_in_bits
+	
+	def get_total_capacity(self)->float:
+		"""
+		Get the total capacity of the user
+		
+		Returns:
+		float
+			Total capacity of the user
+		"""
+		return self.total_capacity
 	
 	def get_carrier_frequency(self)->float:
 		"""
@@ -292,15 +303,21 @@ class AoiUser:
 			CPU frequency of the UAV
 		"""
 		
-		self.current_time_overhead = (self.data_in_bits * self.get_user_strategy()) / self.get_current_data_rate() + ((self.get_task_intensity() * self.get_user_strategy() *self.data_in_bits) 
-																								   / ((1 - (jnp.sum(other_user_strategies * other_user_bits)/ uav_total_capacity)) * uav_cpu_frequency))
+		data_rate = max(self.get_current_data_rate(), 1e-10)
+		denominator = max(1 - (jnp.sum(other_user_strategies * other_user_bits) / uav_total_capacity), 1e-10)
+
+		self.current_time_overhead = (
+			(self.data_in_bits * self.get_user_strategy()) / data_rate + 
+			((self.get_task_intensity() * self.get_user_strategy() * self.data_in_bits) / (denominator * uav_cpu_frequency))
+)
 		#logging.info("User %d has Current time overhead %f", self.get_user_id(), self.current_time_overhead)
 	
 	def calculate_consumed_energy(self)->None:
 		"""
 		Calculate the consumed energy of the user during the offloading process based on the current strategy
 		"""
-		self.current_consumed_energy = ((self.get_user_strategy() * self.get_user_bits())/(self.get_current_data_rate()+ 1)) * self.get_transmit_power()
+		data_rate = max(self.get_current_data_rate(), 1e-10)
+		self.current_consumed_energy = ((self.get_user_strategy() * self.get_user_bits()) / (data_rate)) * self.get_transmit_power()
 		#logging.info("User %d has Current consumed energy %f", self.get_user_id(), self.current_consumed_energy)
 		
 	def calculate_total_consumed_energy(self)->float:
@@ -426,10 +443,10 @@ class AoiUser:
 			#overflow_avoidance_factor = 1e-60
 			
 			# Set the weight for the x/sum(other_strategies) term
-			w_s = 300
+			w_s = 3
 			
 			#Clip total overhead to avoid numerical issues
-			self.current_total_overhead = np.clip(self.current_total_overhead, 3, 16)
+			self.current_total_overhead = np.clip(self.current_total_overhead, 3, 50)
 			
 			# Reshape to match expected shape (if necessary)
 			#percentage_offloaded = np.array(percentage_offloaded).reshape(-1, 1)
