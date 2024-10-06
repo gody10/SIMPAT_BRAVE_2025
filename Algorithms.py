@@ -324,12 +324,23 @@ class Algorithms:
 		for i in range(number_of_nodes):
 			# Generate random center coordinates for the node
 			node_coords = generate_node_coordinates(key, nodes, min_distance_between_nodes)
-			
+
+			max_bits = 2000  # Maximum bits for the highest user ID
+			min_bits = 500  # Minimum bits for the lowest user ID
+			bit_range = max_bits - min_bits
+
+			max_distance = 10  # Set maximum distance to 10
+
 			users = []
 			for j in range(number_of_users[number_of_nodes]):
-				# Calculate a radius that decreases as j increases, ensuring a smooth approach to zero
-				r_scale = (number_of_users[number_of_nodes] - j) / number_of_users[number_of_nodes]  # Smoother scale towards zero
-				r = r_scale * node_radius  # Remove randomness to ensure smooth trend towards zero	
+
+				data_step = 1000  # Amplify the data step size for bigger differences
+				base_data_in_bits = 1000  # Set a base value for data bits
+				data_in_bits = base_data_in_bits + j * (data_step / number_of_users[number_of_nodes])  # Sharper increase in data bits
+
+				# Sharpen the decrease in `r` to make higher ID users much closer to the center
+				r_scale = ((number_of_users[number_of_nodes] - j) / number_of_users[number_of_nodes]) ** 2  # Exponential decrease for sharper differences
+				r = r_scale * max_distance  # Scale `r` to reach the maximum distance of 10
 				
 				theta = random.uniform(random.split(key)[0], (1,))[0] * 2 * jnp.pi  # azimuthal angle (0 to 2*pi)
 				phi = random.uniform(random.split(key)[0], (1,))[0] * jnp.pi  # polar angle (0 to pi)
@@ -342,17 +353,18 @@ class Algorithms:
 				# User coordinates relative to the node center
 				user_coords = (node_coords[0] + x, node_coords[1] + y, node_coords[2] + z)
 				
-				# Strictly increasing data bits for each subsequent user
-				base_data_in_bits = 1000  # Set a base value for data bits
-				data_in_bits = base_data_in_bits + j * (500 / number_of_users[number_of_nodes])  # Strictly increasing data bits
+				# Amplified differences in data bits
+				#data_in_bits = base_data_in_bits + j * (data_step / number_of_users[number_of_nodes])
+				#Smoothed data bits using a square root-based increase
+				data_in_bits = min_bits + bit_range * (j / number_of_users[number_of_nodes])**0.5  # Square root-based smooth increase
 				
 				users.append(AoiUser(
 					user_id=j,
 					data_in_bits=data_in_bits,
-					transmit_power=random.uniform(random.split(key + i + j)[0], (1,))[0] * 100,
+					transmit_power=5,
 					energy_level=4000,
-					task_intensity=random.uniform(random.split(key + i + j)[0], (1,))[0] * 100,
-					carrier_frequency=random.uniform(random.split(key + i + j)[0], (1,))[0] * 100,
+					task_intensity=1,
+					carrier_frequency=2,
 					coordinates=user_coords
 				))
 			
@@ -424,6 +436,8 @@ class Algorithms:
 		convergence_history.append(convergence_counter/1)
 		
 		for idx, user in enumerate(uav.get_current_node().get_user_list()):
+			# Calculate channel gain
+			user.calculate_channel_gain(uav.get_current_coordinates(), uav.get_height())
 			# Assing the channel gain and transmit power to the user
 			user_channel_gains = user_channel_gains.at[idx].set(user.get_channel_gain())
 			user_transmit_powers = user_transmit_powers.at[idx].set(user.get_transmit_power())
