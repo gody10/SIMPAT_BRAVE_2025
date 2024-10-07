@@ -4,6 +4,7 @@ from typing import Tuple
 import logging
 from scipy.optimize import minimize
 import numpy as np
+import Node
 
 class AoiUser:
 	"""
@@ -45,6 +46,7 @@ class AoiUser:
 		self.current_consumed_energy = 0
 		self.current_total_overhead = 0
 		self.user_utility = 0
+		self.distance = 0
 
 	def get_user_bits(self)->float:
 		"""
@@ -156,13 +158,14 @@ class AoiUser:
 		float
 			Channel gain of the user
 		"""
-		distance = jnp.sqrt((self.coordinates[0] - uav_coordinates[0])**2 + (self.coordinates[1] - uav_coordinates[1])**2 + (self.coordinates[2] - uav_coordinates[2])**2)
-		pl_loss = 20*jnp.log(distance) + 20 * jnp.log (self.get_carrier_frequency()) + 2*jnp.log((4*jnp.pi)/ 3 * 10*18) + 2
+		distance = self.get_distance()
+		#logging.info("Distance between User %d and UAV is %f", self.get_user_id(), distance)
+		pl_loss = 20*jnp.log(distance) + 20 * jnp.log(self.get_carrier_frequency()) + 2*jnp.log((4*jnp.pi)/ 3 * 10*18) + 2
 		pl_nloss = 20*jnp.log(distance) + 20 * jnp.log (self.get_carrier_frequency()) + 2*jnp.log((4*jnp.pi)/ 3 * 10*18) + 21
 		#theta = jnp.arcsin(uav_height/distance)
 		theta = jnp.arcsin(jnp.clip(uav_height / distance, -1, 1))
 
-		pr_loss = 1 / (1 + 0.136 * (jnp.exp(-11.95 * (theta * -0.136))))
+		pr_loss = 1 / (1 + 0.136 * (jnp.exp(-11.95 * (theta-0.136))))
 		pl = pr_loss * pl_loss + (1 - pr_loss) * pl_nloss
 		
 		self.channel_gain = 1/(10**(pl/10))
@@ -177,6 +180,36 @@ class AoiUser:
 			Coordinates of the user
 		"""
 		return self.coordinates
+
+	def calculate_distance(self, node: Node)->None:
+		"""
+		Calculate the distance of the user from the node
+  
+		Parameters:
+			node : Node
+  		"""
+		self.distance = jnp.sqrt((node.get_coordinates()[0] - self.coordinates[0])**2 + (node.get_coordinates()[1] - self.coordinates[1])**2 + (node.get_coordinates()[2] - self.coordinates[2])**2)
+  
+	def get_distance(self)->float:
+		"""
+		Get the distance of the user from the node
+		
+		Returns:
+		float
+			Distance of the user from the node
+		"""
+		return self.distance
+
+	def set_distance(self, distance: float)->None:
+		"""
+		Set the distance of the user from the node
+		
+		Parameters:
+		distance : float
+			Distance of the user from the node
+		"""
+		self.distance = distance
+  
 	
 	def set_user_strategy(self, strategy: float)->None:
 		"""
@@ -320,12 +353,6 @@ class AoiUser:
 		self.current_consumed_energy = ((self.get_user_strategy() * self.get_user_bits()) / (data_rate)) * self.get_transmit_power()
 		#logging.info("User %d has Current consumed energy %f", self.get_user_id(), self.current_consumed_energy)
 		
-	def calculate_total_consumed_energy(self)->float:
-		"""
-		Calculate the total consumed energy of the user during the offloading process
-		"""
-		return ((self.get_user_bits())/(self.get_current_data_rate()+1)) * self.get_transmit_power()
-		
 	def calculate_total_overhead(self, T: float)->None:
 		"""
 		Calculate the total overhead of the user during the offloading process over a period T
@@ -443,7 +470,7 @@ class AoiUser:
 			#overflow_avoidance_factor = 1e-60
 			
 			# Set the weight for the x/sum(other_strategies) term
-			w_s = 3
+			w_s = 0.01
 			
 			#Clip total overhead to avoid numerical issues
 			self.current_total_overhead = np.clip(self.current_total_overhead, 3, 50)

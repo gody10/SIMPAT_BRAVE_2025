@@ -303,6 +303,8 @@ user_total_overhead = user_data_dict["User Total Overhead"]
 user_consumed_energy = user_data_dict["User Consumed Energy"]
 user_utility = user_data_dict["User Utility"]
 user_distance_from_node = user_data_dict["User Distance from Node"]
+user_channel_gain = user_data_dict["User Channel Gain"]
+user_data_rate = user_data_dict["User Data Rate"]
 
 user_time_overhead_temp = []
 for time_overhead in user_time_overhead:
@@ -378,6 +380,72 @@ plt.yticks(fontsize=20, fontweight='bold')
 
 # Save the figure
 plt.savefig(os.path.join(folder_for_pure_game, "user_total_bits.png"), bbox_inches='tight')
+
+# Show the plot
+#plt.show()
+
+# Create the figure for user channel gain
+plt.figure(figsize=(12, 8))
+
+# Plot the channel gain of each user
+plt.bar(user_ids, user_channel_gain, color='green', label='Channel Gain')
+
+# Add a legend to the plot
+plt.legend(fontsize=20, loc='upper left')
+
+# Add a grid behind the bars
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+# Set the x-axis label
+plt.xlabel('User IDs', fontsize=25, fontweight='bold')
+
+# Set the y-axis label
+plt.ylabel('Channel Gain', fontsize=25, fontweight='bold')
+
+# Set the plot title
+plt.title('User Channel Gain', fontsize=32, fontweight='bold')
+
+# Set the x-ticks
+plt.xticks(fontsize=20, fontweight='bold')
+
+# Set the y-ticks
+plt.yticks(fontsize=20, fontweight='bold')
+
+# Save the figure
+plt.savefig(os.path.join(folder_for_pure_game, "user_channel_gain.png"), bbox_inches='tight')
+
+# Show the plot
+#plt.show()
+
+# Create the figure for user data rate
+plt.figure(figsize=(12, 8))
+
+# Plot the data rate of each user
+plt.bar(user_ids, user_data_rate, color='orange', label='Data Rate')
+
+# Add a legend to the plot
+plt.legend(fontsize=20, loc='upper left')
+
+# Add a grid behind the bars
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+# Set the x-axis label
+plt.xlabel('User IDs', fontsize=25, fontweight='bold')
+
+# Set the y-axis label
+plt.ylabel('Data Rate', fontsize=25, fontweight='bold')
+
+# Set the plot title
+plt.title('User Data Rate', fontsize=32, fontweight='bold')
+
+# Set the x-ticks
+plt.xticks(fontsize=20, fontweight='bold')
+
+# Set the y-ticks
+plt.yticks(fontsize=20, fontweight='bold')
+
+# Save the figure
+plt.savefig(os.path.join(folder_for_pure_game, "user_data_rate.png"), bbox_inches='tight')
 
 # Show the plot
 #plt.show()

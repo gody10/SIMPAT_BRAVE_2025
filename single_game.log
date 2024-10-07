@@ -1,14 +1,274 @@
-2024-10-06 16:51:54,007 - INFO - Unable to initialize backend 'cuda': 
-2024-10-06 16:51:54,007 - INFO - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
-2024-10-06 16:51:54,009 - INFO - Unable to initialize backend 'tpu': UNIMPLEMENTED: LoadPjrtPlugin is not implemented on windows yet.
-2024-10-06 16:51:54,811 - INFO - Number of Nodes: 1
-2024-10-06 16:51:54,811 - INFO - Number of Edges: 0
-2024-10-06 16:51:54,811 - INFO - Number of Users: 130
-2024-10-06 16:51:54,811 - INFO - Running a Single Submodular Game
-2024-10-06 16:51:59,768 - INFO - Energy level is now: [19799562.] and the energy wasted to process the data is: [437.2897]
-2024-10-06 16:51:59,806 - INFO - Energy level is now: [19799130.] and the energy wasted to hover over the node is: 432.99199999999996
-2024-10-06 16:51:59,806 - INFO - The UAV has finished its business in the current node
-2024-10-06 16:51:59,806 - INFO - The strategies at node 0 have converged to: [0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001
+2024-10-07 16:59:52,998 - INFO - Unable to initialize backend 'cuda': 
+2024-10-07 16:59:52,998 - INFO - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+2024-10-07 16:59:52,998 - INFO - Unable to initialize backend 'tpu': UNIMPLEMENTED: LoadPjrtPlugin is not implemented on windows yet.
+2024-10-07 16:59:53,697 - INFO - Number of Nodes: 1
+2024-10-07 16:59:53,697 - INFO - Number of Edges: 0
+2024-10-07 16:59:53,697 - INFO - Number of Users: 130
+2024-10-07 16:59:53,697 - INFO - Running a Single Submodular Game
+2024-10-07 16:59:53,734 - INFO - Distance between User 0 and UAV is 6.000000
+2024-10-07 16:59:53,883 - INFO - Distance between User 1 and UAV is 5.923385
+2024-10-07 16:59:53,887 - INFO - Distance between User 2 and UAV is 5.847305
+2024-10-07 16:59:53,887 - INFO - Distance between User 3 and UAV is 5.771884
+2024-10-07 16:59:53,887 - INFO - Distance between User 4 and UAV is 5.697007
+2024-10-07 16:59:53,887 - INFO - Distance between User 5 and UAV is 5.622734
+2024-10-07 16:59:53,887 - INFO - Distance between User 6 and UAV is 5.549028
+2024-10-07 16:59:53,887 - INFO - Distance between User 7 and UAV is 5.475986
+2024-10-07 16:59:53,887 - INFO - Distance between User 8 and UAV is 5.403557
+2024-10-07 16:59:53,887 - INFO - Distance between User 9 and UAV is 5.331590
+2024-10-07 16:59:53,899 - INFO - Distance between User 10 and UAV is 5.260355
+2024-10-07 16:59:53,901 - INFO - Distance between User 11 and UAV is 5.189566
+2024-10-07 16:59:53,902 - INFO - Distance between User 12 and UAV is 5.119503
+2024-10-07 16:59:53,903 - INFO - Distance between User 13 and UAV is 5.049983
+2024-10-07 16:59:53,905 - INFO - Distance between User 14 and UAV is 4.981031
+2024-10-07 16:59:53,906 - INFO - Distance between User 15 and UAV is 4.912713
+2024-10-07 16:59:53,908 - INFO - Distance between User 16 and UAV is 4.844932
+2024-10-07 16:59:53,909 - INFO - Distance between User 17 and UAV is 4.777785
+2024-10-07 16:59:53,910 - INFO - Distance between User 18 and UAV is 4.711205
+2024-10-07 16:59:53,912 - INFO - Distance between User 19 and UAV is 4.645231
+2024-10-07 16:59:53,913 - INFO - Distance between User 20 and UAV is 4.579823
+2024-10-07 16:59:53,915 - INFO - Distance between User 21 and UAV is 4.515057
+2024-10-07 16:59:53,916 - INFO - Distance between User 22 and UAV is 4.450820
+2024-10-07 16:59:53,916 - INFO - Distance between User 23 and UAV is 4.387226
+2024-10-07 16:59:53,916 - INFO - Distance between User 24 and UAV is 4.324198
+2024-10-07 16:59:53,916 - INFO - Distance between User 25 and UAV is 4.261798
+2024-10-07 16:59:53,916 - INFO - Distance between User 26 and UAV is 4.199942
+2024-10-07 16:59:53,916 - INFO - Distance between User 27 and UAV is 4.138622
+2024-10-07 16:59:53,916 - INFO - Distance between User 28 and UAV is 4.078035
+2024-10-07 16:59:53,916 - INFO - Distance between User 29 and UAV is 4.017917
+2024-10-07 16:59:53,916 - INFO - Distance between User 30 and UAV is 3.958509
+2024-10-07 16:59:53,916 - INFO - Distance between User 31 and UAV is 3.899563
+2024-10-07 16:59:53,916 - INFO - Distance between User 32 and UAV is 3.841251
+2024-10-07 16:59:53,916 - INFO - Distance between User 33 and UAV is 3.783611
+2024-10-07 16:59:53,932 - INFO - Distance between User 34 and UAV is 3.726471
+2024-10-07 16:59:53,932 - INFO - Distance between User 35 and UAV is 3.670003
+2024-10-07 16:59:53,932 - INFO - Distance between User 36 and UAV is 3.614041
+2024-10-07 16:59:53,932 - INFO - Distance between User 37 and UAV is 3.558775
+2024-10-07 16:59:53,932 - INFO - Distance between User 38 and UAV is 3.504015
+2024-10-07 16:59:53,932 - INFO - Distance between User 39 and UAV is 3.449890
+2024-10-07 16:59:53,932 - INFO - Distance between User 40 and UAV is 3.396332
+2024-10-07 16:59:53,932 - INFO - Distance between User 41 and UAV is 3.343310
+2024-10-07 16:59:53,932 - INFO - Distance between User 42 and UAV is 3.291028
+2024-10-07 16:59:53,932 - INFO - Distance between User 43 and UAV is 3.239178
+2024-10-07 16:59:53,932 - INFO - Distance between User 44 and UAV is 3.187970
+2024-10-07 16:59:53,948 - INFO - Distance between User 45 and UAV is 3.137420
+2024-10-07 16:59:53,949 - INFO - Distance between User 46 and UAV is 3.087413
+2024-10-07 16:59:53,950 - INFO - Distance between User 47 and UAV is 3.038041
+2024-10-07 16:59:53,950 - INFO - Distance between User 48 and UAV is 2.989206
+2024-10-07 16:59:53,950 - INFO - Distance between User 49 and UAV is 2.941006
+2024-10-07 16:59:53,950 - INFO - Distance between User 50 and UAV is 2.893373
+2024-10-07 16:59:53,950 - INFO - Distance between User 51 and UAV is 2.846246
+2024-10-07 16:59:53,950 - INFO - Distance between User 52 and UAV is 2.799784
+2024-10-07 16:59:53,950 - INFO - Distance between User 53 and UAV is 2.753963
+2024-10-07 16:59:53,950 - INFO - Distance between User 54 and UAV is 2.708703
+2024-10-07 16:59:53,950 - INFO - Distance between User 55 and UAV is 2.664055
+2024-10-07 16:59:53,950 - INFO - Distance between User 56 and UAV is 2.619966
+2024-10-07 16:59:53,950 - INFO - Distance between User 57 and UAV is 2.576421
+2024-10-07 16:59:53,966 - INFO - Distance between User 58 and UAV is 2.533511
+2024-10-07 16:59:53,966 - INFO - Distance between User 59 and UAV is 2.491235
+2024-10-07 16:59:53,966 - INFO - Distance between User 60 and UAV is 2.449527
+2024-10-07 16:59:53,966 - INFO - Distance between User 61 and UAV is 2.408422
+2024-10-07 16:59:53,966 - INFO - Distance between User 62 and UAV is 2.367885
+2024-10-07 16:59:53,966 - INFO - Distance between User 63 and UAV is 2.327885
+2024-10-07 16:59:53,966 - INFO - Distance between User 64 and UAV is 2.288527
+2024-10-07 16:59:53,966 - INFO - Distance between User 65 and UAV is 2.249826
+2024-10-07 16:59:53,966 - INFO - Distance between User 66 and UAV is 2.211639
+2024-10-07 16:59:53,966 - INFO - Distance between User 67 and UAV is 2.174011
+2024-10-07 16:59:53,966 - INFO - Distance between User 68 and UAV is 2.137026
+2024-10-07 16:59:53,966 - INFO - Distance between User 69 and UAV is 2.100676
+2024-10-07 16:59:53,982 - INFO - Distance between User 70 and UAV is 2.064892
+2024-10-07 16:59:53,983 - INFO - Distance between User 71 and UAV is 2.029614
+2024-10-07 16:59:53,983 - INFO - Distance between User 72 and UAV is 1.995002
+2024-10-07 16:59:53,983 - INFO - Distance between User 73 and UAV is 1.961025
+2024-10-07 16:59:53,987 - INFO - Distance between User 74 and UAV is 1.927584
+2024-10-07 16:59:53,987 - INFO - Distance between User 75 and UAV is 1.894687
+2024-10-07 16:59:53,987 - INFO - Distance between User 76 and UAV is 1.862448
+2024-10-07 16:59:53,987 - INFO - Distance between User 77 and UAV is 1.830851
+2024-10-07 16:59:53,987 - INFO - Distance between User 78 and UAV is 1.799790
+2024-10-07 16:59:53,987 - INFO - Distance between User 79 and UAV is 1.769259
+2024-10-07 16:59:53,987 - INFO - Distance between User 80 and UAV is 1.739370
+2024-10-07 16:59:53,987 - INFO - Distance between User 81 and UAV is 1.710146
+2024-10-07 16:59:53,998 - INFO - Distance between User 82 and UAV is 1.681428
+2024-10-07 16:59:53,999 - INFO - Distance between User 83 and UAV is 1.653278
+2024-10-07 16:59:53,999 - INFO - Distance between User 84 and UAV is 1.625762
+2024-10-07 16:59:53,999 - INFO - Distance between User 85 and UAV is 1.598888
+2024-10-07 16:59:53,999 - INFO - Distance between User 86 and UAV is 1.572574
+2024-10-07 16:59:53,999 - INFO - Distance between User 87 and UAV is 1.546803
+2024-10-07 16:59:53,999 - INFO - Distance between User 88 and UAV is 1.521630
+2024-10-07 16:59:53,999 - INFO - Distance between User 89 and UAV is 1.497031
+2024-10-07 16:59:53,999 - INFO - Distance between User 90 and UAV is 1.473097
+2024-10-07 16:59:53,999 - INFO - Distance between User 91 and UAV is 1.449768
+2024-10-07 16:59:53,999 - INFO - Distance between User 92 and UAV is 1.427005
+2024-10-07 16:59:53,999 - INFO - Distance between User 93 and UAV is 1.404749
+2024-10-07 16:59:54,015 - INFO - Distance between User 94 and UAV is 1.383158
+2024-10-07 16:59:54,016 - INFO - Distance between User 95 and UAV is 1.362232
+2024-10-07 16:59:54,016 - INFO - Distance between User 96 and UAV is 1.341714
+2024-10-07 16:59:54,016 - INFO - Distance between User 97 and UAV is 1.321967
+2024-10-07 16:59:54,016 - INFO - Distance between User 98 and UAV is 1.302719
+2024-10-07 16:59:54,016 - INFO - Distance between User 99 and UAV is 1.284045
+2024-10-07 16:59:54,016 - INFO - Distance between User 100 and UAV is 1.265998
+2024-10-07 16:59:54,016 - INFO - Distance between User 101 and UAV is 1.248526
+2024-10-07 16:59:54,016 - INFO - Distance between User 102 and UAV is 1.231658
+2024-10-07 16:59:54,016 - INFO - Distance between User 103 and UAV is 1.215455
+2024-10-07 16:59:54,016 - INFO - Distance between User 104 and UAV is 1.199690
+2024-10-07 16:59:54,016 - INFO - Distance between User 105 and UAV is 1.184659
+2024-10-07 16:59:54,016 - INFO - Distance between User 106 and UAV is 1.170171
+2024-10-07 16:59:54,033 - INFO - Distance between User 107 and UAV is 1.156243
+2024-10-07 16:59:54,033 - INFO - Distance between User 108 and UAV is 1.142920
+2024-10-07 16:59:54,033 - INFO - Distance between User 109 and UAV is 1.130171
+2024-10-07 16:59:54,033 - INFO - Distance between User 110 and UAV is 1.118049
+2024-10-07 16:59:54,033 - INFO - Distance between User 111 and UAV is 1.106502
+2024-10-07 16:59:54,033 - INFO - Distance between User 112 and UAV is 1.095559
+2024-10-07 16:59:54,033 - INFO - Distance between User 113 and UAV is 1.085281
+2024-10-07 16:59:54,033 - INFO - Distance between User 114 and UAV is 1.075441
+2024-10-07 16:59:54,033 - INFO - Distance between User 115 and UAV is 1.066335
+2024-10-07 16:59:54,033 - INFO - Distance between User 116 and UAV is 1.057765
+2024-10-07 16:59:54,033 - INFO - Distance between User 117 and UAV is 1.049731
+2024-10-07 16:59:54,033 - INFO - Distance between User 118 and UAV is 1.042370
+2024-10-07 16:59:54,049 - INFO - Distance between User 119 and UAV is 1.035539
+2024-10-07 16:59:54,049 - INFO - Distance between User 120 and UAV is 1.029350
+2024-10-07 16:59:54,049 - INFO - Distance between User 121 and UAV is 1.023689
+2024-10-07 16:59:54,049 - INFO - Distance between User 122 and UAV is 1.018671
+2024-10-07 16:59:54,049 - INFO - Distance between User 123 and UAV is 1.014220
+2024-10-07 16:59:54,049 - INFO - Distance between User 124 and UAV is 1.010374
+2024-10-07 16:59:54,049 - INFO - Distance between User 125 and UAV is 1.007094
+2024-10-07 16:59:54,049 - INFO - Distance between User 126 and UAV is 1.004480
+2024-10-07 16:59:54,049 - INFO - Distance between User 127 and UAV is 1.002370
+2024-10-07 16:59:54,049 - INFO - Distance between User 128 and UAV is 1.000902
+2024-10-07 16:59:54,049 - INFO - Distance between User 129 and UAV is 1.000000
+2024-10-07 16:59:54,087 - INFO - Distance between User 0 and UAV is 6.000000
+2024-10-07 16:59:54,182 - INFO - Distance between User 1 and UAV is 5.923385
+2024-10-07 16:59:54,215 - INFO - Distance between User 2 and UAV is 5.847305
+2024-10-07 16:59:54,245 - INFO - Distance between User 3 and UAV is 5.771884
+2024-10-07 16:59:54,272 - INFO - Distance between User 4 and UAV is 5.697007
+2024-10-07 16:59:54,299 - INFO - Distance between User 5 and UAV is 5.622734
+2024-10-07 16:59:54,326 - INFO - Distance between User 6 and UAV is 5.549028
+2024-10-07 16:59:54,354 - INFO - Distance between User 7 and UAV is 5.475986
+2024-10-07 16:59:54,380 - INFO - Distance between User 8 and UAV is 5.403557
+2024-10-07 16:59:54,409 - INFO - Distance between User 9 and UAV is 5.331590
+2024-10-07 16:59:54,436 - INFO - Distance between User 10 and UAV is 5.260355
+2024-10-07 16:59:54,463 - INFO - Distance between User 11 and UAV is 5.189566
+2024-10-07 16:59:54,488 - INFO - Distance between User 12 and UAV is 5.119503
+2024-10-07 16:59:54,514 - INFO - Distance between User 13 and UAV is 5.049983
+2024-10-07 16:59:54,544 - INFO - Distance between User 14 and UAV is 4.981031
+2024-10-07 16:59:54,573 - INFO - Distance between User 15 and UAV is 4.912713
+2024-10-07 16:59:54,601 - INFO - Distance between User 16 and UAV is 4.844932
+2024-10-07 16:59:54,629 - INFO - Distance between User 17 and UAV is 4.777785
+2024-10-07 16:59:54,658 - INFO - Distance between User 18 and UAV is 4.711205
+2024-10-07 16:59:54,686 - INFO - Distance between User 19 and UAV is 4.645231
+2024-10-07 16:59:54,716 - INFO - Distance between User 20 and UAV is 4.579823
+2024-10-07 16:59:54,745 - INFO - Distance between User 21 and UAV is 4.515057
+2024-10-07 16:59:54,772 - INFO - Distance between User 22 and UAV is 4.450820
+2024-10-07 16:59:54,800 - INFO - Distance between User 23 and UAV is 4.387226
+2024-10-07 16:59:54,826 - INFO - Distance between User 24 and UAV is 4.324198
+2024-10-07 16:59:54,856 - INFO - Distance between User 25 and UAV is 4.261798
+2024-10-07 16:59:54,885 - INFO - Distance between User 26 and UAV is 4.199942
+2024-10-07 16:59:54,917 - INFO - Distance between User 27 and UAV is 4.138622
+2024-10-07 16:59:54,960 - INFO - Distance between User 28 and UAV is 4.078035
+2024-10-07 16:59:54,989 - INFO - Distance between User 29 and UAV is 4.017917
+2024-10-07 16:59:55,017 - INFO - Distance between User 30 and UAV is 3.958509
+2024-10-07 16:59:55,046 - INFO - Distance between User 31 and UAV is 3.899563
+2024-10-07 16:59:55,074 - INFO - Distance between User 32 and UAV is 3.841251
+2024-10-07 16:59:55,101 - INFO - Distance between User 33 and UAV is 3.783611
+2024-10-07 16:59:55,117 - INFO - Distance between User 34 and UAV is 3.726471
+2024-10-07 16:59:55,159 - INFO - Distance between User 35 and UAV is 3.670003
+2024-10-07 16:59:55,183 - INFO - Distance between User 36 and UAV is 3.614041
+2024-10-07 16:59:55,219 - INFO - Distance between User 37 and UAV is 3.558775
+2024-10-07 16:59:55,247 - INFO - Distance between User 38 and UAV is 3.504015
+2024-10-07 16:59:55,275 - INFO - Distance between User 39 and UAV is 3.449890
+2024-10-07 16:59:55,304 - INFO - Distance between User 40 and UAV is 3.396332
+2024-10-07 16:59:55,332 - INFO - Distance between User 41 and UAV is 3.343310
+2024-10-07 16:59:55,359 - INFO - Distance between User 42 and UAV is 3.291028
+2024-10-07 16:59:55,382 - INFO - Distance between User 43 and UAV is 3.239178
+2024-10-07 16:59:55,398 - INFO - Distance between User 44 and UAV is 3.187970
+2024-10-07 16:59:55,440 - INFO - Distance between User 45 and UAV is 3.137420
+2024-10-07 16:59:55,468 - INFO - Distance between User 46 and UAV is 3.087413
+2024-10-07 16:59:55,496 - INFO - Distance between User 47 and UAV is 3.038041
+2024-10-07 16:59:55,523 - INFO - Distance between User 48 and UAV is 2.989206
+2024-10-07 16:59:55,551 - INFO - Distance between User 49 and UAV is 2.941006
+2024-10-07 16:59:55,579 - INFO - Distance between User 50 and UAV is 2.893373
+2024-10-07 16:59:55,608 - INFO - Distance between User 51 and UAV is 2.846246
+2024-10-07 16:59:55,639 - INFO - Distance between User 52 and UAV is 2.799784
+2024-10-07 16:59:55,668 - INFO - Distance between User 53 and UAV is 2.753963
+2024-10-07 16:59:55,691 - INFO - Distance between User 54 and UAV is 2.708703
+2024-10-07 16:59:55,725 - INFO - Distance between User 55 and UAV is 2.664055
+2024-10-07 16:59:55,753 - INFO - Distance between User 56 and UAV is 2.619966
+2024-10-07 16:59:55,780 - INFO - Distance between User 57 and UAV is 2.576421
+2024-10-07 16:59:55,807 - INFO - Distance between User 58 and UAV is 2.533511
+2024-10-07 16:59:55,836 - INFO - Distance between User 59 and UAV is 2.491235
+2024-10-07 16:59:55,863 - INFO - Distance between User 60 and UAV is 2.449527
+2024-10-07 16:59:55,892 - INFO - Distance between User 61 and UAV is 2.408422
+2024-10-07 16:59:55,921 - INFO - Distance between User 62 and UAV is 2.367885
+2024-10-07 16:59:55,949 - INFO - Distance between User 63 and UAV is 2.327885
+2024-10-07 16:59:55,967 - INFO - Distance between User 64 and UAV is 2.288527
+2024-10-07 16:59:55,983 - INFO - Distance between User 65 and UAV is 2.249826
+2024-10-07 16:59:55,993 - INFO - Distance between User 66 and UAV is 2.211639
+2024-10-07 16:59:55,993 - INFO - Distance between User 67 and UAV is 2.174011
+2024-10-07 16:59:56,009 - INFO - Distance between User 68 and UAV is 2.137026
+2024-10-07 16:59:56,009 - INFO - Distance between User 69 and UAV is 2.100676
+2024-10-07 16:59:56,025 - INFO - Distance between User 70 and UAV is 2.064892
+2024-10-07 16:59:56,040 - INFO - Distance between User 71 and UAV is 2.029614
+2024-10-07 16:59:56,050 - INFO - Distance between User 72 and UAV is 1.995002
+2024-10-07 16:59:56,059 - INFO - Distance between User 73 and UAV is 1.961025
+2024-10-07 16:59:56,068 - INFO - Distance between User 74 and UAV is 1.927584
+2024-10-07 16:59:56,068 - INFO - Distance between User 75 and UAV is 1.894687
+2024-10-07 16:59:56,090 - INFO - Distance between User 76 and UAV is 1.862448
+2024-10-07 16:59:56,100 - INFO - Distance between User 77 and UAV is 1.830851
+2024-10-07 16:59:56,109 - INFO - Distance between User 78 and UAV is 1.799790
+2024-10-07 16:59:56,118 - INFO - Distance between User 79 and UAV is 1.769259
+2024-10-07 16:59:56,121 - INFO - Distance between User 80 and UAV is 1.739370
+2024-10-07 16:59:56,138 - INFO - Distance between User 81 and UAV is 1.710146
+2024-10-07 16:59:56,147 - INFO - Distance between User 82 and UAV is 1.681428
+2024-10-07 16:59:56,157 - INFO - Distance between User 83 and UAV is 1.653278
+2024-10-07 16:59:56,166 - INFO - Distance between User 84 and UAV is 1.625762
+2024-10-07 16:59:56,176 - INFO - Distance between User 85 and UAV is 1.598888
+2024-10-07 16:59:56,188 - INFO - Distance between User 86 and UAV is 1.572574
+2024-10-07 16:59:56,199 - INFO - Distance between User 87 and UAV is 1.546803
+2024-10-07 16:59:56,210 - INFO - Distance between User 88 and UAV is 1.521630
+2024-10-07 16:59:56,221 - INFO - Distance between User 89 and UAV is 1.497031
+2024-10-07 16:59:56,230 - INFO - Distance between User 90 and UAV is 1.473097
+2024-10-07 16:59:56,240 - INFO - Distance between User 91 and UAV is 1.449768
+2024-10-07 16:59:56,249 - INFO - Distance between User 92 and UAV is 1.427005
+2024-10-07 16:59:56,251 - INFO - Distance between User 93 and UAV is 1.404749
+2024-10-07 16:59:56,268 - INFO - Distance between User 94 and UAV is 1.383158
+2024-10-07 16:59:56,277 - INFO - Distance between User 95 and UAV is 1.362232
+2024-10-07 16:59:56,286 - INFO - Distance between User 96 and UAV is 1.341714
+2024-10-07 16:59:56,295 - INFO - Distance between User 97 and UAV is 1.321967
+2024-10-07 16:59:56,304 - INFO - Distance between User 98 and UAV is 1.302719
+2024-10-07 16:59:56,313 - INFO - Distance between User 99 and UAV is 1.284045
+2024-10-07 16:59:56,321 - INFO - Distance between User 100 and UAV is 1.265998
+2024-10-07 16:59:56,334 - INFO - Distance between User 101 and UAV is 1.248526
+2024-10-07 16:59:56,344 - INFO - Distance between User 102 and UAV is 1.231658
+2024-10-07 16:59:56,353 - INFO - Distance between User 103 and UAV is 1.215455
+2024-10-07 16:59:56,355 - INFO - Distance between User 104 and UAV is 1.199690
+2024-10-07 16:59:56,373 - INFO - Distance between User 105 and UAV is 1.184659
+2024-10-07 16:59:56,382 - INFO - Distance between User 106 and UAV is 1.170171
+2024-10-07 16:59:56,391 - INFO - Distance between User 107 and UAV is 1.156243
+2024-10-07 16:59:56,401 - INFO - Distance between User 108 and UAV is 1.142920
+2024-10-07 16:59:56,411 - INFO - Distance between User 109 and UAV is 1.130171
+2024-10-07 16:59:56,421 - INFO - Distance between User 110 and UAV is 1.118049
+2024-10-07 16:59:56,430 - INFO - Distance between User 111 and UAV is 1.106502
+2024-10-07 16:59:56,440 - INFO - Distance between User 112 and UAV is 1.095559
+2024-10-07 16:59:56,450 - INFO - Distance between User 113 and UAV is 1.085281
+2024-10-07 16:59:56,462 - INFO - Distance between User 114 and UAV is 1.075441
+2024-10-07 16:59:56,470 - INFO - Distance between User 115 and UAV is 1.066335
+2024-10-07 16:59:56,489 - INFO - Distance between User 116 and UAV is 1.057765
+2024-10-07 16:59:56,498 - INFO - Distance between User 117 and UAV is 1.049731
+2024-10-07 16:59:56,507 - INFO - Distance between User 118 and UAV is 1.042370
+2024-10-07 16:59:56,518 - INFO - Distance between User 119 and UAV is 1.035539
+2024-10-07 16:59:56,524 - INFO - Distance between User 120 and UAV is 1.029350
+2024-10-07 16:59:56,537 - INFO - Distance between User 121 and UAV is 1.023689
+2024-10-07 16:59:56,546 - INFO - Distance between User 122 and UAV is 1.018671
+2024-10-07 16:59:56,556 - INFO - Distance between User 123 and UAV is 1.014220
+2024-10-07 16:59:56,565 - INFO - Distance between User 124 and UAV is 1.010374
+2024-10-07 16:59:56,574 - INFO - Distance between User 125 and UAV is 1.007094
+2024-10-07 16:59:56,583 - INFO - Distance between User 126 and UAV is 1.004480
+2024-10-07 16:59:56,593 - INFO - Distance between User 127 and UAV is 1.002370
+2024-10-07 16:59:56,603 - INFO - Distance between User 128 and UAV is 1.000902
+2024-10-07 16:59:56,613 - INFO - Distance between User 129 and UAV is 1.000000
+2024-10-07 16:59:56,668 - INFO - Energy level is now: [19799962.] and the energy wasted to process the data is: [38.844627]
+2024-10-07 16:59:56,693 - INFO - Energy level is now: [19799530.] and the energy wasted to hover over the node is: 432.99199999999996
+2024-10-07 16:59:56,693 - INFO - The UAV has finished its business in the current node
+2024-10-07 16:59:56,693 - INFO - The strategies at node 0 have converged to: [0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001
  0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001
  0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001
  0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001
@@ -18,6 +278,6 @@
  0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001
  0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001
  0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001
- 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 1.   ]
-2024-10-06 16:51:59,807 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-06 16:51:59,807 - INFO - Converged with strategy difference: 0.0 in 3 iterations
+ 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001]
+2024-10-07 16:59:56,693 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-07 16:59:56,693 - INFO - Converged with strategy difference: 0.0 in 2 iterations

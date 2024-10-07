@@ -349,31 +349,46 @@ class Algorithms:
 				x = r * jnp.sin(phi) * jnp.cos(theta)
 				y = r * jnp.sin(phi) * jnp.sin(theta)
 				z = r * jnp.cos(phi)
-				
+    
 				# User coordinates relative to the node center
 				user_coords = (node_coords[0] + x, node_coords[1] + y, node_coords[2] + z)
-				
+    
 				# Amplified differences in data bits
 				#data_in_bits = base_data_in_bits + j * (data_step / number_of_users[number_of_nodes])
 				#Smoothed data bits using a square root-based increase
 				data_in_bits = min_bits + bit_range * (j / number_of_users[number_of_nodes])**0.5  # Square root-based smooth increase
 				
-				users.append(AoiUser(
+				user = AoiUser(
 					user_id=j,
 					data_in_bits=data_in_bits,
-					transmit_power=5,
-					energy_level=4000000,
+					transmit_power=1,
+					energy_level=4000,
 					task_intensity=1,
-					carrier_frequency=2,
+					carrier_frequency=5,
 					coordinates=user_coords
-				))
+				)
+    
+				users.append(user)
 			
 			nodes.append(Node(
 				node_id=i,
 				users=users,
 				coordinates=node_coords
 			))
-			
+   
+		# Calculate the distance between all users and the UAV
+		for node in nodes:
+			node_distances = []
+			for user in node.get_user_list():
+				user.calculate_distance(node)
+				node_distances.append(user.get_distance())
+			# Scale the distances to be between 100 and 1000
+			max_distance = max(node_distances)
+			min_distance = min(node_distances)
+			distance_range = max_distance - min_distance
+			for user in node.get_user_list():
+				user.set_distance(1 + 5 * (user.get_distance() - min_distance) / distance_range)
+   
 		# Create edges between all nodes with random weights
 		edges = []
 		for i in range(number_of_nodes):

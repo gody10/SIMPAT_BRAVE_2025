@@ -21,11 +21,11 @@ N = 1
 # Generate random user number for each node
 U = random.randint(key, (N,), 50, 250)
 NODE_RADIUS = 2
-MIN_DISTANCE_BETWEEN_NODES = 20  # Minimum distance to maintain between nodes
+MIN_DISTANCE_BETWEEN_NODES = 100  # Minimum distance to maintain between nodes
 UAV_HEIGHT = 100
 CONVERGENCE_THRESHOLD = 1e-15
 UAV_ENERGY_CAPACITY = 19800000
-UAV_BANDWIDTH = 15
+UAV_BANDWIDTH = 2*(10**6)
 UAV_PROCESSING_CAPACITY = 1000
 UAV_CPU_FREQUENCY = 2
 UAV_VELOCITY = 1
@@ -56,19 +56,27 @@ data_dict["User Time Overhead"] = [user.get_current_time_overhead() for user in 
 data_dict["User Total Overhead"] = [user.get_current_total_overhead() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
 
 # Get consumed Energy of each user
-data_dict["User Consumed Energy"] = [(user.get_total_capacity() - user.get_current_consumed_energy()) for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
+data_dict["User Consumed Energy"] = [(user.get_current_consumed_energy()) for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
 
 # Get utility of each user 
 data_dict["User Utility"] = [user.get_user_utility() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
 
+# Get data rate of each user
+data_dict["User Data Rate"] = [user.get_current_data_rate() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
+
+# Get channel gain of each user
+data_dict["User Channel Gain"] = [user.get_channel_gain() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
+
 # Get the distance of each user from the Node
 distance_from_node = []
+d = []
 node = algorithm.get_graph().get_nodes()[0]
 for user in node.get_user_list():
 	dist = jnp.sqrt( (node.get_coordinates()[0] - user.get_coordinates()[0])**2 + (node.get_coordinates()[1] - user.get_coordinates()[1])**2 + 
 						(node.get_coordinates()[2] - user.get_coordinates()[2])**2)
 	distance_from_node.append(dist)
-data_dict["User Distance from Node"] = distance_from_node
+	d.append(user.get_distance())
+data_dict["User Distance from Node"] = d
 
 # Dump the data dictionary to a pickle file
 with open('user_data_dict.pkl', 'wb') as handle:
