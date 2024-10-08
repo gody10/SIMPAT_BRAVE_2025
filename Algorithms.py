@@ -290,7 +290,7 @@ class Algorithms:
 					   velocity= self.uav_velocity, uav_system_bandwidth= self.uav_bandwidth, cpu_frequency= self.uav_cpu_frequency, height= uav_height)
 		
 	def setup__singlular_experiment(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float, uav_energy_capacity: float, 
-                         uav_bandwidth: float, uav_processing_capacity: float, uav_cpu_frequency: float, uav_velocity: float)->None:
+                         uav_bandwidth: float, uav_processing_capacity: float, uav_cpu_frequency: float, uav_velocity: float, energy_level: float, min_bits: float, max_bits: float, distance_min: float, distance_max: float)->None:
 		"""
 		Setup the experiment
 		
@@ -325,8 +325,8 @@ class Algorithms:
 			# Generate random center coordinates for the node
 			node_coords = generate_node_coordinates(key, nodes, min_distance_between_nodes)
 
-			max_bits = 20000  # Maximum bits for the highest user ID 900000000
-			min_bits = 5000    # Minimum bits for the lowest user ID
+			max_bits = max_bits  # Maximum bits for the highest user ID 900000000
+			min_bits = min_bits    # Minimum bits for the lowest user ID
 			bit_range = max_bits - min_bits
 
 			#max_distance = 2  # Set maximum distance to 10
@@ -362,7 +362,7 @@ class Algorithms:
 					user_id=j,
 					data_in_bits=data_in_bits,
 					transmit_power=1,
-					energy_level=0.04,
+					energy_level=energy_level,
 					task_intensity=1,
 					carrier_frequency=5,
 					coordinates=user_coords
@@ -387,7 +387,7 @@ class Algorithms:
 			min_distance = min(node_distances)
 			distance_range = max_distance - min_distance
 			for user in node.get_user_list():
-				user.set_distance(1 + 5 * (user.get_distance() - min_distance) / distance_range)
+				user.set_distance(distance_min + distance_max * (user.get_distance() - min_distance) / distance_range)
 		# Create edges between all nodes with random weights
 		edges = []
 		for i in range(number_of_nodes):
@@ -416,7 +416,7 @@ class Algorithms:
 		self.setup_experiment(number_of_users= self.number_of_users, number_of_nodes= self.number_of_nodes, key= self.key, uav_height= self.uav_height, min_distance_between_nodes= self.min_distance_between_nodes, node_radius= self.node_radius,
 							  uav_energy_capacity= self.uav_energy_capacity, uav_bandwidth= self.uav_bandwidth, uav_processing_capacity= self.uav_processing_capacity, uav_cpu_frequency= self.uav_cpu_frequency, uav_velocity= self.uav_velocity)
 		
-	def run_single_submodular_game(self, solving_method: str)->None:
+	def run_single_submodular_game(self, solving_method: str, c: float, b: float)->None:
 		"""
 		Run a single submodular game
 		
@@ -458,9 +458,6 @@ class Algorithms:
 			user_transmit_powers = user_transmit_powers.at[idx].set(user.get_transmit_power())
 			user_data_in_bits = user_data_in_bits.at[idx].set(user.get_user_bits())
 			user.set_user_strategy(user_strategies[idx])
-			
-		c = 0.08
-		b = 0.4
 		
 		iteration_counter = 1
 		
