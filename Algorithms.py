@@ -325,8 +325,8 @@ class Algorithms:
 			# Generate random center coordinates for the node
 			node_coords = generate_node_coordinates(key, nodes, min_distance_between_nodes)
 
-			max_bits = 20000 # Maximum bits for the highest user ID 900000000
-			min_bits = 5000  # Minimum bits for the lowest user ID
+			max_bits = 20000  # Maximum bits for the highest user ID 900000000
+			min_bits = 5000    # Minimum bits for the lowest user ID
 			bit_range = max_bits - min_bits
 
 			#max_distance = 2  # Set maximum distance to 10
@@ -388,7 +388,6 @@ class Algorithms:
 			distance_range = max_distance - min_distance
 			for user in node.get_user_list():
 				user.set_distance(1 + 5 * (user.get_distance() - min_distance) / distance_range)
-   
 		# Create edges between all nodes with random weights
 		edges = []
 		for i in range(number_of_nodes):

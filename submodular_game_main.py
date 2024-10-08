@@ -3,6 +3,7 @@ from Algorithms import Algorithms
 import pickle
 import jax.numpy as jnp
 import logging
+from plot_graphs import plot_graphs
 
 # Setup logging
 logging.basicConfig(
@@ -50,10 +51,10 @@ convergence_history = algorithm.run_single_submodular_game(solving_method= "scip
 #print(convergence_history)
 
 # Get time overhead of each user
-data_dict["User Time Overhead"] = [user.get_current_time_overhead() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
+data_dict["User Time Overhead"] = [user.get_current_time_overhead()[0] for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
 
 # Get total overhead of each user
-data_dict["User Total Overhead"] = [user.get_current_total_overhead() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
+data_dict["User Total Overhead"] = [user.get_current_total_overhead()[0] for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
 
 # Get consumed Energy of each user
 data_dict["User Consumed Energy"] = [(user.get_current_consumed_energy()) for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
@@ -88,3 +89,6 @@ with open('user_data_dict.pkl', 'wb') as handle:
 # Dump the convergence history to a pickle file
 with open('convergence_history.pkl', 'wb') as handle:
 	pickle.dump(convergence_history, handle)
+ 
+# Plot the graphs
+plot_graphs()

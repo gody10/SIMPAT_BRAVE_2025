@@ -32,6 +32,7 @@ class AoiUser:
 		"""
 		self.user_id = user_id
 		self.data_in_bits = data_in_bits
+		self.total_bits = data_in_bits
 		self.transmit_power = transmit_power
 		self.channel_gain = 0
 		self.energy_level = energy_level
@@ -304,7 +305,7 @@ class AoiUser:
 		float
 			Data offloaded by the user
 		"""
-		return self.data_in_bits * self.current_strategy
+		return self.total_bits * self.current_strategy
 	
 	def get_current_total_overhead(self)->float:
 		"""
@@ -371,11 +372,11 @@ class AoiUser:
 		T : float
 			Time that that timeslot t lasted
 		"""
-		nominator = self.current_time_overhead/T
-		denominator = self.current_consumed_energy/(self.total_capacity)
+		term1 = self.get_current_time_overhead()/T
+		term2 = self.get_current_consumed_energy()/(self.total_capacity)
   
-		#logging.info("Nominator: %f, Denominator: %f", nominator, denominator)
-		self.current_total_overhead = nominator/denominator
+		logging.info("Term 1: %f, Term 2: %f", term1, term2)
+		self.current_total_overhead = term1 + term2
 		#logging.info("User %d has Current total overhead %f", self.get_user_id(), self.current_total_overhead)
 		
 	def play_submodular_game_cvxpy(self, other_people_strategies: list, c: float, b: float, uav_bandwidth: float, other_users_transmit_powers: list, other_users_channel_gains: list, 
@@ -486,8 +487,8 @@ class AoiUser:
 			#overflow_avoidance_factor = 1e-60
 			
 			# Set the weight for the x/sum(other_strategies) term
-			w_s = 30
-			w_o = 0.00001
+			w_s = 3
+			w_o = 0.000000000001
 			
 			#Clip total overhead to avoid numerical issues
 			#self.current_total_overhead = np.clip(self.current_total_overhead, 3, 50)
