@@ -67,6 +67,9 @@ data_dict["User Data Rate"] = [user.get_current_data_rate() for user in algorith
 # Get channel gain of each user
 data_dict["User Channel Gain"] = [user.get_channel_gain() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
 
+# Data offloaded by each user
+data_dict["User Data Offloaded"] = [user.get_data_offloaded() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
+
 # Get the distance of each user from the Node
 distance_from_node = []
 d = []

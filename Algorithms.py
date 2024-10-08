@@ -325,8 +325,8 @@ class Algorithms:
 			# Generate random center coordinates for the node
 			node_coords = generate_node_coordinates(key, nodes, min_distance_between_nodes)
 
-			max_bits = 2000 # Maximum bits for the highest user ID 900000000
-			min_bits = 500  # Minimum bits for the lowest user ID
+			max_bits = 20000 # Maximum bits for the highest user ID 900000000
+			min_bits = 5000  # Minimum bits for the lowest user ID
 			bit_range = max_bits - min_bits
 
 			#max_distance = 2  # Set maximum distance to 10
@@ -362,7 +362,7 @@ class Algorithms:
 					user_id=j,
 					data_in_bits=data_in_bits,
 					transmit_power=1,
-					energy_level=4000,
+					energy_level=0.04,
 					task_intensity=1,
 					carrier_frequency=5,
 					coordinates=user_coords
@@ -431,7 +431,7 @@ class Algorithms:
 		U = self.get_number_of_users()
 		key = self.get_key()
 		convergence_threshold = self.get_convergence_threshold()
-		T = 2
+		T = 3600
 		
 		# Start playing the game inside the current node
 		done = False

@@ -295,6 +295,16 @@ class AoiUser:
 			Current consumed energy of the user
 		"""
 		return self.current_consumed_energy
+
+	def get_data_offloaded(self)->float:
+		"""
+		Get the data offloaded by the user
+		
+		Returns:
+		float
+			Data offloaded by the user
+		"""
+		return self.data_in_bits * self.current_strategy
 	
 	def get_current_total_overhead(self)->float:
 		"""
@@ -361,7 +371,11 @@ class AoiUser:
 		T : float
 			Time that that timeslot t lasted
 		"""
-		self.current_total_overhead = (self.current_time_overhead/T) + (self.current_consumed_energy/(self.energy_level + 1))
+		nominator = self.current_time_overhead/T
+		denominator = self.current_consumed_energy/(self.total_capacity)
+  
+		#logging.info("Nominator: %f, Denominator: %f", nominator, denominator)
+		self.current_total_overhead = nominator/denominator
 		#logging.info("User %d has Current total overhead %f", self.get_user_id(), self.current_total_overhead)
 		
 	def play_submodular_game_cvxpy(self, other_people_strategies: list, c: float, b: float, uav_bandwidth: float, other_users_transmit_powers: list, other_users_channel_gains: list, 
@@ -431,7 +445,7 @@ class AoiUser:
 			List of the strategies of the other users
 		c : float
 		"""
-		
+  
 		# Calculate channel gain of the user
 		self.calculate_channel_gain(uav_coordinates= uav_coordinates, uav_height= uav_height)
 		#print("Channel Gain: ", self.get_channel_gain())
@@ -440,6 +454,9 @@ class AoiUser:
 		self.calculate_data_rate(uav_bandwidth, other_users_transmit_powers, other_users_channel_gains)
 		#print("Data Rate: ", self.get_current_data_rate())
 		
+		# Calculate the consumed energy of the user
+		self.calculate_consumed_energy()
+  
 		# Calculate the time overhead of the user
 		self.calculate_time_overhead(other_people_strategies, other_user_data_in_bits, uav_total_data_processing_capacity, uav_cpu_frequency)
 		#print("Time Overhead: ", self.get_current_time_overhead())
@@ -448,8 +465,7 @@ class AoiUser:
 		self.calculate_total_overhead(T)
 		#print(" Total Overhead: ", self.get_current_total_overhead())
 		
-		# Calculate the consumed energy of the user
-		self.calculate_consumed_energy()
+		
 		#print("Consumed Energy: ", self.get_current_consumed_energy())
 		
 		def constraint_positive(percentage_offloaded):
@@ -470,17 +486,18 @@ class AoiUser:
 			#overflow_avoidance_factor = 1e-60
 			
 			# Set the weight for the x/sum(other_strategies) term
-			w_s = 0.01
+			w_s = 30
+			w_o = 0.00001
 			
 			#Clip total overhead to avoid numerical issues
-			self.current_total_overhead = np.clip(self.current_total_overhead, 3, 50)
+			#self.current_total_overhead = np.clip(self.current_total_overhead, 3, 50)
 			
 			# Reshape to match expected shape (if necessary)
 			#percentage_offloaded = np.array(percentage_offloaded).reshape(-1, 1)
 			
 			# Calculate terms based on the provided expression
 			term1 = b * np.exp( w_s * (percentage_offloaded / np.sum(other_people_strategies)))
-			term2 = c * np.exp(self.get_current_total_overhead())
+			term2 = c * np.exp( w_o * self.get_current_total_overhead())
 			term2_clipped = np.clip(term2, 0, 1e6)  # Clip to avoid numerical issues
 			return -(term1 - term2_clipped)  # Negate for minimization
 
