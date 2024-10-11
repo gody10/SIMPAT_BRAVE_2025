@@ -58,6 +58,16 @@ class AoiUser:
 			Amount of data in bits of the user
 		"""
 		return self.data_in_bits
+
+	def get_total_bits(self)->float:
+		"""
+		Get the total amount of data in bits of the user
+		
+		Returns:
+		float
+			Total amount of data in bits of the user
+		"""
+		return self.total_bits
 	
 	def get_total_capacity(self)->float:
 		"""
@@ -361,7 +371,8 @@ class AoiUser:
 		Calculate the consumed energy of the user during the offloading process based on the current strategy
 		"""
 		data_rate = max(self.get_current_data_rate(), 1e-10)
-		self.current_consumed_energy = ((self.get_user_strategy() * self.get_user_bits()) / (data_rate)) * self.get_transmit_power()
+		self.current_consumed_energy = ((self.get_user_strategy() * self.get_total_bits()) / (data_rate)) * self.get_transmit_power()
+		self.current_consumed_energy = self.get_user_strategy() * self.get_total_bits()
 		#logging.info("User %d has Current consumed energy %f", self.get_user_id(), self.current_consumed_energy)
 		
 	def calculate_total_overhead(self, T: float)->None:
@@ -375,7 +386,7 @@ class AoiUser:
 		term1 = self.get_current_time_overhead()/T
 		term2 = self.get_current_consumed_energy()/(self.total_capacity)
   
-		logging.info("Term 1: %f, Term 2: %f", term1, term2)
+		#logging.info("Term 1: %f, Term 2: %f", term1, term2)
 		self.current_total_overhead = term1 + term2
 		#logging.info("User %d has Current total overhead %f", self.get_user_id(), self.current_total_overhead)
 		
@@ -409,8 +420,6 @@ class AoiUser:
 		self.calculate_total_overhead(T)
 		#print(" Total Overhead: ", self.get_current_total_overhead())
 		
-		# Calculate the consumed energy of the user
-		self.calculate_consumed_energy()
 		#print("Consumed Energy: ", self.get_current_consumed_energy())
 
 	   # Define your variable
@@ -433,6 +442,9 @@ class AoiUser:
 		
 		# Update user energy
 		self.set_user_strategy(percentage_offloaded.value)
+  
+		# Calculate the consumed energy of the user
+		self.calculate_consumed_energy()
 		
 		return (solution, percentage_offloaded.value)
 		

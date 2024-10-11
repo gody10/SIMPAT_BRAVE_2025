@@ -64,6 +64,8 @@ data_dict["User Time Overhead"] = [user.get_current_time_overhead()[0] for user 
 # Get total overhead of each user
 data_dict["User Total Overhead"] = [user.get_current_total_overhead()[0] for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
 
+logging.info("Consumed Energy of each user  : {}".format([user.get_current_consumed_energy() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]))
+
 # Get consumed Energy of each user
 data_dict["User Consumed Energy"] = [(user.get_current_consumed_energy()) for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
 

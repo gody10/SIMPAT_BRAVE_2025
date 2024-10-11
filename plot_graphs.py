@@ -528,7 +528,7 @@ def plot_graphs():
 	#user_time_overhead = [jnp.array([1000000000]) if time_overhead == float('inf') else time_overhead for time_overhead in user_time_overhead]
 
 	# Log scale for better visualization
-	#plt.yscale('log')
+	plt.yscale('log')
 
 	# Plot the time overhead of each user
 	plt.bar(user_ids, user_time_overhead, color='green', label='Time Overhead')
@@ -563,6 +563,9 @@ def plot_graphs():
 	# Create the figure for user total overhead
 	plt.figure(figsize=(12, 8))
 
+	# Apply log scale for better visualization
+	plt.yscale('log')
+
 	# Plot the total overhead of each user
 	plt.bar(user_ids, user_total_overhead, color='orange', label='Total Overhead')
 
@@ -595,6 +598,9 @@ def plot_graphs():
 
 	# Create the figure for user consumed energy
 	plt.figure(figsize=(12, 8))
+
+	# Apply log scale for better visualization
+	plt.yscale('log')
 
 	# Plot the consumed energy of each user
 	plt.bar(user_ids, user_consumed_energy, color='grey', label='Consumed Energy')
