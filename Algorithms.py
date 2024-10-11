@@ -336,10 +336,10 @@ class Algorithms:
 
 				data_step = 1000  # Amplify the data step size for bigger differences
 				base_data_in_bits = 1000  # Set a base value for data bits
-				data_in_bits = base_data_in_bits + j * (data_step / number_of_users[number_of_nodes])  # Sharper increase in data bits
+				data_in_bits = max_bits - bit_range * (j / number_of_users[number_of_nodes])**0.5  # Square root-based smooth decrease
 
 				# Sharpen the decrease in `r` to make higher ID users much closer to the center
-				r_scale = ((number_of_users[number_of_nodes] - j) / number_of_users[number_of_nodes]) ** 2  # Exponential decrease for sharper differences
+				r_scale = (j / number_of_users[number_of_nodes]) ** 2  # Exponential decrease for sharper differences
 				#r = r_scale * max_distance  # Scale `r` to reach the maximum distance of 10
 				r = r_scale
 				theta = random.uniform(random.split(key)[0], (1,))[0] * 2 * jnp.pi  # azimuthal angle (0 to 2*pi)
@@ -356,7 +356,7 @@ class Algorithms:
 				# Amplified differences in data bits
 				#data_in_bits = base_data_in_bits + j * (data_step / number_of_users[number_of_nodes])
 				#Smoothed data bits using a square root-based increase
-				data_in_bits = min_bits + bit_range * (j / number_of_users[number_of_nodes])**0.5  # Square root-based smooth increase
+				#data_in_bits = min_bits + bit_range * (j / number_of_users[number_of_nodes])**0.5  # Square root-based smooth increase
 				
 				user = AoiUser(
 					user_id=j,

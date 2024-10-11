@@ -498,9 +498,13 @@ class AoiUser:
 			
 			# Calculate terms based on the provided expression
 			term1 = b * np.exp( w_s * (percentage_offloaded / np.sum(other_people_strategies)))
+			# Cap the term to avoid numerical issues
+			term1_clipped = jnp.clip(term1, 0, 1e18)
+   
 			term2 = c * np.exp( w_o * self.get_current_total_overhead())
-			term2_clipped = np.clip(term2, 0, 1e6)  # Clip to avoid numerical issues
-			return -(term1 - term2_clipped)  # Negate for minimization
+			term2_clipped = jnp.clip(term2, 0, 1e18)  # Clip to avoid numerical issues
+   
+			return -(term1_clipped - term2_clipped)  # Negate for minimization
 
 		# Solve the optimization problem using SLSQP
 		result = minimize(fun= objective_function, x0= float(self.get_user_strategy()), constraints= constraints, method='SLSQP')

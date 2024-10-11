@@ -36,8 +36,8 @@ DISTANCE_MAX = 5
 MAX_BITS = 20000
 MIN_BITS = 5000
 ENERGY_LEVEL = 4
-B = 0.04
-C = 1
+B = 0.5
+C = 0.5
 
 data_dict = {}
 
@@ -59,10 +59,10 @@ convergence_history = algorithm.run_single_submodular_game(solving_method= "scip
 #print(convergence_history)
 
 # Get time overhead of each user
-data_dict["User Time Overhead"] = [user.get_current_time_overhead() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
+data_dict["User Time Overhead"] = [user.get_current_time_overhead()[0] for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
 
 # Get total overhead of each user
-data_dict["User Total Overhead"] = [user.get_current_total_overhead() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
+data_dict["User Total Overhead"] = [user.get_current_total_overhead()[0] for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
 
 # Get consumed Energy of each user
 data_dict["User Consumed Energy"] = [(user.get_current_consumed_energy()) for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
