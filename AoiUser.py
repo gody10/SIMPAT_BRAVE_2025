@@ -500,7 +500,7 @@ class AoiUser:
 			
 			# Set the weight for the x/sum(other_strategies) term
 			w_s = 3
-			w_o = 0.000000000001
+			w_o = 0.00000000000000001
 			
 			#Clip total overhead to avoid numerical issues
 			#self.current_total_overhead = np.clip(self.current_total_overhead, 3, 50)

@@ -392,6 +392,9 @@ def plot_graphs():
 	# Create the figure for user data offloaded
 	plt.figure(figsize=(12, 8))
 
+	# Apply log scale for better visualization
+	plt.yscale('log')
+
 	# Plot the data offloaded by each user
 	plt.bar(user_ids, user_data_offloaded, color='red', label='Data Offloaded')
 
@@ -634,6 +637,9 @@ def plot_graphs():
 
 	# Create the figure for user utility
 	plt.figure(figsize=(12, 8))
+
+	# Apply log scale for better visualization
+	plt.yscale('log')
 
 	# Plot the utility of each user
 	plt.bar(user_ids, user_utility, color='purple', label='Utility')

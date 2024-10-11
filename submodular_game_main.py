@@ -36,8 +36,8 @@ DISTANCE_MAX = 5
 MAX_BITS = 20000
 MIN_BITS = 5000
 ENERGY_LEVEL = 4
-B = 0.5
-C = 0.5
+B = 1
+C = 0.005
 
 data_dict = {}
 
