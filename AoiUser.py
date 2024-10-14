@@ -48,6 +48,11 @@ class AoiUser:
 		self.current_total_overhead = 0
 		self.user_utility = 0
 		self.distance = 0
+		self.other_user_strategies = []
+		self.other_user_transmit_powers = []
+		self.other_user_bits = []
+		self.uav_total_capacity = 0
+		self.T = 0
 
 	def get_user_bits(self)->float:
 		"""
@@ -361,7 +366,7 @@ class AoiUser:
 		denominator = max(1 - (jnp.sum(other_user_strategies * other_user_bits) / uav_total_capacity), 1e-10)
 
 		self.current_time_overhead = (
-			(self.data_in_bits * self.get_user_strategy()) / data_rate + 
+			((self.data_in_bits * self.get_user_strategy()) / data_rate) + 
 			((self.get_task_intensity() * self.get_user_strategy() * self.data_in_bits) / (denominator * uav_cpu_frequency))
 )
 		#logging.info("User %d has Current time overhead %f", self.get_user_id(), self.current_time_overhead)
@@ -458,6 +463,12 @@ class AoiUser:
 			List of the strategies of the other users
 		c : float
 		"""
+		self.other_user_strategies = other_people_strategies
+		self.other_user_transmit_powers = other_users_transmit_powers
+		self.other_user_bits = other_user_data_in_bits
+		self.uav_total_capacity = uav_total_data_processing_capacity
+		self.T = T
+  
   
 		# Calculate channel gain of the user
 		self.calculate_channel_gain(uav_coordinates= uav_coordinates, uav_height= uav_height)
@@ -486,10 +497,28 @@ class AoiUser:
 	
 		def constraint_upper_bound(percentage_offloaded):
 			return 0.8 - percentage_offloaded  # Each value should be <= 1
+
+		def time_variance_constraint(percentage_offloaded):
+			# Calculate the consumed energy of the user
+			
+			data_rate = max(self.get_current_data_rate(), 1e-10)
+			denominator = max(1 - (jnp.sum(self.other_user_strategies * self.other_user_bits) / self.uav_total_capacity), 1e-10)
+
+			current_time_overhead = ( ((self.data_in_bits * percentage_offloaded) / data_rate) + ((self.get_task_intensity() * percentage_offloaded * self.data_in_bits) / (denominator * uav_cpu_frequency)))
+				
+			return 1 - (current_time_overhead/self.T) # Time overhead should be less than T
+
+		def energy_variance_constraint(percentage_offloaded):
+			
+			current_consumed_energy = ((percentage_offloaded * self.get_total_bits()) / (self.get_current_data_rate())) * self.get_transmit_power()
+			
+			return 1 - current_consumed_energy/(self.total_capacity)  # Energy overhead should be less than total capacity
 		
 		constraints = [
 			{'type': 'ineq', 'fun': constraint_positive},  # percentage_offloaded >= 0
-			{'type': 'ineq', 'fun': constraint_upper_bound}  # percentage_offloaded <= 1
+			{'type': 'ineq', 'fun': constraint_upper_bound},  # percentage_offloaded <= 1
+			{'type': 'ineq', 'fun': time_variance_constraint},  # Time overhead should be less than T
+			{'type': 'ineq', 'fun': energy_variance_constraint}  # Energy overhead should be less than total capacity
 		]
 		
 		# Objective function to maximize (but converted to a minimization problem)

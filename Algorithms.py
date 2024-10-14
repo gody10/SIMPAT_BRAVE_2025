@@ -430,7 +430,7 @@ class Algorithms:
 		U = self.get_number_of_users()
 		key = self.get_key()
 		convergence_threshold = self.get_convergence_threshold()
-		T = 1
+		T = 2
 		
 		# Start playing the game inside the current node
 		done = False
