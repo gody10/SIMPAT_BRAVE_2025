@@ -1,15 +1,15 @@
-2024-10-14 12:54:25,379 - INFO - Unable to initialize backend 'cuda': 
-2024-10-14 12:54:25,379 - INFO - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
-2024-10-14 12:54:25,379 - INFO - Unable to initialize backend 'tpu': UNIMPLEMENTED: LoadPjrtPlugin is not implemented on windows yet.
-2024-10-14 12:54:25,911 - INFO - Number of Nodes: 1
-2024-10-14 12:54:25,911 - INFO - Number of Edges: 0
-2024-10-14 12:54:25,911 - INFO - Number of Users: 10
-2024-10-14 12:54:25,911 - INFO - Running a Single Submodular Game
-2024-10-14 12:54:26,484 - INFO - Energy level goes under 0 - Action not allowed
-2024-10-14 12:54:26,484 - INFO - Energy level goes under 0 - Action not allowed
-2024-10-14 12:54:26,484 - INFO - Energy level is now: 19799783.504 and the energy wasted to hover over the node is: 216.49599999999998
-2024-10-14 12:54:26,484 - INFO - The UAV has finished its business in the current node
-2024-10-14 12:54:26,484 - INFO - The strategies at node 0 have converged to: [0.8 0.2 0.2 0.2 0.8 0.2 0.2 0.2 0.2 0.2]
-2024-10-14 12:54:26,484 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-14 12:54:26,484 - INFO - Converged with strategy difference: 0.0 in 3 iterations
-2024-10-14 12:54:26,497 - INFO - Consumed Energy of each user  : [Array(2.3142405, dtype=float32), Array(0.46306273, dtype=float32), Array(0.50789875, dtype=float32), Array(0.64859504, dtype=float32), Array(3.667385, dtype=float32), Array(1.379599, dtype=float32), Array(2.1416526, dtype=float32), Array(3.34611, dtype=float32), Array(5.1528153, dtype=float32), Array(7.675022, dtype=float32)]
+2024-10-14 12:57:36,268 - INFO - Unable to initialize backend 'cuda': 
+2024-10-14 12:57:36,268 - INFO - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+2024-10-14 12:57:36,268 - INFO - Unable to initialize backend 'tpu': UNIMPLEMENTED: LoadPjrtPlugin is not implemented on windows yet.
+2024-10-14 12:57:36,768 - INFO - Number of Nodes: 1
+2024-10-14 12:57:36,768 - INFO - Number of Edges: 0
+2024-10-14 12:57:36,768 - INFO - Number of Users: 15
+2024-10-14 12:57:36,768 - INFO - Running a Single Submodular Game
+2024-10-14 12:57:37,418 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-14 12:57:37,418 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-14 12:57:37,418 - INFO - Energy level is now: 19799783.504 and the energy wasted to hover over the node is: 216.49599999999998
+2024-10-14 12:57:37,418 - INFO - The UAV has finished its business in the current node
+2024-10-14 12:57:37,418 - INFO - The strategies at node 0 have converged to: [0.8 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2]
+2024-10-14 12:57:37,418 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-14 12:57:37,418 - INFO - Converged with strategy difference: 0.0 in 3 iterations
+2024-10-14 12:57:37,433 - INFO - Consumed Energy of each user  : [Array(3.3422647, dtype=float32), Array(0.6738877, dtype=float32), Array(0.65563667, dtype=float32), Array(0.6882898, dtype=float32), Array(0.7666788, dtype=float32), Array(0.8949959, dtype=float32), Array(1.0839573, dtype=float32), Array(1.3492509, dtype=float32), Array(1.7123361, dtype=float32), Array(2.1990135, dtype=float32), Array(2.8394942, dtype=float32), Array(3.6643748, dtype=float32), Array(4.6999674, dtype=float32), Array(5.957985, dtype=float32), Array(7.419987, dtype=float32)]

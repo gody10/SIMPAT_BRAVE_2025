@@ -20,7 +20,7 @@ key = random.PRNGKey(20)
 N = 1
 #U = 100
 # Generate random user number for each node
-U = random.randint(key, (N,), 10, 15)
+U = random.randint(key, (N,), 15, 15)
 NODE_RADIUS = 2
 MIN_DISTANCE_BETWEEN_NODES = 100  # Minimum distance to maintain between nodes
 UAV_HEIGHT = 100
@@ -32,7 +32,7 @@ UAV_CPU_FREQUENCY = 2 * (10**9)
 UAV_VELOCITY = 1
 MAX_ITER = 50
 DISTANCE_MIN = 10
-DISTANCE_MAX = 14.5
+DISTANCE_MAX = 13
 MAX_BITS = 2 * 10**6
 MIN_BITS = 3 * 10**5
 ENERGY_LEVEL = 29000
