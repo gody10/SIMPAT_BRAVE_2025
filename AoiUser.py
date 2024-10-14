@@ -362,8 +362,8 @@ class AoiUser:
 			CPU frequency of the UAV
 		"""
 		
-		data_rate = max(self.get_current_data_rate(), 1e-10)
-		denominator = max(1 - (jnp.sum(other_user_strategies * other_user_bits) / uav_total_capacity), 1e-10)
+		data_rate = self.get_current_data_rate()
+		denominator = 1 - (jnp.sum(other_user_strategies * other_user_bits) / uav_total_capacity)
 
 		self.current_time_overhead = (
 			((self.data_in_bits * self.get_user_strategy()) / data_rate) + 
@@ -375,7 +375,7 @@ class AoiUser:
 		"""
 		Calculate the consumed energy of the user during the offloading process based on the current strategy
 		"""
-		data_rate = max(self.get_current_data_rate(), 1e-10)
+		data_rate = self.get_current_data_rate()
 		self.current_consumed_energy = ((self.get_user_strategy() * self.get_total_bits()) / (data_rate)) * self.get_transmit_power()
 		#self.current_consumed_energy = self.get_user_strategy() * self.get_total_bits()
 		#logging.info("User %d has Current consumed energy %f", self.get_user_id(), self.current_consumed_energy)
@@ -501,18 +501,22 @@ class AoiUser:
 		def time_variance_constraint(percentage_offloaded):
 			# Calculate the consumed energy of the user
 			
-			data_rate = max(self.get_current_data_rate(), 1e-10)
-			denominator = max(1 - (jnp.sum(self.other_user_strategies * self.other_user_bits) / self.uav_total_capacity), 1e-10)
+			data_rate = self.get_current_data_rate()
+			denominator = 1 - (jnp.sum(self.other_user_strategies * self.other_user_bits) / self.uav_total_capacity)
 
 			current_time_overhead = ( ((self.data_in_bits * percentage_offloaded) / data_rate) + ((self.get_task_intensity() * percentage_offloaded * self.data_in_bits) / (denominator * uav_cpu_frequency)))
-				
-			return 1 - (current_time_overhead/self.T) # Time overhead should be less than T
+			
+			#logging.info("CONSTRAINT: Time Overhead: %f", current_time_overhead/self.T)
+     
+			return 1 - (current_time_overhead/self.T) # Time overhead should be less than T #0.5 and noone can go high
 
 		def energy_variance_constraint(percentage_offloaded):
 			
 			current_consumed_energy = ((percentage_offloaded * self.get_total_bits()) / (self.get_current_data_rate())) * self.get_transmit_power()
+   
+			#logging.info("CONSTRAINT: Consumed Energy: %f", current_consumed_energy/self.total_capacity)
 			
-			return 1 - current_consumed_energy/(self.total_capacity)  # Energy overhead should be less than total capacity
+			return 1 - (current_consumed_energy/self.total_capacity)  # Energy overhead should be less than total capacity
 		
 		constraints = [
 			{'type': 'ineq', 'fun': constraint_positive},  # percentage_offloaded >= 0
