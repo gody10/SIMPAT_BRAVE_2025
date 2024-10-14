@@ -20,24 +20,24 @@ key = random.PRNGKey(20)
 N = 1
 #U = 100
 # Generate random user number for each node
-U = random.randint(key, (N,), 50, 250)
+U = random.randint(key, (N,), 10, 15)
 NODE_RADIUS = 2
 MIN_DISTANCE_BETWEEN_NODES = 100  # Minimum distance to maintain between nodes
 UAV_HEIGHT = 100
 CONVERGENCE_THRESHOLD = 1e-15
 UAV_ENERGY_CAPACITY = 19800000
-UAV_BANDWIDTH = 2*(10**6)
-UAV_PROCESSING_CAPACITY = 1000
-UAV_CPU_FREQUENCY = 2
+UAV_BANDWIDTH = 5*(10**6)
+UAV_PROCESSING_CAPACITY = 1 * (10**9)
+UAV_CPU_FREQUENCY = 2 * (10**9)
 UAV_VELOCITY = 1
 MAX_ITER = 50
-DISTANCE_MIN = 1
-DISTANCE_MAX = 5
-MAX_BITS = 20000
-MIN_BITS = 5000
-ENERGY_LEVEL = 4
-B = 1
-C = 0.005
+DISTANCE_MIN = 10
+DISTANCE_MAX = 14.5
+MAX_BITS = 2 * 10**6
+MIN_BITS = 3 * 10**5
+ENERGY_LEVEL = 29000
+B = 0.74
+C = 0.0043
 
 data_dict = {}
 
@@ -60,9 +60,11 @@ convergence_history = algorithm.run_single_submodular_game(solving_method= "scip
 
 # Get time overhead of each user
 data_dict["User Time Overhead"] = [user.get_current_time_overhead()[0] for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
+print(data_dict["User Time Overhead"])
 
 # Get total overhead of each user
 data_dict["User Total Overhead"] = [user.get_current_total_overhead()[0] for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
+print(data_dict["User Total Overhead"])
 
 logging.info("Consumed Energy of each user  : {}".format([user.get_current_consumed_energy() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]))
 

@@ -372,7 +372,7 @@ class AoiUser:
 		"""
 		data_rate = max(self.get_current_data_rate(), 1e-10)
 		self.current_consumed_energy = ((self.get_user_strategy() * self.get_total_bits()) / (data_rate)) * self.get_transmit_power()
-		self.current_consumed_energy = self.get_user_strategy() * self.get_total_bits()
+		#self.current_consumed_energy = self.get_user_strategy() * self.get_total_bits()
 		#logging.info("User %d has Current consumed energy %f", self.get_user_id(), self.current_consumed_energy)
 		
 	def calculate_total_overhead(self, T: float)->None:
@@ -482,10 +482,10 @@ class AoiUser:
 		#print("Consumed Energy: ", self.get_current_consumed_energy())
 		
 		def constraint_positive(percentage_offloaded):
-			return percentage_offloaded + 0.01  # Each value should be >= 0
+			return percentage_offloaded - 0.2  # Each value should be >= 0
 	
 		def constraint_upper_bound(percentage_offloaded):
-			return 1 - percentage_offloaded  # Each value should be <= 1
+			return 0.8 - percentage_offloaded  # Each value should be <= 1
 		
 		constraints = [
 			{'type': 'ineq', 'fun': constraint_positive},  # percentage_offloaded >= 0
@@ -509,14 +509,14 @@ class AoiUser:
 			#percentage_offloaded = np.array(percentage_offloaded).reshape(-1, 1)
 			
 			# Calculate terms based on the provided expression
-			term1 = b * np.exp( w_s * (percentage_offloaded / np.sum(other_people_strategies)))
+			term1 = b * np.exp( percentage_offloaded / np.sum(other_people_strategies))
 			# Cap the term to avoid numerical issues
-			term1_clipped = jnp.clip(term1, 0, 1e18)
+			#term1_clipped = jnp.clip(term1, 0, 1e18)
    
-			term2 = c * np.exp( w_o * self.get_current_total_overhead())
-			term2_clipped = jnp.clip(term2, 0, 1e18)  # Clip to avoid numerical issues
+			term2 = c * np.exp( self.get_current_total_overhead())
+			#term2_clipped = jnp.clip(term2, 0, 1e18)  # Clip to avoid numerical issues
    
-			return -(term1_clipped - term2_clipped)  # Negate for minimization
+			return -(term1 - term2)  # Negate for minimization
 
 		# Solve the optimization problem using SLSQP
 		result = minimize(fun= objective_function, x0= float(self.get_user_strategy()), constraints= constraints, method='SLSQP')

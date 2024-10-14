@@ -361,7 +361,7 @@ class Algorithms:
 				user = AoiUser(
 					user_id=j,
 					data_in_bits=data_in_bits,
-					transmit_power=1,
+					transmit_power=1.5,
 					energy_level=energy_level,
 					task_intensity=1,
 					carrier_frequency=5,
@@ -430,7 +430,7 @@ class Algorithms:
 		U = self.get_number_of_users()
 		key = self.get_key()
 		convergence_threshold = self.get_convergence_threshold()
-		T = 3600
+		T = 1
 		
 		# Start playing the game inside the current node
 		done = False
@@ -496,7 +496,7 @@ class Algorithms:
 				elif solving_method == "scipy":
 					# Play the submodular game
 					maximized_utility, percentage_offloaded = user.play_submodular_game_scipy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
-																							uav_cpu_frequency, uav_total_data_processing_capacity, 2, uav.get_current_coordinates(), uav.get_height())
+																							uav_cpu_frequency, uav_total_data_processing_capacity, T, uav.get_current_coordinates(), uav.get_height())
 
 					# logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
 					# logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
