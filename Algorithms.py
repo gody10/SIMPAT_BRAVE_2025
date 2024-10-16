@@ -293,6 +293,129 @@ class Algorithms:
 		# Create a UAV
 		self.uav = Uav(uav_id= 1, initial_node= nodes[0], final_node= nodes[len(nodes)-1], capacity= self.uav_energy_capacity, total_data_processing_capacity= self.uav_processing_capacity, 
 					   velocity= self.uav_velocity, uav_system_bandwidth= self.uav_bandwidth, cpu_frequency= self.uav_cpu_frequency, height= uav_height)
+  
+	def setup_algorithm_experiment(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float, uav_energy_capacity: float, 
+                         uav_bandwidth: float, uav_processing_capacity: float, uav_cpu_frequency: float, uav_velocity: float, energy_level: float, min_bits: float, max_bits: float, distance_min: float, distance_max: float)->None:
+		"""
+		Setup the experiment
+		
+		Parameters:
+		number_of_users : float
+			Number of users in the system
+		number_of_nodes : float
+			Number of nodes in the system
+		key : jax.random.PRNGKey
+			Key for random number generation
+		uav_height : float
+			Height of the UAV
+		min_distance_between_nodes : float
+			Minimum distance between nodes
+		node_radius : float
+			Radius of the node
+		"""
+		self.number_of_users = number_of_users
+		self.number_of_nodes = number_of_nodes
+		self.key = key
+		self.uav_height = uav_height
+		self.min_distance_between_nodes = min_distance_between_nodes
+		self.node_radius = node_radius
+		self.uav_energy_capacity = uav_energy_capacity
+		self.uav_bandwidth = uav_bandwidth
+		self.uav_processing_capacity = uav_processing_capacity
+		self.uav_cpu_frequency = uav_cpu_frequency
+		self.uav_velocity = uav_velocity
+		self.energy_level = energy_level
+		self.min_bits = min_bits
+		self.max_bits = max_bits
+		self.distance_min = distance_min
+		self.distance_max = distance_max
+
+		
+		nodes = []
+		for i in range(number_of_nodes):
+			# Generate random center coordinates for the node
+			node_coords = generate_node_coordinates(key, nodes, min_distance_between_nodes)
+
+			max_bits = max_bits  # Maximum bits for the highest user ID 900000000
+			min_bits = min_bits    # Minimum bits for the lowest user ID
+			bit_range = max_bits - min_bits
+
+			#max_distance = 2  # Set maximum distance to 10
+
+			users = []
+			for j in range(number_of_users[number_of_nodes]):
+
+				data_step = 1000  # Amplify the data step size for bigger differences
+				base_data_in_bits = 1000  # Set a base value for data bits
+				data_in_bits = max_bits - bit_range * (j / number_of_users[number_of_nodes])**0.5  # Square root-based smooth decrease
+
+				# Sharpen the decrease in `r` to make higher ID users much closer to the center
+				r_scale = (j / number_of_users[number_of_nodes]) ** 2  # Exponential decrease for sharper differences
+				#r = r_scale * max_distance  # Scale `r` to reach the maximum distance of 10
+				r = r_scale
+				theta = random.uniform(random.split(key)[0], (1,))[0] * 2 * jnp.pi  # azimuthal angle (0 to 2*pi)
+				phi = random.uniform(random.split(key)[0], (1,))[0] * jnp.pi  # polar angle (0 to pi)
+				
+				# Convert spherical coordinates (r, theta, phi) to Cartesian coordinates (x, y, z)
+				x = r * jnp.sin(phi) * jnp.cos(theta)
+				y = r * jnp.sin(phi) * jnp.sin(theta)
+				z = r * jnp.cos(phi)
+    
+				# User coordinates relative to the node center
+				user_coords = (node_coords[0] + x, node_coords[1] + y, node_coords[2] + z)
+    
+				# Amplified differences in data bits
+				#data_in_bits = base_data_in_bits + j * (data_step / number_of_users[number_of_nodes])
+				#Smoothed data bits using a square root-based increase
+				#data_in_bits = min_bits + bit_range * (j / number_of_users[number_of_nodes])**0.5  # Square root-based smooth increase
+				
+				user = AoiUser(
+					user_id=j,
+					data_in_bits=data_in_bits,
+					transmit_power=1.5,
+					energy_level=energy_level,
+					task_intensity=1,
+					carrier_frequency=5,
+					coordinates=user_coords
+				)
+    
+				users.append(user)
+			
+			nodes.append(Node(
+				node_id=i,
+				users=users,
+				coordinates=node_coords
+			))
+   
+		# Calculate the distance between all users and the UAV
+		for node in nodes:
+			node_distances = []
+			for user in node.get_user_list():
+				user.calculate_distance(node)
+				node_distances.append(user.get_distance())
+			# Scale the distances to be between 100 and 1000
+			max_distance = max(node_distances)
+			min_distance = min(node_distances)
+			distance_range = max_distance - min_distance
+			for user in node.get_user_list():
+				user.set_distance(distance_min + distance_max * (user.get_distance() - min_distance) / distance_range)
+		# Create edges between all nodes with random weights
+		edges = []
+		for i in range(number_of_nodes):
+			for j in range(i+1, number_of_nodes):
+				edges.append(Edge(nodes[i].user_list[0], nodes[j].user_list[0], random.normal(key, (1,))))
+				
+		# Create the graph
+		self.graph = Graph(nodes=nodes, edges=edges)
+
+		# Get number of nodes and edges
+		logging.info("Number of Nodes: %s", self.graph.get_num_nodes())
+		logging.info("Number of Edges: %s", self.graph.get_num_edges())
+		logging.info("Number of Users: %s", self.graph.get_num_users())
+
+		# Create a UAV
+		self.uav = Uav(uav_id=1, initial_node=nodes[0], final_node=nodes[len(nodes)-1], capacity=self.uav_energy_capacity, total_data_processing_capacity=self.uav_processing_capacity, 
+					velocity=self.uav_velocity, uav_system_bandwidth=self.uav_bandwidth, cpu_frequency=self.uav_cpu_frequency, height=uav_height)
 		
 	def setup_singlular_experiment(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float, uav_energy_capacity: float, 
                          uav_bandwidth: float, uav_processing_capacity: float, uav_cpu_frequency: float, uav_velocity: float, energy_level: float, min_bits: float, max_bits: float, distance_min: float, distance_max: float)->None:
@@ -424,7 +547,7 @@ class Algorithms:
 		"""
 		self.graph = None
 		self.uav = None
-		self.setup_singlular_experiment(number_of_users= self.number_of_users, number_of_nodes= self.number_of_nodes, key= self.key, uav_height= self.uav_height, min_distance_between_nodes= self.min_distance_between_nodes, node_radius= self.node_radius,
+		self.setup_algorithm_experiment(number_of_users= self.number_of_users, number_of_nodes= self.number_of_nodes, key= self.key, uav_height= self.uav_height, min_distance_between_nodes= self.min_distance_between_nodes, node_radius= self.node_radius,
 							  uav_energy_capacity= self.uav_energy_capacity, uav_bandwidth= self.uav_bandwidth, uav_processing_capacity= self.uav_processing_capacity, uav_cpu_frequency= self.uav_cpu_frequency, uav_velocity= self.uav_velocity
 							  , energy_level= self.energy_level, min_bits= self.min_bits, max_bits= self.max_bits, distance_min= self.distance_min, distance_max= self.distance_max)
 		

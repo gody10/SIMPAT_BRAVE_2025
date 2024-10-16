@@ -44,8 +44,8 @@ MIN_BITS = 3 * 10**5
 ENERGY_LEVEL = 29000
 B = 0.74
 C = 0.00043
-MAX_ITER = 2
-NUMBER_OF_EPISODES = 2
+MAX_ITER = 100
+NUMBER_OF_EPISODES = 50
 
 algorithms_total_bits = {}
 algorithms_expended_energy = {}
