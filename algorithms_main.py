@@ -3,6 +3,7 @@ from jax import random
 from Algorithms import Algorithms
 import pickle
 import time
+from plot_graphs import plot_graphs
 
 # Initialize timers for each method
 random_walk_time = 0
@@ -30,13 +31,21 @@ NODE_RADIUS = 2
 MIN_DISTANCE_BETWEEN_NODES = 20  # Minimum distance to maintain between nodes
 UAV_HEIGHT = 100
 CONVERGENCE_THRESHOLD = 1e-15
-UAV_ENERGY_CAPACITY = 198000
-UAV_BANDWIDTH = 15
-UAV_PROCESSING_CAPACITY = 1000
-UAV_CPU_FREQUENCY = 2
+UAV_ENERGY_CAPACITY = 19800000
+UAV_BANDWIDTH = 5*(10**6)
+UAV_PROCESSING_CAPACITY = 1 * (10**9)
+UAV_CPU_FREQUENCY = 2 * (10**9)
 UAV_VELOCITY = 1
-MAX_ITER = 100
-NUMBER_OF_EPISODES = 100
+MAX_ITER = 50
+DISTANCE_MIN = 10
+DISTANCE_MAX = 40
+MAX_BITS = 2 * 10**6
+MIN_BITS = 3 * 10**5
+ENERGY_LEVEL = 29000
+B = 0.74
+C = 0.00043
+MAX_ITER = 2
+NUMBER_OF_EPISODES = 2
 
 algorithms_total_bits = {}
 algorithms_expended_energy = {}
@@ -46,14 +55,15 @@ timer_dict = {}
 # Create the algorithm object
 algorithm = Algorithms(convergence_threshold= CONVERGENCE_THRESHOLD)
 
-algorithm.setup_experiment(number_of_nodes= N, number_of_users= U, node_radius= NODE_RADIUS, key= key, min_distance_between_nodes= MIN_DISTANCE_BETWEEN_NODES, uav_height= UAV_HEIGHT, 
-						   uav_energy_capacity=UAV_ENERGY_CAPACITY, uav_bandwidth= UAV_BANDWIDTH, uav_processing_capacity= UAV_PROCESSING_CAPACITY, uav_cpu_frequency= UAV_CPU_FREQUENCY, uav_velocity= UAV_VELOCITY)
+algorithm.setup_singlular_experiment(number_of_nodes= N, number_of_users= U, node_radius= NODE_RADIUS, key= key, min_distance_between_nodes= MIN_DISTANCE_BETWEEN_NODES, uav_height= UAV_HEIGHT, 
+						   uav_energy_capacity=UAV_ENERGY_CAPACITY, uav_bandwidth= UAV_BANDWIDTH, uav_processing_capacity= UAV_PROCESSING_CAPACITY, uav_cpu_frequency= UAV_CPU_FREQUENCY, uav_velocity= UAV_VELOCITY, 
+							min_bits= MIN_BITS, max_bits= MAX_BITS, distance_min= DISTANCE_MIN, distance_max= DISTANCE_MAX, energy_level= ENERGY_LEVEL)
 
 # Start the timer for Random Walk Algorithm
 start_time = time.time()
 
 # Run the Random Walk Algorithm
-success_random_walk = algorithm.run_random_walk_algorithm(solving_method= "scipy", max_iter= MAX_ITER)
+success_random_walk = algorithm.run_random_walk_algorithm(solving_method= "scipy", max_iter= MAX_ITER, b= B, c= C)
 
 logging.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
 
@@ -79,11 +89,11 @@ algorithm.reset()
 start_time = time.time()
 
 # Run the Proportional Fairness Algorithm
-success_random_walk = algorithm.run_random_proportional_fairness_algorithm(solving_method= "scipy", max_iter= MAX_ITER)
+success_proportional_fairness = algorithm.run_random_proportional_fairness_algorithm(solving_method= "scipy", max_iter= MAX_ITER, b= B, c= C)
 
 logging.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
 
-if success_random_walk:
+if success_proportional_fairness:
 	logging.info("Proportional Fairness Algorithm has successfully reached the final node!")
 else:
 	logging.info("Proportional Fairness Algorithm failed to reach the final node!")
@@ -105,7 +115,7 @@ algorithm.reset()
 start_time = time.time()
 
 # Run the Brave Greedy Algorithm
-success_brave_greedy = algorithm.brave_greedy(solving_method= "scipy", max_iter= MAX_ITER)
+success_brave_greedy = algorithm.brave_greedy(solving_method= "scipy", max_iter= MAX_ITER, b= B, c= C)
 
 logging.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
 
@@ -131,7 +141,7 @@ algorithm.reset()
 start_time = time.time()
 
 # Run the Q-Brave Algorithm
-success_q_brave_ = algorithm.q_brave(solving_method= "scipy", number_of_episodes= NUMBER_OF_EPISODES, max_travels_per_episode= MAX_ITER)
+success_q_brave_ = algorithm.q_brave(solving_method= "scipy", number_of_episodes= NUMBER_OF_EPISODES, max_travels_per_episode= MAX_ITER, b= B, c= C)
 
 logging.info("The UAV energy level is: %s", algorithm.get_uav().get_energy_level())
 logging.info("The UAV processed in total: %s bits", algorithm.most_processed_bits)
@@ -169,3 +179,5 @@ logging.info("Data dictionaries has been saved as a pickle file!")
 sorted_nodes = algorithm.sort_nodes_based_on_total_bits()
 logging.info("The sorted nodes based on total bits are: %s", sorted_nodes)
 
+# Plot the graphs
+plot_graphs()

@@ -32,7 +32,7 @@ UAV_CPU_FREQUENCY = 2 * (10**9)
 UAV_VELOCITY = 1
 MAX_ITER = 50
 DISTANCE_MIN = 10
-DISTANCE_MAX = 80
+DISTANCE_MAX = 40
 MAX_BITS = 2 * 10**6
 MIN_BITS = 3 * 10**5
 ENERGY_LEVEL = 29000
@@ -44,7 +44,7 @@ data_dict = {}
 # Create the algorithm object
 algorithm = Algorithms(convergence_threshold= CONVERGENCE_THRESHOLD)
 
-algorithm.setup__singlular_experiment(number_of_nodes= N, number_of_users= U, node_radius= NODE_RADIUS, key= key, min_distance_between_nodes= MIN_DISTANCE_BETWEEN_NODES, uav_height= UAV_HEIGHT, 
+algorithm.setup_singlular_experiment(number_of_nodes= N, number_of_users= U, node_radius= NODE_RADIUS, key= key, min_distance_between_nodes= MIN_DISTANCE_BETWEEN_NODES, uav_height= UAV_HEIGHT, 
 						   uav_energy_capacity=UAV_ENERGY_CAPACITY, uav_bandwidth= UAV_BANDWIDTH, uav_processing_capacity= UAV_PROCESSING_CAPACITY, uav_cpu_frequency= UAV_CPU_FREQUENCY, uav_velocity= UAV_VELOCITY, 
 							min_bits= MIN_BITS, max_bits= MAX_BITS, distance_min= DISTANCE_MIN, distance_max= DISTANCE_MAX, energy_level= ENERGY_LEVEL)
 

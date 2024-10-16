@@ -48,6 +48,11 @@ class Algorithms:
 		self.expended_energy = 0
 		self.visited_nodes = 0
 		self.most_processed_bits = 0
+		self.energy_level = 0
+		self.min_bits = 0
+		self.max_bits = 0
+		self.distance_min = 0
+		self.distance_max = 0
 		
 	def get_uav(self)->Uav:
 		"""
@@ -289,7 +294,7 @@ class Algorithms:
 		self.uav = Uav(uav_id= 1, initial_node= nodes[0], final_node= nodes[len(nodes)-1], capacity= self.uav_energy_capacity, total_data_processing_capacity= self.uav_processing_capacity, 
 					   velocity= self.uav_velocity, uav_system_bandwidth= self.uav_bandwidth, cpu_frequency= self.uav_cpu_frequency, height= uav_height)
 		
-	def setup__singlular_experiment(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float, uav_energy_capacity: float, 
+	def setup_singlular_experiment(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float, uav_energy_capacity: float, 
                          uav_bandwidth: float, uav_processing_capacity: float, uav_cpu_frequency: float, uav_velocity: float, energy_level: float, min_bits: float, max_bits: float, distance_min: float, distance_max: float)->None:
 		"""
 		Setup the experiment
@@ -319,6 +324,12 @@ class Algorithms:
 		self.uav_processing_capacity = uav_processing_capacity
 		self.uav_cpu_frequency = uav_cpu_frequency
 		self.uav_velocity = uav_velocity
+		self.energy_level = energy_level
+		self.min_bits = min_bits
+		self.max_bits = max_bits
+		self.distance_min = distance_min
+		self.distance_max = distance_max
+
 		
 		nodes = []
 		for i in range(number_of_nodes):
@@ -413,8 +424,9 @@ class Algorithms:
 		"""
 		self.graph = None
 		self.uav = None
-		self.setup_experiment(number_of_users= self.number_of_users, number_of_nodes= self.number_of_nodes, key= self.key, uav_height= self.uav_height, min_distance_between_nodes= self.min_distance_between_nodes, node_radius= self.node_radius,
-							  uav_energy_capacity= self.uav_energy_capacity, uav_bandwidth= self.uav_bandwidth, uav_processing_capacity= self.uav_processing_capacity, uav_cpu_frequency= self.uav_cpu_frequency, uav_velocity= self.uav_velocity)
+		self.setup_singlular_experiment(number_of_users= self.number_of_users, number_of_nodes= self.number_of_nodes, key= self.key, uav_height= self.uav_height, min_distance_between_nodes= self.min_distance_between_nodes, node_radius= self.node_radius,
+							  uav_energy_capacity= self.uav_energy_capacity, uav_bandwidth= self.uav_bandwidth, uav_processing_capacity= self.uav_processing_capacity, uav_cpu_frequency= self.uav_cpu_frequency, uav_velocity= self.uav_velocity
+							  , energy_level= self.energy_level, min_bits= self.min_bits, max_bits= self.max_bits, distance_min= self.distance_min, distance_max= self.distance_max)
 		
 	def run_single_submodular_game(self, solving_method: str, c: float, b: float)->None:
 		"""
@@ -559,7 +571,7 @@ class Algorithms:
 						
 
 		
-	def run_random_walk_algorithm(self, solving_method: str, max_iter: int)->bool:
+	def run_random_walk_algorithm(self, solving_method: str, max_iter: int, c: float, b: float)->bool:
 		"""
 		Algorithm that makes the UAV navigate through the graph randomly
 		Every time it needs to move from one node to another, it will randomly choose the next node from a set of unvisited nodes
@@ -611,8 +623,8 @@ class Algorithms:
 					user_transmit_powers = user_transmit_powers.at[idx].set(user.get_transmit_power())
 					user_data_in_bits = user_data_in_bits.at[idx].set(user.get_user_bits())
 					user.set_user_strategy(user_strategies[idx])
-					c = 0.08
-					b = 0.4
+					c = c
+					b = b
 					
 					# Initialize data rate, current strategy, channel gain, time overhead, current consumed energy and total overhead for each user
 					user.calculate_data_rate(uav_bandwidth, user_channel_gains[idx], user_transmit_powers[idx])
@@ -741,7 +753,7 @@ class Algorithms:
 		else:
 			return False
 		
-	def run_random_proportional_fairness_algorithm(self, solving_method: str, max_iter: int)->bool:
+	def run_random_proportional_fairness_algorithm(self, solving_method: str, max_iter: int, c: float, b: float)->bool:
 		"""
 		Algorithm that makes the UAV navigate through the graph randomly giving bigger chance to visit nodes that have more data to process
 			
@@ -792,8 +804,8 @@ class Algorithms:
 					user_transmit_powers = user_transmit_powers.at[idx].set(user.get_transmit_power())
 					user_data_in_bits = user_data_in_bits.at[idx].set(user.get_user_bits())
 					user.set_user_strategy(user_strategies[idx])
-					c = 0.08
-					b = 0.4
+					c = c
+					b = b
 					
 					# Initialize data rate, current strategy, channel gain, time overhead, current consumed energy and total overhead for each user
 					user.calculate_data_rate(uav_bandwidth, user_channel_gains[idx], user_transmit_powers[idx])
@@ -922,7 +934,7 @@ class Algorithms:
 		else:
 			return False
 		
-	def brave_greedy(self, solving_method:str, max_iter: int)->bool:
+	def brave_greedy(self, solving_method:str, max_iter: int, c: float, b: float)->bool:
 		"""
 		Algorithm that makes the UAV navigate through the graph by selecting the Area of Interest (AoI) with the highest amount of data to offload
 		Every time it needs to move from one node to another, it will choose the node that has the highest amount of data to offload
@@ -972,8 +984,8 @@ class Algorithms:
 					user_data_in_bits = user_data_in_bits.at[idx].set(user.get_user_bits())
 					user.set_user_strategy(user_strategies[idx])
 					
-				c = 0.08
-				b = 0.4
+				c = c
+				b = b
 					
 				iteration_counter = 0
 				while(not done):
@@ -1095,7 +1107,7 @@ class Algorithms:
 		else:
 			return False
 		
-	def q_brave(self, solving_method:str, number_of_episodes: int, max_travels_per_episode: int)->bool:
+	def q_brave(self, solving_method:str, number_of_episodes: int, max_travels_per_episode: int, c: float, b: float)->bool:
 		"""
 		Algorithm that makes the UAV navigate through the graph by using Q-Learning to select the next node to visit
 		The decision-making process of the RL agent, i.e., UAV, for data collection and processing is represented using a Markov decision process (MDP)
@@ -1139,7 +1151,7 @@ class Algorithms:
 		lr = 0.1
 		
 		env = Qenv(graph= graph, uav= uav, number_of_users= U, convergence_threshold= convergence_threshold,
-				   n_actions= n_actions, n_observations= n_observations, solving_method= solving_method, T= T)
+				   n_actions= n_actions, n_observations= n_observations, solving_method= solving_method, T= T, c= c, b= b)
 		
 		rewards_per_episode = []
 		total_bits_processed_per_episode = []

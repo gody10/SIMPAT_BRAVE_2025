@@ -1,261 +1,571 @@
-2024-10-04 17:57:27,712 - INFO - Number of Nodes: 15
-2024-10-04 17:57:27,712 - INFO - Number of Edges: 105
-2024-10-04 17:57:27,713 - INFO - Number of Users: 3255
-2024-10-04 17:57:27,713 - INFO - Running the Random Walk Algorithm
-2024-10-04 17:57:30,727 - INFO - Energy level is now: [195219.47] and the energy wasted to process the data is: [2780.5251]
-2024-10-04 17:57:30,766 - INFO - Energy level is now: [194786.48] and the energy wasted to hover over the node is: 432.99199999999996
-2024-10-04 17:57:30,766 - INFO - The UAV has finished its business in the current node
-2024-10-04 17:57:30,766 - INFO - The strategies at node 0 have converged to: [1.  1.  1.  1.  1.  1.  1.  0.1 0.1 1.  0.1 0.1 1.  0.1 0.1 0.1 1.  0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 1.  0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1]
-2024-10-04 17:57:30,766 - INFO - The task intensities of the users at node 0 are: [Array(77.430595, dtype=float32), Array(65.38393, dtype=float32), Array(98.73636, dtype=float32), Array(38.88074, dtype=float32), Array(51.45707, dtype=float32), Array(32.497395, dtype=float32), Array(14.307726, dtype=float32), Array(66.98575, dtype=float32), Array(43.74914, dtype=float32), Array(6.3472033, dtype=float32), Array(86.10765, dtype=float32), Array(55.056072, dtype=float32), Array(7.8036904, dtype=float32), Array(77.73365, dtype=float32), Array(39.277744, dtype=float32), Array(79.794205, dtype=float32), Array(13.536299, dtype=float32), Array(29.049253, dtype=float32), Array(55.670868, dtype=float32), Array(20.663034, dtype=float32), Array(44.282604, dtype=float32), Array(15.336359, dtype=float32), Array(43.228306, dtype=float32), Array(83.93915, dtype=float32), Array(44.313217, dtype=float32), Array(6.016743, dtype=float32), Array(88.79747, dtype=float32), Array(6.341791, dtype=float32), Array(26.291168, dtype=float32), Array(0.8557677, dtype=float32), Array(3.7266254, dtype=float32), Array(83.9913, dtype=float32), Array(94.25968, dtype=float32), Array(41.96968, dtype=float32), Array(3.9177537, dtype=float32), Array(53.583015, dtype=float32), Array(12.0591755, dtype=float32), Array(35.07612, dtype=float32), Array(71.40709, dtype=float32), Array(97.710266, dtype=float32), Array(67.91754, dtype=float32), Array(49.949062, dtype=float32), Array(88.851074, dtype=float32), Array(76.98911, dtype=float32), Array(33.631397, dtype=float32), Array(76.32521, dtype=float32), Array(65.64711, dtype=float32), Array(17.377317, dtype=float32), Array(36.34578, dtype=float32), Array(49.94954, dtype=float32), Array(15.935791, dtype=float32), Array(73.53231, dtype=float32), Array(24.531437, dtype=float32), Array(97.480034, dtype=float32), Array(90.410446, dtype=float32), Array(48.633026, dtype=float32), Array(21.569502, dtype=float32), Array(17.80324, dtype=float32), Array(9.022915, dtype=float32), Array(24.888695, dtype=float32), Array(2.2753954, dtype=float32), Array(64.01993, dtype=float32), Array(18.503057, dtype=float32), Array(83.0716, dtype=float32), Array(18.799423, dtype=float32), Array(13.570679, dtype=float32), Array(91.25112, dtype=float32), Array(66.75326, dtype=float32), Array(39.401924, dtype=float32), Array(55.1391, dtype=float32), Array(51.09161, dtype=float32), Array(57.092464, dtype=float32), Array(61.236595, dtype=float32), Array(57.293667, dtype=float32), Array(29.691101, dtype=float32), Array(38.183247, dtype=float32), Array(46.29885, dtype=float32), Array(13.222814, dtype=float32), Array(2.6477098, dtype=float32), Array(9.034967, dtype=float32), Array(42.392956, dtype=float32), Array(93.838295, dtype=float32), Array(39.545677, dtype=float32), Array(8.19931, dtype=float32), Array(39.80304, dtype=float32), Array(8.4829445, dtype=float32), Array(16.200626, dtype=float32), Array(50.549553, dtype=float32), Array(0.657177, dtype=float32), Array(35.76139, dtype=float32), Array(12.460971, dtype=float32), Array(82.04344, dtype=float32), Array(15.890288, dtype=float32), Array(15.197241, dtype=float32), Array(1.469779, dtype=float32), Array(53.4827, dtype=float32), Array(53.736244, dtype=float32), Array(56.35451, dtype=float32), Array(83.01629, dtype=float32), Array(42.32589, dtype=float32), Array(23.293686, dtype=float32), Array(49.07975, dtype=float32), Array(28.99232, dtype=float32), Array(81.638145, dtype=float32), Array(88.317505, dtype=float32), Array(14.34927, dtype=float32), Array(86.22433, dtype=float32), Array(9.515405, dtype=float32), Array(71.788956, dtype=float32), Array(30.763363, dtype=float32), Array(42.200863, dtype=float32), Array(2.4036765, dtype=float32), Array(56.158756, dtype=float32), Array(43.436993, dtype=float32), Array(62.41505, dtype=float32), Array(20.938074, dtype=float32), Array(39.1523, dtype=float32), Array(40.28207, dtype=float32), Array(17.807352, dtype=float32), Array(45.33597, dtype=float32), Array(25.112688, dtype=float32), Array(35.280357, dtype=float32), Array(63.662483, dtype=float32), Array(49.33313, dtype=float32), Array(71.80846, dtype=float32), Array(10.1521015, dtype=float32), Array(70.452156, dtype=float32), Array(14.16217, dtype=float32), Array(37.84281, dtype=float32), Array(30.792427, dtype=float32), Array(30.222237, dtype=float32), Array(86.61097, dtype=float32), Array(0.7090092, dtype=float32), Array(45.77625, dtype=float32), Array(78.347626, dtype=float32), Array(21.395706, dtype=float32), Array(89.710724, dtype=float32), Array(23.072552, dtype=float32), Array(59.53989, dtype=float32), Array(44.468235, dtype=float32), Array(32.638393, dtype=float32), Array(43.507217, dtype=float32), Array(73.16543, dtype=float32), Array(36.09692, dtype=float32), Array(16.64977, dtype=float32), Array(84.45654, dtype=float32), Array(95.29754, dtype=float32), Array(63.251328, dtype=float32), Array(75.034355, dtype=float32), Array(22.564388, dtype=float32), Array(48.949944, dtype=float32), Array(53.866505, dtype=float32), Array(7.6198697, dtype=float32), Array(77.3239, dtype=float32), Array(69.92391, dtype=float32), Array(70.26545, dtype=float32), Array(24.331593, dtype=float32), Array(25.811935, dtype=float32), Array(54.83074, dtype=float32), Array(23.767519, dtype=float32), Array(35.959435, dtype=float32), Array(84.19206, dtype=float32), Array(58.307503, dtype=float32), Array(68.6142, dtype=float32), Array(43.366898, dtype=float32), Array(4.3816566, dtype=float32), Array(34.48074, dtype=float32), Array(32.30041, dtype=float32), Array(71.953156, dtype=float32), Array(22.161436, dtype=float32), Array(9.181285, dtype=float32), Array(74.76764, dtype=float32), Array(19.433475, dtype=float32), Array(40.23433, dtype=float32), Array(47.783493, dtype=float32), Array(79.07618, dtype=float32), Array(63.965534, dtype=float32), Array(29.03738, dtype=float32), Array(32.217262, dtype=float32), Array(93.55246, dtype=float32), Array(91.22068, dtype=float32), Array(82.07739, dtype=float32), Array(10.558998, dtype=float32), Array(57.30289, dtype=float32), Array(10.363436, dtype=float32), Array(72.14059, dtype=float32), Array(38.925087, dtype=float32), Array(91.42133, dtype=float32), Array(86.80443, dtype=float32), Array(47.97462, dtype=float32), Array(58.235573, dtype=float32), Array(86.75944, dtype=float32), Array(8.024609, dtype=float32), Array(28.927517, dtype=float32), Array(16.257322, dtype=float32), Array(24.539925, dtype=float32), Array(40.281963, dtype=float32), Array(88.46413, dtype=float32), Array(5.407381, dtype=float32), Array(86.9307, dtype=float32), Array(60.65793, dtype=float32), Array(93.35473, dtype=float32), Array(87.261284, dtype=float32), Array(33.059166, dtype=float32), Array(14.801264, dtype=float32), Array(43.45064, dtype=float32), Array(97.886696, dtype=float32), Array(12.358189, dtype=float32), Array(64.748955, dtype=float32), Array(90.64234, dtype=float32), Array(16.277372, dtype=float32), Array(38.3621, dtype=float32), Array(7.322693, dtype=float32), Array(63.74302, dtype=float32), Array(98.44422, dtype=float32), Array(78.27207, dtype=float32), Array(40.32632, dtype=float32)]
-2024-10-04 17:57:30,776 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-04 17:57:30,887 - INFO - The energy needed to go to the node 0 is 5488850.5 and to go to the final node 75260.88, but the available energy is [194786.48]
-2024-10-04 17:57:30,888 - INFO - The energy needed to go to the node 1 is 6335070.0 and to go to the final node 45556.316, but the available energy is [194786.48]
-2024-10-04 17:57:30,889 - INFO - The energy needed to go to the node 2 is 6564894.5 and to go to the final node 128370.96, but the available energy is [194786.48]
-2024-10-04 17:57:30,890 - INFO - The energy needed to go to the node 3 is 6311721.5 and to go to the final node 32438.33, but the available energy is [194786.48]
-2024-10-04 17:57:30,891 - INFO - The energy needed to go to the node 4 is 6345153.0 and to go to the final node 121229.27, but the available energy is [194786.48]
-2024-10-04 17:57:30,892 - INFO - The energy needed to go to the node 5 is 6295304.5 and to go to the final node 97350.82, but the available energy is [194786.48]
-2024-10-04 17:57:30,892 - INFO - The energy needed to go to the node 6 is 6370050.5 and to go to the final node 26112.967, but the available energy is [194786.48]
-2024-10-04 17:57:30,893 - INFO - The energy needed to go to the node 7 is 6435132.0 and to go to the final node 65199.508, but the available energy is [194786.48]
-2024-10-04 17:57:30,894 - INFO - The energy needed to go to the node 8 is 6617258.5 and to go to the final node 232428.16, but the available energy is [194786.48]
-2024-10-04 17:57:30,895 - INFO - The energy needed to go to the node 9 is 6369444.5 and to go to the final node 112696.23, but the available energy is [194786.48]
-2024-10-04 17:57:30,896 - INFO - The energy needed to go to the node 10 is 6685164.5 and to go to the final node 275183.94, but the available energy is [194786.48]
-2024-10-04 17:57:30,897 - INFO - The energy needed to go to the node 11 is 6520047.0 and to go to the final node 114726.32, but the available energy is [194786.48]
-2024-10-04 17:57:30,897 - INFO - The energy needed to go to the node 12 is 6587694.0 and to go to the final node 211631.81, but the available energy is [194786.48]
-2024-10-04 17:57:30,898 - INFO - The energy needed to go to the node 13 is 6635144.5 and to go to the final node 180656.48, but the available energy is [194786.48]
-2024-10-04 17:57:30,899 - INFO - The energy needed to go to the node 14 is 6454041.0 and to go to the final node -0.85, but the available energy is [194786.48]
-2024-10-04 17:57:30,899 - INFO - UAV Energy Level before travelling: [194786.48]
-2024-10-04 17:57:30,900 - INFO - Travelling to node 14 and needing energy 75260.882812
-2024-10-04 17:57:30,908 - INFO - UAV Energy Level after travelling: [119525.6]
-2024-10-04 17:57:30,908 - INFO - The UAV has reached the next node
-2024-10-04 17:57:30,908 - INFO - The UAV energy level is: [119525.6] after going to the next node
-2024-10-04 17:57:30,908 - INFO - The UAV has reached the final node
-2024-10-04 17:57:35,942 - INFO - Energy level is now: [117125.15] and the energy wasted to process the data is: [2400.4497]
-2024-10-04 17:57:35,959 - INFO - Energy level is now: [116692.16] and the energy wasted to hover over the node is: 432.99199999999996
-2024-10-04 17:57:35,960 - INFO - The UAV has finished its business in the current node
-2024-10-04 17:57:35,960 - INFO - The strategies at node 14 have converged to: [1.  1.  1.  1.  0.1 1.  0.1 1.  0.1 0.1 0.1 1.  0.1 1.  0.1 1.  0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1]
-2024-10-04 17:57:35,960 - INFO - The task intensities of the users at node 14 are: [Array(39.277744, dtype=float32), Array(79.794205, dtype=float32), Array(13.536299, dtype=float32), Array(29.049253, dtype=float32), Array(55.670868, dtype=float32), Array(20.663034, dtype=float32), Array(44.282604, dtype=float32), Array(15.336359, dtype=float32), Array(43.228306, dtype=float32), Array(83.93915, dtype=float32), Array(44.313217, dtype=float32), Array(6.016743, dtype=float32), Array(88.79747, dtype=float32), Array(6.341791, dtype=float32), Array(26.291168, dtype=float32), Array(0.8557677, dtype=float32), Array(3.7266254, dtype=float32), Array(83.9913, dtype=float32), Array(94.25968, dtype=float32), Array(41.96968, dtype=float32), Array(3.9177537, dtype=float32), Array(53.583015, dtype=float32), Array(12.0591755, dtype=float32), Array(35.07612, dtype=float32), Array(71.40709, dtype=float32), Array(97.710266, dtype=float32), Array(67.91754, dtype=float32), Array(49.949062, dtype=float32), Array(88.851074, dtype=float32), Array(76.98911, dtype=float32), Array(33.631397, dtype=float32), Array(76.32521, dtype=float32), Array(65.64711, dtype=float32), Array(17.377317, dtype=float32), Array(36.34578, dtype=float32), Array(49.94954, dtype=float32), Array(15.935791, dtype=float32), Array(73.53231, dtype=float32), Array(24.531437, dtype=float32), Array(97.480034, dtype=float32), Array(90.410446, dtype=float32), Array(48.633026, dtype=float32), Array(21.569502, dtype=float32), Array(17.80324, dtype=float32), Array(9.022915, dtype=float32), Array(24.888695, dtype=float32), Array(2.2753954, dtype=float32), Array(64.01993, dtype=float32), Array(18.503057, dtype=float32), Array(83.0716, dtype=float32), Array(18.799423, dtype=float32), Array(13.570679, dtype=float32), Array(91.25112, dtype=float32), Array(66.75326, dtype=float32), Array(39.401924, dtype=float32), Array(55.1391, dtype=float32), Array(51.09161, dtype=float32), Array(57.092464, dtype=float32), Array(61.236595, dtype=float32), Array(57.293667, dtype=float32), Array(29.691101, dtype=float32), Array(38.183247, dtype=float32), Array(46.29885, dtype=float32), Array(13.222814, dtype=float32), Array(2.6477098, dtype=float32), Array(9.034967, dtype=float32), Array(42.392956, dtype=float32), Array(93.838295, dtype=float32), Array(39.545677, dtype=float32), Array(8.19931, dtype=float32), Array(39.80304, dtype=float32), Array(8.4829445, dtype=float32), Array(16.200626, dtype=float32), Array(50.549553, dtype=float32), Array(0.657177, dtype=float32), Array(35.76139, dtype=float32), Array(12.460971, dtype=float32), Array(82.04344, dtype=float32), Array(15.890288, dtype=float32), Array(15.197241, dtype=float32), Array(1.469779, dtype=float32), Array(53.4827, dtype=float32), Array(53.736244, dtype=float32), Array(56.35451, dtype=float32), Array(83.01629, dtype=float32), Array(42.32589, dtype=float32), Array(23.293686, dtype=float32), Array(49.07975, dtype=float32), Array(28.99232, dtype=float32), Array(81.638145, dtype=float32), Array(88.317505, dtype=float32), Array(14.34927, dtype=float32), Array(86.22433, dtype=float32), Array(9.515405, dtype=float32), Array(71.788956, dtype=float32), Array(30.763363, dtype=float32), Array(42.200863, dtype=float32), Array(2.4036765, dtype=float32), Array(56.158756, dtype=float32), Array(43.436993, dtype=float32), Array(62.41505, dtype=float32), Array(20.938074, dtype=float32), Array(39.1523, dtype=float32), Array(40.28207, dtype=float32), Array(17.807352, dtype=float32), Array(45.33597, dtype=float32), Array(25.112688, dtype=float32), Array(35.280357, dtype=float32), Array(63.662483, dtype=float32), Array(49.33313, dtype=float32), Array(71.80846, dtype=float32), Array(10.1521015, dtype=float32), Array(70.452156, dtype=float32), Array(14.16217, dtype=float32), Array(37.84281, dtype=float32), Array(30.792427, dtype=float32), Array(30.222237, dtype=float32), Array(86.61097, dtype=float32), Array(0.7090092, dtype=float32), Array(45.77625, dtype=float32), Array(78.347626, dtype=float32), Array(21.395706, dtype=float32), Array(89.710724, dtype=float32), Array(23.072552, dtype=float32), Array(59.53989, dtype=float32), Array(44.468235, dtype=float32), Array(32.638393, dtype=float32), Array(43.507217, dtype=float32), Array(73.16543, dtype=float32), Array(36.09692, dtype=float32), Array(16.64977, dtype=float32), Array(84.45654, dtype=float32), Array(95.29754, dtype=float32), Array(63.251328, dtype=float32), Array(75.034355, dtype=float32), Array(22.564388, dtype=float32), Array(48.949944, dtype=float32), Array(53.866505, dtype=float32), Array(7.6198697, dtype=float32), Array(77.3239, dtype=float32), Array(69.92391, dtype=float32), Array(70.26545, dtype=float32), Array(24.331593, dtype=float32), Array(25.811935, dtype=float32), Array(54.83074, dtype=float32), Array(23.767519, dtype=float32), Array(35.959435, dtype=float32), Array(84.19206, dtype=float32), Array(58.307503, dtype=float32), Array(68.6142, dtype=float32), Array(43.366898, dtype=float32), Array(4.3816566, dtype=float32), Array(34.48074, dtype=float32), Array(32.30041, dtype=float32), Array(71.953156, dtype=float32), Array(22.161436, dtype=float32), Array(9.181285, dtype=float32), Array(74.76764, dtype=float32), Array(19.433475, dtype=float32), Array(40.23433, dtype=float32), Array(47.783493, dtype=float32), Array(79.07618, dtype=float32), Array(63.965534, dtype=float32), Array(29.03738, dtype=float32), Array(32.217262, dtype=float32), Array(93.55246, dtype=float32), Array(91.22068, dtype=float32), Array(82.07739, dtype=float32), Array(10.558998, dtype=float32), Array(57.30289, dtype=float32), Array(10.363436, dtype=float32), Array(72.14059, dtype=float32), Array(38.925087, dtype=float32), Array(91.42133, dtype=float32), Array(86.80443, dtype=float32), Array(47.97462, dtype=float32), Array(58.235573, dtype=float32), Array(86.75944, dtype=float32), Array(8.024609, dtype=float32), Array(28.927517, dtype=float32), Array(16.257322, dtype=float32), Array(24.539925, dtype=float32), Array(40.281963, dtype=float32), Array(88.46413, dtype=float32), Array(5.407381, dtype=float32), Array(86.9307, dtype=float32), Array(60.65793, dtype=float32), Array(93.35473, dtype=float32), Array(87.261284, dtype=float32), Array(33.059166, dtype=float32), Array(14.801264, dtype=float32), Array(43.45064, dtype=float32), Array(97.886696, dtype=float32), Array(12.358189, dtype=float32), Array(64.748955, dtype=float32), Array(90.64234, dtype=float32), Array(16.277372, dtype=float32), Array(38.3621, dtype=float32), Array(7.322693, dtype=float32), Array(63.74302, dtype=float32), Array(98.44422, dtype=float32), Array(78.27207, dtype=float32), Array(40.32632, dtype=float32), Array(28.880894, dtype=float32), Array(99.32086, dtype=float32), Array(22.64334, dtype=float32), Array(67.381226, dtype=float32), Array(7.1326494, dtype=float32), Array(24.537872, dtype=float32), Array(52.954567, dtype=float32), Array(77.31011, dtype=float32), Array(64.48377, dtype=float32), Array(17.641306, dtype=float32), Array(83.35717, dtype=float32), Array(10.261095, dtype=float32), Array(88.90163, dtype=float32), Array(77.44646, dtype=float32)]
-2024-10-04 17:57:35,970 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-04 17:57:35,970 - INFO - The UAV has reached the final node and has finished its business
-2024-10-04 17:57:35,970 - INFO - The UAV trajectory is: [0, 14]
-2024-10-04 17:57:35,970 - INFO - The UAV energy level is: [116692.16] at the end of the algorithm
-2024-10-04 17:57:35,970 - INFO - Random Walk Algorithm has successfully reached the final node!
-2024-10-04 17:57:35,971 - INFO - The UAV processed in total: 17483.615 bits
-2024-10-04 17:57:35,971 - INFO - Random Walk Algorithm took: 8.258071184158325 seconds
-2024-10-04 17:57:41,181 - INFO - Number of Nodes: 15
-2024-10-04 17:57:41,181 - INFO - Number of Edges: 105
-2024-10-04 17:57:41,181 - INFO - Number of Users: 3255
-2024-10-04 17:57:41,181 - INFO - Running the Random Walk Algorithm
-2024-10-04 17:57:42,586 - INFO - Energy level is now: [195219.47] and the energy wasted to process the data is: [2780.5251]
-2024-10-04 17:57:42,617 - INFO - Energy level is now: [194786.48] and the energy wasted to hover over the node is: 432.99199999999996
-2024-10-04 17:57:42,618 - INFO - The UAV has finished its business in the current node
-2024-10-04 17:57:42,618 - INFO - The strategies at node 0 have converged to: [1.  1.  1.  1.  1.  1.  1.  0.1 0.1 1.  0.1 0.1 1.  0.1 0.1 0.1 1.  0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 1.  0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1]
-2024-10-04 17:57:42,618 - INFO - The task intensities of the users at node 0 are: [Array(77.430595, dtype=float32), Array(65.38393, dtype=float32), Array(98.73636, dtype=float32), Array(38.88074, dtype=float32), Array(51.45707, dtype=float32), Array(32.497395, dtype=float32), Array(14.307726, dtype=float32), Array(66.98575, dtype=float32), Array(43.74914, dtype=float32), Array(6.3472033, dtype=float32), Array(86.10765, dtype=float32), Array(55.056072, dtype=float32), Array(7.8036904, dtype=float32), Array(77.73365, dtype=float32), Array(39.277744, dtype=float32), Array(79.794205, dtype=float32), Array(13.536299, dtype=float32), Array(29.049253, dtype=float32), Array(55.670868, dtype=float32), Array(20.663034, dtype=float32), Array(44.282604, dtype=float32), Array(15.336359, dtype=float32), Array(43.228306, dtype=float32), Array(83.93915, dtype=float32), Array(44.313217, dtype=float32), Array(6.016743, dtype=float32), Array(88.79747, dtype=float32), Array(6.341791, dtype=float32), Array(26.291168, dtype=float32), Array(0.8557677, dtype=float32), Array(3.7266254, dtype=float32), Array(83.9913, dtype=float32), Array(94.25968, dtype=float32), Array(41.96968, dtype=float32), Array(3.9177537, dtype=float32), Array(53.583015, dtype=float32), Array(12.0591755, dtype=float32), Array(35.07612, dtype=float32), Array(71.40709, dtype=float32), Array(97.710266, dtype=float32), Array(67.91754, dtype=float32), Array(49.949062, dtype=float32), Array(88.851074, dtype=float32), Array(76.98911, dtype=float32), Array(33.631397, dtype=float32), Array(76.32521, dtype=float32), Array(65.64711, dtype=float32), Array(17.377317, dtype=float32), Array(36.34578, dtype=float32), Array(49.94954, dtype=float32), Array(15.935791, dtype=float32), Array(73.53231, dtype=float32), Array(24.531437, dtype=float32), Array(97.480034, dtype=float32), Array(90.410446, dtype=float32), Array(48.633026, dtype=float32), Array(21.569502, dtype=float32), Array(17.80324, dtype=float32), Array(9.022915, dtype=float32), Array(24.888695, dtype=float32), Array(2.2753954, dtype=float32), Array(64.01993, dtype=float32), Array(18.503057, dtype=float32), Array(83.0716, dtype=float32), Array(18.799423, dtype=float32), Array(13.570679, dtype=float32), Array(91.25112, dtype=float32), Array(66.75326, dtype=float32), Array(39.401924, dtype=float32), Array(55.1391, dtype=float32), Array(51.09161, dtype=float32), Array(57.092464, dtype=float32), Array(61.236595, dtype=float32), Array(57.293667, dtype=float32), Array(29.691101, dtype=float32), Array(38.183247, dtype=float32), Array(46.29885, dtype=float32), Array(13.222814, dtype=float32), Array(2.6477098, dtype=float32), Array(9.034967, dtype=float32), Array(42.392956, dtype=float32), Array(93.838295, dtype=float32), Array(39.545677, dtype=float32), Array(8.19931, dtype=float32), Array(39.80304, dtype=float32), Array(8.4829445, dtype=float32), Array(16.200626, dtype=float32), Array(50.549553, dtype=float32), Array(0.657177, dtype=float32), Array(35.76139, dtype=float32), Array(12.460971, dtype=float32), Array(82.04344, dtype=float32), Array(15.890288, dtype=float32), Array(15.197241, dtype=float32), Array(1.469779, dtype=float32), Array(53.4827, dtype=float32), Array(53.736244, dtype=float32), Array(56.35451, dtype=float32), Array(83.01629, dtype=float32), Array(42.32589, dtype=float32), Array(23.293686, dtype=float32), Array(49.07975, dtype=float32), Array(28.99232, dtype=float32), Array(81.638145, dtype=float32), Array(88.317505, dtype=float32), Array(14.34927, dtype=float32), Array(86.22433, dtype=float32), Array(9.515405, dtype=float32), Array(71.788956, dtype=float32), Array(30.763363, dtype=float32), Array(42.200863, dtype=float32), Array(2.4036765, dtype=float32), Array(56.158756, dtype=float32), Array(43.436993, dtype=float32), Array(62.41505, dtype=float32), Array(20.938074, dtype=float32), Array(39.1523, dtype=float32), Array(40.28207, dtype=float32), Array(17.807352, dtype=float32), Array(45.33597, dtype=float32), Array(25.112688, dtype=float32), Array(35.280357, dtype=float32), Array(63.662483, dtype=float32), Array(49.33313, dtype=float32), Array(71.80846, dtype=float32), Array(10.1521015, dtype=float32), Array(70.452156, dtype=float32), Array(14.16217, dtype=float32), Array(37.84281, dtype=float32), Array(30.792427, dtype=float32), Array(30.222237, dtype=float32), Array(86.61097, dtype=float32), Array(0.7090092, dtype=float32), Array(45.77625, dtype=float32), Array(78.347626, dtype=float32), Array(21.395706, dtype=float32), Array(89.710724, dtype=float32), Array(23.072552, dtype=float32), Array(59.53989, dtype=float32), Array(44.468235, dtype=float32), Array(32.638393, dtype=float32), Array(43.507217, dtype=float32), Array(73.16543, dtype=float32), Array(36.09692, dtype=float32), Array(16.64977, dtype=float32), Array(84.45654, dtype=float32), Array(95.29754, dtype=float32), Array(63.251328, dtype=float32), Array(75.034355, dtype=float32), Array(22.564388, dtype=float32), Array(48.949944, dtype=float32), Array(53.866505, dtype=float32), Array(7.6198697, dtype=float32), Array(77.3239, dtype=float32), Array(69.92391, dtype=float32), Array(70.26545, dtype=float32), Array(24.331593, dtype=float32), Array(25.811935, dtype=float32), Array(54.83074, dtype=float32), Array(23.767519, dtype=float32), Array(35.959435, dtype=float32), Array(84.19206, dtype=float32), Array(58.307503, dtype=float32), Array(68.6142, dtype=float32), Array(43.366898, dtype=float32), Array(4.3816566, dtype=float32), Array(34.48074, dtype=float32), Array(32.30041, dtype=float32), Array(71.953156, dtype=float32), Array(22.161436, dtype=float32), Array(9.181285, dtype=float32), Array(74.76764, dtype=float32), Array(19.433475, dtype=float32), Array(40.23433, dtype=float32), Array(47.783493, dtype=float32), Array(79.07618, dtype=float32), Array(63.965534, dtype=float32), Array(29.03738, dtype=float32), Array(32.217262, dtype=float32), Array(93.55246, dtype=float32), Array(91.22068, dtype=float32), Array(82.07739, dtype=float32), Array(10.558998, dtype=float32), Array(57.30289, dtype=float32), Array(10.363436, dtype=float32), Array(72.14059, dtype=float32), Array(38.925087, dtype=float32), Array(91.42133, dtype=float32), Array(86.80443, dtype=float32), Array(47.97462, dtype=float32), Array(58.235573, dtype=float32), Array(86.75944, dtype=float32), Array(8.024609, dtype=float32), Array(28.927517, dtype=float32), Array(16.257322, dtype=float32), Array(24.539925, dtype=float32), Array(40.281963, dtype=float32), Array(88.46413, dtype=float32), Array(5.407381, dtype=float32), Array(86.9307, dtype=float32), Array(60.65793, dtype=float32), Array(93.35473, dtype=float32), Array(87.261284, dtype=float32), Array(33.059166, dtype=float32), Array(14.801264, dtype=float32), Array(43.45064, dtype=float32), Array(97.886696, dtype=float32), Array(12.358189, dtype=float32), Array(64.748955, dtype=float32), Array(90.64234, dtype=float32), Array(16.277372, dtype=float32), Array(38.3621, dtype=float32), Array(7.322693, dtype=float32), Array(63.74302, dtype=float32), Array(98.44422, dtype=float32), Array(78.27207, dtype=float32), Array(40.32632, dtype=float32)]
-2024-10-04 17:57:42,628 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-04 17:57:42,691 - INFO - The energy needed to go to the node 0 is 5488850.5 and to go to the final node 75260.88, but the available energy is [194786.48]
-2024-10-04 17:57:42,692 - INFO - The energy needed to go to the node 1 is 6335070.0 and to go to the final node 45556.316, but the available energy is [194786.48]
-2024-10-04 17:57:42,693 - INFO - The energy needed to go to the node 2 is 6564894.5 and to go to the final node 128370.96, but the available energy is [194786.48]
-2024-10-04 17:57:42,694 - INFO - The energy needed to go to the node 3 is 6311721.5 and to go to the final node 32438.33, but the available energy is [194786.48]
-2024-10-04 17:57:42,694 - INFO - The energy needed to go to the node 4 is 6345153.0 and to go to the final node 121229.27, but the available energy is [194786.48]
-2024-10-04 17:57:42,695 - INFO - The energy needed to go to the node 5 is 6295304.5 and to go to the final node 97350.82, but the available energy is [194786.48]
-2024-10-04 17:57:42,696 - INFO - The energy needed to go to the node 6 is 6370050.5 and to go to the final node 26112.967, but the available energy is [194786.48]
-2024-10-04 17:57:42,697 - INFO - The energy needed to go to the node 7 is 6435132.0 and to go to the final node 65199.508, but the available energy is [194786.48]
-2024-10-04 17:57:42,698 - INFO - The energy needed to go to the node 8 is 6617258.5 and to go to the final node 232428.16, but the available energy is [194786.48]
-2024-10-04 17:57:42,699 - INFO - The energy needed to go to the node 9 is 6369444.5 and to go to the final node 112696.23, but the available energy is [194786.48]
-2024-10-04 17:57:42,700 - INFO - The energy needed to go to the node 10 is 6685164.5 and to go to the final node 275183.94, but the available energy is [194786.48]
-2024-10-04 17:57:42,700 - INFO - The energy needed to go to the node 11 is 6520047.0 and to go to the final node 114726.32, but the available energy is [194786.48]
-2024-10-04 17:57:42,701 - INFO - The energy needed to go to the node 12 is 6587694.0 and to go to the final node 211631.81, but the available energy is [194786.48]
-2024-10-04 17:57:42,702 - INFO - The energy needed to go to the node 13 is 6635144.5 and to go to the final node 180656.48, but the available energy is [194786.48]
-2024-10-04 17:57:42,703 - INFO - The energy needed to go to the node 14 is 6454041.0 and to go to the final node -0.85, but the available energy is [194786.48]
-2024-10-04 17:57:42,703 - INFO - UAV Energy Level before travelling: [194786.48]
-2024-10-04 17:57:42,704 - INFO - Travelling to node 14 and needing energy 75260.882812
-2024-10-04 17:57:42,704 - INFO - UAV Energy Level after travelling: [119525.6]
-2024-10-04 17:57:42,704 - INFO - The UAV has reached the next node
-2024-10-04 17:57:42,704 - INFO - The UAV energy level is: [119525.6] after going to the next node
-2024-10-04 17:57:42,704 - INFO - The UAV has reached the final node
-2024-10-04 17:57:44,101 - INFO - Energy level is now: [117125.15] and the energy wasted to process the data is: [2400.4497]
-2024-10-04 17:57:44,119 - INFO - Energy level is now: [116692.16] and the energy wasted to hover over the node is: 432.99199999999996
-2024-10-04 17:57:44,119 - INFO - The UAV has finished its business in the current node
-2024-10-04 17:57:44,119 - INFO - The strategies at node 14 have converged to: [1.  1.  1.  1.  0.1 1.  0.1 1.  0.1 0.1 0.1 1.  0.1 1.  0.1 1.  0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1]
-2024-10-04 17:57:44,120 - INFO - The task intensities of the users at node 14 are: [Array(39.277744, dtype=float32), Array(79.794205, dtype=float32), Array(13.536299, dtype=float32), Array(29.049253, dtype=float32), Array(55.670868, dtype=float32), Array(20.663034, dtype=float32), Array(44.282604, dtype=float32), Array(15.336359, dtype=float32), Array(43.228306, dtype=float32), Array(83.93915, dtype=float32), Array(44.313217, dtype=float32), Array(6.016743, dtype=float32), Array(88.79747, dtype=float32), Array(6.341791, dtype=float32), Array(26.291168, dtype=float32), Array(0.8557677, dtype=float32), Array(3.7266254, dtype=float32), Array(83.9913, dtype=float32), Array(94.25968, dtype=float32), Array(41.96968, dtype=float32), Array(3.9177537, dtype=float32), Array(53.583015, dtype=float32), Array(12.0591755, dtype=float32), Array(35.07612, dtype=float32), Array(71.40709, dtype=float32), Array(97.710266, dtype=float32), Array(67.91754, dtype=float32), Array(49.949062, dtype=float32), Array(88.851074, dtype=float32), Array(76.98911, dtype=float32), Array(33.631397, dtype=float32), Array(76.32521, dtype=float32), Array(65.64711, dtype=float32), Array(17.377317, dtype=float32), Array(36.34578, dtype=float32), Array(49.94954, dtype=float32), Array(15.935791, dtype=float32), Array(73.53231, dtype=float32), Array(24.531437, dtype=float32), Array(97.480034, dtype=float32), Array(90.410446, dtype=float32), Array(48.633026, dtype=float32), Array(21.569502, dtype=float32), Array(17.80324, dtype=float32), Array(9.022915, dtype=float32), Array(24.888695, dtype=float32), Array(2.2753954, dtype=float32), Array(64.01993, dtype=float32), Array(18.503057, dtype=float32), Array(83.0716, dtype=float32), Array(18.799423, dtype=float32), Array(13.570679, dtype=float32), Array(91.25112, dtype=float32), Array(66.75326, dtype=float32), Array(39.401924, dtype=float32), Array(55.1391, dtype=float32), Array(51.09161, dtype=float32), Array(57.092464, dtype=float32), Array(61.236595, dtype=float32), Array(57.293667, dtype=float32), Array(29.691101, dtype=float32), Array(38.183247, dtype=float32), Array(46.29885, dtype=float32), Array(13.222814, dtype=float32), Array(2.6477098, dtype=float32), Array(9.034967, dtype=float32), Array(42.392956, dtype=float32), Array(93.838295, dtype=float32), Array(39.545677, dtype=float32), Array(8.19931, dtype=float32), Array(39.80304, dtype=float32), Array(8.4829445, dtype=float32), Array(16.200626, dtype=float32), Array(50.549553, dtype=float32), Array(0.657177, dtype=float32), Array(35.76139, dtype=float32), Array(12.460971, dtype=float32), Array(82.04344, dtype=float32), Array(15.890288, dtype=float32), Array(15.197241, dtype=float32), Array(1.469779, dtype=float32), Array(53.4827, dtype=float32), Array(53.736244, dtype=float32), Array(56.35451, dtype=float32), Array(83.01629, dtype=float32), Array(42.32589, dtype=float32), Array(23.293686, dtype=float32), Array(49.07975, dtype=float32), Array(28.99232, dtype=float32), Array(81.638145, dtype=float32), Array(88.317505, dtype=float32), Array(14.34927, dtype=float32), Array(86.22433, dtype=float32), Array(9.515405, dtype=float32), Array(71.788956, dtype=float32), Array(30.763363, dtype=float32), Array(42.200863, dtype=float32), Array(2.4036765, dtype=float32), Array(56.158756, dtype=float32), Array(43.436993, dtype=float32), Array(62.41505, dtype=float32), Array(20.938074, dtype=float32), Array(39.1523, dtype=float32), Array(40.28207, dtype=float32), Array(17.807352, dtype=float32), Array(45.33597, dtype=float32), Array(25.112688, dtype=float32), Array(35.280357, dtype=float32), Array(63.662483, dtype=float32), Array(49.33313, dtype=float32), Array(71.80846, dtype=float32), Array(10.1521015, dtype=float32), Array(70.452156, dtype=float32), Array(14.16217, dtype=float32), Array(37.84281, dtype=float32), Array(30.792427, dtype=float32), Array(30.222237, dtype=float32), Array(86.61097, dtype=float32), Array(0.7090092, dtype=float32), Array(45.77625, dtype=float32), Array(78.347626, dtype=float32), Array(21.395706, dtype=float32), Array(89.710724, dtype=float32), Array(23.072552, dtype=float32), Array(59.53989, dtype=float32), Array(44.468235, dtype=float32), Array(32.638393, dtype=float32), Array(43.507217, dtype=float32), Array(73.16543, dtype=float32), Array(36.09692, dtype=float32), Array(16.64977, dtype=float32), Array(84.45654, dtype=float32), Array(95.29754, dtype=float32), Array(63.251328, dtype=float32), Array(75.034355, dtype=float32), Array(22.564388, dtype=float32), Array(48.949944, dtype=float32), Array(53.866505, dtype=float32), Array(7.6198697, dtype=float32), Array(77.3239, dtype=float32), Array(69.92391, dtype=float32), Array(70.26545, dtype=float32), Array(24.331593, dtype=float32), Array(25.811935, dtype=float32), Array(54.83074, dtype=float32), Array(23.767519, dtype=float32), Array(35.959435, dtype=float32), Array(84.19206, dtype=float32), Array(58.307503, dtype=float32), Array(68.6142, dtype=float32), Array(43.366898, dtype=float32), Array(4.3816566, dtype=float32), Array(34.48074, dtype=float32), Array(32.30041, dtype=float32), Array(71.953156, dtype=float32), Array(22.161436, dtype=float32), Array(9.181285, dtype=float32), Array(74.76764, dtype=float32), Array(19.433475, dtype=float32), Array(40.23433, dtype=float32), Array(47.783493, dtype=float32), Array(79.07618, dtype=float32), Array(63.965534, dtype=float32), Array(29.03738, dtype=float32), Array(32.217262, dtype=float32), Array(93.55246, dtype=float32), Array(91.22068, dtype=float32), Array(82.07739, dtype=float32), Array(10.558998, dtype=float32), Array(57.30289, dtype=float32), Array(10.363436, dtype=float32), Array(72.14059, dtype=float32), Array(38.925087, dtype=float32), Array(91.42133, dtype=float32), Array(86.80443, dtype=float32), Array(47.97462, dtype=float32), Array(58.235573, dtype=float32), Array(86.75944, dtype=float32), Array(8.024609, dtype=float32), Array(28.927517, dtype=float32), Array(16.257322, dtype=float32), Array(24.539925, dtype=float32), Array(40.281963, dtype=float32), Array(88.46413, dtype=float32), Array(5.407381, dtype=float32), Array(86.9307, dtype=float32), Array(60.65793, dtype=float32), Array(93.35473, dtype=float32), Array(87.261284, dtype=float32), Array(33.059166, dtype=float32), Array(14.801264, dtype=float32), Array(43.45064, dtype=float32), Array(97.886696, dtype=float32), Array(12.358189, dtype=float32), Array(64.748955, dtype=float32), Array(90.64234, dtype=float32), Array(16.277372, dtype=float32), Array(38.3621, dtype=float32), Array(7.322693, dtype=float32), Array(63.74302, dtype=float32), Array(98.44422, dtype=float32), Array(78.27207, dtype=float32), Array(40.32632, dtype=float32), Array(28.880894, dtype=float32), Array(99.32086, dtype=float32), Array(22.64334, dtype=float32), Array(67.381226, dtype=float32), Array(7.1326494, dtype=float32), Array(24.537872, dtype=float32), Array(52.954567, dtype=float32), Array(77.31011, dtype=float32), Array(64.48377, dtype=float32), Array(17.641306, dtype=float32), Array(83.35717, dtype=float32), Array(10.261095, dtype=float32), Array(88.90163, dtype=float32), Array(77.44646, dtype=float32)]
-2024-10-04 17:57:44,129 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-04 17:57:44,129 - INFO - The UAV has reached the final node and has finished its business
-2024-10-04 17:57:44,129 - INFO - The UAV trajectory is: [0, 14]
-2024-10-04 17:57:44,129 - INFO - The UAV energy level is: [116692.16] at the end of the algorithm
-2024-10-04 17:57:44,130 - INFO - Random Walk Algorithm has successfully reached the final node!
-2024-10-04 17:57:44,130 - INFO - The UAV processed in total: 17483.615 bits
-2024-10-04 17:57:44,130 - INFO - Proportional Fairness Algorithm took: 2.9488377571105957 seconds
-2024-10-04 17:57:49,262 - INFO - Number of Nodes: 15
-2024-10-04 17:57:49,262 - INFO - Number of Edges: 105
-2024-10-04 17:57:49,262 - INFO - Number of Users: 3255
-2024-10-04 17:57:49,262 - INFO - Running the Brave Greedy Algorithm
-2024-10-04 17:57:50,473 - INFO - Energy level is now: [195219.47] and the energy wasted to process the data is: [2780.5251]
-2024-10-04 17:57:50,505 - INFO - Energy level is now: [194786.48] and the energy wasted to hover over the node is: 432.99199999999996
-2024-10-04 17:57:50,505 - INFO - The UAV has finished its business in the current node
-2024-10-04 17:57:50,505 - INFO - The strategies at node 0 have converged to: [1.  1.  1.  1.  1.  1.  1.  0.1 0.1 1.  0.1 0.1 1.  0.1 0.1 0.1 1.  0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 1.  0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1]
-2024-10-04 17:57:50,505 - INFO - The task intensities of the users at node 0 are: [Array(77.430595, dtype=float32), Array(65.38393, dtype=float32), Array(98.73636, dtype=float32), Array(38.88074, dtype=float32), Array(51.45707, dtype=float32), Array(32.497395, dtype=float32), Array(14.307726, dtype=float32), Array(66.98575, dtype=float32), Array(43.74914, dtype=float32), Array(6.3472033, dtype=float32), Array(86.10765, dtype=float32), Array(55.056072, dtype=float32), Array(7.8036904, dtype=float32), Array(77.73365, dtype=float32), Array(39.277744, dtype=float32), Array(79.794205, dtype=float32), Array(13.536299, dtype=float32), Array(29.049253, dtype=float32), Array(55.670868, dtype=float32), Array(20.663034, dtype=float32), Array(44.282604, dtype=float32), Array(15.336359, dtype=float32), Array(43.228306, dtype=float32), Array(83.93915, dtype=float32), Array(44.313217, dtype=float32), Array(6.016743, dtype=float32), Array(88.79747, dtype=float32), Array(6.341791, dtype=float32), Array(26.291168, dtype=float32), Array(0.8557677, dtype=float32), Array(3.7266254, dtype=float32), Array(83.9913, dtype=float32), Array(94.25968, dtype=float32), Array(41.96968, dtype=float32), Array(3.9177537, dtype=float32), Array(53.583015, dtype=float32), Array(12.0591755, dtype=float32), Array(35.07612, dtype=float32), Array(71.40709, dtype=float32), Array(97.710266, dtype=float32), Array(67.91754, dtype=float32), Array(49.949062, dtype=float32), Array(88.851074, dtype=float32), Array(76.98911, dtype=float32), Array(33.631397, dtype=float32), Array(76.32521, dtype=float32), Array(65.64711, dtype=float32), Array(17.377317, dtype=float32), Array(36.34578, dtype=float32), Array(49.94954, dtype=float32), Array(15.935791, dtype=float32), Array(73.53231, dtype=float32), Array(24.531437, dtype=float32), Array(97.480034, dtype=float32), Array(90.410446, dtype=float32), Array(48.633026, dtype=float32), Array(21.569502, dtype=float32), Array(17.80324, dtype=float32), Array(9.022915, dtype=float32), Array(24.888695, dtype=float32), Array(2.2753954, dtype=float32), Array(64.01993, dtype=float32), Array(18.503057, dtype=float32), Array(83.0716, dtype=float32), Array(18.799423, dtype=float32), Array(13.570679, dtype=float32), Array(91.25112, dtype=float32), Array(66.75326, dtype=float32), Array(39.401924, dtype=float32), Array(55.1391, dtype=float32), Array(51.09161, dtype=float32), Array(57.092464, dtype=float32), Array(61.236595, dtype=float32), Array(57.293667, dtype=float32), Array(29.691101, dtype=float32), Array(38.183247, dtype=float32), Array(46.29885, dtype=float32), Array(13.222814, dtype=float32), Array(2.6477098, dtype=float32), Array(9.034967, dtype=float32), Array(42.392956, dtype=float32), Array(93.838295, dtype=float32), Array(39.545677, dtype=float32), Array(8.19931, dtype=float32), Array(39.80304, dtype=float32), Array(8.4829445, dtype=float32), Array(16.200626, dtype=float32), Array(50.549553, dtype=float32), Array(0.657177, dtype=float32), Array(35.76139, dtype=float32), Array(12.460971, dtype=float32), Array(82.04344, dtype=float32), Array(15.890288, dtype=float32), Array(15.197241, dtype=float32), Array(1.469779, dtype=float32), Array(53.4827, dtype=float32), Array(53.736244, dtype=float32), Array(56.35451, dtype=float32), Array(83.01629, dtype=float32), Array(42.32589, dtype=float32), Array(23.293686, dtype=float32), Array(49.07975, dtype=float32), Array(28.99232, dtype=float32), Array(81.638145, dtype=float32), Array(88.317505, dtype=float32), Array(14.34927, dtype=float32), Array(86.22433, dtype=float32), Array(9.515405, dtype=float32), Array(71.788956, dtype=float32), Array(30.763363, dtype=float32), Array(42.200863, dtype=float32), Array(2.4036765, dtype=float32), Array(56.158756, dtype=float32), Array(43.436993, dtype=float32), Array(62.41505, dtype=float32), Array(20.938074, dtype=float32), Array(39.1523, dtype=float32), Array(40.28207, dtype=float32), Array(17.807352, dtype=float32), Array(45.33597, dtype=float32), Array(25.112688, dtype=float32), Array(35.280357, dtype=float32), Array(63.662483, dtype=float32), Array(49.33313, dtype=float32), Array(71.80846, dtype=float32), Array(10.1521015, dtype=float32), Array(70.452156, dtype=float32), Array(14.16217, dtype=float32), Array(37.84281, dtype=float32), Array(30.792427, dtype=float32), Array(30.222237, dtype=float32), Array(86.61097, dtype=float32), Array(0.7090092, dtype=float32), Array(45.77625, dtype=float32), Array(78.347626, dtype=float32), Array(21.395706, dtype=float32), Array(89.710724, dtype=float32), Array(23.072552, dtype=float32), Array(59.53989, dtype=float32), Array(44.468235, dtype=float32), Array(32.638393, dtype=float32), Array(43.507217, dtype=float32), Array(73.16543, dtype=float32), Array(36.09692, dtype=float32), Array(16.64977, dtype=float32), Array(84.45654, dtype=float32), Array(95.29754, dtype=float32), Array(63.251328, dtype=float32), Array(75.034355, dtype=float32), Array(22.564388, dtype=float32), Array(48.949944, dtype=float32), Array(53.866505, dtype=float32), Array(7.6198697, dtype=float32), Array(77.3239, dtype=float32), Array(69.92391, dtype=float32), Array(70.26545, dtype=float32), Array(24.331593, dtype=float32), Array(25.811935, dtype=float32), Array(54.83074, dtype=float32), Array(23.767519, dtype=float32), Array(35.959435, dtype=float32), Array(84.19206, dtype=float32), Array(58.307503, dtype=float32), Array(68.6142, dtype=float32), Array(43.366898, dtype=float32), Array(4.3816566, dtype=float32), Array(34.48074, dtype=float32), Array(32.30041, dtype=float32), Array(71.953156, dtype=float32), Array(22.161436, dtype=float32), Array(9.181285, dtype=float32), Array(74.76764, dtype=float32), Array(19.433475, dtype=float32), Array(40.23433, dtype=float32), Array(47.783493, dtype=float32), Array(79.07618, dtype=float32), Array(63.965534, dtype=float32), Array(29.03738, dtype=float32), Array(32.217262, dtype=float32), Array(93.55246, dtype=float32), Array(91.22068, dtype=float32), Array(82.07739, dtype=float32), Array(10.558998, dtype=float32), Array(57.30289, dtype=float32), Array(10.363436, dtype=float32), Array(72.14059, dtype=float32), Array(38.925087, dtype=float32), Array(91.42133, dtype=float32), Array(86.80443, dtype=float32), Array(47.97462, dtype=float32), Array(58.235573, dtype=float32), Array(86.75944, dtype=float32), Array(8.024609, dtype=float32), Array(28.927517, dtype=float32), Array(16.257322, dtype=float32), Array(24.539925, dtype=float32), Array(40.281963, dtype=float32), Array(88.46413, dtype=float32), Array(5.407381, dtype=float32), Array(86.9307, dtype=float32), Array(60.65793, dtype=float32), Array(93.35473, dtype=float32), Array(87.261284, dtype=float32), Array(33.059166, dtype=float32), Array(14.801264, dtype=float32), Array(43.45064, dtype=float32), Array(97.886696, dtype=float32), Array(12.358189, dtype=float32), Array(64.748955, dtype=float32), Array(90.64234, dtype=float32), Array(16.277372, dtype=float32), Array(38.3621, dtype=float32), Array(7.322693, dtype=float32), Array(63.74302, dtype=float32), Array(98.44422, dtype=float32), Array(78.27207, dtype=float32), Array(40.32632, dtype=float32)]
-2024-10-04 17:57:50,515 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-04 17:57:50,588 - INFO - The energy needed to go to the node 13 is 6635144.5 and to go to the final node 180656.48, but the available energy is [194786.48]
-2024-10-04 17:57:50,589 - INFO - The energy needed to go to the node 14 is 6454041.0 and to go to the final node -0.85, but the available energy is [194786.48]
-2024-10-04 17:57:50,590 - INFO - The energy needed to go to the node 2 is 6564894.5 and to go to the final node 128370.96, but the available energy is [194786.48]
-2024-10-04 17:57:50,591 - INFO - The energy needed to go to the node 10 is 6685164.5 and to go to the final node 275183.94, but the available energy is [194786.48]
-2024-10-04 17:57:50,591 - INFO - The energy needed to go to the node 11 is 6520047.0 and to go to the final node 114726.32, but the available energy is [194786.48]
-2024-10-04 17:57:50,592 - INFO - The energy needed to go to the node 9 is 6369444.5 and to go to the final node 112696.23, but the available energy is [194786.48]
-2024-10-04 17:57:50,593 - INFO - The energy needed to go to the node 1 is 6335070.0 and to go to the final node 45556.316, but the available energy is [194786.48]
-2024-10-04 17:57:50,594 - INFO - The energy needed to go to the node 4 is 6345153.0 and to go to the final node 121229.27, but the available energy is [194786.48]
-2024-10-04 17:57:50,595 - INFO - The energy needed to go to the node 8 is 6617258.5 and to go to the final node 232428.16, but the available energy is [194786.48]
-2024-10-04 17:57:50,596 - INFO - The energy needed to go to the node 7 is 6435132.0 and to go to the final node 65199.508, but the available energy is [194786.48]
-2024-10-04 17:57:50,596 - INFO - The energy needed to go to the node 12 is 6587694.0 and to go to the final node 211631.81, but the available energy is [194786.48]
-2024-10-04 17:57:50,597 - INFO - The energy needed to go to the node 3 is 6311721.5 and to go to the final node 32438.33, but the available energy is [194786.48]
-2024-10-04 17:57:50,598 - INFO - The energy needed to go to the node 5 is 6295304.5 and to go to the final node 97350.82, but the available energy is [194786.48]
-2024-10-04 17:57:50,599 - INFO - The energy needed to go to the node 6 is 6370050.5 and to go to the final node 26112.967, but the available energy is [194786.48]
-2024-10-04 17:57:50,600 - INFO - The energy needed to go to the node 0 is 5488850.5 and to go to the final node 75260.88, but the available energy is [194786.48]
-2024-10-04 17:57:50,600 - INFO - UAV Energy Level before travelling: [194786.48]
-2024-10-04 17:57:50,601 - INFO - Travelling to node 14 and needing energy 75260.882812
-2024-10-04 17:57:50,601 - INFO - UAV Energy Level after travelling: [119525.6]
-2024-10-04 17:57:50,601 - INFO - The UAV has reached the next node
-2024-10-04 17:57:50,601 - INFO - The UAV has reached the final node
-2024-10-04 17:57:51,848 - INFO - Energy level is now: [117125.15] and the energy wasted to process the data is: [2400.4497]
-2024-10-04 17:57:51,865 - INFO - Energy level is now: [116692.16] and the energy wasted to hover over the node is: 432.99199999999996
-2024-10-04 17:57:51,865 - INFO - The UAV has finished its business in the current node
-2024-10-04 17:57:51,866 - INFO - The strategies at node 14 have converged to: [1.  1.  1.  1.  0.1 1.  0.1 1.  0.1 0.1 0.1 1.  0.1 1.  0.1 1.  0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1]
-2024-10-04 17:57:51,866 - INFO - The task intensities of the users at node 14 are: [Array(39.277744, dtype=float32), Array(79.794205, dtype=float32), Array(13.536299, dtype=float32), Array(29.049253, dtype=float32), Array(55.670868, dtype=float32), Array(20.663034, dtype=float32), Array(44.282604, dtype=float32), Array(15.336359, dtype=float32), Array(43.228306, dtype=float32), Array(83.93915, dtype=float32), Array(44.313217, dtype=float32), Array(6.016743, dtype=float32), Array(88.79747, dtype=float32), Array(6.341791, dtype=float32), Array(26.291168, dtype=float32), Array(0.8557677, dtype=float32), Array(3.7266254, dtype=float32), Array(83.9913, dtype=float32), Array(94.25968, dtype=float32), Array(41.96968, dtype=float32), Array(3.9177537, dtype=float32), Array(53.583015, dtype=float32), Array(12.0591755, dtype=float32), Array(35.07612, dtype=float32), Array(71.40709, dtype=float32), Array(97.710266, dtype=float32), Array(67.91754, dtype=float32), Array(49.949062, dtype=float32), Array(88.851074, dtype=float32), Array(76.98911, dtype=float32), Array(33.631397, dtype=float32), Array(76.32521, dtype=float32), Array(65.64711, dtype=float32), Array(17.377317, dtype=float32), Array(36.34578, dtype=float32), Array(49.94954, dtype=float32), Array(15.935791, dtype=float32), Array(73.53231, dtype=float32), Array(24.531437, dtype=float32), Array(97.480034, dtype=float32), Array(90.410446, dtype=float32), Array(48.633026, dtype=float32), Array(21.569502, dtype=float32), Array(17.80324, dtype=float32), Array(9.022915, dtype=float32), Array(24.888695, dtype=float32), Array(2.2753954, dtype=float32), Array(64.01993, dtype=float32), Array(18.503057, dtype=float32), Array(83.0716, dtype=float32), Array(18.799423, dtype=float32), Array(13.570679, dtype=float32), Array(91.25112, dtype=float32), Array(66.75326, dtype=float32), Array(39.401924, dtype=float32), Array(55.1391, dtype=float32), Array(51.09161, dtype=float32), Array(57.092464, dtype=float32), Array(61.236595, dtype=float32), Array(57.293667, dtype=float32), Array(29.691101, dtype=float32), Array(38.183247, dtype=float32), Array(46.29885, dtype=float32), Array(13.222814, dtype=float32), Array(2.6477098, dtype=float32), Array(9.034967, dtype=float32), Array(42.392956, dtype=float32), Array(93.838295, dtype=float32), Array(39.545677, dtype=float32), Array(8.19931, dtype=float32), Array(39.80304, dtype=float32), Array(8.4829445, dtype=float32), Array(16.200626, dtype=float32), Array(50.549553, dtype=float32), Array(0.657177, dtype=float32), Array(35.76139, dtype=float32), Array(12.460971, dtype=float32), Array(82.04344, dtype=float32), Array(15.890288, dtype=float32), Array(15.197241, dtype=float32), Array(1.469779, dtype=float32), Array(53.4827, dtype=float32), Array(53.736244, dtype=float32), Array(56.35451, dtype=float32), Array(83.01629, dtype=float32), Array(42.32589, dtype=float32), Array(23.293686, dtype=float32), Array(49.07975, dtype=float32), Array(28.99232, dtype=float32), Array(81.638145, dtype=float32), Array(88.317505, dtype=float32), Array(14.34927, dtype=float32), Array(86.22433, dtype=float32), Array(9.515405, dtype=float32), Array(71.788956, dtype=float32), Array(30.763363, dtype=float32), Array(42.200863, dtype=float32), Array(2.4036765, dtype=float32), Array(56.158756, dtype=float32), Array(43.436993, dtype=float32), Array(62.41505, dtype=float32), Array(20.938074, dtype=float32), Array(39.1523, dtype=float32), Array(40.28207, dtype=float32), Array(17.807352, dtype=float32), Array(45.33597, dtype=float32), Array(25.112688, dtype=float32), Array(35.280357, dtype=float32), Array(63.662483, dtype=float32), Array(49.33313, dtype=float32), Array(71.80846, dtype=float32), Array(10.1521015, dtype=float32), Array(70.452156, dtype=float32), Array(14.16217, dtype=float32), Array(37.84281, dtype=float32), Array(30.792427, dtype=float32), Array(30.222237, dtype=float32), Array(86.61097, dtype=float32), Array(0.7090092, dtype=float32), Array(45.77625, dtype=float32), Array(78.347626, dtype=float32), Array(21.395706, dtype=float32), Array(89.710724, dtype=float32), Array(23.072552, dtype=float32), Array(59.53989, dtype=float32), Array(44.468235, dtype=float32), Array(32.638393, dtype=float32), Array(43.507217, dtype=float32), Array(73.16543, dtype=float32), Array(36.09692, dtype=float32), Array(16.64977, dtype=float32), Array(84.45654, dtype=float32), Array(95.29754, dtype=float32), Array(63.251328, dtype=float32), Array(75.034355, dtype=float32), Array(22.564388, dtype=float32), Array(48.949944, dtype=float32), Array(53.866505, dtype=float32), Array(7.6198697, dtype=float32), Array(77.3239, dtype=float32), Array(69.92391, dtype=float32), Array(70.26545, dtype=float32), Array(24.331593, dtype=float32), Array(25.811935, dtype=float32), Array(54.83074, dtype=float32), Array(23.767519, dtype=float32), Array(35.959435, dtype=float32), Array(84.19206, dtype=float32), Array(58.307503, dtype=float32), Array(68.6142, dtype=float32), Array(43.366898, dtype=float32), Array(4.3816566, dtype=float32), Array(34.48074, dtype=float32), Array(32.30041, dtype=float32), Array(71.953156, dtype=float32), Array(22.161436, dtype=float32), Array(9.181285, dtype=float32), Array(74.76764, dtype=float32), Array(19.433475, dtype=float32), Array(40.23433, dtype=float32), Array(47.783493, dtype=float32), Array(79.07618, dtype=float32), Array(63.965534, dtype=float32), Array(29.03738, dtype=float32), Array(32.217262, dtype=float32), Array(93.55246, dtype=float32), Array(91.22068, dtype=float32), Array(82.07739, dtype=float32), Array(10.558998, dtype=float32), Array(57.30289, dtype=float32), Array(10.363436, dtype=float32), Array(72.14059, dtype=float32), Array(38.925087, dtype=float32), Array(91.42133, dtype=float32), Array(86.80443, dtype=float32), Array(47.97462, dtype=float32), Array(58.235573, dtype=float32), Array(86.75944, dtype=float32), Array(8.024609, dtype=float32), Array(28.927517, dtype=float32), Array(16.257322, dtype=float32), Array(24.539925, dtype=float32), Array(40.281963, dtype=float32), Array(88.46413, dtype=float32), Array(5.407381, dtype=float32), Array(86.9307, dtype=float32), Array(60.65793, dtype=float32), Array(93.35473, dtype=float32), Array(87.261284, dtype=float32), Array(33.059166, dtype=float32), Array(14.801264, dtype=float32), Array(43.45064, dtype=float32), Array(97.886696, dtype=float32), Array(12.358189, dtype=float32), Array(64.748955, dtype=float32), Array(90.64234, dtype=float32), Array(16.277372, dtype=float32), Array(38.3621, dtype=float32), Array(7.322693, dtype=float32), Array(63.74302, dtype=float32), Array(98.44422, dtype=float32), Array(78.27207, dtype=float32), Array(40.32632, dtype=float32), Array(28.880894, dtype=float32), Array(99.32086, dtype=float32), Array(22.64334, dtype=float32), Array(67.381226, dtype=float32), Array(7.1326494, dtype=float32), Array(24.537872, dtype=float32), Array(52.954567, dtype=float32), Array(77.31011, dtype=float32), Array(64.48377, dtype=float32), Array(17.641306, dtype=float32), Array(83.35717, dtype=float32), Array(10.261095, dtype=float32), Array(88.90163, dtype=float32), Array(77.44646, dtype=float32)]
-2024-10-04 17:57:51,876 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-04 17:57:51,876 - INFO - The UAV has reached the final node and has finished its business
-2024-10-04 17:57:51,876 - INFO - The UAV trajectory is: [0, 14]
-2024-10-04 17:57:51,876 - INFO - The UAV energy level is: [116692.16] at the end of the algorithm
-2024-10-04 17:57:51,876 - INFO - Brave Greedy Algorithm has successfully reached the final node!
-2024-10-04 17:57:51,876 - INFO - The UAV processed in total: 17483.615 bits
-2024-10-04 17:57:51,876 - INFO - Brave Greedy Algorithm took: 2.614241123199463 seconds
-2024-10-04 17:57:57,001 - INFO - Number of Nodes: 15
-2024-10-04 17:57:57,001 - INFO - Number of Edges: 105
-2024-10-04 17:57:57,001 - INFO - Number of Users: 3255
-2024-10-04 17:57:57,001 - INFO - Running the Q-Brave Algorithm
-2024-10-04 17:57:57,011 - INFO - Environment has been successfully initialized!
-2024-10-04 17:57:57,013 - INFO - EPISODE START
-2024-10-04 17:58:02,155 - INFO - Number of Nodes: 15
-2024-10-04 17:58:02,155 - INFO - Number of Edges: 105
-2024-10-04 17:58:02,155 - INFO - Number of Users: 3255
-2024-10-04 17:58:02,164 - INFO - UAV Energy Level before travelling: 198000
-2024-10-04 17:58:02,165 - INFO - UAV has to first process the data in the node before moving to another node
-2024-10-04 17:58:03,390 - INFO - Energy level is now: [195219.47] and the energy wasted to process the data is: [2780.5251]
-2024-10-04 17:58:03,390 - INFO - Energy level is now: [194786.48] and the energy wasted to hover over the node is: 432.99199999999996
-2024-10-04 17:58:03,390 - INFO - The UAV has finished its business in the current node
-2024-10-04 17:58:03,390 - INFO - The strategies at node 0 have converged to: [1.  1.  1.  1.  1.  1.  1.  0.1 0.1 1.  0.1 0.1 1.  0.1 0.1 0.1 1.  0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 1.  0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1]
-2024-10-04 17:58:03,390 - INFO - The task intensities of the users at node 0 are: [Array(77.430595, dtype=float32), Array(65.38393, dtype=float32), Array(98.73636, dtype=float32), Array(38.88074, dtype=float32), Array(51.45707, dtype=float32), Array(32.497395, dtype=float32), Array(14.307726, dtype=float32), Array(66.98575, dtype=float32), Array(43.74914, dtype=float32), Array(6.3472033, dtype=float32), Array(86.10765, dtype=float32), Array(55.056072, dtype=float32), Array(7.8036904, dtype=float32), Array(77.73365, dtype=float32), Array(39.277744, dtype=float32), Array(79.794205, dtype=float32), Array(13.536299, dtype=float32), Array(29.049253, dtype=float32), Array(55.670868, dtype=float32), Array(20.663034, dtype=float32), Array(44.282604, dtype=float32), Array(15.336359, dtype=float32), Array(43.228306, dtype=float32), Array(83.93915, dtype=float32), Array(44.313217, dtype=float32), Array(6.016743, dtype=float32), Array(88.79747, dtype=float32), Array(6.341791, dtype=float32), Array(26.291168, dtype=float32), Array(0.8557677, dtype=float32), Array(3.7266254, dtype=float32), Array(83.9913, dtype=float32), Array(94.25968, dtype=float32), Array(41.96968, dtype=float32), Array(3.9177537, dtype=float32), Array(53.583015, dtype=float32), Array(12.0591755, dtype=float32), Array(35.07612, dtype=float32), Array(71.40709, dtype=float32), Array(97.710266, dtype=float32), Array(67.91754, dtype=float32), Array(49.949062, dtype=float32), Array(88.851074, dtype=float32), Array(76.98911, dtype=float32), Array(33.631397, dtype=float32), Array(76.32521, dtype=float32), Array(65.64711, dtype=float32), Array(17.377317, dtype=float32), Array(36.34578, dtype=float32), Array(49.94954, dtype=float32), Array(15.935791, dtype=float32), Array(73.53231, dtype=float32), Array(24.531437, dtype=float32), Array(97.480034, dtype=float32), Array(90.410446, dtype=float32), Array(48.633026, dtype=float32), Array(21.569502, dtype=float32), Array(17.80324, dtype=float32), Array(9.022915, dtype=float32), Array(24.888695, dtype=float32), Array(2.2753954, dtype=float32), Array(64.01993, dtype=float32), Array(18.503057, dtype=float32), Array(83.0716, dtype=float32), Array(18.799423, dtype=float32), Array(13.570679, dtype=float32), Array(91.25112, dtype=float32), Array(66.75326, dtype=float32), Array(39.401924, dtype=float32), Array(55.1391, dtype=float32), Array(51.09161, dtype=float32), Array(57.092464, dtype=float32), Array(61.236595, dtype=float32), Array(57.293667, dtype=float32), Array(29.691101, dtype=float32), Array(38.183247, dtype=float32), Array(46.29885, dtype=float32), Array(13.222814, dtype=float32), Array(2.6477098, dtype=float32), Array(9.034967, dtype=float32), Array(42.392956, dtype=float32), Array(93.838295, dtype=float32), Array(39.545677, dtype=float32), Array(8.19931, dtype=float32), Array(39.80304, dtype=float32), Array(8.4829445, dtype=float32), Array(16.200626, dtype=float32), Array(50.549553, dtype=float32), Array(0.657177, dtype=float32), Array(35.76139, dtype=float32), Array(12.460971, dtype=float32), Array(82.04344, dtype=float32), Array(15.890288, dtype=float32), Array(15.197241, dtype=float32), Array(1.469779, dtype=float32), Array(53.4827, dtype=float32), Array(53.736244, dtype=float32), Array(56.35451, dtype=float32), Array(83.01629, dtype=float32), Array(42.32589, dtype=float32), Array(23.293686, dtype=float32), Array(49.07975, dtype=float32), Array(28.99232, dtype=float32), Array(81.638145, dtype=float32), Array(88.317505, dtype=float32), Array(14.34927, dtype=float32), Array(86.22433, dtype=float32), Array(9.515405, dtype=float32), Array(71.788956, dtype=float32), Array(30.763363, dtype=float32), Array(42.200863, dtype=float32), Array(2.4036765, dtype=float32), Array(56.158756, dtype=float32), Array(43.436993, dtype=float32), Array(62.41505, dtype=float32), Array(20.938074, dtype=float32), Array(39.1523, dtype=float32), Array(40.28207, dtype=float32), Array(17.807352, dtype=float32), Array(45.33597, dtype=float32), Array(25.112688, dtype=float32), Array(35.280357, dtype=float32), Array(63.662483, dtype=float32), Array(49.33313, dtype=float32), Array(71.80846, dtype=float32), Array(10.1521015, dtype=float32), Array(70.452156, dtype=float32), Array(14.16217, dtype=float32), Array(37.84281, dtype=float32), Array(30.792427, dtype=float32), Array(30.222237, dtype=float32), Array(86.61097, dtype=float32), Array(0.7090092, dtype=float32), Array(45.77625, dtype=float32), Array(78.347626, dtype=float32), Array(21.395706, dtype=float32), Array(89.710724, dtype=float32), Array(23.072552, dtype=float32), Array(59.53989, dtype=float32), Array(44.468235, dtype=float32), Array(32.638393, dtype=float32), Array(43.507217, dtype=float32), Array(73.16543, dtype=float32), Array(36.09692, dtype=float32), Array(16.64977, dtype=float32), Array(84.45654, dtype=float32), Array(95.29754, dtype=float32), Array(63.251328, dtype=float32), Array(75.034355, dtype=float32), Array(22.564388, dtype=float32), Array(48.949944, dtype=float32), Array(53.866505, dtype=float32), Array(7.6198697, dtype=float32), Array(77.3239, dtype=float32), Array(69.92391, dtype=float32), Array(70.26545, dtype=float32), Array(24.331593, dtype=float32), Array(25.811935, dtype=float32), Array(54.83074, dtype=float32), Array(23.767519, dtype=float32), Array(35.959435, dtype=float32), Array(84.19206, dtype=float32), Array(58.307503, dtype=float32), Array(68.6142, dtype=float32), Array(43.366898, dtype=float32), Array(4.3816566, dtype=float32), Array(34.48074, dtype=float32), Array(32.30041, dtype=float32), Array(71.953156, dtype=float32), Array(22.161436, dtype=float32), Array(9.181285, dtype=float32), Array(74.76764, dtype=float32), Array(19.433475, dtype=float32), Array(40.23433, dtype=float32), Array(47.783493, dtype=float32), Array(79.07618, dtype=float32), Array(63.965534, dtype=float32), Array(29.03738, dtype=float32), Array(32.217262, dtype=float32), Array(93.55246, dtype=float32), Array(91.22068, dtype=float32), Array(82.07739, dtype=float32), Array(10.558998, dtype=float32), Array(57.30289, dtype=float32), Array(10.363436, dtype=float32), Array(72.14059, dtype=float32), Array(38.925087, dtype=float32), Array(91.42133, dtype=float32), Array(86.80443, dtype=float32), Array(47.97462, dtype=float32), Array(58.235573, dtype=float32), Array(86.75944, dtype=float32), Array(8.024609, dtype=float32), Array(28.927517, dtype=float32), Array(16.257322, dtype=float32), Array(24.539925, dtype=float32), Array(40.281963, dtype=float32), Array(88.46413, dtype=float32), Array(5.407381, dtype=float32), Array(86.9307, dtype=float32), Array(60.65793, dtype=float32), Array(93.35473, dtype=float32), Array(87.261284, dtype=float32), Array(33.059166, dtype=float32), Array(14.801264, dtype=float32), Array(43.45064, dtype=float32), Array(97.886696, dtype=float32), Array(12.358189, dtype=float32), Array(64.748955, dtype=float32), Array(90.64234, dtype=float32), Array(16.277372, dtype=float32), Array(38.3621, dtype=float32), Array(7.322693, dtype=float32), Array(63.74302, dtype=float32), Array(98.44422, dtype=float32), Array(78.27207, dtype=float32), Array(40.32632, dtype=float32)]
-2024-10-04 17:58:03,400 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-04 17:58:03,504 - INFO - UAV Energy Level before travelling: [194786.48]
-2024-10-04 17:58:03,504 - INFO - Travelling to node 0 and needing energy -0.850000
-2024-10-04 17:58:03,504 - INFO - UAV Energy Level after travelling: [194787.33]
-2024-10-04 17:58:04,677 - INFO - Energy level is now: [192006.8] and the energy wasted to process the data is: [2780.5251]
-2024-10-04 17:58:04,678 - INFO - Energy level is now: [191573.81] and the energy wasted to hover over the node is: 432.99199999999996
-2024-10-04 17:58:04,678 - INFO - The UAV has finished its business in the current node
-2024-10-04 17:58:04,678 - INFO - The strategies at node 0 have converged to: [1.  1.  1.  1.  1.  1.  1.  0.1 0.1 1.  0.1 0.1 1.  0.1 0.1 0.1 1.  0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 1.  0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1]
-2024-10-04 17:58:04,678 - INFO - The task intensities of the users at node 0 are: [Array(77.430595, dtype=float32), Array(65.38393, dtype=float32), Array(98.73636, dtype=float32), Array(38.88074, dtype=float32), Array(51.45707, dtype=float32), Array(32.497395, dtype=float32), Array(14.307726, dtype=float32), Array(66.98575, dtype=float32), Array(43.74914, dtype=float32), Array(6.3472033, dtype=float32), Array(86.10765, dtype=float32), Array(55.056072, dtype=float32), Array(7.8036904, dtype=float32), Array(77.73365, dtype=float32), Array(39.277744, dtype=float32), Array(79.794205, dtype=float32), Array(13.536299, dtype=float32), Array(29.049253, dtype=float32), Array(55.670868, dtype=float32), Array(20.663034, dtype=float32), Array(44.282604, dtype=float32), Array(15.336359, dtype=float32), Array(43.228306, dtype=float32), Array(83.93915, dtype=float32), Array(44.313217, dtype=float32), Array(6.016743, dtype=float32), Array(88.79747, dtype=float32), Array(6.341791, dtype=float32), Array(26.291168, dtype=float32), Array(0.8557677, dtype=float32), Array(3.7266254, dtype=float32), Array(83.9913, dtype=float32), Array(94.25968, dtype=float32), Array(41.96968, dtype=float32), Array(3.9177537, dtype=float32), Array(53.583015, dtype=float32), Array(12.0591755, dtype=float32), Array(35.07612, dtype=float32), Array(71.40709, dtype=float32), Array(97.710266, dtype=float32), Array(67.91754, dtype=float32), Array(49.949062, dtype=float32), Array(88.851074, dtype=float32), Array(76.98911, dtype=float32), Array(33.631397, dtype=float32), Array(76.32521, dtype=float32), Array(65.64711, dtype=float32), Array(17.377317, dtype=float32), Array(36.34578, dtype=float32), Array(49.94954, dtype=float32), Array(15.935791, dtype=float32), Array(73.53231, dtype=float32), Array(24.531437, dtype=float32), Array(97.480034, dtype=float32), Array(90.410446, dtype=float32), Array(48.633026, dtype=float32), Array(21.569502, dtype=float32), Array(17.80324, dtype=float32), Array(9.022915, dtype=float32), Array(24.888695, dtype=float32), Array(2.2753954, dtype=float32), Array(64.01993, dtype=float32), Array(18.503057, dtype=float32), Array(83.0716, dtype=float32), Array(18.799423, dtype=float32), Array(13.570679, dtype=float32), Array(91.25112, dtype=float32), Array(66.75326, dtype=float32), Array(39.401924, dtype=float32), Array(55.1391, dtype=float32), Array(51.09161, dtype=float32), Array(57.092464, dtype=float32), Array(61.236595, dtype=float32), Array(57.293667, dtype=float32), Array(29.691101, dtype=float32), Array(38.183247, dtype=float32), Array(46.29885, dtype=float32), Array(13.222814, dtype=float32), Array(2.6477098, dtype=float32), Array(9.034967, dtype=float32), Array(42.392956, dtype=float32), Array(93.838295, dtype=float32), Array(39.545677, dtype=float32), Array(8.19931, dtype=float32), Array(39.80304, dtype=float32), Array(8.4829445, dtype=float32), Array(16.200626, dtype=float32), Array(50.549553, dtype=float32), Array(0.657177, dtype=float32), Array(35.76139, dtype=float32), Array(12.460971, dtype=float32), Array(82.04344, dtype=float32), Array(15.890288, dtype=float32), Array(15.197241, dtype=float32), Array(1.469779, dtype=float32), Array(53.4827, dtype=float32), Array(53.736244, dtype=float32), Array(56.35451, dtype=float32), Array(83.01629, dtype=float32), Array(42.32589, dtype=float32), Array(23.293686, dtype=float32), Array(49.07975, dtype=float32), Array(28.99232, dtype=float32), Array(81.638145, dtype=float32), Array(88.317505, dtype=float32), Array(14.34927, dtype=float32), Array(86.22433, dtype=float32), Array(9.515405, dtype=float32), Array(71.788956, dtype=float32), Array(30.763363, dtype=float32), Array(42.200863, dtype=float32), Array(2.4036765, dtype=float32), Array(56.158756, dtype=float32), Array(43.436993, dtype=float32), Array(62.41505, dtype=float32), Array(20.938074, dtype=float32), Array(39.1523, dtype=float32), Array(40.28207, dtype=float32), Array(17.807352, dtype=float32), Array(45.33597, dtype=float32), Array(25.112688, dtype=float32), Array(35.280357, dtype=float32), Array(63.662483, dtype=float32), Array(49.33313, dtype=float32), Array(71.80846, dtype=float32), Array(10.1521015, dtype=float32), Array(70.452156, dtype=float32), Array(14.16217, dtype=float32), Array(37.84281, dtype=float32), Array(30.792427, dtype=float32), Array(30.222237, dtype=float32), Array(86.61097, dtype=float32), Array(0.7090092, dtype=float32), Array(45.77625, dtype=float32), Array(78.347626, dtype=float32), Array(21.395706, dtype=float32), Array(89.710724, dtype=float32), Array(23.072552, dtype=float32), Array(59.53989, dtype=float32), Array(44.468235, dtype=float32), Array(32.638393, dtype=float32), Array(43.507217, dtype=float32), Array(73.16543, dtype=float32), Array(36.09692, dtype=float32), Array(16.64977, dtype=float32), Array(84.45654, dtype=float32), Array(95.29754, dtype=float32), Array(63.251328, dtype=float32), Array(75.034355, dtype=float32), Array(22.564388, dtype=float32), Array(48.949944, dtype=float32), Array(53.866505, dtype=float32), Array(7.6198697, dtype=float32), Array(77.3239, dtype=float32), Array(69.92391, dtype=float32), Array(70.26545, dtype=float32), Array(24.331593, dtype=float32), Array(25.811935, dtype=float32), Array(54.83074, dtype=float32), Array(23.767519, dtype=float32), Array(35.959435, dtype=float32), Array(84.19206, dtype=float32), Array(58.307503, dtype=float32), Array(68.6142, dtype=float32), Array(43.366898, dtype=float32), Array(4.3816566, dtype=float32), Array(34.48074, dtype=float32), Array(32.30041, dtype=float32), Array(71.953156, dtype=float32), Array(22.161436, dtype=float32), Array(9.181285, dtype=float32), Array(74.76764, dtype=float32), Array(19.433475, dtype=float32), Array(40.23433, dtype=float32), Array(47.783493, dtype=float32), Array(79.07618, dtype=float32), Array(63.965534, dtype=float32), Array(29.03738, dtype=float32), Array(32.217262, dtype=float32), Array(93.55246, dtype=float32), Array(91.22068, dtype=float32), Array(82.07739, dtype=float32), Array(10.558998, dtype=float32), Array(57.30289, dtype=float32), Array(10.363436, dtype=float32), Array(72.14059, dtype=float32), Array(38.925087, dtype=float32), Array(91.42133, dtype=float32), Array(86.80443, dtype=float32), Array(47.97462, dtype=float32), Array(58.235573, dtype=float32), Array(86.75944, dtype=float32), Array(8.024609, dtype=float32), Array(28.927517, dtype=float32), Array(16.257322, dtype=float32), Array(24.539925, dtype=float32), Array(40.281963, dtype=float32), Array(88.46413, dtype=float32), Array(5.407381, dtype=float32), Array(86.9307, dtype=float32), Array(60.65793, dtype=float32), Array(93.35473, dtype=float32), Array(87.261284, dtype=float32), Array(33.059166, dtype=float32), Array(14.801264, dtype=float32), Array(43.45064, dtype=float32), Array(97.886696, dtype=float32), Array(12.358189, dtype=float32), Array(64.748955, dtype=float32), Array(90.64234, dtype=float32), Array(16.277372, dtype=float32), Array(38.3621, dtype=float32), Array(7.322693, dtype=float32), Array(63.74302, dtype=float32), Array(98.44422, dtype=float32), Array(78.27207, dtype=float32), Array(40.32632, dtype=float32)]
-2024-10-04 17:58:04,687 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-04 17:58:04,718 - INFO - UAV Energy Level before travelling: [191573.81]
-2024-10-04 17:58:04,719 - INFO - Travelling to node 0 and needing energy -0.850000
-2024-10-04 17:58:04,719 - INFO - UAV Energy Level after travelling: [191574.66]
-2024-10-04 17:58:06,442 - INFO - Energy level is now: [189836.31] and the energy wasted to process the data is: [1738.3398]
-2024-10-04 17:58:06,442 - INFO - Energy level is now: [189403.33] and the energy wasted to hover over the node is: 432.99199999999996
-2024-10-04 17:58:06,442 - INFO - The UAV has finished its business in the current node
-2024-10-04 17:58:06,442 - INFO - The strategies at node 0 have converged to: [1.  1.  0.1 1.  1.  1.  1.  0.1 0.1 1.  0.1 0.1 1.  0.1 0.1 0.1 1.  0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 1.  0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1]
-2024-10-04 17:58:06,442 - INFO - The task intensities of the users at node 0 are: [Array(77.430595, dtype=float32), Array(65.38393, dtype=float32), Array(98.73636, dtype=float32), Array(38.88074, dtype=float32), Array(51.45707, dtype=float32), Array(32.497395, dtype=float32), Array(14.307726, dtype=float32), Array(66.98575, dtype=float32), Array(43.74914, dtype=float32), Array(6.3472033, dtype=float32), Array(86.10765, dtype=float32), Array(55.056072, dtype=float32), Array(7.8036904, dtype=float32), Array(77.73365, dtype=float32), Array(39.277744, dtype=float32), Array(79.794205, dtype=float32), Array(13.536299, dtype=float32), Array(29.049253, dtype=float32), Array(55.670868, dtype=float32), Array(20.663034, dtype=float32), Array(44.282604, dtype=float32), Array(15.336359, dtype=float32), Array(43.228306, dtype=float32), Array(83.93915, dtype=float32), Array(44.313217, dtype=float32), Array(6.016743, dtype=float32), Array(88.79747, dtype=float32), Array(6.341791, dtype=float32), Array(26.291168, dtype=float32), Array(0.8557677, dtype=float32), Array(3.7266254, dtype=float32), Array(83.9913, dtype=float32), Array(94.25968, dtype=float32), Array(41.96968, dtype=float32), Array(3.9177537, dtype=float32), Array(53.583015, dtype=float32), Array(12.0591755, dtype=float32), Array(35.07612, dtype=float32), Array(71.40709, dtype=float32), Array(97.710266, dtype=float32), Array(67.91754, dtype=float32), Array(49.949062, dtype=float32), Array(88.851074, dtype=float32), Array(76.98911, dtype=float32), Array(33.631397, dtype=float32), Array(76.32521, dtype=float32), Array(65.64711, dtype=float32), Array(17.377317, dtype=float32), Array(36.34578, dtype=float32), Array(49.94954, dtype=float32), Array(15.935791, dtype=float32), Array(73.53231, dtype=float32), Array(24.531437, dtype=float32), Array(97.480034, dtype=float32), Array(90.410446, dtype=float32), Array(48.633026, dtype=float32), Array(21.569502, dtype=float32), Array(17.80324, dtype=float32), Array(9.022915, dtype=float32), Array(24.888695, dtype=float32), Array(2.2753954, dtype=float32), Array(64.01993, dtype=float32), Array(18.503057, dtype=float32), Array(83.0716, dtype=float32), Array(18.799423, dtype=float32), Array(13.570679, dtype=float32), Array(91.25112, dtype=float32), Array(66.75326, dtype=float32), Array(39.401924, dtype=float32), Array(55.1391, dtype=float32), Array(51.09161, dtype=float32), Array(57.092464, dtype=float32), Array(61.236595, dtype=float32), Array(57.293667, dtype=float32), Array(29.691101, dtype=float32), Array(38.183247, dtype=float32), Array(46.29885, dtype=float32), Array(13.222814, dtype=float32), Array(2.6477098, dtype=float32), Array(9.034967, dtype=float32), Array(42.392956, dtype=float32), Array(93.838295, dtype=float32), Array(39.545677, dtype=float32), Array(8.19931, dtype=float32), Array(39.80304, dtype=float32), Array(8.4829445, dtype=float32), Array(16.200626, dtype=float32), Array(50.549553, dtype=float32), Array(0.657177, dtype=float32), Array(35.76139, dtype=float32), Array(12.460971, dtype=float32), Array(82.04344, dtype=float32), Array(15.890288, dtype=float32), Array(15.197241, dtype=float32), Array(1.469779, dtype=float32), Array(53.4827, dtype=float32), Array(53.736244, dtype=float32), Array(56.35451, dtype=float32), Array(83.01629, dtype=float32), Array(42.32589, dtype=float32), Array(23.293686, dtype=float32), Array(49.07975, dtype=float32), Array(28.99232, dtype=float32), Array(81.638145, dtype=float32), Array(88.317505, dtype=float32), Array(14.34927, dtype=float32), Array(86.22433, dtype=float32), Array(9.515405, dtype=float32), Array(71.788956, dtype=float32), Array(30.763363, dtype=float32), Array(42.200863, dtype=float32), Array(2.4036765, dtype=float32), Array(56.158756, dtype=float32), Array(43.436993, dtype=float32), Array(62.41505, dtype=float32), Array(20.938074, dtype=float32), Array(39.1523, dtype=float32), Array(40.28207, dtype=float32), Array(17.807352, dtype=float32), Array(45.33597, dtype=float32), Array(25.112688, dtype=float32), Array(35.280357, dtype=float32), Array(63.662483, dtype=float32), Array(49.33313, dtype=float32), Array(71.80846, dtype=float32), Array(10.1521015, dtype=float32), Array(70.452156, dtype=float32), Array(14.16217, dtype=float32), Array(37.84281, dtype=float32), Array(30.792427, dtype=float32), Array(30.222237, dtype=float32), Array(86.61097, dtype=float32), Array(0.7090092, dtype=float32), Array(45.77625, dtype=float32), Array(78.347626, dtype=float32), Array(21.395706, dtype=float32), Array(89.710724, dtype=float32), Array(23.072552, dtype=float32), Array(59.53989, dtype=float32), Array(44.468235, dtype=float32), Array(32.638393, dtype=float32), Array(43.507217, dtype=float32), Array(73.16543, dtype=float32), Array(36.09692, dtype=float32), Array(16.64977, dtype=float32), Array(84.45654, dtype=float32), Array(95.29754, dtype=float32), Array(63.251328, dtype=float32), Array(75.034355, dtype=float32), Array(22.564388, dtype=float32), Array(48.949944, dtype=float32), Array(53.866505, dtype=float32), Array(7.6198697, dtype=float32), Array(77.3239, dtype=float32), Array(69.92391, dtype=float32), Array(70.26545, dtype=float32), Array(24.331593, dtype=float32), Array(25.811935, dtype=float32), Array(54.83074, dtype=float32), Array(23.767519, dtype=float32), Array(35.959435, dtype=float32), Array(84.19206, dtype=float32), Array(58.307503, dtype=float32), Array(68.6142, dtype=float32), Array(43.366898, dtype=float32), Array(4.3816566, dtype=float32), Array(34.48074, dtype=float32), Array(32.30041, dtype=float32), Array(71.953156, dtype=float32), Array(22.161436, dtype=float32), Array(9.181285, dtype=float32), Array(74.76764, dtype=float32), Array(19.433475, dtype=float32), Array(40.23433, dtype=float32), Array(47.783493, dtype=float32), Array(79.07618, dtype=float32), Array(63.965534, dtype=float32), Array(29.03738, dtype=float32), Array(32.217262, dtype=float32), Array(93.55246, dtype=float32), Array(91.22068, dtype=float32), Array(82.07739, dtype=float32), Array(10.558998, dtype=float32), Array(57.30289, dtype=float32), Array(10.363436, dtype=float32), Array(72.14059, dtype=float32), Array(38.925087, dtype=float32), Array(91.42133, dtype=float32), Array(86.80443, dtype=float32), Array(47.97462, dtype=float32), Array(58.235573, dtype=float32), Array(86.75944, dtype=float32), Array(8.024609, dtype=float32), Array(28.927517, dtype=float32), Array(16.257322, dtype=float32), Array(24.539925, dtype=float32), Array(40.281963, dtype=float32), Array(88.46413, dtype=float32), Array(5.407381, dtype=float32), Array(86.9307, dtype=float32), Array(60.65793, dtype=float32), Array(93.35473, dtype=float32), Array(87.261284, dtype=float32), Array(33.059166, dtype=float32), Array(14.801264, dtype=float32), Array(43.45064, dtype=float32), Array(97.886696, dtype=float32), Array(12.358189, dtype=float32), Array(64.748955, dtype=float32), Array(90.64234, dtype=float32), Array(16.277372, dtype=float32), Array(38.3621, dtype=float32), Array(7.322693, dtype=float32), Array(63.74302, dtype=float32), Array(98.44422, dtype=float32), Array(78.27207, dtype=float32), Array(40.32632, dtype=float32)]
-2024-10-04 17:58:06,450 - INFO - Converged with strategy difference: 0.0 in 3 iterations
-2024-10-04 17:58:06,483 - INFO - UAV Energy Level before travelling: [189403.33]
-2024-10-04 17:58:06,484 - INFO - Travelling to node 10 and needing energy 350445.687500
-2024-10-04 17:58:06,484 - INFO - Energy level goes under 0 - Action not allowed
-2024-10-04 17:58:06,484 - INFO - Available energy level: [189403.33] - while energy needed: 350445.7
-2024-10-04 17:58:07,699 - INFO - Energy level is now: [187838.83] and the energy wasted to process the data is: [1564.5052]
-2024-10-04 17:58:07,699 - INFO - Energy level is now: [187405.84] and the energy wasted to hover over the node is: 432.99199999999996
-2024-10-04 17:58:07,699 - INFO - The UAV has finished its business in the current node
-2024-10-04 17:58:07,699 - INFO - The strategies at node 0 have converged to: [1.  1.  0.1 1.  1.  1.  1.  0.1 0.1 1.  0.1 0.1 1.  0.1 0.1 0.1 1.  0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 1.  0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1]
-2024-10-04 17:58:07,699 - INFO - The task intensities of the users at node 0 are: [Array(77.430595, dtype=float32), Array(65.38393, dtype=float32), Array(98.73636, dtype=float32), Array(38.88074, dtype=float32), Array(51.45707, dtype=float32), Array(32.497395, dtype=float32), Array(14.307726, dtype=float32), Array(66.98575, dtype=float32), Array(43.74914, dtype=float32), Array(6.3472033, dtype=float32), Array(86.10765, dtype=float32), Array(55.056072, dtype=float32), Array(7.8036904, dtype=float32), Array(77.73365, dtype=float32), Array(39.277744, dtype=float32), Array(79.794205, dtype=float32), Array(13.536299, dtype=float32), Array(29.049253, dtype=float32), Array(55.670868, dtype=float32), Array(20.663034, dtype=float32), Array(44.282604, dtype=float32), Array(15.336359, dtype=float32), Array(43.228306, dtype=float32), Array(83.93915, dtype=float32), Array(44.313217, dtype=float32), Array(6.016743, dtype=float32), Array(88.79747, dtype=float32), Array(6.341791, dtype=float32), Array(26.291168, dtype=float32), Array(0.8557677, dtype=float32), Array(3.7266254, dtype=float32), Array(83.9913, dtype=float32), Array(94.25968, dtype=float32), Array(41.96968, dtype=float32), Array(3.9177537, dtype=float32), Array(53.583015, dtype=float32), Array(12.0591755, dtype=float32), Array(35.07612, dtype=float32), Array(71.40709, dtype=float32), Array(97.710266, dtype=float32), Array(67.91754, dtype=float32), Array(49.949062, dtype=float32), Array(88.851074, dtype=float32), Array(76.98911, dtype=float32), Array(33.631397, dtype=float32), Array(76.32521, dtype=float32), Array(65.64711, dtype=float32), Array(17.377317, dtype=float32), Array(36.34578, dtype=float32), Array(49.94954, dtype=float32), Array(15.935791, dtype=float32), Array(73.53231, dtype=float32), Array(24.531437, dtype=float32), Array(97.480034, dtype=float32), Array(90.410446, dtype=float32), Array(48.633026, dtype=float32), Array(21.569502, dtype=float32), Array(17.80324, dtype=float32), Array(9.022915, dtype=float32), Array(24.888695, dtype=float32), Array(2.2753954, dtype=float32), Array(64.01993, dtype=float32), Array(18.503057, dtype=float32), Array(83.0716, dtype=float32), Array(18.799423, dtype=float32), Array(13.570679, dtype=float32), Array(91.25112, dtype=float32), Array(66.75326, dtype=float32), Array(39.401924, dtype=float32), Array(55.1391, dtype=float32), Array(51.09161, dtype=float32), Array(57.092464, dtype=float32), Array(61.236595, dtype=float32), Array(57.293667, dtype=float32), Array(29.691101, dtype=float32), Array(38.183247, dtype=float32), Array(46.29885, dtype=float32), Array(13.222814, dtype=float32), Array(2.6477098, dtype=float32), Array(9.034967, dtype=float32), Array(42.392956, dtype=float32), Array(93.838295, dtype=float32), Array(39.545677, dtype=float32), Array(8.19931, dtype=float32), Array(39.80304, dtype=float32), Array(8.4829445, dtype=float32), Array(16.200626, dtype=float32), Array(50.549553, dtype=float32), Array(0.657177, dtype=float32), Array(35.76139, dtype=float32), Array(12.460971, dtype=float32), Array(82.04344, dtype=float32), Array(15.890288, dtype=float32), Array(15.197241, dtype=float32), Array(1.469779, dtype=float32), Array(53.4827, dtype=float32), Array(53.736244, dtype=float32), Array(56.35451, dtype=float32), Array(83.01629, dtype=float32), Array(42.32589, dtype=float32), Array(23.293686, dtype=float32), Array(49.07975, dtype=float32), Array(28.99232, dtype=float32), Array(81.638145, dtype=float32), Array(88.317505, dtype=float32), Array(14.34927, dtype=float32), Array(86.22433, dtype=float32), Array(9.515405, dtype=float32), Array(71.788956, dtype=float32), Array(30.763363, dtype=float32), Array(42.200863, dtype=float32), Array(2.4036765, dtype=float32), Array(56.158756, dtype=float32), Array(43.436993, dtype=float32), Array(62.41505, dtype=float32), Array(20.938074, dtype=float32), Array(39.1523, dtype=float32), Array(40.28207, dtype=float32), Array(17.807352, dtype=float32), Array(45.33597, dtype=float32), Array(25.112688, dtype=float32), Array(35.280357, dtype=float32), Array(63.662483, dtype=float32), Array(49.33313, dtype=float32), Array(71.80846, dtype=float32), Array(10.1521015, dtype=float32), Array(70.452156, dtype=float32), Array(14.16217, dtype=float32), Array(37.84281, dtype=float32), Array(30.792427, dtype=float32), Array(30.222237, dtype=float32), Array(86.61097, dtype=float32), Array(0.7090092, dtype=float32), Array(45.77625, dtype=float32), Array(78.347626, dtype=float32), Array(21.395706, dtype=float32), Array(89.710724, dtype=float32), Array(23.072552, dtype=float32), Array(59.53989, dtype=float32), Array(44.468235, dtype=float32), Array(32.638393, dtype=float32), Array(43.507217, dtype=float32), Array(73.16543, dtype=float32), Array(36.09692, dtype=float32), Array(16.64977, dtype=float32), Array(84.45654, dtype=float32), Array(95.29754, dtype=float32), Array(63.251328, dtype=float32), Array(75.034355, dtype=float32), Array(22.564388, dtype=float32), Array(48.949944, dtype=float32), Array(53.866505, dtype=float32), Array(7.6198697, dtype=float32), Array(77.3239, dtype=float32), Array(69.92391, dtype=float32), Array(70.26545, dtype=float32), Array(24.331593, dtype=float32), Array(25.811935, dtype=float32), Array(54.83074, dtype=float32), Array(23.767519, dtype=float32), Array(35.959435, dtype=float32), Array(84.19206, dtype=float32), Array(58.307503, dtype=float32), Array(68.6142, dtype=float32), Array(43.366898, dtype=float32), Array(4.3816566, dtype=float32), Array(34.48074, dtype=float32), Array(32.30041, dtype=float32), Array(71.953156, dtype=float32), Array(22.161436, dtype=float32), Array(9.181285, dtype=float32), Array(74.76764, dtype=float32), Array(19.433475, dtype=float32), Array(40.23433, dtype=float32), Array(47.783493, dtype=float32), Array(79.07618, dtype=float32), Array(63.965534, dtype=float32), Array(29.03738, dtype=float32), Array(32.217262, dtype=float32), Array(93.55246, dtype=float32), Array(91.22068, dtype=float32), Array(82.07739, dtype=float32), Array(10.558998, dtype=float32), Array(57.30289, dtype=float32), Array(10.363436, dtype=float32), Array(72.14059, dtype=float32), Array(38.925087, dtype=float32), Array(91.42133, dtype=float32), Array(86.80443, dtype=float32), Array(47.97462, dtype=float32), Array(58.235573, dtype=float32), Array(86.75944, dtype=float32), Array(8.024609, dtype=float32), Array(28.927517, dtype=float32), Array(16.257322, dtype=float32), Array(24.539925, dtype=float32), Array(40.281963, dtype=float32), Array(88.46413, dtype=float32), Array(5.407381, dtype=float32), Array(86.9307, dtype=float32), Array(60.65793, dtype=float32), Array(93.35473, dtype=float32), Array(87.261284, dtype=float32), Array(33.059166, dtype=float32), Array(14.801264, dtype=float32), Array(43.45064, dtype=float32), Array(97.886696, dtype=float32), Array(12.358189, dtype=float32), Array(64.748955, dtype=float32), Array(90.64234, dtype=float32), Array(16.277372, dtype=float32), Array(38.3621, dtype=float32), Array(7.322693, dtype=float32), Array(63.74302, dtype=float32), Array(98.44422, dtype=float32), Array(78.27207, dtype=float32), Array(40.32632, dtype=float32)]
-2024-10-04 17:58:07,707 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-04 17:58:07,740 - INFO - UAV Energy Level before travelling: [187405.84]
-2024-10-04 17:58:07,740 - INFO - Travelling to node 14 and needing energy 75260.882812
-2024-10-04 17:58:07,740 - INFO - UAV Energy Level after travelling: [112144.96]
-2024-10-04 17:58:08,978 - INFO - Energy level is now: [109744.51] and the energy wasted to process the data is: [2400.4497]
-2024-10-04 17:58:08,979 - INFO - Energy level is now: [109311.516] and the energy wasted to hover over the node is: 432.99199999999996
-2024-10-04 17:58:08,979 - INFO - The UAV has finished its business in the current node
-2024-10-04 17:58:08,979 - INFO - The strategies at node 14 have converged to: [1.  1.  1.  1.  0.1 1.  0.1 1.  0.1 0.1 0.1 1.  0.1 1.  0.1 1.  0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1.  0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
- 0.1]
-2024-10-04 17:58:08,980 - INFO - The task intensities of the users at node 14 are: [Array(39.277744, dtype=float32), Array(79.794205, dtype=float32), Array(13.536299, dtype=float32), Array(29.049253, dtype=float32), Array(55.670868, dtype=float32), Array(20.663034, dtype=float32), Array(44.282604, dtype=float32), Array(15.336359, dtype=float32), Array(43.228306, dtype=float32), Array(83.93915, dtype=float32), Array(44.313217, dtype=float32), Array(6.016743, dtype=float32), Array(88.79747, dtype=float32), Array(6.341791, dtype=float32), Array(26.291168, dtype=float32), Array(0.8557677, dtype=float32), Array(3.7266254, dtype=float32), Array(83.9913, dtype=float32), Array(94.25968, dtype=float32), Array(41.96968, dtype=float32), Array(3.9177537, dtype=float32), Array(53.583015, dtype=float32), Array(12.0591755, dtype=float32), Array(35.07612, dtype=float32), Array(71.40709, dtype=float32), Array(97.710266, dtype=float32), Array(67.91754, dtype=float32), Array(49.949062, dtype=float32), Array(88.851074, dtype=float32), Array(76.98911, dtype=float32), Array(33.631397, dtype=float32), Array(76.32521, dtype=float32), Array(65.64711, dtype=float32), Array(17.377317, dtype=float32), Array(36.34578, dtype=float32), Array(49.94954, dtype=float32), Array(15.935791, dtype=float32), Array(73.53231, dtype=float32), Array(24.531437, dtype=float32), Array(97.480034, dtype=float32), Array(90.410446, dtype=float32), Array(48.633026, dtype=float32), Array(21.569502, dtype=float32), Array(17.80324, dtype=float32), Array(9.022915, dtype=float32), Array(24.888695, dtype=float32), Array(2.2753954, dtype=float32), Array(64.01993, dtype=float32), Array(18.503057, dtype=float32), Array(83.0716, dtype=float32), Array(18.799423, dtype=float32), Array(13.570679, dtype=float32), Array(91.25112, dtype=float32), Array(66.75326, dtype=float32), Array(39.401924, dtype=float32), Array(55.1391, dtype=float32), Array(51.09161, dtype=float32), Array(57.092464, dtype=float32), Array(61.236595, dtype=float32), Array(57.293667, dtype=float32), Array(29.691101, dtype=float32), Array(38.183247, dtype=float32), Array(46.29885, dtype=float32), Array(13.222814, dtype=float32), Array(2.6477098, dtype=float32), Array(9.034967, dtype=float32), Array(42.392956, dtype=float32), Array(93.838295, dtype=float32), Array(39.545677, dtype=float32), Array(8.19931, dtype=float32), Array(39.80304, dtype=float32), Array(8.4829445, dtype=float32), Array(16.200626, dtype=float32), Array(50.549553, dtype=float32), Array(0.657177, dtype=float32), Array(35.76139, dtype=float32), Array(12.460971, dtype=float32), Array(82.04344, dtype=float32), Array(15.890288, dtype=float32), Array(15.197241, dtype=float32), Array(1.469779, dtype=float32), Array(53.4827, dtype=float32), Array(53.736244, dtype=float32), Array(56.35451, dtype=float32), Array(83.01629, dtype=float32), Array(42.32589, dtype=float32), Array(23.293686, dtype=float32), Array(49.07975, dtype=float32), Array(28.99232, dtype=float32), Array(81.638145, dtype=float32), Array(88.317505, dtype=float32), Array(14.34927, dtype=float32), Array(86.22433, dtype=float32), Array(9.515405, dtype=float32), Array(71.788956, dtype=float32), Array(30.763363, dtype=float32), Array(42.200863, dtype=float32), Array(2.4036765, dtype=float32), Array(56.158756, dtype=float32), Array(43.436993, dtype=float32), Array(62.41505, dtype=float32), Array(20.938074, dtype=float32), Array(39.1523, dtype=float32), Array(40.28207, dtype=float32), Array(17.807352, dtype=float32), Array(45.33597, dtype=float32), Array(25.112688, dtype=float32), Array(35.280357, dtype=float32), Array(63.662483, dtype=float32), Array(49.33313, dtype=float32), Array(71.80846, dtype=float32), Array(10.1521015, dtype=float32), Array(70.452156, dtype=float32), Array(14.16217, dtype=float32), Array(37.84281, dtype=float32), Array(30.792427, dtype=float32), Array(30.222237, dtype=float32), Array(86.61097, dtype=float32), Array(0.7090092, dtype=float32), Array(45.77625, dtype=float32), Array(78.347626, dtype=float32), Array(21.395706, dtype=float32), Array(89.710724, dtype=float32), Array(23.072552, dtype=float32), Array(59.53989, dtype=float32), Array(44.468235, dtype=float32), Array(32.638393, dtype=float32), Array(43.507217, dtype=float32), Array(73.16543, dtype=float32), Array(36.09692, dtype=float32), Array(16.64977, dtype=float32), Array(84.45654, dtype=float32), Array(95.29754, dtype=float32), Array(63.251328, dtype=float32), Array(75.034355, dtype=float32), Array(22.564388, dtype=float32), Array(48.949944, dtype=float32), Array(53.866505, dtype=float32), Array(7.6198697, dtype=float32), Array(77.3239, dtype=float32), Array(69.92391, dtype=float32), Array(70.26545, dtype=float32), Array(24.331593, dtype=float32), Array(25.811935, dtype=float32), Array(54.83074, dtype=float32), Array(23.767519, dtype=float32), Array(35.959435, dtype=float32), Array(84.19206, dtype=float32), Array(58.307503, dtype=float32), Array(68.6142, dtype=float32), Array(43.366898, dtype=float32), Array(4.3816566, dtype=float32), Array(34.48074, dtype=float32), Array(32.30041, dtype=float32), Array(71.953156, dtype=float32), Array(22.161436, dtype=float32), Array(9.181285, dtype=float32), Array(74.76764, dtype=float32), Array(19.433475, dtype=float32), Array(40.23433, dtype=float32), Array(47.783493, dtype=float32), Array(79.07618, dtype=float32), Array(63.965534, dtype=float32), Array(29.03738, dtype=float32), Array(32.217262, dtype=float32), Array(93.55246, dtype=float32), Array(91.22068, dtype=float32), Array(82.07739, dtype=float32), Array(10.558998, dtype=float32), Array(57.30289, dtype=float32), Array(10.363436, dtype=float32), Array(72.14059, dtype=float32), Array(38.925087, dtype=float32), Array(91.42133, dtype=float32), Array(86.80443, dtype=float32), Array(47.97462, dtype=float32), Array(58.235573, dtype=float32), Array(86.75944, dtype=float32), Array(8.024609, dtype=float32), Array(28.927517, dtype=float32), Array(16.257322, dtype=float32), Array(24.539925, dtype=float32), Array(40.281963, dtype=float32), Array(88.46413, dtype=float32), Array(5.407381, dtype=float32), Array(86.9307, dtype=float32), Array(60.65793, dtype=float32), Array(93.35473, dtype=float32), Array(87.261284, dtype=float32), Array(33.059166, dtype=float32), Array(14.801264, dtype=float32), Array(43.45064, dtype=float32), Array(97.886696, dtype=float32), Array(12.358189, dtype=float32), Array(64.748955, dtype=float32), Array(90.64234, dtype=float32), Array(16.277372, dtype=float32), Array(38.3621, dtype=float32), Array(7.322693, dtype=float32), Array(63.74302, dtype=float32), Array(98.44422, dtype=float32), Array(78.27207, dtype=float32), Array(40.32632, dtype=float32), Array(28.880894, dtype=float32), Array(99.32086, dtype=float32), Array(22.64334, dtype=float32), Array(67.381226, dtype=float32), Array(7.1326494, dtype=float32), Array(24.537872, dtype=float32), Array(52.954567, dtype=float32), Array(77.31011, dtype=float32), Array(64.48377, dtype=float32), Array(17.641306, dtype=float32), Array(83.35717, dtype=float32), Array(10.261095, dtype=float32), Array(88.90163, dtype=float32), Array(77.44646, dtype=float32)]
-2024-10-04 17:58:08,989 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-04 17:58:09,008 - INFO - UAV Energy Level before travelling: [109311.516]
-2024-10-04 17:58:09,009 - INFO - Travelling to node 3 and needing energy 32438.330078
-2024-10-04 17:58:09,009 - INFO - UAV Energy Level after travelling: [76873.19]
+2024-10-16 15:12:42,696 - INFO - Number of Nodes: 15
+2024-10-16 15:12:42,696 - INFO - Number of Edges: 105
+2024-10-16 15:12:42,696 - INFO - Number of Users: 3255
+2024-10-16 15:12:42,696 - INFO - Running the Random Walk Algorithm
+2024-10-16 15:12:49,803 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:12:49,803 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:12:49,850 - INFO - Energy level is now: 19799567.008 and the energy wasted to hover over the node is: 432.99199999999996
+2024-10-16 15:12:49,850 - INFO - The UAV has finished its business in the current node
+2024-10-16 15:12:49,850 - INFO - The strategies at node 0 have converged to: [0.2        0.19999999 0.2        0.19999999 0.19999915 0.19999996
+ 0.19999997 0.2        0.19999999 0.19999999 0.19999944 0.19999981
+ 0.19999996 0.19999994 0.2        0.2        0.2        0.2
+ 0.19999997 0.2        0.2        0.2        0.2        0.2
+ 0.2        0.19999997 0.2        0.19999999 0.19999999 0.19684872
+ 0.19999999 0.18219154 0.19995505 0.19414432 0.18817627 0.18202081
+ 0.17570852 0.1382364  0.13348414 0.12848306 0.12393411 0.11949784
+ 0.1165114  0.11252742 0.10840167 0.10369719 0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1       ]
+2024-10-16 15:12:49,850 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-16 15:12:49,850 - INFO - Converged with strategy difference: 0.0 in 3 iterations
+2024-10-16 15:12:50,103 - INFO - UAV Energy Level before travelling: 19799567.008
+2024-10-16 15:12:50,105 - INFO - Travelling to node 12 and needing energy 28025.753906
+2024-10-16 15:12:50,119 - INFO - UAV Energy Level after travelling: 19771542.0
+2024-10-16 15:12:50,121 - INFO - The UAV has reached the next node
+2024-10-16 15:12:50,121 - INFO - The UAV energy level is: 19771542.0 after going to the next node
+2024-10-16 15:12:57,699 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:12:57,699 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:12:57,757 - INFO - Energy level is now: 19771110.0 and the energy wasted to hover over the node is: 432.99199999999996
+2024-10-16 15:12:57,757 - INFO - The UAV has finished its business in the current node
+2024-10-16 15:12:57,757 - INFO - The strategies at node 12 have converged to: [0.19999999 0.19999994 0.2        0.19999996 0.19999996 0.2
+ 0.2        0.2        0.19999997 0.2        0.19999997 0.19999915
+ 0.19999985 0.2        0.2        0.2        0.2        0.2
+ 0.20009783 0.2        0.2        0.2        0.19999999 0.2
+ 0.19999975 0.19999999 0.2        0.19999972 0.19999999 0.19036083
+ 0.19999999 0.17567798 0.19995113 0.19414856 0.18817997 0.18202081
+ 0.1757074  0.1382669  0.13327613 0.12850237 0.12408381 0.12035961
+ 0.11531601 0.11252455 0.10840166 0.10346993 0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1       ]
+2024-10-16 15:12:57,758 - INFO - The task intensities of the users at node 12 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-16 15:12:57,758 - INFO - Converged with strategy difference: 0.0 in 3 iterations
+2024-10-16 15:12:57,784 - INFO - UAV Energy Level before travelling: 19771110.0
+2024-10-16 15:12:57,785 - INFO - Travelling to node 13 and needing energy 265080.656250
+2024-10-16 15:12:57,785 - INFO - UAV Energy Level after travelling: 19506030.0
+2024-10-16 15:12:57,785 - INFO - The UAV has reached the next node
+2024-10-16 15:12:57,785 - INFO - The UAV energy level is: 19506030.0 after going to the next node
+2024-10-16 15:13:07,964 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:13:07,964 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:13:07,997 - INFO - Energy level is now: 19505598.0 and the energy wasted to hover over the node is: 432.99199999999996
+2024-10-16 15:13:07,997 - INFO - The UAV has finished its business in the current node
+2024-10-16 15:13:07,997 - INFO - The strategies at node 13 have converged to: [0.19999999 0.19999991 0.2        0.19999999 0.19999944 0.19999975
+ 0.19999999 0.2        0.19999999 0.19999999 0.19999999 0.19999944
+ 0.2        0.2        0.2        0.2        0.2        0.2
+ 0.19999944 0.2        0.2        0.2        0.19999999 0.2
+ 0.2        0.19999999 0.2        0.19999972 0.19999999 0.19691321
+ 0.19999999 0.17559004 0.19999935 0.19415273 0.18817899 0.18207182
+ 0.17571278 0.13819897 0.13327904 0.12871754 0.1239697  0.12039465
+ 0.11651315 0.1125293  0.10843892 0.10358646 0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1       ]
+2024-10-16 15:13:07,999 - INFO - The task intensities of the users at node 13 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-16 15:13:07,999 - INFO - Converged with strategy difference: 0.0 in 3 iterations
+2024-10-16 15:13:08,000 - INFO - UAV Energy Level before travelling: 19505598.0
+2024-10-16 15:13:08,000 - INFO - Travelling to node 14 and needing energy 105293.820312
+2024-10-16 15:13:08,000 - INFO - UAV Energy Level after travelling: 19400304.0
+2024-10-16 15:13:08,001 - INFO - The UAV has reached the next node
+2024-10-16 15:13:08,001 - INFO - The UAV energy level is: 19400304.0 after going to the next node
+2024-10-16 15:13:08,001 - INFO - The UAV has reached the final node
+2024-10-16 15:13:17,904 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:13:17,904 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:13:17,936 - INFO - Energy level is now: 19399872.0 and the energy wasted to hover over the node is: 432.99199999999996
+2024-10-16 15:13:17,936 - INFO - The UAV has finished its business in the current node
+2024-10-16 15:13:17,936 - INFO - The strategies at node 14 have converged to: [0.19999999 0.2        0.2        0.19999972 0.2        0.19999996
+ 0.19999994 0.2        0.19999999 0.19999999 0.19999997 0.2
+ 0.19999996 0.2        0.2        0.2        0.2        0.2
+ 0.19999874 0.2        0.2        0.2        0.19999999 0.2
+ 0.2        0.19999999 0.2        0.19999999 0.19999999 0.19041759
+ 0.19999999 0.18219608 0.2        0.19414765 0.18818359 0.15419582
+ 0.1757106  0.1382077  0.13338676 0.12843809 0.12411314 0.1203971
+ 0.11651048 0.11253121 0.10843892 0.10358745 0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1       ]
+2024-10-16 15:13:17,938 - INFO - The task intensities of the users at node 14 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-16 15:13:17,938 - INFO - Converged with strategy difference: 0.0 in 3 iterations
+2024-10-16 15:13:17,938 - INFO - The UAV has reached the final node and has finished its business
+2024-10-16 15:13:17,938 - INFO - The UAV trajectory is: [0, 12, 13, 14]
+2024-10-16 15:13:17,938 - INFO - The UAV energy level is: 19399872.0 at the end of the algorithm
+2024-10-16 15:13:17,938 - INFO - Random Walk Algorithm has successfully reached the final node!
+2024-10-16 15:13:17,938 - INFO - The UAV processed in total: 84412290.0 bits
+2024-10-16 15:13:17,939 - INFO - Random Walk Algorithm took: 35.24325728416443 seconds
+2024-10-16 15:13:25,481 - INFO - Number of Nodes: 15
+2024-10-16 15:13:25,496 - INFO - Number of Edges: 105
+2024-10-16 15:13:25,496 - INFO - Number of Users: 3255
+2024-10-16 15:13:25,496 - INFO - Running the Proportional Fairness Algorithm
+2024-10-16 15:13:30,509 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:13:30,510 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:13:30,571 - INFO - Energy level is now: 19799567.008 and the energy wasted to hover over the node is: 432.99199999999996
+2024-10-16 15:13:30,571 - INFO - The UAV has finished its business in the current node
+2024-10-16 15:13:30,571 - INFO - The strategies at node 0 have converged to: [0.2        0.19999999 0.2        0.19999999 0.19999915 0.19999996
+ 0.19999997 0.2        0.19999999 0.19999999 0.19999944 0.19999981
+ 0.19999996 0.19999994 0.2        0.2        0.2        0.2
+ 0.19999997 0.2        0.2        0.2        0.2        0.2
+ 0.2        0.19999997 0.2        0.19999999 0.19999999 0.19684872
+ 0.19999999 0.18219154 0.19995505 0.19414432 0.18817627 0.18202081
+ 0.17570852 0.1382364  0.13348414 0.12848306 0.12393411 0.11949784
+ 0.1165114  0.11252742 0.10840167 0.10369719 0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1       ]
+2024-10-16 15:13:30,572 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-16 15:13:30,572 - INFO - Converged with strategy difference: 0.0 in 3 iterations
+2024-10-16 15:13:30,806 - INFO - UAV Energy Level before travelling: 19799567.008
+2024-10-16 15:13:30,806 - INFO - Travelling to node 11 and needing energy 44140.132812
+2024-10-16 15:13:30,807 - INFO - UAV Energy Level after travelling: 19755428.0
+2024-10-16 15:13:30,807 - INFO - The UAV has reached the next node
+2024-10-16 15:13:30,807 - INFO - The UAV energy level is: 19755428.0 after going to the next node
+2024-10-16 15:13:40,077 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:13:40,077 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:13:40,129 - INFO - Energy level is now: 19754996.0 and the energy wasted to hover over the node is: 432.99199999999996
+2024-10-16 15:13:40,129 - INFO - The UAV has finished its business in the current node
+2024-10-16 15:13:40,129 - INFO - The strategies at node 11 have converged to: [0.19999984 0.19999994 0.2        0.19999999 0.19999915 0.2
+ 0.19999999 0.2        0.19999999 0.19999942 0.19999996 0.19999996
+ 0.19999981 0.19999364 0.2        0.2        0.2        0.2
+ 0.2        0.2        0.2        0.2        0.19999999 0.2
+ 0.19999996 0.2        0.2        0.19999999 0.19999999 0.18823285
+ 0.19999999 0.17564154 0.19997995 0.16079439 0.18820114 0.15416907
+ 0.14348017 0.13827904 0.1332936  0.12848122 0.12395061 0.12036043
+ 0.11650962 0.1125255  0.10839958 0.10355159 0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1       ]
+2024-10-16 15:13:40,129 - INFO - The task intensities of the users at node 11 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-16 15:13:40,129 - INFO - Converged with strategy difference: 0.0 in 4 iterations
+2024-10-16 15:13:40,164 - INFO - UAV Energy Level before travelling: 19754996.0
+2024-10-16 15:13:40,164 - INFO - Travelling to node 14 and needing energy 203838.109375
+2024-10-16 15:13:40,164 - INFO - UAV Energy Level after travelling: 19551158.0
+2024-10-16 15:13:40,165 - INFO - The UAV has reached the next node
+2024-10-16 15:13:40,165 - INFO - The UAV energy level is: 19551158.0 after going to the next node
+2024-10-16 15:13:40,165 - INFO - The UAV has reached the final node
+2024-10-16 15:13:46,035 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:13:46,035 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:13:46,071 - INFO - Energy level is now: 19550726.0 and the energy wasted to hover over the node is: 432.99199999999996
+2024-10-16 15:13:46,071 - INFO - The UAV has finished its business in the current node
+2024-10-16 15:13:46,071 - INFO - The strategies at node 14 have converged to: [0.19999999 0.2        0.2        0.19999972 0.2        0.19999996
+ 0.19999994 0.2        0.19999999 0.19999999 0.19999997 0.2
+ 0.19999996 0.2        0.2        0.2        0.2        0.2
+ 0.19999874 0.2        0.2        0.2        0.19999999 0.2
+ 0.2        0.19999999 0.2        0.19999999 0.19999999 0.19041759
+ 0.19999999 0.18219608 0.2        0.19414765 0.18818359 0.15419582
+ 0.1757106  0.1382077  0.13338676 0.12843809 0.12411314 0.1203971
+ 0.11651048 0.11253121 0.10843892 0.10358745 0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1       ]
+2024-10-16 15:13:46,073 - INFO - The task intensities of the users at node 14 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-16 15:13:46,073 - INFO - Converged with strategy difference: 0.0 in 3 iterations
+2024-10-16 15:13:46,073 - INFO - The UAV has reached the final node and has finished its business
+2024-10-16 15:13:46,073 - INFO - The UAV trajectory is: [0, 11, 14]
+2024-10-16 15:13:46,073 - INFO - The UAV energy level is: 19550726.0 at the end of the algorithm
+2024-10-16 15:13:46,073 - INFO - Proportional Fairness Algorithm has successfully reached the final node!
+2024-10-16 15:13:46,073 - INFO - The UAV processed in total: 63220064.0 bits
+2024-10-16 15:13:46,073 - INFO - Proportional Fairness Algorithm took: 20.57697105407715 seconds
+2024-10-16 15:13:53,675 - INFO - Number of Nodes: 15
+2024-10-16 15:13:53,675 - INFO - Number of Edges: 105
+2024-10-16 15:13:53,675 - INFO - Number of Users: 3255
+2024-10-16 15:13:53,675 - INFO - Running the Brave Greedy Algorithm
+2024-10-16 15:13:58,745 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:13:58,745 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:13:58,802 - INFO - Energy level is now: 19799567.008 and the energy wasted to hover over the node is: 432.99199999999996
+2024-10-16 15:13:58,802 - INFO - The UAV has finished its business in the current node
+2024-10-16 15:13:58,802 - INFO - The strategies at node 0 have converged to: [0.2        0.19999999 0.2        0.19999999 0.19999915 0.19999996
+ 0.19999997 0.2        0.19999999 0.19999999 0.19999944 0.19999981
+ 0.19999996 0.19999994 0.2        0.2        0.2        0.2
+ 0.19999997 0.2        0.2        0.2        0.2        0.2
+ 0.2        0.19999997 0.2        0.19999999 0.19999999 0.19684872
+ 0.19999999 0.18219154 0.19995505 0.19414432 0.18817627 0.18202081
+ 0.17570852 0.1382364  0.13348414 0.12848306 0.12393411 0.11949784
+ 0.1165114  0.11252742 0.10840167 0.10369719 0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1       ]
+2024-10-16 15:13:58,803 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-16 15:13:58,803 - INFO - Converged with strategy difference: 0.0 in 3 iterations
+2024-10-16 15:13:58,825 - INFO - UAV Energy Level before travelling: 19799567.008
+2024-10-16 15:13:58,826 - INFO - Travelling to node 1 and needing energy 107006.429688
+2024-10-16 15:13:58,826 - INFO - UAV Energy Level after travelling: 19692562.0
+2024-10-16 15:13:58,826 - INFO - The UAV has reached the next node
+2024-10-16 15:14:06,724 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:14:06,724 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:14:06,785 - INFO - Energy level is now: 19692130.0 and the energy wasted to hover over the node is: 432.99199999999996
+2024-10-16 15:14:06,785 - INFO - The UAV has finished its business in the current node
+2024-10-16 15:14:06,785 - INFO - The strategies at node 1 have converged to: [0.19999987 0.19999999 0.2        0.19999997 0.19999994 0.2
+ 0.19999981 0.2        0.19999997 0.19999999 0.19999999 0.19999994
+ 0.19999994 0.19999999 0.2        0.2        0.2        0.2
+ 0.1999999  0.2        0.2        0.2        0.19999999 0.2
+ 0.2        0.19999999 0.2        0.19999997 0.19999999 0.19688702
+ 0.19999999 0.17385092 0.19996987 0.16788217 0.18819381 0.18204886
+ 0.14757948 0.14119954 0.19999999 0.19999999 0.12395497 0.12036779
+ 0.11651319 0.11252934 0.10840684 0.10356157 0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1       ]
+2024-10-16 15:14:06,785 - INFO - The task intensities of the users at node 1 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-16 15:14:06,785 - INFO - Converged with strategy difference: 0.0 in 4 iterations
+2024-10-16 15:14:06,817 - INFO - UAV Energy Level before travelling: 19692130.0
+2024-10-16 15:14:06,817 - INFO - Travelling to node 2 and needing energy 199023.484375
+2024-10-16 15:14:06,817 - INFO - UAV Energy Level after travelling: 19493106.0
+2024-10-16 15:14:06,817 - INFO - The UAV has reached the next node
+2024-10-16 15:14:15,486 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:14:15,486 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:14:15,541 - INFO - Energy level is now: 19492674.0 and the energy wasted to hover over the node is: 432.99199999999996
+2024-10-16 15:14:15,541 - INFO - The UAV has finished its business in the current node
+2024-10-16 15:14:15,541 - INFO - The strategies at node 2 have converged to: [0.19999999 0.19999999 0.2        0.19999745 0.19999972 0.19999972
+ 0.19999999 0.2        0.19999999 0.19999996 0.19999987 0.19999994
+ 0.20014079 0.2        0.2        0.2        0.2        0.2
+ 0.2        0.2        0.2        0.2        0.19999994 0.2
+ 0.2        0.19999431 0.2        0.19999999 0.19999999 0.19691756
+ 0.2        0.18219429 0.19999708 0.19415534 0.1881818  0.14889427
+ 0.17571282 0.1383028  0.13509165 0.12843262 0.12411391 0.12039304
+ 0.11651494 0.11252645 0.10843999 0.10358748 0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1       ]
+2024-10-16 15:14:15,541 - INFO - The task intensities of the users at node 2 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-16 15:14:15,541 - INFO - Converged with strategy difference: 0.0 in 4 iterations
+2024-10-16 15:14:15,541 - INFO - UAV Energy Level before travelling: 19492674.0
+2024-10-16 15:14:15,541 - INFO - Travelling to node 14 and needing energy 35977.890625
+2024-10-16 15:14:15,541 - INFO - UAV Energy Level after travelling: 19456696.0
+2024-10-16 15:14:15,541 - INFO - The UAV has reached the next node
+2024-10-16 15:14:15,541 - INFO - The UAV has reached the final node
+2024-10-16 15:14:21,182 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:14:21,182 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:14:21,216 - INFO - Energy level is now: 19456264.0 and the energy wasted to hover over the node is: 432.99199999999996
+2024-10-16 15:14:21,216 - INFO - The UAV has finished its business in the current node
+2024-10-16 15:14:21,216 - INFO - The strategies at node 14 have converged to: [0.19999999 0.2        0.2        0.19999972 0.2        0.19999996
+ 0.19999994 0.2        0.19999999 0.19999999 0.19999997 0.2
+ 0.19999996 0.2        0.2        0.2        0.2        0.2
+ 0.19999874 0.2        0.2        0.2        0.19999999 0.2
+ 0.2        0.19999999 0.2        0.19999999 0.19999999 0.19041759
+ 0.19999999 0.18219608 0.2        0.19414765 0.18818359 0.15419582
+ 0.1757106  0.1382077  0.13338676 0.12843809 0.12411314 0.1203971
+ 0.11651048 0.11253121 0.10843892 0.10358745 0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1       ]
+2024-10-16 15:14:21,218 - INFO - The task intensities of the users at node 14 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-16 15:14:21,218 - INFO - Converged with strategy difference: 0.0 in 3 iterations
+2024-10-16 15:14:21,218 - INFO - The UAV has reached the final node and has finished its business
+2024-10-16 15:14:21,218 - INFO - The UAV trajectory is: [0, 1, 2, 14]
+2024-10-16 15:14:21,218 - INFO - The UAV energy level is: 19456264.0 at the end of the algorithm
+2024-10-16 15:14:21,218 - INFO - Brave Greedy Algorithm has successfully reached the final node!
+2024-10-16 15:14:21,218 - INFO - The UAV processed in total: 84469810.0 bits
+2024-10-16 15:14:21,218 - INFO - Brave Greedy Algorithm took: 27.542631149291992 seconds
+2024-10-16 15:14:28,864 - INFO - Number of Nodes: 15
+2024-10-16 15:14:28,864 - INFO - Number of Edges: 105
+2024-10-16 15:14:28,864 - INFO - Number of Users: 3255
+2024-10-16 15:14:28,864 - INFO - Running the Q-Brave Algorithm
+2024-10-16 15:14:28,876 - INFO - Environment has been successfully initialized!
+2024-10-16 15:14:28,882 - INFO - EPISODE START
+2024-10-16 15:14:36,679 - INFO - Number of Nodes: 15
+2024-10-16 15:14:36,679 - INFO - Number of Edges: 105
+2024-10-16 15:14:36,679 - INFO - Number of Users: 3255
+2024-10-16 15:14:36,680 - INFO - UAV Energy Level before travelling: 19800000
+2024-10-16 15:14:36,680 - INFO - UAV has to first process the data in the node before moving to another node
+2024-10-16 15:14:41,670 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:14:41,670 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:14:41,670 - INFO - Energy level is now: 19799567.008 and the energy wasted to hover over the node is: 432.99199999999996
+2024-10-16 15:14:41,671 - INFO - The UAV has finished its business in the current node
+2024-10-16 15:14:41,671 - INFO - The strategies at node 0 have converged to: [0.2        0.19999999 0.2        0.19999999 0.19999915 0.19999996
+ 0.19999997 0.2        0.19999999 0.19999999 0.19999944 0.19999981
+ 0.19999996 0.19999994 0.2        0.2        0.2        0.2
+ 0.19999997 0.2        0.2        0.2        0.2        0.2
+ 0.2        0.19999997 0.2        0.19999999 0.19999999 0.19684872
+ 0.19999999 0.18219154 0.19995505 0.19414432 0.18817627 0.18202081
+ 0.17570852 0.1382364  0.13348414 0.12848306 0.12393411 0.11949784
+ 0.1165114  0.11252742 0.10840167 0.10369719 0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1       ]
+2024-10-16 15:14:41,671 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-16 15:14:41,671 - INFO - Converged with strategy difference: 0.0 in 3 iterations
+2024-10-16 15:14:41,820 - INFO - UAV Energy Level before travelling: 19799567.008
+2024-10-16 15:14:41,821 - INFO - Travelling to node 12 and needing energy 28025.753906
+2024-10-16 15:14:41,821 - INFO - UAV Energy Level after travelling: 19771542.0
+2024-10-16 15:14:47,215 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:14:47,215 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:14:47,215 - INFO - Energy level is now: 19771110.0 and the energy wasted to hover over the node is: 432.99199999999996
+2024-10-16 15:14:47,215 - INFO - The UAV has finished its business in the current node
+2024-10-16 15:14:47,215 - INFO - The strategies at node 12 have converged to: [0.19999999 0.19999994 0.2        0.19999996 0.19999996 0.2
+ 0.2        0.2        0.19999997 0.2        0.19999997 0.19999915
+ 0.19999985 0.2        0.2        0.2        0.2        0.2
+ 0.20009783 0.2        0.2        0.2        0.19999999 0.2
+ 0.19999975 0.19999999 0.2        0.19999972 0.19999999 0.19036083
+ 0.19999999 0.17567798 0.19995113 0.19414856 0.18817997 0.18202081
+ 0.1757074  0.1382669  0.13327613 0.12850237 0.12408381 0.12035961
+ 0.11531601 0.11252455 0.10840166 0.10346993 0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1       ]
+2024-10-16 15:14:47,215 - INFO - The task intensities of the users at node 12 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-16 15:14:47,215 - INFO - Converged with strategy difference: 0.0 in 3 iterations
+2024-10-16 15:14:47,299 - INFO - The reward for episode 0 is: 63331580.0
+2024-10-16 15:14:47,300 - INFO - EPISODE START
+2024-10-16 15:14:54,769 - INFO - Number of Nodes: 15
+2024-10-16 15:14:54,769 - INFO - Number of Edges: 105
+2024-10-16 15:14:54,769 - INFO - Number of Users: 3255
+2024-10-16 15:14:54,800 - INFO - UAV Energy Level before travelling: 19800000
+2024-10-16 15:14:54,800 - INFO - UAV has to first process the data in the node before moving to another node
+2024-10-16 15:14:59,698 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:14:59,698 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:14:59,698 - INFO - Energy level is now: 19799567.008 and the energy wasted to hover over the node is: 432.99199999999996
+2024-10-16 15:14:59,698 - INFO - The UAV has finished its business in the current node
+2024-10-16 15:14:59,698 - INFO - The strategies at node 0 have converged to: [0.2        0.19999999 0.2        0.19999999 0.19999915 0.19999996
+ 0.19999997 0.2        0.19999999 0.19999999 0.19999944 0.19999981
+ 0.19999996 0.19999994 0.2        0.2        0.2        0.2
+ 0.19999997 0.2        0.2        0.2        0.2        0.2
+ 0.2        0.19999997 0.2        0.19999999 0.19999999 0.19684872
+ 0.19999999 0.18219154 0.19995505 0.19414432 0.18817627 0.18202081
+ 0.17570852 0.1382364  0.13348414 0.12848306 0.12393411 0.11949784
+ 0.1165114  0.11252742 0.10840167 0.10369719 0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1       ]
+2024-10-16 15:14:59,699 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-16 15:14:59,699 - INFO - Converged with strategy difference: 0.0 in 3 iterations
+2024-10-16 15:14:59,760 - INFO - UAV Energy Level before travelling: 19799567.008
+2024-10-16 15:14:59,760 - INFO - Travelling to node 1 and needing energy 107006.429688
+2024-10-16 15:14:59,760 - INFO - UAV Energy Level after travelling: 19692562.0
+2024-10-16 15:15:06,165 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:15:06,165 - INFO - Energy level goes under 0 - Action not allowed
+2024-10-16 15:15:06,165 - INFO - Energy level is now: 19692130.0 and the energy wasted to hover over the node is: 432.99199999999996
+2024-10-16 15:15:06,165 - INFO - The UAV has finished its business in the current node
+2024-10-16 15:15:06,165 - INFO - The strategies at node 1 have converged to: [0.19999987 0.19999999 0.2        0.19999997 0.19999994 0.2
+ 0.19999981 0.2        0.19999997 0.19999999 0.19999999 0.19999994
+ 0.19999994 0.19999999 0.2        0.2        0.2        0.2
+ 0.1999999  0.2        0.2        0.2        0.19999999 0.2
+ 0.2        0.19999999 0.2        0.19999997 0.19999999 0.19688702
+ 0.19999999 0.17385092 0.19996987 0.16788217 0.18819381 0.18204886
+ 0.14757948 0.14119954 0.19999999 0.19999999 0.12395497 0.12036779
+ 0.11651319 0.11252934 0.10840684 0.10356157 0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1
+ 0.1        0.1        0.1        0.1        0.1        0.1       ]
+2024-10-16 15:15:06,165 - INFO - The task intensities of the users at node 1 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-16 15:15:06,165 - INFO - Converged with strategy difference: 0.0 in 4 iterations
+2024-10-16 15:15:06,232 - INFO - The reward for episode 1 is: 63410772.0
+2024-10-16 15:15:06,267 - INFO - The rewards per episode are: [Array(63331580., dtype=float32), Array(63410772., dtype=float32)]
+2024-10-16 15:15:06,274 - INFO - Q Table is: [[      0.  4229637.5       0.  2111440.        0.        0.        0.
+  2529390.        0.        0.        0.        0.  4221718.        0.
+        0. ]
+ [      0.        0.        0.        0.        0.        0.        0.
+        0.        0.        0.        0.        0.        0.        0.
+        0. ]
+ [      0.        0.        0.        0.        0.        0.        0.
+        0.        0.        0.        0.        0.        0.        0.
+        0. ]
+ [      0.        0.        0.        0.        0.        0.        0.
+        0.        0.        0.        0.        0.        0.        0.
+        0. ]
+ [      0.        0.        0.        0.        0.        0.        0.
+        0.        0.        0.        0.        0.        0.        0.
+        0. ]
+ [      0.        0.        0.        0.        0.        0.        0.
+        0.        0.        0.        0.        0.        0.        0.
+        0. ]
+ [      0.        0.        0.        0.        0.        0.        0.
+        0.        0.        0.        0.        0.        0.        0.
+        0. ]
+ [      0.        0.        0.        0.        0.        0.        0.
+        0.        0.        0.        0.        0.        0.        0.
+        0. ]
+ [      0.        0.        0.        0.        0.        0.        0.
+        0.        0.        0.        0.        0.        0.        0.
+        0. ]
+ [      0.        0.        0.        0.        0.        0.        0.
+        0.        0.        0.        0.        0.        0.        0.
+        0. ]
+ [      0.        0.        0.        0.        0.        0.        0.
+        0.        0.        0.        0.        0.        0.        0.
+        0. ]
+ [      0.        0.        0.        0.        0.        0.        0.
+        0.        0.        0.        0.        0.        0.        0.
+        0. ]
+ [      0.        0.        0.        0.        0.        0.        0.
+        0.        0.        0.        0.        0.        0.        0.
+        0. ]
+ [      0.        0.        0.        0.        0.        0.        0.
+        0.        0.        0.        0.        0.        0.        0.
+        0. ]
+ [      0.        0.        0.        0.        0.        0.        0.
+        0.        0.        0.        0.        0.        0.        0.
+        0. ]]
+2024-10-16 15:15:06,276 - INFO - Mean reward per episode: 63371176.0
+2024-10-16 15:15:06,276 - INFO - Max reward: 63410772.0
+2024-10-16 15:15:06,301 - INFO - The UAV energy level is: 19692130.0
+2024-10-16 15:15:06,301 - INFO - The UAV processed in total: 42296372.0 bits
+2024-10-16 15:15:06,301 - INFO - Q-Brave Algorithm took: 37.4363956451416 seconds
+2024-10-16 15:15:06,301 - INFO - Q-Brave Algorithm has successfully reached the final node!
+2024-10-16 15:15:06,301 - INFO - Data dictionaries has been saved as a pickle file!
+2024-10-16 15:15:06,301 - INFO - The nodes have been sorted based on the total bits of data they have
+2024-10-16 15:15:06,301 - INFO - Node 1 has 188940370.0 bits of data
+2024-10-16 15:15:06,301 - INFO - Node 2 has 188940370.0 bits of data
+2024-10-16 15:15:06,301 - INFO - Node 3 has 188940370.0 bits of data
+2024-10-16 15:15:06,301 - INFO - Node 4 has 188940370.0 bits of data
+2024-10-16 15:15:06,301 - INFO - Node 5 has 188940370.0 bits of data
+2024-10-16 15:15:06,301 - INFO - Node 6 has 188940370.0 bits of data
+2024-10-16 15:15:06,301 - INFO - Node 7 has 188940370.0 bits of data
+2024-10-16 15:15:06,301 - INFO - Node 8 has 188940370.0 bits of data
+2024-10-16 15:15:06,301 - INFO - Node 9 has 188940370.0 bits of data
+2024-10-16 15:15:06,301 - INFO - Node 10 has 188940370.0 bits of data
+2024-10-16 15:15:06,301 - INFO - Node 11 has 188940370.0 bits of data
+2024-10-16 15:15:06,315 - INFO - Node 12 has 188940370.0 bits of data
+2024-10-16 15:15:06,315 - INFO - Node 13 has 188940370.0 bits of data
+2024-10-16 15:15:06,315 - INFO - Node 14 has 188940370.0 bits of data
+2024-10-16 15:15:06,315 - INFO - Node 0 has 164212580.0 bits of data
+2024-10-16 15:15:06,315 - INFO - The sorted nodes based on total bits are: [<Node.Node object at 0x000001D77502C160>, <Node.Node object at 0x000001D7770A8280>, <Node.Node object at 0x000001D7770A80D0>, <Node.Node object at 0x000001D7770E0100>, <Node.Node object at 0x000001D77711C0D0>, <Node.Node object at 0x000001D77711C100>, <Node.Node object at 0x000001D7771581F0>, <Node.Node object at 0x000001D778160100>, <Node.Node object at 0x000001D7781601F0>, <Node.Node object at 0x000001D77819C070>, <Node.Node object at 0x000001D7781D81F0>, <Node.Node object at 0x000001D7781D8070>, <Node.Node object at 0x000001D778210160>, <Node.Node object at 0x000001D77824C070>, <Node.Node object at 0x000001D77502C070>]

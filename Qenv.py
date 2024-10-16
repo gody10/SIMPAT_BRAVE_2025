@@ -15,7 +15,7 @@ class Qenv(gym.Env):
 	"""
 	
 	def __init__(self, graph: Graph, uav: Uav, number_of_users: list, convergence_threshold: float, n_actions: float,
-				n_observations: float, solving_method: str, T: float) -> None:
+				n_observations: float, solving_method: str, T: float, c: float, b: float) -> None:
 		"""
 		Initialize the environment.
 		
@@ -37,6 +37,8 @@ class Qenv(gym.Env):
 		self.solving_method = solving_method
 		self.T = T
 		self.done = False
+		self.c = c
+		self.b = b
 		
 		self.action_space = gym.spaces.Discrete(n_actions)
 		self.observation_space = gym.spaces.Discrete(n_observations)
@@ -98,8 +100,8 @@ class Qenv(gym.Env):
 			user.set_user_strategy(user_strategies[idx])
 		
 		# Play the submodular game
-		c = 0.08
-		b = 0.4
+		c = self.c
+		b = self.b
 			
 		iteration_counter = 0
 		while(not done_game):

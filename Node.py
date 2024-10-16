@@ -113,7 +113,7 @@ class Node:
 		"""
 		return self.user_list
 	
-	def calculate_total_energy_for_all_user_data_processing(self)->float:
+	def calculate_total_energy_for_all_user_data_processing(self, uav_processor_power: float, uav_processor_frequency: float)->float:
 		"""
 		Calculate the total energy for all users data processing
 		
@@ -121,9 +121,11 @@ class Node:
 		float
 			Total energy for all users data processing
 		"""
-		total_energy = 0
-		for user in self.get_user_list():
-			total_energy += user.calculate_total_consumed_energy()
+		#total_energy = 0
+		#for user in self.get_user_list():
+			#total_energy += user.calculate_total_consumed_energy()
+		total_energy = uav_processor_power * max((self.get_node_total_data() / uav_processor_frequency), 1)
+
 		return total_energy
 		
 	def __str__(self)->str:

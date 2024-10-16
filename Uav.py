@@ -2,6 +2,7 @@ from Node import Node
 import jax.numpy as jnp
 import jax
 import logging
+import numpy as np
 
 class Uav:
 	"""
@@ -9,7 +10,8 @@ class Uav:
 	Represents the UAV that will navigate itself in the graph and process user data
 	"""
 	
-	def __init__(self, uav_id: int, initial_node: Node, final_node: Node, capacity: float = 100, total_data_processing_capacity: float = 1000, velocity : float = 1, uav_system_bandwidth: float = 0.9, cpu_frequency: float = 2, height: float = 100)->None:
+	def __init__(self, uav_id: int, initial_node: Node, final_node: Node, capacity: float = 100, total_data_processing_capacity: float = 1000, velocity : float = 1, uav_system_bandwidth: float = 0.9, cpu_frequency: float = 2, 
+              height: float = 100, cpu_power: float = 50)->None:
 		"""
 		Initialize the UAV
 		
@@ -41,6 +43,7 @@ class Uav:
 		self.update_visited_nodes(self.initial_node)
 		self.set_current_coordinates(self.initial_node.get_coordinates())
 		self.total_processed_data = 0
+		self.cpu_power = cpu_power
 		
 	def set_finished_business_in_node(self, finished: bool)->None:
 		"""
@@ -51,6 +54,16 @@ class Uav:
 			True if the business is finished, False otherwise
 		"""
 		self.finished_business_in_node = finished
+  
+	def get_cpu_power(self)->float:
+		"""
+		Get the CPU power of the UAV
+		
+		Returns:
+		float
+			CPU power of the UAV
+		"""
+		return self.cpu_power
   
 	def get_total_energy_level(self)->float:
 		"""
@@ -407,7 +420,7 @@ class Uav:
 		# Calculate the energy needed to travel to each unvisited node
 		energy_travel = jnp.array([308.709 * self.calculate_time_to_travel(node_to_start= self.get_current_node(), node_to_end_up= node) - 0.85 for node in nodes])
 		
-		energy_process = jnp.array([node.calculate_total_energy_for_all_user_data_processing() for node in nodes])
+		energy_process = jnp.array([node.calculate_total_energy_for_all_user_data_processing(uav_processor_power = 50, uav_processor_frequency = self.get_cpu_frequency()) for node in nodes])
 		
 		energy_hover = jnp.array([(4.917 * self.get_height() - 275.204) * 1 for node in nodes])
 		energy_to_travel_to_final_node = jnp.array([308.709 * self.calculate_time_to_travel(node_to_start= node, node_to_end_up= self.get_final_node()) - 0.85 for node in nodes])
@@ -475,7 +488,7 @@ class Uav:
 		# Calculate the energy needed to travel to each unvisited node
 		energy_travel = jnp.array([308.709 * self.calculate_time_to_travel(node_to_start= self.get_current_node(), node_to_end_up= node) - 0.85 for node in nodes])
 		
-		energy_process = jnp.array([node.calculate_total_energy_for_all_user_data_processing() for node in nodes])
+		energy_process = jnp.array([node.calculate_total_energy_for_all_user_data_processing(uav_processor_power= self.get_cpu_power(), uav_processor_frequency= self.get_cpu_frequency()) for node in nodes])
 		
 		energy_hover = jnp.array([(4.917 * self.get_height() - 275.204) * 1 for node in nodes])
 		energy_to_travel_to_final_node = jnp.array([308.709 * self.calculate_time_to_travel(node_to_start= node, node_to_end_up= self.get_final_node()) - 0.85 for node in nodes])
@@ -507,15 +520,24 @@ class Uav:
 		# if not nodes_final:
 		#     return self.get_final_node()
 		
-		# Calculate the proportion of the total bits of each node_final to the total bits of all nodes_final
+		# Step 1: Calculate total bits across all nodes
 		total_bits_final = jnp.sum(jnp.array([node.get_node_total_data() for node in nodes_final]))
+
+		# Step 2: Calculate the proportion for each node (which will act as the probability)
 		proportion = jnp.array([node.get_node_total_data() / total_bits_final for node in nodes_final])
-		
-		# Calculate the probabilities for each node_final based on the proportion
-		probabilities = jnp.array([proportion[i] / jnp.sum(proportion) for i in range(len(proportion))])
-		
+
+		# Step 3: Set probabilities directly as the calculated proportions
+		probabilities = proportion
+
+		# Optionally, check if probabilities sum to 1 (it should)
+		#sum_probabilities = jnp.sum(probabilities)
+		#print(f"Sum of probabilities: {sum_probabilities}")  # Should print 1.0
+
+		# Instead of passing Node objects, create an array of indices for the nodes
+		node_indices = jnp.arange(len(nodes_final))  # Numeric indices representing nodes
+  
 		# Pick a random node based on the probabilities
-		idx = jax.random.choice(key + (self.number_of_actions * 15), shape=(), a=nodes_final, p=probabilities)
+		idx = jax.random.choice(key + (self.number_of_actions * 15), shape=(), a=node_indices, p=probabilities)
 		
 		return nodes_final[idx]
 	
@@ -552,7 +574,7 @@ class Uav:
 		# Calculate the energy needed to travel to each unvisited node
 		energy_travel = jnp.array([308.709 * self.calculate_time_to_travel(node_to_start= self.get_current_node(), node_to_end_up= node) - 0.85 for node in nodes])
 		
-		energy_process = jnp.array([node.calculate_total_energy_for_all_user_data_processing() for node in nodes])
+		energy_process = jnp.array([node.calculate_total_energy_for_all_user_data_processing(uav_processor_power= self.get_cpu_power(), uav_processor_frequency= self.get_cpu_frequency()) for node in nodes])
 		
 		energy_hover = jnp.array([(4.917 * self.get_height() - 275.204) * 1 for node in nodes])
 		energy_to_travel_to_final_node = jnp.array([308.709 * self.calculate_time_to_travel(node_to_start= node, node_to_end_up= self.get_final_node()) - 0.85 for node in nodes])

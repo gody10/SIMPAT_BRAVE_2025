@@ -88,11 +88,11 @@ def plot_graphs():
 	algorithms = list(data_dict.keys())
 
 	# Remove total bits from the name of algorithms
-	algorithms = [algorithm.replace("Total Bits", "") for algorithm in algorithms]
+	algorithms = [algorithm.replace("Energy Level", "") for algorithm in algorithms]
 
 	energy = list(data_dict.values())
 
-	energy = [float(e[0]) for e in energy]
+	energy = [float(e) for e in energy]
 
 	# Define colors for each bar (for visualization purposes)
 	colors = ['blue', 'green', 'orange', 'grey']  # Customize colors as needed
@@ -152,7 +152,7 @@ def plot_graphs():
 	algorithms = list(data_dict.keys())
 
 	# Remove total bits from the name of algorithms
-	algorithms = [algorithm.replace("Total Bits", "") for algorithm in algorithms]
+	algorithms = [algorithm.replace("Total Visited Nodes", "") for algorithm in algorithms]
 
 	visited_nodes = list(data_dict.values())
 
@@ -670,3 +670,6 @@ def plot_graphs():
 
 	# Show the plot
 	#plt.show()
+
+if __name__ == "__main__":
+	plot_graphs()
