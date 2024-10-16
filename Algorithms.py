@@ -343,42 +343,41 @@ class Algorithms:
 			#max_distance = 2  # Set maximum distance to 10
 
 			users = []
+			# Convert the number of users to an integer if it's an array
+			num_users = int(number_of_users[number_of_nodes])
+
+			# Split the key into enough subkeys for the number of users
+			subkeys = jax.random.split(key, num_users)
+
 			for j in range(number_of_users[number_of_nodes]):
-
-				data_step = 1000  # Amplify the data step size for bigger differences
-				base_data_in_bits = 1000  # Set a base value for data bits
-				data_in_bits = max_bits - bit_range * (j / number_of_users[number_of_nodes])**0.5  # Square root-based smooth decrease
-
+				# Use a unique subkey for each user to get different random values
+				data_in_bits = jax.random.uniform(subkeys[j], minval=min_bits, maxval=max_bits)
+				
 				# Sharpen the decrease in `r` to make higher ID users much closer to the center
 				r_scale = (j / number_of_users[number_of_nodes]) ** 2  # Exponential decrease for sharper differences
-				#r = r_scale * max_distance  # Scale `r` to reach the maximum distance of 10
 				r = r_scale
 				theta = random.uniform(random.split(key)[0], (1,))[0] * 2 * jnp.pi  # azimuthal angle (0 to 2*pi)
 				phi = random.uniform(random.split(key)[0], (1,))[0] * jnp.pi  # polar angle (0 to pi)
-				
+
 				# Convert spherical coordinates (r, theta, phi) to Cartesian coordinates (x, y, z)
 				x = r * jnp.sin(phi) * jnp.cos(theta)
 				y = r * jnp.sin(phi) * jnp.sin(theta)
 				z = r * jnp.cos(phi)
-    
+
 				# User coordinates relative to the node center
 				user_coords = (node_coords[0] + x, node_coords[1] + y, node_coords[2] + z)
-    
-				# Amplified differences in data bits
-				#data_in_bits = base_data_in_bits + j * (data_step / number_of_users[number_of_nodes])
-				#Smoothed data bits using a square root-based increase
-				#data_in_bits = min_bits + bit_range * (j / number_of_users[number_of_nodes])**0.5  # Square root-based smooth increase
 				
+				# Create user object with random data_in_bits
 				user = AoiUser(
 					user_id=j,
-					data_in_bits=data_in_bits,
+					data_in_bits=data_in_bits,  # Assign random bits to each user
 					transmit_power=1.5,
 					energy_level=energy_level,
 					task_intensity=1,
 					carrier_frequency=5,
 					coordinates=user_coords
 				)
-    
+
 				users.append(user)
 			
 			nodes.append(Node(
@@ -417,7 +416,7 @@ class Algorithms:
 		self.uav = Uav(uav_id=1, initial_node=nodes[0], final_node=nodes[len(nodes)-1], capacity=self.uav_energy_capacity, total_data_processing_capacity=self.uav_processing_capacity, 
 					velocity=self.uav_velocity, uav_system_bandwidth=self.uav_bandwidth, cpu_frequency=self.uav_cpu_frequency, height=uav_height)
 		
-	def setup_singlular_experiment(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float, uav_energy_capacity: float, 
+	def setup_singular_experiment(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float, uav_energy_capacity: float, 
                          uav_bandwidth: float, uav_processing_capacity: float, uav_cpu_frequency: float, uav_velocity: float, energy_level: float, min_bits: float, max_bits: float, distance_min: float, distance_max: float)->None:
 		"""
 		Setup the experiment
