@@ -870,6 +870,7 @@ class Algorithms:
 			trajectory_ids.append(node.get_node_id())
 			
 		self.logger.info("The UAV trajectory is: %s", trajectory_ids)
+		self.logger.info("The UAV has visited %d nodes", len(trajectory_ids))
 		self.set_trajectory(trajectory_ids)
 		
 		if uav_has_reached_final_node:
@@ -1275,7 +1276,7 @@ class Algorithms:
 		lr = 0.1
 		
 		env = Qenv(graph= graph, uav= uav, number_of_users= U, convergence_threshold= convergence_threshold,
-				   n_actions= n_actions, n_observations= n_observations, solving_method= solving_method, T= T, c= c, b= b)
+				   n_actions= n_actions, n_observations= n_observations, solving_method= solving_method, T= T, c= c, b= b, max_iter= max_travels_per_episode)
 		
 		rewards_per_episode = []
 		total_bits_processed_per_episode = []

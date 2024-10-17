@@ -15,7 +15,7 @@ class Qenv(gym.Env):
 	"""
 	
 	def __init__(self, graph: Graph, uav: Uav, number_of_users: list, convergence_threshold: float, n_actions: float,
-				n_observations: float, solving_method: str, T: float, c: float, b: float) -> None:
+				n_observations: float, solving_method: str, T: float, c: float, b: float, max_iter: int) -> None:
 		"""
 		Initialize the environment.
 		
@@ -39,6 +39,7 @@ class Qenv(gym.Env):
 		self.done = False
 		self.c = c
 		self.b = b
+		self.max_iter = max_iter
 		
 		self.action_space = gym.spaces.Discrete(n_actions)
 		self.observation_space = gym.spaces.Discrete(n_observations)
@@ -68,12 +69,16 @@ class Qenv(gym.Env):
 		
 		# Check if the UAV has reached the final node to end the episode
 		if (self.uav.get_current_node() == self.uav.get_final_node()):
+			#logging.info("The UAV has reached the final node!")
 			self.done = True
+			if len(self.uav.get_visited_nodes()) == self.max_iter:
+				self.reward+= 10000000000000000
 			
 		# Check if the UAV has enough energy to continue travelling
 		if (self.uav.get_energy_level() <= 0):
 			self.done = True
 			#logging.info("The UAV has run out of energy!")
+   
 			
 		# # If the UAV has exceeded 5 actions, end the episode
 		# if (self.uav.get_number_of_actions() > 6):

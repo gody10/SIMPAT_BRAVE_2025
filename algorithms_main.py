@@ -13,7 +13,7 @@ brave_greedy_time = 0
 q_brave_time = 0
 
 # Create a random key
-key = random.PRNGKey(10)
+key = random.PRNGKey(2062702539)
 
 # Create N nodes with U users in them
 N = 10
@@ -63,7 +63,7 @@ q_brave_logger = setup_logger('q_brave_logger', 'q_brave_algorithm.log')
 start_time = time.time()
 
 # Run the Random Walk Algorithm
-success_random_walk = algorithm.run_random_walk_algorithm(solving_method= "scipy", max_iter= MAX_ITER, b= B, c= C, logger= random_walk_logger)
+success_random_walk = algorithm.run_random_walk_algorithm(solving_method= "scipy", max_iter= MAX_ITER/2, b= B, c= C, logger= random_walk_logger)
 
 random_walk_logger.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
 
