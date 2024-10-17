@@ -39,7 +39,7 @@ def generate_node_coordinates(key, existing_nodes, min_distance_between_nodes=50
   # Function to set up a logger for each algorithm
 def setup_logger(name, log_file, level=logging.INFO):
     """Function to setup a logger."""
-    handler = logging.FileHandler(log_file)        
+    handler = logging.FileHandler(log_file, mode='w')  # 'w' mode overwrites the log file
     handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
     
     logger = logging.getLogger(name)

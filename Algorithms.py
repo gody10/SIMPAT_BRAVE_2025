@@ -1311,7 +1311,7 @@ class Algorithms:
 				# The environment runs the chosen action and returns
 				# the next state, a reward and true if the epiosed is ended.
 				returns = env.step(action_node)
-				next_state, reward, done, _ = returns
+				next_state, reward, done, info = returns
 				next_state = next_state.get_node_id()
 				
 				# We update our Q-table using the Q-learning iteration
@@ -1319,6 +1319,7 @@ class Algorithms:
 				total_episode_reward = total_episode_reward + reward
 				# If the episode is finished, we leave the for loop
 				if done:
+					logger.info("The episode has finished")
 					break
 				current_state = next_state
 			#We update the exploration proba using exponential decay formula
@@ -1328,11 +1329,12 @@ class Algorithms:
 			energy_expended_per_episode.append(self.get_uav().get_total_energy_level() - self.get_uav().get_energy_level())
 			trajectory = uav.get_visited_nodes()
 			trajectory_ids = []
-			for node in trajectory:
+			for node in info['visited_nodes']:
 				trajectory_ids.append(node.get_node_id())
 			uav_visited_nodes_per_episode.append(len(trajectory_ids))
 			self.logger.info("The reward for episode %d is: %s", e, total_episode_reward)
 			self.logger.info("The UAV has visited %d nodes in episode %d", len(trajectory_ids), e)
+			self.logger.info("The UAV has visited the nodes: %s", trajectory_ids)
 			self.logger.info("EPISODE FINISHED")
 			#print("EPISODE END")
 			

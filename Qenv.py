@@ -193,6 +193,8 @@ class Qenv(gym.Env):
 		temp_reward = total_data_processed                             
 		
 		self.reward += temp_reward
+  
+		info["visited_nodes"] = self.uav.get_visited_nodes()
 		
 		return (self.observation, self.reward, self.done, info)
 	
