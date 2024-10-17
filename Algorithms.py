@@ -53,7 +53,8 @@ class Algorithms:
 		self.max_bits = 0
 		self.distance_min = 0
 		self.distance_max = 0
-		
+		self.logger = None		
+  
 	def get_uav(self)->Uav:
 		"""
 		Get the UAV
@@ -204,9 +205,9 @@ class Algorithms:
 		"""
 		nodes = self.graph.get_nodes()
 		sorted_nodes = sorted(nodes, key= lambda x: x.get_node_total_data(), reverse= True)
-		logging.info("The nodes have been sorted based on the total bits of data they have")
+		self.logger.info("The nodes have been sorted based on the total bits of data they have")
 		for node in sorted_nodes:
-			logging.info("Node %s has %s bits of data", node.get_node_id(), node.get_node_total_data())
+			self.logger.info("Node %s has %s bits of data", node.get_node_id(), node.get_node_total_data())
 		return sorted_nodes
 	
 	def setup_experiment(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float, uav_energy_capacity: float, 
@@ -286,9 +287,9 @@ class Algorithms:
 		self.graph = Graph(nodes= nodes, edges= edges)
 
 		# Get number of nodes and edges
-		logging.info("Number of Nodes: %s", self.graph.get_num_nodes())
-		logging.info("Number of Edges: %s", self.graph.get_num_edges())
-		logging.info("Number of Users: %s", self.graph.get_num_users())
+		#self.logger.info("Number of Nodes: %s", self.graph.get_num_nodes())
+		#self.logger.info("Number of Edges: %s", self.graph.get_num_edges())
+		#self.logger.info("Number of Users: %s", self.graph.get_num_users())
 
 		# Create a UAV
 		self.uav = Uav(uav_id= 1, initial_node= nodes[0], final_node= nodes[len(nodes)-1], capacity= self.uav_energy_capacity, total_data_processing_capacity= self.uav_processing_capacity, 
@@ -408,9 +409,9 @@ class Algorithms:
 		self.graph = Graph(nodes=nodes, edges=edges)
 
 		# Get number of nodes and edges
-		logging.info("Number of Nodes: %s", self.graph.get_num_nodes())
-		logging.info("Number of Edges: %s", self.graph.get_num_edges())
-		logging.info("Number of Users: %s", self.graph.get_num_users())
+		#self.logger.info("Number of Nodes: %s", self.graph.get_num_nodes())
+		#self.logger.info("Number of Edges: %s", self.graph.get_num_edges())
+		#self.logger.info("Number of Users: %s", self.graph.get_num_users())
 
 		# Create a UAV
 		self.uav = Uav(uav_id=1, initial_node=nodes[0], final_node=nodes[len(nodes)-1], capacity=self.uav_energy_capacity, total_data_processing_capacity=self.uav_processing_capacity, 
@@ -531,9 +532,9 @@ class Algorithms:
 		self.graph = Graph(nodes=nodes, edges=edges)
 
 		# Get number of nodes and edges
-		logging.info("Number of Nodes: %s", self.graph.get_num_nodes())
-		logging.info("Number of Edges: %s", self.graph.get_num_edges())
-		logging.info("Number of Users: %s", self.graph.get_num_users())
+		self.logger.info("Number of Nodes: %s", self.graph.get_num_nodes())
+		self.logger.info("Number of Edges: %s", self.graph.get_num_edges())
+		self.logger.info("Number of Users: %s", self.graph.get_num_users())
 
 		# Create a UAV
 		self.uav = Uav(uav_id=1, initial_node=nodes[0], final_node=nodes[len(nodes)-1], capacity=self.uav_energy_capacity, total_data_processing_capacity=self.uav_processing_capacity, 
@@ -550,7 +551,7 @@ class Algorithms:
 							  uav_energy_capacity= self.uav_energy_capacity, uav_bandwidth= self.uav_bandwidth, uav_processing_capacity= self.uav_processing_capacity, uav_cpu_frequency= self.uav_cpu_frequency, uav_velocity= self.uav_velocity
 							  , energy_level= self.energy_level, min_bits= self.min_bits, max_bits= self.max_bits, distance_min= self.distance_min, distance_max= self.distance_max)
 		
-	def run_single_submodular_game(self, solving_method: str, c: float, b: float)->None:
+	def run_single_submodular_game(self, solving_method: str, c: float, b: float, logger: logging.Logger = None)->None:
 		"""
 		Run a single submodular game
 		
@@ -558,7 +559,8 @@ class Algorithms:
 		solving_method : str
 			Solving method to be used for the submodular game (cvxpy or scipy)
 		"""
-		logging.info("Running a Single Submodular Game")
+		self.logger = logger
+		self.logger.info("Running a Single Submodular Game")
 		uav = self.get_uav()
 		graph = self.get_graph()
 		U = self.get_number_of_users()
@@ -618,8 +620,8 @@ class Algorithms:
 						maximized_utility, percentage_offloaded = user.play_submodular_game_cvxpy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
 																								uav_cpu_frequency, uav_total_data_processing_capacity, T, uav.get_current_coordinates(), uav.get_height())
 						
-						logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
-						logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
+						self.logger.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
+						self.logger.info("User %d has maximized its utility to %s", idx, maximized_utility)
 						
 						# Update the user's strategy
 						user_strategies = user_strategies.at[idx].set(percentage_offloaded[0][0])
@@ -632,8 +634,8 @@ class Algorithms:
 					maximized_utility, percentage_offloaded = user.play_submodular_game_scipy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
 																							uav_cpu_frequency, uav_total_data_processing_capacity, T, uav.get_current_coordinates(), uav.get_height())
 
-					# logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
-					# logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
+					# logger.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
+					# logger.info("User %d has maximized its utility to %s", idx, maximized_utility)
 					
 					# Update the user's strategy
 					user_strategies = user_strategies.at[idx].set(percentage_offloaded[0])
@@ -674,14 +676,14 @@ class Algorithms:
 		
 		uav.set_finished_business_in_node(True)
 		uav.hover_over_node(time_hover= T)
-		logging.info("The UAV has finished its business in the current node")
-		logging.info("The strategies at node %s have converged to: %s", uav.get_current_node().get_node_id(), user_strategies)
+		self.logger.info("The UAV has finished its business in the current node")
+		self.logger.info("The strategies at node %s have converged to: %s", uav.get_current_node().get_node_id(), user_strategies)
 		# Log the task_intensity of the users
 		task_intensities = []
 		for user in uav.get_current_node().get_user_list():
 			task_intensities.append(user.get_task_intensity())
-		logging.info("The task intensities of the users at node %s are: %s", uav.get_current_node().get_node_id(), task_intensities)
-		logging.info("Converged with strategy difference: %s in %d iterations", strategy_difference, iteration_counter)
+		self.logger.info("The task intensities of the users at node %s are: %s", uav.get_current_node().get_node_id(), task_intensities)
+		self.logger.info("Converged with strategy difference: %s in %d iterations", strategy_difference, iteration_counter)
 		
 		# Keep adding to the convergence history for 10 more iterations
 		for i in range(100):
@@ -693,7 +695,7 @@ class Algorithms:
 						
 
 		
-	def run_random_walk_algorithm(self, solving_method: str, max_iter: int, c: float, b: float)->bool:
+	def run_random_walk_algorithm(self, solving_method: str, max_iter: int, c: float, b: float, logger : logging.Logger = None  )->bool:
 		"""
 		Algorithm that makes the UAV navigate through the graph randomly
 		Every time it needs to move from one node to another, it will randomly choose the next node from a set of unvisited nodes
@@ -708,8 +710,8 @@ class Algorithms:
 			bool
 				True if the UAV has reached the final node, False otherwise
 		"""
-
-		logging.info("Running the Random Walk Algorithm")
+		self.logger = logger
+		self.logger.info("Running the Random Walk Algorithm")
 		uav = self.get_uav()
 		graph = self.get_graph()
 		U = self.get_number_of_users()
@@ -780,8 +782,8 @@ class Algorithms:
 							maximized_utility, percentage_offloaded = user.play_submodular_game_cvxpy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
 																									uav_cpu_frequency, uav_total_data_processing_capacity, T, uav.get_current_coordinates(), uav.get_height())
 							
-							logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
-							logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
+							logger.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
+							logger.info("User %d has maximized its utility to %s", idx, maximized_utility)
 							
 							# Update the user's strategy
 							user_strategies = user_strategies.at[idx].set(percentage_offloaded[0][0])
@@ -794,8 +796,8 @@ class Algorithms:
 							maximized_utility, percentage_offloaded = user.play_submodular_game_scipy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
 																									uav_cpu_frequency, uav_total_data_processing_capacity, 2, uav.get_current_coordinates(), uav.get_height())
 	
-							# logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
-							# logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
+							# logger.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
+							# logger.info("User %d has maximized its utility to %s", idx, maximized_utility)
 							
 							# Update the user's strategy
 							user_strategies = user_strategies.at[idx].set(percentage_offloaded[0])
@@ -832,17 +834,17 @@ class Algorithms:
 				
 				uav.set_finished_business_in_node(True)
 				uav.hover_over_node(time_hover= T)
-				logging.info("The UAV has finished its business in the current node")
-				logging.info("The strategies at node %s have converged to: %s", uav.get_current_node().get_node_id(), user_strategies)
+				self.logger.info("The UAV has finished its business in the current node")
+				self.logger.info("The strategies at node %s have converged to: %s", uav.get_current_node().get_node_id(), user_strategies)
 				# Log the task_intensity of the users
 				task_intensities = []
 				for user in uav.get_current_node().get_user_list():
 					task_intensities.append(user.get_task_intensity())
-				logging.info("The task intensities of the users at node %s are: %s", uav.get_current_node().get_node_id(), task_intensities)
-				logging.info("Converged with strategy difference: %s in %d iterations", strategy_difference, iteration_counter)
+				self.logger.info("The task intensities of the users at node %s are: %s", uav.get_current_node().get_node_id(), task_intensities)
+				self.logger.info("Converged with strategy difference: %s in %d iterations", strategy_difference, iteration_counter)
 				
 				if (uav_has_reached_final_node):
-					logging.info("The UAV has reached the final node and has finished its business")
+					self.logger.info("The UAV has reached the final node and has finished its business")
 					break_flag = True
 				#print(f"Final Strategies: {user_strategies}")
 			else:
@@ -850,24 +852,24 @@ class Algorithms:
 				next_node = uav.get_random_unvisited_next_node(nodes= graph.get_nodes(), key= key, max_iter= max_iter)
 				if (next_node is not None):
 					if (uav.travel_to_node(next_node)):
-						logging.info("The UAV has reached the next node")
-						logging.info("The UAV energy level is: %s after going to the next node", uav.get_energy_level())
+						self.logger.info("The UAV has reached the next node")
+						self.logger.info("The UAV energy level is: %s after going to the next node", uav.get_energy_level())
 						# Check if the UAV has reached the final node
 						if uav.check_if_final_node(uav.get_current_node()):
-							logging.info("The UAV has reached the final node")
+							self.logger.info("The UAV has reached the final node")
 							uav_has_reached_final_node = True
 					else:
-						logging.info("The UAV has not reached the next node because it has not enough energy")
+						self.logger.info("The UAV has not reached the next node because it has not enough energy")
 						break_flag = True
 				else:
-					logging.info("The UAV has visited all the nodes")
+					self.logger.info("The UAV has visited all the nodes")
 					break_flag = True
 		trajectory = uav.get_visited_nodes()
 		trajectory_ids = []
 		for node in trajectory:
 			trajectory_ids.append(node.get_node_id())
 			
-		logging.info("The UAV trajectory is: %s", trajectory_ids)
+		self.logger.info("The UAV trajectory is: %s", trajectory_ids)
 		self.set_trajectory(trajectory_ids)
 		
 		if uav_has_reached_final_node:
@@ -875,7 +877,7 @@ class Algorithms:
 		else:
 			return False
 		
-	def run_random_proportional_fairness_algorithm(self, solving_method: str, max_iter: int, c: float, b: float)->bool:
+	def run_random_proportional_fairness_algorithm(self, solving_method: str, max_iter: int, c: float, b: float, logger : logging.Logger = None)->bool:
 		"""
 		Algorithm that makes the UAV navigate through the graph randomly giving bigger chance to visit nodes that have more data to process
 			
@@ -889,8 +891,8 @@ class Algorithms:
 			bool
 				True if the UAV has reached the final node, False otherwise
 		"""
-
-		logging.info("Running the Proportional Fairness Algorithm")
+		self.logger = logger
+		self.logger.info("Running the Proportional Fairness Algorithm")
 		uav = self.get_uav()
 		graph = self.get_graph()
 		U = self.get_number_of_users()
@@ -961,8 +963,8 @@ class Algorithms:
 							maximized_utility, percentage_offloaded = user.play_submodular_game_cvxpy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
 																									uav_cpu_frequency, uav_total_data_processing_capacity, T, uav.get_current_coordinates(), uav.get_height())
 							
-							logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
-							logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
+							self.logger.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
+							self.logger.info("User %d has maximized its utility to %s", idx, maximized_utility)
 							
 							# Update the user's strategy
 							user_strategies = user_strategies.at[idx].set(percentage_offloaded[0][0])
@@ -975,8 +977,8 @@ class Algorithms:
 							maximized_utility, percentage_offloaded = user.play_submodular_game_scipy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
 																									uav_cpu_frequency, uav_total_data_processing_capacity, 2, uav.get_current_coordinates(), uav.get_height())
 	
-							# logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
-							# logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
+							# logger.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
+							# logger.info("User %d has maximized its utility to %s", idx, maximized_utility)
 							
 							# Update the user's strategy
 							user_strategies = user_strategies.at[idx].set(percentage_offloaded[0])
@@ -1013,17 +1015,17 @@ class Algorithms:
 				
 				uav.set_finished_business_in_node(True)
 				uav.hover_over_node(time_hover= T)
-				logging.info("The UAV has finished its business in the current node")
-				logging.info("The strategies at node %s have converged to: %s", uav.get_current_node().get_node_id(), user_strategies)
+				self.logger.info("The UAV has finished its business in the current node")
+				self.logger.info("The strategies at node %s have converged to: %s", uav.get_current_node().get_node_id(), user_strategies)
 				# Log the task_intensity of the users
 				task_intensities = []
 				for user in uav.get_current_node().get_user_list():
 					task_intensities.append(user.get_task_intensity())
-				logging.info("The task intensities of the users at node %s are: %s", uav.get_current_node().get_node_id(), task_intensities)
-				logging.info("Converged with strategy difference: %s in %d iterations", strategy_difference, iteration_counter)
+				self.logger.info("The task intensities of the users at node %s are: %s", uav.get_current_node().get_node_id(), task_intensities)
+				self.logger.info("Converged with strategy difference: %s in %d iterations", strategy_difference, iteration_counter)
 				
 				if (uav_has_reached_final_node):
-					logging.info("The UAV has reached the final node and has finished its business")
+					self.logger.info("The UAV has reached the final node and has finished its business")
 					break_flag = True
 				#print(f"Final Strategies: {user_strategies}")
 			else:
@@ -1031,24 +1033,24 @@ class Algorithms:
 				next_node = uav.get_random_unvisited_next_node_with_proportion(nodes= graph.get_nodes(), key= key, max_iter= max_iter)
 				if (next_node is not None):
 					if (uav.travel_to_node(next_node)):
-						logging.info("The UAV has reached the next node")
-						logging.info("The UAV energy level is: %s after going to the next node", uav.get_energy_level())
+						self.logger.info("The UAV has reached the next node")
+						self.logger.info("The UAV energy level is: %s after going to the next node", uav.get_energy_level())
 						# Check if the UAV has reached the final node
 						if uav.check_if_final_node(uav.get_current_node()):
-							logging.info("The UAV has reached the final node")
+							self.logger.info("The UAV has reached the final node")
 							uav_has_reached_final_node = True
 					else:
-						logging.info("The UAV has not reached the next node because it has not enough energy")
+						self.logger.info("The UAV has not reached the next node because it has not enough energy")
 						break_flag = True
 				else:
-					logging.info("The UAV has visited all the nodes")
+					self.logger.info("The UAV has visited all the nodes")
 					break_flag = True
 		trajectory = uav.get_visited_nodes()
 		trajectory_ids = []
 		for node in trajectory:
 			trajectory_ids.append(node.get_node_id())
 			
-		logging.info("The UAV trajectory is: %s", trajectory_ids)
+		self.logger.info("The UAV trajectory is: %s", trajectory_ids)
 		self.set_trajectory(trajectory_ids)
 		
 		if uav_has_reached_final_node:
@@ -1056,7 +1058,7 @@ class Algorithms:
 		else:
 			return False
 		
-	def brave_greedy(self, solving_method:str, max_iter: int, c: float, b: float)->bool:
+	def brave_greedy(self, solving_method:str, max_iter: int, c: float, b: float, logger : logging.Logger = None)->bool:
 		"""
 		Algorithm that makes the UAV navigate through the graph by selecting the Area of Interest (AoI) with the highest amount of data to offload
 		Every time it needs to move from one node to another, it will choose the node that has the highest amount of data to offload
@@ -1069,8 +1071,8 @@ class Algorithms:
 			bool
 				True if the UAV has reached the final node, False otherwise
 		"""
-	
-		logging.info("Running the Brave Greedy Algorithm")
+		self.logger = logger
+		self.logger.info("Running the Brave Greedy Algorithm")
 		uav = self.get_uav()
 		graph = self.get_graph()
 		U = self.get_number_of_users()
@@ -1134,8 +1136,8 @@ class Algorithms:
 							maximized_utility, percentage_offloaded = user.play_submodular_game_cvxpy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
 																									uav_cpu_frequency, uav_total_data_processing_capacity, T, uav.get_current_coordinates(), uav.get_height())
 							
-							logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
-							logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
+							self.logger.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
+							self.logger.info("User %d has maximized its utility to %s", idx, maximized_utility)
 							
 							# Update the user's strategy
 							user_strategies = user_strategies.at[idx].set(percentage_offloaded[0][0])
@@ -1148,8 +1150,8 @@ class Algorithms:
 							maximized_utility, percentage_offloaded = user.play_submodular_game_scipy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
 																									uav_cpu_frequency, uav_total_data_processing_capacity, 2, uav.get_current_coordinates(), uav.get_height())
 	
-							# logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
-							# logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
+							# logger.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
+							# logger.info("User %d has maximized its utility to %s", idx, maximized_utility)
 							
 							# Update the user's strategy
 							user_strategies = user_strategies.at[idx].set(percentage_offloaded[0])
@@ -1187,17 +1189,17 @@ class Algorithms:
 				
 				uav.set_finished_business_in_node(True)
 				uav.hover_over_node(time_hover= T)
-				logging.info("The UAV has finished its business in the current node")
-				logging.info("The strategies at node %s have converged to: %s", uav.get_current_node().get_node_id(), user_strategies)
+				self.logger.info("The UAV has finished its business in the current node")
+				self.logger.info("The strategies at node %s have converged to: %s", uav.get_current_node().get_node_id(), user_strategies)
 				# Log the task_intensity of the users
 				task_intensities = []
 				for user in uav.get_current_node().get_user_list():
 					task_intensities.append(user.get_task_intensity())
-				logging.info("The task intensities of the users at node %s are: %s", uav.get_current_node().get_node_id(), task_intensities)
-				logging.info("Converged with strategy difference: %s in %d iterations", strategy_difference, iteration_counter)
+				self.logger.info("The task intensities of the users at node %s are: %s", uav.get_current_node().get_node_id(), task_intensities)
+				self.logger.info("Converged with strategy difference: %s in %d iterations", strategy_difference, iteration_counter)
 				
 				if (uav_has_reached_final_node):
-					logging.info("The UAV has reached the final node and has finished its business")
+					logger.info("The UAV has reached the final node and has finished its business")
 					break_flag = True
 				#print(f"Final Strategies: {user_strategies}")
 			else:
@@ -1205,23 +1207,23 @@ class Algorithms:
 				next_node = uav.get_brave_greedy_next_node(nodes= graph.get_nodes(), max_iter= max_iter)
 				if (next_node is not None):
 					if (uav.travel_to_node(next_node)):
-						logging.info("The UAV has reached the next node")
+						self.logger.info("The UAV has reached the next node")
 						# Check if the UAV has reached the final node
 						if uav.check_if_final_node(uav.get_current_node()):
-							logging.info("The UAV has reached the final node")
+							self.logger.info("The UAV has reached the final node")
 							uav_has_reached_final_node = True
 					else:
-						logging.info("The UAV has not reached the next node because it has not enough energy")
+						self.logger.info("The UAV has not reached the next node because it has not enough energy")
 						break_flag = True
 				else:
-					logging.info("The UAV has visited all the nodes")
+					self.logger.info("The UAV has visited all the nodes")
 					break_flag = True
 		trajectory = uav.get_visited_nodes()
 		trajectory_ids = []
 		for node in trajectory:
 			trajectory_ids.append(node.get_node_id())
 			
-		logging.info("The UAV trajectory is: %s", trajectory_ids)
+		self.logger.info("The UAV trajectory is: %s", trajectory_ids)
 		self.set_trajectory(trajectory_ids)
 		
 		if uav_has_reached_final_node:
@@ -1229,7 +1231,7 @@ class Algorithms:
 		else:
 			return False
 		
-	def q_brave(self, solving_method:str, number_of_episodes: int, max_travels_per_episode: int, c: float, b: float)->bool:
+	def q_brave(self, solving_method:str, number_of_episodes: int, max_travels_per_episode: int, c: float, b: float, logger : logging.Logger = None)->bool:
 		"""
 		Algorithm that makes the UAV navigate through the graph by using Q-Learning to select the next node to visit
 		The decision-making process of the RL agent, i.e., UAV, for data collection and processing is represented using a Markov decision process (MDP)
@@ -1244,8 +1246,8 @@ class Algorithms:
 			bool
 				True if the UAV has reached the final node, False otherwise
 		"""
-
-		logging.info("Running the Q-Brave Algorithm")
+		self.logger = logger
+		self.logger.info("Running the Q-Brave Algorithm")
 		uav = self.get_uav()
 		graph = self.get_graph()
 		U = self.get_number_of_users()
@@ -1283,8 +1285,8 @@ class Algorithms:
 		for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Algorithm"):
 			
 			#we initialize the first state of the episode
-			print("\nEPISODE START")
-			logging.info("EPISODE START")
+			#print("\nEPISODE START")
+			self.logger.info("EPISODE START")
 			self.reset()
 			current_state = env.reset(graph= self.get_graph(), uav= self.get_uav(),)
 			current_state = current_state.get_node_id()
@@ -1329,17 +1331,19 @@ class Algorithms:
 			for node in trajectory:
 				trajectory_ids.append(node.get_node_id())
 			uav_visited_nodes_per_episode.append(len(trajectory_ids))
-			logging.info("The reward for episode %d is: %s", e, total_episode_reward)
-			print("EPISODE END")
+			self.logger.info("The reward for episode %d is: %s", e, total_episode_reward)
+			self.logger.info("The UAV has visited %d nodes in episode %d", len(trajectory_ids), e)
+			self.logger.info("EPISODE FINISHED")
+			#print("EPISODE END")
 			
-		print("The Q-table is: ", Q_table)
-		print("The rewards per episode are: ", rewards_per_episode)
-		print("Mean reward per episode: ", jnp.mean(jnp.array(rewards_per_episode)))
-		print("Max reward: ", jnp.max(jnp.array(rewards_per_episode)))
-		logging.info("The rewards per episode are: %s", rewards_per_episode)
-		logging.info("Q Table is: %s", Q_table)
-		logging.info("Mean reward per episode: %s", jnp.mean(jnp.array(rewards_per_episode)))
-		logging.info("Max reward: %s", jnp.max(jnp.array(rewards_per_episode)))
+		# print("The Q-table is: ", Q_table)
+		# print("The rewards per episode are: ", rewards_per_episode)
+		# print("Mean reward per episode: ", jnp.mean(jnp.array(rewards_per_episode)))
+		# print("Max reward: ", jnp.max(jnp.array(rewards_per_episode)))
+		self.logger.info("The rewards per episode are: %s", rewards_per_episode)
+		self.logger.info("Q Table is: %s", Q_table)
+		self.logger.info("Mean reward per episode: %s", jnp.mean(jnp.array(rewards_per_episode)))
+		self.logger.info("Max reward: %s", jnp.max(jnp.array(rewards_per_episode)))
   
 		# Find at which episode the Q-Learning algorithm had the best reward
 		best_episode = jnp.argmax(jnp.array(rewards_per_episode))

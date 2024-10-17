@@ -1,5 +1,6 @@
 import jax.numpy as jnp
 from jax import random
+import logging
 
 def generate_node_coordinates(key, existing_nodes, min_distance_between_nodes=50):
 	"""
@@ -34,3 +35,15 @@ def generate_node_coordinates(key, existing_nodes, min_distance_between_nodes=50
 			return new_coords
 		# Update key for the next iteration to ensure randomness
 		key, _ = random.split(key)
+  
+  # Function to set up a logger for each algorithm
+def setup_logger(name, log_file, level=logging.INFO):
+    """Function to setup a logger."""
+    handler = logging.FileHandler(log_file)        
+    handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+    
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+    logger.addHandler(handler)
+    
+    return logger

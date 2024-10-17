@@ -175,7 +175,7 @@ class AoiUser:
 			Channel gain of the user
 		"""
 		distance = self.get_distance()
-		#logging.info("Distance between User %d and UAV is %f", self.get_user_id(), distance)
+		##logging.info("Distance between User %d and UAV is %f", self.get_user_id(), distance)
 		pl_loss = 20*jnp.log(distance) + 20 * jnp.log(self.get_carrier_frequency()) + 2*jnp.log((4*jnp.pi)/ 3 * 10*18) + 2
 		pl_nloss = 20*jnp.log(distance) + 20 * jnp.log (self.get_carrier_frequency()) + 2*jnp.log((4*jnp.pi)/ 3 * 10*18) + 21
 		#theta = jnp.arcsin(uav_height/distance)
@@ -185,7 +185,7 @@ class AoiUser:
 		pl = pr_loss * pl_loss + (1 - pr_loss) * pl_nloss
 		
 		self.channel_gain = 1/(10**(pl/10))
-		#logging.info("User %d has Channel Gain %f", self.get_user_id(), self.channel_gain)
+		##logging.info("User %d has Channel Gain %f", self.get_user_id(), self.channel_gain)
 	
 	def get_coordinates(self)->Tuple:
 		"""
@@ -256,7 +256,7 @@ class AoiUser:
 			Energy level to be adjusted
 		"""
 		if self.energy_level - energy_used < 0:
-			logging.info("Energy required for user %d is greater than the current energy level. The energy_level is %f and the energy_used is %f", self.get_user_id(), self.energy_level, energy_used)
+			#logging.info("Energy required for user %d is greater than the current energy level. The energy_level is %f and the energy_used is %f", self.get_user_id(), self.energy_level, energy_used)
 			return False
 		else:
 			self.energy_level -= energy_used
@@ -345,7 +345,7 @@ class AoiUser:
 			Data rate of the user
 		"""
 		self.current_data_rate = uav_bandwidth* jnp.log(1 + ((self.transmit_power * self.get_channel_gain()) / (self.white_noise + jnp.sum(other_users_transmit_powers * other_users_channel_gains))))
-		#logging.info("User %d has Current data rate %f", self.get_user_id(), self.current_data_rate)
+		##logging.info("User %d has Current data rate %f", self.get_user_id(), self.current_data_rate)
 	
 	def calculate_time_overhead(self, other_user_strategies: list, other_user_bits: list, uav_total_capacity: float, uav_cpu_frequency: float)->None:
 		"""
@@ -369,7 +369,7 @@ class AoiUser:
 			((self.data_in_bits * self.get_user_strategy()) / data_rate) + 
 			((self.get_task_intensity() * self.get_user_strategy() * self.data_in_bits) / (denominator * uav_cpu_frequency))
 )
-		#logging.info("User %d has Current time overhead %f", self.get_user_id(), self.current_time_overhead)
+		##logging.info("User %d has Current time overhead %f", self.get_user_id(), self.current_time_overhead)
 	
 	def calculate_consumed_energy(self)->None:
 		"""
@@ -378,7 +378,7 @@ class AoiUser:
 		data_rate = self.get_current_data_rate()
 		self.current_consumed_energy = ((self.get_user_strategy() * self.get_total_bits()) / (data_rate)) * self.get_transmit_power()
 		#self.current_consumed_energy = self.get_user_strategy() * self.get_total_bits()
-		#logging.info("User %d has Current consumed energy %f", self.get_user_id(), self.current_consumed_energy)
+		##logging.info("User %d has Current consumed energy %f", self.get_user_id(), self.current_consumed_energy)
 		
 	def calculate_total_overhead(self, T: float)->None:
 		"""
@@ -391,9 +391,9 @@ class AoiUser:
 		term1 = self.get_current_time_overhead()/T
 		term2 = self.get_current_consumed_energy()/(self.total_capacity)
   
-		#logging.info("Term 1: %f, Term 2: %f", term1, term2)
+		##logging.info("Term 1: %f, Term 2: %f", term1, term2)
 		self.current_total_overhead = term1 + term2
-		#logging.info("User %d has Current total overhead %f", self.get_user_id(), self.current_total_overhead)
+		##logging.info("User %d has Current total overhead %f", self.get_user_id(), self.current_total_overhead)
 		
 	def play_submodular_game_cvxpy(self, other_people_strategies: list, c: float, b: float, uav_bandwidth: float, other_users_transmit_powers: list, other_users_channel_gains: list, 
 								   other_user_data_in_bits: list, uav_cpu_frequency: float, uav_total_data_processing_capacity: float, T: float, uav_coordinates: Tuple, uav_height: float)->float:
@@ -506,7 +506,7 @@ class AoiUser:
 
 			current_time_overhead = ( ((self.data_in_bits * percentage_offloaded) / data_rate) + ((self.get_task_intensity() * percentage_offloaded * self.data_in_bits) / (denominator * uav_cpu_frequency)))
 			
-			#logging.info("CONSTRAINT: Time Overhead: %f", current_time_overhead/self.T)
+			##logging.info("CONSTRAINT: Time Overhead: %f", current_time_overhead/self.T)
      
 			return 1 - (current_time_overhead/self.T) # Time overhead should be less than T #0.5 and noone can go high
 
@@ -514,7 +514,7 @@ class AoiUser:
 			
 			current_consumed_energy = ((percentage_offloaded * self.get_total_bits()) / (self.get_current_data_rate())) * self.get_transmit_power()
    
-			#logging.info("CONSTRAINT: Consumed Energy: %f", current_consumed_energy/self.total_capacity)
+			##logging.info("CONSTRAINT: Consumed Energy: %f", current_consumed_energy/self.total_capacity)
 			
 			return 1 - (current_consumed_energy/self.total_capacity)  # Energy overhead should be less than total capacity
 		

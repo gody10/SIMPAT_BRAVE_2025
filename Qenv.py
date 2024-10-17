@@ -44,7 +44,7 @@ class Qenv(gym.Env):
 		self.observation_space = gym.spaces.Discrete(n_observations)
 		
 		self.reset(uav= uav, graph= graph)
-		logging.info("Environment has been successfully initialized!")
+		#logging.info("Environment has been successfully initialized!")
 	
 	def step(self, action: Node) -> Tuple[Node, float, bool, dict]:
 		"""
@@ -73,12 +73,12 @@ class Qenv(gym.Env):
 		# Check if the UAV has enough energy to continue travelling
 		if (self.uav.get_energy_level() <= 0):
 			self.done = True
-			logging.info("The UAV has run out of energy!")
+			#logging.info("The UAV has run out of energy!")
 			
 		# # If the UAV has exceeded 5 actions, end the episode
 		# if (self.uav.get_number_of_actions() > 6):
 		#     self.done = True
-		#     logging.info("The UAV has exceeded the maximum number of actions!")
+		#     #logging.info("The UAV has exceeded the maximum number of actions!")
 		
 		# Start playing the game inside the current node
 		done_game = False
@@ -128,8 +128,8 @@ class Qenv(gym.Env):
 					maximized_utility, percentage_offloaded = user.play_submodular_game_cvxpy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
 																							uav_cpu_frequency, uav_total_data_processing_capacity, self.T, self.uav.get_current_coordinates(), self.uav.get_height())
 					
-					logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
-					logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
+					#logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
+					#logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
 					
 					# Update the user's strategy
 					user_strategies = user_strategies.at[idx].set(percentage_offloaded[0][0])
@@ -142,8 +142,8 @@ class Qenv(gym.Env):
 					maximized_utility, percentage_offloaded = user.play_submodular_game_scipy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
 																							uav_cpu_frequency, uav_total_data_processing_capacity, self.T, self.uav.get_current_coordinates(), self.uav.get_height())
 
-					# logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
-					# logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
+					# #logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
+					# #logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
 					
 					# Update the user's strategy
 					user_strategies = user_strategies.at[idx].set(percentage_offloaded[0])
@@ -168,14 +168,14 @@ class Qenv(gym.Env):
 				
 		self.uav.set_finished_business_in_node(True)
 		self.uav.hover_over_node(time_hover= self.T)
-		logging.info("The UAV has finished its business in the current node")
-		logging.info("The strategies at node %s have converged to: %s", self.uav.get_current_node().get_node_id(), user_strategies)
+		#logging.info("The UAV has finished its business in the current node")
+		#logging.info("The strategies at node %s have converged to: %s", self.uav.get_current_node().get_node_id(), user_strategies)
 		# Log the task_intensity of the users
 		task_intensities = []
 		for user in self.uav.get_current_node().get_user_list():
 			task_intensities.append(user.get_task_intensity())
-		logging.info("The task intensities of the users at node %s are: %s", self.uav.get_current_node().get_node_id(), task_intensities)
-		logging.info("Converged with strategy difference: %s in %d iterations", strategy_difference, iteration_counter)
+		#logging.info("The task intensities of the users at node %s are: %s", self.uav.get_current_node().get_node_id(), task_intensities)
+		#logging.info("Converged with strategy difference: %s in %d iterations", strategy_difference, iteration_counter)
 				
 		# Get the strategies of the users and calculate the new remaining data for the users
 		for idx, user in enumerate(self.uav.get_current_node().get_user_list()):
