@@ -4,14 +4,9 @@ import pickle
 import jax.numpy as jnp
 import logging
 from plot_graphs import plot_graphs
+from Utility_functions import setup_logger
 
-# Setup logging
-logging.basicConfig(
-	filename='single_game.log',  # Log file name
-	filemode='w',            # Mode: 'w' for overwrite, 'a' for append
-	level=logging.INFO,      # Logging level
-	format='%(asctime)s - %(levelname)s - %(message)s'  # Format of the log messages
-)
+system_logger = setup_logger('single_game', 'single_game.log')
 
 # Create a random key
 key = random.PRNGKey(20)
@@ -20,7 +15,7 @@ key = random.PRNGKey(20)
 N = 1
 #U = 100
 # Generate random user number for each node
-U = random.randint(key, (N,), 15, 15)
+U = random.randint(key, (N,), 8, 8)
 NODE_RADIUS = 2
 MIN_DISTANCE_BETWEEN_NODES = 100  # Minimum distance to maintain between nodes
 UAV_HEIGHT = 100
@@ -46,7 +41,7 @@ algorithm = Algorithms(convergence_threshold= CONVERGENCE_THRESHOLD)
 
 algorithm.setup_singular_experiment(number_of_nodes= N, number_of_users= U, node_radius= NODE_RADIUS, key= key, min_distance_between_nodes= MIN_DISTANCE_BETWEEN_NODES, uav_height= UAV_HEIGHT, 
 						   uav_energy_capacity=UAV_ENERGY_CAPACITY, uav_bandwidth= UAV_BANDWIDTH, uav_processing_capacity= UAV_PROCESSING_CAPACITY, uav_cpu_frequency= UAV_CPU_FREQUENCY, uav_velocity= UAV_VELOCITY, 
-							min_bits= MIN_BITS, max_bits= MAX_BITS, distance_min= DISTANCE_MIN, distance_max= DISTANCE_MAX, energy_level= ENERGY_LEVEL)
+							min_bits= MIN_BITS, max_bits= MAX_BITS, distance_min= DISTANCE_MIN, distance_max= DISTANCE_MAX, energy_level= ENERGY_LEVEL, logger= system_logger)
 
 # Get User IDs
 data_dict["User IDs"] = [user.get_user_id() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
@@ -55,18 +50,18 @@ data_dict["User IDs"] = [user.get_user_id() for user in algorithm.get_graph().ge
 data_dict["User Total Bits"] = [user.get_user_bits() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
 
 # Run the Submodular Game Algorithm
-convergence_history = algorithm.run_single_submodular_game(solving_method= "scipy", b=B, c=C)
+convergence_history = algorithm.run_single_submodular_game(solving_method= "scipy", b=B, c=C, logger= system_logger)
 #print(convergence_history)
 
 # Get time overhead of each user
 data_dict["User Time Overhead"] = [user.get_current_time_overhead()[0] for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
-print(data_dict["User Time Overhead"])
+#print(data_dict["User Time Overhead"])
 
 # Get total overhead of each user
 data_dict["User Total Overhead"] = [user.get_current_total_overhead()[0] for user in algorithm.get_graph().get_nodes()[0].get_user_list()]
-print(data_dict["User Total Overhead"])
+#print(data_dict["User Total Overhead"])
 
-logging.info("Consumed Energy of each user  : {}".format([user.get_current_consumed_energy() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]))
+system_logger.info("Consumed Energy of each user  : {}".format([user.get_current_consumed_energy() for user in algorithm.get_graph().get_nodes()[0].get_user_list()]))
 
 # Get consumed Energy of each user
 data_dict["User Consumed Energy"] = [(user.get_current_consumed_energy()) for user in algorithm.get_graph().get_nodes()[0].get_user_list()]

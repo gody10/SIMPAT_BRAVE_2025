@@ -418,7 +418,8 @@ class Algorithms:
 					velocity=self.uav_velocity, uav_system_bandwidth=self.uav_bandwidth, cpu_frequency=self.uav_cpu_frequency, height=uav_height)
 		
 	def setup_singular_experiment(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float, uav_energy_capacity: float, 
-                         uav_bandwidth: float, uav_processing_capacity: float, uav_cpu_frequency: float, uav_velocity: float, energy_level: float, min_bits: float, max_bits: float, distance_min: float, distance_max: float)->None:
+                         uav_bandwidth: float, uav_processing_capacity: float, uav_cpu_frequency: float, uav_velocity: float, energy_level: float, min_bits: float, max_bits: float, distance_min: float, distance_max: float,
+						 logger: logging.Logger)->None:
 		"""
 		Setup the experiment
 		
@@ -452,6 +453,7 @@ class Algorithms:
 		self.max_bits = max_bits
 		self.distance_min = distance_min
 		self.distance_max = distance_max
+		self.logger = logger
 
 		
 		nodes = []
