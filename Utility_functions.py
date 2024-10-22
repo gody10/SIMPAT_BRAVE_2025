@@ -47,3 +47,6 @@ def setup_logger(name, log_file, level=logging.INFO):
     logger.addHandler(handler)
     
     return logger
+
+def compute_average(acc_dict):
+    return {key: sum(values) / len(values) if values else 0 for key, values in acc_dict.items()}

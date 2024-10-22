@@ -4,7 +4,7 @@ from Algorithms import Algorithms
 import pickle
 import time
 from plot_graphs import plot_graphs
-from Utility_functions import setup_logger
+from Utility_functions import setup_logger, compute_average
 from tqdm import tqdm
 
 # Initialize timers for each method
@@ -240,8 +240,6 @@ for run in tqdm(range(1, NUM_RUNS + 1)):
     algorithm.reset()
 
 # -------------------- Compute Averages --------------------
-def compute_average(acc_dict):
-    return {key: sum(values) / len(values) if values else 0 for key, values in acc_dict.items()}
 
 algorithms_total_bits_avg = compute_average(algorithms_total_bits_acc)
 algorithms_expended_energy_avg = compute_average(algorithms_expended_energy_acc)
