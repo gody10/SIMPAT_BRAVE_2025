@@ -89,6 +89,10 @@ for user in node.get_user_list():
 	d.append(user.get_distance())
 data_dict["User Distance from Node"] = d
 
+# Print the minimum and maximum distance of the users from the node
+system_logger.info("Minimum distance of the users from the node : {}".format(min(d)))
+system_logger.info("Maximum distance of the users from the node : {}".format(max(d)))
+
 # Dump the data dictionary to a pickle file
 with open('user_data_dict.pkl', 'wb') as handle:
 	pickle.dump(data_dict, handle)

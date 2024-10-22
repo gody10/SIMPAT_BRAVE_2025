@@ -505,7 +505,7 @@ class AoiUser:
 			denominator = 1 - (jnp.sum(self.other_user_strategies * self.other_user_bits) / self.uav_total_capacity)
 
 			current_time_overhead = ( ((self.data_in_bits * percentage_offloaded) / data_rate) + ((self.get_task_intensity() * percentage_offloaded * self.data_in_bits) / (denominator * uav_cpu_frequency)))
-			print("Time Overhead: ", current_time_overhead/self.T)
+			#print("Time Overhead: ", current_time_overhead/self.T)
 			#logging.info("CONSTRAINT: Time Overhead: %f", current_time_overhead/self.T)
 
 			return self.T - current_time_overhead # Time overhead should be less than T #0.5 and noone can go high
@@ -515,7 +515,7 @@ class AoiUser:
 			current_consumed_energy = ((percentage_offloaded * self.get_total_bits()) / (self.get_current_data_rate())) * self.get_transmit_power()
    
 			#logging.info("CONSTRAINT: Consumed Energy: %f", current_consumed_energy/self.total_capacity)
-			print("Energy Overhead: ", 1 - (current_consumed_energy/self.total_capacity))
+			#print("Energy Overhead: ", 1 - (current_consumed_energy/self.total_capacity))
 			return self.total_capacity - current_consumed_energy  # Energy overhead should be less than total capacity
 		
 		constraints = [

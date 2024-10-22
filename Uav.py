@@ -325,7 +325,7 @@ class Uav:
 			energy_travel = 0
 			self.update_visited_nodes(node)
 			self.number_of_actions += 1
-			print("Updated Visited Nodes")
+			#print("Updated Visited Nodes")
 			return True
 		
 		# Calculate the time to travel from the current node to the next node
@@ -348,7 +348,7 @@ class Uav:
 		self.set_current_coordinates(node.get_coordinates())
 		self.update_visited_nodes(node)
 		self.number_of_actions += 1
-		print("Updated Visited Nodes")
+		#print("Updated Visited Nodes")
 		self.set_finished_business_in_node(False)
 		return True
 		

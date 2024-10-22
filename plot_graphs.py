@@ -3,14 +3,14 @@ import matplotlib.pyplot as plt
 import os
 import jax.numpy as jnp
 
-def plot_graphs():
+def plot_graphs(folder_for_pure_learning= 'plots/pure_learning', folder_for_pure_game= 'plots/pure_game'):
 	"""
 	Plot the graphs for the algorithms
 	"""
 	# Specify the folder to save the plot
 	basic_folder = "plots"
-	folder_for_pure_learning = "plots/pure_learning"
-	folder_for_pure_game = "plots/pure_game"
+	folder_for_pure_learning = folder_for_pure_learning
+	folder_for_pure_game = folder_for_pure_game
 
 	os.makedirs(basic_folder, exist_ok=True)
 	os.makedirs(folder_for_pure_learning, exist_ok=True)
