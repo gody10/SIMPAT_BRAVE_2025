@@ -170,6 +170,10 @@ class Qenv(gym.Env):
 				self.uav.energy_to_process_data(energy_coefficient= 0.1)
 				
 				done_game = True
+    
+			if iteration_counter > 19:
+				#logging.info("The game has not converged after 100 iterations!")
+				done_game = True
 				
 		self.uav.set_finished_business_in_node(True)
 		self.uav.hover_over_node(time_hover= self.T)
