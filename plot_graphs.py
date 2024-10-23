@@ -19,7 +19,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning', folder_for_pure
 	##################### COMPARATIVE PLOT FOR BITS #####################
 
 	# Read the data dictionary from pickle
-	with open('algorithms_total_bits.pkl', 'rb') as handle:
+	with open('algorithms_total_bits_avg.pkl', 'rb') as handle:
 		data_dict = pickle.load(handle)
 
 	# Extract the keys and values
@@ -81,7 +81,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning', folder_for_pure
 
 	##################### COMPARATIVE PLOT FOR ENERGY #####################
 	# Read the data dictionary from pickle
-	with open('algorithms_expended_energy.pkl', 'rb') as handle:
+	with open('algorithms_expended_energy_avg.pkl', 'rb') as handle:
 		data_dict = pickle.load(handle)
 	
 	# Extract the keys and values
@@ -145,7 +145,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning', folder_for_pure
 
 	##################### COMPARATIVE PLOT FOR TOTAL VISITED NODES #####################
 	# Read the data dictionary from pickle
-	with open('algorithms_total_visited_nodes.pkl', 'rb') as handle:
+	with open('algorithms_total_visited_nodes_avg.pkl', 'rb') as handle:
 		data_dict = pickle.load(handle)
 	
 	# Extract the keys and values

@@ -412,9 +412,28 @@ class Algorithms:
 		#self.logger.info("Number of Nodes: %s", self.graph.get_num_nodes())
 		#self.logger.info("Number of Edges: %s", self.graph.get_num_edges())
 		#self.logger.info("Number of Users: %s", self.graph.get_num_users())
+  
+		# Create two subkeys for the initial and final node selection
+		key, subkey1, subkey2 = random.split(key, 3)
+
+		# Randomly select a node object to be the final and the initial node
+		initial_node = random.randint(subkey1, (1,), 0, number_of_nodes)[0]
+		initial_node = nodes[initial_node]
+	
+		final_node = random.randint(subkey2, (1,), 0, number_of_nodes)[0]
+
+		# Check if initial and final nodes are the same
+		while final_node == initial_node:
+			subkey3 = random.split(key)[0]
+			final_node = random.randint(subkey3, (1,), 0, number_of_nodes)[0]
+	
+		final_node = nodes[final_node]
+
+		#print("The initial node is %s", initial_node.get_node_id())
+		#print("The final node is %s", final_node.get_node_id())
 
 		# Create a UAV
-		self.uav = Uav(uav_id=1, initial_node=nodes[0], final_node=nodes[len(nodes)-1], capacity=self.uav_energy_capacity, total_data_processing_capacity=self.uav_processing_capacity, 
+		self.uav = Uav(uav_id=1, initial_node= initial_node, final_node= final_node, capacity=self.uav_energy_capacity, total_data_processing_capacity=self.uav_processing_capacity, 
 					velocity=self.uav_velocity, uav_system_bandwidth=self.uav_bandwidth, cpu_frequency=self.uav_cpu_frequency, height=uav_height)
 		
 	def setup_singular_experiment(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float, uav_energy_capacity: float, 

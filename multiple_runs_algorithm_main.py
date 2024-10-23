@@ -6,6 +6,7 @@ import time
 from plot_graphs import plot_graphs
 from Utility_functions import setup_logger, compute_average
 from tqdm import tqdm
+import os
 
 # Initialize timers for each method
 random_walk_time = 0
@@ -13,14 +14,8 @@ proportional_fairness_time = 0
 brave_greedy_time = 0
 q_brave_time = 0
 
-# Create a random key
-key = random.PRNGKey(2062702539)
-
 # Create N nodes with U users in them
 N = 10
-#U = 100
-# Generate random user number for each node
-U = random.randint(key, (N,), 15, 15)
 NODE_RADIUS = 2
 MIN_DISTANCE_BETWEEN_NODES = 20  # Minimum distance to maintain between nodes
 UAV_HEIGHT = 100
@@ -37,8 +32,11 @@ MIN_BITS = 3 * 10**5
 ENERGY_LEVEL = 29000
 B = 0.74
 C = 0.00043
-MAX_ITER = 30
-NUMBER_OF_EPISODES = 100
+MAX_ITER = 20
+NUMBER_OF_EPISODES = 30
+
+# Initialize the main random key
+main_key = random.PRNGKey(10)
 
 # Define the number of runs
 NUM_RUNS = 1000
@@ -69,31 +67,36 @@ brave_greedy_logger = setup_logger('brave_greedy_logger', 'brave_algorithm.log')
 q_brave_logger = setup_logger('q_brave_logger', 'q_brave_algorithm.log')
 
 # Create the algorithm object once outside the loop if applicable
-# If each run requires a fresh object, move this inside the loop
 algorithm = Algorithms(convergence_threshold=CONVERGENCE_THRESHOLD)
 
-# Set up the algorithm experiment for each run
-algorithm.setup_algorithm_experiment(
-    number_of_nodes=N,
-    number_of_users=U,
-    node_radius=NODE_RADIUS,
-    key=key,
-    min_distance_between_nodes=MIN_DISTANCE_BETWEEN_NODES,
-    uav_height=UAV_HEIGHT,
-    uav_energy_capacity=UAV_ENERGY_CAPACITY,
-    uav_bandwidth=UAV_BANDWIDTH,
-    uav_processing_capacity=UAV_PROCESSING_CAPACITY,
-    uav_cpu_frequency=UAV_CPU_FREQUENCY,
-    uav_velocity=UAV_VELOCITY,
-    min_bits=MIN_BITS,
-    max_bits=MAX_BITS,
-    distance_min=DISTANCE_MIN,
-    distance_max=DISTANCE_MAX,
-    energy_level=ENERGY_LEVEL
-)
-
-for run in tqdm(range(1, NUM_RUNS + 1)):
+for run in tqdm(range(1, NUM_RUNS + 1), desc="Run Progress"):
     system_logger.info(f"Starting run {run} of {NUM_RUNS}")
+    
+    # Split the main key to get a unique subkey for this run
+    main_key, subkey = random.split(main_key)
+    
+    # Generate a unique number of users for each node using the subkey
+    U = random.randint(subkey, (N,), 15, 15)  # Adjust min and max values as needed
+    #print(subkey)
+    # Set up the algorithm experiment with the new subkey and U
+    algorithm.setup_algorithm_experiment(
+        number_of_nodes=N,
+        number_of_users=U,
+        node_radius=NODE_RADIUS,
+        key=subkey,
+        min_distance_between_nodes=MIN_DISTANCE_BETWEEN_NODES,
+        uav_height=UAV_HEIGHT,
+        uav_energy_capacity=UAV_ENERGY_CAPACITY,
+        uav_bandwidth=UAV_BANDWIDTH,
+        uav_processing_capacity=UAV_PROCESSING_CAPACITY,
+        uav_cpu_frequency=UAV_CPU_FREQUENCY,
+        uav_velocity=UAV_VELOCITY,
+        min_bits=MIN_BITS,
+        max_bits=MAX_BITS,
+        distance_min=DISTANCE_MIN,
+        distance_max=DISTANCE_MAX,
+        energy_level=ENERGY_LEVEL
+    )
     
     algorithm.reset()
     
@@ -247,6 +250,20 @@ algorithms_total_visited_nodes_avg = compute_average(algorithms_total_visited_no
 timer_dict_avg = compute_average(timer_dict_acc)
 
 # -------------------- Save the Averaged Data as Pickle Files --------------------
+
+# Delete existing pickle files with the specified names
+if os.path.exists("algorithms_total_bits_avg.pkl"):
+    os.remove("algorithms_total_bits_avg.pkl")
+
+if os.path.exists("algorithms_expended_energy_avg.pkl"):
+    os.remove("algorithms_expended_energy_avg.pkl")
+    
+if os.path.exists("algorithms_total_visited_nodes_avg.pkl"):
+    os.remove("algorithms_total_visited_nodes_avg.pkl")
+    
+if os.path.exists("timer_dict_avg.pkl"):
+    os.remove("timer_dict_avg.pkl")
+
 with open("algorithms_total_bits_avg.pkl", "wb") as file:
     pickle.dump(algorithms_total_bits_avg, file)
 
@@ -262,4 +279,4 @@ with open("timer_dict_avg.pkl", "wb") as file:
 system_logger.info("Averaged data dictionaries have been saved as pickle files!")
 
 # -------------------- Plot the Graphs --------------------
-plot_graphs(folder_for_pure_learning= 'plots/multiple_runs_{}'.format(NUM_RUNS))
+plot_graphs(folder_for_pure_learning= f'plots/multiple_runs_{NUM_RUNS}')
