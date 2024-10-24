@@ -19,7 +19,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning', folder_for_pure
 	##################### COMPARATIVE PLOT FOR BITS #####################
 
 	# Read the data dictionary from pickle
-	with open('algorithms_total_bits_avg.pkl', 'rb') as handle:
+	with open('algorithms_total_bits.pkl', 'rb') as handle:
 		data_dict = pickle.load(handle)
 
 	# Extract the keys and values
@@ -31,7 +31,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning', folder_for_pure
 	bits_processed = list(data_dict.values())
 
 	# Define colors for each bar (for visualization purposes)
-	colors = ['blue', 'green', 'orange', 'grey']  # Customize colors as needed
+	colors = ['blue', 'green', 'orange', 'red', 'yellow', 'grey']  # Customize colors as needed
 
 	# Create the figure
 	plt.figure(figsize=(12, 8))
@@ -81,7 +81,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning', folder_for_pure
 
 	##################### COMPARATIVE PLOT FOR ENERGY #####################
 	# Read the data dictionary from pickle
-	with open('algorithms_expended_energy_avg.pkl', 'rb') as handle:
+	with open('algorithms_expended_energy.pkl', 'rb') as handle:
 		data_dict = pickle.load(handle)
 	
 	# Extract the keys and values
@@ -95,7 +95,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning', folder_for_pure
 	energy = [float(e) for e in energy]
 
 	# Define colors for each bar (for visualization purposes)
-	colors = ['blue', 'green', 'orange', 'grey']  # Customize colors as needed
+	colors = ['blue', 'green', 'orange', 'red', 'yellow', 'grey']  # Customize colors as needed
 
 	# Create the figure
 	plt.figure(figsize=(12, 8))
@@ -145,7 +145,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning', folder_for_pure
 
 	##################### COMPARATIVE PLOT FOR TOTAL VISITED NODES #####################
 	# Read the data dictionary from pickle
-	with open('algorithms_total_visited_nodes_avg.pkl', 'rb') as handle:
+	with open('algorithms_total_visited_nodes.pkl', 'rb') as handle:
 		data_dict = pickle.load(handle)
 	
 	# Extract the keys and values
@@ -157,7 +157,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning', folder_for_pure
 	visited_nodes = list(data_dict.values())
 
 	# Define colors for each bar (for visualization purposes)
-	colors = ['blue', 'green', 'orange', 'grey']  # Customize colors as needed
+	colors = ['blue', 'green', 'orange', 'red', 'yellow', 'grey']  # Customize colors as needed
 
 	# Create the figure
 	plt.figure(figsize=(12, 8))
@@ -207,12 +207,12 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning', folder_for_pure
 
 	##################### PURE LEARNING PROPORTIONAL PLOT #####################
 	# Read the data dictionary from pickle
-	algorithms = ["Random Walk", "Proportional Fairness", "Brave Greedy", "Q-Brave"]
+	algorithms = ["Random Walk", "Proportional Fairness", "Max-Logit", "B-Logit", "Brave Greedy", "Q-Brave"]
 
 	values = [(total_bits_processed * total_nodes_visited)/energy_expended for total_bits_processed, total_nodes_visited, energy_expended in zip(bits_processed, visited_nodes, energy)]
 
 	# Define colors for each bar (for visualization purposes)
-	colors = ['blue', 'green', 'orange', 'grey']  # Customize colors as needed
+	colors = ['blue', 'green', 'orange', 'red', 'yellow', 'grey']  # Customize colors as needed
 
 	# Create the figure
 	plt.figure(figsize=(12, 8))

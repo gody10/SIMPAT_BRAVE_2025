@@ -551,7 +551,181 @@ class Uav:
 		idx = jax.random.choice(key + (self.number_of_actions * 15), shape=(), a=node_indices, p=probabilities)
 		
 		return nodes_final[idx]
+
+	def get_random_unvisited_next_node_with_b_logit(self, nodes: list, key, max_iter: int, beta: float = 1.0) -> Node:
+		"""
+		Get a random unvisited next node using the B-Logit algorithm.
+		
+		Parameters:
+		nodes : list
+			List of nodes
+		key : jax.random.PRNGKey
+			JAX random key
+		max_iter : int
+			Maximum number of iterations allowed
+		beta : float
+			Scaling parameter for the B-Logit model (controls randomness)
+		
+		Returns:
+		Node
+			Selected next node
+		"""
+		# Get all nodes that haven't been visited yet
+		unvisited_nodes = [node for node in nodes if node not in self.get_visited_nodes()]
+		
+		# Remove the final node from the list of unvisited nodes if there are more than one unvisited nodes
+		if len(unvisited_nodes) > 1:
+			unvisited_nodes = [node for node in nodes if node.get_node_id() != self.final_node.get_node_id()]
+			
+		if (self.number_of_actions >= max_iter):
+			return self.get_final_node()
+			
+		# Check if there arent any unvisited nodes left except the final node
+		# if not unvisited_nodes:
+		#     return self.get_final_node()
+			
+		# Calculate the total bits available in each unvisited node
+		total_bits = [node.get_node_total_data() for node in nodes]
+		
+		# Calculate the energy needed to travel to each unvisited node
+		energy_travel = jnp.array([308.709 * self.calculate_time_to_travel(node_to_start= self.get_current_node(), node_to_end_up= node) - 0.85 for node in nodes])
+		
+		energy_process = jnp.array([node.calculate_total_energy_for_all_user_data_processing(uav_processor_power= self.get_cpu_power(), uav_processor_frequency= self.get_cpu_frequency()) for node in nodes])
+		
+		energy_hover = jnp.array([(4.917 * self.get_height() - 275.204) * 1 for node in nodes])
+		energy_to_travel_to_final_node = jnp.array([308.709 * self.calculate_time_to_travel(node_to_start= node, node_to_end_up= self.get_final_node()) - 0.85 for node in nodes])
+		
+		# Print all the energies
+		# print(f"Energy Travel: {energy_travel}")
+		# print(f"Energy Process: {energy_process}")
+		# print(f"Energy Hover: {energy_hover}")
+		# print(f"Energy to Travel to Final Node: {energy_to_travel_to_final_node}")
+		# print(f"Total Bits: {total_bits}")
+		# print(f"Total Energy: {jnp.add(energy_travel, jnp.add(energy_process, energy_hover))}")
+		
+		# Calculate the total energy needed to travel to each unvisited node
+		total_energy = jnp.add(energy_travel, jnp.add(energy_process, energy_hover))
+		
+		# Remove from unvisited nodes the ones that the energy needed to travel to them and then to the final node is higher than the available energy of the UAV
+		nodes_final = []
+		for i, node in enumerate(nodes):
+			if total_energy[i] + energy_to_travel_to_final_node[i] < self.get_energy_level():
+				nodes_final.append(node)
+			else:
+				#print(f"The energy needed to go to the node {node.get_node_id()} is {total_energy[i]} and to go to the final node {energy_to_travel_to_final_node[i]}, but the available energy is {self.get_energy_level()}")
+				#logging.info("The energy needed to go to the node %s is %s and to go to the final node %s, but the available energy is %s", node.get_node_id(), total_energy[i], energy_to_travel_to_final_node[i], self.get_energy_level())
+				pass
+		if not nodes_final:
+			return self.get_final_node()
+		
+		# # Check if there arent any unvisited nodes left except the final node
+		# if not nodes_final:
+		#     return self.get_final_node()
+		
+		# Step 1: Calculate total bits across all nodes_final
+		total_bits_final = jnp.sum(jnp.array([node.get_node_total_data() for node in nodes_final]))
+		
+		# Step 2: Calculate utilities for each node (e.g., total data)
+		utilities = jnp.array([node.get_node_total_data() for node in nodes_final])
+		
+		# Step 3: Apply the B-Logit probability calculation
+		# B-Logit: P(i) = exp(beta * utility_i) / sum_j exp(beta * utility_j)
+		exp_utilities = jnp.exp(beta * (utilities/1000000))
+		probabilities = exp_utilities / jnp.sum(exp_utilities)
+		
+		# [The rest of the function remains the same]
+		
+		node_indices = jnp.arange(len(nodes_final))  # Numeric indices representing nodes
+		idx = jax.random.choice(key + (self.number_of_actions * 15), shape=(), a=node_indices, p=probabilities)
+		
+		return nodes_final[idx]
+
+	def get_random_unvisited_next_node_with_max_logit(self, nodes: list, key, max_iter: int) -> Node:
+		"""
+		Get a random unvisited next node using the Max-Logit algorithm.
+		
+		Parameters:
+		nodes : list
+			List of nodes
+		key : jax.random.PRNGKey
+			JAX random key
+		max_iter : int
+			Maximum number of iterations allowed
+		
+		Returns:
+		Node
+			Selected next node
+		"""
+		# Get all nodes that haven't been visited yet
+		unvisited_nodes = [node for node in nodes if node not in self.get_visited_nodes()]
+		
+		# Remove the final node from the list of unvisited nodes if there are more than one unvisited nodes
+		if len(unvisited_nodes) > 1:
+			unvisited_nodes = [node for node in nodes if node.get_node_id() != self.final_node.get_node_id()]
+			
+		if (self.number_of_actions >= max_iter):
+			return self.get_final_node()
+			
+		# Check if there arent any unvisited nodes left except the final node
+		# if not unvisited_nodes:
+		#     return self.get_final_node()
+			
+		# Calculate the total bits available in each unvisited node
+		total_bits = [node.get_node_total_data() for node in nodes]
+		
+		# Calculate the energy needed to travel to each unvisited node
+		energy_travel = jnp.array([308.709 * self.calculate_time_to_travel(node_to_start= self.get_current_node(), node_to_end_up= node) - 0.85 for node in nodes])
+		
+		energy_process = jnp.array([node.calculate_total_energy_for_all_user_data_processing(uav_processor_power= self.get_cpu_power(), uav_processor_frequency= self.get_cpu_frequency()) for node in nodes])
+		
+		energy_hover = jnp.array([(4.917 * self.get_height() - 275.204) * 1 for node in nodes])
+		energy_to_travel_to_final_node = jnp.array([308.709 * self.calculate_time_to_travel(node_to_start= node, node_to_end_up= self.get_final_node()) - 0.85 for node in nodes])
+		
+		# Print all the energies
+		# print(f"Energy Travel: {energy_travel}")
+		# print(f"Energy Process: {energy_process}")
+		# print(f"Energy Hover: {energy_hover}")
+		# print(f"Energy to Travel to Final Node: {energy_to_travel_to_final_node}")
+		# print(f"Total Bits: {total_bits}")
+		# print(f"Total Energy: {jnp.add(energy_travel, jnp.add(energy_process, energy_hover))}")
+		
+		# Calculate the total energy needed to travel to each unvisited node
+		total_energy = jnp.add(energy_travel, jnp.add(energy_process, energy_hover))
+		
+		# Remove from unvisited nodes the ones that the energy needed to travel to them and then to the final node is higher than the available energy of the UAV
+		nodes_final = []
+		for i, node in enumerate(nodes):
+			if total_energy[i] + energy_to_travel_to_final_node[i] < self.get_energy_level():
+				nodes_final.append(node)
+			else:
+				#print(f"The energy needed to go to the node {node.get_node_id()} is {total_energy[i]} and to go to the final node {energy_to_travel_to_final_node[i]}, but the available energy is {self.get_energy_level()}")
+				#logging.info("The energy needed to go to the node %s is %s and to go to the final node %s, but the available energy is %s", node.get_node_id(), total_energy[i], energy_to_travel_to_final_node[i], self.get_energy_level())
+				pass
+		if not nodes_final:
+			return self.get_final_node()
+		
+		# # Check if there arent any unvisited nodes left except the final node
+		# if not nodes_final:
+		#     return self.get_final_node()
+		
+		# Step 1: Calculate total bits across all nodes_final
+		total_bits_final = jnp.sum(jnp.array([node.get_node_total_data() for node in nodes_final]))
+		
+		# Step 2: Calculate utilities for each node (e.g., total data)
+		utilities = jnp.array([node.get_node_total_data() for node in nodes_final])
+		
+		# Step 3: Apply the softmax function to compute probabilities
+		exp_utilities = jnp.exp(utilities/1000000)
+		probabilities = exp_utilities / jnp.sum(exp_utilities)
+		
+		# [The rest of the function remains the same]
+		
+		node_indices = jnp.arange(len(nodes_final))  # Numeric indices representing nodes
+		idx = jax.random.choice(key + (self.number_of_actions * 15), shape=(), a=node_indices, p=probabilities)
+		
+		return nodes_final[idx]
 	
+ 
 	def get_brave_greedy_next_node(self, nodes: list, max_iter: int)->Node:
 		"""
 		Get the next node using the Brave Greedy algorithm

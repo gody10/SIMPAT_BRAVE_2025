@@ -39,10 +39,10 @@ NUMBER_OF_EPISODES = 30
 main_key = random.PRNGKey(10)
 
 # Define the number of runs
-NUM_RUNS = 10
+NUM_RUNS = 1000
 
 # Define the save interval
-SAVE_INTERVAL = 2  # Save progress every 5 runs
+SAVE_INTERVAL = 50  # Save progress every 50 runs
 
 # Initialize accumulation dictionaries
 algorithms_total_bits_acc = {}

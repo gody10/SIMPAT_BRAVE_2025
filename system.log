@@ -1,6 +1,1 @@
-2024-10-23 18:36:18,276 - INFO - Starting run 1 of 10
-2024-10-23 18:38:00,028 - INFO - Starting run 2 of 10
-2024-10-23 18:39:36,688 - INFO - Saving progress at run 2 of 10
-2024-10-23 18:39:36,688 - INFO - Averaged data dictionaries up to run 2 have been saved as pickle files!
-2024-10-23 18:39:38,363 - INFO - Plots up to run 2 have been generated!
-2024-10-23 18:39:38,364 - INFO - Starting run 3 of 10
+2024-10-24 12:11:18,354 - INFO - Data dictionaries has been saved as a pickle file!
