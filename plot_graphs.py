@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 import jax.numpy as jnp
 
-def plot_graphs(folder_for_pure_learning= 'plots/pure_learning_600', folder_for_pure_game= 'plots/pure_game'):
+def plot_graphs(folder_for_pure_learning= 'plots/pure_learning', folder_for_pure_game= 'plots/pure_game'):
 	"""
 	Plot the graphs for the algorithms
 	"""
@@ -31,7 +31,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning_600', folder_for_
 	bits_processed = list(data_dict.values())
 
 	# Define colors for each bar (for visualization purposes)
-	colors = ['blue', 'green', 'orange', 'red', 'yellow', 'grey']  # Customize colors as needed
+	colors = ['blue', 'green', 'red', 'grey']  # Customize colors as needed
 
 	# Create the figure
 	plt.figure(figsize=(12, 8))
@@ -95,7 +95,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning_600', folder_for_
 	energy = [float(e) for e in energy]
 
 	# Define colors for each bar (for visualization purposes)
-	colors = ['blue', 'green', 'orange', 'red', 'yellow', 'grey']  # Customize colors as needed
+	colors = ['blue', 'green', 'red', 'grey']  # Customize colors as needed
 
 	# Create the figure
 	plt.figure(figsize=(12, 8))
@@ -157,7 +157,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning_600', folder_for_
 	visited_nodes = list(data_dict.values())
 
 	# Define colors for each bar (for visualization purposes)
-	colors = ['blue', 'green', 'orange', 'red', 'yellow', 'grey']  # Customize colors as needed
+	colors = ['blue', 'green', 'red', 'grey']  # Customize colors as needed
 
 	# Create the figure
 	plt.figure(figsize=(12, 8))
@@ -207,12 +207,12 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning_600', folder_for_
 
 	##################### PURE LEARNING PROPORTIONAL PLOT #####################
 	# Read the data dictionary from pickle
-	algorithms = ["Random Walk", "Proportional Fairness", "Max-Logit", "B-Logit","Brave Greedy", "Q-Brave"]
+	algorithms = ["Proportional Fairness", "Max-Logit", "Brave Greedy", "Q-Brave"]
 
 	values = [(total_bits_processed * total_nodes_visited)/energy_expended for total_bits_processed, total_nodes_visited, energy_expended in zip(bits_processed, visited_nodes, energy)]
 
 	# Define colors for each bar (for visualization purposes)
-	colors = ['blue', 'green', 'orange', 'red', 'yellow', 'grey']  # Customize colors as needed
+	colors = ['blue', 'green', 'red', 'grey']  # Customize colors as needed
 
 	# Create the figure
 	plt.figure(figsize=(12, 8))

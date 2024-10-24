@@ -143,7 +143,7 @@ algorithm.reset()
 start_time = time.time()
 
 # Run the Proportional Fairness Algorithm
-success_b_logit = algorithm.run_b_logit_algorithm(solving_method= "scipy", max_iter= MAX_ITER, b= B, c= C, beta=0.5, logger= b_logit_logger)
+success_b_logit = algorithm.run_b_logit_algorithm(solving_method= "scipy", max_iter= MAX_ITER, b= B, c= C, beta=0.3, logger= b_logit_logger)
 
 b_logit_logger.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
 

@@ -1,554 +1,62 @@
-2024-10-24 14:18:18,809 - INFO - Running the Max-Logit Algorithm
-2024-10-24 14:18:18,942 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:18:18,942 - INFO - The strategies at node 0 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.17086057
+2024-10-24 16:31:46,783 - INFO - Running the Max-Logit Algorithm
+2024-10-24 16:31:46,909 - INFO - The UAV has finished its business in the current node
+2024-10-24 16:31:46,909 - INFO - The strategies at node 0 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.17086057
  0.11937391 0.1        0.1        0.1        0.1        0.1
  0.1        0.1        0.1       ]
-2024-10-24 14:18:18,942 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:18:18,942 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:18:18,981 - INFO - The UAV has reached the next node
-2024-10-24 14:18:18,981 - INFO - The UAV energy level is: 19571878.0 after going to the next node
-2024-10-24 14:18:19,185 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:18:19,185 - INFO - The strategies at node 2 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.17080149
+2024-10-24 16:31:46,910 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-24 16:31:46,910 - INFO - Converged with strategy difference: 0.0 in 2 iterations
+2024-10-24 16:31:46,947 - INFO - The UAV has reached the next node
+2024-10-24 16:31:46,947 - INFO - The UAV energy level is: 838165.6 after going to the next node
+2024-10-24 16:31:47,137 - INFO - The UAV has finished its business in the current node
+2024-10-24 16:31:47,137 - INFO - The strategies at node 2 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.17080149
  0.11841749 0.1        0.1        0.1        0.1        0.1
  0.1        0.1        0.1       ]
-2024-10-24 14:18:19,185 - INFO - The task intensities of the users at node 2 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:18:19,185 - INFO - Converged with strategy difference: 0.0 in 3 iterations
-2024-10-24 14:18:19,195 - INFO - The UAV has reached the next node
-2024-10-24 14:18:19,195 - INFO - The UAV energy level is: 19340482.0 after going to the next node
-2024-10-24 14:18:19,323 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:18:19,323 - INFO - The strategies at node 8 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.16303419
+2024-10-24 16:31:47,138 - INFO - The task intensities of the users at node 2 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-24 16:31:47,138 - INFO - Converged with strategy difference: 0.0 in 3 iterations
+2024-10-24 16:31:47,147 - INFO - The UAV has reached the next node
+2024-10-24 16:31:47,147 - INFO - The UAV energy level is: 607456.44 after going to the next node
+2024-10-24 16:31:47,278 - INFO - The UAV has finished its business in the current node
+2024-10-24 16:31:47,278 - INFO - The strategies at node 8 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.16303419
  0.11844216 0.1        0.1        0.1        0.1        0.1
  0.1        0.1        0.1       ]
-2024-10-24 14:18:19,323 - INFO - The task intensities of the users at node 8 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:18:19,323 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:18:19,333 - INFO - The UAV has reached the next node
-2024-10-24 14:18:19,333 - INFO - The UAV energy level is: 19270166.0 after going to the next node
-2024-10-24 14:18:19,461 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:18:19,461 - INFO - The strategies at node 5 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.16303419
+2024-10-24 16:31:47,278 - INFO - The task intensities of the users at node 8 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-24 16:31:47,278 - INFO - Converged with strategy difference: 0.0 in 2 iterations
+2024-10-24 16:31:47,288 - INFO - The UAV has reached the next node
+2024-10-24 16:31:47,288 - INFO - The UAV energy level is: 537827.6 after going to the next node
+2024-10-24 16:31:47,418 - INFO - The UAV has finished its business in the current node
+2024-10-24 16:31:47,418 - INFO - The strategies at node 5 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.16303419
  0.11844216 0.1        0.1        0.1        0.1        0.1
  0.1        0.1        0.1       ]
-2024-10-24 14:18:19,462 - INFO - The task intensities of the users at node 5 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:18:19,462 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:18:19,471 - INFO - The UAV has reached the next node
-2024-10-24 14:18:19,471 - INFO - The UAV energy level is: 18967864.0 after going to the next node
-2024-10-24 14:18:19,633 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:18:19,633 - INFO - The strategies at node 3 have converged to: [0.2        0.2        0.20045082 0.2        0.2        0.17077516
+2024-10-24 16:31:47,418 - INFO - The task intensities of the users at node 5 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-24 16:31:47,418 - INFO - Converged with strategy difference: 0.0 in 2 iterations
+2024-10-24 16:31:47,428 - INFO - The UAV has reached the next node
+2024-10-24 16:31:47,428 - INFO - The UAV energy level is: 236212.97 after going to the next node
+2024-10-24 16:31:47,576 - INFO - The UAV has finished its business in the current node
+2024-10-24 16:31:47,576 - INFO - The strategies at node 3 have converged to: [0.2        0.2        0.20045082 0.2        0.2        0.17077516
  0.11936505 0.1        0.1        0.1        0.1        0.1
  0.1        0.1        0.1       ]
-2024-10-24 14:18:19,634 - INFO - The task intensities of the users at node 3 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:18:19,634 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:18:19,643 - INFO - The UAV has reached the next node
-2024-10-24 14:18:19,643 - INFO - The UAV energy level is: 18838650.0 after going to the next node
-2024-10-24 14:18:19,794 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:18:19,794 - INFO - The strategies at node 7 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.17086057
+2024-10-24 16:31:47,576 - INFO - The task intensities of the users at node 3 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-24 16:31:47,576 - INFO - Converged with strategy difference: 0.0 in 2 iterations
+2024-10-24 16:31:47,704 - INFO - The UAV has reached the next node
+2024-10-24 16:31:47,704 - INFO - The UAV energy level is: 107686.516 after going to the next node
+2024-10-24 16:31:47,842 - INFO - The UAV has finished its business in the current node
+2024-10-24 16:31:47,842 - INFO - The strategies at node 7 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.17086057
  0.11835989 0.1        0.1        0.1        0.1        0.1
  0.1        0.1        0.1       ]
-2024-10-24 14:18:19,794 - INFO - The task intensities of the users at node 7 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:18:19,794 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:18:19,804 - INFO - The UAV has reached the next node
-2024-10-24 14:18:19,804 - INFO - The UAV energy level is: 18812894.0 after going to the next node
-2024-10-24 14:18:19,804 - INFO - The UAV has reached the final node
-2024-10-24 14:18:19,944 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:18:19,944 - INFO - The strategies at node 9 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.16305721
+2024-10-24 16:31:47,842 - INFO - The task intensities of the users at node 7 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-24 16:31:47,842 - INFO - Converged with strategy difference: 0.0 in 2 iterations
+2024-10-24 16:31:47,991 - INFO - The UAV has reached the next node
+2024-10-24 16:31:47,991 - INFO - The UAV energy level is: 82617.39 after going to the next node
+2024-10-24 16:31:47,991 - INFO - The UAV has reached the final node
+2024-10-24 16:31:48,132 - INFO - The UAV has finished its business in the current node
+2024-10-24 16:31:48,133 - INFO - The strategies at node 9 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.16305721
  0.11844216 0.1        0.1        0.1        0.1        0.1
  0.1        0.1        0.1       ]
-2024-10-24 14:18:19,944 - INFO - The task intensities of the users at node 9 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:18:19,944 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:18:19,944 - INFO - The UAV has reached the final node and has finished its business
-2024-10-24 14:18:19,944 - INFO - The UAV trajectory is: [0, 2, 8, 5, 3, 7, 9]
-2024-10-24 14:18:19,944 - INFO - The UAV energy level is: 18812462.0 at the end of the algorithm
-2024-10-24 14:18:19,944 - INFO - Max-Logit Algorithm has successfully reached the final node!
-2024-10-24 14:18:19,944 - INFO - The UAV processed in total: 11355716.0 bits
-2024-10-24 14:18:19,944 - INFO - Max-Logit Algorithm took: 1.1349992752075195 seconds
-2024-10-24 14:20:04,292 - INFO - Running the Max-Logit Algorithm
-2024-10-24 14:20:04,428 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:20:04,428 - INFO - The strategies at node 0 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:20:04,428 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:20:04,428 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:20:04,439 - INFO - The UAV has reached the next node
-2024-10-24 14:20:04,439 - INFO - The UAV energy level is: 19603470.0 after going to the next node
-2024-10-24 14:20:04,577 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:20:04,577 - INFO - The strategies at node 4 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:20:04,577 - INFO - The task intensities of the users at node 4 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:20:04,577 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:20:04,587 - INFO - The UAV has reached the next node
-2024-10-24 14:20:04,587 - INFO - The UAV energy level is: 19267082.0 after going to the next node
-2024-10-24 14:20:04,710 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:20:04,710 - INFO - The strategies at node 6 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:20:04,710 - INFO - The task intensities of the users at node 6 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:20:04,710 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:20:04,720 - INFO - The UAV has reached the next node
-2024-10-24 14:20:04,720 - INFO - The UAV energy level is: 18956244.0 after going to the next node
-2024-10-24 14:20:04,844 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:20:04,844 - INFO - The strategies at node 3 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:20:04,844 - INFO - The task intensities of the users at node 3 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:20:04,844 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:20:04,854 - INFO - The UAV has reached the next node
-2024-10-24 14:20:04,854 - INFO - The UAV energy level is: 18827030.0 after going to the next node
-2024-10-24 14:20:04,984 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:20:04,985 - INFO - The strategies at node 7 have converged to: [0.2        0.2        0.2004302  0.8        0.20026775 0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:20:04,985 - INFO - The task intensities of the users at node 7 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:20:04,985 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:20:04,994 - INFO - The UAV has reached the next node
-2024-10-24 14:20:04,995 - INFO - The UAV energy level is: 18593374.0 after going to the next node
-2024-10-24 14:20:05,147 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:20:05,147 - INFO - The strategies at node 2 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:20:05,147 - INFO - The task intensities of the users at node 2 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:20:05,147 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:20:05,157 - INFO - The UAV has reached the next node
-2024-10-24 14:20:05,157 - INFO - The UAV energy level is: 18361978.0 after going to the next node
-2024-10-24 14:20:05,279 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:20:05,279 - INFO - The strategies at node 8 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:20:05,279 - INFO - The task intensities of the users at node 8 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:20:05,279 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:20:05,290 - INFO - The UAV has reached the next node
-2024-10-24 14:20:05,290 - INFO - The UAV energy level is: 18188892.0 after going to the next node
-2024-10-24 14:20:05,290 - INFO - The UAV has reached the final node
-2024-10-24 14:20:05,412 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:20:05,412 - INFO - The strategies at node 9 have converged to: [0.2        0.2        0.20161985 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:20:05,412 - INFO - The task intensities of the users at node 9 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:20:05,412 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:20:05,412 - INFO - The UAV has reached the final node and has finished its business
-2024-10-24 14:20:05,413 - INFO - The UAV trajectory is: [0, 4, 6, 3, 7, 2, 8, 9]
-2024-10-24 14:20:05,413 - INFO - The UAV energy level is: 18188460.0 at the end of the algorithm
-2024-10-24 14:20:05,413 - INFO - Max-Logit Algorithm has successfully reached the final node!
-2024-10-24 14:20:05,413 - INFO - The UAV processed in total: 15556549.0 bits
-2024-10-24 14:20:05,413 - INFO - Max-Logit Algorithm took: 1.120570182800293 seconds
-2024-10-24 14:21:47,143 - INFO - Running the Max-Logit Algorithm
-2024-10-24 14:21:47,271 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:21:47,271 - INFO - The strategies at node 0 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.20022967
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:21:47,271 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:21:47,271 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:21:47,281 - INFO - The UAV has reached the next node
-2024-10-24 14:21:47,281 - INFO - The UAV energy level is: 19571878.0 after going to the next node
-2024-10-24 14:21:47,401 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:21:47,401 - INFO - The strategies at node 2 have converged to: [0.2        0.2        0.20036311 0.2        0.2        0.2
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:21:47,401 - INFO - The task intensities of the users at node 2 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:21:47,401 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:21:47,410 - INFO - The UAV has reached the next node
-2024-10-24 14:21:47,410 - INFO - The UAV energy level is: 19422346.0 after going to the next node
-2024-10-24 14:21:47,525 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:21:47,525 - INFO - The strategies at node 4 have converged to: [0.2 0.2 0.8 0.2 0.2 0.2 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1]
-2024-10-24 14:21:47,526 - INFO - The task intensities of the users at node 4 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:21:47,526 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:21:47,535 - INFO - The UAV has reached the next node
-2024-10-24 14:21:47,535 - INFO - The UAV energy level is: 19104896.0 after going to the next node
-2024-10-24 14:21:47,701 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:21:47,701 - INFO - The strategies at node 5 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.20104273
- 0.09999994 0.1        0.10000001 0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:21:47,701 - INFO - The task intensities of the users at node 5 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:21:47,701 - INFO - Converged with strategy difference: 0.0 in 3 iterations
-2024-10-24 14:21:47,712 - INFO - The UAV has reached the next node
-2024-10-24 14:21:47,712 - INFO - The UAV energy level is: 18873044.0 after going to the next node
-2024-10-24 14:21:47,712 - INFO - The UAV has reached the final node
-2024-10-24 14:21:47,838 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:21:47,838 - INFO - The strategies at node 9 have converged to: [0.2        0.2        0.20036301 0.20113187 0.2        0.2
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:21:47,838 - INFO - The task intensities of the users at node 9 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:21:47,838 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:21:47,838 - INFO - The UAV has reached the final node and has finished its business
-2024-10-24 14:21:47,838 - INFO - The UAV trajectory is: [0, 2, 4, 5, 9]
-2024-10-24 14:21:47,838 - INFO - The UAV energy level is: 18872612.0 at the end of the algorithm
-2024-10-24 14:21:47,838 - INFO - Max-Logit Algorithm has successfully reached the final node!
-2024-10-24 14:21:47,838 - INFO - The UAV processed in total: 10797526.0 bits
-2024-10-24 14:21:47,838 - INFO - Max-Logit Algorithm took: 0.6950085163116455 seconds
-2024-10-24 14:23:27,538 - INFO - Running the Max-Logit Algorithm
-2024-10-24 14:23:27,680 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:23:27,680 - INFO - The strategies at node 0 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.20000751
- 0.10499737 0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:23:27,680 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:23:27,680 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:23:27,690 - INFO - The UAV has reached the next node
-2024-10-24 14:23:27,690 - INFO - The UAV energy level is: 19692562.0 after going to the next node
-2024-10-24 14:23:27,806 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:23:27,806 - INFO - The strategies at node 1 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.2000075
- 0.10583641 0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:23:27,806 - INFO - The task intensities of the users at node 1 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:23:27,806 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:23:27,816 - INFO - The UAV has reached the next node
-2024-10-24 14:23:27,816 - INFO - The UAV energy level is: 19493106.0 after going to the next node
-2024-10-24 14:23:27,966 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:23:27,966 - INFO - The strategies at node 2 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.2000075
- 0.10510442 0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:23:27,966 - INFO - The task intensities of the users at node 2 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:23:27,966 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:23:27,976 - INFO - The UAV has reached the next node
-2024-10-24 14:23:27,976 - INFO - The UAV energy level is: 19286068.0 after going to the next node
-2024-10-24 14:23:28,091 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:23:28,091 - INFO - The strategies at node 3 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.2000075
- 0.10583641 0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:23:28,091 - INFO - The task intensities of the users at node 3 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:23:28,091 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:23:28,101 - INFO - The UAV has reached the next node
-2024-10-24 14:23:28,101 - INFO - The UAV energy level is: 19169458.0 after going to the next node
-2024-10-24 14:23:28,101 - INFO - The UAV has reached the final node
-2024-10-24 14:23:28,242 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:23:28,242 - INFO - The strategies at node 9 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.20000753
- 0.10499737 0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:23:28,242 - INFO - The task intensities of the users at node 9 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:23:28,242 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:23:28,242 - INFO - The UAV has reached the final node and has finished its business
-2024-10-24 14:23:28,242 - INFO - The UAV trajectory is: [0, 1, 2, 3, 9]
-2024-10-24 14:23:28,242 - INFO - The UAV energy level is: 19169026.0 at the end of the algorithm
-2024-10-24 14:23:28,242 - INFO - Max-Logit Algorithm has successfully reached the final node!
-2024-10-24 14:23:28,242 - INFO - The UAV processed in total: 7539892.0 bits
-2024-10-24 14:23:28,242 - INFO - Max-Logit Algorithm took: 0.7033913135528564 seconds
-2024-10-24 14:25:07,763 - INFO - Running the Max-Logit Algorithm
-2024-10-24 14:25:07,957 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:25:07,957 - INFO - The strategies at node 0 have converged to: [0.2        0.2        0.20119031 0.2        0.16457154 0.2
- 0.11555447 0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:25:07,957 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:25:07,957 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:25:07,967 - INFO - The UAV has reached the next node
-2024-10-24 14:25:07,967 - INFO - The UAV energy level is: 19771238.0 after going to the next node
-2024-10-24 14:25:07,967 - INFO - The UAV has reached the final node
-2024-10-24 14:25:08,337 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:25:08,337 - INFO - The strategies at node 9 have converged to: [0.2        0.2        0.8        0.2        0.15757489 0.2
- 0.11555901 0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:25:08,337 - INFO - The task intensities of the users at node 9 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:25:08,337 - INFO - Converged with strategy difference: 0.0 in 3 iterations
-2024-10-24 14:25:08,337 - INFO - The UAV has reached the final node and has finished its business
-2024-10-24 14:25:08,337 - INFO - The UAV trajectory is: [0, 9]
-2024-10-24 14:25:08,337 - INFO - The UAV energy level is: 19770806.0 at the end of the algorithm
-2024-10-24 14:25:08,337 - INFO - Max-Logit Algorithm has successfully reached the final node!
-2024-10-24 14:25:08,337 - INFO - The UAV processed in total: 3324438.8 bits
-2024-10-24 14:25:08,337 - INFO - Max-Logit Algorithm took: 0.5740628242492676 seconds
-2024-10-24 14:26:53,968 - INFO - Running the Max-Logit Algorithm
-2024-10-24 14:26:54,179 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:26:54,180 - INFO - The strategies at node 0 have converged to: [0.2        0.2        0.8        0.2        0.2        0.20016976
- 0.11035523 0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:26:54,180 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:26:54,180 - INFO - Converged with strategy difference: 0.0 in 3 iterations
-2024-10-24 14:26:54,189 - INFO - The UAV has reached the next node
-2024-10-24 14:26:54,190 - INFO - The UAV energy level is: 19771238.0 after going to the next node
-2024-10-24 14:26:54,190 - INFO - The UAV has reached the final node
-2024-10-24 14:26:54,376 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:26:54,376 - INFO - The strategies at node 9 have converged to: [0.2        0.2        0.8        0.2        0.2        0.20016977
- 0.11035523 0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:26:54,376 - INFO - The task intensities of the users at node 9 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:26:54,376 - INFO - Converged with strategy difference: 0.0 in 3 iterations
-2024-10-24 14:26:54,376 - INFO - The UAV has reached the final node and has finished its business
-2024-10-24 14:26:54,376 - INFO - The UAV trajectory is: [0, 9]
-2024-10-24 14:26:54,376 - INFO - The UAV energy level is: 19770806.0 at the end of the algorithm
-2024-10-24 14:26:54,376 - INFO - Max-Logit Algorithm has successfully reached the final node!
-2024-10-24 14:26:54,376 - INFO - The UAV processed in total: 2799809.2 bits
-2024-10-24 14:26:54,376 - INFO - Max-Logit Algorithm took: 0.40799975395202637 seconds
-2024-10-24 14:28:38,454 - INFO - Running the Max-Logit Algorithm
-2024-10-24 14:28:38,596 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:28:38,596 - INFO - The strategies at node 0 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:28:38,596 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:28:38,596 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:28:38,606 - INFO - The UAV has reached the next node
-2024-10-24 14:28:38,606 - INFO - The UAV energy level is: 19603470.0 after going to the next node
-2024-10-24 14:28:38,744 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:28:38,744 - INFO - The strategies at node 4 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:28:38,744 - INFO - The task intensities of the users at node 4 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:28:38,744 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:28:38,754 - INFO - The UAV has reached the next node
-2024-10-24 14:28:38,755 - INFO - The UAV energy level is: 19506178.0 after going to the next node
-2024-10-24 14:28:38,889 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:28:38,889 - INFO - The strategies at node 3 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:28:38,889 - INFO - The task intensities of the users at node 3 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:28:38,889 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:28:38,899 - INFO - The UAV has reached the next node
-2024-10-24 14:28:38,899 - INFO - The UAV energy level is: 19249748.0 after going to the next node
-2024-10-24 14:28:39,036 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:28:39,036 - INFO - The strategies at node 8 have converged to: [0.2        0.2        0.20039047 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:28:39,036 - INFO - The task intensities of the users at node 8 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:28:39,036 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:28:39,046 - INFO - The UAV has reached the next node
-2024-10-24 14:28:39,046 - INFO - The UAV energy level is: 19191884.0 after going to the next node
-2024-10-24 14:28:39,181 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:28:39,181 - INFO - The strategies at node 6 have converged to: [0.2        0.2        0.20039047 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:28:39,182 - INFO - The task intensities of the users at node 6 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:28:39,182 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:28:39,191 - INFO - The UAV has reached the next node
-2024-10-24 14:28:39,192 - INFO - The UAV energy level is: 19149776.0 after going to the next node
-2024-10-24 14:28:39,327 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:28:39,327 - INFO - The strategies at node 5 have converged to: [0.2        0.2        0.20039047 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:28:39,327 - INFO - The task intensities of the users at node 5 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:28:39,327 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:28:39,337 - INFO - The UAV has reached the next node
-2024-10-24 14:28:39,337 - INFO - The UAV energy level is: 18936588.0 after going to the next node
-2024-10-24 14:28:39,478 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:28:39,478 - INFO - The strategies at node 7 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:28:39,478 - INFO - The task intensities of the users at node 7 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:28:39,478 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:28:39,488 - INFO - The UAV has reached the next node
-2024-10-24 14:28:39,488 - INFO - The UAV energy level is: 18928398.0 after going to the next node
-2024-10-24 14:28:39,616 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:28:39,616 - INFO - The strategies at node 0 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:28:39,616 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:28:39,616 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:28:39,626 - INFO - The UAV has reached the next node
-2024-10-24 14:28:39,626 - INFO - The UAV energy level is: 18700276.0 after going to the next node
-2024-10-24 14:28:39,818 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:28:39,818 - INFO - The strategies at node 2 have converged to: [0.2        0.2        0.20147365 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:28:39,819 - INFO - The task intensities of the users at node 2 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:28:39,819 - INFO - Converged with strategy difference: 0.0 in 3 iterations
-2024-10-24 14:28:39,828 - INFO - The UAV has reached the next node
-2024-10-24 14:28:39,828 - INFO - The UAV energy level is: 18500820.0 after going to the next node
-2024-10-24 14:28:39,955 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:28:39,955 - INFO - The strategies at node 1 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:28:39,955 - INFO - The task intensities of the users at node 1 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:28:39,955 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:28:39,965 - INFO - The UAV has reached the next node
-2024-10-24 14:28:39,965 - INFO - The UAV energy level is: 18400516.0 after going to the next node
-2024-10-24 14:28:39,965 - INFO - The UAV has reached the final node
-2024-10-24 14:28:40,102 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:28:40,102 - INFO - The strategies at node 9 have converged to: [0.2       0.2       0.2003905 0.2       0.2       0.1       0.1
- 0.1       0.1       0.1       0.1       0.1       0.1       0.1
- 0.1      ]
-2024-10-24 14:28:40,102 - INFO - The task intensities of the users at node 9 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:28:40,102 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:28:40,102 - INFO - The UAV has reached the final node and has finished its business
-2024-10-24 14:28:40,102 - INFO - The UAV trajectory is: [0, 4, 3, 8, 6, 5, 7, 0, 2, 1, 9]
-2024-10-24 14:28:40,102 - INFO - The UAV energy level is: 18400084.0 at the end of the algorithm
-2024-10-24 14:28:40,102 - INFO - Max-Logit Algorithm has successfully reached the final node!
-2024-10-24 14:28:40,102 - INFO - The UAV processed in total: 20093798.0 bits
-2024-10-24 14:28:40,102 - INFO - Max-Logit Algorithm took: 1.6475377082824707 seconds
-2024-10-24 14:30:21,290 - INFO - Running the Max-Logit Algorithm
-2024-10-24 14:30:21,403 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:30:21,403 - INFO - The strategies at node 0 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:30:21,404 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:30:21,404 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:30:21,413 - INFO - The UAV has reached the next node
-2024-10-24 14:30:21,413 - INFO - The UAV energy level is: 19571878.0 after going to the next node
-2024-10-24 14:30:21,534 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:30:21,534 - INFO - The strategies at node 2 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:30:21,534 - INFO - The task intensities of the users at node 2 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:30:21,534 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:30:21,543 - INFO - The UAV has reached the next node
-2024-10-24 14:30:21,543 - INFO - The UAV energy level is: 19364840.0 after going to the next node
-2024-10-24 14:30:21,664 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:30:21,664 - INFO - The strategies at node 3 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:30:21,664 - INFO - The task intensities of the users at node 3 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:30:21,664 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:30:21,673 - INFO - The UAV has reached the next node
-2024-10-24 14:30:21,673 - INFO - The UAV energy level is: 19248230.0 after going to the next node
-2024-10-24 14:30:21,673 - INFO - The UAV has reached the final node
-2024-10-24 14:30:21,778 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:30:21,778 - INFO - The strategies at node 9 have converged to: [0.2        0.2        0.20043081 0.2        0.2        0.1
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:30:21,779 - INFO - The task intensities of the users at node 9 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:30:21,779 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:30:21,779 - INFO - The UAV has reached the final node and has finished its business
-2024-10-24 14:30:21,779 - INFO - The UAV trajectory is: [0, 2, 3, 9]
-2024-10-24 14:30:21,779 - INFO - The UAV energy level is: 19247798.0 at the end of the algorithm
-2024-10-24 14:30:21,779 - INFO - Max-Logit Algorithm has successfully reached the final node!
-2024-10-24 14:30:21,779 - INFO - The UAV processed in total: 7718872.0 bits
-2024-10-24 14:30:21,779 - INFO - Max-Logit Algorithm took: 0.4890017509460449 seconds
-2024-10-24 14:31:59,752 - INFO - Running the Max-Logit Algorithm
-2024-10-24 14:31:59,884 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:31:59,884 - INFO - The strategies at node 0 have converged to: [0.2        0.2        0.20119031 0.2        0.17441142 0.2
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:31:59,885 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:31:59,885 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:31:59,894 - INFO - The UAV has reached the next node
-2024-10-24 14:31:59,894 - INFO - The UAV energy level is: 19590136.0 after going to the next node
-2024-10-24 14:32:00,125 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:32:00,125 - INFO - The strategies at node 6 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.2000964
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:32:00,125 - INFO - The task intensities of the users at node 6 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:32:00,125 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:32:00,135 - INFO - The UAV has reached the next node
-2024-10-24 14:32:00,135 - INFO - The UAV energy level is: 19279298.0 after going to the next node
-2024-10-24 14:32:00,272 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:32:00,272 - INFO - The strategies at node 3 have converged to: [0.2        0.2        0.20119031 0.2        0.17625839 0.2
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:32:00,272 - INFO - The task intensities of the users at node 3 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:32:00,272 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:32:00,282 - INFO - The UAV has reached the next node
-2024-10-24 14:32:00,282 - INFO - The UAV energy level is: 19072260.0 after going to the next node
-2024-10-24 14:32:00,410 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:32:00,410 - INFO - The strategies at node 2 have converged to: [0.2        0.2        0.20119031 0.2        0.17630912 0.2
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:32:00,410 - INFO - The task intensities of the users at node 2 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:32:00,410 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:32:00,420 - INFO - The UAV has reached the next node
-2024-10-24 14:32:00,420 - INFO - The UAV energy level is: 18840864.0 after going to the next node
-2024-10-24 14:32:00,553 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:32:00,553 - INFO - The strategies at node 8 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.2000964
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:32:00,553 - INFO - The task intensities of the users at node 8 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:32:00,553 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:32:00,563 - INFO - The UAV has reached the next node
-2024-10-24 14:32:00,563 - INFO - The UAV energy level is: 18667778.0 after going to the next node
-2024-10-24 14:32:00,563 - INFO - The UAV has reached the final node
-2024-10-24 14:32:00,749 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:32:00,749 - INFO - The strategies at node 9 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.20009631
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:32:00,750 - INFO - The task intensities of the users at node 9 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:32:00,750 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:32:00,750 - INFO - The UAV has reached the final node and has finished its business
-2024-10-24 14:32:00,750 - INFO - The UAV trajectory is: [0, 6, 3, 2, 8, 9]
-2024-10-24 14:32:00,750 - INFO - The UAV energy level is: 18667346.0 at the end of the algorithm
-2024-10-24 14:32:00,750 - INFO - Max-Logit Algorithm has successfully reached the final node!
-2024-10-24 14:32:00,750 - INFO - The UAV processed in total: 12287936.0 bits
-2024-10-24 14:32:00,750 - INFO - Max-Logit Algorithm took: 0.998645544052124 seconds
-2024-10-24 14:33:38,916 - INFO - Running the Max-Logit Algorithm
-2024-10-24 14:33:39,056 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:33:39,056 - INFO - The strategies at node 0 have converged to: [0.2        0.2        0.20119031 0.2        0.16657102 0.10886322
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:33:39,057 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:33:39,057 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:33:39,066 - INFO - The UAV has reached the next node
-2024-10-24 14:33:39,066 - INFO - The UAV energy level is: 19647540.0 after going to the next node
-2024-10-24 14:33:39,241 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:33:39,242 - INFO - The strategies at node 8 have converged to: [0.2        0.2        0.20119031 0.2        0.16660404 0.1088765
- 0.10000001 0.10000001 0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:33:39,242 - INFO - The task intensities of the users at node 8 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:33:39,242 - INFO - Converged with strategy difference: 0.0 in 3 iterations
-2024-10-24 14:33:39,251 - INFO - The UAV has reached the next node
-2024-10-24 14:33:39,251 - INFO - The UAV energy level is: 19416144.0 after going to the next node
-2024-10-24 14:33:39,373 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:33:39,373 - INFO - The strategies at node 2 have converged to: [0.2        0.2        0.20119031 0.2        1.         0.10887037
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:33:39,373 - INFO - The task intensities of the users at node 2 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:33:39,373 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:33:39,382 - INFO - The UAV has reached the next node
-2024-10-24 14:33:39,382 - INFO - The UAV energy level is: 19159524.0 after going to the next node
-2024-10-24 14:33:39,518 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:33:39,518 - INFO - The strategies at node 6 have converged to: [0.2        0.2        0.20036367 0.2        0.19987758 0.1088765
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:33:39,518 - INFO - The task intensities of the users at node 6 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:33:39,518 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:33:39,528 - INFO - The UAV has reached the next node
-2024-10-24 14:33:39,528 - INFO - The UAV energy level is: 18823136.0 after going to the next node
-2024-10-24 14:33:39,637 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:33:39,637 - INFO - The strategies at node 4 have converged to: [0.2        0.2        0.20119031 0.2        0.16698033 0.10888059
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:33:39,637 - INFO - The task intensities of the users at node 4 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:33:39,637 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:33:39,647 - INFO - The UAV has reached the next node
-2024-10-24 14:33:39,647 - INFO - The UAV energy level is: 18620676.0 after going to the next node
-2024-10-24 14:33:39,823 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:33:39,823 - INFO - The strategies at node 7 have converged to: [0.42423594 0.2        0.20036365 0.2        0.1747522  0.10886117
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:33:39,823 - INFO - The task intensities of the users at node 7 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:33:39,823 - INFO - Converged with strategy difference: 0.0 in 3 iterations
-2024-10-24 14:33:39,832 - INFO - The UAV has reached the next node
-2024-10-24 14:33:39,832 - INFO - The UAV energy level is: 18468466.0 after going to the next node
-2024-10-24 14:33:39,958 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:33:39,958 - INFO - The strategies at node 8 have converged to: [0.2        0.2        0.20119031 0.2        0.2        0.12045544
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:33:39,958 - INFO - The task intensities of the users at node 8 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:33:39,958 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:33:39,968 - INFO - The UAV has reached the next node
-2024-10-24 14:33:39,968 - INFO - The UAV energy level is: 18212036.0 after going to the next node
-2024-10-24 14:33:40,104 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:33:40,104 - INFO - The strategies at node 3 have converged to: [0.2        0.2        0.20119031 0.2        0.16649167 0.10888059
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:33:40,105 - INFO - The task intensities of the users at node 3 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:33:40,105 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:33:40,114 - INFO - The UAV has reached the next node
-2024-10-24 14:33:40,114 - INFO - The UAV energy level is: 18192896.0 after going to the next node
-2024-10-24 14:33:40,233 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:33:40,233 - INFO - The strategies at node 1 have converged to: [0.2        0.2        0.20119031 0.2        0.17477834 0.1088857
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:33:40,233 - INFO - The task intensities of the users at node 1 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:33:40,233 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:33:40,243 - INFO - The UAV has reached the next node
-2024-10-24 14:33:40,243 - INFO - The UAV energy level is: 17908240.0 after going to the next node
-2024-10-24 14:33:40,381 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:33:40,381 - INFO - The strategies at node 5 have converged to: [0.2        0.2        0.20119031 0.2        0.16861454 0.10887957
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:33:40,381 - INFO - The task intensities of the users at node 5 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:33:40,381 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:33:40,391 - INFO - The UAV has reached the next node
-2024-10-24 14:33:40,391 - INFO - The UAV energy level is: 17623584.0 after going to the next node
-2024-10-24 14:33:40,508 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:33:40,508 - INFO - The strategies at node 1 have converged to: [0.2        0.2        0.200374   0.2        0.19999999 0.12046488
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:33:40,508 - INFO - The task intensities of the users at node 1 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:33:40,508 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:33:40,518 - INFO - The UAV has reached the next node
-2024-10-24 14:33:40,518 - INFO - The UAV energy level is: 17523280.0 after going to the next node
-2024-10-24 14:33:40,518 - INFO - The UAV has reached the final node
-2024-10-24 14:33:40,643 - INFO - The UAV has finished its business in the current node
-2024-10-24 14:33:40,644 - INFO - The strategies at node 9 have converged to: [0.2        0.2        0.20036368 0.2        0.16658585 0.10888877
- 0.1        0.1        0.1        0.1        0.1        0.1
- 0.1        0.1        0.1       ]
-2024-10-24 14:33:40,644 - INFO - The task intensities of the users at node 9 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-24 14:33:40,644 - INFO - Converged with strategy difference: 0.0 in 2 iterations
-2024-10-24 14:33:40,644 - INFO - The UAV has reached the final node and has finished its business
-2024-10-24 14:33:40,644 - INFO - The UAV trajectory is: [0, 8, 2, 6, 4, 7, 8, 3, 1, 5, 1, 9]
-2024-10-24 14:33:40,644 - INFO - The UAV energy level is: 17522848.0 at the end of the algorithm
-2024-10-24 14:33:40,644 - INFO - Max-Logit Algorithm has successfully reached the final node!
-2024-10-24 14:33:40,644 - INFO - The UAV processed in total: 29036592.0 bits
-2024-10-24 14:33:40,644 - INFO - Max-Logit Algorithm took: 1.7271926403045654 seconds
+2024-10-24 16:31:48,133 - INFO - The task intensities of the users at node 9 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-10-24 16:31:48,133 - INFO - Converged with strategy difference: 0.0 in 2 iterations
+2024-10-24 16:31:48,133 - INFO - The UAV has reached the final node and has finished its business
+2024-10-24 16:31:48,133 - INFO - The UAV trajectory is: [0, 2, 8, 5, 3, 7, 9]
+2024-10-24 16:31:48,133 - INFO - The UAV energy level is: 82872.78 at the end of the algorithm
+2024-10-24 16:31:48,133 - INFO - Max-Logit Algorithm has successfully reached the final node!
+2024-10-24 16:31:48,133 - INFO - The UAV processed in total: 11355716.0 bits
+2024-10-24 16:31:48,133 - INFO - Max-Logit Algorithm took: 1.350778579711914 seconds

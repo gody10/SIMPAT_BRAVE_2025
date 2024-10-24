@@ -18,9 +18,9 @@ q_brave_time = 0
 N = 10
 NODE_RADIUS = 2
 MIN_DISTANCE_BETWEEN_NODES = 20  # Minimum distance to maintain between nodes
-UAV_HEIGHT = 100
+UAV_HEIGHT = 30
 CONVERGENCE_THRESHOLD = 1e-15
-UAV_ENERGY_CAPACITY = 19800000
+UAV_ENERGY_CAPACITY = 1065600
 UAV_BANDWIDTH = 5*(10**6)
 UAV_PROCESSING_CAPACITY = 1 * (10**9)
 UAV_CPU_FREQUENCY = 2 * (10**9)
@@ -32,17 +32,17 @@ MIN_BITS = 3 * 10**5
 ENERGY_LEVEL = 29000
 B = 0.74
 C = 0.00043
-MAX_ITER = 20
-NUMBER_OF_EPISODES = 30
+MAX_ITER = 30
+NUMBER_OF_EPISODES = 40
 
 # Initialize the main random key
 main_key = random.PRNGKey(10)
 
 # Define the number of runs
-NUM_RUNS = 10
+NUM_RUNS = 1000
 
 # Define the save interval
-SAVE_INTERVAL = 5  # Save progress every 50 runs
+SAVE_INTERVAL = 1  # Save progress every 50 runs
 
 # Initialize accumulation dictionaries
 algorithms_total_bits_acc = {}
@@ -51,7 +51,7 @@ algorithms_total_visited_nodes_acc = {}
 timer_dict_acc = {}
 
 # List of algorithms
-algorithm_names = ["Random Walk", "Proportional Fairness", "Max-Logit", "B-Logit", "Brave Greedy", "Q-Brave"]
+algorithm_names = ["Proportional Fairness", "Max-Logit", "Brave Greedy", "Q-Brave"]
 
 # Initialize accumulation dictionaries with empty lists for each algorithm
 for name in algorithm_names:
@@ -64,10 +64,10 @@ for name in algorithm_names:
 system_logger = setup_logger('system_logger', 'system.log')
 
 # Set up separate loggers for each algorithm
-random_walk_logger = setup_logger('random_walk_logger', 'random_walk_algorithm.log')
+#random_walk_logger = setup_logger('random_walk_logger', 'random_walk_algorithm.log')
 proportional_fairness_logger = setup_logger('proportional_fairness_logger', 'proportional_algorithm.log')
 max_logit_logger = setup_logger('max_logit_logger', 'max_logit_algorithm.log')
-b_logit_logger = setup_logger('b_logit_logger', 'b_logit_algorithm.log')
+#b_logit_logger = setup_logger('b_logit_logger', 'b_logit_algorithm.log')
 brave_greedy_logger = setup_logger('brave_greedy_logger', 'brave_algorithm.log')
 q_brave_logger = setup_logger('q_brave_logger', 'q_brave_algorithm.log')
 
@@ -105,41 +105,41 @@ for run in tqdm(range(1, NUM_RUNS + 1), desc="Run Progress"):
     
     algorithm.reset()
     
-    # -------------------- Random Walk Algorithm --------------------
-    start_time = time.time()
+    # # -------------------- Random Walk Algorithm --------------------
+    # start_time = time.time()
     
-    # Run the Random Walk Algorithm
-    success_random_walk = algorithm.run_random_walk_algorithm(
-        solving_method="scipy",
-        max_iter=MAX_ITER / 2,
-        b=B,
-        c=C,
-        logger=random_walk_logger
-    )
+    # # Run the Random Walk Algorithm
+    # success_random_walk = algorithm.run_random_walk_algorithm(
+    #     solving_method="scipy",
+    #     max_iter=MAX_ITER / 2,
+    #     b=B,
+    #     c=C,
+    #     logger=random_walk_logger
+    # )
     
-    random_walk_logger.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
+    # random_walk_logger.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
     
-    if success_random_walk:
-        random_walk_logger.info("Random Walk Algorithm has successfully reached the final node!")
-    else:
-        random_walk_logger.info("Random Walk Algorithm failed to reach the final node!")
+    # if success_random_walk:
+    #     random_walk_logger.info("Random Walk Algorithm has successfully reached the final node!")
+    # else:
+    #     random_walk_logger.info("Random Walk Algorithm failed to reach the final node!")
         
-    random_walk_logger.info("The UAV processed in total: %s bits", algorithm.get_uav().get_total_processed_data())
+    # random_walk_logger.info("The UAV processed in total: %s bits", algorithm.get_uav().get_total_processed_data())
     
-    # Accumulate metrics
-    algorithms_total_bits_acc["Random Walk Total Bits"].append(algorithm.get_uav().get_total_processed_data())
-    algorithms_expended_energy_acc["Random Walk Energy Level"].append(
-        algorithm.get_uav().get_total_energy_level() - algorithm.get_uav().get_energy_level()
-    )
-    algorithms_total_visited_nodes_acc["Random Walk Total Visited Nodes"].append(len(algorithm.get_trajectory()))
+    # # Accumulate metrics
+    # algorithms_total_bits_acc["Random Walk Total Bits"].append(algorithm.get_uav().get_total_processed_data())
+    # algorithms_expended_energy_acc["Random Walk Energy Level"].append(
+    #     algorithm.get_uav().get_total_energy_level() - algorithm.get_uav().get_energy_level()
+    # )
+    # algorithms_total_visited_nodes_acc["Random Walk Total Visited Nodes"].append(len(algorithm.get_trajectory()))
     
-    # End the timer for Random Walk Algorithm
-    random_walk_time = time.time() - start_time
-    random_walk_logger.info("Random Walk Algorithm took: %s seconds", random_walk_time)
-    timer_dict_acc["Random Walk Time"].append(random_walk_time)
+    # # End the timer for Random Walk Algorithm
+    # random_walk_time = time.time() - start_time
+    # random_walk_logger.info("Random Walk Algorithm took: %s seconds", random_walk_time)
+    # timer_dict_acc["Random Walk Time"].append(random_walk_time)
     
-    # Reset the Algorithm object
-    algorithm.reset()
+    # # Reset the Algorithm object
+    # algorithm.reset()
     
     # -------------------- Proportional Fairness Algorithm --------------------
     start_time = time.time()
@@ -212,43 +212,43 @@ for run in tqdm(range(1, NUM_RUNS + 1), desc="Run Progress"):
     # Reset the Algorithm object
     algorithm.reset()
     
-    # -------------------- B-Logit Algorithm --------------------
+    # # -------------------- B-Logit Algorithm --------------------
     
-    start_time = time.time()
+    # start_time = time.time()
     
-    # Run the B-Logit Algorithm
-    success_b_logit = algorithm.run_b_logit_algorithm(
-        solving_method="scipy",
-        max_iter=MAX_ITER,
-        b=B,
-        c=C,
-        logger=b_logit_logger,
-        beta= 0.5
-    )
+    # # Run the B-Logit Algorithm
+    # success_b_logit = algorithm.run_b_logit_algorithm(
+    #     solving_method="scipy",
+    #     max_iter=MAX_ITER,
+    #     b=B,
+    #     c=C,
+    #     logger=b_logit_logger,
+    #     beta= 0.3
+    # )
     
-    b_logit_logger.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
+    # b_logit_logger.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
     
-    if success_b_logit:
-        b_logit_logger.info("B-Logit Algorithm has successfully reached the final node!")
-    else:
-        b_logit_logger.info("B-Logit Algorithm failed to reach the final node!")
+    # if success_b_logit:
+    #     b_logit_logger.info("B-Logit Algorithm has successfully reached the final node!")
+    # else:
+    #     b_logit_logger.info("B-Logit Algorithm failed to reach the final node!")
         
-    b_logit_logger.info("The UAV processed in total: %s bits", algorithm.get_uav().get_total_processed_data())
+    # b_logit_logger.info("The UAV processed in total: %s bits", algorithm.get_uav().get_total_processed_data())
     
-    # Accumulate metrics
-    algorithms_total_bits_acc["B-Logit Total Bits"].append(algorithm.get_uav().get_total_processed_data())
-    algorithms_expended_energy_acc["B-Logit Energy Level"].append(
-        algorithm.get_uav().get_total_energy_level() - algorithm.get_uav().get_energy_level()
-    )
-    algorithms_total_visited_nodes_acc["B-Logit Total Visited Nodes"].append(len(algorithm.get_trajectory()))
+    # # Accumulate metrics
+    # algorithms_total_bits_acc["B-Logit Total Bits"].append(algorithm.get_uav().get_total_processed_data())
+    # algorithms_expended_energy_acc["B-Logit Energy Level"].append(
+    #     algorithm.get_uav().get_total_energy_level() - algorithm.get_uav().get_energy_level()
+    # )
+    # algorithms_total_visited_nodes_acc["B-Logit Total Visited Nodes"].append(len(algorithm.get_trajectory()))
     
-    # End the timer for B-Logit Algorithm
-    b_logit_time = time.time() - start_time
-    b_logit_logger.info("B-Logit Algorithm took: %s seconds", b_logit_time)
-    timer_dict_acc["B-Logit Time"].append(b_logit_time)
+    # # End the timer for B-Logit Algorithm
+    # b_logit_time = time.time() - start_time
+    # b_logit_logger.info("B-Logit Algorithm took: %s seconds", b_logit_time)
+    # timer_dict_acc["B-Logit Time"].append(b_logit_time)
     
-    # Reset the Algorithm object
-    algorithm.reset()
+    # # Reset the Algorithm object
+    # algorithm.reset()
     
     # -------------------- Brave Greedy Algorithm --------------------
     start_time = time.time()
@@ -334,7 +334,7 @@ for run in tqdm(range(1, NUM_RUNS + 1), desc="Run Progress"):
         bits_filename = f"algorithms_total_bits_avg.pkl"
         energy_filename = f"algorithms_expended_energy_avg.pkl"
         nodes_filename = f"algorithms_total_visited_nodes_avg.pkl"
-        timer_filename = f"timer_dict_avg_run_{run}.pkl"
+        timer_filename = f"timer_dict_avg.pkl"
         
         # Save the current averaged data as Pickle Files
         with open(bits_filename, "wb") as file:
