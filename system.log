@@ -1,1 +1,18 @@
-2024-10-24 12:11:18,354 - INFO - Data dictionaries has been saved as a pickle file!
+2024-10-24 14:18:12,639 - INFO - Starting run 1 of 10
+2024-10-24 14:19:59,357 - INFO - Starting run 2 of 10
+2024-10-24 14:21:43,734 - INFO - Starting run 3 of 10
+2024-10-24 14:23:24,139 - INFO - Starting run 4 of 10
+2024-10-24 14:25:04,022 - INFO - Starting run 5 of 10
+2024-10-24 14:26:49,329 - INFO - Saving progress at run 5 of 10
+2024-10-24 14:26:49,331 - INFO - Averaged data dictionaries up to run 5 have been saved as pickle files!
+2024-10-24 14:26:51,070 - INFO - Plots up to run 5 have been generated!
+2024-10-24 14:26:51,070 - INFO - Starting run 6 of 10
+2024-10-24 14:28:33,267 - INFO - Starting run 7 of 10
+2024-10-24 14:30:18,779 - INFO - Starting run 8 of 10
+2024-10-24 14:31:56,359 - INFO - Starting run 9 of 10
+2024-10-24 14:33:33,155 - INFO - Starting run 10 of 10
+2024-10-24 14:35:20,734 - INFO - Saving progress at run 10 of 10
+2024-10-24 14:35:20,736 - INFO - Averaged data dictionaries up to run 10 have been saved as pickle files!
+2024-10-24 14:35:22,417 - INFO - Plots up to run 10 have been generated!
+2024-10-24 14:35:22,420 - INFO - Final averaged data dictionaries have been saved as pickle files!
+2024-10-24 14:35:24,103 - INFO - Final plots have been generated!

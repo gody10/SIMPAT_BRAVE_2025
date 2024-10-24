@@ -39,10 +39,10 @@ NUMBER_OF_EPISODES = 30
 main_key = random.PRNGKey(10)
 
 # Define the number of runs
-NUM_RUNS = 1000
+NUM_RUNS = 10
 
 # Define the save interval
-SAVE_INTERVAL = 50  # Save progress every 50 runs
+SAVE_INTERVAL = 5  # Save progress every 50 runs
 
 # Initialize accumulation dictionaries
 algorithms_total_bits_acc = {}
@@ -51,7 +51,7 @@ algorithms_total_visited_nodes_acc = {}
 timer_dict_acc = {}
 
 # List of algorithms
-algorithm_names = ["Random Walk", "Proportional Fairness", "Brave Greedy", "Q-Brave"]
+algorithm_names = ["Random Walk", "Proportional Fairness", "Max-Logit", "B-Logit", "Brave Greedy", "Q-Brave"]
 
 # Initialize accumulation dictionaries with empty lists for each algorithm
 for name in algorithm_names:
@@ -66,6 +66,8 @@ system_logger = setup_logger('system_logger', 'system.log')
 # Set up separate loggers for each algorithm
 random_walk_logger = setup_logger('random_walk_logger', 'random_walk_algorithm.log')
 proportional_fairness_logger = setup_logger('proportional_fairness_logger', 'proportional_algorithm.log')
+max_logit_logger = setup_logger('max_logit_logger', 'max_logit_algorithm.log')
+b_logit_logger = setup_logger('b_logit_logger', 'b_logit_algorithm.log')
 brave_greedy_logger = setup_logger('brave_greedy_logger', 'brave_algorithm.log')
 q_brave_logger = setup_logger('q_brave_logger', 'q_brave_algorithm.log')
 
@@ -175,6 +177,79 @@ for run in tqdm(range(1, NUM_RUNS + 1), desc="Run Progress"):
     # Reset the Algorithm object
     algorithm.reset()
     
+    # -------------------- Max-Logit Algorithm --------------------
+    start_time = time.time()
+    
+    success_max_logit = algorithm.run_max_logit_algorithm(
+        solving_method="scipy",
+        max_iter=MAX_ITER,
+        b=B,
+        c=C,
+        logger=max_logit_logger
+    )
+    
+    max_logit_logger.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
+    
+    if success_max_logit:
+        max_logit_logger.info("Max-Logit Algorithm has successfully reached the final node!")
+    else:
+        max_logit_logger.info("Max-Logit Algorithm failed to reach the final node!")
+        
+    max_logit_logger.info("The UAV processed in total: %s bits", algorithm.get_uav().get_total_processed_data())
+    
+    # Accumulate metrics
+    algorithms_total_bits_acc["Max-Logit Total Bits"].append(algorithm.get_uav().get_total_processed_data())
+    algorithms_expended_energy_acc["Max-Logit Energy Level"].append(
+        algorithm.get_uav().get_total_energy_level() - algorithm.get_uav().get_energy_level()
+    )
+    algorithms_total_visited_nodes_acc["Max-Logit Total Visited Nodes"].append(len(algorithm.get_trajectory()))
+    
+    # End the timer for Max-Logit Algorithm
+    max_logit_time = time.time() - start_time
+    max_logit_logger.info("Max-Logit Algorithm took: %s seconds", max_logit_time)
+    timer_dict_acc["Max-Logit Time"].append(max_logit_time)
+    
+    # Reset the Algorithm object
+    algorithm.reset()
+    
+    # -------------------- B-Logit Algorithm --------------------
+    
+    start_time = time.time()
+    
+    # Run the B-Logit Algorithm
+    success_b_logit = algorithm.run_b_logit_algorithm(
+        solving_method="scipy",
+        max_iter=MAX_ITER,
+        b=B,
+        c=C,
+        logger=b_logit_logger,
+        beta= 0.5
+    )
+    
+    b_logit_logger.info("The UAV energy level is: %s at the end of the algorithm", algorithm.get_uav().get_energy_level())
+    
+    if success_b_logit:
+        b_logit_logger.info("B-Logit Algorithm has successfully reached the final node!")
+    else:
+        b_logit_logger.info("B-Logit Algorithm failed to reach the final node!")
+        
+    b_logit_logger.info("The UAV processed in total: %s bits", algorithm.get_uav().get_total_processed_data())
+    
+    # Accumulate metrics
+    algorithms_total_bits_acc["B-Logit Total Bits"].append(algorithm.get_uav().get_total_processed_data())
+    algorithms_expended_energy_acc["B-Logit Energy Level"].append(
+        algorithm.get_uav().get_total_energy_level() - algorithm.get_uav().get_energy_level()
+    )
+    algorithms_total_visited_nodes_acc["B-Logit Total Visited Nodes"].append(len(algorithm.get_trajectory()))
+    
+    # End the timer for B-Logit Algorithm
+    b_logit_time = time.time() - start_time
+    b_logit_logger.info("B-Logit Algorithm took: %s seconds", b_logit_time)
+    timer_dict_acc["B-Logit Time"].append(b_logit_time)
+    
+    # Reset the Algorithm object
+    algorithm.reset()
+    
     # -------------------- Brave Greedy Algorithm --------------------
     start_time = time.time()
     
@@ -256,9 +331,9 @@ for run in tqdm(range(1, NUM_RUNS + 1), desc="Run Progress"):
         current_timer_dict_avg = compute_average(timer_dict_acc)
         
         # Define filenames with run number
-        bits_filename = f"algorithms_total_bits_avg_run_{run}.pkl"
-        energy_filename = f"algorithms_expended_energy_avg_run_{run}.pkl"
-        nodes_filename = f"algorithms_total_visited_nodes_avg_run_{run}.pkl"
+        bits_filename = f"algorithms_total_bits_avg.pkl"
+        energy_filename = f"algorithms_expended_energy_avg.pkl"
+        nodes_filename = f"algorithms_total_visited_nodes_avg.pkl"
         timer_filename = f"timer_dict_avg_run_{run}.pkl"
         
         # Save the current averaged data as Pickle Files

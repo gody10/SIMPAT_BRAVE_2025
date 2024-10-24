@@ -1,178 +1,1780 @@
-2024-10-24 12:09:40,621 - INFO - Running the Q-Brave Algorithm
-2024-10-24 12:09:40,632 - INFO - EPISODE START
-2024-10-24 12:09:43,704 - INFO - The reward for episode 0 is: 347925060.0
-2024-10-24 12:09:43,704 - INFO - The UAV has visited 20 nodes in episode 0
-2024-10-24 12:09:43,705 - INFO - The UAV has visited the nodes: [0, 8, 5, 1, 5, 7, 9, 1, 3, 0, 5, 6, 4, 0, 5, 9, 0, 1, 8, 2]
-2024-10-24 12:09:43,705 - INFO - EPISODE FINISHED
-2024-10-24 12:09:43,705 - INFO - EPISODE START
-2024-10-24 12:09:46,713 - INFO - The reward for episode 1 is: 262881890.0
-2024-10-24 12:09:46,713 - INFO - The UAV has visited 20 nodes in episode 1
-2024-10-24 12:09:46,713 - INFO - The UAV has visited the nodes: [0, 3, 8, 0, 4, 0, 4, 5, 2, 1, 1, 2, 0, 0, 6, 5, 8, 6, 0, 9]
-2024-10-24 12:09:46,713 - INFO - EPISODE FINISHED
-2024-10-24 12:09:46,713 - INFO - EPISODE START
-2024-10-24 12:09:50,092 - INFO - The reward for episode 2 is: 221490350.0
-2024-10-24 12:09:50,092 - INFO - The UAV has visited 20 nodes in episode 2
-2024-10-24 12:09:50,092 - INFO - The UAV has visited the nodes: [0, 7, 5, 8, 7, 9, 3, 7, 9, 1, 5, 5, 2, 2, 5, 0, 5, 0, 3, 6]
-2024-10-24 12:09:50,092 - INFO - EPISODE FINISHED
-2024-10-24 12:09:50,093 - INFO - EPISODE START
-2024-10-24 12:09:53,017 - INFO - The reward for episode 3 is: 161683420.0
-2024-10-24 12:09:53,017 - INFO - The UAV has visited 20 nodes in episode 3
-2024-10-24 12:09:53,017 - INFO - The UAV has visited the nodes: [0, 5, 7, 2, 7, 2, 3, 0, 8, 5, 2, 4, 5, 0, 7, 5, 7, 0, 0, 7]
-2024-10-24 12:09:53,017 - INFO - EPISODE FINISHED
-2024-10-24 12:09:53,017 - INFO - EPISODE START
-2024-10-24 12:09:56,321 - INFO - The reward for episode 4 is: 149232050.0
-2024-10-24 12:09:56,321 - INFO - The UAV has visited 20 nodes in episode 4
-2024-10-24 12:09:56,321 - INFO - The UAV has visited the nodes: [0, 5, 2, 9, 7, 4, 6, 7, 3, 4, 7, 2, 8, 0, 9, 9, 5, 5, 1, 0]
-2024-10-24 12:09:56,321 - INFO - EPISODE FINISHED
-2024-10-24 12:09:56,322 - INFO - EPISODE START
-2024-10-24 12:09:59,533 - INFO - The reward for episode 5 is: 125566344.0
-2024-10-24 12:09:59,533 - INFO - The UAV has visited 20 nodes in episode 5
-2024-10-24 12:09:59,533 - INFO - The UAV has visited the nodes: [0, 9, 2, 3, 1, 0, 0, 8, 9, 8, 5, 4, 8, 7, 6, 9, 3, 7, 7, 7]
-2024-10-24 12:09:59,533 - INFO - EPISODE FINISHED
-2024-10-24 12:09:59,533 - INFO - EPISODE START
-2024-10-24 12:10:02,895 - INFO - The reward for episode 6 is: 112562936.0
-2024-10-24 12:10:02,895 - INFO - The UAV has visited 20 nodes in episode 6
-2024-10-24 12:10:02,895 - INFO - The UAV has visited the nodes: [0, 4, 5, 4, 6, 7, 6, 0, 7, 2, 3, 8, 9, 6, 6, 0, 9, 1, 0, 9]
-2024-10-24 12:10:02,895 - INFO - EPISODE FINISHED
-2024-10-24 12:10:02,895 - INFO - EPISODE START
-2024-10-24 12:10:06,378 - INFO - The reward for episode 7 is: 91265930.0
-2024-10-24 12:10:06,378 - INFO - The UAV has visited 20 nodes in episode 7
-2024-10-24 12:10:06,378 - INFO - The UAV has visited the nodes: [0, 5, 2, 8, 4, 2, 5, 1, 5, 7, 3, 8, 8, 2, 1, 6, 6, 7, 8, 4]
-2024-10-24 12:10:06,378 - INFO - EPISODE FINISHED
-2024-10-24 12:10:06,378 - INFO - EPISODE START
-2024-10-24 12:10:09,597 - INFO - The reward for episode 8 is: 81717380.0
-2024-10-24 12:10:09,597 - INFO - The UAV has visited 20 nodes in episode 8
-2024-10-24 12:10:09,597 - INFO - The UAV has visited the nodes: [0, 5, 3, 2, 3, 8, 0, 5, 9, 1, 6, 2, 6, 8, 5, 4, 4, 6, 1, 1]
-2024-10-24 12:10:09,597 - INFO - EPISODE FINISHED
-2024-10-24 12:10:09,598 - INFO - EPISODE START
-2024-10-24 12:10:12,850 - INFO - The reward for episode 9 is: 66208816.0
-2024-10-24 12:10:12,851 - INFO - The UAV has visited 20 nodes in episode 9
-2024-10-24 12:10:12,851 - INFO - The UAV has visited the nodes: [0, 2, 8, 2, 4, 5, 5, 5, 5, 8, 3, 3, 6, 1, 0, 9, 0, 7, 7, 3]
-2024-10-24 12:10:12,851 - INFO - EPISODE FINISHED
-2024-10-24 12:10:12,851 - INFO - EPISODE START
-2024-10-24 12:10:16,098 - INFO - The reward for episode 10 is: 66509188.0
-2024-10-24 12:10:16,098 - INFO - The UAV has visited 20 nodes in episode 10
-2024-10-24 12:10:16,098 - INFO - The UAV has visited the nodes: [0, 7, 3, 3, 9, 7, 6, 1, 1, 9, 2, 5, 7, 8, 4, 5, 3, 4, 1, 0]
-2024-10-24 12:10:16,098 - INFO - EPISODE FINISHED
-2024-10-24 12:10:16,098 - INFO - EPISODE START
-2024-10-24 12:10:19,355 - INFO - The reward for episode 11 is: 56637588.0
-2024-10-24 12:10:19,356 - INFO - The UAV has visited 20 nodes in episode 11
-2024-10-24 12:10:19,356 - INFO - The UAV has visited the nodes: [0, 6, 5, 7, 7, 3, 0, 9, 8, 9, 5, 4, 4, 1, 8, 8, 3, 0, 4, 9]
-2024-10-24 12:10:19,356 - INFO - EPISODE FINISHED
-2024-10-24 12:10:19,356 - INFO - EPISODE START
-2024-10-24 12:10:22,771 - INFO - The reward for episode 12 is: 54194824.0
-2024-10-24 12:10:22,771 - INFO - The UAV has visited 20 nodes in episode 12
-2024-10-24 12:10:22,771 - INFO - The UAV has visited the nodes: [0, 1, 1, 0, 4, 9, 6, 8, 5, 3, 5, 0, 3, 6, 6, 1, 6, 5, 2, 4]
-2024-10-24 12:10:22,771 - INFO - EPISODE FINISHED
-2024-10-24 12:10:22,771 - INFO - EPISODE START
-2024-10-24 12:10:25,890 - INFO - The reward for episode 13 is: 49605492.0
-2024-10-24 12:10:25,890 - INFO - The UAV has visited 20 nodes in episode 13
-2024-10-24 12:10:25,890 - INFO - The UAV has visited the nodes: [0, 7, 7, 6, 5, 8, 3, 2, 0, 4, 4, 6, 2, 3, 4, 4, 4, 1, 8, 9]
-2024-10-24 12:10:25,890 - INFO - EPISODE FINISHED
-2024-10-24 12:10:25,891 - INFO - EPISODE START
-2024-10-24 12:10:29,213 - INFO - The reward for episode 14 is: 47392490.0
-2024-10-24 12:10:29,213 - INFO - The UAV has visited 20 nodes in episode 14
-2024-10-24 12:10:29,213 - INFO - The UAV has visited the nodes: [0, 2, 3, 6, 0, 3, 9, 9, 5, 5, 9, 3, 2, 6, 1, 6, 3, 4, 9, 5]
-2024-10-24 12:10:29,213 - INFO - EPISODE FINISHED
-2024-10-24 12:10:29,214 - INFO - EPISODE START
-2024-10-24 12:10:32,597 - INFO - The reward for episode 15 is: 45492548.0
-2024-10-24 12:10:32,597 - INFO - The UAV has visited 20 nodes in episode 15
-2024-10-24 12:10:32,597 - INFO - The UAV has visited the nodes: [0, 4, 2, 9, 1, 9, 0, 6, 2, 8, 6, 7, 2, 8, 1, 6, 3, 4, 3, 0]
-2024-10-24 12:10:32,597 - INFO - EPISODE FINISHED
-2024-10-24 12:10:32,598 - INFO - EPISODE START
-2024-10-24 12:10:36,124 - INFO - The reward for episode 16 is: 42174276.0
-2024-10-24 12:10:36,124 - INFO - The UAV has visited 20 nodes in episode 16
-2024-10-24 12:10:36,124 - INFO - The UAV has visited the nodes: [0, 4, 6, 2, 0, 7, 0, 1, 3, 7, 6, 2, 5, 8, 5, 1, 2, 4, 2, 9]
-2024-10-24 12:10:36,124 - INFO - EPISODE FINISHED
-2024-10-24 12:10:36,124 - INFO - EPISODE START
-2024-10-24 12:10:39,404 - INFO - The reward for episode 17 is: 40570364.0
-2024-10-24 12:10:39,405 - INFO - The UAV has visited 20 nodes in episode 17
-2024-10-24 12:10:39,405 - INFO - The UAV has visited the nodes: [0, 2, 6, 3, 9, 0, 6, 6, 0, 7, 1, 7, 5, 7, 8, 5, 8, 2, 9, 9]
-2024-10-24 12:10:39,405 - INFO - EPISODE FINISHED
-2024-10-24 12:10:39,405 - INFO - EPISODE START
-2024-10-24 12:10:42,818 - INFO - The reward for episode 18 is: 38158940.0
-2024-10-24 12:10:42,818 - INFO - The UAV has visited 20 nodes in episode 18
-2024-10-24 12:10:42,818 - INFO - The UAV has visited the nodes: [0, 5, 6, 5, 3, 0, 5, 2, 0, 5, 5, 9, 9, 0, 6, 5, 3, 9, 1, 7]
-2024-10-24 12:10:42,818 - INFO - EPISODE FINISHED
-2024-10-24 12:10:42,819 - INFO - EPISODE START
-2024-10-24 12:10:46,117 - INFO - The reward for episode 19 is: 39163056.0
-2024-10-24 12:10:46,117 - INFO - The UAV has visited 20 nodes in episode 19
-2024-10-24 12:10:46,117 - INFO - The UAV has visited the nodes: [0, 3, 9, 6, 7, 7, 8, 0, 8, 3, 2, 4, 4, 9, 0, 0, 8, 3, 3, 2]
-2024-10-24 12:10:46,117 - INFO - EPISODE FINISHED
-2024-10-24 12:10:46,117 - INFO - EPISODE START
-2024-10-24 12:10:49,461 - INFO - The reward for episode 20 is: 38328890.0
-2024-10-24 12:10:49,461 - INFO - The UAV has visited 20 nodes in episode 20
-2024-10-24 12:10:49,461 - INFO - The UAV has visited the nodes: [0, 5, 8, 5, 9, 7, 1, 8, 8, 8, 9, 1, 8, 4, 6, 9, 3, 9, 7, 4]
-2024-10-24 12:10:49,461 - INFO - EPISODE FINISHED
-2024-10-24 12:10:49,461 - INFO - EPISODE START
-2024-10-24 12:10:52,624 - INFO - The reward for episode 21 is: 37969148.0
-2024-10-24 12:10:52,625 - INFO - The UAV has visited 20 nodes in episode 21
-2024-10-24 12:10:52,625 - INFO - The UAV has visited the nodes: [0, 2, 6, 7, 1, 7, 4, 9, 1, 1, 7, 5, 3, 7, 7, 2, 5, 6, 1, 8]
-2024-10-24 12:10:52,625 - INFO - EPISODE FINISHED
-2024-10-24 12:10:52,625 - INFO - EPISODE START
-2024-10-24 12:10:55,704 - INFO - The reward for episode 22 is: 37527724.0
-2024-10-24 12:10:55,704 - INFO - The UAV has visited 20 nodes in episode 22
-2024-10-24 12:10:55,704 - INFO - The UAV has visited the nodes: [0, 2, 4, 8, 8, 2, 8, 4, 3, 8, 2, 3, 3, 9, 6, 3, 1, 4, 7, 7]
-2024-10-24 12:10:55,704 - INFO - EPISODE FINISHED
-2024-10-24 12:10:55,704 - INFO - EPISODE START
-2024-10-24 12:10:58,574 - INFO - The reward for episode 23 is: 36859256.0
-2024-10-24 12:10:58,574 - INFO - The UAV has visited 20 nodes in episode 23
-2024-10-24 12:10:58,574 - INFO - The UAV has visited the nodes: [0, 3, 1, 5, 9, 7, 2, 5, 7, 4, 0, 1, 4, 6, 1, 4, 9, 7, 6, 4]
-2024-10-24 12:10:58,574 - INFO - EPISODE FINISHED
-2024-10-24 12:10:58,575 - INFO - EPISODE START
-2024-10-24 12:11:01,671 - INFO - The reward for episode 24 is: 36577350.0
-2024-10-24 12:11:01,671 - INFO - The UAV has visited 20 nodes in episode 24
-2024-10-24 12:11:01,671 - INFO - The UAV has visited the nodes: [0, 2, 2, 9, 0, 8, 1, 5, 9, 7, 3, 0, 8, 4, 3, 5, 9, 1, 3, 9]
-2024-10-24 12:11:01,671 - INFO - EPISODE FINISHED
-2024-10-24 12:11:01,671 - INFO - EPISODE START
-2024-10-24 12:11:04,858 - INFO - The reward for episode 25 is: 36305050.0
-2024-10-24 12:11:04,858 - INFO - The UAV has visited 20 nodes in episode 25
-2024-10-24 12:11:04,858 - INFO - The UAV has visited the nodes: [0, 5, 3, 8, 4, 6, 4, 0, 8, 3, 8, 0, 7, 4, 5, 5, 0, 9, 5, 3]
-2024-10-24 12:11:04,858 - INFO - EPISODE FINISHED
-2024-10-24 12:11:04,858 - INFO - EPISODE START
-2024-10-24 12:11:08,107 - INFO - The reward for episode 26 is: 36317460.0
-2024-10-24 12:11:08,107 - INFO - The UAV has visited 20 nodes in episode 26
-2024-10-24 12:11:08,107 - INFO - The UAV has visited the nodes: [0, 4, 6, 4, 8, 4, 7, 8, 9, 9, 1, 1, 2, 0, 0, 9, 7, 6, 2, 6]
-2024-10-24 12:11:08,107 - INFO - EPISODE FINISHED
-2024-10-24 12:11:08,107 - INFO - EPISODE START
-2024-10-24 12:11:11,586 - INFO - The reward for episode 27 is: 36024296.0
-2024-10-24 12:11:11,586 - INFO - The UAV has visited 20 nodes in episode 27
-2024-10-24 12:11:11,586 - INFO - The UAV has visited the nodes: [0, 3, 5, 0, 9, 9, 9, 7, 2, 1, 5, 7, 1, 3, 3, 8, 0, 4, 2, 0]
-2024-10-24 12:11:11,586 - INFO - EPISODE FINISHED
-2024-10-24 12:11:11,586 - INFO - EPISODE START
-2024-10-24 12:11:14,942 - INFO - The reward for episode 28 is: 35959124.0
-2024-10-24 12:11:14,942 - INFO - The UAV has visited 20 nodes in episode 28
-2024-10-24 12:11:14,942 - INFO - The UAV has visited the nodes: [0, 8, 1, 3, 8, 7, 9, 8, 8, 0, 7, 5, 5, 1, 1, 8, 3, 6, 7, 9]
-2024-10-24 12:11:14,942 - INFO - EPISODE FINISHED
-2024-10-24 12:11:14,943 - INFO - EPISODE START
-2024-10-24 12:11:18,279 - INFO - The reward for episode 29 is: 35946790.0
-2024-10-24 12:11:18,279 - INFO - The UAV has visited 20 nodes in episode 29
-2024-10-24 12:11:18,279 - INFO - The UAV has visited the nodes: [0, 1, 9, 1, 6, 8, 4, 0, 7, 9, 7, 2, 9, 8, 1, 0, 2, 5, 6, 1]
-2024-10-24 12:11:18,279 - INFO - EPISODE FINISHED
-2024-10-24 12:11:18,279 - INFO - The rewards per episode are: [Array(3.4792506e+08, dtype=float32), Array(2.6288189e+08, dtype=float32), Array(2.2149035e+08, dtype=float32), Array(1.6168342e+08, dtype=float32), Array(1.4923205e+08, dtype=float32), Array(1.25566344e+08, dtype=float32), Array(1.12562936e+08, dtype=float32), Array(91265928., dtype=float32), Array(81717376., dtype=float32), Array(66208816., dtype=float32), Array(66509188., dtype=float32), Array(56637588., dtype=float32), Array(54194824., dtype=float32), Array(49605492., dtype=float32), Array(47392488., dtype=float32), Array(45492548., dtype=float32), Array(42174276., dtype=float32), Array(40570364., dtype=float32), Array(38158940., dtype=float32), Array(39163056., dtype=float32), Array(38328888., dtype=float32), Array(37969148., dtype=float32), Array(37527724., dtype=float32), Array(36859256., dtype=float32), Array(36577352., dtype=float32), Array(36305048., dtype=float32), Array(36317460., dtype=float32), Array(36024296., dtype=float32), Array(35959124., dtype=float32), Array(35946792., dtype=float32)]
-2024-10-24 12:11:18,281 - INFO - Q Table is: [[6225714.5 5397913.  4123050.  4636695.  5910900.5 7029639.  5898427.
-  5466158.  4827434.  6650310. ]
- [5895834.5 4553735.  2513641.  3441277.8 1630146.9 4284681.5 3765661.8
-  1910701.1 4854214.5 1945072.5]
- [4786653.  2917557.5 2120860.5 3603159.8 3415810.  4715103.5 3034216.2
-   806003.1 3260791.5 3269298. ]
- [5407149.5 1982562.8 2293993.5 2705975.8 3238475.8 2094162.8 3905167.2
-  2991006.5 4337796.  4054132.8]
- [4968850.  2371994.5 1960438.6 1886178.8 3335261.  4491323.  4521381.
-  2037127.5 2118294.5 3389265.2]
- [6285080.5 3635497.2 4089853.  3876012.5 2810180.  5547416.5 3396660.
-  4410544.5 4317574.5 5108418.5]
- [5292309.5 4562336.  2704123.2 2313692.  3260330.2 4476782.  3078050.
-  3530082.5 1945452.2 1841059.5]
- [2496775.2 2545615.5 4082620.2 3182044.  2653795.  3761410.  3883948.2
-  4086415.5 3013818.2 4485919.5]
- [5108509.5 2570311.2 4328511.  3590760.5 4077802.2 4898628.  2852484.5
-  2172532.2 3274705.8 3675534. ]
- [5911420.  5815416.5 1034499.2 3044207.2       0.  3853229.5 2684923.8
-  3886193.8 2470831.5 4149471.2]]
-2024-10-24 12:11:18,323 - INFO - Mean reward per episode: 82274936.0
-2024-10-24 12:11:18,334 - INFO - Max reward: 347925060.0
-2024-10-24 12:11:18,353 - INFO - The UAV energy level is: 16814498.0
-2024-10-24 12:11:18,353 - INFO - The UAV processed in total: 31920130.0 bits
-2024-10-24 12:11:18,353 - INFO - Q-Brave Algorithm took: 97.73187828063965 seconds
-2024-10-24 12:11:18,353 - INFO - Q-Brave Algorithm has successfully reached the final node!
+2024-10-24 14:18:23,625 - INFO - Running the Q-Brave Algorithm
+2024-10-24 14:18:23,635 - INFO - EPISODE START
+2024-10-24 14:18:27,663 - INFO - The reward for episode 0 is: 319563360.0
+2024-10-24 14:18:27,663 - INFO - The UAV has visited 20 nodes in episode 0
+2024-10-24 14:18:27,664 - INFO - The UAV has visited the nodes: [0, 8, 5, 3, 6, 5, 5, 4, 3, 4, 1, 3, 7, 2, 5, 9, 0, 2, 7, 6]
+2024-10-24 14:18:27,664 - INFO - EPISODE FINISHED
+2024-10-24 14:18:27,664 - INFO - EPISODE START
+2024-10-24 14:18:30,840 - INFO - The reward for episode 1 is: 257264290.0
+2024-10-24 14:18:30,840 - INFO - The UAV has visited 20 nodes in episode 1
+2024-10-24 14:18:30,840 - INFO - The UAV has visited the nodes: [0, 0, 2, 0, 8, 9, 9, 4, 3, 5, 4, 6, 3, 7, 5, 5, 3, 6, 5, 6]
+2024-10-24 14:18:30,840 - INFO - EPISODE FINISHED
+2024-10-24 14:18:30,840 - INFO - EPISODE START
+2024-10-24 14:18:34,144 - INFO - The reward for episode 2 is: 187089780.0
+2024-10-24 14:18:34,144 - INFO - The UAV has visited 20 nodes in episode 2
+2024-10-24 14:18:34,144 - INFO - The UAV has visited the nodes: [0, 2, 2, 9, 6, 3, 5, 6, 2, 7, 4, 9, 5, 6, 4, 5, 5, 8, 2, 6]
+2024-10-24 14:18:34,144 - INFO - EPISODE FINISHED
+2024-10-24 14:18:34,145 - INFO - EPISODE START
+2024-10-24 14:18:37,980 - INFO - The reward for episode 3 is: 168585840.0
+2024-10-24 14:18:37,981 - INFO - The UAV has visited 20 nodes in episode 3
+2024-10-24 14:18:37,981 - INFO - The UAV has visited the nodes: [0, 1, 6, 1, 6, 5, 4, 7, 6, 0, 7, 5, 8, 6, 7, 2, 6, 6, 7, 3]
+2024-10-24 14:18:37,981 - INFO - EPISODE FINISHED
+2024-10-24 14:18:37,981 - INFO - EPISODE START
+2024-10-24 14:18:41,420 - INFO - The reward for episode 4 is: 124980850.0
+2024-10-24 14:18:41,420 - INFO - The UAV has visited 20 nodes in episode 4
+2024-10-24 14:18:41,420 - INFO - The UAV has visited the nodes: [0, 2, 6, 7, 6, 9, 4, 6, 5, 3, 9, 1, 5, 4, 7, 1, 0, 7, 9, 5]
+2024-10-24 14:18:41,420 - INFO - EPISODE FINISHED
+2024-10-24 14:18:41,421 - INFO - EPISODE START
+2024-10-24 14:18:44,468 - INFO - The reward for episode 5 is: 147478940.0
+2024-10-24 14:18:44,468 - INFO - The UAV has visited 20 nodes in episode 5
+2024-10-24 14:18:44,468 - INFO - The UAV has visited the nodes: [0, 8, 8, 0, 8, 8, 7, 3, 0, 6, 3, 0, 2, 9, 1, 2, 2, 1, 0, 2]
+2024-10-24 14:18:44,468 - INFO - EPISODE FINISHED
+2024-10-24 14:18:44,468 - INFO - EPISODE START
+2024-10-24 14:18:47,663 - INFO - The reward for episode 6 is: 96649600.0
+2024-10-24 14:18:47,663 - INFO - The UAV has visited 20 nodes in episode 6
+2024-10-24 14:18:47,663 - INFO - The UAV has visited the nodes: [0, 6, 3, 3, 7, 6, 9, 0, 6, 8, 1, 9, 3, 1, 1, 2, 8, 4, 6, 0]
+2024-10-24 14:18:47,663 - INFO - EPISODE FINISHED
+2024-10-24 14:18:47,663 - INFO - EPISODE START
+2024-10-24 14:18:51,135 - INFO - The reward for episode 7 is: 83734430.0
+2024-10-24 14:18:51,135 - INFO - The UAV has visited 20 nodes in episode 7
+2024-10-24 14:18:51,135 - INFO - The UAV has visited the nodes: [0, 8, 7, 8, 6, 5, 3, 1, 7, 9, 7, 6, 9, 0, 9, 2, 5, 0, 1, 6]
+2024-10-24 14:18:51,135 - INFO - EPISODE FINISHED
+2024-10-24 14:18:51,135 - INFO - EPISODE START
+2024-10-24 14:18:54,272 - INFO - The reward for episode 8 is: 68442480.0
+2024-10-24 14:18:54,272 - INFO - The UAV has visited 20 nodes in episode 8
+2024-10-24 14:18:54,272 - INFO - The UAV has visited the nodes: [0, 3, 0, 6, 7, 7, 6, 2, 7, 1, 3, 3, 9, 6, 4, 3, 5, 0, 1, 4]
+2024-10-24 14:18:54,272 - INFO - EPISODE FINISHED
+2024-10-24 14:18:54,272 - INFO - EPISODE START
+2024-10-24 14:18:57,194 - INFO - The reward for episode 9 is: 67984890.0
+2024-10-24 14:18:57,194 - INFO - The UAV has visited 20 nodes in episode 9
+2024-10-24 14:18:57,194 - INFO - The UAV has visited the nodes: [0, 0, 0, 2, 7, 2, 9, 4, 3, 7, 1, 2, 2, 2, 1, 1, 3, 3, 2, 9]
+2024-10-24 14:18:57,194 - INFO - EPISODE FINISHED
+2024-10-24 14:18:57,194 - INFO - EPISODE START
+2024-10-24 14:19:00,229 - INFO - The reward for episode 10 is: 57897070.0
+2024-10-24 14:19:00,229 - INFO - The UAV has visited 20 nodes in episode 10
+2024-10-24 14:19:00,229 - INFO - The UAV has visited the nodes: [0, 1, 6, 9, 1, 6, 6, 8, 2, 5, 0, 3, 5, 5, 1, 4, 9, 3, 8, 1]
+2024-10-24 14:19:00,229 - INFO - EPISODE FINISHED
+2024-10-24 14:19:00,229 - INFO - EPISODE START
+2024-10-24 14:19:03,499 - INFO - The reward for episode 11 is: 55990492.0
+2024-10-24 14:19:03,499 - INFO - The UAV has visited 20 nodes in episode 11
+2024-10-24 14:19:03,499 - INFO - The UAV has visited the nodes: [0, 5, 3, 1, 4, 0, 1, 7, 2, 1, 1, 8, 8, 7, 6, 0, 8, 7, 8, 6]
+2024-10-24 14:19:03,499 - INFO - EPISODE FINISHED
+2024-10-24 14:19:03,499 - INFO - EPISODE START
+2024-10-24 14:19:06,403 - INFO - The reward for episode 12 is: 55411560.0
+2024-10-24 14:19:06,403 - INFO - The UAV has visited 20 nodes in episode 12
+2024-10-24 14:19:06,403 - INFO - The UAV has visited the nodes: [0, 1, 9, 4, 8, 2, 0, 5, 0, 7, 4, 8, 0, 4, 3, 6, 5, 4, 9, 1]
+2024-10-24 14:19:06,403 - INFO - EPISODE FINISHED
+2024-10-24 14:19:06,404 - INFO - EPISODE START
+2024-10-24 14:19:09,290 - INFO - The reward for episode 13 is: 46632544.0
+2024-10-24 14:19:09,290 - INFO - The UAV has visited 20 nodes in episode 13
+2024-10-24 14:19:09,290 - INFO - The UAV has visited the nodes: [0, 5, 0, 9, 8, 1, 2, 1, 1, 8, 6, 0, 4, 6, 7, 3, 5, 9, 1, 9]
+2024-10-24 14:19:09,290 - INFO - EPISODE FINISHED
+2024-10-24 14:19:09,290 - INFO - EPISODE START
+2024-10-24 14:19:12,305 - INFO - The reward for episode 14 is: 42938340.0
+2024-10-24 14:19:12,305 - INFO - The UAV has visited 20 nodes in episode 14
+2024-10-24 14:19:12,305 - INFO - The UAV has visited the nodes: [0, 0, 9, 0, 6, 6, 2, 0, 0, 4, 6, 9, 7, 8, 5, 5, 0, 3, 6, 6]
+2024-10-24 14:19:12,305 - INFO - EPISODE FINISHED
+2024-10-24 14:19:12,305 - INFO - EPISODE START
+2024-10-24 14:19:15,470 - INFO - The reward for episode 15 is: 42116236.0
+2024-10-24 14:19:15,470 - INFO - The UAV has visited 20 nodes in episode 15
+2024-10-24 14:19:15,470 - INFO - The UAV has visited the nodes: [0, 8, 8, 2, 1, 3, 5, 6, 0, 1, 8, 8, 6, 4, 0, 1, 3, 0, 9, 7]
+2024-10-24 14:19:15,470 - INFO - EPISODE FINISHED
+2024-10-24 14:19:15,470 - INFO - EPISODE START
+2024-10-24 14:19:18,409 - INFO - The reward for episode 16 is: 42867220.0
+2024-10-24 14:19:18,409 - INFO - The UAV has visited 20 nodes in episode 16
+2024-10-24 14:19:18,409 - INFO - The UAV has visited the nodes: [0, 7, 4, 0, 8, 9, 4, 2, 4, 2, 5, 1, 4, 8, 5, 0, 8, 4, 9, 2]
+2024-10-24 14:19:18,410 - INFO - EPISODE FINISHED
+2024-10-24 14:19:18,410 - INFO - EPISODE START
+2024-10-24 14:19:21,395 - INFO - The reward for episode 17 is: 38932400.0
+2024-10-24 14:19:21,396 - INFO - The UAV has visited 20 nodes in episode 17
+2024-10-24 14:19:21,396 - INFO - The UAV has visited the nodes: [0, 3, 2, 3, 7, 5, 2, 7, 4, 7, 0, 6, 6, 0, 2, 2, 9, 9, 4, 4]
+2024-10-24 14:19:21,396 - INFO - EPISODE FINISHED
+2024-10-24 14:19:21,396 - INFO - EPISODE START
+2024-10-24 14:19:24,609 - INFO - The reward for episode 18 is: 37639504.0
+2024-10-24 14:19:24,610 - INFO - The UAV has visited 20 nodes in episode 18
+2024-10-24 14:19:24,610 - INFO - The UAV has visited the nodes: [0, 6, 8, 7, 2, 8, 9, 7, 4, 3, 1, 0, 6, 0, 3, 4, 9, 4, 6, 7]
+2024-10-24 14:19:24,610 - INFO - EPISODE FINISHED
+2024-10-24 14:19:24,610 - INFO - EPISODE START
+2024-10-24 14:19:27,837 - INFO - The reward for episode 19 is: 36162324.0
+2024-10-24 14:19:27,837 - INFO - The UAV has visited 20 nodes in episode 19
+2024-10-24 14:19:27,837 - INFO - The UAV has visited the nodes: [0, 6, 3, 2, 7, 5, 7, 9, 7, 3, 7, 6, 3, 5, 8, 8, 5, 6, 2, 3]
+2024-10-24 14:19:27,837 - INFO - EPISODE FINISHED
+2024-10-24 14:19:27,838 - INFO - EPISODE START
+2024-10-24 14:19:31,016 - INFO - The reward for episode 20 is: 35796176.0
+2024-10-24 14:19:31,016 - INFO - The UAV has visited 20 nodes in episode 20
+2024-10-24 14:19:31,016 - INFO - The UAV has visited the nodes: [0, 3, 3, 8, 5, 1, 8, 2, 1, 8, 0, 2, 1, 9, 0, 0, 1, 2, 6, 1]
+2024-10-24 14:19:31,016 - INFO - EPISODE FINISHED
+2024-10-24 14:19:31,016 - INFO - EPISODE START
+2024-10-24 14:19:34,291 - INFO - The reward for episode 21 is: 35066370.0
+2024-10-24 14:19:34,291 - INFO - The UAV has visited 20 nodes in episode 21
+2024-10-24 14:19:34,291 - INFO - The UAV has visited the nodes: [0, 9, 7, 5, 8, 4, 8, 6, 2, 6, 1, 0, 2, 7, 6, 9, 0, 3, 0, 2]
+2024-10-24 14:19:34,291 - INFO - EPISODE FINISHED
+2024-10-24 14:19:34,291 - INFO - EPISODE START
+2024-10-24 14:19:37,647 - INFO - The reward for episode 22 is: 34957504.0
+2024-10-24 14:19:37,647 - INFO - The UAV has visited 20 nodes in episode 22
+2024-10-24 14:19:37,647 - INFO - The UAV has visited the nodes: [0, 4, 4, 3, 3, 3, 5, 3, 1, 9, 1, 5, 8, 6, 3, 8, 4, 1, 8, 7]
+2024-10-24 14:19:37,647 - INFO - EPISODE FINISHED
+2024-10-24 14:19:37,647 - INFO - EPISODE START
+2024-10-24 14:19:40,689 - INFO - The reward for episode 23 is: 33980050.0
+2024-10-24 14:19:40,689 - INFO - The UAV has visited 20 nodes in episode 23
+2024-10-24 14:19:40,689 - INFO - The UAV has visited the nodes: [0, 6, 2, 5, 7, 2, 4, 1, 2, 1, 6, 1, 0, 7, 4, 9, 0, 7, 2, 5]
+2024-10-24 14:19:40,689 - INFO - EPISODE FINISHED
+2024-10-24 14:19:40,689 - INFO - EPISODE START
+2024-10-24 14:19:43,997 - INFO - The reward for episode 24 is: 34002404.0
+2024-10-24 14:19:43,997 - INFO - The UAV has visited 20 nodes in episode 24
+2024-10-24 14:19:43,997 - INFO - The UAV has visited the nodes: [0, 9, 0, 7, 2, 4, 5, 5, 9, 2, 7, 8, 0, 6, 4, 4, 4, 3, 8, 6]
+2024-10-24 14:19:43,997 - INFO - EPISODE FINISHED
+2024-10-24 14:19:43,997 - INFO - EPISODE START
+2024-10-24 14:19:47,055 - INFO - The reward for episode 25 is: 33634360.0
+2024-10-24 14:19:47,055 - INFO - The UAV has visited 20 nodes in episode 25
+2024-10-24 14:19:47,055 - INFO - The UAV has visited the nodes: [0, 9, 2, 9, 0, 8, 6, 4, 9, 5, 2, 9, 6, 4, 5, 5, 4, 1, 2, 8]
+2024-10-24 14:19:47,055 - INFO - EPISODE FINISHED
+2024-10-24 14:19:47,055 - INFO - EPISODE START
+2024-10-24 14:19:49,975 - INFO - The reward for episode 26 is: 33223468.0
+2024-10-24 14:19:49,975 - INFO - The UAV has visited 20 nodes in episode 26
+2024-10-24 14:19:49,975 - INFO - The UAV has visited the nodes: [0, 1, 5, 3, 4, 9, 5, 0, 0, 9, 6, 6, 5, 3, 1, 6, 0, 4, 2, 1]
+2024-10-24 14:19:49,975 - INFO - EPISODE FINISHED
+2024-10-24 14:19:49,975 - INFO - EPISODE START
+2024-10-24 14:19:52,833 - INFO - The reward for episode 27 is: 33006948.0
+2024-10-24 14:19:52,833 - INFO - The UAV has visited 20 nodes in episode 27
+2024-10-24 14:19:52,833 - INFO - The UAV has visited the nodes: [0, 2, 7, 2, 0, 0, 4, 3, 9, 1, 6, 5, 6, 6, 3, 7, 8, 7, 9, 0]
+2024-10-24 14:19:52,833 - INFO - EPISODE FINISHED
+2024-10-24 14:19:52,833 - INFO - EPISODE START
+2024-10-24 14:19:55,964 - INFO - The reward for episode 28 is: 32970894.0
+2024-10-24 14:19:55,964 - INFO - The UAV has visited 20 nodes in episode 28
+2024-10-24 14:19:55,964 - INFO - The UAV has visited the nodes: [0, 4, 3, 9, 0, 4, 1, 5, 3, 7, 1, 0, 8, 6, 0, 4, 4, 4, 4, 5]
+2024-10-24 14:19:55,964 - INFO - EPISODE FINISHED
+2024-10-24 14:19:55,964 - INFO - EPISODE START
+2024-10-24 14:19:59,049 - INFO - The reward for episode 29 is: 32836540.0
+2024-10-24 14:19:59,050 - INFO - The UAV has visited 20 nodes in episode 29
+2024-10-24 14:19:59,050 - INFO - The UAV has visited the nodes: [0, 2, 9, 3, 2, 3, 8, 1, 6, 5, 0, 7, 7, 3, 0, 3, 5, 3, 4, 9]
+2024-10-24 14:19:59,050 - INFO - EPISODE FINISHED
+2024-10-24 14:19:59,050 - INFO - The rewards per episode are: [Array(3.1956336e+08, dtype=float32), Array(2.5726429e+08, dtype=float32), Array(1.8708978e+08, dtype=float32), Array(1.6858584e+08, dtype=float32), Array(1.2498085e+08, dtype=float32), Array(1.4747894e+08, dtype=float32), Array(96649600., dtype=float32), Array(83734432., dtype=float32), Array(68442480., dtype=float32), Array(67984888., dtype=float32), Array(57897072., dtype=float32), Array(55990492., dtype=float32), Array(55411560., dtype=float32), Array(46632544., dtype=float32), Array(42938340., dtype=float32), Array(42116236., dtype=float32), Array(42867220., dtype=float32), Array(38932400., dtype=float32), Array(37639504., dtype=float32), Array(36162324., dtype=float32), Array(35796176., dtype=float32), Array(35066368., dtype=float32), Array(34957504., dtype=float32), Array(33980048., dtype=float32), Array(34002404., dtype=float32), Array(33634360., dtype=float32), Array(33223468., dtype=float32), Array(33006948., dtype=float32), Array(32970894., dtype=float32), Array(32836540., dtype=float32)]
+2024-10-24 14:19:59,052 - INFO - Q Table is: [[5953356.  4460487.  6751510.  5545701.5 4824416.5 2598867.8 5816294.
+  4929606.5 4487709.5 4887762. ]
+ [4746664.5 2390298.5 4386547.  3851840.8 2396984.  2798356.8 4578965.
+  1519110.8 2584655.  2813860.2]
+ [2871344.2 3879390.8 3676770.  1848686.  1685625.  4531705.  4315110.5
+  5808830.  1884283.4 4533582.5]
+ [4287230.  2908502.8 2537827.  3361255.5 2985701.  5015129.5 3917577.2
+  5525682.5 2505893.5 2737739.8]
+ [2235075.  3115258.8 1885390.2 5192327.  3413026.5 3211087.5 4443569.
+  2694883.8 1927369.2 4812086. ]
+ [5417775.5 1636606.8 1312434.8 5255979.  4654986.  5570717.  5269173.
+  1393044.  3453702.  3304728.5]
+ [5567519.  2026490.5 3484779.2 4747087.  3623778.5 5750145.  4247145.
+  4617490.  1456228.8 3119924. ]
+ [ 816608.7 2501354.5 5400261.  3776218.  3264023.  4269253.  5822661.
+  1417467.9 2424081.5 2922850.5]
+ [2885501.8 2302556.8 3657831.        0.  2492341.5 2801026.  4998642.5
+  4177974.5 2653551.  2070991.5]
+ [6435399.5 3658820.5 2645768.8 2262044.2 3620937.5 3730608.2 2653225.
+  3600427.5  494113.9 1750092.1]]
+2024-10-24 14:19:59,093 - INFO - Mean reward per episode: 77261240.0
+2024-10-24 14:19:59,105 - INFO - Max reward: 319563360.0
+2024-10-24 14:19:59,122 - INFO - The UAV energy level is: 16476305.0
+2024-10-24 14:19:59,122 - INFO - The UAV processed in total: 29909176.0 bits
+2024-10-24 14:19:59,122 - INFO - Q-Brave Algorithm took: 95.49730014801025 seconds
+2024-10-24 14:19:59,122 - INFO - Q-Brave Algorithm has successfully reached the final node!
+2024-10-24 14:20:09,834 - INFO - Running the Q-Brave Algorithm
+2024-10-24 14:20:09,835 - INFO - EPISODE START
+2024-10-24 14:20:12,452 - INFO - The reward for episode 0 is: 382177180.0
+2024-10-24 14:20:12,452 - INFO - The UAV has visited 20 nodes in episode 0
+2024-10-24 14:20:12,452 - INFO - The UAV has visited the nodes: [0, 6, 5, 9, 1, 5, 5, 6, 0, 4, 8, 8, 2, 4, 1, 4, 2, 0, 8, 8]
+2024-10-24 14:20:12,452 - INFO - EPISODE FINISHED
+2024-10-24 14:20:12,452 - INFO - EPISODE START
+2024-10-24 14:20:15,090 - INFO - The reward for episode 1 is: 302716480.0
+2024-10-24 14:20:15,090 - INFO - The UAV has visited 20 nodes in episode 1
+2024-10-24 14:20:15,090 - INFO - The UAV has visited the nodes: [0, 4, 7, 8, 3, 4, 1, 7, 1, 0, 1, 5, 0, 9, 7, 8, 6, 3, 3, 8]
+2024-10-24 14:20:15,090 - INFO - EPISODE FINISHED
+2024-10-24 14:20:15,091 - INFO - EPISODE START
+2024-10-24 14:20:17,914 - INFO - The reward for episode 2 is: 210023820.0
+2024-10-24 14:20:17,914 - INFO - The UAV has visited 20 nodes in episode 2
+2024-10-24 14:20:17,914 - INFO - The UAV has visited the nodes: [0, 7, 8, 1, 3, 7, 8, 8, 8, 5, 5, 6, 1, 4, 6, 8, 0, 8, 3, 9]
+2024-10-24 14:20:17,914 - INFO - EPISODE FINISHED
+2024-10-24 14:20:17,914 - INFO - EPISODE START
+2024-10-24 14:20:21,529 - INFO - The reward for episode 3 is: 195095090.0
+2024-10-24 14:20:21,529 - INFO - The UAV has visited 20 nodes in episode 3
+2024-10-24 14:20:21,529 - INFO - The UAV has visited the nodes: [0, 3, 9, 1, 0, 5, 6, 1, 1, 5, 1, 5, 9, 4, 4, 0, 0, 4, 4, 9]
+2024-10-24 14:20:21,530 - INFO - EPISODE FINISHED
+2024-10-24 14:20:21,530 - INFO - EPISODE START
+2024-10-24 14:20:24,664 - INFO - The reward for episode 4 is: 182300180.0
+2024-10-24 14:20:24,664 - INFO - The UAV has visited 20 nodes in episode 4
+2024-10-24 14:20:24,664 - INFO - The UAV has visited the nodes: [0, 6, 6, 2, 8, 3, 5, 9, 1, 2, 4, 6, 9, 8, 2, 7, 5, 9, 9, 5]
+2024-10-24 14:20:24,664 - INFO - EPISODE FINISHED
+2024-10-24 14:20:24,665 - INFO - EPISODE START
+2024-10-24 14:20:28,150 - INFO - The reward for episode 5 is: 139848750.0
+2024-10-24 14:20:28,150 - INFO - The UAV has visited 20 nodes in episode 5
+2024-10-24 14:20:28,150 - INFO - The UAV has visited the nodes: [0, 4, 5, 9, 9, 7, 0, 5, 2, 3, 0, 1, 3, 1, 9, 2, 0, 9, 4, 8]
+2024-10-24 14:20:28,150 - INFO - EPISODE FINISHED
+2024-10-24 14:20:28,150 - INFO - EPISODE START
+2024-10-24 14:20:31,519 - INFO - The reward for episode 6 is: 102070380.0
+2024-10-24 14:20:31,519 - INFO - The UAV has visited 20 nodes in episode 6
+2024-10-24 14:20:31,519 - INFO - The UAV has visited the nodes: [0, 5, 9, 2, 8, 5, 0, 1, 9, 7, 9, 4, 9, 1, 0, 4, 8, 1, 1, 5]
+2024-10-24 14:20:31,519 - INFO - EPISODE FINISHED
+2024-10-24 14:20:31,519 - INFO - EPISODE START
+2024-10-24 14:20:34,833 - INFO - The reward for episode 7 is: 110204910.0
+2024-10-24 14:20:34,833 - INFO - The UAV has visited 20 nodes in episode 7
+2024-10-24 14:20:34,834 - INFO - The UAV has visited the nodes: [0, 6, 3, 4, 3, 9, 5, 5, 9, 2, 3, 2, 1, 0, 2, 3, 7, 0, 6, 1]
+2024-10-24 14:20:34,834 - INFO - EPISODE FINISHED
+2024-10-24 14:20:34,834 - INFO - EPISODE START
+2024-10-24 14:20:38,064 - INFO - The reward for episode 8 is: 86600024.0
+2024-10-24 14:20:38,064 - INFO - The UAV has visited 20 nodes in episode 8
+2024-10-24 14:20:38,064 - INFO - The UAV has visited the nodes: [0, 4, 1, 0, 6, 8, 5, 7, 8, 9, 7, 9, 5, 2, 7, 2, 6, 3, 4, 8]
+2024-10-24 14:20:38,064 - INFO - EPISODE FINISHED
+2024-10-24 14:20:38,065 - INFO - EPISODE START
+2024-10-24 14:20:41,047 - INFO - The reward for episode 9 is: 75818180.0
+2024-10-24 14:20:41,047 - INFO - The UAV has visited 20 nodes in episode 9
+2024-10-24 14:20:41,047 - INFO - The UAV has visited the nodes: [0, 9, 0, 6, 9, 6, 2, 8, 6, 4, 2, 2, 1, 6, 9, 6, 1, 7, 5, 5]
+2024-10-24 14:20:41,047 - INFO - EPISODE FINISHED
+2024-10-24 14:20:41,047 - INFO - EPISODE START
+2024-10-24 14:20:43,900 - INFO - The reward for episode 10 is: 64704356.0
+2024-10-24 14:20:43,900 - INFO - The UAV has visited 20 nodes in episode 10
+2024-10-24 14:20:43,900 - INFO - The UAV has visited the nodes: [0, 1, 7, 7, 1, 6, 8, 8, 8, 6, 8, 0, 8, 2, 9, 8, 4, 4, 5, 5]
+2024-10-24 14:20:43,900 - INFO - EPISODE FINISHED
+2024-10-24 14:20:43,901 - INFO - EPISODE START
+2024-10-24 14:20:46,941 - INFO - The reward for episode 11 is: 64488080.0
+2024-10-24 14:20:46,941 - INFO - The UAV has visited 20 nodes in episode 11
+2024-10-24 14:20:46,941 - INFO - The UAV has visited the nodes: [0, 8, 1, 8, 2, 2, 7, 7, 4, 7, 3, 7, 4, 6, 0, 2, 4, 6, 7, 0]
+2024-10-24 14:20:46,941 - INFO - EPISODE FINISHED
+2024-10-24 14:20:46,941 - INFO - EPISODE START
+2024-10-24 14:20:49,867 - INFO - The reward for episode 12 is: 58876090.0
+2024-10-24 14:20:49,867 - INFO - The UAV has visited 20 nodes in episode 12
+2024-10-24 14:20:49,867 - INFO - The UAV has visited the nodes: [0, 4, 4, 0, 4, 9, 3, 3, 7, 3, 8, 5, 0, 6, 6, 6, 9, 0, 2, 5]
+2024-10-24 14:20:49,867 - INFO - EPISODE FINISHED
+2024-10-24 14:20:49,868 - INFO - EPISODE START
+2024-10-24 14:20:52,928 - INFO - The reward for episode 13 is: 54272630.0
+2024-10-24 14:20:52,928 - INFO - The UAV has visited 20 nodes in episode 13
+2024-10-24 14:20:52,928 - INFO - The UAV has visited the nodes: [0, 3, 2, 7, 1, 6, 7, 0, 1, 8, 6, 9, 3, 8, 5, 1, 2, 2, 4, 1]
+2024-10-24 14:20:52,928 - INFO - EPISODE FINISHED
+2024-10-24 14:20:52,929 - INFO - EPISODE START
+2024-10-24 14:20:55,818 - INFO - The reward for episode 14 is: 47711524.0
+2024-10-24 14:20:55,818 - INFO - The UAV has visited 20 nodes in episode 14
+2024-10-24 14:20:55,818 - INFO - The UAV has visited the nodes: [0, 8, 0, 4, 8, 7, 7, 7, 8, 9, 4, 5, 5, 4, 9, 8, 7, 7, 7, 5]
+2024-10-24 14:20:55,818 - INFO - EPISODE FINISHED
+2024-10-24 14:20:55,818 - INFO - EPISODE START
+2024-10-24 14:20:59,338 - INFO - The reward for episode 15 is: 47130172.0
+2024-10-24 14:20:59,338 - INFO - The UAV has visited 20 nodes in episode 15
+2024-10-24 14:20:59,338 - INFO - The UAV has visited the nodes: [0, 6, 2, 1, 8, 9, 1, 3, 5, 6, 8, 9, 4, 7, 7, 5, 8, 2, 8, 7]
+2024-10-24 14:20:59,338 - INFO - EPISODE FINISHED
+2024-10-24 14:20:59,338 - INFO - EPISODE START
+2024-10-24 14:21:02,367 - INFO - The reward for episode 16 is: 47671580.0
+2024-10-24 14:21:02,367 - INFO - The UAV has visited 20 nodes in episode 16
+2024-10-24 14:21:02,367 - INFO - The UAV has visited the nodes: [0, 6, 2, 1, 6, 3, 5, 8, 3, 5, 0, 3, 9, 4, 2, 1, 9, 9, 7, 1]
+2024-10-24 14:21:02,367 - INFO - EPISODE FINISHED
+2024-10-24 14:21:02,367 - INFO - EPISODE START
+2024-10-24 14:21:05,529 - INFO - The reward for episode 17 is: 44168636.0
+2024-10-24 14:21:05,529 - INFO - The UAV has visited 20 nodes in episode 17
+2024-10-24 14:21:05,529 - INFO - The UAV has visited the nodes: [0, 1, 3, 5, 4, 8, 0, 4, 8, 8, 2, 9, 1, 6, 5, 0, 9, 9, 8, 6]
+2024-10-24 14:21:05,529 - INFO - EPISODE FINISHED
+2024-10-24 14:21:05,530 - INFO - EPISODE START
+2024-10-24 14:21:08,595 - INFO - The reward for episode 18 is: 43689964.0
+2024-10-24 14:21:08,595 - INFO - The UAV has visited 20 nodes in episode 18
+2024-10-24 14:21:08,595 - INFO - The UAV has visited the nodes: [0, 8, 3, 9, 9, 1, 3, 4, 2, 7, 7, 1, 6, 2, 8, 6, 9, 1, 1, 6]
+2024-10-24 14:21:08,595 - INFO - EPISODE FINISHED
+2024-10-24 14:21:08,596 - INFO - EPISODE START
+2024-10-24 14:21:11,894 - INFO - The reward for episode 19 is: 42142050.0
+2024-10-24 14:21:11,894 - INFO - The UAV has visited 20 nodes in episode 19
+2024-10-24 14:21:11,894 - INFO - The UAV has visited the nodes: [0, 9, 8, 1, 3, 9, 5, 9, 3, 7, 9, 0, 9, 7, 8, 4, 1, 1, 6, 5]
+2024-10-24 14:21:11,894 - INFO - EPISODE FINISHED
+2024-10-24 14:21:11,894 - INFO - EPISODE START
+2024-10-24 14:21:15,054 - INFO - The reward for episode 20 is: 42281704.0
+2024-10-24 14:21:15,054 - INFO - The UAV has visited 20 nodes in episode 20
+2024-10-24 14:21:15,054 - INFO - The UAV has visited the nodes: [0, 9, 0, 1, 8, 4, 8, 0, 7, 0, 1, 3, 4, 8, 4, 2, 2, 0, 1, 7]
+2024-10-24 14:21:15,054 - INFO - EPISODE FINISHED
+2024-10-24 14:21:15,055 - INFO - EPISODE START
+2024-10-24 14:21:18,383 - INFO - The reward for episode 21 is: 40751910.0
+2024-10-24 14:21:18,383 - INFO - The UAV has visited 20 nodes in episode 21
+2024-10-24 14:21:18,383 - INFO - The UAV has visited the nodes: [0, 5, 8, 8, 6, 2, 7, 1, 5, 9, 8, 2, 9, 5, 8, 7, 4, 0, 5, 8]
+2024-10-24 14:21:18,383 - INFO - EPISODE FINISHED
+2024-10-24 14:21:18,383 - INFO - EPISODE START
+2024-10-24 14:21:21,812 - INFO - The reward for episode 22 is: 41830360.0
+2024-10-24 14:21:21,812 - INFO - The UAV has visited 20 nodes in episode 22
+2024-10-24 14:21:21,812 - INFO - The UAV has visited the nodes: [0, 4, 0, 2, 3, 6, 7, 2, 6, 1, 7, 7, 5, 0, 0, 0, 4, 7, 5, 7]
+2024-10-24 14:21:21,812 - INFO - EPISODE FINISHED
+2024-10-24 14:21:21,812 - INFO - EPISODE START
+2024-10-24 14:21:24,815 - INFO - The reward for episode 23 is: 41181284.0
+2024-10-24 14:21:24,815 - INFO - The UAV has visited 20 nodes in episode 23
+2024-10-24 14:21:24,815 - INFO - The UAV has visited the nodes: [0, 7, 0, 2, 0, 2, 3, 5, 2, 9, 7, 9, 3, 5, 6, 2, 6, 8, 4, 2]
+2024-10-24 14:21:24,815 - INFO - EPISODE FINISHED
+2024-10-24 14:21:24,815 - INFO - EPISODE START
+2024-10-24 14:21:28,191 - INFO - The reward for episode 24 is: 40499070.0
+2024-10-24 14:21:28,191 - INFO - The UAV has visited 20 nodes in episode 24
+2024-10-24 14:21:28,191 - INFO - The UAV has visited the nodes: [0, 3, 1, 3, 4, 0, 5, 1, 0, 6, 6, 5, 7, 9, 9, 8, 7, 7, 3, 7]
+2024-10-24 14:21:28,191 - INFO - EPISODE FINISHED
+2024-10-24 14:21:28,192 - INFO - EPISODE START
+2024-10-24 14:21:31,289 - INFO - The reward for episode 25 is: 39877284.0
+2024-10-24 14:21:31,289 - INFO - The UAV has visited 20 nodes in episode 25
+2024-10-24 14:21:31,289 - INFO - The UAV has visited the nodes: [0, 5, 9, 7, 2, 3, 6, 9, 1, 7, 0, 3, 7, 8, 5, 0, 3, 7, 2, 2]
+2024-10-24 14:21:31,289 - INFO - EPISODE FINISHED
+2024-10-24 14:21:31,289 - INFO - EPISODE START
+2024-10-24 14:21:34,305 - INFO - The reward for episode 26 is: 39538252.0
+2024-10-24 14:21:34,305 - INFO - The UAV has visited 20 nodes in episode 26
+2024-10-24 14:21:34,305 - INFO - The UAV has visited the nodes: [0, 1, 2, 8, 2, 3, 5, 7, 6, 7, 9, 8, 1, 4, 5, 4, 1, 7, 0, 5]
+2024-10-24 14:21:34,305 - INFO - EPISODE FINISHED
+2024-10-24 14:21:34,306 - INFO - EPISODE START
+2024-10-24 14:21:37,504 - INFO - The reward for episode 27 is: 39370750.0
+2024-10-24 14:21:37,504 - INFO - The UAV has visited 20 nodes in episode 27
+2024-10-24 14:21:37,504 - INFO - The UAV has visited the nodes: [0, 8, 1, 5, 7, 2, 2, 3, 2, 1, 8, 9, 6, 8, 6, 3, 9, 8, 5, 4]
+2024-10-24 14:21:37,504 - INFO - EPISODE FINISHED
+2024-10-24 14:21:37,505 - INFO - EPISODE START
+2024-10-24 14:21:40,637 - INFO - The reward for episode 28 is: 39409220.0
+2024-10-24 14:21:40,637 - INFO - The UAV has visited 20 nodes in episode 28
+2024-10-24 14:21:40,637 - INFO - The UAV has visited the nodes: [0, 6, 4, 8, 1, 2, 5, 4, 0, 8, 7, 6, 0, 3, 2, 0, 6, 6, 4, 4]
+2024-10-24 14:21:40,637 - INFO - EPISODE FINISHED
+2024-10-24 14:21:40,638 - INFO - EPISODE START
+2024-10-24 14:21:43,495 - INFO - The reward for episode 29 is: 39069224.0
+2024-10-24 14:21:43,495 - INFO - The UAV has visited 20 nodes in episode 29
+2024-10-24 14:21:43,495 - INFO - The UAV has visited the nodes: [0, 8, 8, 6, 6, 7, 9, 1, 8, 6, 6, 8, 5, 4, 0, 4, 2, 2, 9, 5]
+2024-10-24 14:21:43,495 - INFO - EPISODE FINISHED
+2024-10-24 14:21:43,495 - INFO - The rewards per episode are: [Array(3.8217718e+08, dtype=float32), Array(3.0271648e+08, dtype=float32), Array(2.1002382e+08, dtype=float32), Array(1.9509509e+08, dtype=float32), Array(1.8230018e+08, dtype=float32), Array(1.3984875e+08, dtype=float32), Array(1.0207038e+08, dtype=float32), Array(1.1020491e+08, dtype=float32), Array(86600024., dtype=float32), Array(75818176., dtype=float32), Array(64704356., dtype=float32), Array(64488080., dtype=float32), Array(58876088., dtype=float32), Array(54272632., dtype=float32), Array(47711524., dtype=float32), Array(47130172., dtype=float32), Array(47671580., dtype=float32), Array(44168636., dtype=float32), Array(43689964., dtype=float32), Array(42142048., dtype=float32), Array(42281704., dtype=float32), Array(40751912., dtype=float32), Array(41830360., dtype=float32), Array(41181284., dtype=float32), Array(40499072., dtype=float32), Array(39877284., dtype=float32), Array(39538252., dtype=float32), Array(39370752., dtype=float32), Array(39409220., dtype=float32), Array(39069224., dtype=float32)]
+2024-10-24 14:21:43,497 - INFO - Q Table is: [[3943860.5  6838017.5  4437754.   5001641.   8022886.   5949863.
+  6052222.5  2955826.2  8036982.   5933371.5 ]
+ [5432026.5  3482555.8  2972510.   4270783.5  5085285.5  6023187.5
+  4198797.   4938863.   4799017.   2450909.2 ]
+ [6043563.5  4092914.2  4012443.2  4467045.   4899325.   1543334.8
+  2180873.   4746806.   5040714.   3196338.5 ]
+ [1321122.9  2029573.8  2773669.   3125699.   4615346.5  4303294.
+  1394517.6  5383663.   4767184.   4575330.5 ]
+ [5530412.   5376619.   5336530.    711549.56 5029734.   2669878.2
+  3947243.   2774857.8  7797674.5  3485661.  ]
+ [5660513.   2741517.2  2463915.5        0.   4340074.   4705337.
+  4221219.5  3645185.   4217208.5  5623587.  ]
+ [3285021.2  4896969.   3850971.2  4363955.5  2579980.8  2411538.
+  4049784.5  3692460.   6528671.   4348464.5 ]
+ [5838507.5  4260329.   3264839.2  1824395.   2498315.5  4284300.
+  1480332.6  5632963.   7080854.   4232029.5 ]
+ [4456635.   4319803.5  5474645.5  4134653.2  3834956.8  4650866.
+  5661076.5  4101720.   8560165.   2972062.8 ]
+ [3198406.   5677465.   2816843.5  2285945.5  5005717.5  4420129.
+  2084209.8  5894787.5  6743422.5  4031106.  ]]
+2024-10-24 14:21:43,499 - INFO - Mean reward per episode: 90183976.0
+2024-10-24 14:21:43,501 - INFO - Max reward: 382177180.0
+2024-10-24 14:21:43,505 - INFO - The UAV energy level is: 17497070.0
+2024-10-24 14:21:43,505 - INFO - The UAV processed in total: 34737524.0 bits
+2024-10-24 14:21:43,505 - INFO - Q-Brave Algorithm took: 93.67130184173584 seconds
+2024-10-24 14:21:43,505 - INFO - Q-Brave Algorithm has successfully reached the final node!
+2024-10-24 14:21:50,784 - INFO - Running the Q-Brave Algorithm
+2024-10-24 14:21:50,784 - INFO - EPISODE START
+2024-10-24 14:21:53,765 - INFO - The reward for episode 0 is: 417371170.0
+2024-10-24 14:21:53,765 - INFO - The UAV has visited 20 nodes in episode 0
+2024-10-24 14:21:53,765 - INFO - The UAV has visited the nodes: [0, 3, 0, 6, 5, 7, 5, 2, 5, 7, 3, 3, 9, 7, 1, 1, 2, 3, 1, 7]
+2024-10-24 14:21:53,765 - INFO - EPISODE FINISHED
+2024-10-24 14:21:53,765 - INFO - EPISODE START
+2024-10-24 14:21:56,702 - INFO - The reward for episode 1 is: 344411870.0
+2024-10-24 14:21:56,703 - INFO - The UAV has visited 20 nodes in episode 1
+2024-10-24 14:21:56,703 - INFO - The UAV has visited the nodes: [0, 4, 6, 6, 6, 7, 8, 7, 8, 6, 3, 2, 4, 8, 9, 2, 9, 0, 9, 4]
+2024-10-24 14:21:56,703 - INFO - EPISODE FINISHED
+2024-10-24 14:21:56,703 - INFO - EPISODE START
+2024-10-24 14:21:59,915 - INFO - The reward for episode 2 is: 259456690.0
+2024-10-24 14:21:59,915 - INFO - The UAV has visited 20 nodes in episode 2
+2024-10-24 14:21:59,916 - INFO - The UAV has visited the nodes: [0, 8, 6, 0, 1, 6, 5, 3, 9, 3, 5, 7, 1, 6, 4, 8, 0, 6, 0, 8]
+2024-10-24 14:21:59,916 - INFO - EPISODE FINISHED
+2024-10-24 14:21:59,916 - INFO - EPISODE START
+2024-10-24 14:22:02,726 - INFO - The reward for episode 3 is: 208172690.0
+2024-10-24 14:22:02,726 - INFO - The UAV has visited 20 nodes in episode 3
+2024-10-24 14:22:02,726 - INFO - The UAV has visited the nodes: [0, 0, 1, 4, 1, 5, 3, 5, 8, 7, 6, 4, 2, 6, 6, 7, 0, 9, 4, 2]
+2024-10-24 14:22:02,726 - INFO - EPISODE FINISHED
+2024-10-24 14:22:02,726 - INFO - EPISODE START
+2024-10-24 14:22:05,799 - INFO - The reward for episode 4 is: 170573120.0
+2024-10-24 14:22:05,799 - INFO - The UAV has visited 20 nodes in episode 4
+2024-10-24 14:22:05,799 - INFO - The UAV has visited the nodes: [0, 1, 3, 9, 8, 4, 7, 2, 7, 1, 4, 0, 6, 6, 5, 3, 1, 9, 8, 8]
+2024-10-24 14:22:05,799 - INFO - EPISODE FINISHED
+2024-10-24 14:22:05,799 - INFO - EPISODE START
+2024-10-24 14:22:08,589 - INFO - The reward for episode 5 is: 128046580.0
+2024-10-24 14:22:08,589 - INFO - The UAV has visited 20 nodes in episode 5
+2024-10-24 14:22:08,589 - INFO - The UAV has visited the nodes: [0, 1, 9, 7, 6, 3, 5, 6, 9, 7, 1, 6, 9, 7, 3, 6, 7, 6, 8, 6]
+2024-10-24 14:22:08,589 - INFO - EPISODE FINISHED
+2024-10-24 14:22:08,589 - INFO - EPISODE START
+2024-10-24 14:22:11,305 - INFO - The reward for episode 6 is: 129793224.0
+2024-10-24 14:22:11,305 - INFO - The UAV has visited 20 nodes in episode 6
+2024-10-24 14:22:11,305 - INFO - The UAV has visited the nodes: [0, 8, 0, 2, 9, 5, 9, 3, 2, 0, 7, 6, 6, 9, 7, 6, 3, 3, 1, 2]
+2024-10-24 14:22:11,305 - INFO - EPISODE FINISHED
+2024-10-24 14:22:11,305 - INFO - EPISODE START
+2024-10-24 14:22:14,191 - INFO - The reward for episode 7 is: 98577540.0
+2024-10-24 14:22:14,191 - INFO - The UAV has visited 20 nodes in episode 7
+2024-10-24 14:22:14,191 - INFO - The UAV has visited the nodes: [0, 7, 1, 2, 6, 7, 3, 3, 9, 4, 6, 6, 4, 4, 4, 3, 1, 5, 6, 1]
+2024-10-24 14:22:14,191 - INFO - EPISODE FINISHED
+2024-10-24 14:22:14,191 - INFO - EPISODE START
+2024-10-24 14:22:17,370 - INFO - The reward for episode 8 is: 104903200.0
+2024-10-24 14:22:17,370 - INFO - The UAV has visited 20 nodes in episode 8
+2024-10-24 14:22:17,370 - INFO - The UAV has visited the nodes: [0, 0, 7, 0, 8, 9, 0, 9, 0, 8, 5, 9, 8, 3, 7, 9, 1, 2, 7, 9]
+2024-10-24 14:22:17,370 - INFO - EPISODE FINISHED
+2024-10-24 14:22:17,371 - INFO - EPISODE START
+2024-10-24 14:22:20,320 - INFO - The reward for episode 9 is: 79772960.0
+2024-10-24 14:22:20,321 - INFO - The UAV has visited 20 nodes in episode 9
+2024-10-24 14:22:20,321 - INFO - The UAV has visited the nodes: [0, 9, 6, 0, 5, 6, 9, 0, 6, 7, 1, 5, 9, 8, 3, 1, 0, 0, 8, 5]
+2024-10-24 14:22:20,321 - INFO - EPISODE FINISHED
+2024-10-24 14:22:20,321 - INFO - EPISODE START
+2024-10-24 14:22:23,428 - INFO - The reward for episode 10 is: 75210320.0
+2024-10-24 14:22:23,428 - INFO - The UAV has visited 20 nodes in episode 10
+2024-10-24 14:22:23,428 - INFO - The UAV has visited the nodes: [0, 6, 1, 9, 8, 9, 7, 0, 7, 2, 2, 4, 2, 7, 0, 9, 6, 1, 6, 4]
+2024-10-24 14:22:23,428 - INFO - EPISODE FINISHED
+2024-10-24 14:22:23,429 - INFO - EPISODE START
+2024-10-24 14:22:26,719 - INFO - The reward for episode 11 is: 66182450.0
+2024-10-24 14:22:26,719 - INFO - The UAV has visited 20 nodes in episode 11
+2024-10-24 14:22:26,719 - INFO - The UAV has visited the nodes: [0, 9, 9, 3, 5, 6, 8, 9, 1, 7, 3, 9, 4, 8, 1, 1, 1, 7, 9, 2]
+2024-10-24 14:22:26,719 - INFO - EPISODE FINISHED
+2024-10-24 14:22:26,719 - INFO - EPISODE START
+2024-10-24 14:22:29,958 - INFO - The reward for episode 12 is: 69579130.0
+2024-10-24 14:22:29,958 - INFO - The UAV has visited 20 nodes in episode 12
+2024-10-24 14:22:29,958 - INFO - The UAV has visited the nodes: [0, 1, 5, 7, 1, 0, 2, 2, 5, 6, 2, 0, 3, 1, 2, 7, 2, 6, 0, 0]
+2024-10-24 14:22:29,958 - INFO - EPISODE FINISHED
+2024-10-24 14:22:29,958 - INFO - EPISODE START
+2024-10-24 14:22:33,173 - INFO - The reward for episode 13 is: 62234936.0
+2024-10-24 14:22:33,173 - INFO - The UAV has visited 20 nodes in episode 13
+2024-10-24 14:22:33,173 - INFO - The UAV has visited the nodes: [0, 6, 7, 4, 3, 3, 5, 1, 2, 1, 0, 2, 2, 0, 0, 7, 2, 8, 1, 0]
+2024-10-24 14:22:33,173 - INFO - EPISODE FINISHED
+2024-10-24 14:22:33,174 - INFO - EPISODE START
+2024-10-24 14:22:36,526 - INFO - The reward for episode 14 is: 62251404.0
+2024-10-24 14:22:36,526 - INFO - The UAV has visited 20 nodes in episode 14
+2024-10-24 14:22:36,527 - INFO - The UAV has visited the nodes: [0, 4, 1, 4, 7, 8, 0, 3, 7, 8, 3, 3, 2, 3, 5, 4, 5, 5, 3, 7]
+2024-10-24 14:22:36,527 - INFO - EPISODE FINISHED
+2024-10-24 14:22:36,527 - INFO - EPISODE START
+2024-10-24 14:22:39,647 - INFO - The reward for episode 15 is: 56643856.0
+2024-10-24 14:22:39,647 - INFO - The UAV has visited 20 nodes in episode 15
+2024-10-24 14:22:39,647 - INFO - The UAV has visited the nodes: [0, 0, 2, 2, 3, 0, 4, 4, 5, 2, 6, 4, 6, 0, 8, 0, 2, 7, 5, 5]
+2024-10-24 14:22:39,647 - INFO - EPISODE FINISHED
+2024-10-24 14:22:39,647 - INFO - EPISODE START
+2024-10-24 14:22:42,940 - INFO - The reward for episode 16 is: 51913560.0
+2024-10-24 14:22:42,940 - INFO - The UAV has visited 20 nodes in episode 16
+2024-10-24 14:22:42,940 - INFO - The UAV has visited the nodes: [0, 3, 9, 8, 6, 1, 3, 6, 0, 4, 8, 5, 0, 7, 5, 5, 8, 9, 5, 7]
+2024-10-24 14:22:42,941 - INFO - EPISODE FINISHED
+2024-10-24 14:22:42,941 - INFO - EPISODE START
+2024-10-24 14:22:46,440 - INFO - The reward for episode 17 is: 48758636.0
+2024-10-24 14:22:46,440 - INFO - The UAV has visited 20 nodes in episode 17
+2024-10-24 14:22:46,440 - INFO - The UAV has visited the nodes: [0, 9, 9, 7, 8, 9, 1, 6, 1, 0, 7, 0, 4, 1, 7, 4, 5, 3, 1, 8]
+2024-10-24 14:22:46,440 - INFO - EPISODE FINISHED
+2024-10-24 14:22:46,440 - INFO - EPISODE START
+2024-10-24 14:22:49,854 - INFO - The reward for episode 18 is: 47928190.0
+2024-10-24 14:22:49,854 - INFO - The UAV has visited 20 nodes in episode 18
+2024-10-24 14:22:49,854 - INFO - The UAV has visited the nodes: [0, 1, 0, 2, 7, 1, 3, 3, 9, 5, 8, 9, 6, 0, 8, 4, 3, 8, 4, 4]
+2024-10-24 14:22:49,854 - INFO - EPISODE FINISHED
+2024-10-24 14:22:49,856 - INFO - EPISODE START
+2024-10-24 14:22:53,302 - INFO - The reward for episode 19 is: 47454716.0
+2024-10-24 14:22:53,302 - INFO - The UAV has visited 20 nodes in episode 19
+2024-10-24 14:22:53,302 - INFO - The UAV has visited the nodes: [0, 4, 3, 2, 0, 6, 8, 3, 5, 9, 5, 6, 9, 6, 3, 2, 9, 7, 5, 7]
+2024-10-24 14:22:53,302 - INFO - EPISODE FINISHED
+2024-10-24 14:22:53,303 - INFO - EPISODE START
+2024-10-24 14:22:56,694 - INFO - The reward for episode 20 is: 46307820.0
+2024-10-24 14:22:56,694 - INFO - The UAV has visited 20 nodes in episode 20
+2024-10-24 14:22:56,694 - INFO - The UAV has visited the nodes: [0, 2, 6, 6, 5, 3, 3, 2, 5, 4, 3, 1, 6, 5, 0, 0, 3, 6, 4, 8]
+2024-10-24 14:22:56,694 - INFO - EPISODE FINISHED
+2024-10-24 14:22:56,694 - INFO - EPISODE START
+2024-10-24 14:22:59,700 - INFO - The reward for episode 21 is: 45415510.0
+2024-10-24 14:22:59,700 - INFO - The UAV has visited 20 nodes in episode 21
+2024-10-24 14:22:59,700 - INFO - The UAV has visited the nodes: [0, 1, 4, 0, 3, 6, 3, 5, 7, 1, 6, 0, 3, 2, 9, 1, 2, 3, 5, 6]
+2024-10-24 14:22:59,700 - INFO - EPISODE FINISHED
+2024-10-24 14:22:59,701 - INFO - EPISODE START
+2024-10-24 14:23:02,907 - INFO - The reward for episode 22 is: 44790116.0
+2024-10-24 14:23:02,907 - INFO - The UAV has visited 20 nodes in episode 22
+2024-10-24 14:23:02,907 - INFO - The UAV has visited the nodes: [0, 0, 7, 7, 6, 3, 1, 3, 8, 1, 7, 7, 2, 7, 0, 0, 4, 5, 4, 6]
+2024-10-24 14:23:02,907 - INFO - EPISODE FINISHED
+2024-10-24 14:23:02,907 - INFO - EPISODE START
+2024-10-24 14:23:06,094 - INFO - The reward for episode 23 is: 45211396.0
+2024-10-24 14:23:06,094 - INFO - The UAV has visited 20 nodes in episode 23
+2024-10-24 14:23:06,094 - INFO - The UAV has visited the nodes: [0, 2, 3, 8, 2, 7, 9, 3, 9, 2, 8, 0, 0, 1, 5, 4, 8, 2, 0, 8]
+2024-10-24 14:23:06,094 - INFO - EPISODE FINISHED
+2024-10-24 14:23:06,094 - INFO - EPISODE START
+2024-10-24 14:23:08,942 - INFO - The reward for episode 24 is: 44662212.0
+2024-10-24 14:23:08,942 - INFO - The UAV has visited 20 nodes in episode 24
+2024-10-24 14:23:08,942 - INFO - The UAV has visited the nodes: [0, 3, 4, 7, 8, 2, 1, 6, 5, 2, 3, 1, 5, 3, 2, 7, 1, 4, 2, 1]
+2024-10-24 14:23:08,942 - INFO - EPISODE FINISHED
+2024-10-24 14:23:08,942 - INFO - EPISODE START
+2024-10-24 14:23:11,934 - INFO - The reward for episode 25 is: 44343084.0
+2024-10-24 14:23:11,934 - INFO - The UAV has visited 20 nodes in episode 25
+2024-10-24 14:23:11,934 - INFO - The UAV has visited the nodes: [0, 3, 8, 0, 0, 4, 8, 6, 6, 2, 5, 6, 8, 2, 1, 6, 8, 3, 0, 7]
+2024-10-24 14:23:11,934 - INFO - EPISODE FINISHED
+2024-10-24 14:23:11,934 - INFO - EPISODE START
+2024-10-24 14:23:14,783 - INFO - The reward for episode 26 is: 44083908.0
+2024-10-24 14:23:14,783 - INFO - The UAV has visited 20 nodes in episode 26
+2024-10-24 14:23:14,783 - INFO - The UAV has visited the nodes: [0, 1, 8, 0, 2, 1, 0, 9, 2, 9, 2, 2, 6, 5, 5, 0, 6, 9, 5, 5]
+2024-10-24 14:23:14,783 - INFO - EPISODE FINISHED
+2024-10-24 14:23:14,785 - INFO - EPISODE START
+2024-10-24 14:23:17,910 - INFO - The reward for episode 27 is: 43931428.0
+2024-10-24 14:23:17,910 - INFO - The UAV has visited 20 nodes in episode 27
+2024-10-24 14:23:17,910 - INFO - The UAV has visited the nodes: [0, 1, 4, 5, 5, 2, 2, 0, 9, 3, 6, 1, 1, 7, 2, 2, 1, 0, 0, 9]
+2024-10-24 14:23:17,910 - INFO - EPISODE FINISHED
+2024-10-24 14:23:17,910 - INFO - EPISODE START
+2024-10-24 14:23:20,910 - INFO - The reward for episode 28 is: 44105164.0
+2024-10-24 14:23:20,910 - INFO - The UAV has visited 20 nodes in episode 28
+2024-10-24 14:23:20,910 - INFO - The UAV has visited the nodes: [0, 9, 4, 2, 1, 8, 6, 9, 4, 8, 0, 2, 4, 3, 6, 8, 9, 4, 9, 0]
+2024-10-24 14:23:20,910 - INFO - EPISODE FINISHED
+2024-10-24 14:23:20,910 - INFO - EPISODE START
+2024-10-24 14:23:23,915 - INFO - The reward for episode 29 is: 43684630.0
+2024-10-24 14:23:23,916 - INFO - The UAV has visited 20 nodes in episode 29
+2024-10-24 14:23:23,916 - INFO - The UAV has visited the nodes: [0, 6, 4, 1, 2, 6, 3, 8, 3, 8, 9, 9, 1, 4, 6, 3, 9, 3, 7, 9]
+2024-10-24 14:23:23,916 - INFO - EPISODE FINISHED
+2024-10-24 14:23:23,916 - INFO - The rewards per episode are: [Array(4.1737117e+08, dtype=float32), Array(3.4441187e+08, dtype=float32), Array(2.5945669e+08, dtype=float32), Array(2.0817269e+08, dtype=float32), Array(1.7057312e+08, dtype=float32), Array(1.2804658e+08, dtype=float32), Array(1.29793224e+08, dtype=float32), Array(98577536., dtype=float32), Array(1.049032e+08, dtype=float32), Array(79772960., dtype=float32), Array(75210320., dtype=float32), Array(66182448., dtype=float32), Array(69579128., dtype=float32), Array(62234936., dtype=float32), Array(62251404., dtype=float32), Array(56643856., dtype=float32), Array(51913560., dtype=float32), Array(48758636., dtype=float32), Array(47928192., dtype=float32), Array(47454716., dtype=float32), Array(46307820., dtype=float32), Array(45415512., dtype=float32), Array(44790116., dtype=float32), Array(45211396., dtype=float32), Array(44662212., dtype=float32), Array(44343084., dtype=float32), Array(44083908., dtype=float32), Array(43931428., dtype=float32), Array(44105164., dtype=float32), Array(43684632., dtype=float32)]
+2024-10-24 14:23:23,918 - INFO - Q Table is: [[7112832.   5532313.   5713675.5  7581136.   5544017.5  3209665.
+  6869817.   6041593.5  5963324.5  7810892.  ]
+ [5506941.5  4712209.5  6177676.5  3132603.2  4471796.5  4348928.
+  5948779.   6232613.5  2165096.5  3112865.  ]
+ [4638610.5  4320048.5  4041780.5  6175640.   3324247.   3753169.2
+  4890094.5  6125536.5  1552734.8  5166979.  ]
+ [2323472.   7531934.   5162320.   6142732.    769165.25 5736437.
+  4129919.5  3536365.   3804140.5  6713549.  ]
+ [2222901.8  2970820.8  4934047.   4691043.5  3038745.8  3442969.5
+  3504191.8  2610047.2  6018136.    916410.8 ]
+ [2527787.8   850216.   3411065.5  5956711.   2629947.   3971767.2
+  5156003.   6276312.   2436770.8  3618805.2 ]
+ [6178398.   4198257.   1493447.2  6290642.   5468216.   5258397.5
+  6136869.5  5637175.   3965367.8  5383474.5 ]
+ [4870426.   6969865.   3875073.2  4666571.5  1396463.4  3390492.8
+  5365765.5  1707010.5  4427004.5  4466074.  ]
+ [6021612.   2430257.   2785790.   4867605.   2251929.8  2601068.
+  4758902.   2956742.5  1728804.4  6431264.  ]
+ [5306904.5  3601047.5  4740329.   4987720.   6435072.   3442883.2
+  2984276.8  6990808.5  4171627.2  2401638.5 ]]
+2024-10-24 14:23:23,920 - INFO - Mean reward per episode: 99192390.0
+2024-10-24 14:23:23,922 - INFO - Max reward: 417371170.0
+2024-10-24 14:23:23,925 - INFO - The UAV energy level is: 16200667.0
+2024-10-24 14:23:23,925 - INFO - The UAV processed in total: 37414520.0 bits
+2024-10-24 14:23:23,926 - INFO - Q-Brave Algorithm took: 93.14199948310852 seconds
+2024-10-24 14:23:23,926 - INFO - Q-Brave Algorithm has successfully reached the final node!
+2024-10-24 14:23:31,214 - INFO - Running the Q-Brave Algorithm
+2024-10-24 14:23:31,214 - INFO - EPISODE START
+2024-10-24 14:23:34,247 - INFO - The reward for episode 0 is: 295309020.0
+2024-10-24 14:23:34,247 - INFO - The UAV has visited 20 nodes in episode 0
+2024-10-24 14:23:34,247 - INFO - The UAV has visited the nodes: [0, 8, 3, 4, 1, 2, 8, 4, 9, 9, 7, 7, 7, 8, 0, 1, 2, 8, 8, 9]
+2024-10-24 14:23:34,247 - INFO - EPISODE FINISHED
+2024-10-24 14:23:34,248 - INFO - EPISODE START
+2024-10-24 14:23:37,316 - INFO - The reward for episode 1 is: 247373760.0
+2024-10-24 14:23:37,316 - INFO - The UAV has visited 20 nodes in episode 1
+2024-10-24 14:23:37,316 - INFO - The UAV has visited the nodes: [0, 3, 2, 8, 4, 0, 7, 5, 6, 0, 5, 6, 1, 0, 0, 5, 4, 3, 4, 9]
+2024-10-24 14:23:37,316 - INFO - EPISODE FINISHED
+2024-10-24 14:23:37,317 - INFO - EPISODE START
+2024-10-24 14:23:40,598 - INFO - The reward for episode 2 is: 181044820.0
+2024-10-24 14:23:40,598 - INFO - The UAV has visited 20 nodes in episode 2
+2024-10-24 14:23:40,598 - INFO - The UAV has visited the nodes: [0, 2, 0, 1, 4, 9, 2, 3, 1, 9, 7, 7, 1, 9, 4, 0, 3, 3, 6, 8]
+2024-10-24 14:23:40,598 - INFO - EPISODE FINISHED
+2024-10-24 14:23:40,598 - INFO - EPISODE START
+2024-10-24 14:23:43,557 - INFO - The reward for episode 3 is: 132508810.0
+2024-10-24 14:23:43,557 - INFO - The UAV has visited 20 nodes in episode 3
+2024-10-24 14:23:43,557 - INFO - The UAV has visited the nodes: [0, 4, 8, 1, 4, 9, 3, 7, 0, 7, 8, 2, 9, 0, 9, 2, 2, 5, 3, 7]
+2024-10-24 14:23:43,557 - INFO - EPISODE FINISHED
+2024-10-24 14:23:43,557 - INFO - EPISODE START
+2024-10-24 14:23:46,761 - INFO - The reward for episode 4 is: 120109300.0
+2024-10-24 14:23:46,762 - INFO - The UAV has visited 20 nodes in episode 4
+2024-10-24 14:23:46,762 - INFO - The UAV has visited the nodes: [0, 1, 8, 1, 3, 1, 9, 9, 6, 6, 5, 3, 9, 9, 9, 0, 4, 7, 6, 0]
+2024-10-24 14:23:46,762 - INFO - EPISODE FINISHED
+2024-10-24 14:23:46,762 - INFO - EPISODE START
+2024-10-24 14:23:49,995 - INFO - The reward for episode 5 is: 106070800.0
+2024-10-24 14:23:49,995 - INFO - The UAV has visited 20 nodes in episode 5
+2024-10-24 14:23:49,995 - INFO - The UAV has visited the nodes: [0, 7, 3, 5, 5, 2, 9, 3, 5, 4, 6, 4, 1, 5, 5, 5, 8, 9, 7, 8]
+2024-10-24 14:23:49,995 - INFO - EPISODE FINISHED
+2024-10-24 14:23:49,996 - INFO - EPISODE START
+2024-10-24 14:23:52,898 - INFO - The reward for episode 6 is: 84340184.0
+2024-10-24 14:23:52,900 - INFO - The UAV has visited 20 nodes in episode 6
+2024-10-24 14:23:52,900 - INFO - The UAV has visited the nodes: [0, 7, 6, 7, 8, 6, 7, 9, 0, 1, 1, 3, 3, 9, 5, 3, 4, 6, 9, 5]
+2024-10-24 14:23:52,900 - INFO - EPISODE FINISHED
+2024-10-24 14:23:52,900 - INFO - EPISODE START
+2024-10-24 14:23:55,741 - INFO - The reward for episode 7 is: 75530140.0
+2024-10-24 14:23:55,741 - INFO - The UAV has visited 20 nodes in episode 7
+2024-10-24 14:23:55,741 - INFO - The UAV has visited the nodes: [0, 6, 3, 5, 0, 1, 7, 6, 3, 1, 7, 2, 3, 6, 5, 2, 2, 7, 1, 6]
+2024-10-24 14:23:55,741 - INFO - EPISODE FINISHED
+2024-10-24 14:23:55,742 - INFO - EPISODE START
+2024-10-24 14:23:58,451 - INFO - The reward for episode 8 is: 64390300.0
+2024-10-24 14:23:58,451 - INFO - The UAV has visited 20 nodes in episode 8
+2024-10-24 14:23:58,451 - INFO - The UAV has visited the nodes: [0, 8, 8, 8, 0, 9, 0, 1, 3, 3, 4, 8, 5, 0, 8, 6, 1, 9, 4, 1]
+2024-10-24 14:23:58,451 - INFO - EPISODE FINISHED
+2024-10-24 14:23:58,451 - INFO - EPISODE START
+2024-10-24 14:24:01,369 - INFO - The reward for episode 9 is: 58480756.0
+2024-10-24 14:24:01,369 - INFO - The UAV has visited 20 nodes in episode 9
+2024-10-24 14:24:01,369 - INFO - The UAV has visited the nodes: [0, 0, 1, 8, 4, 2, 5, 8, 5, 8, 0, 2, 0, 3, 0, 5, 1, 1, 9, 2]
+2024-10-24 14:24:01,369 - INFO - EPISODE FINISHED
+2024-10-24 14:24:01,369 - INFO - EPISODE START
+2024-10-24 14:24:04,501 - INFO - The reward for episode 10 is: 49207910.0
+2024-10-24 14:24:04,501 - INFO - The UAV has visited 20 nodes in episode 10
+2024-10-24 14:24:04,501 - INFO - The UAV has visited the nodes: [0, 9, 1, 7, 7, 5, 1, 8, 7, 7, 5, 2, 9, 8, 6, 4, 9, 8, 0, 3]
+2024-10-24 14:24:04,501 - INFO - EPISODE FINISHED
+2024-10-24 14:24:04,501 - INFO - EPISODE START
+2024-10-24 14:24:07,598 - INFO - The reward for episode 11 is: 49340220.0
+2024-10-24 14:24:07,598 - INFO - The UAV has visited 20 nodes in episode 11
+2024-10-24 14:24:07,598 - INFO - The UAV has visited the nodes: [0, 8, 7, 6, 1, 2, 2, 6, 0, 0, 1, 3, 5, 0, 7, 4, 5, 4, 3, 4]
+2024-10-24 14:24:07,598 - INFO - EPISODE FINISHED
+2024-10-24 14:24:07,598 - INFO - EPISODE START
+2024-10-24 14:24:10,553 - INFO - The reward for episode 12 is: 45791076.0
+2024-10-24 14:24:10,553 - INFO - The UAV has visited 20 nodes in episode 12
+2024-10-24 14:24:10,553 - INFO - The UAV has visited the nodes: [0, 5, 7, 4, 3, 7, 6, 2, 6, 7, 2, 9, 2, 8, 1, 0, 4, 6, 8, 9]
+2024-10-24 14:24:10,553 - INFO - EPISODE FINISHED
+2024-10-24 14:24:10,553 - INFO - EPISODE START
+2024-10-24 14:24:13,469 - INFO - The reward for episode 13 is: 39225944.0
+2024-10-24 14:24:13,469 - INFO - The UAV has visited 20 nodes in episode 13
+2024-10-24 14:24:13,469 - INFO - The UAV has visited the nodes: [0, 9, 9, 8, 7, 9, 9, 5, 2, 0, 1, 7, 6, 8, 1, 9, 7, 9, 3, 4]
+2024-10-24 14:24:13,469 - INFO - EPISODE FINISHED
+2024-10-24 14:24:13,469 - INFO - EPISODE START
+2024-10-24 14:24:16,500 - INFO - The reward for episode 14 is: 40976170.0
+2024-10-24 14:24:16,500 - INFO - The UAV has visited 20 nodes in episode 14
+2024-10-24 14:24:16,500 - INFO - The UAV has visited the nodes: [0, 6, 1, 2, 6, 0, 6, 5, 9, 6, 2, 7, 4, 2, 2, 4, 9, 3, 9, 8]
+2024-10-24 14:24:16,500 - INFO - EPISODE FINISHED
+2024-10-24 14:24:16,500 - INFO - EPISODE START
+2024-10-24 14:24:19,489 - INFO - The reward for episode 15 is: 37192604.0
+2024-10-24 14:24:19,489 - INFO - The UAV has visited 20 nodes in episode 15
+2024-10-24 14:24:19,489 - INFO - The UAV has visited the nodes: [0, 6, 6, 8, 2, 9, 9, 1, 2, 3, 8, 6, 5, 9, 6, 2, 6, 2, 8, 9]
+2024-10-24 14:24:19,489 - INFO - EPISODE FINISHED
+2024-10-24 14:24:19,490 - INFO - EPISODE START
+2024-10-24 14:24:22,586 - INFO - The reward for episode 16 is: 36149708.0
+2024-10-24 14:24:22,587 - INFO - The UAV has visited 20 nodes in episode 16
+2024-10-24 14:24:22,587 - INFO - The UAV has visited the nodes: [0, 8, 5, 6, 0, 9, 3, 3, 9, 5, 2, 4, 5, 9, 2, 8, 8, 1, 1, 7]
+2024-10-24 14:24:22,587 - INFO - EPISODE FINISHED
+2024-10-24 14:24:22,587 - INFO - EPISODE START
+2024-10-24 14:24:26,052 - INFO - The reward for episode 17 is: 34824684.0
+2024-10-24 14:24:26,052 - INFO - The UAV has visited 20 nodes in episode 17
+2024-10-24 14:24:26,052 - INFO - The UAV has visited the nodes: [0, 7, 3, 8, 3, 5, 5, 2, 9, 3, 2, 5, 9, 7, 4, 8, 1, 7, 2, 6]
+2024-10-24 14:24:26,052 - INFO - EPISODE FINISHED
+2024-10-24 14:24:26,053 - INFO - EPISODE START
+2024-10-24 14:24:29,456 - INFO - The reward for episode 18 is: 34827276.0
+2024-10-24 14:24:29,456 - INFO - The UAV has visited 20 nodes in episode 18
+2024-10-24 14:24:29,456 - INFO - The UAV has visited the nodes: [0, 6, 4, 4, 6, 5, 5, 8, 3, 6, 5, 1, 2, 5, 3, 5, 8, 0, 4, 4]
+2024-10-24 14:24:29,456 - INFO - EPISODE FINISHED
+2024-10-24 14:24:29,456 - INFO - EPISODE START
+2024-10-24 14:24:32,340 - INFO - The reward for episode 19 is: 33927052.0
+2024-10-24 14:24:32,340 - INFO - The UAV has visited 20 nodes in episode 19
+2024-10-24 14:24:32,341 - INFO - The UAV has visited the nodes: [0, 3, 1, 0, 3, 2, 6, 0, 1, 3, 0, 3, 7, 7, 5, 6, 3, 5, 4, 2]
+2024-10-24 14:24:32,341 - INFO - EPISODE FINISHED
+2024-10-24 14:24:32,341 - INFO - EPISODE START
+2024-10-24 14:24:35,661 - INFO - The reward for episode 20 is: 33084340.0
+2024-10-24 14:24:35,661 - INFO - The UAV has visited 20 nodes in episode 20
+2024-10-24 14:24:35,661 - INFO - The UAV has visited the nodes: [0, 2, 4, 0, 1, 0, 9, 2, 6, 8, 1, 2, 6, 7, 3, 8, 2, 4, 1, 7]
+2024-10-24 14:24:35,661 - INFO - EPISODE FINISHED
+2024-10-24 14:24:35,662 - INFO - EPISODE START
+2024-10-24 14:24:38,532 - INFO - The reward for episode 21 is: 31778320.0
+2024-10-24 14:24:38,532 - INFO - The UAV has visited 20 nodes in episode 21
+2024-10-24 14:24:38,532 - INFO - The UAV has visited the nodes: [0, 9, 1, 2, 3, 1, 1, 0, 9, 3, 1, 3, 6, 2, 2, 8, 5, 8, 0, 4]
+2024-10-24 14:24:38,532 - INFO - EPISODE FINISHED
+2024-10-24 14:24:38,532 - INFO - EPISODE START
+2024-10-24 14:24:41,491 - INFO - The reward for episode 22 is: 31647020.0
+2024-10-24 14:24:41,491 - INFO - The UAV has visited 20 nodes in episode 22
+2024-10-24 14:24:41,491 - INFO - The UAV has visited the nodes: [0, 8, 1, 0, 2, 9, 0, 5, 9, 8, 7, 5, 6, 1, 7, 6, 2, 3, 9, 8]
+2024-10-24 14:24:41,491 - INFO - EPISODE FINISHED
+2024-10-24 14:24:41,492 - INFO - EPISODE START
+2024-10-24 14:24:44,541 - INFO - The reward for episode 23 is: 31651644.0
+2024-10-24 14:24:44,541 - INFO - The UAV has visited 20 nodes in episode 23
+2024-10-24 14:24:44,541 - INFO - The UAV has visited the nodes: [0, 4, 9, 9, 4, 4, 3, 5, 2, 5, 9, 2, 4, 2, 4, 4, 9, 9, 6, 8]
+2024-10-24 14:24:44,541 - INFO - EPISODE FINISHED
+2024-10-24 14:24:44,541 - INFO - EPISODE START
+2024-10-24 14:24:47,752 - INFO - The reward for episode 24 is: 31315650.0
+2024-10-24 14:24:47,752 - INFO - The UAV has visited 20 nodes in episode 24
+2024-10-24 14:24:47,752 - INFO - The UAV has visited the nodes: [0, 1, 3, 2, 3, 7, 8, 0, 7, 0, 7, 6, 8, 5, 7, 1, 6, 8, 6, 5]
+2024-10-24 14:24:47,752 - INFO - EPISODE FINISHED
+2024-10-24 14:24:47,753 - INFO - EPISODE START
+2024-10-24 14:24:50,649 - INFO - The reward for episode 25 is: 30929468.0
+2024-10-24 14:24:50,650 - INFO - The UAV has visited 20 nodes in episode 25
+2024-10-24 14:24:50,650 - INFO - The UAV has visited the nodes: [0, 7, 2, 7, 1, 1, 3, 4, 1, 5, 7, 3, 7, 6, 9, 4, 1, 6, 7, 1]
+2024-10-24 14:24:50,650 - INFO - EPISODE FINISHED
+2024-10-24 14:24:50,650 - INFO - EPISODE START
+2024-10-24 14:24:53,928 - INFO - The reward for episode 26 is: 30974016.0
+2024-10-24 14:24:53,928 - INFO - The UAV has visited 20 nodes in episode 26
+2024-10-24 14:24:53,928 - INFO - The UAV has visited the nodes: [0, 5, 7, 0, 8, 5, 8, 3, 0, 4, 9, 4, 6, 2, 0, 2, 2, 0, 8, 1]
+2024-10-24 14:24:53,928 - INFO - EPISODE FINISHED
+2024-10-24 14:24:53,929 - INFO - EPISODE START
+2024-10-24 14:24:57,108 - INFO - The reward for episode 27 is: 30628448.0
+2024-10-24 14:24:57,108 - INFO - The UAV has visited 20 nodes in episode 27
+2024-10-24 14:24:57,108 - INFO - The UAV has visited the nodes: [0, 1, 5, 8, 7, 9, 4, 6, 1, 0, 9, 6, 9, 4, 9, 0, 4, 5, 7, 1]
+2024-10-24 14:24:57,108 - INFO - EPISODE FINISHED
+2024-10-24 14:24:57,108 - INFO - EPISODE START
+2024-10-24 14:25:00,488 - INFO - The reward for episode 28 is: 30559700.0
+2024-10-24 14:25:00,488 - INFO - The UAV has visited 20 nodes in episode 28
+2024-10-24 14:25:00,488 - INFO - The UAV has visited the nodes: [0, 4, 4, 7, 1, 0, 1, 4, 5, 2, 1, 2, 9, 2, 0, 6, 7, 9, 2, 1]
+2024-10-24 14:25:00,488 - INFO - EPISODE FINISHED
+2024-10-24 14:25:00,488 - INFO - EPISODE START
+2024-10-24 14:25:03,783 - INFO - The reward for episode 29 is: 30390334.0
+2024-10-24 14:25:03,783 - INFO - The UAV has visited 20 nodes in episode 29
+2024-10-24 14:25:03,783 - INFO - The UAV has visited the nodes: [0, 9, 9, 4, 2, 5, 8, 9, 0, 7, 1, 4, 7, 1, 9, 6, 7, 4, 4, 5]
+2024-10-24 14:25:03,783 - INFO - EPISODE FINISHED
+2024-10-24 14:25:03,783 - INFO - The rewards per episode are: [Array(2.9530902e+08, dtype=float32), Array(2.4737376e+08, dtype=float32), Array(1.8104482e+08, dtype=float32), Array(1.3250881e+08, dtype=float32), Array(1.201093e+08, dtype=float32), Array(1.060708e+08, dtype=float32), Array(84340184., dtype=float32), Array(75530144., dtype=float32), Array(64390300., dtype=float32), Array(58480756., dtype=float32), Array(49207912., dtype=float32), Array(49340220., dtype=float32), Array(45791076., dtype=float32), Array(39225944., dtype=float32), Array(40976168., dtype=float32), Array(37192604., dtype=float32), Array(36149708., dtype=float32), Array(34824684., dtype=float32), Array(34827276., dtype=float32), Array(33927052., dtype=float32), Array(33084340., dtype=float32), Array(31778320., dtype=float32), Array(31647020., dtype=float32), Array(31651644., dtype=float32), Array(31315650., dtype=float32), Array(30929468., dtype=float32), Array(30974016., dtype=float32), Array(30628448., dtype=float32), Array(30559700., dtype=float32), Array(30390334., dtype=float32)]
+2024-10-24 14:25:03,785 - INFO - Q Table is: [[3429375.5 5466515.  3027353.2 4122606.2 4910718.5 4437764.5 3394042.5
+  5160512.  4389496.5 4822978. ]
+ [4476556.5 2679725.  4758022.5 3651095.8 2478594.5 1748346.8 1759772.6
+  4004454.5 1500941.2 4247476.5]
+ [3243534.5 1172671.  3586171.5 3268362.2 3020699.5 2918852.  3094321.
+  2122054.  4709769.  3726617. ]
+ [1935277.5 3264315.  2229797.  3140760.5 4832826.  3070791.8 2914716.
+  3973165.5 1579546.1 2975720.2]
+ [2900973.8 3324553.5 2584721.8 3329311.  3044437.8 2185260.2 2999603.2
+  2381461.8 1675780.5 5144405.5]
+ [1983079.8 1681631.  3781282.5 3272064.  3628664.  2890421.5 3381369.8
+  2733229.5 3862330.  2803319.2]
+ [4029116.8 3649682.8 3251731.5 1727791.  2112620.2 3055612.5 1223641.4
+  3632639.5 4014233.8 1957833. ]
+ [2049315.1 4258952.  2307716.5 2074174.8 2732576.2 2384234.5 3547020.
+  5186931.  4201642.5 2535639.8]
+ [4403763.5 3721562.  2088097.  2035043.8 2261209.  2514918.2 2384394.5
+  2750311.8 3587288.8 4408526. ]
+ [4172379.5 1547194.  4451912.  3488022.5 4300915.5 2327570.8 2683111.2
+  4380806.  2860786.5 4655565. ]]
+2024-10-24 14:25:03,787 - INFO - Mean reward per episode: 69319320.0
+2024-10-24 14:25:03,789 - INFO - Max reward: 295309020.0
+2024-10-24 14:25:03,793 - INFO - The UAV energy level is: 17328716.0
+2024-10-24 14:25:03,793 - INFO - The UAV processed in total: 26421998.0 bits
+2024-10-24 14:25:03,793 - INFO - Q-Brave Algorithm took: 92.57829475402832 seconds
+2024-10-24 14:25:03,793 - INFO - Q-Brave Algorithm has successfully reached the final node!
+2024-10-24 14:25:11,855 - INFO - Running the Q-Brave Algorithm
+2024-10-24 14:25:11,856 - INFO - EPISODE START
+2024-10-24 14:25:15,749 - INFO - The reward for episode 0 is: 325902560.0
+2024-10-24 14:25:15,749 - INFO - The UAV has visited 20 nodes in episode 0
+2024-10-24 14:25:15,749 - INFO - The UAV has visited the nodes: [0, 2, 7, 9, 7, 9, 2, 1, 7, 4, 2, 6, 8, 5, 3, 7, 6, 0, 6, 7]
+2024-10-24 14:25:15,749 - INFO - EPISODE FINISHED
+2024-10-24 14:25:15,749 - INFO - EPISODE START
+2024-10-24 14:25:18,923 - INFO - The reward for episode 1 is: 265904850.0
+2024-10-24 14:25:18,923 - INFO - The UAV has visited 20 nodes in episode 1
+2024-10-24 14:25:18,923 - INFO - The UAV has visited the nodes: [0, 5, 9, 5, 0, 1, 9, 3, 7, 6, 4, 2, 9, 6, 5, 1, 7, 1, 8, 5]
+2024-10-24 14:25:18,923 - INFO - EPISODE FINISHED
+2024-10-24 14:25:18,924 - INFO - EPISODE START
+2024-10-24 14:25:21,998 - INFO - The reward for episode 2 is: 199241420.0
+2024-10-24 14:25:21,998 - INFO - The UAV has visited 20 nodes in episode 2
+2024-10-24 14:25:21,998 - INFO - The UAV has visited the nodes: [0, 8, 6, 1, 2, 2, 8, 2, 5, 4, 9, 7, 9, 8, 7, 1, 8, 5, 9, 3]
+2024-10-24 14:25:21,998 - INFO - EPISODE FINISHED
+2024-10-24 14:25:21,998 - INFO - EPISODE START
+2024-10-24 14:25:24,986 - INFO - The reward for episode 3 is: 170086480.0
+2024-10-24 14:25:24,986 - INFO - The UAV has visited 20 nodes in episode 3
+2024-10-24 14:25:24,986 - INFO - The UAV has visited the nodes: [0, 2, 5, 4, 8, 3, 2, 8, 3, 1, 6, 4, 2, 8, 2, 3, 0, 4, 2, 4]
+2024-10-24 14:25:24,986 - INFO - EPISODE FINISHED
+2024-10-24 14:25:24,986 - INFO - EPISODE START
+2024-10-24 14:25:28,373 - INFO - The reward for episode 4 is: 116924280.0
+2024-10-24 14:25:28,373 - INFO - The UAV has visited 20 nodes in episode 4
+2024-10-24 14:25:28,373 - INFO - The UAV has visited the nodes: [0, 5, 7, 7, 5, 8, 4, 2, 1, 3, 8, 7, 5, 8, 8, 7, 3, 1, 4, 8]
+2024-10-24 14:25:28,373 - INFO - EPISODE FINISHED
+2024-10-24 14:25:28,373 - INFO - EPISODE START
+2024-10-24 14:25:31,683 - INFO - The reward for episode 5 is: 117305540.0
+2024-10-24 14:25:31,683 - INFO - The UAV has visited 20 nodes in episode 5
+2024-10-24 14:25:31,683 - INFO - The UAV has visited the nodes: [0, 7, 1, 5, 2, 3, 6, 4, 6, 3, 1, 0, 3, 0, 3, 1, 0, 7, 6, 9]
+2024-10-24 14:25:31,683 - INFO - EPISODE FINISHED
+2024-10-24 14:25:31,684 - INFO - EPISODE START
+2024-10-24 14:25:35,064 - INFO - The reward for episode 6 is: 101112060.0
+2024-10-24 14:25:35,064 - INFO - The UAV has visited 20 nodes in episode 6
+2024-10-24 14:25:35,064 - INFO - The UAV has visited the nodes: [0, 4, 3, 0, 4, 6, 3, 0, 4, 2, 3, 0, 8, 9, 1, 5, 4, 7, 8, 6]
+2024-10-24 14:25:35,064 - INFO - EPISODE FINISHED
+2024-10-24 14:25:35,064 - INFO - EPISODE START
+2024-10-24 14:25:38,445 - INFO - The reward for episode 7 is: 80834580.0
+2024-10-24 14:25:38,445 - INFO - The UAV has visited 20 nodes in episode 7
+2024-10-24 14:25:38,446 - INFO - The UAV has visited the nodes: [0, 6, 5, 9, 4, 2, 9, 3, 9, 2, 6, 4, 9, 3, 6, 2, 1, 3, 1, 8]
+2024-10-24 14:25:38,446 - INFO - EPISODE FINISHED
+2024-10-24 14:25:38,446 - INFO - EPISODE START
+2024-10-24 14:25:42,060 - INFO - The reward for episode 8 is: 65026532.0
+2024-10-24 14:25:42,060 - INFO - The UAV has visited 20 nodes in episode 8
+2024-10-24 14:25:42,060 - INFO - The UAV has visited the nodes: [0, 4, 8, 7, 4, 5, 5, 8, 1, 7, 1, 5, 1, 2, 1, 4, 2, 7, 6, 1]
+2024-10-24 14:25:42,060 - INFO - EPISODE FINISHED
+2024-10-24 14:25:42,061 - INFO - EPISODE START
+2024-10-24 14:25:45,987 - INFO - The reward for episode 9 is: 66575108.0
+2024-10-24 14:25:45,987 - INFO - The UAV has visited 20 nodes in episode 9
+2024-10-24 14:25:45,987 - INFO - The UAV has visited the nodes: [0, 1, 9, 0, 5, 7, 5, 7, 2, 5, 9, 9, 8, 7, 0, 0, 8, 2, 5, 9]
+2024-10-24 14:25:45,987 - INFO - EPISODE FINISHED
+2024-10-24 14:25:45,988 - INFO - EPISODE START
+2024-10-24 14:25:49,161 - INFO - The reward for episode 10 is: 53760696.0
+2024-10-24 14:25:49,161 - INFO - The UAV has visited 20 nodes in episode 10
+2024-10-24 14:25:49,161 - INFO - The UAV has visited the nodes: [0, 4, 7, 1, 3, 8, 5, 0, 2, 9, 7, 4, 1, 4, 8, 7, 4, 5, 1, 2]
+2024-10-24 14:25:49,161 - INFO - EPISODE FINISHED
+2024-10-24 14:25:49,162 - INFO - EPISODE START
+2024-10-24 14:25:52,269 - INFO - The reward for episode 11 is: 52995984.0
+2024-10-24 14:25:52,269 - INFO - The UAV has visited 20 nodes in episode 11
+2024-10-24 14:25:52,269 - INFO - The UAV has visited the nodes: [0, 9, 9, 2, 0, 8, 1, 7, 7, 6, 5, 8, 0, 1, 2, 3, 2, 6, 4, 6]
+2024-10-24 14:25:52,269 - INFO - EPISODE FINISHED
+2024-10-24 14:25:52,269 - INFO - EPISODE START
+2024-10-24 14:25:55,643 - INFO - The reward for episode 12 is: 46668180.0
+2024-10-24 14:25:55,643 - INFO - The UAV has visited 20 nodes in episode 12
+2024-10-24 14:25:55,643 - INFO - The UAV has visited the nodes: [0, 8, 6, 5, 2, 2, 7, 3, 2, 9, 4, 9, 0, 7, 6, 2, 8, 8, 7, 0]
+2024-10-24 14:25:55,643 - INFO - EPISODE FINISHED
+2024-10-24 14:25:55,644 - INFO - EPISODE START
+2024-10-24 14:25:58,781 - INFO - The reward for episode 13 is: 43842670.0
+2024-10-24 14:25:58,782 - INFO - The UAV has visited 20 nodes in episode 13
+2024-10-24 14:25:58,782 - INFO - The UAV has visited the nodes: [0, 7, 9, 6, 4, 2, 8, 3, 8, 3, 3, 2, 5, 3, 6, 4, 1, 2, 9, 7]
+2024-10-24 14:25:58,782 - INFO - EPISODE FINISHED
+2024-10-24 14:25:58,782 - INFO - EPISODE START
+2024-10-24 14:26:01,890 - INFO - The reward for episode 14 is: 44979172.0
+2024-10-24 14:26:01,890 - INFO - The UAV has visited 20 nodes in episode 14
+2024-10-24 14:26:01,890 - INFO - The UAV has visited the nodes: [0, 0, 1, 3, 0, 3, 4, 8, 7, 9, 5, 3, 1, 5, 9, 4, 5, 9, 0, 4]
+2024-10-24 14:26:01,891 - INFO - EPISODE FINISHED
+2024-10-24 14:26:01,891 - INFO - EPISODE START
+2024-10-24 14:26:05,452 - INFO - The reward for episode 15 is: 39162356.0
+2024-10-24 14:26:05,452 - INFO - The UAV has visited 20 nodes in episode 15
+2024-10-24 14:26:05,452 - INFO - The UAV has visited the nodes: [0, 8, 7, 0, 9, 7, 2, 5, 4, 2, 9, 3, 7, 2, 4, 2, 7, 4, 5, 4]
+2024-10-24 14:26:05,452 - INFO - EPISODE FINISHED
+2024-10-24 14:26:05,452 - INFO - EPISODE START
+2024-10-24 14:26:08,692 - INFO - The reward for episode 16 is: 38746290.0
+2024-10-24 14:26:08,692 - INFO - The UAV has visited 20 nodes in episode 16
+2024-10-24 14:26:08,692 - INFO - The UAV has visited the nodes: [0, 7, 4, 1, 4, 6, 2, 6, 8, 6, 1, 2, 8, 8, 4, 6, 8, 7, 6, 5]
+2024-10-24 14:26:08,692 - INFO - EPISODE FINISHED
+2024-10-24 14:26:08,693 - INFO - EPISODE START
+2024-10-24 14:26:12,064 - INFO - The reward for episode 17 is: 37078084.0
+2024-10-24 14:26:12,064 - INFO - The UAV has visited 20 nodes in episode 17
+2024-10-24 14:26:12,064 - INFO - The UAV has visited the nodes: [0, 4, 1, 8, 2, 8, 6, 9, 8, 9, 6, 1, 9, 4, 2, 5, 2, 3, 0, 4]
+2024-10-24 14:26:12,064 - INFO - EPISODE FINISHED
+2024-10-24 14:26:12,064 - INFO - EPISODE START
+2024-10-24 14:26:15,320 - INFO - The reward for episode 18 is: 37436004.0
+2024-10-24 14:26:15,320 - INFO - The UAV has visited 20 nodes in episode 18
+2024-10-24 14:26:15,320 - INFO - The UAV has visited the nodes: [0, 0, 8, 8, 5, 3, 2, 8, 8, 3, 5, 7, 1, 3, 3, 9, 4, 7, 1, 2]
+2024-10-24 14:26:15,320 - INFO - EPISODE FINISHED
+2024-10-24 14:26:15,320 - INFO - EPISODE START
+2024-10-24 14:26:18,600 - INFO - The reward for episode 19 is: 37657120.0
+2024-10-24 14:26:18,600 - INFO - The UAV has visited 20 nodes in episode 19
+2024-10-24 14:26:18,600 - INFO - The UAV has visited the nodes: [0, 2, 6, 2, 0, 3, 7, 7, 0, 2, 1, 5, 0, 5, 2, 4, 0, 6, 7, 7]
+2024-10-24 14:26:18,600 - INFO - EPISODE FINISHED
+2024-10-24 14:26:18,600 - INFO - EPISODE START
+2024-10-24 14:26:21,940 - INFO - The reward for episode 20 is: 35682210.0
+2024-10-24 14:26:21,940 - INFO - The UAV has visited 20 nodes in episode 20
+2024-10-24 14:26:21,940 - INFO - The UAV has visited the nodes: [0, 9, 4, 8, 8, 4, 9, 4, 6, 6, 5, 3, 3, 8, 6, 1, 1, 0, 1, 2]
+2024-10-24 14:26:21,940 - INFO - EPISODE FINISHED
+2024-10-24 14:26:21,941 - INFO - EPISODE START
+2024-10-24 14:26:24,945 - INFO - The reward for episode 21 is: 35683030.0
+2024-10-24 14:26:24,945 - INFO - The UAV has visited 20 nodes in episode 21
+2024-10-24 14:26:24,945 - INFO - The UAV has visited the nodes: [0, 5, 6, 5, 7, 1, 0, 9, 2, 1, 4, 3, 7, 3, 7, 0, 9, 8, 0, 4]
+2024-10-24 14:26:24,945 - INFO - EPISODE FINISHED
+2024-10-24 14:26:24,946 - INFO - EPISODE START
+2024-10-24 14:26:28,105 - INFO - The reward for episode 22 is: 35071790.0
+2024-10-24 14:26:28,105 - INFO - The UAV has visited 20 nodes in episode 22
+2024-10-24 14:26:28,105 - INFO - The UAV has visited the nodes: [0, 3, 3, 7, 1, 9, 9, 2, 0, 2, 9, 4, 1, 9, 9, 6, 9, 7, 0, 0]
+2024-10-24 14:26:28,105 - INFO - EPISODE FINISHED
+2024-10-24 14:26:28,106 - INFO - EPISODE START
+2024-10-24 14:26:31,067 - INFO - The reward for episode 23 is: 34736588.0
+2024-10-24 14:26:31,067 - INFO - The UAV has visited 20 nodes in episode 23
+2024-10-24 14:26:31,067 - INFO - The UAV has visited the nodes: [0, 2, 7, 9, 3, 6, 4, 2, 6, 9, 6, 0, 5, 0, 2, 0, 2, 8, 0, 3]
+2024-10-24 14:26:31,067 - INFO - EPISODE FINISHED
+2024-10-24 14:26:31,067 - INFO - EPISODE START
+2024-10-24 14:26:34,078 - INFO - The reward for episode 24 is: 34496870.0
+2024-10-24 14:26:34,079 - INFO - The UAV has visited 20 nodes in episode 24
+2024-10-24 14:26:34,079 - INFO - The UAV has visited the nodes: [0, 5, 9, 4, 1, 4, 9, 0, 2, 0, 4, 6, 3, 8, 0, 6, 0, 7, 1, 1]
+2024-10-24 14:26:34,079 - INFO - EPISODE FINISHED
+2024-10-24 14:26:34,079 - INFO - EPISODE START
+2024-10-24 14:26:37,081 - INFO - The reward for episode 25 is: 34130250.0
+2024-10-24 14:26:37,081 - INFO - The UAV has visited 20 nodes in episode 25
+2024-10-24 14:26:37,081 - INFO - The UAV has visited the nodes: [0, 8, 9, 4, 2, 9, 1, 5, 0, 0, 7, 4, 6, 0, 1, 6, 3, 7, 6, 1]
+2024-10-24 14:26:37,081 - INFO - EPISODE FINISHED
+2024-10-24 14:26:37,082 - INFO - EPISODE START
+2024-10-24 14:26:40,044 - INFO - The reward for episode 26 is: 33975252.0
+2024-10-24 14:26:40,044 - INFO - The UAV has visited 20 nodes in episode 26
+2024-10-24 14:26:40,044 - INFO - The UAV has visited the nodes: [0, 4, 8, 6, 9, 6, 9, 6, 3, 9, 9, 6, 5, 3, 4, 4, 3, 7, 1, 4]
+2024-10-24 14:26:40,044 - INFO - EPISODE FINISHED
+2024-10-24 14:26:40,045 - INFO - EPISODE START
+2024-10-24 14:26:43,096 - INFO - The reward for episode 27 is: 33719110.0
+2024-10-24 14:26:43,096 - INFO - The UAV has visited 20 nodes in episode 27
+2024-10-24 14:26:43,096 - INFO - The UAV has visited the nodes: [0, 9, 8, 2, 3, 9, 4, 6, 9, 5, 2, 6, 4, 6, 3, 7, 5, 2, 8, 6]
+2024-10-24 14:26:43,096 - INFO - EPISODE FINISHED
+2024-10-24 14:26:43,097 - INFO - EPISODE START
+2024-10-24 14:26:46,145 - INFO - The reward for episode 28 is: 33668744.0
+2024-10-24 14:26:46,145 - INFO - The UAV has visited 20 nodes in episode 28
+2024-10-24 14:26:46,145 - INFO - The UAV has visited the nodes: [0, 9, 2, 5, 6, 4, 7, 9, 8, 6, 0, 2, 3, 4, 4, 2, 0, 0, 1, 5]
+2024-10-24 14:26:46,145 - INFO - EPISODE FINISHED
+2024-10-24 14:26:46,146 - INFO - EPISODE START
+2024-10-24 14:26:49,107 - INFO - The reward for episode 29 is: 33632630.0
+2024-10-24 14:26:49,107 - INFO - The UAV has visited 20 nodes in episode 29
+2024-10-24 14:26:49,107 - INFO - The UAV has visited the nodes: [0, 7, 0, 5, 9, 1, 7, 9, 1, 4, 8, 2, 1, 6, 0, 6, 6, 4, 8, 4]
+2024-10-24 14:26:49,107 - INFO - EPISODE FINISHED
+2024-10-24 14:26:49,108 - INFO - The rewards per episode are: [Array(3.2590256e+08, dtype=float32), Array(2.6590485e+08, dtype=float32), Array(1.9924142e+08, dtype=float32), Array(1.7008648e+08, dtype=float32), Array(1.1692428e+08, dtype=float32), Array(1.1730554e+08, dtype=float32), Array(1.0111206e+08, dtype=float32), Array(80834576., dtype=float32), Array(65026532., dtype=float32), Array(66575108., dtype=float32), Array(53760696., dtype=float32), Array(52995984., dtype=float32), Array(46668180., dtype=float32), Array(43842672., dtype=float32), Array(44979172., dtype=float32), Array(39162356., dtype=float32), Array(38746288., dtype=float32), Array(37078084., dtype=float32), Array(37436004., dtype=float32), Array(37657120., dtype=float32), Array(35682208., dtype=float32), Array(35683032., dtype=float32), Array(35071792., dtype=float32), Array(34736588., dtype=float32), Array(34496872., dtype=float32), Array(34130248., dtype=float32), Array(33975252., dtype=float32), Array(33719112., dtype=float32), Array(33668744., dtype=float32), Array(33632632., dtype=float32)]
+2024-10-24 14:26:49,109 - INFO - Q Table is: [[4703577.   4421789.5  5543236.   4809761.   6423241.   4268717.5
+  4964482.5  5117621.5  5400691.5  4922927.5 ]
+ [3161094.5  1333322.6  4088041.5  3181505.   5226787.5  3385775.8
+  2453843.2  4946259.5  5247199.   2899854.2 ]
+ [3573774.2  4405349.5  1304729.8  4450212.5  3282835.8  3829650.2
+  4472000.   3087298.   5883440.   4331305.5 ]
+ [4634380.5  4986585.5  2825236.5  2352062.   2263616.5   620779.9
+  2680441.8  6044536.   3493154.5  2423191.  ]
+ [ 771557.94 3299482.   6741087.5  1855982.1  1575329.6  2231404.8
+  4928989.   2979851.5  5285174.   3245929.  ]
+ [3293757.5  3332742.8  3277690.2  4249757.   4094313.5   583034.7
+  1411516.1  3168226.5  3437746.8  4855208.  ]
+ [4908693.   3535329.2  2472161.   3560291.8  6476084.5  4161426.8
+  1442202.8  3746823.2  3132889.5  3959290.  ]
+ [4013951.2  5896843.   1792732.8  2283385.8  4904032.5  2331536.5
+  6123305.   2645295.5  1346027.4  4510158.5 ]
+ [2656841.2  1448795.9  4122212.8  3298669.   2989170.   5955504.5
+  4727264.   5942183.   4026955.5  2034569.2 ]
+ [2493794.8  2650793.   3574318.   4827140.   5723383.   1811201.
+  4805084.   4274781.   4290047.   2765493.  ]]
+2024-10-24 14:26:49,111 - INFO - Mean reward per episode: 76201220.0
+2024-10-24 14:26:49,113 - INFO - Max reward: 325902560.0
+2024-10-24 14:26:49,116 - INFO - The UAV energy level is: 16545292.0
+2024-10-24 14:26:49,116 - INFO - The UAV processed in total: 29978400.0 bits
+2024-10-24 14:26:49,116 - INFO - Q-Brave Algorithm took: 97.26142024993896 seconds
+2024-10-24 14:26:49,116 - INFO - Q-Brave Algorithm has successfully reached the final node!
+2024-10-24 14:26:57,165 - INFO - Running the Q-Brave Algorithm
+2024-10-24 14:26:57,166 - INFO - EPISODE START
+2024-10-24 14:27:00,356 - INFO - The reward for episode 0 is: 273304580.0
+2024-10-24 14:27:00,356 - INFO - The UAV has visited 20 nodes in episode 0
+2024-10-24 14:27:00,356 - INFO - The UAV has visited the nodes: [0, 5, 9, 5, 8, 6, 7, 1, 4, 0, 1, 8, 5, 1, 5, 2, 1, 0, 9, 4]
+2024-10-24 14:27:00,356 - INFO - EPISODE FINISHED
+2024-10-24 14:27:00,356 - INFO - EPISODE START
+2024-10-24 14:27:03,459 - INFO - The reward for episode 1 is: 205597220.0
+2024-10-24 14:27:03,459 - INFO - The UAV has visited 20 nodes in episode 1
+2024-10-24 14:27:03,459 - INFO - The UAV has visited the nodes: [0, 6, 8, 1, 4, 6, 9, 0, 4, 2, 5, 0, 9, 8, 5, 6, 2, 7, 4, 0]
+2024-10-24 14:27:03,459 - INFO - EPISODE FINISHED
+2024-10-24 14:27:03,459 - INFO - EPISODE START
+2024-10-24 14:27:06,341 - INFO - The reward for episode 2 is: 151151230.0
+2024-10-24 14:27:06,341 - INFO - The UAV has visited 20 nodes in episode 2
+2024-10-24 14:27:06,341 - INFO - The UAV has visited the nodes: [0, 1, 5, 5, 7, 5, 9, 1, 1, 7, 8, 4, 4, 3, 2, 0, 9, 6, 6, 9]
+2024-10-24 14:27:06,341 - INFO - EPISODE FINISHED
+2024-10-24 14:27:06,341 - INFO - EPISODE START
+2024-10-24 14:27:09,505 - INFO - The reward for episode 3 is: 127770940.0
+2024-10-24 14:27:09,505 - INFO - The UAV has visited 20 nodes in episode 3
+2024-10-24 14:27:09,505 - INFO - The UAV has visited the nodes: [0, 2, 8, 6, 6, 9, 7, 6, 5, 4, 9, 7, 2, 9, 3, 4, 6, 1, 1, 7]
+2024-10-24 14:27:09,505 - INFO - EPISODE FINISHED
+2024-10-24 14:27:09,506 - INFO - EPISODE START
+2024-10-24 14:27:12,619 - INFO - The reward for episode 4 is: 89735160.0
+2024-10-24 14:27:12,619 - INFO - The UAV has visited 20 nodes in episode 4
+2024-10-24 14:27:12,619 - INFO - The UAV has visited the nodes: [0, 9, 7, 5, 5, 1, 1, 2, 9, 0, 5, 1, 5, 1, 3, 6, 6, 1, 0, 4]
+2024-10-24 14:27:12,619 - INFO - EPISODE FINISHED
+2024-10-24 14:27:12,619 - INFO - EPISODE START
+2024-10-24 14:27:15,860 - INFO - The reward for episode 5 is: 77936856.0
+2024-10-24 14:27:15,860 - INFO - The UAV has visited 20 nodes in episode 5
+2024-10-24 14:27:15,860 - INFO - The UAV has visited the nodes: [0, 2, 5, 7, 2, 5, 1, 0, 0, 5, 5, 9, 7, 6, 9, 1, 0, 2, 0, 3]
+2024-10-24 14:27:15,860 - INFO - EPISODE FINISHED
+2024-10-24 14:27:15,861 - INFO - EPISODE START
+2024-10-24 14:27:19,025 - INFO - The reward for episode 6 is: 78807960.0
+2024-10-24 14:27:19,025 - INFO - The UAV has visited 20 nodes in episode 6
+2024-10-24 14:27:19,025 - INFO - The UAV has visited the nodes: [0, 1, 4, 3, 2, 5, 5, 5, 9, 0, 3, 1, 3, 7, 9, 6, 8, 7, 1, 9]
+2024-10-24 14:27:19,025 - INFO - EPISODE FINISHED
+2024-10-24 14:27:19,025 - INFO - EPISODE START
+2024-10-24 14:27:22,311 - INFO - The reward for episode 7 is: 72409230.0
+2024-10-24 14:27:22,311 - INFO - The UAV has visited 20 nodes in episode 7
+2024-10-24 14:27:22,311 - INFO - The UAV has visited the nodes: [0, 3, 2, 8, 5, 5, 2, 6, 5, 9, 3, 8, 7, 5, 3, 3, 6, 3, 1, 2]
+2024-10-24 14:27:22,311 - INFO - EPISODE FINISHED
+2024-10-24 14:27:22,312 - INFO - EPISODE START
+2024-10-24 14:27:25,805 - INFO - The reward for episode 8 is: 55621892.0
+2024-10-24 14:27:25,805 - INFO - The UAV has visited 20 nodes in episode 8
+2024-10-24 14:27:25,805 - INFO - The UAV has visited the nodes: [0, 9, 3, 0, 4, 6, 9, 4, 9, 7, 1, 9, 9, 3, 7, 1, 4, 6, 9, 0]
+2024-10-24 14:27:25,805 - INFO - EPISODE FINISHED
+2024-10-24 14:27:25,805 - INFO - EPISODE START
+2024-10-24 14:27:28,972 - INFO - The reward for episode 9 is: 51517096.0
+2024-10-24 14:27:28,972 - INFO - The UAV has visited 20 nodes in episode 9
+2024-10-24 14:27:28,972 - INFO - The UAV has visited the nodes: [0, 4, 0, 3, 3, 0, 3, 6, 4, 0, 9, 5, 5, 3, 3, 4, 2, 2, 9, 9]
+2024-10-24 14:27:28,972 - INFO - EPISODE FINISHED
+2024-10-24 14:27:28,973 - INFO - EPISODE START
+2024-10-24 14:27:32,326 - INFO - The reward for episode 10 is: 51007404.0
+2024-10-24 14:27:32,326 - INFO - The UAV has visited 20 nodes in episode 10
+2024-10-24 14:27:32,326 - INFO - The UAV has visited the nodes: [0, 3, 2, 9, 0, 7, 4, 4, 8, 1, 7, 5, 8, 7, 1, 8, 3, 0, 9, 5]
+2024-10-24 14:27:32,326 - INFO - EPISODE FINISHED
+2024-10-24 14:27:32,326 - INFO - EPISODE START
+2024-10-24 14:27:35,655 - INFO - The reward for episode 11 is: 44367060.0
+2024-10-24 14:27:35,655 - INFO - The UAV has visited 20 nodes in episode 11
+2024-10-24 14:27:35,655 - INFO - The UAV has visited the nodes: [0, 4, 1, 6, 7, 4, 6, 8, 8, 9, 5, 0, 4, 3, 7, 9, 5, 3, 3, 6]
+2024-10-24 14:27:35,655 - INFO - EPISODE FINISHED
+2024-10-24 14:27:35,656 - INFO - EPISODE START
+2024-10-24 14:27:39,061 - INFO - The reward for episode 12 is: 42134736.0
+2024-10-24 14:27:39,061 - INFO - The UAV has visited 20 nodes in episode 12
+2024-10-24 14:27:39,061 - INFO - The UAV has visited the nodes: [0, 2, 6, 8, 4, 6, 1, 1, 4, 2, 8, 9, 2, 1, 9, 6, 5, 0, 8, 1]
+2024-10-24 14:27:39,061 - INFO - EPISODE FINISHED
+2024-10-24 14:27:39,061 - INFO - EPISODE START
+2024-10-24 14:27:42,445 - INFO - The reward for episode 13 is: 36458184.0
+2024-10-24 14:27:42,445 - INFO - The UAV has visited 20 nodes in episode 13
+2024-10-24 14:27:42,445 - INFO - The UAV has visited the nodes: [0, 1, 6, 0, 1, 9, 7, 2, 5, 8, 4, 6, 5, 7, 1, 5, 7, 2, 0, 8]
+2024-10-24 14:27:42,445 - INFO - EPISODE FINISHED
+2024-10-24 14:27:42,446 - INFO - EPISODE START
+2024-10-24 14:27:46,083 - INFO - The reward for episode 14 is: 35027264.0
+2024-10-24 14:27:46,083 - INFO - The UAV has visited 20 nodes in episode 14
+2024-10-24 14:27:46,083 - INFO - The UAV has visited the nodes: [0, 6, 8, 1, 4, 2, 6, 9, 1, 2, 6, 5, 4, 2, 7, 2, 5, 2, 2, 2]
+2024-10-24 14:27:46,083 - INFO - EPISODE FINISHED
+2024-10-24 14:27:46,084 - INFO - EPISODE START
+2024-10-24 14:27:49,647 - INFO - The reward for episode 15 is: 33537238.0
+2024-10-24 14:27:49,647 - INFO - The UAV has visited 20 nodes in episode 15
+2024-10-24 14:27:49,647 - INFO - The UAV has visited the nodes: [0, 9, 9, 5, 4, 3, 7, 8, 3, 4, 3, 2, 1, 0, 9, 1, 9, 4, 3, 0]
+2024-10-24 14:27:49,648 - INFO - EPISODE FINISHED
+2024-10-24 14:27:49,648 - INFO - EPISODE START
+2024-10-24 14:27:53,373 - INFO - The reward for episode 16 is: 33078572.0
+2024-10-24 14:27:53,373 - INFO - The UAV has visited 20 nodes in episode 16
+2024-10-24 14:27:53,373 - INFO - The UAV has visited the nodes: [0, 3, 5, 8, 6, 9, 4, 7, 0, 0, 3, 1, 7, 5, 2, 1, 8, 4, 4, 2]
+2024-10-24 14:27:53,374 - INFO - EPISODE FINISHED
+2024-10-24 14:27:53,374 - INFO - EPISODE START
+2024-10-24 14:27:56,939 - INFO - The reward for episode 17 is: 31302658.0
+2024-10-24 14:27:56,939 - INFO - The UAV has visited 20 nodes in episode 17
+2024-10-24 14:27:56,939 - INFO - The UAV has visited the nodes: [0, 0, 1, 0, 4, 3, 3, 2, 2, 9, 7, 1, 4, 9, 6, 3, 2, 7, 8, 7]
+2024-10-24 14:27:56,939 - INFO - EPISODE FINISHED
+2024-10-24 14:27:56,940 - INFO - EPISODE START
+2024-10-24 14:28:00,098 - INFO - The reward for episode 18 is: 31284606.0
+2024-10-24 14:28:00,098 - INFO - The UAV has visited 20 nodes in episode 18
+2024-10-24 14:28:00,098 - INFO - The UAV has visited the nodes: [0, 3, 4, 8, 0, 6, 5, 5, 5, 0, 0, 6, 7, 8, 3, 7, 1, 1, 9, 3]
+2024-10-24 14:28:00,098 - INFO - EPISODE FINISHED
+2024-10-24 14:28:00,098 - INFO - EPISODE START
+2024-10-24 14:28:03,306 - INFO - The reward for episode 19 is: 30239068.0
+2024-10-24 14:28:03,306 - INFO - The UAV has visited 20 nodes in episode 19
+2024-10-24 14:28:03,306 - INFO - The UAV has visited the nodes: [0, 2, 0, 7, 6, 4, 2, 3, 7, 1, 9, 8, 9, 3, 9, 7, 9, 3, 1, 7]
+2024-10-24 14:28:03,306 - INFO - EPISODE FINISHED
+2024-10-24 14:28:03,306 - INFO - EPISODE START
+2024-10-24 14:28:06,543 - INFO - The reward for episode 20 is: 29586612.0
+2024-10-24 14:28:06,544 - INFO - The UAV has visited 20 nodes in episode 20
+2024-10-24 14:28:06,544 - INFO - The UAV has visited the nodes: [0, 1, 2, 4, 7, 6, 4, 2, 6, 3, 5, 5, 0, 1, 7, 4, 2, 5, 7, 6]
+2024-10-24 14:28:06,544 - INFO - EPISODE FINISHED
+2024-10-24 14:28:06,544 - INFO - EPISODE START
+2024-10-24 14:28:09,726 - INFO - The reward for episode 21 is: 29361616.0
+2024-10-24 14:28:09,726 - INFO - The UAV has visited 20 nodes in episode 21
+2024-10-24 14:28:09,726 - INFO - The UAV has visited the nodes: [0, 5, 9, 5, 2, 4, 0, 7, 5, 1, 0, 5, 6, 8, 8, 4, 9, 6, 9, 8]
+2024-10-24 14:28:09,726 - INFO - EPISODE FINISHED
+2024-10-24 14:28:09,727 - INFO - EPISODE START
+2024-10-24 14:28:12,486 - INFO - The reward for episode 22 is: 29312580.0
+2024-10-24 14:28:12,487 - INFO - The UAV has visited 20 nodes in episode 22
+2024-10-24 14:28:12,487 - INFO - The UAV has visited the nodes: [0, 0, 2, 4, 1, 0, 2, 2, 8, 2, 3, 6, 7, 9, 2, 0, 0, 6, 0, 5]
+2024-10-24 14:28:12,487 - INFO - EPISODE FINISHED
+2024-10-24 14:28:12,487 - INFO - EPISODE START
+2024-10-24 14:28:15,330 - INFO - The reward for episode 23 is: 28920920.0
+2024-10-24 14:28:15,330 - INFO - The UAV has visited 20 nodes in episode 23
+2024-10-24 14:28:15,331 - INFO - The UAV has visited the nodes: [0, 4, 2, 7, 2, 6, 9, 3, 8, 1, 0, 2, 9, 9, 6, 6, 5, 8, 0, 4]
+2024-10-24 14:28:15,331 - INFO - EPISODE FINISHED
+2024-10-24 14:28:15,331 - INFO - EPISODE START
+2024-10-24 14:28:18,118 - INFO - The reward for episode 24 is: 28641140.0
+2024-10-24 14:28:18,118 - INFO - The UAV has visited 20 nodes in episode 24
+2024-10-24 14:28:18,118 - INFO - The UAV has visited the nodes: [0, 9, 5, 0, 9, 0, 6, 8, 0, 7, 4, 2, 6, 6, 2, 9, 5, 9, 6, 7]
+2024-10-24 14:28:18,118 - INFO - EPISODE FINISHED
+2024-10-24 14:28:18,119 - INFO - EPISODE START
+2024-10-24 14:28:20,970 - INFO - The reward for episode 25 is: 28502408.0
+2024-10-24 14:28:20,970 - INFO - The UAV has visited 20 nodes in episode 25
+2024-10-24 14:28:20,970 - INFO - The UAV has visited the nodes: [0, 3, 5, 3, 9, 4, 2, 7, 0, 7, 1, 7, 6, 5, 5, 0, 2, 7, 1, 3]
+2024-10-24 14:28:20,970 - INFO - EPISODE FINISHED
+2024-10-24 14:28:20,970 - INFO - EPISODE START
+2024-10-24 14:28:23,978 - INFO - The reward for episode 26 is: 28548418.0
+2024-10-24 14:28:23,978 - INFO - The UAV has visited 20 nodes in episode 26
+2024-10-24 14:28:23,978 - INFO - The UAV has visited the nodes: [0, 3, 8, 9, 1, 3, 0, 5, 4, 5, 6, 0, 7, 0, 0, 5, 0, 3, 5, 2]
+2024-10-24 14:28:23,978 - INFO - EPISODE FINISHED
+2024-10-24 14:28:23,978 - INFO - EPISODE START
+2024-10-24 14:28:27,095 - INFO - The reward for episode 27 is: 28421304.0
+2024-10-24 14:28:27,095 - INFO - The UAV has visited 20 nodes in episode 27
+2024-10-24 14:28:27,095 - INFO - The UAV has visited the nodes: [0, 5, 0, 5, 3, 2, 1, 6, 8, 0, 9, 8, 6, 9, 1, 9, 5, 2, 7, 2]
+2024-10-24 14:28:27,095 - INFO - EPISODE FINISHED
+2024-10-24 14:28:27,095 - INFO - EPISODE START
+2024-10-24 14:28:30,112 - INFO - The reward for episode 28 is: 28270710.0
+2024-10-24 14:28:30,112 - INFO - The UAV has visited 20 nodes in episode 28
+2024-10-24 14:28:30,112 - INFO - The UAV has visited the nodes: [0, 2, 2, 1, 5, 7, 7, 6, 4, 9, 0, 3, 3, 1, 3, 8, 4, 1, 6, 2]
+2024-10-24 14:28:30,112 - INFO - EPISODE FINISHED
+2024-10-24 14:28:30,112 - INFO - EPISODE START
+2024-10-24 14:28:33,026 - INFO - The reward for episode 29 is: 28144526.0
+2024-10-24 14:28:33,026 - INFO - The UAV has visited 20 nodes in episode 29
+2024-10-24 14:28:33,026 - INFO - The UAV has visited the nodes: [0, 1, 1, 9, 6, 4, 2, 9, 3, 9, 6, 5, 7, 9, 6, 6, 9, 0, 6, 2]
+2024-10-24 14:28:33,026 - INFO - EPISODE FINISHED
+2024-10-24 14:28:33,027 - INFO - The rewards per episode are: [Array(2.7330458e+08, dtype=float32), Array(2.0559722e+08, dtype=float32), Array(1.5115123e+08, dtype=float32), Array(1.2777094e+08, dtype=float32), Array(89735160., dtype=float32), Array(77936856., dtype=float32), Array(78807960., dtype=float32), Array(72409232., dtype=float32), Array(55621892., dtype=float32), Array(51517096., dtype=float32), Array(51007404., dtype=float32), Array(44367060., dtype=float32), Array(42134736., dtype=float32), Array(36458184., dtype=float32), Array(35027264., dtype=float32), Array(33537238., dtype=float32), Array(33078572., dtype=float32), Array(31302658., dtype=float32), Array(31284606., dtype=float32), Array(30239068., dtype=float32), Array(29586612., dtype=float32), Array(29361616., dtype=float32), Array(29312580., dtype=float32), Array(28920920., dtype=float32), Array(28641140., dtype=float32), Array(28502408., dtype=float32), Array(28548418., dtype=float32), Array(28421304., dtype=float32), Array(28270710., dtype=float32), Array(28144526., dtype=float32)]
+2024-10-24 14:28:33,028 - INFO - Q Table is: [[4303175.5  4359813.   3924154.2  4172767.8  3972080.8  4260731.5
+  3295196.2  4523711.   2951149.2  5057281.  ]
+ [5309576.   3515119.5  1994263.2  2166839.5  3489138.8  3429512.5
+  1907799.   3661011.2  2524053.   3395615.8 ]
+ [3591699.8  4061107.5  2419804.8   840107.5  1518657.   3345249.
+  2956605.5  3775279.5  1903381.6  3311075.2 ]
+ [2888412.   3034407.5  3170060.   2272707.2  2599619.2  1811671.5
+  2906824.5  2775141.   1877494.   1407200.5 ]
+ [4371574.   1726200.5  3962881.   2540356.8  2147259.    531142.44
+  3595649.2  1077956.4  1030346.4  2365871.8 ]
+ [4396858.5  3903593.5  3455560.8  2026314.5  2243360.   3920356.5
+  2352540.5  3046547.5  2293161.   2966719.  ]
+ [1765608.4  2530918.8  2767798.   1424559.2  2356333.5  3508720.
+  3561429.2  2601706.5  3111732.5  4471606.5 ]
+ [1761551.2  4944961.5  2838044.         0.   3265383.5  2751077.
+  3183032.2   630179.56 2188002.5  2345366.  ]
+ [2226113.8  2710889.    488411.97 1301579.   3101015.5  3518205.5
+  2122023.5  2228410.5  1021034.5  1843197.5 ]
+ [4262464.5  3290750.2   932590.75 3067890.5  3714824.   3719200.5
+  4211736.   3315983.   2464005.5  1896664.4 ]]
+2024-10-24 14:28:33,031 - INFO - Mean reward per episode: 61333310.0
+2024-10-24 14:28:33,033 - INFO - Max reward: 273304580.0
+2024-10-24 14:28:33,037 - INFO - The UAV energy level is: 16935650.0
+2024-10-24 14:28:33,037 - INFO - The UAV processed in total: 24653838.0 bits
+2024-10-24 14:28:33,037 - INFO - Q-Brave Algorithm took: 95.87188577651978 seconds
+2024-10-24 14:28:33,037 - INFO - Q-Brave Algorithm has successfully reached the final node!
+2024-10-24 14:28:43,613 - INFO - Running the Q-Brave Algorithm
+2024-10-24 14:28:43,614 - INFO - EPISODE START
+2024-10-24 14:28:46,222 - INFO - The reward for episode 0 is: 363849000.0
+2024-10-24 14:28:46,223 - INFO - The UAV has visited 20 nodes in episode 0
+2024-10-24 14:28:46,223 - INFO - The UAV has visited the nodes: [0, 8, 0, 4, 1, 3, 3, 5, 6, 4, 8, 0, 4, 5, 6, 9, 3, 3, 6, 3]
+2024-10-24 14:28:46,223 - INFO - EPISODE FINISHED
+2024-10-24 14:28:46,223 - INFO - EPISODE START
+2024-10-24 14:28:49,294 - INFO - The reward for episode 1 is: 276696580.0
+2024-10-24 14:28:49,294 - INFO - The UAV has visited 20 nodes in episode 1
+2024-10-24 14:28:49,294 - INFO - The UAV has visited the nodes: [0, 8, 4, 9, 3, 4, 8, 0, 2, 4, 2, 5, 4, 7, 6, 4, 4, 9, 1, 7]
+2024-10-24 14:28:49,294 - INFO - EPISODE FINISHED
+2024-10-24 14:28:49,294 - INFO - EPISODE START
+2024-10-24 14:28:52,082 - INFO - The reward for episode 2 is: 224940700.0
+2024-10-24 14:28:52,082 - INFO - The UAV has visited 20 nodes in episode 2
+2024-10-24 14:28:52,082 - INFO - The UAV has visited the nodes: [0, 6, 3, 7, 0, 6, 0, 7, 3, 4, 6, 0, 9, 0, 1, 8, 1, 3, 4, 0]
+2024-10-24 14:28:52,082 - INFO - EPISODE FINISHED
+2024-10-24 14:28:52,082 - INFO - EPISODE START
+2024-10-24 14:28:55,177 - INFO - The reward for episode 3 is: 177881100.0
+2024-10-24 14:28:55,177 - INFO - The UAV has visited 20 nodes in episode 3
+2024-10-24 14:28:55,177 - INFO - The UAV has visited the nodes: [0, 3, 8, 3, 4, 0, 7, 8, 0, 5, 1, 6, 0, 7, 2, 0, 5, 3, 5, 4]
+2024-10-24 14:28:55,177 - INFO - EPISODE FINISHED
+2024-10-24 14:28:55,177 - INFO - EPISODE START
+2024-10-24 14:28:58,429 - INFO - The reward for episode 4 is: 154643020.0
+2024-10-24 14:28:58,429 - INFO - The UAV has visited 20 nodes in episode 4
+2024-10-24 14:28:58,429 - INFO - The UAV has visited the nodes: [0, 7, 3, 6, 3, 5, 7, 0, 8, 4, 5, 8, 9, 0, 9, 0, 1, 6, 1, 7]
+2024-10-24 14:28:58,429 - INFO - EPISODE FINISHED
+2024-10-24 14:28:58,429 - INFO - EPISODE START
+2024-10-24 14:29:01,738 - INFO - The reward for episode 5 is: 131824070.0
+2024-10-24 14:29:01,738 - INFO - The UAV has visited 20 nodes in episode 5
+2024-10-24 14:29:01,738 - INFO - The UAV has visited the nodes: [0, 2, 0, 4, 0, 5, 8, 6, 6, 3, 9, 7, 0, 8, 4, 9, 0, 8, 9, 6]
+2024-10-24 14:29:01,738 - INFO - EPISODE FINISHED
+2024-10-24 14:29:01,738 - INFO - EPISODE START
+2024-10-24 14:29:04,991 - INFO - The reward for episode 6 is: 131603460.0
+2024-10-24 14:29:04,991 - INFO - The UAV has visited 20 nodes in episode 6
+2024-10-24 14:29:04,991 - INFO - The UAV has visited the nodes: [0, 8, 5, 3, 2, 9, 7, 5, 1, 5, 7, 3, 6, 5, 8, 1, 1, 6, 0, 2]
+2024-10-24 14:29:04,991 - INFO - EPISODE FINISHED
+2024-10-24 14:29:04,992 - INFO - EPISODE START
+2024-10-24 14:29:08,026 - INFO - The reward for episode 7 is: 106350430.0
+2024-10-24 14:29:08,026 - INFO - The UAV has visited 20 nodes in episode 7
+2024-10-24 14:29:08,026 - INFO - The UAV has visited the nodes: [0, 1, 6, 4, 9, 7, 0, 6, 5, 3, 8, 2, 2, 2, 7, 2, 4, 7, 6, 6]
+2024-10-24 14:29:08,026 - INFO - EPISODE FINISHED
+2024-10-24 14:29:08,026 - INFO - EPISODE START
+2024-10-24 14:29:10,727 - INFO - The reward for episode 8 is: 95849460.0
+2024-10-24 14:29:10,727 - INFO - The UAV has visited 20 nodes in episode 8
+2024-10-24 14:29:10,727 - INFO - The UAV has visited the nodes: [0, 5, 9, 5, 2, 9, 9, 1, 7, 3, 0, 9, 2, 0, 6, 7, 1, 7, 2, 0]
+2024-10-24 14:29:10,727 - INFO - EPISODE FINISHED
+2024-10-24 14:29:10,727 - INFO - EPISODE START
+2024-10-24 14:29:13,755 - INFO - The reward for episode 9 is: 73456184.0
+2024-10-24 14:29:13,755 - INFO - The UAV has visited 20 nodes in episode 9
+2024-10-24 14:29:13,755 - INFO - The UAV has visited the nodes: [0, 4, 4, 5, 4, 1, 1, 5, 5, 0, 8, 7, 3, 3, 0, 9, 1, 2, 9, 2]
+2024-10-24 14:29:13,755 - INFO - EPISODE FINISHED
+2024-10-24 14:29:13,755 - INFO - EPISODE START
+2024-10-24 14:29:16,659 - INFO - The reward for episode 10 is: 65148480.0
+2024-10-24 14:29:16,659 - INFO - The UAV has visited 20 nodes in episode 10
+2024-10-24 14:29:16,659 - INFO - The UAV has visited the nodes: [0, 1, 4, 7, 6, 9, 6, 4, 4, 6, 1, 2, 3, 8, 3, 5, 8, 4, 0, 3]
+2024-10-24 14:29:16,659 - INFO - EPISODE FINISHED
+2024-10-24 14:29:16,660 - INFO - EPISODE START
+2024-10-24 14:29:19,716 - INFO - The reward for episode 11 is: 56084132.0
+2024-10-24 14:29:19,717 - INFO - The UAV has visited 20 nodes in episode 11
+2024-10-24 14:29:19,717 - INFO - The UAV has visited the nodes: [0, 3, 3, 9, 8, 4, 5, 5, 4, 3, 3, 3, 9, 6, 2, 4, 0, 1, 1, 3]
+2024-10-24 14:29:19,717 - INFO - EPISODE FINISHED
+2024-10-24 14:29:19,717 - INFO - EPISODE START
+2024-10-24 14:29:22,793 - INFO - The reward for episode 12 is: 56457220.0
+2024-10-24 14:29:22,793 - INFO - The UAV has visited 20 nodes in episode 12
+2024-10-24 14:29:22,793 - INFO - The UAV has visited the nodes: [0, 9, 5, 5, 8, 9, 1, 0, 1, 5, 6, 7, 7, 1, 5, 9, 8, 9, 3, 0]
+2024-10-24 14:29:22,793 - INFO - EPISODE FINISHED
+2024-10-24 14:29:22,793 - INFO - EPISODE START
+2024-10-24 14:29:26,175 - INFO - The reward for episode 13 is: 50597720.0
+2024-10-24 14:29:26,175 - INFO - The UAV has visited 20 nodes in episode 13
+2024-10-24 14:29:26,175 - INFO - The UAV has visited the nodes: [0, 7, 3, 2, 9, 5, 4, 4, 5, 8, 0, 4, 5, 3, 1, 0, 8, 3, 9, 1]
+2024-10-24 14:29:26,175 - INFO - EPISODE FINISHED
+2024-10-24 14:29:26,175 - INFO - EPISODE START
+2024-10-24 14:29:29,183 - INFO - The reward for episode 14 is: 50581824.0
+2024-10-24 14:29:29,183 - INFO - The UAV has visited 20 nodes in episode 14
+2024-10-24 14:29:29,183 - INFO - The UAV has visited the nodes: [0, 9, 4, 5, 2, 6, 7, 2, 4, 0, 9, 9, 0, 2, 2, 9, 7, 1, 6, 2]
+2024-10-24 14:29:29,184 - INFO - EPISODE FINISHED
+2024-10-24 14:29:29,184 - INFO - EPISODE START
+2024-10-24 14:29:33,087 - INFO - The reward for episode 15 is: 46917068.0
+2024-10-24 14:29:33,087 - INFO - The UAV has visited 20 nodes in episode 15
+2024-10-24 14:29:33,087 - INFO - The UAV has visited the nodes: [0, 8, 6, 1, 2, 4, 3, 7, 4, 4, 2, 8, 6, 5, 5, 8, 3, 3, 4, 4]
+2024-10-24 14:29:33,087 - INFO - EPISODE FINISHED
+2024-10-24 14:29:33,087 - INFO - EPISODE START
+2024-10-24 14:29:36,615 - INFO - The reward for episode 16 is: 43492476.0
+2024-10-24 14:29:36,616 - INFO - The UAV has visited 20 nodes in episode 16
+2024-10-24 14:29:36,616 - INFO - The UAV has visited the nodes: [0, 9, 4, 8, 3, 3, 5, 0, 2, 7, 1, 4, 2, 4, 0, 8, 4, 6, 9, 8]
+2024-10-24 14:29:36,616 - INFO - EPISODE FINISHED
+2024-10-24 14:29:36,616 - INFO - EPISODE START
+2024-10-24 14:29:40,336 - INFO - The reward for episode 17 is: 43090640.0
+2024-10-24 14:29:40,337 - INFO - The UAV has visited 20 nodes in episode 17
+2024-10-24 14:29:40,337 - INFO - The UAV has visited the nodes: [0, 0, 7, 1, 3, 8, 0, 1, 3, 4, 8, 2, 1, 1, 1, 7, 1, 8, 1, 6]
+2024-10-24 14:29:40,337 - INFO - EPISODE FINISHED
+2024-10-24 14:29:40,337 - INFO - EPISODE START
+2024-10-24 14:29:44,040 - INFO - The reward for episode 18 is: 41553880.0
+2024-10-24 14:29:44,040 - INFO - The UAV has visited 20 nodes in episode 18
+2024-10-24 14:29:44,040 - INFO - The UAV has visited the nodes: [0, 3, 0, 1, 7, 8, 1, 2, 3, 6, 2, 5, 1, 5, 0, 1, 4, 6, 0, 9]
+2024-10-24 14:29:44,040 - INFO - EPISODE FINISHED
+2024-10-24 14:29:44,040 - INFO - EPISODE START
+2024-10-24 14:29:47,531 - INFO - The reward for episode 19 is: 40529470.0
+2024-10-24 14:29:47,531 - INFO - The UAV has visited 20 nodes in episode 19
+2024-10-24 14:29:47,531 - INFO - The UAV has visited the nodes: [0, 6, 6, 0, 3, 2, 2, 4, 3, 8, 0, 4, 4, 1, 6, 2, 5, 9, 4, 0]
+2024-10-24 14:29:47,531 - INFO - EPISODE FINISHED
+2024-10-24 14:29:47,532 - INFO - EPISODE START
+2024-10-24 14:29:50,936 - INFO - The reward for episode 20 is: 39867124.0
+2024-10-24 14:29:50,936 - INFO - The UAV has visited 20 nodes in episode 20
+2024-10-24 14:29:50,936 - INFO - The UAV has visited the nodes: [0, 8, 5, 1, 5, 3, 7, 4, 4, 0, 4, 1, 8, 2, 1, 6, 0, 9, 7, 6]
+2024-10-24 14:29:50,936 - INFO - EPISODE FINISHED
+2024-10-24 14:29:50,937 - INFO - EPISODE START
+2024-10-24 14:29:54,206 - INFO - The reward for episode 21 is: 40090470.0
+2024-10-24 14:29:54,206 - INFO - The UAV has visited 20 nodes in episode 21
+2024-10-24 14:29:54,206 - INFO - The UAV has visited the nodes: [0, 7, 0, 7, 9, 7, 7, 3, 3, 3, 9, 8, 5, 4, 9, 6, 3, 9, 9, 5]
+2024-10-24 14:29:54,206 - INFO - EPISODE FINISHED
+2024-10-24 14:29:54,206 - INFO - EPISODE START
+2024-10-24 14:29:57,304 - INFO - The reward for episode 22 is: 38720200.0
+2024-10-24 14:29:57,304 - INFO - The UAV has visited 20 nodes in episode 22
+2024-10-24 14:29:57,304 - INFO - The UAV has visited the nodes: [0, 8, 5, 3, 9, 3, 5, 0, 5, 4, 8, 9, 5, 7, 7, 4, 7, 3, 5, 2]
+2024-10-24 14:29:57,304 - INFO - EPISODE FINISHED
+2024-10-24 14:29:57,304 - INFO - EPISODE START
+2024-10-24 14:30:00,470 - INFO - The reward for episode 23 is: 38259380.0
+2024-10-24 14:30:00,470 - INFO - The UAV has visited 20 nodes in episode 23
+2024-10-24 14:30:00,470 - INFO - The UAV has visited the nodes: [0, 6, 3, 4, 2, 4, 4, 5, 0, 9, 5, 3, 0, 6, 0, 2, 5, 4, 8, 9]
+2024-10-24 14:30:00,470 - INFO - EPISODE FINISHED
+2024-10-24 14:30:00,470 - INFO - EPISODE START
+2024-10-24 14:30:03,616 - INFO - The reward for episode 24 is: 38119050.0
+2024-10-24 14:30:03,616 - INFO - The UAV has visited 20 nodes in episode 24
+2024-10-24 14:30:03,616 - INFO - The UAV has visited the nodes: [0, 5, 1, 8, 9, 0, 4, 6, 4, 4, 7, 6, 3, 1, 5, 9, 4, 7, 6, 7]
+2024-10-24 14:30:03,616 - INFO - EPISODE FINISHED
+2024-10-24 14:30:03,616 - INFO - EPISODE START
+2024-10-24 14:30:06,699 - INFO - The reward for episode 25 is: 38002140.0
+2024-10-24 14:30:06,699 - INFO - The UAV has visited 20 nodes in episode 25
+2024-10-24 14:30:06,699 - INFO - The UAV has visited the nodes: [0, 4, 1, 4, 2, 3, 3, 8, 9, 6, 1, 8, 9, 1, 1, 1, 4, 5, 0, 9]
+2024-10-24 14:30:06,699 - INFO - EPISODE FINISHED
+2024-10-24 14:30:06,699 - INFO - EPISODE START
+2024-10-24 14:30:09,696 - INFO - The reward for episode 26 is: 37834884.0
+2024-10-24 14:30:09,697 - INFO - The UAV has visited 20 nodes in episode 26
+2024-10-24 14:30:09,697 - INFO - The UAV has visited the nodes: [0, 4, 2, 5, 7, 4, 9, 7, 0, 9, 1, 9, 1, 1, 4, 6, 6, 3, 4, 0]
+2024-10-24 14:30:09,697 - INFO - EPISODE FINISHED
+2024-10-24 14:30:09,697 - INFO - EPISODE START
+2024-10-24 14:30:12,743 - INFO - The reward for episode 27 is: 37787990.0
+2024-10-24 14:30:12,744 - INFO - The UAV has visited 20 nodes in episode 27
+2024-10-24 14:30:12,744 - INFO - The UAV has visited the nodes: [0, 6, 4, 0, 2, 2, 4, 7, 1, 0, 9, 1, 1, 6, 2, 4, 3, 6, 6, 1]
+2024-10-24 14:30:12,744 - INFO - EPISODE FINISHED
+2024-10-24 14:30:12,744 - INFO - EPISODE START
+2024-10-24 14:30:15,631 - INFO - The reward for episode 28 is: 37729830.0
+2024-10-24 14:30:15,631 - INFO - The UAV has visited 20 nodes in episode 28
+2024-10-24 14:30:15,631 - INFO - The UAV has visited the nodes: [0, 2, 1, 3, 2, 3, 0, 8, 5, 1, 0, 4, 8, 7, 7, 2, 0, 6, 2, 7]
+2024-10-24 14:30:15,631 - INFO - EPISODE FINISHED
+2024-10-24 14:30:15,631 - INFO - EPISODE START
+2024-10-24 14:30:18,537 - INFO - The reward for episode 29 is: 37522284.0
+2024-10-24 14:30:18,537 - INFO - The UAV has visited 20 nodes in episode 29
+2024-10-24 14:30:18,538 - INFO - The UAV has visited the nodes: [0, 3, 7, 7, 9, 8, 9, 4, 1, 7, 8, 1, 3, 7, 1, 9, 2, 6, 5, 2]
+2024-10-24 14:30:18,538 - INFO - EPISODE FINISHED
+2024-10-24 14:30:18,538 - INFO - The rewards per episode are: [Array(3.63849e+08, dtype=float32), Array(2.7669658e+08, dtype=float32), Array(2.249407e+08, dtype=float32), Array(1.778811e+08, dtype=float32), Array(1.5464302e+08, dtype=float32), Array(1.3182407e+08, dtype=float32), Array(1.3160346e+08, dtype=float32), Array(1.0635043e+08, dtype=float32), Array(95849456., dtype=float32), Array(73456184., dtype=float32), Array(65148480., dtype=float32), Array(56084132., dtype=float32), Array(56457220., dtype=float32), Array(50597720., dtype=float32), Array(50581824., dtype=float32), Array(46917068., dtype=float32), Array(43492476., dtype=float32), Array(43090640., dtype=float32), Array(41553880., dtype=float32), Array(40529472., dtype=float32), Array(39867124., dtype=float32), Array(40090472., dtype=float32), Array(38720200., dtype=float32), Array(38259380., dtype=float32), Array(38119048., dtype=float32), Array(38002140., dtype=float32), Array(37834884., dtype=float32), Array(37787992., dtype=float32), Array(37729832., dtype=float32), Array(37522284., dtype=float32)]
+2024-10-24 14:30:18,540 - INFO - Q Table is: [[1376686.9 6470070.5 4930369.  4890384.  6008545.5 5114724.  5877889.
+  4844096.5 6307365.5 6722827.5]
+ [2819993.  4951446.  2402100.  5351608.  3413485.5 3943685.  5862664.5
+  5602820.5 3852308.8 1412610.5]
+ [4275482.  2030550.2 2990849.  2820244.5 5461357.  3749544.2 1471153.5
+  2169729.2  718111.7 3549238.2]
+ [3993997.5 1460601.8 2218679.5 6534669.5 5608245.5 5020632.  5315351.
+  2840249.5 3533986.  4065233.8]
+ [6136508.5 3645113.5 3630613.8 2726751.5 5417037.  5334380.5 4090765.5
+  4532867.  4691085.  5303741. ]
+ [3781402.  4014447.2 2239249.2 4882012.  5461515.5 2420523.2 4603705.
+  2700124.  4629828.5 2629264. ]
+ [5911218.5 3720432.5 3247965.  6255119.5 5251282.5 2970772.5 3787909.5
+  2625195.8       0.  3680079. ]
+ [4239930.5 4510922.5 3808881.8 5222726.  2523311.2  981479.3 4967945.5
+  2841927.5 2202449.8 1386662.2]
+ [5367659.  4388447.  1870076.4 3347441.5 4092591.5 2821074.5 2214801.2
+  1395741.2       0.  5414766.5]
+ [5586261.  5608009.5 2262968.5 4746523.5 2977261.8 3261122.2 3774501.5
+  3807686.5 2985489.5 2135940.8]]
+2024-10-24 14:30:18,542 - INFO - Mean reward per episode: 87182680.0
+2024-10-24 14:30:18,544 - INFO - Max reward: 363849000.0
+2024-10-24 14:30:18,548 - INFO - The UAV energy level is: 17248548.0
+2024-10-24 14:30:18,548 - INFO - The UAV processed in total: 32520254.0 bits
+2024-10-24 14:30:18,548 - INFO - Q-Brave Algorithm took: 94.9347813129425 seconds
+2024-10-24 14:30:18,548 - INFO - Q-Brave Algorithm has successfully reached the final node!
+2024-10-24 14:30:23,991 - INFO - Running the Q-Brave Algorithm
+2024-10-24 14:30:23,993 - INFO - EPISODE START
+2024-10-24 14:30:26,398 - INFO - The reward for episode 0 is: 375573200.0
+2024-10-24 14:30:26,398 - INFO - The UAV has visited 20 nodes in episode 0
+2024-10-24 14:30:26,398 - INFO - The UAV has visited the nodes: [0, 7, 7, 4, 6, 9, 5, 6, 3, 7, 3, 1, 3, 5, 5, 1, 7, 9, 2, 1]
+2024-10-24 14:30:26,398 - INFO - EPISODE FINISHED
+2024-10-24 14:30:26,398 - INFO - EPISODE START
+2024-10-24 14:30:29,048 - INFO - The reward for episode 1 is: 319011300.0
+2024-10-24 14:30:29,048 - INFO - The UAV has visited 20 nodes in episode 1
+2024-10-24 14:30:29,048 - INFO - The UAV has visited the nodes: [0, 7, 2, 3, 0, 8, 5, 6, 0, 4, 6, 2, 2, 0, 4, 6, 9, 0, 3, 0]
+2024-10-24 14:30:29,048 - INFO - EPISODE FINISHED
+2024-10-24 14:30:29,048 - INFO - EPISODE START
+2024-10-24 14:30:31,805 - INFO - The reward for episode 2 is: 252515380.0
+2024-10-24 14:30:31,805 - INFO - The UAV has visited 20 nodes in episode 2
+2024-10-24 14:30:31,805 - INFO - The UAV has visited the nodes: [0, 1, 0, 9, 5, 9, 0, 8, 8, 5, 3, 3, 4, 4, 0, 4, 4, 9, 2, 0]
+2024-10-24 14:30:31,805 - INFO - EPISODE FINISHED
+2024-10-24 14:30:31,806 - INFO - EPISODE START
+2024-10-24 14:30:34,901 - INFO - The reward for episode 3 is: 195585660.0
+2024-10-24 14:30:34,901 - INFO - The UAV has visited 20 nodes in episode 3
+2024-10-24 14:30:34,901 - INFO - The UAV has visited the nodes: [0, 9, 8, 8, 0, 9, 0, 9, 0, 6, 6, 7, 4, 9, 5, 1, 3, 4, 3, 9]
+2024-10-24 14:30:34,901 - INFO - EPISODE FINISHED
+2024-10-24 14:30:34,902 - INFO - EPISODE START
+2024-10-24 14:30:38,022 - INFO - The reward for episode 4 is: 173324700.0
+2024-10-24 14:30:38,022 - INFO - The UAV has visited 20 nodes in episode 4
+2024-10-24 14:30:38,022 - INFO - The UAV has visited the nodes: [0, 4, 4, 6, 8, 6, 5, 3, 5, 7, 1, 7, 3, 6, 9, 0, 2, 9, 7, 2]
+2024-10-24 14:30:38,022 - INFO - EPISODE FINISHED
+2024-10-24 14:30:38,022 - INFO - EPISODE START
+2024-10-24 14:30:41,249 - INFO - The reward for episode 5 is: 148155170.0
+2024-10-24 14:30:41,249 - INFO - The UAV has visited 20 nodes in episode 5
+2024-10-24 14:30:41,249 - INFO - The UAV has visited the nodes: [0, 4, 5, 5, 1, 2, 6, 2, 5, 8, 5, 3, 4, 5, 5, 8, 5, 9, 4, 9]
+2024-10-24 14:30:41,249 - INFO - EPISODE FINISHED
+2024-10-24 14:30:41,249 - INFO - EPISODE START
+2024-10-24 14:30:44,338 - INFO - The reward for episode 6 is: 124551340.0
+2024-10-24 14:30:44,338 - INFO - The UAV has visited 20 nodes in episode 6
+2024-10-24 14:30:44,338 - INFO - The UAV has visited the nodes: [0, 1, 9, 8, 9, 7, 0, 8, 9, 3, 7, 2, 4, 0, 5, 0, 7, 7, 0, 1]
+2024-10-24 14:30:44,338 - INFO - EPISODE FINISHED
+2024-10-24 14:30:44,338 - INFO - EPISODE START
+2024-10-24 14:30:47,302 - INFO - The reward for episode 7 is: 119048670.0
+2024-10-24 14:30:47,302 - INFO - The UAV has visited 20 nodes in episode 7
+2024-10-24 14:30:47,302 - INFO - The UAV has visited the nodes: [0, 1, 4, 6, 1, 1, 8, 1, 3, 8, 2, 9, 3, 6, 7, 4, 1, 0, 7, 6]
+2024-10-24 14:30:47,302 - INFO - EPISODE FINISHED
+2024-10-24 14:30:47,303 - INFO - EPISODE START
+2024-10-24 14:30:50,475 - INFO - The reward for episode 8 is: 78046630.0
+2024-10-24 14:30:50,475 - INFO - The UAV has visited 20 nodes in episode 8
+2024-10-24 14:30:50,475 - INFO - The UAV has visited the nodes: [0, 7, 9, 9, 6, 4, 7, 9, 4, 8, 9, 7, 0, 1, 7, 4, 0, 9, 4, 3]
+2024-10-24 14:30:50,475 - INFO - EPISODE FINISHED
+2024-10-24 14:30:50,475 - INFO - EPISODE START
+2024-10-24 14:30:53,441 - INFO - The reward for episode 9 is: 75871300.0
+2024-10-24 14:30:53,441 - INFO - The UAV has visited 20 nodes in episode 9
+2024-10-24 14:30:53,441 - INFO - The UAV has visited the nodes: [0, 8, 9, 9, 2, 0, 6, 7, 4, 4, 0, 5, 7, 4, 2, 9, 9, 1, 7, 1]
+2024-10-24 14:30:53,441 - INFO - EPISODE FINISHED
+2024-10-24 14:30:53,441 - INFO - EPISODE START
+2024-10-24 14:30:56,444 - INFO - The reward for episode 10 is: 73625176.0
+2024-10-24 14:30:56,444 - INFO - The UAV has visited 20 nodes in episode 10
+2024-10-24 14:30:56,444 - INFO - The UAV has visited the nodes: [0, 1, 6, 1, 9, 5, 2, 1, 2, 6, 6, 1, 5, 6, 0, 5, 9, 7, 9, 3]
+2024-10-24 14:30:56,444 - INFO - EPISODE FINISHED
+2024-10-24 14:30:56,444 - INFO - EPISODE START
+2024-10-24 14:30:59,429 - INFO - The reward for episode 11 is: 66913480.0
+2024-10-24 14:30:59,429 - INFO - The UAV has visited 20 nodes in episode 11
+2024-10-24 14:30:59,429 - INFO - The UAV has visited the nodes: [0, 6, 3, 4, 7, 6, 8, 5, 9, 2, 1, 4, 1, 8, 3, 9, 6, 2, 6, 1]
+2024-10-24 14:30:59,429 - INFO - EPISODE FINISHED
+2024-10-24 14:30:59,430 - INFO - EPISODE START
+2024-10-24 14:31:02,508 - INFO - The reward for episode 12 is: 59650852.0
+2024-10-24 14:31:02,508 - INFO - The UAV has visited 20 nodes in episode 12
+2024-10-24 14:31:02,508 - INFO - The UAV has visited the nodes: [0, 7, 6, 4, 2, 7, 9, 3, 8, 0, 3, 7, 4, 4, 6, 5, 3, 8, 6, 6]
+2024-10-24 14:31:02,508 - INFO - EPISODE FINISHED
+2024-10-24 14:31:02,508 - INFO - EPISODE START
+2024-10-24 14:31:05,491 - INFO - The reward for episode 13 is: 56272370.0
+2024-10-24 14:31:05,491 - INFO - The UAV has visited 20 nodes in episode 13
+2024-10-24 14:31:05,491 - INFO - The UAV has visited the nodes: [0, 5, 2, 5, 7, 1, 1, 6, 2, 4, 0, 6, 7, 0, 3, 1, 9, 0, 7, 2]
+2024-10-24 14:31:05,491 - INFO - EPISODE FINISHED
+2024-10-24 14:31:05,492 - INFO - EPISODE START
+2024-10-24 14:31:08,770 - INFO - The reward for episode 14 is: 51892748.0
+2024-10-24 14:31:08,770 - INFO - The UAV has visited 20 nodes in episode 14
+2024-10-24 14:31:08,770 - INFO - The UAV has visited the nodes: [0, 4, 7, 7, 0, 1, 2, 2, 9, 8, 9, 8, 5, 0, 6, 1, 7, 9, 8, 6]
+2024-10-24 14:31:08,770 - INFO - EPISODE FINISHED
+2024-10-24 14:31:08,770 - INFO - EPISODE START
+2024-10-24 14:31:12,092 - INFO - The reward for episode 15 is: 47236200.0
+2024-10-24 14:31:12,092 - INFO - The UAV has visited 20 nodes in episode 15
+2024-10-24 14:31:12,092 - INFO - The UAV has visited the nodes: [0, 0, 5, 1, 7, 5, 9, 5, 1, 0, 7, 9, 8, 6, 9, 7, 9, 5, 3, 2]
+2024-10-24 14:31:12,092 - INFO - EPISODE FINISHED
+2024-10-24 14:31:12,092 - INFO - EPISODE START
+2024-10-24 14:31:15,256 - INFO - The reward for episode 16 is: 48524652.0
+2024-10-24 14:31:15,256 - INFO - The UAV has visited 20 nodes in episode 16
+2024-10-24 14:31:15,256 - INFO - The UAV has visited the nodes: [0, 4, 8, 5, 7, 9, 5, 8, 4, 3, 1, 5, 1, 8, 9, 5, 3, 3, 6, 3]
+2024-10-24 14:31:15,256 - INFO - EPISODE FINISHED
+2024-10-24 14:31:15,256 - INFO - EPISODE START
+2024-10-24 14:31:18,707 - INFO - The reward for episode 17 is: 44782500.0
+2024-10-24 14:31:18,707 - INFO - The UAV has visited 20 nodes in episode 17
+2024-10-24 14:31:18,707 - INFO - The UAV has visited the nodes: [0, 6, 5, 1, 2, 5, 7, 7, 6, 8, 5, 0, 6, 9, 7, 4, 3, 0, 4, 5]
+2024-10-24 14:31:18,707 - INFO - EPISODE FINISHED
+2024-10-24 14:31:18,707 - INFO - EPISODE START
+2024-10-24 14:31:21,877 - INFO - The reward for episode 18 is: 44432716.0
+2024-10-24 14:31:21,877 - INFO - The UAV has visited 20 nodes in episode 18
+2024-10-24 14:31:21,877 - INFO - The UAV has visited the nodes: [0, 9, 9, 0, 2, 3, 3, 1, 6, 8, 7, 9, 1, 0, 0, 8, 9, 5, 3, 2]
+2024-10-24 14:31:21,877 - INFO - EPISODE FINISHED
+2024-10-24 14:31:21,878 - INFO - EPISODE START
+2024-10-24 14:31:25,435 - INFO - The reward for episode 19 is: 42836788.0
+2024-10-24 14:31:25,435 - INFO - The UAV has visited 20 nodes in episode 19
+2024-10-24 14:31:25,435 - INFO - The UAV has visited the nodes: [0, 2, 1, 4, 2, 5, 5, 0, 9, 6, 0, 1, 9, 6, 9, 7, 5, 7, 6, 8]
+2024-10-24 14:31:25,435 - INFO - EPISODE FINISHED
+2024-10-24 14:31:25,435 - INFO - EPISODE START
+2024-10-24 14:31:28,662 - INFO - The reward for episode 20 is: 41750650.0
+2024-10-24 14:31:28,662 - INFO - The UAV has visited 20 nodes in episode 20
+2024-10-24 14:31:28,662 - INFO - The UAV has visited the nodes: [0, 4, 0, 7, 6, 3, 5, 3, 3, 3, 5, 3, 5, 6, 4, 1, 3, 0, 5, 1]
+2024-10-24 14:31:28,662 - INFO - EPISODE FINISHED
+2024-10-24 14:31:28,663 - INFO - EPISODE START
+2024-10-24 14:31:32,064 - INFO - The reward for episode 21 is: 41898428.0
+2024-10-24 14:31:32,064 - INFO - The UAV has visited 20 nodes in episode 21
+2024-10-24 14:31:32,064 - INFO - The UAV has visited the nodes: [0, 4, 3, 2, 8, 0, 1, 7, 3, 6, 1, 0, 1, 9, 9, 4, 0, 5, 4, 8]
+2024-10-24 14:31:32,064 - INFO - EPISODE FINISHED
+2024-10-24 14:31:32,064 - INFO - EPISODE START
+2024-10-24 14:31:34,998 - INFO - The reward for episode 22 is: 41285396.0
+2024-10-24 14:31:34,998 - INFO - The UAV has visited 20 nodes in episode 22
+2024-10-24 14:31:34,998 - INFO - The UAV has visited the nodes: [0, 4, 3, 4, 1, 6, 2, 2, 4, 9, 6, 8, 5, 3, 9, 1, 3, 4, 0, 8]
+2024-10-24 14:31:34,998 - INFO - EPISODE FINISHED
+2024-10-24 14:31:34,998 - INFO - EPISODE START
+2024-10-24 14:31:38,181 - INFO - The reward for episode 23 is: 40594370.0
+2024-10-24 14:31:38,181 - INFO - The UAV has visited 20 nodes in episode 23
+2024-10-24 14:31:38,181 - INFO - The UAV has visited the nodes: [0, 1, 5, 2, 6, 8, 9, 9, 3, 1, 6, 2, 9, 7, 5, 1, 9, 7, 7, 9]
+2024-10-24 14:31:38,181 - INFO - EPISODE FINISHED
+2024-10-24 14:31:38,182 - INFO - EPISODE START
+2024-10-24 14:31:41,218 - INFO - The reward for episode 24 is: 40318920.0
+2024-10-24 14:31:41,219 - INFO - The UAV has visited 20 nodes in episode 24
+2024-10-24 14:31:41,219 - INFO - The UAV has visited the nodes: [0, 0, 9, 2, 1, 9, 2, 9, 6, 9, 8, 8, 7, 4, 6, 6, 5, 2, 7, 3]
+2024-10-24 14:31:41,219 - INFO - EPISODE FINISHED
+2024-10-24 14:31:41,219 - INFO - EPISODE START
+2024-10-24 14:31:44,386 - INFO - The reward for episode 25 is: 40025810.0
+2024-10-24 14:31:44,386 - INFO - The UAV has visited 20 nodes in episode 25
+2024-10-24 14:31:44,386 - INFO - The UAV has visited the nodes: [0, 0, 8, 1, 9, 8, 5, 0, 3, 6, 2, 7, 3, 1, 9, 1, 7, 3, 5, 8]
+2024-10-24 14:31:44,386 - INFO - EPISODE FINISHED
+2024-10-24 14:31:44,386 - INFO - EPISODE START
+2024-10-24 14:31:47,289 - INFO - The reward for episode 26 is: 39523970.0
+2024-10-24 14:31:47,289 - INFO - The UAV has visited 20 nodes in episode 26
+2024-10-24 14:31:47,289 - INFO - The UAV has visited the nodes: [0, 6, 1, 7, 6, 4, 1, 9, 2, 8, 0, 3, 0, 3, 7, 6, 6, 8, 2, 5]
+2024-10-24 14:31:47,289 - INFO - EPISODE FINISHED
+2024-10-24 14:31:47,290 - INFO - EPISODE START
+2024-10-24 14:31:50,231 - INFO - The reward for episode 27 is: 39332064.0
+2024-10-24 14:31:50,232 - INFO - The UAV has visited 20 nodes in episode 27
+2024-10-24 14:31:50,232 - INFO - The UAV has visited the nodes: [0, 0, 1, 9, 2, 6, 5, 5, 7, 1, 2, 6, 4, 8, 4, 1, 0, 1, 4, 5]
+2024-10-24 14:31:50,232 - INFO - EPISODE FINISHED
+2024-10-24 14:31:50,232 - INFO - EPISODE START
+2024-10-24 14:31:53,169 - INFO - The reward for episode 28 is: 39314776.0
+2024-10-24 14:31:53,169 - INFO - The UAV has visited 20 nodes in episode 28
+2024-10-24 14:31:53,169 - INFO - The UAV has visited the nodes: [0, 2, 6, 4, 1, 7, 3, 8, 4, 5, 8, 7, 9, 0, 1, 7, 8, 9, 7, 1]
+2024-10-24 14:31:53,169 - INFO - EPISODE FINISHED
+2024-10-24 14:31:53,170 - INFO - EPISODE START
+2024-10-24 14:31:56,134 - INFO - The reward for episode 29 is: 38894844.0
+2024-10-24 14:31:56,134 - INFO - The UAV has visited 20 nodes in episode 29
+2024-10-24 14:31:56,134 - INFO - The UAV has visited the nodes: [0, 4, 6, 7, 1, 6, 1, 9, 4, 3, 1, 4, 3, 5, 3, 4, 6, 1, 4, 9]
+2024-10-24 14:31:56,134 - INFO - EPISODE FINISHED
+2024-10-24 14:31:56,134 - INFO - The rewards per episode are: [Array(3.755732e+08, dtype=float32), Array(3.190113e+08, dtype=float32), Array(2.5251538e+08, dtype=float32), Array(1.9558566e+08, dtype=float32), Array(1.733247e+08, dtype=float32), Array(1.4815517e+08, dtype=float32), Array(1.2455134e+08, dtype=float32), Array(1.1904867e+08, dtype=float32), Array(78046632., dtype=float32), Array(75871296., dtype=float32), Array(73625176., dtype=float32), Array(66913480., dtype=float32), Array(59650852., dtype=float32), Array(56272368., dtype=float32), Array(51892748., dtype=float32), Array(47236200., dtype=float32), Array(48524652., dtype=float32), Array(44782500., dtype=float32), Array(44432716., dtype=float32), Array(42836788., dtype=float32), Array(41750648., dtype=float32), Array(41898428., dtype=float32), Array(41285396., dtype=float32), Array(40594368., dtype=float32), Array(40318920., dtype=float32), Array(40025808., dtype=float32), Array(39523968., dtype=float32), Array(39332064., dtype=float32), Array(39314776., dtype=float32), Array(38894844., dtype=float32)]
+2024-10-24 14:31:56,136 - INFO - Q Table is: [[3630965.2  7001742.   5637988.   6112641.5  7337499.   5171691.
+  5535122.5  6415169.5  6429001.5  6141917.  ]
+ [4540764.   1538972.   3331601.5  5358357.5  3930734.5  2260332.5
+  3853506.5  7351436.5  2455079.5  6819675.5 ]
+ [5330969.   5306849.   3335403.5  1508191.   2624573.   3508027.5
+  4702632.5  2432015.   1555957.8  5556027.5 ]
+ [5415002.   5114851.   2089732.5  3792174.2  6048492.5  5466224.5
+  4241886.5  3940514.2  3121035.   3808784.5 ]
+ [6236059.5  4708806.5  2236513.5  5077320.5  5603570.5  3793529.5
+  6673447.   2022350.8  2837339.2  6250724.  ]
+ [4048587.8  6390647.   2631645.5  5994920.    806071.44 5157650.
+  4037779.8  4855863.   3981556.8  4841037.  ]
+ [3089120.   5376108.5  5083275.5  3271929.2  3805143.8  3525539.2
+  3976425.8  4147076.5  4622491.   6741269.  ]
+ [4429495.   4531219.   4205936.5  5185790.   6087015.5  2146663.
+  5001567.   3680580.5   836563.2  7735977.  ]
+ [3303693.2  1657023.2  1779055.1   934188.1  2213984.   6440629.
+  2956242.8  2554520.5  2587151.   6180958.5 ]
+ [7637151.   2946666.2  6478732.5  3896894.   4214222.5  5627963.5
+  3954803.2  6376382.   4619305.   4591106.  ]]
+2024-10-24 14:31:56,138 - INFO - Mean reward per episode: 93359670.0
+2024-10-24 14:31:56,140 - INFO - Max reward: 375573200.0
+2024-10-24 14:31:56,144 - INFO - The UAV energy level is: 16116413.0
+2024-10-24 14:31:56,144 - INFO - The UAV processed in total: 34451664.0 bits
+2024-10-24 14:31:56,144 - INFO - Q-Brave Algorithm took: 92.15312695503235 seconds
+2024-10-24 14:31:56,144 - INFO - Q-Brave Algorithm has successfully reached the final node!
+2024-10-24 14:32:03,881 - INFO - Running the Q-Brave Algorithm
+2024-10-24 14:32:03,881 - INFO - EPISODE START
+2024-10-24 14:32:07,041 - INFO - The reward for episode 0 is: 378292900.0
+2024-10-24 14:32:07,041 - INFO - The UAV has visited 20 nodes in episode 0
+2024-10-24 14:32:07,041 - INFO - The UAV has visited the nodes: [0, 3, 3, 3, 4, 3, 4, 8, 9, 4, 7, 5, 6, 3, 9, 9, 7, 1, 7, 7]
+2024-10-24 14:32:07,041 - INFO - EPISODE FINISHED
+2024-10-24 14:32:07,041 - INFO - EPISODE START
+2024-10-24 14:32:09,786 - INFO - The reward for episode 1 is: 310290700.0
+2024-10-24 14:32:09,786 - INFO - The UAV has visited 20 nodes in episode 1
+2024-10-24 14:32:09,786 - INFO - The UAV has visited the nodes: [0, 6, 2, 5, 9, 9, 3, 4, 6, 5, 8, 7, 8, 3, 3, 2, 2, 2, 5, 8]
+2024-10-24 14:32:09,786 - INFO - EPISODE FINISHED
+2024-10-24 14:32:09,787 - INFO - EPISODE START
+2024-10-24 14:32:12,624 - INFO - The reward for episode 2 is: 258933090.0
+2024-10-24 14:32:12,624 - INFO - The UAV has visited 20 nodes in episode 2
+2024-10-24 14:32:12,624 - INFO - The UAV has visited the nodes: [0, 8, 7, 1, 0, 4, 1, 4, 3, 8, 0, 5, 3, 3, 5, 2, 7, 1, 3, 9]
+2024-10-24 14:32:12,624 - INFO - EPISODE FINISHED
+2024-10-24 14:32:12,624 - INFO - EPISODE START
+2024-10-24 14:32:15,531 - INFO - The reward for episode 3 is: 205498460.0
+2024-10-24 14:32:15,531 - INFO - The UAV has visited 20 nodes in episode 3
+2024-10-24 14:32:15,531 - INFO - The UAV has visited the nodes: [0, 0, 5, 7, 0, 7, 6, 6, 6, 5, 7, 2, 7, 3, 3, 8, 2, 5, 4, 6]
+2024-10-24 14:32:15,531 - INFO - EPISODE FINISHED
+2024-10-24 14:32:15,532 - INFO - EPISODE START
+2024-10-24 14:32:18,714 - INFO - The reward for episode 4 is: 143493300.0
+2024-10-24 14:32:18,714 - INFO - The UAV has visited 20 nodes in episode 4
+2024-10-24 14:32:18,714 - INFO - The UAV has visited the nodes: [0, 3, 6, 3, 5, 2, 9, 4, 7, 0, 2, 2, 4, 6, 6, 4, 4, 5, 3, 5]
+2024-10-24 14:32:18,714 - INFO - EPISODE FINISHED
+2024-10-24 14:32:18,715 - INFO - EPISODE START
+2024-10-24 14:32:21,751 - INFO - The reward for episode 5 is: 149621020.0
+2024-10-24 14:32:21,751 - INFO - The UAV has visited 20 nodes in episode 5
+2024-10-24 14:32:21,751 - INFO - The UAV has visited the nodes: [0, 9, 8, 2, 0, 0, 9, 7, 1, 7, 6, 5, 7, 5, 4, 6, 1, 2, 5, 3]
+2024-10-24 14:32:21,751 - INFO - EPISODE FINISHED
+2024-10-24 14:32:21,752 - INFO - EPISODE START
+2024-10-24 14:32:24,535 - INFO - The reward for episode 6 is: 116500180.0
+2024-10-24 14:32:24,535 - INFO - The UAV has visited 20 nodes in episode 6
+2024-10-24 14:32:24,535 - INFO - The UAV has visited the nodes: [0, 6, 1, 3, 8, 3, 6, 6, 1, 3, 8, 0, 1, 3, 8, 8, 7, 9, 8, 0]
+2024-10-24 14:32:24,535 - INFO - EPISODE FINISHED
+2024-10-24 14:32:24,535 - INFO - EPISODE START
+2024-10-24 14:32:27,474 - INFO - The reward for episode 7 is: 92679576.0
+2024-10-24 14:32:27,474 - INFO - The UAV has visited 20 nodes in episode 7
+2024-10-24 14:32:27,474 - INFO - The UAV has visited the nodes: [0, 7, 7, 4, 6, 0, 4, 5, 7, 3, 9, 5, 1, 1, 2, 1, 3, 7, 4, 8]
+2024-10-24 14:32:27,474 - INFO - EPISODE FINISHED
+2024-10-24 14:32:27,475 - INFO - EPISODE START
+2024-10-24 14:32:30,252 - INFO - The reward for episode 8 is: 82335960.0
+2024-10-24 14:32:30,252 - INFO - The UAV has visited 20 nodes in episode 8
+2024-10-24 14:32:30,252 - INFO - The UAV has visited the nodes: [0, 7, 2, 3, 7, 0, 7, 0, 6, 0, 1, 8, 0, 5, 7, 1, 2, 8, 5, 7]
+2024-10-24 14:32:30,252 - INFO - EPISODE FINISHED
+2024-10-24 14:32:30,252 - INFO - EPISODE START
+2024-10-24 14:32:33,117 - INFO - The reward for episode 9 is: 79325700.0
+2024-10-24 14:32:33,117 - INFO - The UAV has visited 20 nodes in episode 9
+2024-10-24 14:32:33,117 - INFO - The UAV has visited the nodes: [0, 8, 4, 1, 1, 7, 4, 9, 2, 0, 1, 5, 4, 9, 3, 6, 0, 1, 5, 6]
+2024-10-24 14:32:33,117 - INFO - EPISODE FINISHED
+2024-10-24 14:32:33,117 - INFO - EPISODE START
+2024-10-24 14:32:36,042 - INFO - The reward for episode 10 is: 69413180.0
+2024-10-24 14:32:36,042 - INFO - The UAV has visited 20 nodes in episode 10
+2024-10-24 14:32:36,042 - INFO - The UAV has visited the nodes: [0, 6, 0, 1, 8, 9, 7, 5, 2, 0, 1, 4, 6, 2, 4, 7, 0, 3, 3, 6]
+2024-10-24 14:32:36,042 - INFO - EPISODE FINISHED
+2024-10-24 14:32:36,043 - INFO - EPISODE START
+2024-10-24 14:32:39,099 - INFO - The reward for episode 11 is: 62664640.0
+2024-10-24 14:32:39,099 - INFO - The UAV has visited 20 nodes in episode 11
+2024-10-24 14:32:39,099 - INFO - The UAV has visited the nodes: [0, 3, 3, 5, 8, 8, 9, 1, 9, 9, 5, 3, 9, 7, 0, 0, 7, 8, 7, 3]
+2024-10-24 14:32:39,099 - INFO - EPISODE FINISHED
+2024-10-24 14:32:39,099 - INFO - EPISODE START
+2024-10-24 14:32:41,870 - INFO - The reward for episode 12 is: 57579950.0
+2024-10-24 14:32:41,871 - INFO - The UAV has visited 20 nodes in episode 12
+2024-10-24 14:32:41,871 - INFO - The UAV has visited the nodes: [0, 1, 7, 0, 8, 6, 9, 7, 2, 1, 1, 5, 1, 4, 5, 9, 9, 4, 5, 2]
+2024-10-24 14:32:41,871 - INFO - EPISODE FINISHED
+2024-10-24 14:32:41,871 - INFO - EPISODE START
+2024-10-24 14:32:44,654 - INFO - The reward for episode 13 is: 55263824.0
+2024-10-24 14:32:44,654 - INFO - The UAV has visited 20 nodes in episode 13
+2024-10-24 14:32:44,654 - INFO - The UAV has visited the nodes: [0, 5, 8, 9, 6, 4, 8, 9, 5, 1, 0, 6, 2, 2, 8, 0, 1, 4, 5, 4]
+2024-10-24 14:32:44,654 - INFO - EPISODE FINISHED
+2024-10-24 14:32:44,655 - INFO - EPISODE START
+2024-10-24 14:32:47,753 - INFO - The reward for episode 14 is: 50074410.0
+2024-10-24 14:32:47,753 - INFO - The UAV has visited 20 nodes in episode 14
+2024-10-24 14:32:47,753 - INFO - The UAV has visited the nodes: [0, 9, 4, 5, 1, 7, 9, 1, 4, 1, 8, 1, 4, 4, 0, 7, 3, 5, 4, 3]
+2024-10-24 14:32:47,753 - INFO - EPISODE FINISHED
+2024-10-24 14:32:47,754 - INFO - EPISODE START
+2024-10-24 14:32:50,769 - INFO - The reward for episode 15 is: 50071536.0
+2024-10-24 14:32:50,769 - INFO - The UAV has visited 20 nodes in episode 15
+2024-10-24 14:32:50,769 - INFO - The UAV has visited the nodes: [0, 1, 9, 6, 8, 3, 2, 0, 7, 5, 8, 2, 2, 6, 0, 5, 8, 8, 1, 7]
+2024-10-24 14:32:50,769 - INFO - EPISODE FINISHED
+2024-10-24 14:32:50,769 - INFO - EPISODE START
+2024-10-24 14:32:53,886 - INFO - The reward for episode 16 is: 47398616.0
+2024-10-24 14:32:53,886 - INFO - The UAV has visited 20 nodes in episode 16
+2024-10-24 14:32:53,886 - INFO - The UAV has visited the nodes: [0, 3, 1, 8, 7, 0, 6, 9, 0, 2, 6, 7, 5, 4, 0, 9, 3, 1, 4, 4]
+2024-10-24 14:32:53,886 - INFO - EPISODE FINISHED
+2024-10-24 14:32:53,886 - INFO - EPISODE START
+2024-10-24 14:32:57,122 - INFO - The reward for episode 17 is: 47140084.0
+2024-10-24 14:32:57,122 - INFO - The UAV has visited 20 nodes in episode 17
+2024-10-24 14:32:57,122 - INFO - The UAV has visited the nodes: [0, 4, 2, 6, 4, 4, 2, 4, 2, 9, 0, 6, 9, 2, 7, 4, 6, 4, 1, 1]
+2024-10-24 14:32:57,122 - INFO - EPISODE FINISHED
+2024-10-24 14:32:57,123 - INFO - EPISODE START
+2024-10-24 14:33:00,164 - INFO - The reward for episode 18 is: 45268530.0
+2024-10-24 14:33:00,164 - INFO - The UAV has visited 20 nodes in episode 18
+2024-10-24 14:33:00,164 - INFO - The UAV has visited the nodes: [0, 6, 6, 4, 9, 9, 4, 5, 9, 8, 0, 7, 0, 0, 4, 9, 1, 0, 9, 4]
+2024-10-24 14:33:00,164 - INFO - EPISODE FINISHED
+2024-10-24 14:33:00,165 - INFO - EPISODE START
+2024-10-24 14:33:03,317 - INFO - The reward for episode 19 is: 43942788.0
+2024-10-24 14:33:03,317 - INFO - The UAV has visited 20 nodes in episode 19
+2024-10-24 14:33:03,317 - INFO - The UAV has visited the nodes: [0, 1, 3, 4, 0, 6, 3, 8, 6, 0, 2, 3, 3, 5, 7, 7, 3, 0, 2, 0]
+2024-10-24 14:33:03,317 - INFO - EPISODE FINISHED
+2024-10-24 14:33:03,318 - INFO - EPISODE START
+2024-10-24 14:33:06,238 - INFO - The reward for episode 20 is: 43392510.0
+2024-10-24 14:33:06,238 - INFO - The UAV has visited 20 nodes in episode 20
+2024-10-24 14:33:06,238 - INFO - The UAV has visited the nodes: [0, 5, 7, 8, 2, 6, 4, 1, 8, 7, 4, 3, 0, 2, 3, 6, 3, 3, 6, 8]
+2024-10-24 14:33:06,238 - INFO - EPISODE FINISHED
+2024-10-24 14:33:06,238 - INFO - EPISODE START
+2024-10-24 14:33:09,169 - INFO - The reward for episode 21 is: 43099820.0
+2024-10-24 14:33:09,169 - INFO - The UAV has visited 20 nodes in episode 21
+2024-10-24 14:33:09,169 - INFO - The UAV has visited the nodes: [0, 0, 2, 1, 2, 2, 2, 4, 4, 2, 6, 3, 8, 2, 0, 5, 7, 4, 6, 4]
+2024-10-24 14:33:09,169 - INFO - EPISODE FINISHED
+2024-10-24 14:33:09,169 - INFO - EPISODE START
+2024-10-24 14:33:12,025 - INFO - The reward for episode 22 is: 42363776.0
+2024-10-24 14:33:12,025 - INFO - The UAV has visited 20 nodes in episode 22
+2024-10-24 14:33:12,025 - INFO - The UAV has visited the nodes: [0, 0, 5, 6, 3, 6, 8, 1, 0, 6, 4, 2, 2, 2, 8, 8, 3, 1, 3, 6]
+2024-10-24 14:33:12,026 - INFO - EPISODE FINISHED
+2024-10-24 14:33:12,026 - INFO - EPISODE START
+2024-10-24 14:33:14,938 - INFO - The reward for episode 23 is: 41990372.0
+2024-10-24 14:33:14,938 - INFO - The UAV has visited 20 nodes in episode 23
+2024-10-24 14:33:14,938 - INFO - The UAV has visited the nodes: [0, 8, 2, 7, 4, 4, 9, 1, 3, 2, 9, 7, 7, 8, 8, 1, 2, 3, 4, 7]
+2024-10-24 14:33:14,938 - INFO - EPISODE FINISHED
+2024-10-24 14:33:14,938 - INFO - EPISODE START
+2024-10-24 14:33:17,672 - INFO - The reward for episode 24 is: 41624096.0
+2024-10-24 14:33:17,672 - INFO - The UAV has visited 20 nodes in episode 24
+2024-10-24 14:33:17,672 - INFO - The UAV has visited the nodes: [0, 6, 3, 0, 3, 9, 3, 6, 0, 1, 0, 2, 8, 3, 8, 5, 1, 2, 5, 2]
+2024-10-24 14:33:17,672 - INFO - EPISODE FINISHED
+2024-10-24 14:33:17,672 - INFO - EPISODE START
+2024-10-24 14:33:20,593 - INFO - The reward for episode 25 is: 41215356.0
+2024-10-24 14:33:20,593 - INFO - The UAV has visited 20 nodes in episode 25
+2024-10-24 14:33:20,593 - INFO - The UAV has visited the nodes: [0, 1, 4, 1, 1, 8, 3, 1, 5, 0, 1, 4, 0, 4, 4, 8, 6, 0, 8, 1]
+2024-10-24 14:33:20,593 - INFO - EPISODE FINISHED
+2024-10-24 14:33:20,593 - INFO - EPISODE START
+2024-10-24 14:33:23,747 - INFO - The reward for episode 26 is: 41675550.0
+2024-10-24 14:33:23,747 - INFO - The UAV has visited 20 nodes in episode 26
+2024-10-24 14:33:23,747 - INFO - The UAV has visited the nodes: [0, 3, 5, 4, 5, 9, 9, 4, 8, 8, 5, 5, 9, 0, 9, 2, 6, 6, 4, 2]
+2024-10-24 14:33:23,747 - INFO - EPISODE FINISHED
+2024-10-24 14:33:23,747 - INFO - EPISODE START
+2024-10-24 14:33:27,090 - INFO - The reward for episode 27 is: 41020650.0
+2024-10-24 14:33:27,090 - INFO - The UAV has visited 20 nodes in episode 27
+2024-10-24 14:33:27,090 - INFO - The UAV has visited the nodes: [0, 4, 3, 8, 3, 0, 4, 9, 4, 7, 2, 0, 5, 8, 1, 0, 3, 8, 9, 7]
+2024-10-24 14:33:27,090 - INFO - EPISODE FINISHED
+2024-10-24 14:33:27,090 - INFO - EPISODE START
+2024-10-24 14:33:30,141 - INFO - The reward for episode 28 is: 41037090.0
+2024-10-24 14:33:30,141 - INFO - The UAV has visited 20 nodes in episode 28
+2024-10-24 14:33:30,141 - INFO - The UAV has visited the nodes: [0, 2, 5, 8, 4, 9, 6, 6, 5, 6, 8, 6, 7, 7, 3, 8, 3, 3, 7, 4]
+2024-10-24 14:33:30,141 - INFO - EPISODE FINISHED
+2024-10-24 14:33:30,141 - INFO - EPISODE START
+2024-10-24 14:33:32,930 - INFO - The reward for episode 29 is: 40915844.0
+2024-10-24 14:33:32,931 - INFO - The UAV has visited 20 nodes in episode 29
+2024-10-24 14:33:32,931 - INFO - The UAV has visited the nodes: [0, 1, 4, 1, 3, 5, 4, 9, 4, 0, 1, 9, 6, 7, 2, 7, 4, 8, 1, 4]
+2024-10-24 14:33:32,931 - INFO - EPISODE FINISHED
+2024-10-24 14:33:32,931 - INFO - The rewards per episode are: [Array(3.782929e+08, dtype=float32), Array(3.102907e+08, dtype=float32), Array(2.5893309e+08, dtype=float32), Array(2.0549846e+08, dtype=float32), Array(1.434933e+08, dtype=float32), Array(1.4962102e+08, dtype=float32), Array(1.1650018e+08, dtype=float32), Array(92679576., dtype=float32), Array(82335960., dtype=float32), Array(79325696., dtype=float32), Array(69413184., dtype=float32), Array(62664640., dtype=float32), Array(57579952., dtype=float32), Array(55263824., dtype=float32), Array(50074408., dtype=float32), Array(50071536., dtype=float32), Array(47398616., dtype=float32), Array(47140084., dtype=float32), Array(45268528., dtype=float32), Array(43942788., dtype=float32), Array(43392512., dtype=float32), Array(43099820., dtype=float32), Array(42363776., dtype=float32), Array(41990372., dtype=float32), Array(41624096., dtype=float32), Array(41215356., dtype=float32), Array(41675552., dtype=float32), Array(41020648., dtype=float32), Array(41037088., dtype=float32), Array(40915844., dtype=float32)]
+2024-10-24 14:33:32,933 - INFO - Q Table is: [[4419356.  7360625.  5619814.5 5807824.  5927981.  6661816.  5718078.5
+  5663211.  3671123.2 5137296.5]
+ [3990448.2 3749151.  5185479.5 7193184.5 5865611.  3375431.        0.
+  6342630.5 3374865.  2155418.2]
+ [4319978.  2553916.8 7356348.5 3249586.  3217974.  6917670.  3193169.
+  5302307.5 2759039.  2231400. ]
+ [2934947.  2981480.5 3631774.5 7838864.  4258328.5 5984221.  4673169.5
+  2748280.5 6024307.  6028574.5]
+ [3540576.8 4814838.  4199594.5 4536619.5 4607569.5 5382295.  6007077.
+  4779166.5 4184453.  4612958.5]
+ [ 875120.7 3655634.2 4885535.  5568344.5 5633494.5  886639.5 3984273.2
+  6844299.  5879623.5 3612734. ]
+ [4587715.  2959892.2 2349626.  5946397.  5241565.  4587694.5 4914003.
+  2437921.  2569955.  2158560.5]
+ [4971395.5 6892586.5 4290121.  5227035.5 5165206.5 4787675.5 2146784.
+  5573636.  3591113.2 1955147.8]
+ [4694765.  4616226.  4900009.5 6183657.5 1512063.1 2593422.  2498888.5
+  5437585.  3647857.5 4160691.8]
+ [2290236.  2949170.5 2569841.2 3757575.  5532230.5 2496983.2 2483169.2
+  6311941.  2381048.8 5477173. ]]
+2024-10-24 14:33:32,935 - INFO - Mean reward per episode: 92137450.0
+2024-10-24 14:33:32,937 - INFO - Max reward: 378292900.0
+2024-10-24 14:33:32,939 - INFO - The UAV energy level is: 16310064.0
+2024-10-24 14:33:32,939 - INFO - The UAV processed in total: 34962444.0 bits
+2024-10-24 14:33:32,939 - INFO - Q-Brave Algorithm took: 89.05879545211792 seconds
+2024-10-24 14:33:32,939 - INFO - Q-Brave Algorithm has successfully reached the final node!
+2024-10-24 14:33:44,739 - INFO - Running the Q-Brave Algorithm
+2024-10-24 14:33:44,740 - INFO - EPISODE START
+2024-10-24 14:33:47,755 - INFO - The reward for episode 0 is: 469499200.0
+2024-10-24 14:33:47,755 - INFO - The UAV has visited 20 nodes in episode 0
+2024-10-24 14:33:47,755 - INFO - The UAV has visited the nodes: [0, 7, 7, 0, 6, 7, 0, 1, 7, 2, 6, 6, 5, 3, 4, 3, 6, 3, 0, 8]
+2024-10-24 14:33:47,755 - INFO - EPISODE FINISHED
+2024-10-24 14:33:47,756 - INFO - EPISODE START
+2024-10-24 14:33:51,479 - INFO - The reward for episode 1 is: 391246980.0
+2024-10-24 14:33:51,479 - INFO - The UAV has visited 20 nodes in episode 1
+2024-10-24 14:33:51,479 - INFO - The UAV has visited the nodes: [0, 2, 8, 3, 9, 9, 2, 0, 3, 5, 4, 6, 0, 0, 2, 9, 1, 2, 0, 3]
+2024-10-24 14:33:51,479 - INFO - EPISODE FINISHED
+2024-10-24 14:33:51,479 - INFO - EPISODE START
+2024-10-24 14:33:54,732 - INFO - The reward for episode 2 is: 295771600.0
+2024-10-24 14:33:54,732 - INFO - The UAV has visited 20 nodes in episode 2
+2024-10-24 14:33:54,732 - INFO - The UAV has visited the nodes: [0, 5, 0, 1, 0, 2, 1, 4, 0, 6, 8, 8, 3, 0, 4, 5, 2, 7, 5, 0]
+2024-10-24 14:33:54,732 - INFO - EPISODE FINISHED
+2024-10-24 14:33:54,733 - INFO - EPISODE START
+2024-10-24 14:33:58,140 - INFO - The reward for episode 3 is: 237591970.0
+2024-10-24 14:33:58,141 - INFO - The UAV has visited 20 nodes in episode 3
+2024-10-24 14:33:58,141 - INFO - The UAV has visited the nodes: [0, 8, 3, 2, 2, 0, 1, 9, 5, 6, 1, 8, 9, 6, 8, 1, 0, 0, 9, 2]
+2024-10-24 14:33:58,141 - INFO - EPISODE FINISHED
+2024-10-24 14:33:58,141 - INFO - EPISODE START
+2024-10-24 14:34:01,496 - INFO - The reward for episode 4 is: 210990460.0
+2024-10-24 14:34:01,496 - INFO - The UAV has visited 20 nodes in episode 4
+2024-10-24 14:34:01,496 - INFO - The UAV has visited the nodes: [0, 4, 9, 2, 6, 8, 8, 4, 8, 3, 9, 4, 5, 6, 7, 3, 8, 7, 5, 3]
+2024-10-24 14:34:01,496 - INFO - EPISODE FINISHED
+2024-10-24 14:34:01,496 - INFO - EPISODE START
+2024-10-24 14:34:04,550 - INFO - The reward for episode 5 is: 156175470.0
+2024-10-24 14:34:04,551 - INFO - The UAV has visited 20 nodes in episode 5
+2024-10-24 14:34:04,551 - INFO - The UAV has visited the nodes: [0, 8, 9, 7, 2, 7, 4, 6, 0, 2, 9, 0, 5, 3, 3, 5, 9, 7, 7, 0]
+2024-10-24 14:34:04,551 - INFO - EPISODE FINISHED
+2024-10-24 14:34:04,551 - INFO - EPISODE START
+2024-10-24 14:34:07,592 - INFO - The reward for episode 6 is: 113146856.0
+2024-10-24 14:34:07,592 - INFO - The UAV has visited 20 nodes in episode 6
+2024-10-24 14:34:07,592 - INFO - The UAV has visited the nodes: [0, 8, 2, 9, 6, 0, 0, 8, 8, 0, 6, 5, 6, 8, 6, 9, 0, 2, 2, 3]
+2024-10-24 14:34:07,592 - INFO - EPISODE FINISHED
+2024-10-24 14:34:07,593 - INFO - EPISODE START
+2024-10-24 14:34:10,680 - INFO - The reward for episode 7 is: 130074580.0
+2024-10-24 14:34:10,680 - INFO - The UAV has visited 20 nodes in episode 7
+2024-10-24 14:34:10,680 - INFO - The UAV has visited the nodes: [0, 4, 1, 2, 2, 9, 8, 8, 4, 4, 1, 8, 5, 6, 5, 8, 8, 0, 2, 4]
+2024-10-24 14:34:10,680 - INFO - EPISODE FINISHED
+2024-10-24 14:34:10,681 - INFO - EPISODE START
+2024-10-24 14:34:13,972 - INFO - The reward for episode 8 is: 98116344.0
+2024-10-24 14:34:13,972 - INFO - The UAV has visited 20 nodes in episode 8
+2024-10-24 14:34:13,972 - INFO - The UAV has visited the nodes: [0, 2, 4, 5, 4, 4, 4, 8, 2, 3, 2, 3, 7, 0, 8, 4, 0, 2, 2, 2]
+2024-10-24 14:34:13,972 - INFO - EPISODE FINISHED
+2024-10-24 14:34:13,972 - INFO - EPISODE START
+2024-10-24 14:34:17,175 - INFO - The reward for episode 9 is: 92772510.0
+2024-10-24 14:34:17,176 - INFO - The UAV has visited 20 nodes in episode 9
+2024-10-24 14:34:17,176 - INFO - The UAV has visited the nodes: [0, 5, 3, 9, 5, 4, 8, 3, 9, 3, 3, 7, 0, 3, 9, 4, 3, 2, 7, 1]
+2024-10-24 14:34:17,176 - INFO - EPISODE FINISHED
+2024-10-24 14:34:17,176 - INFO - EPISODE START
+2024-10-24 14:34:20,351 - INFO - The reward for episode 10 is: 87620136.0
+2024-10-24 14:34:20,351 - INFO - The UAV has visited 20 nodes in episode 10
+2024-10-24 14:34:20,351 - INFO - The UAV has visited the nodes: [0, 1, 3, 3, 0, 4, 2, 1, 8, 9, 5, 5, 5, 8, 2, 1, 4, 9, 6, 6]
+2024-10-24 14:34:20,351 - INFO - EPISODE FINISHED
+2024-10-24 14:34:20,352 - INFO - EPISODE START
+2024-10-24 14:34:23,351 - INFO - The reward for episode 11 is: 77476560.0
+2024-10-24 14:34:23,352 - INFO - The UAV has visited 20 nodes in episode 11
+2024-10-24 14:34:23,352 - INFO - The UAV has visited the nodes: [0, 7, 2, 1, 4, 8, 5, 2, 0, 2, 3, 7, 6, 4, 1, 4, 4, 9, 2, 7]
+2024-10-24 14:34:23,352 - INFO - EPISODE FINISHED
+2024-10-24 14:34:23,352 - INFO - EPISODE START
+2024-10-24 14:34:26,383 - INFO - The reward for episode 12 is: 70457680.0
+2024-10-24 14:34:26,383 - INFO - The UAV has visited 20 nodes in episode 12
+2024-10-24 14:34:26,383 - INFO - The UAV has visited the nodes: [0, 0, 5, 7, 8, 5, 9, 6, 6, 0, 6, 7, 3, 2, 4, 2, 1, 9, 8, 9]
+2024-10-24 14:34:26,384 - INFO - EPISODE FINISHED
+2024-10-24 14:34:26,384 - INFO - EPISODE START
+2024-10-24 14:34:29,723 - INFO - The reward for episode 13 is: 65034300.0
+2024-10-24 14:34:29,723 - INFO - The UAV has visited 20 nodes in episode 13
+2024-10-24 14:34:29,723 - INFO - The UAV has visited the nodes: [0, 0, 1, 0, 9, 2, 4, 6, 6, 2, 4, 3, 7, 2, 2, 2, 1, 1, 3, 1]
+2024-10-24 14:34:29,724 - INFO - EPISODE FINISHED
+2024-10-24 14:34:29,724 - INFO - EPISODE START
+2024-10-24 14:34:32,734 - INFO - The reward for episode 14 is: 65271980.0
+2024-10-24 14:34:32,734 - INFO - The UAV has visited 20 nodes in episode 14
+2024-10-24 14:34:32,734 - INFO - The UAV has visited the nodes: [0, 1, 7, 5, 1, 6, 6, 0, 4, 8, 7, 6, 2, 5, 2, 3, 3, 9, 8, 7]
+2024-10-24 14:34:32,734 - INFO - EPISODE FINISHED
+2024-10-24 14:34:32,734 - INFO - EPISODE START
+2024-10-24 14:34:35,835 - INFO - The reward for episode 15 is: 57894510.0
+2024-10-24 14:34:35,835 - INFO - The UAV has visited 20 nodes in episode 15
+2024-10-24 14:34:35,835 - INFO - The UAV has visited the nodes: [0, 8, 9, 5, 0, 0, 8, 1, 2, 8, 4, 0, 8, 8, 3, 2, 2, 7, 2, 4]
+2024-10-24 14:34:35,835 - INFO - EPISODE FINISHED
+2024-10-24 14:34:35,836 - INFO - EPISODE START
+2024-10-24 14:34:39,114 - INFO - The reward for episode 16 is: 57094656.0
+2024-10-24 14:34:39,114 - INFO - The UAV has visited 20 nodes in episode 16
+2024-10-24 14:34:39,114 - INFO - The UAV has visited the nodes: [0, 0, 4, 5, 8, 2, 1, 1, 9, 2, 9, 0, 3, 2, 3, 2, 2, 2, 5, 0]
+2024-10-24 14:34:39,114 - INFO - EPISODE FINISHED
+2024-10-24 14:34:39,114 - INFO - EPISODE START
+2024-10-24 14:34:42,362 - INFO - The reward for episode 17 is: 56348410.0
+2024-10-24 14:34:42,362 - INFO - The UAV has visited 20 nodes in episode 17
+2024-10-24 14:34:42,362 - INFO - The UAV has visited the nodes: [0, 2, 2, 7, 8, 1, 2, 5, 8, 5, 4, 7, 8, 7, 8, 1, 6, 1, 4, 6]
+2024-10-24 14:34:42,362 - INFO - EPISODE FINISHED
+2024-10-24 14:34:42,362 - INFO - EPISODE START
+2024-10-24 14:34:45,481 - INFO - The reward for episode 18 is: 56220948.0
+2024-10-24 14:34:45,481 - INFO - The UAV has visited 20 nodes in episode 18
+2024-10-24 14:34:45,481 - INFO - The UAV has visited the nodes: [0, 0, 0, 5, 5, 9, 1, 5, 7, 6, 7, 2, 7, 7, 7, 0, 9, 1, 1, 2]
+2024-10-24 14:34:45,481 - INFO - EPISODE FINISHED
+2024-10-24 14:34:45,482 - INFO - EPISODE START
+2024-10-24 14:34:48,718 - INFO - The reward for episode 19 is: 53614588.0
+2024-10-24 14:34:48,718 - INFO - The UAV has visited 20 nodes in episode 19
+2024-10-24 14:34:48,718 - INFO - The UAV has visited the nodes: [0, 4, 4, 6, 8, 4, 2, 4, 6, 8, 9, 4, 0, 0, 3, 6, 2, 0, 1, 4]
+2024-10-24 14:34:48,718 - INFO - EPISODE FINISHED
+2024-10-24 14:34:48,719 - INFO - EPISODE START
+2024-10-24 14:34:52,050 - INFO - The reward for episode 20 is: 53401824.0
+2024-10-24 14:34:52,050 - INFO - The UAV has visited 20 nodes in episode 20
+2024-10-24 14:34:52,050 - INFO - The UAV has visited the nodes: [0, 7, 4, 6, 8, 0, 2, 1, 7, 2, 5, 1, 1, 6, 5, 3, 9, 2, 9, 5]
+2024-10-24 14:34:52,050 - INFO - EPISODE FINISHED
+2024-10-24 14:34:52,050 - INFO - EPISODE START
+2024-10-24 14:34:55,453 - INFO - The reward for episode 21 is: 52970744.0
+2024-10-24 14:34:55,454 - INFO - The UAV has visited 20 nodes in episode 21
+2024-10-24 14:34:55,454 - INFO - The UAV has visited the nodes: [0, 9, 6, 1, 2, 7, 3, 4, 2, 9, 3, 5, 2, 1, 1, 4, 5, 9, 2, 8]
+2024-10-24 14:34:55,454 - INFO - EPISODE FINISHED
+2024-10-24 14:34:55,454 - INFO - EPISODE START
+2024-10-24 14:34:58,898 - INFO - The reward for episode 22 is: 51786812.0
+2024-10-24 14:34:58,898 - INFO - The UAV has visited 20 nodes in episode 22
+2024-10-24 14:34:58,898 - INFO - The UAV has visited the nodes: [0, 9, 8, 3, 2, 0, 7, 2, 3, 5, 7, 2, 2, 9, 9, 7, 4, 1, 0, 2]
+2024-10-24 14:34:58,898 - INFO - EPISODE FINISHED
+2024-10-24 14:34:58,898 - INFO - EPISODE START
+2024-10-24 14:35:02,199 - INFO - The reward for episode 23 is: 51894240.0
+2024-10-24 14:35:02,199 - INFO - The UAV has visited 20 nodes in episode 23
+2024-10-24 14:35:02,199 - INFO - The UAV has visited the nodes: [0, 9, 5, 6, 6, 9, 4, 0, 8, 5, 7, 2, 6, 5, 2, 9, 3, 8, 8, 6]
+2024-10-24 14:35:02,199 - INFO - EPISODE FINISHED
+2024-10-24 14:35:02,199 - INFO - EPISODE START
+2024-10-24 14:35:05,333 - INFO - The reward for episode 24 is: 51501910.0
+2024-10-24 14:35:05,333 - INFO - The UAV has visited 20 nodes in episode 24
+2024-10-24 14:35:05,333 - INFO - The UAV has visited the nodes: [0, 3, 3, 3, 1, 0, 5, 6, 3, 9, 5, 4, 8, 4, 7, 9, 4, 5, 1, 7]
+2024-10-24 14:35:05,333 - INFO - EPISODE FINISHED
+2024-10-24 14:35:05,334 - INFO - EPISODE START
+2024-10-24 14:35:08,412 - INFO - The reward for episode 25 is: 51160236.0
+2024-10-24 14:35:08,412 - INFO - The UAV has visited 20 nodes in episode 25
+2024-10-24 14:35:08,412 - INFO - The UAV has visited the nodes: [0, 1, 0, 9, 6, 5, 9, 6, 7, 5, 4, 3, 8, 7, 6, 0, 9, 1, 5, 7]
+2024-10-24 14:35:08,412 - INFO - EPISODE FINISHED
+2024-10-24 14:35:08,413 - INFO - EPISODE START
+2024-10-24 14:35:11,596 - INFO - The reward for episode 26 is: 50681136.0
+2024-10-24 14:35:11,597 - INFO - The UAV has visited 20 nodes in episode 26
+2024-10-24 14:35:11,597 - INFO - The UAV has visited the nodes: [0, 6, 0, 7, 8, 7, 9, 7, 2, 1, 0, 7, 6, 9, 0, 4, 6, 3, 3, 7]
+2024-10-24 14:35:11,597 - INFO - EPISODE FINISHED
+2024-10-24 14:35:11,597 - INFO - EPISODE START
+2024-10-24 14:35:14,701 - INFO - The reward for episode 27 is: 50532396.0
+2024-10-24 14:35:14,702 - INFO - The UAV has visited 20 nodes in episode 27
+2024-10-24 14:35:14,702 - INFO - The UAV has visited the nodes: [0, 6, 7, 5, 1, 4, 4, 5, 5, 4, 1, 7, 8, 0, 8, 5, 0, 9, 5, 4]
+2024-10-24 14:35:14,702 - INFO - EPISODE FINISHED
+2024-10-24 14:35:14,702 - INFO - EPISODE START
+2024-10-24 14:35:17,593 - INFO - The reward for episode 28 is: 50441030.0
+2024-10-24 14:35:17,593 - INFO - The UAV has visited 20 nodes in episode 28
+2024-10-24 14:35:17,593 - INFO - The UAV has visited the nodes: [0, 7, 9, 1, 8, 1, 6, 3, 6, 6, 3, 4, 7, 5, 5, 1, 6, 5, 6, 5]
+2024-10-24 14:35:17,593 - INFO - EPISODE FINISHED
+2024-10-24 14:35:17,593 - INFO - EPISODE START
+2024-10-24 14:35:20,490 - INFO - The reward for episode 29 is: 50009348.0
+2024-10-24 14:35:20,491 - INFO - The UAV has visited 20 nodes in episode 29
+2024-10-24 14:35:20,491 - INFO - The UAV has visited the nodes: [0, 5, 7, 5, 4, 4, 2, 1, 0, 8, 0, 5, 2, 0, 5, 1, 3, 0, 9, 4]
+2024-10-24 14:35:20,491 - INFO - EPISODE FINISHED
+2024-10-24 14:35:20,491 - INFO - The rewards per episode are: [Array(4.694992e+08, dtype=float32), Array(3.9124698e+08, dtype=float32), Array(2.957716e+08, dtype=float32), Array(2.3759197e+08, dtype=float32), Array(2.1099046e+08, dtype=float32), Array(1.5617547e+08, dtype=float32), Array(1.13146856e+08, dtype=float32), Array(1.3007458e+08, dtype=float32), Array(98116344., dtype=float32), Array(92772512., dtype=float32), Array(87620136., dtype=float32), Array(77476560., dtype=float32), Array(70457680., dtype=float32), Array(65034300., dtype=float32), Array(65271980., dtype=float32), Array(57894512., dtype=float32), Array(57094656., dtype=float32), Array(56348408., dtype=float32), Array(56220948., dtype=float32), Array(53614588., dtype=float32), Array(53401824., dtype=float32), Array(52970744., dtype=float32), Array(51786812., dtype=float32), Array(51894240., dtype=float32), Array(51501912., dtype=float32), Array(51160236., dtype=float32), Array(50681136., dtype=float32), Array(50532396., dtype=float32), Array(50441032., dtype=float32), Array(50009348., dtype=float32)]
+2024-10-24 14:35:20,492 - INFO - Q Table is: [[9340150.  6811417.  9341575.  7968627.  7280339.  7492852.5 6454331.5
+  5698411.  7849227.5 6941131. ]
+ [7348378.  3404103.  6170485.5 2659825.5 5255028.5 1776928.9 3690189.5
+  4705306.5 4117504.5 2804281.5]
+ [8104537.  6013551.5 7611022.5 5641005.5 4443233.  3264165.  3894857.
+  6318457.5 2209890.  6843054. ]
+ [7341899.  1625285.8 5890854.  5425410.5 4329990.  4801680.5 4978255.
+  4063897.2 3424845.  5757264. ]
+ [5330204.  3762853.5 4114182.5 5687661.  4579247.  6194172.  5970890.5
+  2557738.  4572300.  2659988.8]
+ [6147967.  4193097.5 5805781.  6889580.  5893147.5 4085683.  5984194.
+  4338347.5 3573471.5 4211357. ]
+ [6948293.5 2882043.5 2723285.8 6046019.   896608.6 6742742.5 5698431.
+  5271579.5 6126173.5 2818578.2]
+ [6522201.  1109701.2 7359709.5 3623329.  2354553.5 6607413.  3700913.5
+  3584225.  4205950.  2581534. ]
+ [5031848.5 4194689.5 3508549.2 6556405.5 4352935.5 4724041.  1973769.5
+  4990100.  5985220.5 4798150.5]
+ [4329468.  5142376.  7057287.5 2672764.  4438131.  5744723.  5242855.
+  3783868.  3313169.  2111467.5]]
+2024-10-24 14:35:20,495 - INFO - Mean reward per episode: 111893310.0
+2024-10-24 14:35:20,497 - INFO - Max reward: 469499200.0
+2024-10-24 14:35:20,501 - INFO - The UAV energy level is: 16550213.0
+2024-10-24 14:35:20,501 - INFO - The UAV processed in total: 43622864.0 bits
+2024-10-24 14:35:20,501 - INFO - Q-Brave Algorithm took: 95.76194477081299 seconds
+2024-10-24 14:35:20,501 - INFO - Q-Brave Algorithm has successfully reached the final node!
