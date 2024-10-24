@@ -41,6 +41,9 @@ main_key = random.PRNGKey(10)
 # Define the number of runs
 NUM_RUNS = 10
 
+# Define the save interval
+SAVE_INTERVAL = 2  # Save progress every 5 runs
+
 # Initialize accumulation dictionaries
 algorithms_total_bits_acc = {}
 algorithms_expended_energy_acc = {}
@@ -241,42 +244,77 @@ for run in tqdm(range(1, NUM_RUNS + 1), desc="Run Progress"):
     
     # Reset the Algorithm object for the next run
     algorithm.reset()
+    
+    # -------------------- Save Progress Every SAVE_INTERVAL Runs --------------------
+    if run % SAVE_INTERVAL == 0:
+        system_logger.info(f"Saving progress at run {run} of {NUM_RUNS}")
+        
+        # Compute current averages
+        current_total_bits_avg = compute_average(algorithms_total_bits_acc)
+        current_expended_energy_avg = compute_average(algorithms_expended_energy_acc)
+        current_total_visited_nodes_avg = compute_average(algorithms_total_visited_nodes_acc)
+        current_timer_dict_avg = compute_average(timer_dict_acc)
+        
+        # Define filenames with run number
+        bits_filename = f"algorithms_total_bits_avg_run_{run}.pkl"
+        energy_filename = f"algorithms_expended_energy_avg_run_{run}.pkl"
+        nodes_filename = f"algorithms_total_visited_nodes_avg_run_{run}.pkl"
+        timer_filename = f"timer_dict_avg_run_{run}.pkl"
+        
+        # Save the current averaged data as Pickle Files
+        with open(bits_filename, "wb") as file:
+            pickle.dump(current_total_bits_avg, file)
+        
+        with open(energy_filename, "wb") as file:
+            pickle.dump(current_expended_energy_avg, file)
+             
+        with open(nodes_filename, "wb") as file:
+            pickle.dump(current_total_visited_nodes_avg, file)
+             
+        with open(timer_filename, "wb") as file:
+            pickle.dump(current_timer_dict_avg, file)
+        
+        system_logger.info(f"Averaged data dictionaries up to run {run} have been saved as pickle files!")
+        
+        # Plot the current progress graphs
+        plot_graphs(folder_for_pure_learning= f'big_run_plots/multiple_runs_up_to_{run}')
+        system_logger.info(f"Plots up to run {run} have been generated!")
 
-# -------------------- Compute Averages --------------------
+# -------------------- Compute Final Averages --------------------
 
 algorithms_total_bits_avg = compute_average(algorithms_total_bits_acc)
 algorithms_expended_energy_avg = compute_average(algorithms_expended_energy_acc)
 algorithms_total_visited_nodes_avg = compute_average(algorithms_total_visited_nodes_acc)
 timer_dict_avg = compute_average(timer_dict_acc)
 
-# -------------------- Save the Averaged Data as Pickle Files --------------------
+# -------------------- Save the Final Averaged Data as Pickle Files --------------------
 
-# Delete existing pickle files with the specified names
-if os.path.exists("algorithms_total_bits_avg.pkl"):
-    os.remove("algorithms_total_bits_avg.pkl")
+# Define final filenames
+final_bits_filename = "algorithms_total_bits_avg.pkl"
+final_energy_filename = "algorithms_expended_energy_avg.pkl"
+final_nodes_filename = "algorithms_total_visited_nodes_avg.pkl"
+final_timer_filename = "timer_dict_avg.pkl"
 
-if os.path.exists("algorithms_expended_energy_avg.pkl"):
-    os.remove("algorithms_expended_energy_avg.pkl")
-    
-if os.path.exists("algorithms_total_visited_nodes_avg.pkl"):
-    os.remove("algorithms_total_visited_nodes_avg.pkl")
-    
-if os.path.exists("timer_dict_avg.pkl"):
-    os.remove("timer_dict_avg.pkl")
+# Delete existing final pickle files if they exist
+for filename in [final_bits_filename, final_energy_filename, final_nodes_filename, final_timer_filename]:
+    if os.path.exists(filename):
+        os.remove(filename)
 
-with open("algorithms_total_bits_avg.pkl", "wb") as file:
+# Save the final averaged data
+with open(final_bits_filename, "wb") as file:
     pickle.dump(algorithms_total_bits_avg, file)
 
-with open("algorithms_expended_energy_avg.pkl", "wb") as file:
+with open(final_energy_filename, "wb") as file:
     pickle.dump(algorithms_expended_energy_avg, file)
      
-with open("algorithms_total_visited_nodes_avg.pkl", "wb") as file:
+with open(final_nodes_filename, "wb") as file:
     pickle.dump(algorithms_total_visited_nodes_avg, file)
      
-with open("timer_dict_avg.pkl", "wb") as file:
+with open(final_timer_filename, "wb") as file:
     pickle.dump(timer_dict_avg, file)
     
-system_logger.info("Averaged data dictionaries have been saved as pickle files!")
+system_logger.info("Final averaged data dictionaries have been saved as pickle files!")
 
-# -------------------- Plot the Graphs --------------------
+# -------------------- Plot the Final Graphs --------------------
 plot_graphs(folder_for_pure_learning= f'plots/multiple_runs_{NUM_RUNS}')
+system_logger.info("Final plots have been generated!")

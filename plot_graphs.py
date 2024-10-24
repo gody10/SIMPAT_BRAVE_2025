@@ -218,7 +218,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning', folder_for_pure
 	plt.figure(figsize=(12, 8))
 
 	# Create a bar plot with colored bars
-	bars = plt.bar(algorithms, visited_nodes, color=colors)
+	bars = plt.bar(algorithms, values, color=colors)
 
 	# Add a grid behind the bars
 	plt.grid(axis='y', linestyle='--', alpha=0.7)

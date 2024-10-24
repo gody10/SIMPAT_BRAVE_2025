@@ -1,17 +1,6 @@
-2024-10-23 16:56:39,793 - INFO - Starting run 1 of 1000
-2024-10-23 16:58:25,576 - INFO - Starting run 2 of 1000
-2024-10-23 17:00:09,139 - INFO - Starting run 3 of 1000
-2024-10-23 17:01:51,604 - INFO - Starting run 4 of 1000
-2024-10-23 17:03:33,284 - INFO - Starting run 5 of 1000
-2024-10-23 17:05:19,957 - INFO - Starting run 6 of 1000
-2024-10-23 17:07:05,060 - INFO - Starting run 7 of 1000
-2024-10-23 17:09:15,358 - INFO - Starting run 8 of 1000
-2024-10-23 17:11:00,613 - INFO - Starting run 9 of 1000
-2024-10-23 17:12:37,610 - INFO - Starting run 10 of 1000
-2024-10-23 17:14:22,712 - INFO - Starting run 11 of 1000
-2024-10-23 17:16:04,538 - INFO - Starting run 12 of 1000
-2024-10-23 17:17:57,549 - INFO - Starting run 13 of 1000
-2024-10-23 17:19:34,146 - INFO - Starting run 14 of 1000
-2024-10-23 17:21:49,393 - INFO - Starting run 15 of 1000
-2024-10-23 17:24:33,942 - INFO - Starting run 16 of 1000
-2024-10-23 17:26:58,414 - INFO - Starting run 17 of 1000
+2024-10-23 18:36:18,276 - INFO - Starting run 1 of 10
+2024-10-23 18:38:00,028 - INFO - Starting run 2 of 10
+2024-10-23 18:39:36,688 - INFO - Saving progress at run 2 of 10
+2024-10-23 18:39:36,688 - INFO - Averaged data dictionaries up to run 2 have been saved as pickle files!
+2024-10-23 18:39:38,363 - INFO - Plots up to run 2 have been generated!
+2024-10-23 18:39:38,364 - INFO - Starting run 3 of 10
