@@ -39,7 +39,7 @@ NUMBER_OF_EPISODES = 40
 main_key = random.PRNGKey(10)
 
 # Define the number of runs
-NUM_RUNS = 1000
+NUM_RUNS = 500
 
 # Define the save interval
 SAVE_INTERVAL = 100  # Save progress every 100 runs
@@ -352,7 +352,7 @@ for run in tqdm(range(1, NUM_RUNS + 1), desc="Run Progress"):
         system_logger.info(f"Averaged data dictionaries up to run {run} have been saved as pickle files!")
         
         # Plot the current progress graphs
-        plot_graphs(folder_for_pure_learning= f'big_run_plots/multiple_runs_up_to_{run}')
+        plot_graphs(folder_for_pure_learning= f'big_run_plots_equal/multiple_runs_up_to_{run}')
         system_logger.info(f"Plots up to run {run} have been generated!")
 
 # -------------------- Compute Final Averages --------------------
@@ -391,5 +391,5 @@ with open(final_timer_filename, "wb") as file:
 system_logger.info("Final averaged data dictionaries have been saved as pickle files!")
 
 # -------------------- Plot the Final Graphs --------------------
-plot_graphs(folder_for_pure_learning= f'plots/multiple_runs_{NUM_RUNS}')
+plot_graphs(folder_for_pure_learning= f'big_run_plots_equal/multiple_runs_{NUM_RUNS}')
 system_logger.info("Final plots have been generated!")

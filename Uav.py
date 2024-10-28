@@ -715,7 +715,7 @@ class Uav:
 		utilities = jnp.array([node.get_node_total_data() for node in nodes_final])
 		
 		# Step 3: Apply the softmax function to compute probabilities
-		exp_utilities = jnp.exp(utilities/1000000)
+		exp_utilities = jnp.exp(utilities/total_bits_final)
 		probabilities = exp_utilities / jnp.sum(exp_utilities)
 		
 		# [The rest of the function remains the same]
