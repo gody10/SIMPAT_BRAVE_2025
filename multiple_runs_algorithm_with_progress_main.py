@@ -42,7 +42,7 @@ main_key = random.PRNGKey(10)
 NUM_RUNS = 1000
 
 # Define the save interval
-SAVE_INTERVAL = 1  # Save progress every 50 runs
+SAVE_INTERVAL = 100  # Save progress every 100 runs
 
 # Initialize accumulation dictionaries
 algorithms_total_bits_acc = {}
