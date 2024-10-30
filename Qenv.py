@@ -78,13 +78,12 @@ class Qenv(gym.Env):
 		if (self.uav.get_energy_level() <= 0):
 			self.done = True
 			#logging.info("The UAV has run out of energy!")
-   
 			
-		# # If the UAV has exceeded 5 actions, end the episode
-		# if (self.uav.get_number_of_actions() > 6):
-		#     self.done = True
-		#     #logging.info("The UAV has exceeded the maximum number of actions!")
-		
+		# If the UAV has exceeded max_iter actions, end the episode
+		if (self.uav.get_number_of_actions() > self.max_iter):
+			self.done = True
+			#logging.info("The UAV has exceeded the maximum number of actions!")
+
 		# Start playing the game inside the current node
 		done_game = False
 		temp_U = self.number_of_users[self.uav.get_current_node().get_node_id()]

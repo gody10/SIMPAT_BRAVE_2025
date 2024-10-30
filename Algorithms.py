@@ -9,6 +9,7 @@ from AoiUser import AoiUser
 from Edge import Edge
 from Node import Node
 from Qenv import Qenv
+from Multiagent_Qenv import Multiagent_Qenv
 from tqdm import tqdm
 
 class Algorithms:
@@ -53,7 +54,8 @@ class Algorithms:
 		self.max_bits = 0
 		self.distance_min = 0
 		self.distance_max = 0
-		self.logger = None		
+		self.logger = None
+		self.number_of_uavs = 1
   
 	def get_uav(self)->Uav:
 		"""
@@ -185,6 +187,26 @@ class Algorithms:
 		"""
 		self.expended_energy = expended_energy
   
+	def set_best_trajectory(self, trajectory: list)->None:
+		"""
+		Set the best trajectory
+		
+		Parameters:
+		trajectory : list
+			Best trajectory
+		"""
+		self.trajectory = trajectory
+  
+	def get_best_trajectory(self)->list:
+		"""
+		Get the best trajectory
+		
+		Returns:
+		list
+			Best trajectory
+		"""
+		return self.trajectory
+  
 	def set_most_visited_nodes(self, visited_nodes: int)->None:
 		"""
 		Set the total visited nodes
@@ -211,7 +233,7 @@ class Algorithms:
 		return sorted_nodes
 	
 	def setup_experiment(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float, uav_energy_capacity: float, 
-						 uav_bandwidth: float, uav_processing_capacity: float, uav_cpu_frequency: float, uav_velocity: float)->None:
+							uav_bandwidth: float, uav_processing_capacity: float, uav_cpu_frequency: float, uav_velocity: float)->None:
 		"""
 		Setup the experiment
 		
@@ -293,7 +315,7 @@ class Algorithms:
 
 		# Create a UAV
 		self.uav = Uav(uav_id= 1, initial_node= nodes[0], final_node= nodes[len(nodes)-1], capacity= self.uav_energy_capacity, total_data_processing_capacity= self.uav_processing_capacity, 
-					   velocity= self.uav_velocity, uav_system_bandwidth= self.uav_bandwidth, cpu_frequency= self.uav_cpu_frequency, height= uav_height)
+						velocity= self.uav_velocity, uav_system_bandwidth= self.uav_bandwidth, cpu_frequency= self.uav_cpu_frequency, height= uav_height)
   
 	def setup_algorithm_experiment(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float, uav_energy_capacity: float, 
                          uav_bandwidth: float, uav_processing_capacity: float, uav_cpu_frequency: float, uav_velocity: float, energy_level: float, min_bits: float, max_bits: float, distance_min: float, distance_max: float)->None:
@@ -330,6 +352,7 @@ class Algorithms:
 		self.max_bits = max_bits
 		self.distance_min = distance_min
 		self.distance_max = distance_max
+		self.trajectory = None
 
 		
 		nodes = []
@@ -438,6 +461,242 @@ class Algorithms:
 		self.uav = Uav(uav_id=1, initial_node= initial_node, final_node= final_node, capacity=self.uav_energy_capacity, total_data_processing_capacity=self.uav_processing_capacity, 
 					velocity=self.uav_velocity, uav_system_bandwidth=self.uav_bandwidth, cpu_frequency=self.uav_cpu_frequency, height=uav_height)
 		
+	def setup_realistic_scenario(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float, uav_energy_capacity: float, 
+                         uav_bandwidth: float, uav_processing_capacity: float, uav_cpu_frequency: float, uav_velocity: float, energy_level: float, min_bits: float, max_bits: float, distance_min: float, distance_max: float)->None:
+		"""
+		Setup the experiment
+		
+		Parameters:
+		number_of_users : float
+			Number of users in the system
+		number_of_nodes : float
+			Number of nodes in the system
+		key : jax.random.PRNGKey
+			Key for random number generation
+		uav_height : float
+			Height of the UAV
+		min_distance_between_nodes : float
+			Minimum distance between nodes
+		node_radius : float
+			Radius of the node
+		"""
+		self.number_of_users = number_of_users
+		self.number_of_nodes = number_of_nodes
+		self.key = key
+		self.uav_height = uav_height
+		self.min_distance_between_nodes = min_distance_between_nodes
+		self.node_radius = node_radius
+		self.uav_energy_capacity = uav_energy_capacity
+		self.uav_bandwidth = uav_bandwidth
+		self.uav_processing_capacity = uav_processing_capacity
+		self.uav_cpu_frequency = uav_cpu_frequency
+		self.uav_velocity = uav_velocity
+		self.energy_level = energy_level
+		self.min_bits = min_bits
+		self.max_bits = max_bits
+		self.distance_min = distance_min
+		self.distance_max = distance_max
+
+		
+		nodes = []
+		for i in range(number_of_nodes):
+			# Generate random center coordinates for the node
+			node_coords = generate_node_coordinates(key, nodes, min_distance_between_nodes)
+
+			# Determine bit size range for each node: 3 nodes with high bits, 2 nodes with low bits
+			if i in [0, 3, 5]:  # Nodes with a larger number of bits
+				bits_range = (max_bits * 0.75, max_bits)  # Upper range of bit capacity
+			else:  # Nodes with a smaller number of bits
+				bits_range = (min_bits, min_bits * 1.5)  # Lower range of bit capacity
+
+			users = []
+			num_users = int(number_of_users[number_of_nodes])
+
+			# Split the key into enough subkeys for the number of users
+			subkeys = jax.random.split(key, num_users)
+
+			for j in range(num_users):
+				data_in_bits = jax.random.uniform(subkeys[j], minval=bits_range[0], maxval=bits_range[1])
+
+				r_scale = (j / num_users) ** 2  # Exponential decrease for sharper differences
+				r = r_scale
+				theta = random.uniform(random.split(key)[0], (1,))[0] * 2 * jnp.pi
+				phi = random.uniform(random.split(key)[0], (1,))[0] * jnp.pi
+
+				x = r * jnp.sin(phi) * jnp.cos(theta)
+				y = r * jnp.sin(phi) * jnp.sin(theta)
+				z = r * jnp.cos(phi)
+
+				user_coords = (node_coords[0] + x, node_coords[1] + y, node_coords[2] + z)
+
+				user = AoiUser(
+					user_id=j,
+					data_in_bits=data_in_bits,
+					transmit_power=1.5,
+					energy_level=energy_level,
+					task_intensity=1,
+					carrier_frequency=5,
+					coordinates=user_coords
+				)
+
+				users.append(user)
+
+			nodes.append(Node(
+				node_id=i,
+				users=users,
+				coordinates=node_coords
+			))
+
+		# Calculate the distance between all users and the UAV and set distances
+		for node in nodes:
+			node_distances = []
+			for user in node.get_user_list():
+				user.calculate_distance(node)
+				node_distances.append(user.get_distance())
+			max_distance = max(node_distances)
+			min_distance = min(node_distances)
+			distance_range = max_distance - min_distance
+			for user in node.get_user_list():
+				user.set_distance(distance_min + distance_max * (user.get_distance() - min_distance) / distance_range)
+
+		# Create edges between all nodes with random weights
+		edges = []
+		for i in range(number_of_nodes):
+			for j in range(i + 1, number_of_nodes):
+				edges.append(Edge(nodes[i].user_list[0], nodes[j].user_list[0], random.normal(key, (1,))))
+
+		# Create the graph
+		self.graph = Graph(nodes=nodes, edges=edges)
+
+		initial_node = nodes[0]
+		final_node = nodes[-1]
+		self.uav = Uav(
+			uav_id=1, initial_node=initial_node, final_node=final_node,
+			capacity=self.uav_energy_capacity, total_data_processing_capacity=self.uav_processing_capacity,
+			velocity=self.uav_velocity, uav_system_bandwidth=self.uav_bandwidth, cpu_frequency=self.uav_cpu_frequency,
+			height=uav_height
+		)
+  
+	def setup_multiagent_scenario(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float, uav_energy_capacity: float, 
+                         uav_bandwidth: float, uav_processing_capacity: float, uav_cpu_frequency: float, uav_velocity: float, energy_level: float, min_bits: float, max_bits: float, distance_min: float, distance_max: float, 
+                         number_of_uavs: int)->None:
+		"""
+		Setup the experiment
+		
+		Parameters:
+		number_of_users : list
+			Number of users in the system per node
+		number_of_nodes : float
+			Number of nodes in the system
+		key : jax.random.PRNGKey
+			Key for random number generation
+		uav_height : float
+			Height of the UAV
+		min_distance_between_nodes : float
+			Minimum distance between nodes
+		node_radius : float
+			Radius of the node
+		"""
+		self.number_of_users = number_of_users
+		self.number_of_nodes = number_of_nodes
+		self.key = key
+		self.uav_height = uav_height
+		self.min_distance_between_nodes = min_distance_between_nodes
+		self.node_radius = node_radius
+		self.uav_energy_capacity = uav_energy_capacity
+		self.uav_bandwidth = uav_bandwidth
+		self.uav_processing_capacity = uav_processing_capacity
+		self.uav_cpu_frequency = uav_cpu_frequency
+		self.uav_velocity = uav_velocity
+		self.energy_level = energy_level
+		self.min_bits = min_bits
+		self.max_bits = max_bits
+		self.distance_min = distance_min
+		self.distance_max = distance_max
+		self.number_of_uavs = number_of_uavs
+
+		nodes = []
+		for i in range(number_of_nodes):
+			# Generate random center coordinates for the node
+			node_coords = generate_node_coordinates(key, nodes, min_distance_between_nodes)
+
+			# Determine bit size range for each node
+			bits_range = (max_bits * 0.75, max_bits) if i in [0, 3, 5] else (min_bits, min_bits * 1.5)
+
+			users = []
+			num_users = int(number_of_users[number_of_nodes])
+			subkeys = jax.random.split(key, num_users)
+
+			for j in range(num_users):
+				data_in_bits = jax.random.uniform(subkeys[j], minval=bits_range[0], maxval=bits_range[1])
+				r_scale = (j / num_users) ** 2
+				r = r_scale
+				theta = random.uniform(random.split(key)[0], (1,))[0] * 2 * jnp.pi
+				phi = random.uniform(random.split(key)[0], (1,))[0] * jnp.pi
+
+				x = r * jnp.sin(phi) * jnp.cos(theta)
+				y = r * jnp.sin(phi) * jnp.sin(theta)
+				z = r * jnp.cos(phi)
+
+				user_coords = (node_coords[0] + x, node_coords[1] + y, node_coords[2] + z)
+
+				user = AoiUser(
+					user_id=j,
+					data_in_bits=data_in_bits,
+					transmit_power=1.5,
+					energy_level=energy_level,
+					task_intensity=1,
+					carrier_frequency=5,
+					coordinates=user_coords
+				)
+				users.append(user)
+
+			nodes.append(Node(
+				node_id=i,
+				users=users,
+				coordinates=node_coords
+			))
+
+		# Calculate distances for all users and set them
+		for node in nodes:
+			node_distances = []
+			for user in node.get_user_list():
+				user.calculate_distance(node)
+				node_distances.append(user.get_distance())
+			max_distance = max(node_distances)
+			min_distance = min(node_distances)
+			distance_range = max_distance - min_distance
+			for user in node.get_user_list():
+				user.set_distance(distance_min + distance_max * (user.get_distance() - min_distance) / distance_range)
+
+		# Create edges between all nodes with random weights
+		edges = []
+		for i in range(number_of_nodes):
+			for j in range(i + 1, number_of_nodes):
+				edges.append(Edge(nodes[i].user_list[0], nodes[j].user_list[0], random.normal(key, (1,))))
+
+		# Create the graph
+		self.graph = Graph(nodes=nodes, edges=edges)
+
+		# Initialize UAVs on random nodes
+		self.uavs = []
+		node_indices = jax.random.choice(key, jnp.arange(number_of_nodes), shape=(number_of_uavs,), replace=False)
+		for uav_id, node_index in enumerate(node_indices):
+			node = nodes[node_index]
+			uav = Uav(
+				uav_id=uav_id,
+				initial_node=node,
+				final_node=node,  # Set the final node; adjust if necessary
+				capacity=self.uav_energy_capacity,
+				total_data_processing_capacity=self.uav_processing_capacity,
+				velocity=self.uav_velocity,
+				uav_system_bandwidth=self.uav_bandwidth,
+				cpu_frequency=self.uav_cpu_frequency,
+				height=uav_height
+			)
+			self.uavs.append(uav)
+		
+  
 	def setup_singular_experiment(self, number_of_users: list, number_of_nodes: float, key: jax.random.PRNGKey, uav_height: float, min_distance_between_nodes: float, node_radius: float, uav_energy_capacity: float, 
                          uav_bandwidth: float, uav_processing_capacity: float, uav_cpu_frequency: float, uav_velocity: float, energy_level: float, min_bits: float, max_bits: float, distance_min: float, distance_max: float,
 						 logger: logging.Logger)->None:
@@ -568,11 +827,18 @@ class Algorithms:
 		"""
 		Reset the experiment so that it can be run again by the same or a different algorithm
 		"""
-		self.graph = None
-		self.uav = None
-		self.setup_algorithm_experiment(number_of_users= self.number_of_users, number_of_nodes= self.number_of_nodes, key= self.key, uav_height= self.uav_height, min_distance_between_nodes= self.min_distance_between_nodes, node_radius= self.node_radius,
-							  uav_energy_capacity= self.uav_energy_capacity, uav_bandwidth= self.uav_bandwidth, uav_processing_capacity= self.uav_processing_capacity, uav_cpu_frequency= self.uav_cpu_frequency, uav_velocity= self.uav_velocity
-							  , energy_level= self.energy_level, min_bits= self.min_bits, max_bits= self.max_bits, distance_min= self.distance_min, distance_max= self.distance_max)
+		if self.number_of_uavs==1:
+			self.graph = None
+			self.uav = None
+			self.setup_algorithm_experiment(number_of_users= self.number_of_users, number_of_nodes= self.number_of_nodes, key= self.key, uav_height= self.uav_height, min_distance_between_nodes= self.min_distance_between_nodes, node_radius= self.node_radius,
+								uav_energy_capacity= self.uav_energy_capacity, uav_bandwidth= self.uav_bandwidth, uav_processing_capacity= self.uav_processing_capacity, uav_cpu_frequency= self.uav_cpu_frequency, uav_velocity= self.uav_velocity
+								, energy_level= self.energy_level, min_bits= self.min_bits, max_bits= self.max_bits, distance_min= self.distance_min, distance_max= self.distance_max)
+		else:
+			self.graph = None
+			self.uav = None
+			self.setup_multiagent_scenario(number_of_users= self.number_of_users, number_of_nodes= self.number_of_nodes, key= self.key, uav_height= self.uav_height, min_distance_between_nodes= self.min_distance_between_nodes, node_radius= self.node_radius,
+								uav_energy_capacity= self.uav_energy_capacity, uav_bandwidth= self.uav_bandwidth, uav_processing_capacity= self.uav_processing_capacity, uav_cpu_frequency= self.uav_cpu_frequency, uav_velocity= self.uav_velocity
+								, energy_level= self.energy_level, min_bits= self.min_bits, max_bits= self.max_bits, distance_min= self.distance_min, distance_max= self.distance_max, number_of_uavs= self.number_of_uavs)
 		
 	def run_single_submodular_game(self, solving_method: str, c: float, b: float, logger: logging.Logger = None)->None:
 		"""
@@ -1740,5 +2006,266 @@ class Algorithms:
 		self.set_most_processed_bits(total_bits_processed_per_episode[best_episode])
 		self.set_most_energy_expended(energy_expended_per_episode[best_episode])
 		self.set_most_visited_nodes(uav_visited_nodes_per_episode[best_episode])
+		self.set_best_trajectory(uav_visited_nodes_per_episode[best_episode])
+			
+		return True
+
+	def multi_agent_q_learning_coop(self, solving_method:str, number_of_episodes: int, max_travels_per_episode: int, c: float, b: float, logger : logging.Logger = None)->bool:
+		"""
+		Algorithm that makes the UAV navigate through the graph by using Q-Learning to select the next node to visit
+		The decision-making process of the RL agent, i.e., UAV, for data collection and processing is represented using a Markov decision process (MDP)
+		characterized by a four-component tuple (S, A, f, r), with S set of states, A set of actions, f : S × A → S state transition function, 
+		and r : S × A → R is the reward function, with R denoting the real value reward.
+			
+		Parameters:
+		solving_method : str
+			Solving method to be used for the submodular game (cvxpy or scipy)
+		
+		Returns:
+			bool
+				True if the UAV has reached the final node, False otherwise
+		"""
+		self.logger = logger
+		self.logger.info("Running the Multi-Agent Coop Q-Brave Algorithm")
+		uav = self.get_uav()
+		graph = self.get_graph()
+		U = self.get_number_of_users()
+		convergence_threshold = self.get_convergence_threshold()
+		T = 2
+		
+		n_observations = len(graph.get_nodes()) # The State resembles a node in the graph. Therefore, the number of observations is equal to the number of nodes
+		n_actions = n_observations # The Uav can travel to any node from any node (including itself)
+		Q_table = jnp.zeros((n_observations,n_actions)) # Initialize the Q-table with zeros for all state-action pairs
+		action_node_list = [node for node in graph.get_nodes()]
+
+		#initialize the exploration probability to 1
+		exploration_proba = 1
+
+		#exploartion decreasing decay for exponential decreasing
+		exploration_decreasing_decay = 0.001
+
+		# minimum of exploration proba
+		min_exploration_proba = 0.01
+
+		#discounted factor
+		gamma = 0.99
+
+		#learning rate
+		lr = 0.1
+		
+		env = Multiagent_Qenv(graph= graph, uavs= uav, number_of_users= U, convergence_threshold= convergence_threshold,
+				   n_actions= n_actions, n_observations= n_observations, solving_method= solving_method, T= T, c= c, b= b, max_iter= max_travels_per_episode)
+		
+		rewards_per_episode = []
+		total_bits_processed_per_episode = []
+		energy_expended_per_episode = []
+		uav_visited_nodes_per_episode = []
+		#we iterate over episodes
+		for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Algorithm"):
+			
+			#we initialize the first state of the episode
+			#print("\nEPISODE START")
+			self.logger.info("EPISODE START")
+			self.reset()
+			current_state = env.reset(graph= self.get_graph(), uav= self.get_uav(),)
+			current_state_temp = []
+			for state in current_state:
+				current_state_temp.append(state.get_node_id())
+			current_state = current_state_temp
+			done = False
+			
+			#sum the rewards that the agent gets from the environment
+			total_episode_reward = 0
+			
+			for i in range(max_travels_per_episode):
+				for i in range(len(uav)):
+					# we sample a float from a uniform distribution over 0 and 1
+					# if the sampled flaot is less than the exploration probability
+					#     then the agent selects a random action
+					# else
+					#     he exploits his knowledge using the bellman equation
+					if random.uniform(random.split(self.key)[0], (1,))[0] < exploration_proba:
+						action = env.action_space.sample()
+					else:
+						action = jnp.argmax(Q_table[current_state,:])
+					
+					action_node = action_node_list[action]
+					# The environment runs the chosen action and returns
+					# the next state, a reward and true if the epiosed is ended.
+					returns = env.step(action_node)
+					next_state, reward, done, info = returns
+					next_state_temp = []
+					for state in next_state:
+						next_state_temp.append(state.get_node_id())
+					next_state = next_state_temp
+					
+					# We update our Q-table using the Q-learning iteration
+					Q_table = Q_table.at[current_state, action].set((1-lr) * Q_table[current_state, action] +lr*(reward + gamma*max(Q_table[next_state,:])))
+					total_episode_reward = total_episode_reward + reward
+					# If the episode is finished, we leave the for loop
+					if done:
+						logger.info("The episode has finished")
+						break
+					current_state = next_state
+			#We update the exploration proba using exponential decay formula
+			exploration_proba = max(min_exploration_proba, jnp.exp(-exploration_decreasing_decay*e))
+			rewards_per_episode.append(total_episode_reward)
+			total_bits_processed_per_episode.append(self.get_uav().get_total_processed_data())
+			energy_expended_per_episode.append(self.get_uav().get_total_energy_level() - self.get_uav().get_energy_level())
+			trajectory = uav.get_visited_nodes()
+			trajectory_ids = []
+			for node in info['visited_nodes']:
+				trajectory_ids.append(node.get_node_id())
+			uav_visited_nodes_per_episode.append(len(trajectory_ids))
+			self.logger.info("The reward for episode %d is: %s", e, total_episode_reward)
+			self.logger.info("The UAV has visited %d nodes in episode %d", len(trajectory_ids), e)
+			self.logger.info("The UAV has visited the nodes: %s", trajectory_ids)
+			self.logger.info("EPISODE FINISHED")
+			#print("EPISODE END")
+			
+		# print("The Q-table is: ", Q_table)
+		# print("The rewards per episode are: ", rewards_per_episode)
+		# print("Mean reward per episode: ", jnp.mean(jnp.array(rewards_per_episode)))
+		# print("Max reward: ", jnp.max(jnp.array(rewards_per_episode)))
+		self.logger.info("The rewards per episode are: %s", rewards_per_episode)
+		self.logger.info("Q Table is: %s", Q_table)
+		self.logger.info("Mean reward per episode: %s", jnp.mean(jnp.array(rewards_per_episode)))
+		self.logger.info("Max reward: %s", jnp.max(jnp.array(rewards_per_episode)))
+  
+		# Find at which episode the Q-Learning algorithm had the best reward
+		best_episode = jnp.argmax(jnp.array(rewards_per_episode))
+  
+		# Set the Information used for the plots by getting the information on the best episode
+		self.set_most_processed_bits(total_bits_processed_per_episode[best_episode])
+		self.set_most_energy_expended(energy_expended_per_episode[best_episode])
+		self.set_most_visited_nodes(uav_visited_nodes_per_episode[best_episode])
+		self.set_best_trajectory(uav_visited_nodes_per_episode[best_episode])
+			
+		return True
+
+	def multi_agent_q_learning_indi(self, solving_method:str, number_of_episodes: int, max_travels_per_episode: int, c: float, b: float, logger : logging.Logger = None)->bool:
+		"""
+		Algorithm that makes the UAV navigate through the graph by using Q-Learning to select the next node to visit
+		The decision-making process of the RL agent, i.e., UAV, for data collection and processing is represented using a Markov decision process (MDP)
+		characterized by a four-component tuple (S, A, f, r), with S set of states, A set of actions, f : S × A → S state transition function, 
+		and r : S × A → R is the reward function, with R denoting the real value reward.
+			
+		Parameters:
+		solving_method : str
+			Solving method to be used for the submodular game (cvxpy or scipy)
+		
+		Returns:
+			bool
+				True if the UAV has reached the final node, False otherwise
+		"""
+		self.logger = logger
+		self.logger.info("Running the Multi-Agent Coop Q-Brave Algorithm")
+		uav = self.get_uav()
+		graph = self.get_graph()
+		U = self.get_number_of_users()
+		convergence_threshold = self.get_convergence_threshold()
+		T = 2
+		
+		n_observations = len(graph.get_nodes()) # The State resembles a node in the graph. Therefore, the number of observations is equal to the number of nodes
+		n_actions = n_observations # The Uav can travel to any node from any node (including itself)
+		Q_table = jnp.zeros((n_observations,n_actions)) # Initialize the Q-table with zeros for all state-action pairs
+		action_node_list = [node for node in graph.get_nodes()]
+
+		#initialize the exploration probability to 1
+		exploration_proba = 1
+
+		#exploartion decreasing decay for exponential decreasing
+		exploration_decreasing_decay = 0.001
+
+		# minimum of exploration proba
+		min_exploration_proba = 0.01
+
+		#discounted factor
+		gamma = 0.99
+
+		#learning rate
+		lr = 0.1
+		
+		env = Qenv(graph= graph, uav= uav, number_of_users= U, convergence_threshold= convergence_threshold,
+				   n_actions= n_actions, n_observations= n_observations, solving_method= solving_method, T= T, c= c, b= b, max_iter= max_travels_per_episode)
+		
+		rewards_per_episode = []
+		total_bits_processed_per_episode = []
+		energy_expended_per_episode = []
+		uav_visited_nodes_per_episode = []
+		#we iterate over episodes
+		for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Algorithm"):
+			
+			#we initialize the first state of the episode
+			#print("\nEPISODE START")
+			self.logger.info("EPISODE START")
+			self.reset()
+			current_state = env.reset(graph= self.get_graph(), uav= self.get_uav(),)
+			current_state = current_state.get_node_id()
+			done = False
+			
+			#sum the rewards that the agent gets from the environment
+			total_episode_reward = 0
+			
+			for i in range(max_travels_per_episode):
+				# we sample a float from a uniform distribution over 0 and 1
+				# if the sampled flaot is less than the exploration probability
+				#     then the agent selects a random action
+				# else
+				#     he exploits his knowledge using the bellman equation  
+				
+				if random.uniform(random.split(self.key)[0], (1,))[0] < exploration_proba:
+					action = env.action_space.sample()
+				else:
+					action = jnp.argmax(Q_table[current_state,:])
+				
+				action_node = action_node_list[action]
+				# The environment runs the chosen action and returns
+				# the next state, a reward and true if the epiosed is ended.
+				returns = env.step(action_node)
+				next_state, reward, done, info = returns
+				next_state = next_state.get_node_id()
+				
+				# We update our Q-table using the Q-learning iteration
+				Q_table = Q_table.at[current_state, action].set((1-lr) * Q_table[current_state, action] +lr*(reward + gamma*max(Q_table[next_state,:])))
+				total_episode_reward = total_episode_reward + reward
+				# If the episode is finished, we leave the for loop
+				if done:
+					logger.info("The episode has finished")
+					break
+				current_state = next_state
+			#We update the exploration proba using exponential decay formula
+			exploration_proba = max(min_exploration_proba, jnp.exp(-exploration_decreasing_decay*e))
+			rewards_per_episode.append(total_episode_reward)
+			total_bits_processed_per_episode.append(self.get_uav().get_total_processed_data())
+			energy_expended_per_episode.append(self.get_uav().get_total_energy_level() - self.get_uav().get_energy_level())
+			trajectory = uav.get_visited_nodes()
+			trajectory_ids = []
+			for node in info['visited_nodes']:
+				trajectory_ids.append(node.get_node_id())
+			uav_visited_nodes_per_episode.append(len(trajectory_ids))
+			self.logger.info("The reward for episode %d is: %s", e, total_episode_reward)
+			self.logger.info("The UAV has visited %d nodes in episode %d", len(trajectory_ids), e)
+			self.logger.info("The UAV has visited the nodes: %s", trajectory_ids)
+			self.logger.info("EPISODE FINISHED")
+			#print("EPISODE END")
+			
+		# print("The Q-table is: ", Q_table)
+		# print("The rewards per episode are: ", rewards_per_episode)
+		# print("Mean reward per episode: ", jnp.mean(jnp.array(rewards_per_episode)))
+		# print("Max reward: ", jnp.max(jnp.array(rewards_per_episode)))
+		self.logger.info("The rewards per episode are: %s", rewards_per_episode)
+		self.logger.info("Q Table is: %s", Q_table)
+		self.logger.info("Mean reward per episode: %s", jnp.mean(jnp.array(rewards_per_episode)))
+		self.logger.info("Max reward: %s", jnp.max(jnp.array(rewards_per_episode)))
+  
+		# Find at which episode the Q-Learning algorithm had the best reward
+		best_episode = jnp.argmax(jnp.array(rewards_per_episode))
+  
+		# Set the Information used for the plots by getting the information on the best episode
+		self.set_most_processed_bits(total_bits_processed_per_episode[best_episode])
+		self.set_most_energy_expended(energy_expended_per_episode[best_episode])
+		self.set_most_visited_nodes(uav_visited_nodes_per_episode[best_episode])
+		self.set_best_trajectory(uav_visited_nodes_per_episode[best_episode])
 			
 		return True
