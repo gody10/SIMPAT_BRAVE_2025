@@ -68,7 +68,7 @@ class Qenv(gym.Env):
 		self.observation = self.uav.get_current_node()
 		
 		# Check if the UAV has reached the final node to end the episode
-		if (self.uav.get_current_node() == self.uav.get_final_node()):
+		if (self.uav.get_current_node().get_node_id() == self.uav.get_final_node().get_node_id()):
 			#logging.info("The UAV has reached the final node!")
 			self.done = True
 			if len(self.uav.get_visited_nodes()) == self.max_iter:

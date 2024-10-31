@@ -11,6 +11,7 @@ from Node import Node
 from Qenv import Qenv
 from Multiagent_Qenv import Multiagent_Qenv
 from tqdm import tqdm
+import matplotlib.pyplot as plt
 
 class Algorithms:
 	"""
@@ -499,25 +500,26 @@ class Algorithms:
 
 		
 		nodes = []
+		sum_of_bits = []
 		for i in range(number_of_nodes):
 			# Generate random center coordinates for the node
 			node_coords = generate_node_coordinates(key, nodes, min_distance_between_nodes)
 
 			# Determine bit size range for each node: 3 nodes with high bits, 2 nodes with low bits
-			if i in [0, 3, 5]:  # Nodes with a larger number of bits
-				bits_range = (max_bits * 0.75, max_bits)  # Upper range of bit capacity
+			if i in [1,2,4]:  # Nodes with a larger number of bits
+				bits_range = (max_bits * 0.85, max_bits)  # Upper range of bit capacity
 			else:  # Nodes with a smaller number of bits
-				bits_range = (min_bits, min_bits * 1.5)  # Lower range of bit capacity
+				bits_range = (min_bits, min_bits * 1.2)  # Lower range of bit capacity
 
 			users = []
-			num_users = int(number_of_users[number_of_nodes])
+			num_users = int(number_of_users[number_of_nodes-1])
 
 			# Split the key into enough subkeys for the number of users
 			subkeys = jax.random.split(key, num_users)
-
+			bits_sum = 0
 			for j in range(num_users):
 				data_in_bits = jax.random.uniform(subkeys[j], minval=bits_range[0], maxval=bits_range[1])
-
+				bits_sum += data_in_bits
 				r_scale = (j / num_users) ** 2  # Exponential decrease for sharper differences
 				r = r_scale
 				theta = random.uniform(random.split(key)[0], (1,))[0] * 2 * jnp.pi
@@ -540,7 +542,7 @@ class Algorithms:
 				)
 
 				users.append(user)
-
+			sum_of_bits.append(bits_sum)
 			nodes.append(Node(
 				node_id=i,
 				users=users,
@@ -563,13 +565,28 @@ class Algorithms:
 		edges = []
 		for i in range(number_of_nodes):
 			for j in range(i + 1, number_of_nodes):
-				edges.append(Edge(nodes[i].user_list[0], nodes[j].user_list[0], random.normal(key, (1,))))
+				edges.append(Edge(nodes[i], nodes[j], random.normal(key, (1,))))
 
 		# Create the graph
 		self.graph = Graph(nodes=nodes, edges=edges)
+		self.graph.plot_3d_graph()
+  
+		# Plot the sum of bits of each node
+		plt.figure(figsize=(10, 5))
+  
+		plt.bar(jnp.arange(number_of_nodes), sum_of_bits, color='skyblue')
+  
+		plt.xlabel('Node ID')
+		plt.ylabel('Sum of Bits')
+  
+		plt.title('Sum of Bits of Each Node')
+  
+		plt.savefig('sum_of_bits.png')
+  
 
 		initial_node = nodes[0]
 		final_node = nodes[-1]
+  
 		self.uav = Uav(
 			uav_id=1, initial_node=initial_node, final_node=final_node,
 			capacity=self.uav_energy_capacity, total_data_processing_capacity=self.uav_processing_capacity,
@@ -830,7 +847,7 @@ class Algorithms:
 		if self.number_of_uavs==1:
 			self.graph = None
 			self.uav = None
-			self.setup_algorithm_experiment(number_of_users= self.number_of_users, number_of_nodes= self.number_of_nodes, key= self.key, uav_height= self.uav_height, min_distance_between_nodes= self.min_distance_between_nodes, node_radius= self.node_radius,
+			self.setup_realistic_scenario(number_of_users= self.number_of_users, number_of_nodes= self.number_of_nodes, key= self.key, uav_height= self.uav_height, min_distance_between_nodes= self.min_distance_between_nodes, node_radius= self.node_radius,
 								uav_energy_capacity= self.uav_energy_capacity, uav_bandwidth= self.uav_bandwidth, uav_processing_capacity= self.uav_processing_capacity, uav_cpu_frequency= self.uav_cpu_frequency, uav_velocity= self.uav_velocity
 								, energy_level= self.energy_level, min_bits= self.min_bits, max_bits= self.max_bits, distance_min= self.distance_min, distance_max= self.distance_max)
 		else:
@@ -1983,7 +2000,7 @@ class Algorithms:
 			trajectory_ids = []
 			for node in info['visited_nodes']:
 				trajectory_ids.append(node.get_node_id())
-			uav_visited_nodes_per_episode.append(len(trajectory_ids))
+			uav_visited_nodes_per_episode.append(trajectory_ids)
 			self.logger.info("The reward for episode %d is: %s", e, total_episode_reward)
 			self.logger.info("The UAV has visited %d nodes in episode %d", len(trajectory_ids), e)
 			self.logger.info("The UAV has visited the nodes: %s", trajectory_ids)
