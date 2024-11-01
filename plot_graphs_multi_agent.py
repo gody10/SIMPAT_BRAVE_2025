@@ -14,6 +14,16 @@ def plot_graphs_multi_agent(folder_path: str = "multi_q_learning_results") -> No
     with open('multi_q_learning_total_visited_nodes.pkl', 'rb') as f:
         algorithms_total_visited_nodes_acc = pickle.load(f)
         
+    # Print all the values
+    print("Total Bits Processed by Each Algorithm")
+    print(algorithms_total_bits_acc)
+    
+    print("Expended Energy by Each Algorithm")
+    print(algorithms_expended_energy_acc)
+    
+    print("Total Visited Nodes by Each Algorithm")
+    print(algorithms_total_visited_nodes_acc)
+        
     # Check if folder path exists otherwise create it
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
@@ -25,13 +35,13 @@ def plot_graphs_multi_agent(folder_path: str = "multi_q_learning_results") -> No
     algorithm_names_plain = [name.replace("Total Bits", "") for name in algorithm_names]
     
     # Define the colors used
-    colors = ['blue']
+    colors = ['blue', 'red']
     
     # Make a bar plot for the total bits processed
     plt.figure()
     
     for i, (algorithm_name, color) in enumerate(zip(algorithm_names, colors)):
-        plt.bar(i, algorithms_total_bits_acc[algorithm_name], color=color, label=algorithm_names_plain)
+        plt.bar(i, algorithms_total_bits_acc[algorithm_name], color=color, label=algorithm_names_plain[i])
         
     plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
     
@@ -55,7 +65,7 @@ def plot_graphs_multi_agent(folder_path: str = "multi_q_learning_results") -> No
     algorithm_names_plain = [name.replace("Energy Level", "") for name in algorithm_names]
     
     for i, (algorithm_name, color) in enumerate(zip(algorithm_names, colors)):
-        plt.bar(i, algorithms_expended_energy_acc[algorithm_name], color=color, label=algorithm_names_plain)
+        plt.bar(i, algorithms_expended_energy_acc[algorithm_name], color=color, label=algorithm_names_plain[i])
         
     plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
     
@@ -79,7 +89,7 @@ def plot_graphs_multi_agent(folder_path: str = "multi_q_learning_results") -> No
     algorithm_names_plain = [name.replace("Total Visited Nodes", "") for name in algorithm_names]
     
     for i, (algorithm_name, color) in enumerate(zip(algorithm_names, colors)):
-        plt.bar(i, algorithms_total_visited_nodes_acc[algorithm_name], color=color, label=algorithm_names_plain)
+        plt.bar(i, algorithms_total_visited_nodes_acc[algorithm_name], color=color, label=algorithm_names_plain[i])
         
     plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
     

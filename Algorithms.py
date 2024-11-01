@@ -2256,7 +2256,7 @@ class Algorithms:
 		"""
 		self.logger = logger
 		self.logger.info("Running the Multi-Agent Coop Q-Brave Algorithm")
-		uav = self.get_uav()
+		uavs = self.get_uavs()
 		graph = self.get_graph()
 		U = self.get_number_of_users()
 		convergence_threshold = self.get_convergence_threshold()
@@ -2264,7 +2264,12 @@ class Algorithms:
 		
 		n_observations = len(graph.get_nodes()) # The State resembles a node in the graph. Therefore, the number of observations is equal to the number of nodes
 		n_actions = n_observations # The Uav can travel to any node from any node (including itself)
-		Q_table = jnp.zeros((n_observations,n_actions)) # Initialize the Q-table with zeros for all state-action pairs
+  
+		Q_tables = []
+		for i in range(len(uavs)):
+			Q_tables.append(jnp.zeros((n_observations,n_actions)))
+   
+   		# Initialize the Q-table with zeros for all state-action pairs
 		action_node_list = [node for node in graph.get_nodes()]
 
 		#initialize the exploration probability to 1
@@ -2282,13 +2287,15 @@ class Algorithms:
 		#learning rate
 		lr = 0.1
 		
-		env = Qenv(graph= graph, uav= uav, number_of_users= U, convergence_threshold= convergence_threshold,
+		env = Multiagent_Qenv(graph= graph, uavs= uavs, number_of_users= U, convergence_threshold= convergence_threshold,
 				   n_actions= n_actions, n_observations= n_observations, solving_method= solving_method, T= T, c= c, b= b, max_iter= max_travels_per_episode)
 		
 		rewards_per_episode = []
 		total_bits_processed_per_episode = []
 		energy_expended_per_episode = []
 		uav_visited_nodes_per_episode = []
+		uav_trajectory_per_episode = []
+    
 		#we iterate over episodes
 		for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Algorithm"):
 			
@@ -2297,7 +2304,10 @@ class Algorithms:
 			self.logger.info("EPISODE START")
 			self.reset()
 			current_state = env.reset(graph= self.get_graph(), uav= self.get_uav(),)
-			current_state = current_state.get_node_id()
+			current_state_temp = []
+			for state in current_state:
+				current_state_temp.append(state.get_node_id())
+			current_state = current_state_temp
 			done = False
 			
 			#sum the rewards that the agent gets from the environment
@@ -2308,42 +2318,77 @@ class Algorithms:
 				# if the sampled flaot is less than the exploration probability
 				#     then the agent selects a random action
 				# else
-				#     he exploits his knowledge using the bellman equation  
+				#     he exploits his knowledge using the bellman equation
+				#sum the rewards that the agent gets from the environment
+
 				
-				if random.uniform(random.split(self.key)[0], (1,))[0] < exploration_proba:
-					action = env.action_space.sample()
-				else:
-					action = jnp.argmax(Q_table[current_state,:])
+				uav_actions = []
+				for i in range(len(uavs)):
+					if random.uniform(random.split(self.key)[0], (1,))[0] < exploration_proba:
+						action = env.action_space.sample()[0]
+					else:
+						action = jnp.argmax(Q_tables[i][current_state[i],:])
+					uav_actions.append(action)
 				
-				action_node = action_node_list[action]
+				action_nodes = []
+				for i in range(len(uav_actions)):
+					action_nodes.append(action_node_list[i])
+     
+				# The environment runs the chosen action and returns
+				# the next state, a reward and true
 				# The environment runs the chosen action and returns
 				# the next state, a reward and true if the epiosed is ended.
-				returns = env.step(action_node)
+				returns = env.step(action_nodes)
 				next_state, reward, done, info = returns
-				next_state = next_state.get_node_id()
+				next_state_temp = []
+				for state in next_state:
+					next_state_temp.append(state.get_node_id())
+				next_state = next_state_temp
 				
-				# We update our Q-table using the Q-learning iteration
-				Q_table = Q_table.at[current_state, action].set((1-lr) * Q_table[current_state, action] +lr*(reward + gamma*max(Q_table[next_state,:])))
-				total_episode_reward = total_episode_reward + reward
+				for i in range(len(uav_actions)):
+					# We update the shared Q-table using the Q-learning iteration
+					Q_tables[i] = Q_tables[i].at[current_state[i], uav_actions[i]].set((1-lr) * Q_tables[i][current_state[i], uav_actions[i]] +lr*(reward[i] + gamma*max(Q_tables[i][next_state[i],:])))
+					total_episode_reward = total_episode_reward + reward[i]
 				# If the episode is finished, we leave the for loop
 				if done:
 					logger.info("The episode has finished")
 					break
 				current_state = next_state
+    
 			#We update the exploration proba using exponential decay formula
 			exploration_proba = max(min_exploration_proba, jnp.exp(-exploration_decreasing_decay*e))
 			rewards_per_episode.append(total_episode_reward)
-			total_bits_processed_per_episode.append(self.get_uav().get_total_processed_data())
-			energy_expended_per_episode.append(self.get_uav().get_total_energy_level() - self.get_uav().get_energy_level())
-			trajectory = uav.get_visited_nodes()
-			trajectory_ids = []
-			for node in info['visited_nodes']:
-				trajectory_ids.append(node.get_node_id())
-			uav_visited_nodes_per_episode.append(len(trajectory_ids))
+   
+			total_bits_processed = 0
+			for uav in uavs:
+				total_bits_processed += uav.get_total_processed_data()
+			total_bits_processed_per_episode.append(total_bits_processed)
 			
-			self.logger.info("The reward for episode %d is: %s", e, total_episode_reward)
-			self.logger.info("The UAV has visited %d nodes in episode %d", len(trajectory_ids), e)
-			self.logger.info("The UAV has visited the nodes: %s", trajectory_ids)
+			energy_expended = 0
+			for uav in uavs:
+				energy_expended += uav.get_total_energy_level() - uav.get_energy_level()
+			energy_expended_per_episode.append(energy_expended)
+   
+			trajectory = []
+			for uav in uavs:
+				trajectory.append(uav.get_visited_nodes())
+	
+			trajectories = []		
+			total_visited_nodes = 0
+			for uav in info['visited_nodes']:
+				trajectory_ids = []
+				for node in uav:
+					trajectory_ids.append(node.get_node_id())
+				trajectories.append(trajectory_ids)
+				total_visited_nodes += len(trajectory_ids)
+     
+			uav_visited_nodes_per_episode.append(total_visited_nodes)
+			uav_trajectory_per_episode.append(trajectories)
+   
+			self.logger.info("The total reward for episode %d is: %s", e, total_episode_reward)
+			self.logger.info("The UAVs have visited %d nodes in episode %d", total_visited_nodes, e)
+			self.logger.info("The UAVs have visited the nodes: %s", trajectories)
+			self.logger.info("The UAVs have expended %s energy in episode %d", energy_expended, e)
 			self.logger.info("EPISODE FINISHED")
 			#print("EPISODE END")
 			
@@ -2352,7 +2397,7 @@ class Algorithms:
 		# print("Mean reward per episode: ", jnp.mean(jnp.array(rewards_per_episode)))
 		# print("Max reward: ", jnp.max(jnp.array(rewards_per_episode)))
 		self.logger.info("The rewards per episode are: %s", rewards_per_episode)
-		self.logger.info("Q Table is: %s", Q_table)
+		self.logger.info("Q Tables are: %s", Q_tables)
 		self.logger.info("Mean reward per episode: %s", jnp.mean(jnp.array(rewards_per_episode)))
 		self.logger.info("Max reward: %s", jnp.max(jnp.array(rewards_per_episode)))
   
@@ -2363,6 +2408,6 @@ class Algorithms:
 		self.set_most_processed_bits(total_bits_processed_per_episode[best_episode])
 		self.set_most_energy_expended(energy_expended_per_episode[best_episode])
 		self.set_most_visited_nodes(uav_visited_nodes_per_episode[best_episode])
-		self.set_best_trajectory(uav_visited_nodes_per_episode[best_episode])
+		self.set_best_trajectories(uav_trajectory_per_episode[best_episode])
 			
 		return True
