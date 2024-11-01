@@ -208,6 +208,26 @@ class Algorithms:
 		"""
 		self.trajectory = trajectory
   
+	def set_best_trajectories(self, trajectories: list)->None:
+		"""
+		Set the best trajectories
+		
+		Parameters:
+		trajectories : list
+			Best trajectories
+		"""
+		self.trajectories = trajectories
+  
+	def get_best_trajectories(self)->list:
+		"""
+		Get the best trajectories
+		
+		Returns:
+		list
+			Best trajectories
+		"""
+		return self.trajectories
+  
 	def get_best_trajectory(self)->list:
 		"""
 		Get the best trajectory
@@ -2101,6 +2121,8 @@ class Algorithms:
 		total_bits_processed_per_episode = []
 		energy_expended_per_episode = []
 		uav_visited_nodes_per_episode = []
+		uav_trajectory_per_episode = []
+    
 		#we iterate over episodes
 		for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Algorithm"):
 			
@@ -2151,7 +2173,7 @@ class Algorithms:
 				next_state = next_state_temp
 				
 				for i in range(len(uav_actions)):
-					# We update our Q-table using the Q-learning iteration
+					# We update the shared Q-table using the Q-learning iteration
 					Q_table = Q_table.at[current_state[i], uav_actions[i]].set((1-lr) * Q_table[current_state[i], uav_actions[i]] +lr*(reward[i] + gamma*max(Q_table[next_state[i],:])))
 					total_episode_reward = total_episode_reward + reward[i]
 				# If the episode is finished, we leave the for loop
@@ -2163,20 +2185,37 @@ class Algorithms:
 			#We update the exploration proba using exponential decay formula
 			exploration_proba = max(min_exploration_proba, jnp.exp(-exploration_decreasing_decay*e))
 			rewards_per_episode.append(total_episode_reward)
-			total_bits_processed_per_episode.append(self.get_uav().get_total_processed_data())
-			energy_expended_per_episode.append(self.get_uav().get_total_energy_level() - self.get_uav().get_energy_level())
+   
+			total_bits_processed = 0
+			for uav in uavs:
+				total_bits_processed += uav.get_total_processed_data()
+			total_bits_processed_per_episode.append(total_bits_processed)
+			
+			energy_expended = 0
+			for uav in uavs:
+				energy_expended += uav.get_total_energy_level() - uav.get_energy_level()
+			energy_expended_per_episode.append(energy_expended)
    
 			trajectory = []
 			for uav in uavs:
 				trajectory.append(uav.get_visited_nodes())
-    
-			trajectory_ids = []
-			for node in info['visited_nodes']:
-				trajectory_ids.append(node.get_node_id())
-			uav_visited_nodes_per_episode.append(len(trajectory_ids))
-			self.logger.info("The reward for episode %d is: %s", e, total_episode_reward)
-			self.logger.info("The UAV has visited %d nodes in episode %d", len(trajectory_ids), e)
-			self.logger.info("The UAV has visited the nodes: %s", trajectory_ids)
+	
+			trajectories = []		
+			total_visited_nodes = 0
+			for uav in info['visited_nodes']:
+				trajectory_ids = []
+				for node in uav:
+					trajectory_ids.append(node.get_node_id())
+				trajectories.append(trajectory_ids)
+				total_visited_nodes += len(trajectory_ids)
+     
+			uav_visited_nodes_per_episode.append(total_visited_nodes)
+			uav_trajectory_per_episode.append(trajectories)
+   
+			self.logger.info("The total reward for episode %d is: %s", e, total_episode_reward)
+			self.logger.info("The UAVs have visited %d nodes in episode %d", total_visited_nodes, e)
+			self.logger.info("The UAVs have visited the nodes: %s", trajectories)
+			self.logger.info("The UAVs have expended %s energy in episode %d", energy_expended, e)
 			self.logger.info("EPISODE FINISHED")
 			#print("EPISODE END")
 			
@@ -2196,7 +2235,7 @@ class Algorithms:
 		self.set_most_processed_bits(total_bits_processed_per_episode[best_episode])
 		self.set_most_energy_expended(energy_expended_per_episode[best_episode])
 		self.set_most_visited_nodes(uav_visited_nodes_per_episode[best_episode])
-		self.set_best_trajectory(uav_visited_nodes_per_episode[best_episode])
+		self.set_best_trajectories(uav_trajectory_per_episode[best_episode])
 			
 		return True
 
@@ -2301,6 +2340,7 @@ class Algorithms:
 			for node in info['visited_nodes']:
 				trajectory_ids.append(node.get_node_id())
 			uav_visited_nodes_per_episode.append(len(trajectory_ids))
+			
 			self.logger.info("The reward for episode %d is: %s", e, total_episode_reward)
 			self.logger.info("The UAV has visited %d nodes in episode %d", len(trajectory_ids), e)
 			self.logger.info("The UAV has visited the nodes: %s", trajectory_ids)

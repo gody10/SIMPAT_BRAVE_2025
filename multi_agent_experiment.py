@@ -3,7 +3,7 @@ from jax import random
 from Algorithms import Algorithms
 import pickle
 import time
-from plot_graphs import plot_graphs
+from plot_graphs_multi_agent import plot_graphs_multi_agent
 from Utility_functions import setup_logger, compute_average
 from tqdm import tqdm
 import os
@@ -43,7 +43,7 @@ algorithms_total_visited_nodes_acc = {}
 timer_dict_acc = {}
 
 # List of algorithms
-algorithm_names = ["Q-Learning Common Table", "Q-Learning Individual Tables"]
+algorithm_names = ["Q-Learning Common Table"]
 
 # Initialize accumulation dictionaries with empty lists for each algorithm
 for name in algorithm_names:
@@ -98,14 +98,11 @@ success_common = algorithm.multi_agent_q_learning_coop(
     logger= multi_q_learning_logger,
 )
 
-multi_q_learning_logger.info("The UAV energy level is: %s", algorithm.get_uav().get_energy_level())
-multi_q_learning_logger.info("The UAV processed in total: %s bits", algorithm.most_processed_bits)
-
 # Get UAV trajectory and the number of bits processed at each node
 processed_bits = algorithm.get_most_processed_bits()
 energy_expended = algorithm.get_most_expended_energy()
 total_visited_nodes = algorithm.get_most_visited_nodes()
-trajectory = algorithm.get_best_trajectory()
+trajectory = algorithm.get_best_trajectories()
 
 # End the timer for Q-Brave Algorithm
 q_common_time = time.time() - start_time
@@ -115,40 +112,68 @@ if success_common:
     multi_q_learning_logger.info("Q-Brave Algorithm has successfully reached the final node!")
 else:
     multi_q_learning_logger.info("Q-Brave Algorithm failed to reach the final node!")
+    
+# Add the results to the accumulation dictionaries
+algorithms_total_bits_acc["Q-Learning Common Table Total Bits"].append(processed_bits)
+algorithms_expended_energy_acc["Q-Learning Common Table Energy Level"].append(energy_expended)
+algorithms_total_visited_nodes_acc["Q-Learning Common Table Total Visited Nodes"].append(total_visited_nodes)
+timer_dict_acc["Q-Learning Common Table Time"].append(q_common_time)
 
 # Reset the Algorithm object for the next run
 algorithm.reset()
 
-# -------------------- Multi Q-Brave Solution with Individual Q-tables --------------------
-start_time = time.time()
+# # -------------------- Multi Q-Brave Solution with Individual Q-tables --------------------
+# start_time = time.time()
 
-# Run the Algorithm
-success_individual = algorithm.multi_agent_q_learning_indi(
-    solving_method="scipy",
-    number_of_episodes=NUMBER_OF_EPISODES,
-    max_travels_per_episode=MAX_ITER,
-    b=B,
-    c=C,
-    logger= multi_q_learning_logger,
-)
+# # Run the Algorithm
+# success_individual = algorithm.multi_agent_q_learning_indi(
+#     solving_method="scipy",
+#     number_of_episodes=NUMBER_OF_EPISODES,
+#     max_travels_per_episode=MAX_ITER,
+#     b=B,
+#     c=C,
+#     logger= multi_q_learning_logger,
+# )
 
-multi_q_learning_logger.info("The UAV energy level is: %s", algorithm.get_uav().get_energy_level())
-multi_q_learning_logger.info("The UAV processed in total: %s bits", algorithm.most_processed_bits)
+# multi_q_learning_logger.info("The UAV energy level is: %s", algorithm.get_uav().get_energy_level())
+# multi_q_learning_logger.info("The UAV processed in total: %s bits", algorithm.most_processed_bits)
 
-# Get UAV trajectory and the number of bits processed at each node
-processed_bits = algorithm.get_most_processed_bits()
-energy_expended = algorithm.get_most_expended_energy()
-total_visited_nodes = algorithm.get_most_visited_nodes()
-trajectory = algorithm.get_best_trajectory()
+# # Get UAV trajectory and the number of bits processed at each node
+# processed_bits = algorithm.get_most_processed_bits()
+# energy_expended = algorithm.get_most_expended_energy()
+# total_visited_nodes = algorithm.get_most_visited_nodes()
+# trajectory = algorithm.get_best_trajectory()
 
-# End the timer for Q-Brave Algorithm
-q_individual_time = time.time() - start_time
-multi_q_learning_logger.info("Q-Brave Algorithm took: %s seconds", q_individual_time)
+# # End the timer for Q-Brave Algorithm
+# q_individual_time = time.time() - start_time
+# multi_q_learning_logger.info("Q-Brave Algorithm took: %s seconds", q_individual_time)
 
-if success_individual:
-    multi_q_learning_logger.info("Q-Brave Algorithm has successfully reached the final node!")
-else:
-    multi_q_learning_logger.info("Q-Brave Algorithm failed to reach the final node!")
+# if success_individual:
+#     multi_q_learning_logger.info("Q-Brave Algorithm has successfully reached the final node!")
+# else:
+#     multi_q_learning_logger.info("Q-Brave Algorithm failed to reach the final node!")
 
-# Reset the Algorithm object for the next run
-algorithm.reset()
+# Add the results to the accumulation dictionaries
+# algorithms_total_bits_acc["Q-Learning Individual Tables Total Bits"].append(processed_bits)
+# algorithms_expended_energy_acc["Q-Learning Individual Tables Energy Level"].append(energy_expended)
+# algorithms_total_visited_nodes_acc["Q-Learning Individual Tables Total Visited Nodes"].append(total_visited_nodes)
+# timer_dict_acc["Q-Learning Individual Tables Time"].append(q_individual_time)
+
+# # Reset the Algorithm object for the next run
+# algorithm.reset()
+
+# Save the dictionaries to different pickle files
+with open('multi_q_learning_total_bits.pkl', 'wb') as f:
+    pickle.dump(algorithms_total_bits_acc, f)
+    
+with open('multi_q_learning_expended_energy.pkl', 'wb') as f:
+    pickle.dump(algorithms_expended_energy_acc, f)  
+    
+with open('multi_q_learning_total_visited_nodes.pkl', 'wb') as f:
+    pickle.dump(algorithms_total_visited_nodes_acc, f)
+    
+with open('multi_q_learning_timers.pkl', 'wb') as f:
+    pickle.dump(timer_dict_acc, f)
+    
+# Plot the graphs
+plot_graphs_multi_agent()
