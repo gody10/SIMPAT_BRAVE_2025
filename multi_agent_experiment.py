@@ -30,7 +30,7 @@ ENERGY_LEVEL = 29000
 B = 0.74
 C = 0.00043
 MAX_ITER = 30
-NUMBER_OF_EPISODES = 40
+NUMBER_OF_EPISODES = 5
 NUMBER_OF_UAVS = 3
 
 # Initialize the main random key

@@ -46,7 +46,7 @@ class Multiagent_Qenv(gym.Env):
 		self.action_space = gym.spaces.MultiDiscrete([n_actions] * self.number_of_uavs)
 		self.observation_space = gym.spaces.MultiDiscrete([n_observations] * self.number_of_uavs)
 		
-		self.reset(uav= uavs, graph= graph)
+		self.reset(uavs= self.uavs, graph= graph)
 		#logging.info("Environment has been successfully initialized!")
 	
 	def step(self, action: list) -> Tuple[Node, float, bool, dict]:
@@ -222,11 +222,11 @@ class Multiagent_Qenv(gym.Env):
 		
 		return (self.observation, self.reward, self.done, info)
 	
-	def reset(self, uav: Uav, graph: Graph) -> Node:
+	def reset(self, uavs: list, graph: Graph) -> Node:
 		"""
 		Reset the environment to the initial state.
 		"""
-		self.uav = uav
+		self.uavs = uavs
 		self.graph = graph
 				
 		# if (self.uav.get_current_node() != self.uav.get_initial_node()):

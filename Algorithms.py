@@ -2130,7 +2130,7 @@ class Algorithms:
 			#print("\nEPISODE START")
 			self.logger.info("EPISODE START")
 			self.reset()
-			current_state = env.reset(graph= self.get_graph(), uav= self.get_uav(),)
+			current_state = env.reset(graph= self.get_graph(), uavs= self.get_uavs(),)
 			current_state_temp = []
 			for state in current_state:
 				current_state_temp.append(state.get_node_id())
@@ -2172,10 +2172,10 @@ class Algorithms:
 					next_state_temp.append(state.get_node_id())
 				next_state = next_state_temp
 				
-				for i in range(len(uav_actions)):
+				for j in range(len(uav_actions)):
 					# We update the shared Q-table using the Q-learning iteration
-					Q_table = Q_table.at[current_state[i], uav_actions[i]].set((1-lr) * Q_table[current_state[i], uav_actions[i]] +lr*(reward[i] + gamma*max(Q_table[next_state[i],:])))
-					total_episode_reward = total_episode_reward + reward[i]
+					Q_table = Q_table.at[current_state[j], uav_actions[j]].set((1-lr) * Q_table[current_state[j], uav_actions[j]] +lr*(reward[j] + gamma*max(Q_table[next_state[j],:])))
+					total_episode_reward = total_episode_reward + reward[j]
 				# If the episode is finished, we leave the for loop
 				if done:
 					logger.info("The episode has finished")
@@ -2303,7 +2303,7 @@ class Algorithms:
 			#print("\nEPISODE START")
 			self.logger.info("EPISODE START")
 			self.reset()
-			current_state = env.reset(graph= self.get_graph(), uav= self.get_uav(),)
+			current_state = env.reset(graph= self.get_graph(), uavs= self.get_uavs(),)
 			current_state_temp = []
 			for state in current_state:
 				current_state_temp.append(state.get_node_id())
@@ -2345,10 +2345,10 @@ class Algorithms:
 					next_state_temp.append(state.get_node_id())
 				next_state = next_state_temp
 				
-				for i in range(len(uav_actions)):
+				for j in range(len(uav_actions)):
 					# We update the shared Q-table using the Q-learning iteration
-					Q_tables[i] = Q_tables[i].at[current_state[i], uav_actions[i]].set((1-lr) * Q_tables[i][current_state[i], uav_actions[i]] +lr*(reward[i] + gamma*max(Q_tables[i][next_state[i],:])))
-					total_episode_reward = total_episode_reward + reward[i]
+					Q_tables[j] = Q_tables[j].at[current_state[j], uav_actions[j]].set((1-lr) * Q_tables[j][current_state[i], uav_actions[j]] +lr*(reward[j] + gamma*max(Q_tables[j][next_state[j],:])))
+					total_episode_reward = total_episode_reward + reward[j]
 				# If the episode is finished, we leave the for loop
 				if done:
 					logger.info("The episode has finished")
