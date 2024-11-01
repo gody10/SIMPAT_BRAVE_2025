@@ -12,7 +12,7 @@ import os
 q_brave_time = 0
 
 # Create N nodes with U users in them
-N = 6
+N = 10
 NODE_RADIUS = 2
 MIN_DISTANCE_BETWEEN_NODES = 20  # Minimum distance to maintain between nodes
 UAV_HEIGHT = 30
@@ -59,10 +59,10 @@ multi_q_learning_logger = setup_logger('q_learning_realistic_scenario', 'q_learn
 algorithm = Algorithms(convergence_threshold= CONVERGENCE_THRESHOLD)
 
 # Setup subkeys
-subkey = random.split(main_key, 4)
+subkey = random.split(main_key)[0]
 
 # Generate a unique number of users for each node using the subkey
-U = random.randint(subkey, (N,), 15, 15)  # Adjust min and max values as needed
+U = [random.randint(subkey, (N,), 15, 15)]  # Adjust min and max values as needed
 
 # Setup the algorithm 
 algorithm.setup_multiagent_scenario(
@@ -96,7 +96,6 @@ success_common = algorithm.multi_agent_q_learning_coop(
     b=B,
     c=C,
     logger= multi_q_learning_logger,
-    
 )
 
 multi_q_learning_logger.info("The UAV energy level is: %s", algorithm.get_uav().get_energy_level())

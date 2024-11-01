@@ -44,17 +44,17 @@ class Multiagent_Qenv(gym.Env):
 		
 		#self.action_space = gym.spaces.Discrete(n_actions)
 		self.action_space = gym.spaces.MultiDiscrete([n_actions] * self.number_of_uavs)
-		self.observation_space = gym.spaces.Discrete([n_observations] * self.number_of_uavs)
+		self.observation_space = gym.spaces.MultiDiscrete([n_observations] * self.number_of_uavs)
 		
 		self.reset(uav= uavs, graph= graph)
 		#logging.info("Environment has been successfully initialized!")
 	
-	def step(self, action: Node) -> Tuple[Node, float, bool, dict]:
+	def step(self, action: list) -> Tuple[Node, float, bool, dict]:
 		"""
 		Perform an action in the environment and calculate the reward.
 		
 		Parameters:
-			action (int): The action to perform.
+			action (list): The actions to perform.
 
 		Returns:
 			observation (Node): The new observation.
@@ -95,11 +95,11 @@ class Multiagent_Qenv(gym.Env):
 		if (self.uavs[0].get_number_of_actions() > self.max_iter):
 			self.done = True
 		
-		for i in range(len(self.number_of_uavs)):
+		for i in range(self.number_of_uavs):
   
 			# Start playing the game inside the current node
 			done_game = False
-			temp_U = self.number_of_users[self.uavs[i].get_current_node().get_node_id()]
+			temp_U = self.number_of_users[0][self.uavs[i].get_current_node().get_node_id()]
 			user_strategies = jnp.ones(temp_U) * 0.1  # Strategies for all users
 			uav_bandwidth = self.uavs[i].get_uav_bandwidth()
 			uav_cpu_frequency = self.uavs[i].get_cpu_frequency()
@@ -157,7 +157,7 @@ class Multiagent_Qenv(gym.Env):
 					elif self.solving_method == "scipy":
 						# Play the submodular game
 						maximized_utility, percentage_offloaded = user.play_submodular_game_scipy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
-																								uav_cpu_frequency, uav_total_data_processing_capacity, self.T, self.uav.get_current_coordinates(), self.uav.get_height())
+																								uav_cpu_frequency, uav_total_data_processing_capacity, self.T, self.uavs[i].get_current_coordinates(), self.uavs[i].get_height())
 
 						# #logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
 						# #logging.info("User %d has maximized its utility to %s", idx, maximized_utility)
@@ -211,9 +211,9 @@ class Multiagent_Qenv(gym.Env):
 			
 			self.uavs[i].update_total_processed_data(total_data_processed)
 			# Calculate the reward
-			temp_reward[i] = total_data_processed                             
+			temp_reward = temp_reward.at[i].set(total_data_processed)                            
 		
-			self.reward[i] += temp_reward[i]
+			self.reward = self.reward.at[i].add(temp_reward[i])
    
 			# Update the visited nodes for each UAV
 			visited_nodes[i] = self.uavs[i].get_visited_nodes()
@@ -229,8 +229,8 @@ class Multiagent_Qenv(gym.Env):
 		self.uav = uav
 		self.graph = graph
 				
-		if (self.uav.get_current_node() != self.uav.get_initial_node()):
-			print("STOP THE INITIAL NODE IS NOT THE CURRENT NODE") 
+		# if (self.uav.get_current_node() != self.uav.get_initial_node()):
+		# 	print("STOP THE INITIAL NODE IS NOT THE CURRENT NODE") 
 		
 		# Perform the action for all uavs
 		observation_list = []

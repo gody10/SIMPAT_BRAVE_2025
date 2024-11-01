@@ -67,6 +67,16 @@ class Algorithms:
 			UAV
 		"""
 		return self.uav
+
+	def get_uavs(self)->list:
+		"""
+		Get the UAVs
+		
+		Returns:
+		list
+			UAVs
+		"""
+		return self.uavs
 	
 	def get_graph(self)->Graph:
 		"""
@@ -637,61 +647,75 @@ class Algorithms:
 			# Generate random center coordinates for the node
 			node_coords = generate_node_coordinates(key, nodes, min_distance_between_nodes)
 
-			# Determine bit size range for each node
-			bits_range = (max_bits * 0.75, max_bits) if i in [0, 3, 5] else (min_bits, min_bits * 1.5)
+			max_bits = max_bits  # Maximum bits for the highest user ID 900000000
+			min_bits = min_bits    # Minimum bits for the lowest user ID
+			bit_range = max_bits - min_bits
+
+			#max_distance = 2  # Set maximum distance to 10
 
 			users = []
-			num_users = int(number_of_users[number_of_nodes])
+			# Convert the number of users to an integer if it's an array
+
+			num_users = int(number_of_users[0][number_of_nodes])
+
+			# Split the key into enough subkeys for the number of users
 			subkeys = jax.random.split(key, num_users)
 
 			for j in range(num_users):
-				data_in_bits = jax.random.uniform(subkeys[j], minval=bits_range[0], maxval=bits_range[1])
-				r_scale = (j / num_users) ** 2
+				# Use a unique subkey for each user to get different random values
+				data_in_bits = jax.random.uniform(subkeys[j], minval=min_bits, maxval=max_bits)
+				
+				# Sharpen the decrease in `r` to make higher ID users much closer to the center
+				r_scale = (j / number_of_users[0][number_of_nodes]) ** 2  # Exponential decrease for sharper differences
 				r = r_scale
-				theta = random.uniform(random.split(key)[0], (1,))[0] * 2 * jnp.pi
-				phi = random.uniform(random.split(key)[0], (1,))[0] * jnp.pi
+				theta = random.uniform(random.split(key)[0], (1,))[0] * 2 * jnp.pi  # azimuthal angle (0 to 2*pi)
+				phi = random.uniform(random.split(key)[0], (1,))[0] * jnp.pi  # polar angle (0 to pi)
 
+				# Convert spherical coordinates (r, theta, phi) to Cartesian coordinates (x, y, z)
 				x = r * jnp.sin(phi) * jnp.cos(theta)
 				y = r * jnp.sin(phi) * jnp.sin(theta)
 				z = r * jnp.cos(phi)
 
+				# User coordinates relative to the node center
 				user_coords = (node_coords[0] + x, node_coords[1] + y, node_coords[2] + z)
-
+				
+				# Create user object with random data_in_bits
 				user = AoiUser(
 					user_id=j,
-					data_in_bits=data_in_bits,
+					data_in_bits=data_in_bits,  # Assign random bits to each user
 					transmit_power=1.5,
 					energy_level=energy_level,
 					task_intensity=1,
 					carrier_frequency=5,
 					coordinates=user_coords
 				)
-				users.append(user)
 
+				users.append(user)
+			
 			nodes.append(Node(
 				node_id=i,
 				users=users,
 				coordinates=node_coords
 			))
-
-		# Calculate distances for all users and set them
+   
+		# Calculate the distance between all users and the UAV
 		for node in nodes:
 			node_distances = []
 			for user in node.get_user_list():
 				user.calculate_distance(node)
 				node_distances.append(user.get_distance())
+			# Scale the distances to be between 100 and 1000
 			max_distance = max(node_distances)
 			min_distance = min(node_distances)
 			distance_range = max_distance - min_distance
 			for user in node.get_user_list():
 				user.set_distance(distance_min + distance_max * (user.get_distance() - min_distance) / distance_range)
-
 		# Create edges between all nodes with random weights
 		edges = []
 		for i in range(number_of_nodes):
-			for j in range(i + 1, number_of_nodes):
-				edges.append(Edge(nodes[i].user_list[0], nodes[j].user_list[0], random.normal(key, (1,))))
-
+			for j in range(i+1, number_of_nodes):
+				edges.append(Edge(nodes[i], nodes[j], random.normal(key, (1,))))
+				
 		# Create the graph
 		self.graph = Graph(nodes=nodes, edges=edges)
 
@@ -2044,7 +2068,7 @@ class Algorithms:
 		"""
 		self.logger = logger
 		self.logger.info("Running the Multi-Agent Coop Q-Brave Algorithm")
-		uav = self.get_uav()
+		uavs = self.get_uavs()
 		graph = self.get_graph()
 		U = self.get_number_of_users()
 		convergence_threshold = self.get_convergence_threshold()
@@ -2070,7 +2094,7 @@ class Algorithms:
 		#learning rate
 		lr = 0.1
 		
-		env = Multiagent_Qenv(graph= graph, uavs= uav, number_of_users= U, convergence_threshold= convergence_threshold,
+		env = Multiagent_Qenv(graph= graph, uavs= uavs, number_of_users= U, convergence_threshold= convergence_threshold,
 				   n_actions= n_actions, n_observations= n_observations, solving_method= solving_method, T= T, c= c, b= b, max_iter= max_travels_per_episode)
 		
 		rewards_per_episode = []
@@ -2095,41 +2119,57 @@ class Algorithms:
 			total_episode_reward = 0
 			
 			for i in range(max_travels_per_episode):
-				for i in range(len(uav)):
-					# we sample a float from a uniform distribution over 0 and 1
-					# if the sampled flaot is less than the exploration probability
-					#     then the agent selects a random action
-					# else
-					#     he exploits his knowledge using the bellman equation
+				# we sample a float from a uniform distribution over 0 and 1
+				# if the sampled flaot is less than the exploration probability
+				#     then the agent selects a random action
+				# else
+				#     he exploits his knowledge using the bellman equation
+				#sum the rewards that the agent gets from the environment
+
+				
+				uav_actions = []
+				for i in range(len(uavs)):
 					if random.uniform(random.split(self.key)[0], (1,))[0] < exploration_proba:
-						action = env.action_space.sample()
+						action = env.action_space.sample()[0]
 					else:
-						action = jnp.argmax(Q_table[current_state,:])
-					
-					action_node = action_node_list[action]
-					# The environment runs the chosen action and returns
-					# the next state, a reward and true if the epiosed is ended.
-					returns = env.step(action_node)
-					next_state, reward, done, info = returns
-					next_state_temp = []
-					for state in next_state:
-						next_state_temp.append(state.get_node_id())
-					next_state = next_state_temp
-					
+						action = jnp.argmax(Q_table[current_state[i],:])
+					uav_actions.append(action)
+				
+				action_nodes = []
+				for i in range(len(uav_actions)):
+					action_nodes.append(action_node_list[i])
+     
+				# The environment runs the chosen action and returns
+				# the next state, a reward and true
+				# The environment runs the chosen action and returns
+				# the next state, a reward and true if the epiosed is ended.
+				returns = env.step(action_nodes)
+				next_state, reward, done, info = returns
+				next_state_temp = []
+				for state in next_state:
+					next_state_temp.append(state.get_node_id())
+				next_state = next_state_temp
+				
+				for i in range(len(uav_actions)):
 					# We update our Q-table using the Q-learning iteration
-					Q_table = Q_table.at[current_state, action].set((1-lr) * Q_table[current_state, action] +lr*(reward + gamma*max(Q_table[next_state,:])))
-					total_episode_reward = total_episode_reward + reward
-					# If the episode is finished, we leave the for loop
-					if done:
-						logger.info("The episode has finished")
-						break
-					current_state = next_state
+					Q_table = Q_table.at[current_state[i], uav_actions[i]].set((1-lr) * Q_table[current_state[i], uav_actions[i]] +lr*(reward[i] + gamma*max(Q_table[next_state[i],:])))
+					total_episode_reward = total_episode_reward + reward[i]
+				# If the episode is finished, we leave the for loop
+				if done:
+					logger.info("The episode has finished")
+					break
+				current_state = next_state
+    
 			#We update the exploration proba using exponential decay formula
 			exploration_proba = max(min_exploration_proba, jnp.exp(-exploration_decreasing_decay*e))
 			rewards_per_episode.append(total_episode_reward)
 			total_bits_processed_per_episode.append(self.get_uav().get_total_processed_data())
 			energy_expended_per_episode.append(self.get_uav().get_total_energy_level() - self.get_uav().get_energy_level())
-			trajectory = uav.get_visited_nodes()
+   
+			trajectory = []
+			for uav in uavs:
+				trajectory.append(uav.get_visited_nodes())
+    
 			trajectory_ids = []
 			for node in info['visited_nodes']:
 				trajectory_ids.append(node.get_node_id())
