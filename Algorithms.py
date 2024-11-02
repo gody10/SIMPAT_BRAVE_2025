@@ -2102,6 +2102,7 @@ class Algorithms:
 		#initialize the exploration probability to 1
 		exploration_proba = 1
 
+
 		#exploartion decreasing decay for exponential decreasing
 		exploration_decreasing_decay = 0.001
 
@@ -2128,6 +2129,7 @@ class Algorithms:
 			
 			#we initialize the first state of the episode
 			#print("\nEPISODE START")
+
 			self.logger.info("EPISODE START")
 			self.reset()
 			uavs = self.get_uavs()
@@ -2151,16 +2153,24 @@ class Algorithms:
 
 				
 				uav_actions = []
-				for i in range(len(uavs)):
+				for j in range(len(uavs)):
 					if random.uniform(random.split(self.key)[0], (1,))[0] < exploration_proba:
 						action = env.action_space.sample()[0]
 					else:
-						action = jnp.argmax(Q_table[current_state[i],:])
+						q_values = Q_table[current_state[j], :]
+						max_value = jnp.max(q_values)
+						max_actions = jnp.where(q_values == max_value)[0]  # Get indices of maximum values
+						
+						if len(max_actions) > 1:
+							action = random.choice(max_actions)  # Randomly select one of the max actions
+						else:
+							action = max_actions[0]  # Only one max, select it directly
+
 					uav_actions.append(action)
 				
 				action_nodes = []
-				for i in range(len(uav_actions)):
-					action_nodes.append(action_node_list[i])
+				for j in range(len(uav_actions)):
+					action_nodes.append(action_node_list[uav_actions[j]])
      
 				# The environment runs the chosen action and returns
 				# the next state, a reward and true
@@ -2276,7 +2286,7 @@ class Algorithms:
 
 		#initialize the exploration probability to 1
 		exploration_proba = 1
-
+		
 		#exploartion decreasing decay for exponential decreasing
 		exploration_decreasing_decay = 0.001
 
@@ -2300,7 +2310,7 @@ class Algorithms:
     
 		#we iterate over episodes
 		for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Individual Algorithm"):
-			
+
 			#we initialize the first state of the episode
 			#print("\nEPISODE START")
 			self.logger.info("EPISODE START")
@@ -2326,16 +2336,24 @@ class Algorithms:
 
 				
 				uav_actions = []
-				for i in range(len(uavs)):
+				for j in range(len(uavs)):
 					if random.uniform(random.split(self.key)[0], (1,))[0] < exploration_proba:
 						action = env.action_space.sample()[0]
 					else:
-						action = jnp.argmax(Q_tables[i][current_state[i],:])
+						q_values = Q_tables[j][current_state[j], :]
+						max_value = jnp.max(q_values)
+						max_actions = jnp.where(q_values == max_value)[0]  # Get indices of maximum values
+						
+						if len(max_actions) > 1:
+							action = random.choice(max_actions)  # Randomly select one of the max actions
+						else:
+							action = max_actions[0]  # Only one max, select it directly
+
 					uav_actions.append(action)
 				
 				action_nodes = []
-				for i in range(len(uav_actions)):
-					action_nodes.append(action_node_list[i])
+				for j in range(len(uav_actions)):
+					action_nodes.append(action_node_list[uav_actions[j]])
      
 				# The environment runs the chosen action and returns
 				# the next state, a reward and true
@@ -2350,7 +2368,7 @@ class Algorithms:
 				
 				for j in range(len(uav_actions)):
 					# We update the shared Q-table using the Q-learning iteration
-					Q_tables[j] = Q_tables[j].at[current_state[j], uav_actions[j]].set((1-lr) * Q_tables[j][current_state[i], uav_actions[j]] +lr*(reward[j] + gamma*max(Q_tables[j][next_state[j],:])))
+					Q_tables[j] = Q_tables[j].at[current_state[j], uav_actions[j]].set((1-lr) * Q_tables[j][current_state[j], uav_actions[j]] +lr*(reward[j] + gamma*max(Q_tables[j][next_state[j],:])))
 					total_episode_reward = total_episode_reward + reward[j]
 				# If the episode is finished, we leave the for loop
 				if done:
