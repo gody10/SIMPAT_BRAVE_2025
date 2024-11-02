@@ -44,18 +44,21 @@ def plot_graphs_multi_agent(folder_path: str = "multi_q_learning_results") -> No
     plt.figure()
     
     for i, (algorithm_name, color) in enumerate(zip(algorithm_names, colors)):
-        plt.bar(i, algorithms_total_bits_acc[algorithm_name], color=color, label=algorithm_names_plain[i], width= bar_width)
+        # Plot the bar
+        bar_value = algorithms_total_bits_acc[algorithm_name]
+
+        plt.bar(i, bar_value[0], color=color, width=bar_width)
         
+        # Add text within the bar
+        plt.text(i, bar_value[0] / 2, algorithm_names_plain[i], ha='center', va='center', color='black', fontweight='bold', fontsize= 15, rotation=90)
+
+    # Set x-axis labels and other configurations
     plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
-    
     plt.xlabel('Algorithm')
-    
     plt.ylabel('Total Bits Processed')
-    
     plt.title('Total Bits Processed by Each Algorithm')
-    
-    plt.legend( loc='lower left')
-    
+
+    # Save the plot
     plt.savefig(os.path.join(folder_path, 'total_bits.png'))
     
     # Make a bar plot for the expended energy
@@ -69,7 +72,12 @@ def plot_graphs_multi_agent(folder_path: str = "multi_q_learning_results") -> No
     
     
     for i, (algorithm_name, color) in enumerate(zip(algorithm_names, colors)):
-        plt.bar(i, algorithms_expended_energy_acc[algorithm_name], color=color, label=algorithm_names_plain[i], width= bar_width)
+        bar_value = algorithms_expended_energy_acc[algorithm_name]
+
+        plt.bar(i, bar_value[0], color=color, width= bar_width)
+
+        # Add text within the bar
+        plt.text(i, bar_value[0] / 2, algorithm_names_plain[i], ha='center', va='center', color='black', fontweight='bold', fontsize= 15,rotation=90)
         
     plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
     
@@ -78,8 +86,6 @@ def plot_graphs_multi_agent(folder_path: str = "multi_q_learning_results") -> No
     plt.ylabel('Expended Energy')
     
     plt.title('Expended Energy by Each Algorithm')
-    
-    plt.legend( loc='lower left')
     
     plt.savefig(os.path.join(folder_path, 'expended_energy.png'))
     
@@ -93,7 +99,12 @@ def plot_graphs_multi_agent(folder_path: str = "multi_q_learning_results") -> No
     algorithm_names_plain = [name.replace("Total Visited Nodes", "") for name in algorithm_names]
     
     for i, (algorithm_name, color) in enumerate(zip(algorithm_names, colors)):
-        plt.bar(i, algorithms_total_visited_nodes_acc[algorithm_name], color=color, label=algorithm_names_plain[i], width= bar_width)
+        bar_value = algorithms_total_visited_nodes_acc[algorithm_name]
+
+        plt.bar(i, bar_value[0], color=color, width= bar_width)
+
+        # Add text within the bar
+        plt.text(i, bar_value[0] / 2, algorithm_names_plain[i], ha='center', va='center', color='black', fontweight='bold',fontsize= 15,rotation=90)
         
     plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
     
@@ -103,9 +114,37 @@ def plot_graphs_multi_agent(folder_path: str = "multi_q_learning_results") -> No
     
     plt.title('Total Visited Nodes by Each Algorithm')
     
-    plt.legend( loc='lower left')
-    
     plt.savefig(os.path.join(folder_path, 'total_visited_nodes.png'))
+
+    # Plot Custom Metric
+    custom_metric = {}
+
+    algorithm_names = list(algorithms_total_bits_acc.keys())
+    algorithm_names_plain = [name.replace("Total Bits", "") for name in algorithm_names]
+
+    for algorithm_name in algorithm_names_plain:
+        custom_metric[algorithm_name + "Custom Metric"] = (algorithms_total_bits_acc[algorithm_name + "Total Bits"][0]
+                            * algorithms_total_visited_nodes_acc[algorithm_name + "Total Visited Nodes"][0])/ algorithms_expended_energy_acc[algorithm_name + "Energy Level"][0]
+
+    plt.figure()
+
+    for i, (algorithm_name, color) in enumerate(zip(algorithm_names_plain, colors)):
+        bar_value = custom_metric[algorithm_name + "Custom Metric"]
+
+        plt.bar(i, bar_value, color=color, width= bar_width)
+
+        # Add text within the bar
+        plt.text(i, bar_value / 2, algorithm_names_plain[i], ha='center', va='center', color='black', fontweight='bold',fontsize= 15,rotation=90)
+
+    plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
+
+    plt.xlabel('Algorithm')
+
+    plt.ylabel('Custom Metric')
+
+    plt.title('Custom Metric by Each Algorithm')
+
+    plt.savefig(os.path.join(folder_path, 'custom_metric.png'))
     
     
 if __name__ == '__main__':
