@@ -64,38 +64,47 @@ class Multiagent_Qenv(gym.Env):
 		"""
 
 		info = {}
-		temp_reward = jnp.zeros(self.number_of_uavs)
+		available_uavs = []
+
+		# Check if the UAV has reached the final node to end the episode
+		for i in range(len(self.uavs)):
+			if (self.uavs[i].get_current_node() != self.uavs[i].get_final_node()):
+				#logging.info("The UAV has reached the final node!")
+				available_uavs.append(self.uavs[i])
+			
+		# Check if a UAV has run out of energy
+		for i in range(len(available_uavs)):
+			if (available_uavs[i].get_energy_level() <= 0):
+				available_uavs.remove(available_uavs[i])
+			#logging.info("The UAV has run out of energy!")
+   
+		# If the UAV has exceeded max_iter actions, end the episode
+		for i in range(len(available_uavs)):
+			if (self.uavs[i].get_total_actions() > self.max_iter):
+				available_uavs.remove(available_uavs[i])
+			#logging.info("The UAV has exceeded the maximum number of actions!")
+
+		if len(available_uavs) == 0:
+			self.done = True
+			#logging.info("The episode has ended!")
+			return (self.observation, self.reward, self.done, info)
+		else:
+			self.uavs = available_uavs
+			
+		temp_reward = jnp.zeros(len(self.uavs))
 		
 		# Create an empty list with lists to store the visited nodes of each UAV
-		visited_nodes = [[] for i in range(self.number_of_uavs)]
-  
+		visited_nodes = [[] for i in range(len(self.uavs))]
+
 		# Perform the action for all uavs
 		observation_list = []
-		for i in range(self.number_of_uavs):
+		for i in range(len(self.uavs)):
 			self.uavs[i].travel_to_node(action[i])
 			observation_list.append(self.uavs[i].get_current_node())
    
 		self.observation = observation_list
 		
-		# Check if the UAV has reached the final node to end the episode
-		# if (self.uav.get_current_node() == self.uav.get_final_node()):
-		# 	#logging.info("The UAV has reached the final node!")
-		# 	self.done = True
-		# 	if len(self.uav.get_visited_nodes()) == self.max_iter:
-		# 		self.reward+= 10000000000000000
-			
-		# Check if a UAV has run out of energy
-		for uav in self.uavs:
-			if (uav.get_energy_level() <= 0):
-				self.done = True
-				break
-			#logging.info("The UAV has run out of energy!")
-   
-		# If the UAV has exceeded max_iter actions, end the episode
-		if (self.uavs[0].get_number_of_actions() > self.max_iter):
-			self.done = True
-		
-		for i in range(self.number_of_uavs):
+		for i in range(len(self.uavs)):
   
 			# Start playing the game inside the current node
 			done_game = False
@@ -221,6 +230,12 @@ class Multiagent_Qenv(gym.Env):
 		info["visited_nodes"] = visited_nodes
 		
 		return (self.observation, self.reward, self.done, info)
+	
+	def get_uavs(self) -> list[Uav]:
+		"""
+		Return the UAVs in the environment.
+		"""
+		return self.uavs
 	
 	def reset(self, uavs: list, graph: Graph) -> Node:
 		"""

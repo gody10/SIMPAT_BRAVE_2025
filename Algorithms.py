@@ -742,12 +742,13 @@ class Algorithms:
 		# Initialize UAVs on random nodes
 		self.uavs = []
 		node_indices = [0,3,6]
+		final_node = [9]
 		for uav_id, node_index in enumerate(node_indices):
 			node = nodes[node_index]
 			uav = Uav(
 				uav_id=uav_id,
 				initial_node=node,
-				final_node=node,  # Set the final node; adjust if necessary
+				final_node= final_node,  # Set the final node; adjust if necessary
 				capacity=self.uav_energy_capacity,
 				total_data_processing_capacity=self.uav_processing_capacity,
 				velocity=self.uav_velocity,
@@ -2102,7 +2103,6 @@ class Algorithms:
 		#initialize the exploration probability to 1
 		exploration_proba = 1
 
-
 		#exploartion decreasing decay for exponential decreasing
 		exploration_decreasing_decay = 0.001
 
@@ -2126,12 +2126,10 @@ class Algorithms:
     
 		#we iterate over episodes
 		for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Coop Algorithm"):
-			
-			#we initialize the first state of the episode
-			#print("\nEPISODE START")
 
 			self.logger.info("EPISODE START")
 			self.reset()
+
 			uavs = self.get_uavs()
 			current_state = env.reset(graph= self.get_graph(), uavs= uavs,)
 			current_state_temp = []
@@ -2144,13 +2142,8 @@ class Algorithms:
 			total_episode_reward = 0
 			
 			for i in range(max_travels_per_episode):
-				# we sample a float from a uniform distribution over 0 and 1
-				# if the sampled flaot is less than the exploration probability
-				#     then the agent selects a random action
-				# else
-				#     he exploits his knowledge using the bellman equation
-				#sum the rewards that the agent gets from the environment
-
+				
+				
 				
 				uav_actions = []
 				for j in range(len(uavs)):
@@ -2169,7 +2162,7 @@ class Algorithms:
 					uav_actions.append(action)
 				
 				action_nodes = []
-				for j in range(len(uav_actions)):
+				for j in range(len(uavs)):
 					action_nodes.append(action_node_list[uav_actions[j]])
      
 				# The environment runs the chosen action and returns
@@ -2183,7 +2176,7 @@ class Algorithms:
 					next_state_temp.append(state.get_node_id())
 				next_state = next_state_temp
 				
-				for j in range(len(uav_actions)):
+				for j in range(len(uavs)):
 					# We update the shared Q-table using the Q-learning iteration
 					Q_table = Q_table.at[current_state[j], uav_actions[j]].set((1-lr) * Q_table[current_state[j], uav_actions[j]] +lr*(reward[j] + gamma*max(Q_table[next_state[j],:])))
 					total_episode_reward = total_episode_reward + reward[j]
@@ -2315,8 +2308,10 @@ class Algorithms:
 			#print("\nEPISODE START")
 			self.logger.info("EPISODE START")
 			self.reset()
-			uavs = self.get_uavs()
-			current_state = env.reset(graph= self.get_graph(), uavs= uavs,)
+
+			original_uavs = self.get_uavs()
+			current_state = env.reset(graph= self.get_graph(), uavs= original_uavs,)
+
 			current_state_temp = []
 			for state in current_state:
 				current_state_temp.append(state.get_node_id())
@@ -2327,6 +2322,9 @@ class Algorithms:
 			total_episode_reward = 0
 			
 			for i in range(max_travels_per_episode):
+
+				if i == 0:
+					uavs = original_uavs
 				# we sample a float from a uniform distribution over 0 and 1
 				# if the sampled flaot is less than the exploration probability
 				#     then the agent selects a random action
@@ -2352,7 +2350,7 @@ class Algorithms:
 					uav_actions.append(action)
 				
 				action_nodes = []
-				for j in range(len(uav_actions)):
+				for j in range(len(uavs)):
 					action_nodes.append(action_node_list[uav_actions[j]])
      
 				# The environment runs the chosen action and returns
@@ -2366,7 +2364,7 @@ class Algorithms:
 					next_state_temp.append(state.get_node_id())
 				next_state = next_state_temp
 				
-				for j in range(len(uav_actions)):
+				for j in range(len(uavs)):
 					# We update the shared Q-table using the Q-learning iteration
 					Q_tables[j] = Q_tables[j].at[current_state[j], uav_actions[j]].set((1-lr) * Q_tables[j][current_state[j], uav_actions[j]] +lr*(reward[j] + gamma*max(Q_tables[j][next_state[j],:])))
 					total_episode_reward = total_episode_reward + reward[j]
@@ -2381,24 +2379,24 @@ class Algorithms:
 			rewards_per_episode.append(total_episode_reward)
    
 			total_bits_processed = 0
-			for uav in uavs:
+			for uav in original_uavs:
 				total_bits_processed += uav.get_total_processed_data()
 			total_bits_processed_per_episode.append(total_bits_processed)
 			
 			energy_expended = 0
-			for uav in uavs:
+			for uav in original_uavs:
 				energy_expended += uav.get_total_energy_level() - uav.get_energy_level()
 			energy_expended_per_episode.append(energy_expended)
    
 			trajectory = []
-			for uav in uavs:
+			for uav in original_uavs:
 				trajectory.append(uav.get_visited_nodes())
 	
 			trajectories = []		
 			total_visited_nodes = 0
-			for uav in info['visited_nodes']:
+			for uav in original_uavs:
 				trajectory_ids = []
-				for node in uav:
+				for node in uav.get_visited_nodes():
 					trajectory_ids.append(node.get_node_id())
 				trajectories.append(trajectory_ids)
 				total_visited_nodes += len(trajectory_ids)
