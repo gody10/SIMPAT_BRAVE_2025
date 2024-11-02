@@ -14,7 +14,7 @@ q_brave_time = 0
 # Create N nodes with U users in them
 N = 10
 NODE_RADIUS = 2
-MIN_DISTANCE_BETWEEN_NODES = 20  # Minimum distance to maintain between nodes
+MIN_DISTANCE_BETWEEN_NODES = 40  # Minimum distance to maintain between nodes
 UAV_HEIGHT = 30
 CONVERGENCE_THRESHOLD = 1e-15
 UAV_ENERGY_CAPACITY = 1065600

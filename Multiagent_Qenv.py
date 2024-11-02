@@ -143,7 +143,7 @@ class Multiagent_Qenv(gym.Env):
 					if self.solving_method == "cvxpy":
 						# Play the submodular game
 						maximized_utility, percentage_offloaded = user.play_submodular_game_cvxpy(other_user_strategies, c, b, uav_bandwidth, other_user_channel_gains, other_user_transmit_powers, other_user_data_in_bits, 
-																								uav_cpu_frequency, uav_total_data_processing_capacity, self.T, self.uav.get_current_coordinates(), self.uav.get_height())
+																								uav_cpu_frequency, uav_total_data_processing_capacity, self.T, self.uavs[i].get_current_coordinates(), self.uavs[i].get_height())
 						
 						#logging.info("User %d has offloaded %f of its data", idx, percentage_offloaded[0])
 						#logging.info("User %d has maximized its utility to %s", idx, maximized_utility)

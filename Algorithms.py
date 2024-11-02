@@ -2124,13 +2124,14 @@ class Algorithms:
 		uav_trajectory_per_episode = []
     
 		#we iterate over episodes
-		for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Algorithm"):
+		for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Coop Algorithm"):
 			
 			#we initialize the first state of the episode
 			#print("\nEPISODE START")
 			self.logger.info("EPISODE START")
 			self.reset()
-			current_state = env.reset(graph= self.get_graph(), uavs= self.get_uavs(),)
+			uavs = self.get_uavs()
+			current_state = env.reset(graph= self.get_graph(), uavs= uavs,)
 			current_state_temp = []
 			for state in current_state:
 				current_state_temp.append(state.get_node_id())
@@ -2212,6 +2213,7 @@ class Algorithms:
 			uav_visited_nodes_per_episode.append(total_visited_nodes)
 			uav_trajectory_per_episode.append(trajectories)
    
+			self.logger.info("The total bits processed for episode %d is: %s", e, total_bits_processed)
 			self.logger.info("The total reward for episode %d is: %s", e, total_episode_reward)
 			self.logger.info("The UAVs have visited %d nodes in episode %d", total_visited_nodes, e)
 			self.logger.info("The UAVs have visited the nodes: %s", trajectories)
@@ -2297,13 +2299,14 @@ class Algorithms:
 		uav_trajectory_per_episode = []
     
 		#we iterate over episodes
-		for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Algorithm"):
+		for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Individual Algorithm"):
 			
 			#we initialize the first state of the episode
 			#print("\nEPISODE START")
 			self.logger.info("EPISODE START")
 			self.reset()
-			current_state = env.reset(graph= self.get_graph(), uavs= self.get_uavs(),)
+			uavs = self.get_uavs()
+			current_state = env.reset(graph= self.get_graph(), uavs= uavs,)
 			current_state_temp = []
 			for state in current_state:
 				current_state_temp.append(state.get_node_id())

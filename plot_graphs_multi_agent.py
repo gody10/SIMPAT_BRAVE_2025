@@ -54,7 +54,7 @@ def plot_graphs_multi_agent(folder_path: str = "multi_q_learning_results") -> No
     
     plt.title('Total Bits Processed by Each Algorithm')
     
-    plt.legend()
+    plt.legend( loc='lower left')
     
     plt.savefig(os.path.join(folder_path, 'total_bits.png'))
     
@@ -79,7 +79,7 @@ def plot_graphs_multi_agent(folder_path: str = "multi_q_learning_results") -> No
     
     plt.title('Expended Energy by Each Algorithm')
     
-    plt.legend()
+    plt.legend( loc='lower left')
     
     plt.savefig(os.path.join(folder_path, 'expended_energy.png'))
     
@@ -103,7 +103,7 @@ def plot_graphs_multi_agent(folder_path: str = "multi_q_learning_results") -> No
     
     plt.title('Total Visited Nodes by Each Algorithm')
     
-    plt.legend()
+    plt.legend( loc='lower left')
     
     plt.savefig(os.path.join(folder_path, 'total_visited_nodes.png'))
     
