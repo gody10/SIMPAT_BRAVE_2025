@@ -741,7 +741,7 @@ class Algorithms:
 
 		# Initialize UAVs on random nodes
 		self.uavs = []
-		node_indices = jax.random.choice(key, jnp.arange(number_of_nodes), shape=(number_of_uavs,), replace=False)
+		node_indices = [0,3,6]
 		for uav_id, node_index in enumerate(node_indices):
 			node = nodes[node_index]
 			uav = Uav(
