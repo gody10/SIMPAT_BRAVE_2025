@@ -64,32 +64,6 @@ class Multiagent_Qenv(gym.Env):
 		"""
 
 		info = {}
-		available_uavs = []
-
-		# Check if the UAV has reached the final node to end the episode
-		for i in range(len(self.uavs)):
-			if (self.uavs[i].get_current_node() != self.uavs[i].get_final_node()):
-				#logging.info("The UAV has reached the final node!")
-				available_uavs.append(self.uavs[i])
-			
-		# Check if a UAV has run out of energy
-		for i in range(len(available_uavs)):
-			if (available_uavs[i].get_energy_level() <= 0):
-				available_uavs.remove(available_uavs[i])
-			#logging.info("The UAV has run out of energy!")
-   
-		# If the UAV has exceeded max_iter actions, end the episode
-		for i in range(len(available_uavs)):
-			if (self.uavs[i].get_total_actions() > self.max_iter):
-				available_uavs.remove(available_uavs[i])
-			#logging.info("The UAV has exceeded the maximum number of actions!")
-
-		if len(available_uavs) == 0:
-			self.done = True
-			#logging.info("The episode has ended!")
-			return (self.observation, self.reward, self.done, info)
-		else:
-			self.uavs = available_uavs
 			
 		temp_reward = jnp.zeros(len(self.uavs))
 		
@@ -228,14 +202,37 @@ class Multiagent_Qenv(gym.Env):
 			visited_nodes[i] = self.uavs[i].get_visited_nodes()
   
 		info["visited_nodes"] = visited_nodes
+
+		# Check UAV situation
+		available_uavs = []
+
+		# Check if the UAV has reached the final node to end the episode
+		for i in range(len(self.uavs)):
+			if (self.uavs[i].get_current_node() != self.uavs[i].get_final_node()):
+				#logging.info("The UAV has reached the final node!")
+				available_uavs.append(self.uavs[i])
+			
+		# Check if a UAV has run out of energy
+		for i in range(len(available_uavs)):
+			if (available_uavs[i].get_energy_level() <= 0):
+				available_uavs.remove(available_uavs[i])
+			#logging.info("The UAV has run out of energy!")
+   
+		# If the UAV has exceeded max_iter actions, end the episode
+		for i in range(len(available_uavs)):
+			if (self.uavs[i].get_total_actions() > self.max_iter):
+				available_uavs.remove(available_uavs[i])
+			#logging.info("The UAV has exceeded the maximum number of actions!")
+
+		if len(available_uavs) == 0:
+			self.done = True
+			#logging.info("The episode has ended!")
+		else:
+			self.uavs = available_uavs
+
+		info["Available UAVs"] = self.uavs
 		
 		return (self.observation, self.reward, self.done, info)
-	
-	def get_uavs(self) -> list[Uav]:
-		"""
-		Return the UAVs in the environment.
-		"""
-		return self.uavs
 	
 	def reset(self, uavs: list, graph: Graph) -> Node:
 		"""
