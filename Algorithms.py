@@ -2144,7 +2144,8 @@ class Algorithms:
 			#sum the rewards that the agent gets from the environment
 			total_episode_reward = 0
 			
-			for i in range(max_travels_per_episode):
+			#for i in range(max_travels_per_episode):
+			while not done:
 				
 				uav_actions = []
 				for j in range(len(uavs)):
@@ -2181,12 +2182,13 @@ class Algorithms:
 					# We update the shared Q-table using the Q-learning iteration
 					Q_table = Q_table.at[current_state[j], uav_actions[j]].set((1-lr) * Q_table[current_state[j], uav_actions[j]] +lr*(reward[j] + gamma*max(Q_table[next_state[j],:])))
 					total_episode_reward = total_episode_reward + reward[j]
+				
+				current_state = next_state
+				uavs = info['Available UAVs']
 				# If the episode is finished, we leave the for loop
 				if done:
 					logger.info("The episode has finished")
 					break
-				current_state = next_state
-				uavs = info['Available UAVs']
     
 			#We update the exploration proba using exponential decay formula
 			exploration_proba = max(min_exploration_proba, jnp.exp(-exploration_decreasing_decay*e))
@@ -2275,6 +2277,8 @@ class Algorithms:
 		Q_tables = []
 		for i in range(len(uavs)):
 			Q_tables.append(jnp.zeros((n_observations,n_actions)))
+
+		original_Q_tables = Q_tables
    
    		# Initialize the Q-table with zeros for all state-action pairs
 		action_node_list = [node for node in graph.get_nodes()]
@@ -2311,7 +2315,10 @@ class Algorithms:
 			self.logger.info("EPISODE START")
 			self.reset()
 
+			uavs = self.get_uavs()
+
 			original_uavs = self.get_uavs()
+
 			current_state = env.reset(graph= self.get_graph(), uavs= original_uavs,)
 
 			current_state_temp = []
@@ -2319,14 +2326,19 @@ class Algorithms:
 				current_state_temp.append(state.get_node_id())
 			current_state = current_state_temp
 			done = False
+
+			# Reset the Q-tables for each episode
+			Q_tables = []
+			for i in range(len(uavs)):
+				Q_tables.append(jnp.zeros((n_observations,n_actions)))
+				original_Q_tables[uavs[i].get_uav_id()] = Q_tables[i]
 			
 			#sum the rewards that the agent gets from the environment
 			total_episode_reward = 0
 			
-			for i in range(max_travels_per_episode):
+			#for i in range(max_travels_per_episode):
+			while not done:
 
-				if i == 0:
-					uavs = original_uavs
 				# we sample a float from a uniform distribution over 0 and 1
 				# if the sampled flaot is less than the exploration probability
 				#     then the agent selects a random action
@@ -2369,13 +2381,26 @@ class Algorithms:
 				for j in range(len(uavs)):
 					# We update the shared Q-table using the Q-learning iteration
 					Q_tables[j] = Q_tables[j].at[current_state[j], uav_actions[j]].set((1-lr) * Q_tables[j][current_state[j], uav_actions[j]] +lr*(reward[j] + gamma*max(Q_tables[j][next_state[j],:])))
+					original_Q_tables[uavs[j].get_uav_id()] = Q_tables[j]
 					total_episode_reward = total_episode_reward + reward[j]
 				# If the episode is finished, we leave the for loop
 				if done:
 					logger.info("The episode has finished")
 					break
 				current_state = next_state
+				
+				# Update the original Q-tables
+				for j in range(len(uavs)):
+					original_Q_tables[uavs[j].get_uav_id()] = Q_tables[j]
+
 				uavs = info['Available UAVs']
+
+				# Get the Q-tables for the UAVs that remain in the environment
+				Q_tables = []
+				for j in range(len(uavs)):
+					Q_tables.append(original_Q_tables[uavs[j].get_uav_id()])
+
+				
     
 			#We update the exploration proba using exponential decay formula
 			exploration_proba = max(min_exploration_proba, jnp.exp(-exploration_decreasing_decay*e))

@@ -64,6 +64,16 @@ class Uav:
 			CPU power of the UAV
 		"""
 		return self.cpu_power
+	
+	def get_uav_id(self)->int:
+		"""
+		Get the ID of the UAV
+		
+		Returns:
+		int
+			ID of the UAV
+		"""
+		return self.uav_id
   
 	def get_total_energy_level(self)->float:
 		"""

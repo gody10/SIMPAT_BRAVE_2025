@@ -64,9 +64,10 @@ class Multiagent_Qenv(gym.Env):
 		"""
 
 		info = {}
-			
-		temp_reward = jnp.zeros(len(self.uavs))
 		
+		# Initialize the reward
+		temp_reward = jnp.zeros(len(self.uavs))
+	
 		# Create an empty list with lists to store the visited nodes of each UAV
 		visited_nodes = [[] for i in range(len(self.uavs))]
 
@@ -193,8 +194,17 @@ class Multiagent_Qenv(gym.Env):
 				total_data_processed += user.get_current_strategy() * user.get_user_bits()
 			
 			self.uavs[i].update_total_processed_data(total_data_processed)
+
 			# Calculate the reward
-			temp_reward = temp_reward.at[i].set(total_data_processed)                            
+			temp_reward = temp_reward.at[i].set(total_data_processed)
+
+			# Divide the reward by the number of uavs that are on the same node as this uav
+			uavs_in_node = 0
+			for j in range(len(self.uavs)):
+				if (self.uavs[j].get_current_node().get_node_id() == self.uavs[i].get_current_node().get_node_id()):
+					uavs_in_node += 1
+
+			temp_reward = temp_reward.at[i].set(temp_reward[i] / uavs_in_node)
 		
 			self.reward = self.reward.at[i].add(temp_reward[i])
    
@@ -211,18 +221,21 @@ class Multiagent_Qenv(gym.Env):
 			if (self.uavs[i].get_current_node().get_node_id() != self.uavs[i].get_final_node().get_node_id()):
 				#logging.info("The UAV has reached the final node!")
 				available_uavs.append(self.uavs[i])
+			else:
+				print("UAV with id: ", self.uavs[i].get_uav_id(), " has reached the final node!")
 			
 		# Check if a UAV has run out of energy
 		for i in range(len(available_uavs)):
 			if (available_uavs[i].get_energy_level() <= 0):
+				print("UAV with id: ", available_uavs[i].get_uav_id(), " has run out of energy!")
 				available_uavs.remove(available_uavs[i])
-			#logging.info("The UAV has run out of energy!")
+				
    
 		# If the UAV has exceeded max_iter actions, end the episode
 		for i in range(len(available_uavs)):
 			if (self.uavs[i].get_number_of_actions() > self.max_iter):
+				print("UAV with id: ", available_uavs[i].get_uav_id(), " has exceeded the maximum number of actions!")
 				available_uavs.remove(available_uavs[i])
-			#logging.info("The UAV has exceeded the maximum number of actions!")
 
 		if len(available_uavs) == 0:
 			self.done = True
