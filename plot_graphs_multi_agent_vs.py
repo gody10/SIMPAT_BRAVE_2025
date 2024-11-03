@@ -28,6 +28,8 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") ->
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
                
+    algo_names = ['Coop Learning', 'Indi Learning', 'Indi Learning Double Ep', 'Indi Learning Triple Ep']
+
     # Get algorithm names
     algorithm_names = list(algorithms_total_bits_acc.keys())
     
@@ -35,7 +37,7 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") ->
     algorithm_names_plain = [name.replace("Total Bits", "") for name in algorithm_names]
     
     # Define the colors used
-    colors = ['blue', 'red', 'orange', 'green', 'purple']
+    colors = ['blue', 'red', 'orange', 'green']
     
     # Set the width of the bars
     bar_width = 0.6
@@ -50,10 +52,10 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") ->
         plt.bar(i, bar_value[0], color=color, width=bar_width)
         
         # Add text within the bar
-        plt.text(i, bar_value[0] / 2, algorithm_names_plain[i], ha='center', va='center', color='black', fontweight='bold', fontsize= 15, rotation=90)
+        plt.text(i, bar_value[0] / 2, algo_names[i], ha='center', va='center', color='black', fontweight='bold', fontsize= 15, rotation=90)
 
     # Set x-axis labels and other configurations
-    plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
+    #plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
     plt.xlabel('Algorithm')
     plt.ylabel('Total Bits Processed')
     plt.title('Total Bits Processed by Each Algorithm')
@@ -77,9 +79,9 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") ->
         plt.bar(i, bar_value[0], color=color, width= bar_width)
 
         # Add text within the bar
-        plt.text(i, bar_value[0] / 2, algorithm_names_plain[i], ha='center', va='center', color='black', fontweight='bold', fontsize= 15,rotation=90)
+        plt.text(i, bar_value[0] / 2, algo_names[i], ha='center', va='center', color='black', fontweight='bold', fontsize= 15,rotation=90)
         
-    plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
+    #plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
     
     plt.xlabel('Algorithm')
     
@@ -104,9 +106,9 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") ->
         plt.bar(i, bar_value[0], color=color, width= bar_width)
 
         # Add text within the bar
-        plt.text(i, bar_value[0] / 2, algorithm_names_plain[i], ha='center', va='center', color='black', fontweight='bold',fontsize= 15,rotation=90)
+        plt.text(i, bar_value[0] / 2, algo_names[i], ha='center', va='center', color='black', fontweight='bold',fontsize= 15,rotation=90)
         
-    plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
+    #plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
     
     plt.xlabel('Algorithm')
     
@@ -125,7 +127,9 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") ->
     for algorithm_name in algorithm_names_plain:
         custom_metric[algorithm_name + "Custom Metric"] = (algorithms_total_bits_acc[algorithm_name + "Total Bits"][0]
                             * algorithms_total_visited_nodes_acc[algorithm_name + "Total Visited Nodes"][0])/ algorithms_expended_energy_acc[algorithm_name + "Energy Level"][0]
-
+        
+    print("Custom Metric for Each Algorithm: ", custom_metric)
+    
     plt.figure()
 
     for i, (algorithm_name, color) in enumerate(zip(algorithm_names_plain, colors)):
@@ -134,9 +138,9 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") ->
         plt.bar(i, bar_value, color=color, width= bar_width)
 
         # Add text within the bar
-        plt.text(i, bar_value / 2, algorithm_names_plain[i], ha='center', va='center', color='black', fontweight='bold',fontsize= 15,rotation=90)
+        plt.text(i, bar_value / 2, algo_names[i], ha='center', va='center', color='black', fontweight='bold',fontsize= 15,rotation=90)
 
-    plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
+    #plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
 
     plt.xlabel('Algorithm')
 
@@ -163,9 +167,9 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") ->
         plt.bar(i, bar_value[0], color=color, width= bar_width)
 
         # Add text within the bar
-        plt.text(i, bar_value[0] / 2, algorithm_names_plain[i], ha='center', va='center', color='black', fontweight='bold',fontsize= 15,rotation=90)
+        plt.text(i, bar_value[0] / 2, algo_names[i], ha='center', va='center', color='black', fontweight='bold',fontsize= 15,rotation=90)
 
-    plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
+    #plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
 
     plt.xlabel('Algorithm')
 

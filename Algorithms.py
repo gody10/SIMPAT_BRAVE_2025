@@ -2327,11 +2327,10 @@ class Algorithms:
 			current_state = current_state_temp
 			done = False
 
-			# Reset the Q-tables for each episode
+			# Assign the appropriate Q-tables at the beginning of each episode
 			Q_tables = []
 			for i in range(len(uavs)):
-				Q_tables.append(jnp.zeros((n_observations,n_actions)))
-				original_Q_tables[uavs[i].get_uav_id()] = Q_tables[i]
+				Q_tables.append(original_Q_tables[uavs[i].get_uav_id()])
 			
 			#sum the rewards that the agent gets from the environment
 			total_episode_reward = 0

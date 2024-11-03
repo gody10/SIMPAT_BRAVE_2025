@@ -30,7 +30,7 @@ ENERGY_LEVEL = 29000
 B = 0.74
 C = 0.00043
 MAX_ITER = 30
-NUMBER_OF_EPISODES = 5
+NUMBER_OF_EPISODES = 15
 NUMBER_OF_UAVS = 3
 
 # Initialize the main random key
@@ -43,15 +43,15 @@ algorithms_total_visited_nodes_acc = {}
 timer_dict_acc = {}
 
 # List of algorithms
-algorithm_names = ["Q-Learning Common Table", "Q-Learning Individual Tables", "Q-Learning Individual Tables +5", 
-                   "Q-Learning Individual Tables +10", "Q-Learning Individual Tables +15"]
+algorithm_names = ["Q-Learning Common Table", "Q-Learning Individual Tables", "Q-Learning Individual Tables Double Episodes", 
+                   "Q-Learning Individual Tables Triple Episodes"]
 
 # Initialize accumulation dictionaries with empty lists for each algorithm
 for name in algorithm_names:
     algorithms_total_bits_acc[f"{name} Total Bits"] = []
     algorithms_expended_energy_acc[f"{name} Energy Level"] = []
     algorithms_total_visited_nodes_acc[f"{name} Total Visited Nodes"] = []
-    timer_dict_acc[f"{name} Time"] = []
+    timer_dict_acc[f"{name} Time"] = [] 
 
 # Initialize the logger
 multi_q_learning_logger = setup_logger('multi_q_learning', 'multi_q_learning.log')
@@ -150,13 +150,13 @@ timer_dict_acc["Q-Learning Individual Tables Time"].append(q_individual_time)
 # Reset the Algorithm object for the next run
 algorithm.reset()
 
-# -------------------- Multi Q-Brave Solution with Individual Q-tables + 5 EPISODES --------------------
+# -------------------- Multi Q-Brave Solution with Individual Q-tables *2 EPISODES --------------------
 start_time = time.time()
 
 # Run the Algorithm
 success_individual = algorithm.multi_agent_q_learning_indi(
     solving_method="scipy",
-    number_of_episodes=NUMBER_OF_EPISODES + 5,
+    number_of_episodes=NUMBER_OF_EPISODES *2,
     max_travels_per_episode=MAX_ITER,
     b=B,
     c=C,
@@ -174,21 +174,21 @@ q_individual_time = time.time() - start_time
 multi_q_learning_logger.info("Q-Brave Algorithm took: %s seconds", q_individual_time)
 
 # Add the results to the accumulation dictionaries
-algorithms_total_bits_acc["Q-Learning Individual +5 Tables Total Bits"].append(processed_bits)
-algorithms_expended_energy_acc["Q-Learning Individual Tables +5 Energy Level"].append(energy_expended)
-algorithms_total_visited_nodes_acc["Q-Learning Individual Tables +5 Total Visited Nodes"].append(total_visited_nodes)
-timer_dict_acc["Q-Learning Individual Tables +5 Time"].append(q_individual_time)
+algorithms_total_bits_acc["Q-Learning Individual Tables Double Episodes Total Bits"].append(processed_bits)
+algorithms_expended_energy_acc["Q-Learning Individual Tables Double Episodes Energy Level"].append(energy_expended)
+algorithms_total_visited_nodes_acc["Q-Learning Individual Tables Double Episodes Total Visited Nodes"].append(total_visited_nodes)
+timer_dict_acc["Q-Learning Individual Tables Double Episodes Time"].append(q_individual_time)
 
 # Reset the Algorithm object for the next run
 algorithm.reset()
 
-# -------------------- Multi Q-Brave Solution with Individual Q-tables + 5 EPISODES --------------------
+# -------------------- Multi Q-Brave Solution with Individual Q-tables *3 EPISODES --------------------
 start_time = time.time()
 
 # Run the Algorithm
 success_individual = algorithm.multi_agent_q_learning_indi(
     solving_method="scipy",
-    number_of_episodes=NUMBER_OF_EPISODES + 10,
+    number_of_episodes=NUMBER_OF_EPISODES *3,
     max_travels_per_episode=MAX_ITER,
     b=B,
     c=C,
@@ -206,42 +206,10 @@ q_individual_time = time.time() - start_time
 multi_q_learning_logger.info("Q-Brave Algorithm took: %s seconds", q_individual_time)
 
 # Add the results to the accumulation dictionaries
-algorithms_total_bits_acc["Q-Learning Individual +10 Tables Total Bits"].append(processed_bits)
-algorithms_expended_energy_acc["Q-Learning Individual Tables +10 Energy Level"].append(energy_expended)
-algorithms_total_visited_nodes_acc["Q-Learning Individual Tables +10 Total Visited Nodes"].append(total_visited_nodes)
-timer_dict_acc["Q-Learning Individual Tables +10 Time"].append(q_individual_time)
-
-# Reset the Algorithm object for the next run
-algorithm.reset()
-
-# -------------------- Multi Q-Brave Solution with Individual Q-tables + 15 EPISODES --------------------
-start_time = time.time()
-
-# Run the Algorithm
-success_individual = algorithm.multi_agent_q_learning_indi(
-    solving_method="scipy",
-    number_of_episodes=NUMBER_OF_EPISODES + 15,
-    max_travels_per_episode=MAX_ITER,
-    b=B,
-    c=C,
-    logger= multi_q_learning_logger,
-)
-
-# Get UAV trajectory and the number of bits processed at each node
-processed_bits = algorithm.get_most_processed_bits()
-energy_expended = algorithm.get_most_expended_energy()
-total_visited_nodes = algorithm.get_most_visited_nodes()
-trajectory = algorithm.get_best_trajectory()
-
-# End the timer for Q-Brave Algorithm
-q_individual_time = time.time() - start_time
-multi_q_learning_logger.info("Q-Brave Algorithm took: %s seconds", q_individual_time)
-
-# Add the results to the accumulation dictionaries
-algorithms_total_bits_acc["Q-Learning Individual +15 Tables Total Bits"].append(processed_bits)
-algorithms_expended_energy_acc["Q-Learning Individual Tables +15 Energy Level"].append(energy_expended)
-algorithms_total_visited_nodes_acc["Q-Learning Individual Tables +15 Total Visited Nodes"].append(total_visited_nodes)
-timer_dict_acc["Q-Learning Individual Tables +15 Time"].append(q_individual_time)
+algorithms_total_bits_acc["Q-Learning Individual Tables Triple Episodes Total Bits"].append(processed_bits)
+algorithms_expended_energy_acc["Q-Learning Individual Tables Triple Episodes Energy Level"].append(energy_expended)
+algorithms_total_visited_nodes_acc["Q-Learning Individual Tables Triple Episodes Total Visited Nodes"].append(total_visited_nodes)
+timer_dict_acc["Q-Learning Individual Tables Triple Episodes Time"].append(q_individual_time)
 
 # Reset the Algorithm object for the next run
 algorithm.reset()
