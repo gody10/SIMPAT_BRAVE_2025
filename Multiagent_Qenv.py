@@ -208,7 +208,7 @@ class Multiagent_Qenv(gym.Env):
 
 		# Check if the UAV has reached the final node to end the episode
 		for i in range(len(self.uavs)):
-			if (self.uavs[i].get_current_node() != self.uavs[i].get_final_node()):
+			if (self.uavs[i].get_current_node().get_node_id() != self.uavs[i].get_final_node().get_node_id()):
 				#logging.info("The UAV has reached the final node!")
 				available_uavs.append(self.uavs[i])
 			
@@ -220,12 +220,13 @@ class Multiagent_Qenv(gym.Env):
    
 		# If the UAV has exceeded max_iter actions, end the episode
 		for i in range(len(available_uavs)):
-			if (self.uavs[i].get_total_actions() > self.max_iter):
+			if (self.uavs[i].get_number_of_actions() > self.max_iter):
 				available_uavs.remove(available_uavs[i])
 			#logging.info("The UAV has exceeded the maximum number of actions!")
 
 		if len(available_uavs) == 0:
 			self.done = True
+			self.uavs = available_uavs
 			#logging.info("The episode has ended!")
 		else:
 			self.uavs = available_uavs

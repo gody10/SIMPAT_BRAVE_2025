@@ -742,7 +742,7 @@ class Algorithms:
 		# Initialize UAVs on random nodes
 		self.uavs = []
 		node_indices = [0,3,6]
-		final_node = [9]
+		final_node = nodes[-1]
 		for uav_id, node_index in enumerate(node_indices):
 			node = nodes[node_index]
 			uav = Uav(
@@ -2131,6 +2131,9 @@ class Algorithms:
 			self.reset()
 
 			uavs = self.get_uavs()
+
+			original_uavs = self.get_uavs()
+
 			current_state = env.reset(graph= self.get_graph(), uavs= uavs,)
 			current_state_temp = []
 			for state in current_state:
@@ -2142,8 +2145,6 @@ class Algorithms:
 			total_episode_reward = 0
 			
 			for i in range(max_travels_per_episode):
-				
-				
 				
 				uav_actions = []
 				for j in range(len(uavs)):
@@ -2185,30 +2186,31 @@ class Algorithms:
 					logger.info("The episode has finished")
 					break
 				current_state = next_state
+				uavs = info['Available UAVs']
     
 			#We update the exploration proba using exponential decay formula
 			exploration_proba = max(min_exploration_proba, jnp.exp(-exploration_decreasing_decay*e))
 			rewards_per_episode.append(total_episode_reward)
    
 			total_bits_processed = 0
-			for uav in uavs:
+			for uav in original_uavs:
 				total_bits_processed += uav.get_total_processed_data()
 			total_bits_processed_per_episode.append(total_bits_processed)
 			
 			energy_expended = 0
-			for uav in uavs:
+			for uav in original_uavs:
 				energy_expended += uav.get_total_energy_level() - uav.get_energy_level()
 			energy_expended_per_episode.append(energy_expended)
    
 			trajectory = []
-			for uav in uavs:
+			for uav in original_uavs:
 				trajectory.append(uav.get_visited_nodes())
 	
 			trajectories = []		
 			total_visited_nodes = 0
-			for uav in info['visited_nodes']:
+			for uav in original_uavs:
 				trajectory_ids = []
-				for node in uav:
+				for node in uav.get_visited_nodes():
 					trajectory_ids.append(node.get_node_id())
 				trajectories.append(trajectory_ids)
 				total_visited_nodes += len(trajectory_ids)
@@ -2373,6 +2375,7 @@ class Algorithms:
 					logger.info("The episode has finished")
 					break
 				current_state = next_state
+				uavs = info['Available UAVs']
     
 			#We update the exploration proba using exponential decay formula
 			exploration_proba = max(min_exploration_proba, jnp.exp(-exploration_decreasing_decay*e))
