@@ -145,7 +145,31 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") ->
     plt.title('Custom Metric by Each Algorithm')
 
     plt.savefig(os.path.join(folder_path, 'custom_metric.png'))
-    
+
+    # Import time dictionary
+    with open('multi_q_learning_timers.pkl', 'rb') as f:
+        timer_dict_acc = pickle.load(f)
+
+    # Plot the time taken by each algorithm
+    plt.figure()
+
+    for i, (algorithm_name, color) in enumerate(zip(algorithm_names, colors)):
+        bar_value = timer_dict_acc[algorithm_name]
+
+        plt.bar(i, bar_value[0], color=color, width= bar_width)
+
+        # Add text within the bar
+        plt.text(i, bar_value[0] / 2, algorithm_names_plain[i], ha='center', va='center', color='black', fontweight='bold',fontsize= 15,rotation=90)
+
+    plt.xticks(range(len(algorithm_names)), algorithm_names_plain)
+
+    plt.xlabel('Algorithm')
+
+    plt.ylabel('Time Taken (s)')
+
+    plt.title('Time Taken by Each Algorithm')
+
+    plt.savefig(os.path.join(folder_path, 'time_taken.png'))
     
 if __name__ == '__main__':
     plot_graphs_multi_agent_vs()
