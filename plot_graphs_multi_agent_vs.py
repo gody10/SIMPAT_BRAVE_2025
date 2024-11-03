@@ -35,7 +35,7 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") ->
     algorithm_names_plain = [name.replace("Total Bits", "") for name in algorithm_names]
     
     # Define the colors used
-    colors = ['blue', 'red', 'orange']
+    colors = ['blue', 'red', 'orange', 'green', 'purple']
     
     # Set the width of the bars
     bar_width = 0.6
@@ -150,6 +150,10 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") ->
     with open('multi_q_learning_timers.pkl', 'rb') as f:
         timer_dict_acc = pickle.load(f)
 
+    algorithm_names = list(timer_dict_acc.keys())
+
+    algorithm_names_plain = [name.replace("Time", "") for name in algorithm_names]
+
     # Plot the time taken by each algorithm
     plt.figure()
 
@@ -172,4 +176,4 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") ->
     plt.savefig(os.path.join(folder_path, 'time_taken.png'))
     
 if __name__ == '__main__':
-    plot_graphs_multi_agent_vs()
+    plot_graphs_multi_agent_vs(folder_path= 'marl_coop_vs_individual/')

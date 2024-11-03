@@ -1,127 +1,143 @@
-2024-11-02 21:58:39,542 - INFO - Running the Multi-Agent Coop Q-Brave Algorithm
-2024-11-02 21:58:39,578 - INFO - EPISODE START
-2024-11-02 21:59:56,832 - INFO - The episode has finished
-2024-11-02 21:59:56,888 - INFO - The total bits processed for episode 0 is: 50593884.0
-2024-11-02 21:59:56,888 - INFO - The total reward for episode 0 is: 5922783000.0
-2024-11-02 21:59:56,889 - INFO - The UAVs have visited 42 nodes in episode 0
-2024-11-02 21:59:56,889 - INFO - The UAVs have visited the nodes: [[0, 8, 5, 9], [3, 3, 5, 6, 6, 3, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [6, 7, 5, 5, 4, 9]]
-2024-11-02 21:59:56,889 - INFO - The UAVs have expended [2229357.5] energy in episode 0
-2024-11-02 21:59:56,889 - INFO - EPISODE FINISHED
-2024-11-02 21:59:56,889 - INFO - EPISODE START
-2024-11-02 22:01:26,327 - INFO - The episode has finished
-2024-11-02 22:01:26,329 - INFO - The total bits processed for episode 1 is: 73686720.0
-2024-11-02 22:01:26,329 - INFO - The total reward for episode 1 is: 9506100000.0
-2024-11-02 22:01:26,329 - INFO - The UAVs have visited 74 nodes in episode 1
-2024-11-02 22:01:26,329 - INFO - The UAVs have visited the nodes: [[0, 8, 8, 4, 4, 8, 3, 1, 2, 9], [3, 8, 0, 4, 1, 3, 7, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [6, 3, 5, 8, 1, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0]]
-2024-11-02 22:01:26,329 - INFO - The UAVs have expended [3153777.] energy in episode 1
-2024-11-02 22:01:26,329 - INFO - EPISODE FINISHED
-2024-11-02 22:01:26,329 - INFO - EPISODE START
-2024-11-02 22:04:03,331 - INFO - The episode has finished
-2024-11-02 22:04:03,333 - INFO - The total bits processed for episode 2 is: 32950608.0
-2024-11-02 22:04:03,333 - INFO - The total reward for episode 2 is: 6814877000.0
-2024-11-02 22:04:03,333 - INFO - The UAVs have visited 96 nodes in episode 2
-2024-11-02 22:04:03,333 - INFO - The UAVs have visited the nodes: [[0, 1, 5, 6, 5, 1, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [3, 2, 8, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [6, 1, 2, 7, 0, 3, 3, 3, 3, 1, 3, 3, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 3]]
-2024-11-02 22:04:03,333 - INFO - The UAVs have expended [3057048.5] energy in episode 2
-2024-11-02 22:04:03,333 - INFO - EPISODE FINISHED
-2024-11-02 22:04:03,333 - INFO - EPISODE START
-2024-11-02 22:04:06,962 - INFO - The episode has finished
-2024-11-02 22:04:06,965 - INFO - The total bits processed for episode 3 is: 12728456.0
-2024-11-02 22:04:06,965 - INFO - The total reward for episode 3 is: 44165760.0
-2024-11-02 22:04:06,965 - INFO - The UAVs have visited 14 nodes in episode 3
-2024-11-02 22:04:06,965 - INFO - The UAVs have visited the nodes: [[0, 4, 6, 3, 0, 0, 0, 9], [3, 2, 9], [6, 7, 9]]
-2024-11-02 22:04:06,965 - INFO - The UAVs have expended [1726930.6] energy in episode 3
-2024-11-02 22:04:06,965 - INFO - EPISODE FINISHED
-2024-11-02 22:04:06,965 - INFO - EPISODE START
-2024-11-02 22:05:02,281 - INFO - The episode has finished
-2024-11-02 22:05:02,283 - INFO - The total bits processed for episode 4 is: 11547140.0
-2024-11-02 22:05:02,283 - INFO - The total reward for episode 4 is: 1010449900.0
-2024-11-02 22:05:02,283 - INFO - The UAVs have visited 41 nodes in episode 4
-2024-11-02 22:05:02,283 - INFO - The UAVs have visited the nodes: [[0, 2, 2, 7, 9], [3, 2, 4, 2, 6, 8, 0, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 0], [6, 6, 0, 9]]
-2024-11-02 22:05:02,283 - INFO - The UAVs have expended [1944405.5] energy in episode 4
-2024-11-02 22:05:02,284 - INFO - EPISODE FINISHED
-2024-11-02 22:05:02,284 - INFO - The rewards per episode are: [Array(5.922783e+09, dtype=float32), Array(9.5061e+09, dtype=float32), Array(6.814877e+09, dtype=float32), Array(44165760., dtype=float32), Array(1.0104499e+09, dtype=float32)]
-2024-11-02 22:05:02,285 - INFO - Q Table is: [[53791144.   56003644.   56003044.   54862620.   53946668.   55477424.
-  49260440.   54412468.   58645348.   50379604.  ]
- [15151930.   20724658.   31164312.   24620936.   24610284.   14505143.
-  18758902.   24146458.   15641066.   20115300.  ]
- [70157688.   71821816.   72500416.   67118120.   69250888.   70323168.
-  63446904.   62035516.   72297792.   64233728.  ]
- [21368130.   20564342.   28984324.   19271244.   16337479.   15575926.
-  21876028.   20136026.   17004046.    9530986.  ]
- [71112984.   56443900.   76846432.   77736648.   82555744.   72476760.
-  72866968.   76393856.   63675860.   77360080.  ]
- [       0.    1441670.5         0.          0.          0.     732631.94
-   1414185.5         0.    1493582.9    756904.5 ]
- [ 5704183.5    524859.94   641740.5   4188578.    1221364.6   1319721.2
-    764746.94  1495004.9         0.          0.  ]
- [ 3338617.5         0.    3101751.     870287.1    577288.7    510120.6
-         0.          0.    7945795.5    935956.4 ]
- [80042088.   84191512.   84418232.   82710704.   84802928.   85593376.
-  85399424.   83512472.   85138048.   84428392.  ]
- [       0.          0.          0.          0.          0.          0.
-    996236.8   1250863.9   8408772.          0.  ]]
-2024-11-02 22:05:02,315 - INFO - Mean reward per episode: 4659675000.0
-2024-11-02 22:05:02,330 - INFO - Max reward: 9506100000.0
-2024-11-02 22:05:02,355 - INFO - Q-Brave Algorithm took: 382.8129277229309 seconds
-2024-11-02 22:05:02,355 - INFO - Q-Brave Algorithm has successfully reached the final node!
-2024-11-02 22:05:02,792 - INFO - Running the Multi-Agent Coop Q-Brave Algorithm
-2024-11-02 22:05:02,793 - INFO - EPISODE START
-2024-11-02 22:06:02,591 - INFO - The episode has finished
-2024-11-02 22:06:02,591 - INFO - The total reward for episode 0 is: 10139699000.0
-2024-11-02 22:06:02,592 - INFO - The UAVs have visited 37 nodes in episode 0
-2024-11-02 22:06:02,592 - INFO - The UAVs have visited the nodes: [[0, 8, 9], [3, 3, 2, 0, 2, 2, 3, 8, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 0, 0], [6, 9]]
-2024-11-02 22:06:02,592 - INFO - The UAVs have expended 1362581.9 energy in episode 0
-2024-11-02 22:06:02,592 - INFO - EPISODE FINISHED
-2024-11-02 22:06:02,593 - INFO - EPISODE START
-2024-11-02 22:07:01,219 - INFO - The episode has finished
-2024-11-02 22:07:01,221 - INFO - The total reward for episode 1 is: 9397585000.0
-2024-11-02 22:07:01,221 - INFO - The UAVs have visited 39 nodes in episode 1
-2024-11-02 22:07:01,221 - INFO - The UAVs have visited the nodes: [[0, 9], [3, 5, 4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6], [6, 2, 5, 6, 9]]
-2024-11-02 22:07:01,221 - INFO - The UAVs have expended [1850942.5] energy in episode 1
-2024-11-02 22:07:01,221 - INFO - EPISODE FINISHED
-2024-11-02 22:07:01,221 - INFO - EPISODE START
-2024-11-02 22:07:48,832 - INFO - The episode has finished
-2024-11-02 22:07:48,833 - INFO - The total reward for episode 2 is: 1000592060.0
-2024-11-02 22:07:48,834 - INFO - The UAVs have visited 38 nodes in episode 2
-2024-11-02 22:07:48,834 - INFO - The UAVs have visited the nodes: [[0, 0, 9], [3, 7, 3, 2, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7], [6, 5, 9]]
-2024-11-02 22:07:48,834 - INFO - The UAVs have expended [1343785.6] energy in episode 2
-2024-11-02 22:07:48,834 - INFO - EPISODE FINISHED
-2024-11-02 22:07:48,835 - INFO - EPISODE START
-2024-11-02 22:08:34,878 - INFO - The episode has finished
-2024-11-02 22:08:34,880 - INFO - The total reward for episode 3 is: 1151185200.0
-2024-11-02 22:08:34,881 - INFO - The UAVs have visited 40 nodes in episode 3
-2024-11-02 22:08:34,881 - INFO - The UAVs have visited the nodes: [[0, 5, 7, 2, 5, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8], [3, 5, 8, 4, 0, 9], [6, 9]]
-2024-11-02 22:08:34,881 - INFO - The UAVs have expended [2277174.5] energy in episode 3
-2024-11-02 22:08:34,881 - INFO - EPISODE FINISHED
-2024-11-02 22:08:34,881 - INFO - EPISODE START
-2024-11-02 22:10:51,081 - INFO - The episode has finished
-2024-11-02 22:10:51,084 - INFO - The total reward for episode 4 is: 3323201500.0
-2024-11-02 22:10:51,084 - INFO - The UAVs have visited 71 nodes in episode 4
-2024-11-02 22:10:51,084 - INFO - The UAVs have visited the nodes: [[0, 6, 6, 7, 3, 6, 9], [3, 6, 4, 7, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5], [6, 5, 4, 0, 2, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]]
-2024-11-02 22:10:51,084 - INFO - The UAVs have expended [3137614.] energy in episode 4
-2024-11-02 22:10:51,084 - INFO - EPISODE FINISHED
-2024-11-02 22:10:51,085 - INFO - The rewards per episode are: [Array(1.0139699e+10, dtype=float32), Array(9.397585e+09, dtype=float32), Array(1.00059206e+09, dtype=float32), Array(1.1511852e+09, dtype=float32), Array(3.3232015e+09, dtype=float32)]
-2024-11-02 22:10:51,085 - INFO - Q Tables are: [Array([[       0.  ,        0.  ,        0.  ,        0.  ,        0.  ,
-               0.  ,        0.  ,        0.  ,        0.  ,        0.  ],
-       [       0.  ,        0.  ,        0.  ,        0.  ,        0.  ,
-               0.  ,        0.  ,        0.  ,        0.  ,        0.  ],
-       [       0.  ,        0.  ,        0.  ,        0.  ,        0.  ,
-               0.  ,        0.  ,        0.  ,        0.  ,        0.  ],
-       [       0.  ,        0.  ,        0.  ,        0.  ,        0.  ,
-          227071.25,   227071.25,        0.  ,        0.  ,        0.  ],
-       [       0.  ,        0.  ,        0.  ,        0.  ,        0.  ,
-               0.  ,        0.  ,   299158.34,        0.  ,        0.  ],
-       [       0.  ,        0.  ,        0.  ,        0.  ,        0.  ,
-               0.  ,        0.  ,        0.  ,        0.  ,        0.  ],
-       [15993259.  , 11604002.  , 12902010.  , 12267471.  ,  8028557.  ,
-        11380121.  ,  8298868.5 , 11197112.  , 13815823.  , 14362015.  ],
-       [10665352.  ,  7029750.5 ,  9627574.  , 11199469.  , 10762548.  ,
-        11426687.  ,  7926286.  ,  7742404.  ,  8945564.  ,  9594003.  ],
-       [       0.  ,        0.  ,        0.  ,        0.  ,        0.  ,
-               0.  ,        0.  ,        0.  ,        0.  ,        0.  ],
-       [       0.  ,        0.  ,        0.  ,        0.  ,        0.  ,
-               0.  ,   471509.4 ,        0.  ,        0.  ,        0.  ]],      dtype=float32)]
-2024-11-02 22:10:51,088 - INFO - Mean reward per episode: 5002452500.0
-2024-11-02 22:10:51,090 - INFO - Max reward: 10139699000.0
-2024-11-02 22:10:51,095 - INFO - Q-Brave Algorithm took: 348.3022708892822 seconds
-2024-11-02 22:10:51,095 - INFO - Q-Brave Algorithm has successfully reached the final node!
+2024-11-02 22:16:26,232 - INFO - Running the Multi-Agent Coop Q-Brave Algorithm
+2024-11-02 22:16:26,267 - INFO - EPISODE START
+2024-11-02 22:18:09,597 - INFO - The episode has finished
+2024-11-02 22:18:09,632 - INFO - The total bits processed for episode 0 is: 92082450.0
+2024-11-02 22:18:09,632 - INFO - The total reward for episode 0 is: 12609962000.0
+2024-11-02 22:18:09,632 - INFO - The UAVs have visited 73 nodes in episode 0
+2024-11-02 22:18:09,632 - INFO - The UAVs have visited the nodes: [[0, 4, 2, 4, 2, 5, 7, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7], [3, 1, 2, 8, 2, 2, 7, 7, 9], [6, 3, 2, 2, 7, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 3, 3]]
+2024-11-02 22:18:09,632 - INFO - The UAVs have expended [3175454.] energy in episode 0
+2024-11-02 22:18:09,633 - INFO - EPISODE FINISHED
+2024-11-02 22:18:09,633 - INFO - EPISODE START
+2024-11-02 22:20:56,125 - INFO - The episode has finished
+2024-11-02 22:20:56,126 - INFO - The total bits processed for episode 1 is: 36656044.0
+2024-11-02 22:20:56,126 - INFO - The total reward for episode 1 is: 8241842700.0
+2024-11-02 22:20:56,126 - INFO - The UAVs have visited 96 nodes in episode 1
+2024-11-02 22:20:56,126 - INFO - The UAVs have visited the nodes: [[0, 7, 8, 2, 0, 8, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [3, 5, 3, 5, 7, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [6, 3, 8, 4, 5, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]]
+2024-11-02 22:20:56,126 - INFO - The UAVs have expended [3102201.5] energy in episode 1
+2024-11-02 22:20:56,126 - INFO - EPISODE FINISHED
+2024-11-02 22:20:56,127 - INFO - EPISODE START
+2024-11-02 22:21:49,826 - INFO - The episode has finished
+2024-11-02 22:21:49,827 - INFO - The total bits processed for episode 2 is: 32639892.0
+2024-11-02 22:21:49,827 - INFO - The total reward for episode 2 is: 4551634400.0
+2024-11-02 22:21:49,827 - INFO - The UAVs have visited 48 nodes in episode 2
+2024-11-02 22:21:49,827 - INFO - The UAVs have visited the nodes: [[0, 7, 0, 8, 8, 5, 0, 0, 9], [3, 2, 2, 1, 2, 3, 9], [6, 3, 5, 5, 8, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]]
+2024-11-02 22:21:49,827 - INFO - The UAVs have expended [2915621.] energy in episode 2
+2024-11-02 22:21:49,827 - INFO - EPISODE FINISHED
+2024-11-02 22:21:49,828 - INFO - EPISODE START
+2024-11-02 22:23:35,397 - INFO - The episode has finished
+2024-11-02 22:23:35,400 - INFO - The total bits processed for episode 3 is: 17340192.0
+2024-11-02 22:23:35,400 - INFO - The total reward for episode 3 is: 2955943000.0
+2024-11-02 22:23:35,400 - INFO - The UAVs have visited 72 nodes in episode 3
+2024-11-02 22:23:35,400 - INFO - The UAVs have visited the nodes: [[0, 4, 2, 3, 4, 0, 8, 9], [3, 2, 6, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [6, 1, 5, 7, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]]
+2024-11-02 22:23:35,400 - INFO - The UAVs have expended [3002569.8] energy in episode 3
+2024-11-02 22:23:35,400 - INFO - EPISODE FINISHED
+2024-11-02 22:23:35,400 - INFO - EPISODE START
+2024-11-02 22:24:34,104 - INFO - The episode has finished
+2024-11-02 22:24:34,109 - INFO - The total bits processed for episode 4 is: 10440040.0
+2024-11-02 22:24:34,109 - INFO - The total reward for episode 4 is: 814975700.0
+2024-11-02 22:24:34,109 - INFO - The UAVs have visited 41 nodes in episode 4
+2024-11-02 22:24:34,109 - INFO - The UAVs have visited the nodes: [[0, 4, 2, 8, 6, 7, 5, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [3, 6, 2, 9], [6, 7, 2, 0, 9]]
+2024-11-02 22:24:34,109 - INFO - The UAVs have expended [2483584.8] energy in episode 4
+2024-11-02 22:24:34,109 - INFO - EPISODE FINISHED
+2024-11-02 22:24:34,109 - INFO - The rewards per episode are: [Array(1.2609962e+10, dtype=float32), Array(8.2418427e+09, dtype=float32), Array(4.5516344e+09, dtype=float32), Array(2.955943e+09, dtype=float32), Array(8.149757e+08, dtype=float32)]
+2024-11-02 22:24:34,111 - INFO - Q Table is: [[ 2652396.     292263.6   5141100.    1065504.8  12825696.          0.
+         0.   17614402.    4475019.    1649205.1 ]
+ [51750456.   43838668.   28474098.   32143094.   37109632.   40343076.
+  46730596.   52294220.   47365952.   48234516.  ]
+ [42302788.   45838884.   48439536.   41180312.   47217736.   48516504.
+  47315928.   46764320.   42971080.   43428836.  ]
+ [52481148.   31470110.   19211436.   42293728.   57167776.   45478384.
+  45497980.   43459616.   49631140.   43652356.  ]
+ [52422536.   57755568.   57103748.   52868804.   62808728.   55101104.
+  51476544.   61150180.   61539048.   55748180.  ]
+ [68908976.   68909728.   69319768.   69764680.   70207968.   70016888.
+  64942520.   71019192.   61398268.   69010440.  ]
+ [54189404.   54470996.   56631856.   56798988.   55066332.   57639860.
+  53061968.   57294592.   55131520.   53088596.  ]
+ [76915496.   94950528.   91326064.   92789848.   79768576.   95688992.
+  82226208.   85155840.   92585816.   88252504.  ]
+ [       0.    5538385.5   3748900.5         0.     610971.44  8666990.
+   6503495.          0.     759373.5   1379201.  ]
+ [       0.          0.          0.          0.    2071528.9   1333731.8
+   5791712.          0.          0.    2829206.5 ]]
+2024-11-02 22:24:34,139 - INFO - Mean reward per episode: 5834872000.0
+2024-11-02 22:24:34,150 - INFO - Max reward: 12609962000.0
+2024-11-02 22:24:34,179 - INFO - Q-Brave Algorithm took: 487.9467182159424 seconds
+2024-11-02 22:24:34,179 - INFO - Q-Brave Algorithm has successfully reached the final node!
+2024-11-02 22:24:34,628 - INFO - Running the Multi-Agent Coop Q-Brave Algorithm
+2024-11-02 22:24:34,629 - INFO - EPISODE START
+2024-11-02 22:25:28,763 - INFO - The episode has finished
+2024-11-02 22:25:28,775 - INFO - The total reward for episode 0 is: 7870703000.0
+2024-11-02 22:25:28,775 - INFO - The UAVs have visited 42 nodes in episode 0
+2024-11-02 22:25:28,775 - INFO - The UAVs have visited the nodes: [[0, 7, 1, 6, 7, 9], [3, 0, 3, 8, 2, 6, 7, 7, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7], [6, 7, 8, 9]]
+2024-11-02 22:25:28,775 - INFO - The UAVs have expended [2236539.5] energy in episode 0
+2024-11-02 22:25:28,776 - INFO - EPISODE FINISHED
+2024-11-02 22:25:28,776 - INFO - EPISODE START
+2024-11-02 22:26:34,969 - INFO - The episode has finished
+2024-11-02 22:26:34,970 - INFO - The total reward for episode 1 is: 7517180000.0
+2024-11-02 22:26:34,971 - INFO - The UAVs have visited 41 nodes in episode 1
+2024-11-02 22:26:34,971 - INFO - The UAVs have visited the nodes: [[0, 9], [3, 7, 7, 7, 3, 4, 3, 8, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [6, 8, 5, 5, 6, 3, 9]]
+2024-11-02 22:26:34,971 - INFO - The UAVs have expended [2125784.] energy in episode 1
+2024-11-02 22:26:34,971 - INFO - EPISODE FINISHED
+2024-11-02 22:26:34,971 - INFO - EPISODE START
+2024-11-02 22:27:20,913 - INFO - The episode has finished
+2024-11-02 22:27:20,913 - INFO - The total reward for episode 2 is: 2926028500.0
+2024-11-02 22:27:20,913 - INFO - The UAVs have visited 43 nodes in episode 2
+2024-11-02 22:27:20,913 - INFO - The UAVs have visited the nodes: [[0, 5, 7, 0, 6, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [3, 1, 1, 7, 8, 9], [6, 2, 7, 3, 9]]
+2024-11-02 22:27:20,913 - INFO - The UAVs have expended [2453441.5] energy in episode 2
+2024-11-02 22:27:20,913 - INFO - EPISODE FINISHED
+2024-11-02 22:27:20,913 - INFO - EPISODE START
+2024-11-02 22:30:15,875 - INFO - The episode has finished
+2024-11-02 22:30:15,876 - INFO - The total reward for episode 3 is: 10423250000.0
+2024-11-02 22:30:15,876 - INFO - The UAVs have visited 96 nodes in episode 3
+2024-11-02 22:30:15,877 - INFO - The UAVs have visited the nodes: [[0, 2, 8, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [3, 3, 3, 7, 0, 5, 6, 7, 6, 7, 0, 8, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8], [6, 7, 1, 2, 3, 4, 0, 0, 8, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0]]
+2024-11-02 22:30:15,877 - INFO - The UAVs have expended [3123663.2] energy in episode 3
+2024-11-02 22:30:15,877 - INFO - EPISODE FINISHED
+2024-11-02 22:30:15,877 - INFO - EPISODE START
+2024-11-02 22:31:15,859 - INFO - The episode has finished
+2024-11-02 22:31:15,859 - INFO - The total reward for episode 4 is: 952142850.0
+2024-11-02 22:31:15,859 - INFO - The UAVs have visited 37 nodes in episode 4
+2024-11-02 22:31:15,859 - INFO - The UAVs have visited the nodes: [[0, 2, 4, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 4], [3, 9], [6, 0, 9]]
+2024-11-02 22:31:15,859 - INFO - The UAVs have expended [1572669.] energy in episode 4
+2024-11-02 22:31:15,859 - INFO - EPISODE FINISHED
+2024-11-02 22:31:15,859 - INFO - The rewards per episode are: [Array(7.870703e+09, dtype=float32), Array(7.51718e+09, dtype=float32), Array(2.9260285e+09, dtype=float32), Array(1.042325e+10, dtype=float32), Array(9.5214285e+08, dtype=float32)]
+2024-11-02 22:31:15,859 - INFO - Q Tables are: [Array([[       0. ,        0. ,   227071.4,        0. ,   227071.4,
+               0. ,        0. ,        0. ,        0. ,        0. ],
+       [       0. ,        0. ,        0. ,        0. ,        0. ,
+               0. ,        0. ,        0. ,        0. ,        0. ],
+       [ 9056596. ,  9515331. ,  8508795. ,  9761630. ,  8476109. ,
+        10335174. ,  8330411. ,  8111594. ,  9515121. ,  8544554. ],
+       [       0. ,        0. ,        0. ,        0. ,        0. ,
+               0. ,        0. ,        0. ,        0. ,        0. ],
+       [ 3444665.8,  1824747. ,  2754397.2,  3357884.2,  1895677.2,
+         3291945.5,  2968266.5,  3308209. ,  3130283.5,  3714414.2],
+       [       0. ,        0. ,        0. ,        0. ,        0. ,
+               0. ,        0. ,        0. ,        0. ,        0. ],
+       [       0. ,        0. ,   333924.8,        0. ,        0. ,
+               0. ,        0. ,        0. ,        0. ,        0. ],
+       [       0. ,        0. ,        0. ,        0. ,        0. ,
+               0. ,        0. ,        0. ,        0. ,        0. ],
+       [       0. ,        0. ,        0. ,        0. ,        0. ,
+               0. ,        0. ,        0. ,        0. ,        0. ],
+       [       0. ,        0. ,        0. ,        0. ,        0. ,
+               0. ,        0. ,        0. ,        0. ,        0. ]],      dtype=float32)]
+2024-11-02 22:31:15,863 - INFO - Mean reward per episode: 5937861000.0
+2024-11-02 22:31:15,863 - INFO - Max reward: 10423250000.0
+2024-11-02 22:31:15,870 - INFO - Q-Brave Algorithm took: 401.2415945529938 seconds
+2024-11-02 22:31:15,870 - INFO - Q-Brave Algorithm has successfully reached the final node!
+2024-11-02 22:31:16,273 - INFO - Running the Multi-Agent Coop Q-Brave Algorithm
+2024-11-02 22:31:16,279 - INFO - EPISODE START
+2024-11-02 22:35:32,670 - INFO - The episode has finished
+2024-11-02 22:35:32,671 - INFO - The total reward for episode 0 is: 32360315000.0
+2024-11-02 22:35:32,671 - INFO - The UAVs have visited 126 nodes in episode 0
+2024-11-02 22:35:32,671 - INFO - The UAVs have visited the nodes: [[0, 6, 5, 5, 4, 0, 7, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6], [3, 3, 3, 4, 5, 6, 7, 6, 2, 1, 3, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3], [6, 0, 6, 7, 2, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6]]
+2024-11-02 22:35:32,671 - INFO - The UAVs have expended [3172547.5] energy in episode 0
+2024-11-02 22:35:32,672 - INFO - EPISODE FINISHED
+2024-11-02 22:35:32,672 - INFO - EPISODE START
+2024-11-02 22:39:26,427 - INFO - The episode has finished
+2024-11-02 22:39:26,427 - INFO - The total reward for episode 1 is: 14735531000.0
+2024-11-02 22:39:26,427 - INFO - The UAVs have visited 87 nodes in episode 1
+2024-11-02 22:39:26,427 - INFO - The UAVs have visited the nodes: [[0, 0, 9], [3, 5, 4, 3, 4, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [6, 2, 8, 3, 0, 6, 6, 6, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]]
+2024-11-02 22:39:26,429 - INFO - The UAVs have expended [2158413.] energy in episode 1
+2024-11-02 22:39:26,429 - INFO - EPISODE FINISHED
+2024-11-02 22:39:26,429 - INFO - EPISODE START
