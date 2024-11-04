@@ -30,7 +30,7 @@ ENERGY_LEVEL = 29000
 B = 0.74
 C = 0.00043
 MAX_ITER = 30
-NUMBER_OF_EPISODES = 15
+NUMBER_OF_EPISODES = 30
 NUMBER_OF_UAVS = 3
 
 # Initialize the main random key
@@ -228,4 +228,4 @@ with open('multi_q_learning_timers.pkl', 'wb') as f:
     pickle.dump(timer_dict_acc, f)
     
 # Plot the graphs
-plot_graphs_multi_agent_vs(folder_path= 'marl_coop_vs_individual/')
+plot_graphs_multi_agent_vs(folder_path= f'marl_coop_vs_individual_{NUMBER_OF_EPISODES}/')
