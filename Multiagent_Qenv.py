@@ -224,18 +224,25 @@ class Multiagent_Qenv(gym.Env):
 			else:
 				print("UAV with id: ", self.uavs[i].get_uav_id(), " has reached the final node!")
 			
+		remaining_uavs = []
 		# Check if a UAV has run out of energy
 		for i in range(len(available_uavs)):
-			if (available_uavs[i].get_energy_level() <= 0):
-				print("UAV with id: ", available_uavs[i].get_uav_id(), " has run out of energy!")
-				available_uavs.remove(available_uavs[i])
-				
-   
+			if (self.uavs[i].get_energy_level() <= 0):
+				print("UAV with id: ", self.uavs[i].get_uav_id(), " has run out of energy!")
+			else:
+				remaining_uavs.append(available_uavs[i])
+			
+		available_uavs = remaining_uavs
+  
+		remaining_uavs = []
 		# If the UAV has exceeded max_iter actions, end the episode
 		for i in range(len(available_uavs)):
-			if (self.uavs[i].get_number_of_actions() > self.max_iter):
-				print("UAV with id: ", available_uavs[i].get_uav_id(), " has exceeded the maximum number of actions!")
-				available_uavs.remove(available_uavs[i])
+			if (self.uavs[i].get_number_of_actions() >= self.max_iter):
+				print("UAV with id: ", self.uavs[i].get_uav_id(), " has exceeded the maximum number of actions!")
+			else:
+				remaining_uavs.append(available_uavs[i])
+		
+		available_uavs = remaining_uavs
 
 		if len(available_uavs) == 0:
 			self.done = True
