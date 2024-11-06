@@ -1,721 +1,501 @@
-2024-11-05 15:00:05,577 - INFO - Running the Multi-Agent Coop Q-Brave Algorithm
-2024-11-05 15:00:05,606 - INFO - EPISODE START
-2024-11-05 15:01:27,134 - INFO - The episode has finished
-2024-11-05 15:01:27,150 - INFO - The total bits processed for episode 0 is: 94685810.0
-2024-11-05 15:01:27,150 - INFO - The total reward for episode 0 is: 16108137000.0
-2024-11-05 15:01:27,150 - INFO - The UAVs have visited 69 nodes in episode 0
-2024-11-05 15:01:27,150 - INFO - The UAVs have visited the nodes: [[0, 3, 6, 7, 5, 2, 0, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8], [3, 0, 8, 3, 8, 6, 9], [6, 4, 0, 6, 7, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1]]
-2024-11-05 15:01:27,150 - INFO - The UAVs have expended 2894946.5 energy in episode 0
-2024-11-05 15:01:27,150 - INFO - EPISODE FINISHED
-2024-11-05 15:01:27,150 - INFO - EPISODE START
-2024-11-05 15:03:13,663 - INFO - The episode has finished
-2024-11-05 15:03:13,663 - INFO - The total bits processed for episode 1 is: 16087804.0
-2024-11-05 15:03:13,663 - INFO - The total reward for episode 1 is: 2250598100.0
-2024-11-05 15:03:13,663 - INFO - The UAVs have visited 67 nodes in episode 1
-2024-11-05 15:03:13,663 - INFO - The UAVs have visited the nodes: [[0, 5, 8, 6, 1, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [3, 0, 6, 8, 9], [6, 0, 6, 7, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
-2024-11-05 15:03:13,663 - INFO - The UAVs have expended [2901460.] energy in episode 1
-2024-11-05 15:03:13,663 - INFO - EPISODE FINISHED
-2024-11-05 15:03:13,663 - INFO - EPISODE START
-2024-11-05 15:04:59,612 - INFO - The episode has finished
-2024-11-05 15:04:59,612 - INFO - The total bits processed for episode 2 is: 44764120.0
-2024-11-05 15:04:59,612 - INFO - The total reward for episode 2 is: 5428039000.0
-2024-11-05 15:04:59,612 - INFO - The UAVs have visited 70 nodes in episode 2
-2024-11-05 15:04:59,612 - INFO - The UAVs have visited the nodes: [[0, 1, 1, 3, 8, 4, 1, 5, 7, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6], [3, 1, 8, 8, 5, 8, 0, 9], [6, 4, 7, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
-2024-11-05 15:04:59,612 - INFO - The UAVs have expended [2778070.8] energy in episode 2
-2024-11-05 15:04:59,612 - INFO - EPISODE FINISHED
-2024-11-05 15:04:59,612 - INFO - EPISODE START
-2024-11-05 15:06:11,247 - INFO - The episode has finished
-2024-11-05 15:06:11,247 - INFO - The total bits processed for episode 3 is: 18588012.0
-2024-11-05 15:06:11,247 - INFO - The total reward for episode 3 is: 2945961500.0
-2024-11-05 15:06:11,247 - INFO - The UAVs have visited 41 nodes in episode 3
-2024-11-05 15:06:11,247 - INFO - The UAVs have visited the nodes: [[0, 2, 8, 9], [3, 1, 3, 7, 6, 9], [6, 4, 1, 6, 7, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]]
-2024-11-05 15:06:11,247 - INFO - The UAVs have expended [2126619.8] energy in episode 3
-2024-11-05 15:06:11,247 - INFO - EPISODE FINISHED
-2024-11-05 15:06:11,247 - INFO - EPISODE START
-2024-11-05 15:06:59,797 - INFO - The episode has finished
-2024-11-05 15:06:59,797 - INFO - The total bits processed for episode 4 is: 11129131.0
-2024-11-05 15:06:59,797 - INFO - The total reward for episode 4 is: 630960450.0
-2024-11-05 15:06:59,797 - INFO - The UAVs have visited 41 nodes in episode 4
-2024-11-05 15:06:59,797 - INFO - The UAVs have visited the nodes: [[0, 7, 7, 8, 6, 9], [3, 1, 7, 9], [6, 8, 4, 4, 0, 3, 3, 3, 1, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]]
-2024-11-05 15:06:59,797 - INFO - The UAVs have expended [2159584.2] energy in episode 4
-2024-11-05 15:06:59,797 - INFO - EPISODE FINISHED
-2024-11-05 15:06:59,797 - INFO - EPISODE START
-2024-11-05 15:08:57,315 - INFO - The episode has finished
-2024-11-05 15:08:57,331 - INFO - The total bits processed for episode 5 is: 9243058.0
-2024-11-05 15:08:57,331 - INFO - The total reward for episode 5 is: 1471731800.0
-2024-11-05 15:08:57,331 - INFO - The UAVs have visited 65 nodes in episode 5
-2024-11-05 15:08:57,331 - INFO - The UAVs have visited the nodes: [[0, 8, 6, 5, 2, 8, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [3, 5, 8, 3, 2, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 1], [6, 8, 9]]
-2024-11-05 15:08:57,331 - INFO - The UAVs have expended [2325295.2] energy in episode 5
-2024-11-05 15:08:57,331 - INFO - EPISODE FINISHED
-2024-11-05 15:08:57,331 - INFO - EPISODE START
-2024-11-05 15:09:01,316 - INFO - The episode has finished
-2024-11-05 15:09:01,318 - INFO - The total bits processed for episode 6 is: 9644906.0
-2024-11-05 15:09:01,318 - INFO - The total reward for episode 6 is: 31922708.0
-2024-11-05 15:09:01,318 - INFO - The UAVs have visited 12 nodes in episode 6
-2024-11-05 15:09:01,319 - INFO - The UAVs have visited the nodes: [[0, 7, 8, 1, 9], [3, 4, 3, 9], [6, 8, 9]]
-2024-11-05 15:09:01,319 - INFO - The UAVs have expended [1321492.5] energy in episode 6
-2024-11-05 15:09:01,319 - INFO - EPISODE FINISHED
-2024-11-05 15:09:01,319 - INFO - EPISODE START
-2024-11-05 15:09:47,660 - INFO - The episode has finished
-2024-11-05 15:09:47,675 - INFO - The total bits processed for episode 7 is: 10334241.0
-2024-11-05 15:09:47,675 - INFO - The total reward for episode 7 is: 623429500.0
-2024-11-05 15:09:47,675 - INFO - The UAVs have visited 49 nodes in episode 7
-2024-11-05 15:09:47,675 - INFO - The UAVs have visited the nodes: [[0, 1, 2, 4, 8, 8, 6, 9], [3, 4, 7, 5, 0, 3, 1, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [6, 8, 0, 1, 6, 5, 8, 8, 0, 9]]
-2024-11-05 15:09:47,675 - INFO - The UAVs have expended [3093141.5] energy in episode 7
-2024-11-05 15:09:47,675 - INFO - EPISODE FINISHED
-2024-11-05 15:09:47,675 - INFO - EPISODE START
-2024-11-05 15:12:34,991 - INFO - The episode has finished
-2024-11-05 15:12:34,991 - INFO - The total bits processed for episode 8 is: 12276895.0
-2024-11-05 15:12:34,991 - INFO - The total reward for episode 8 is: 2487974100.0
-2024-11-05 15:12:34,991 - INFO - The UAVs have visited 93 nodes in episode 8
-2024-11-05 15:12:34,991 - INFO - The UAVs have visited the nodes: [[0, 5, 6, 3, 4, 7, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [3, 1, 3, 5, 7, 4, 4, 8, 0, 3, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1], [6, 7, 0, 0, 6, 2, 5, 7, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]]
-2024-11-05 15:12:34,991 - INFO - The UAVs have expended [3100722.] energy in episode 8
-2024-11-05 15:12:34,991 - INFO - EPISODE FINISHED
-2024-11-05 15:12:34,991 - INFO - EPISODE START
-2024-11-05 15:13:29,372 - INFO - The episode has finished
-2024-11-05 15:13:29,372 - INFO - The total bits processed for episode 9 is: 7848713.0
-2024-11-05 15:13:29,372 - INFO - The total reward for episode 9 is: 653094660.0
-2024-11-05 15:13:29,372 - INFO - The UAVs have visited 44 nodes in episode 9
-2024-11-05 15:13:29,372 - INFO - The UAVs have visited the nodes: [[0, 4, 9], [3, 6, 7, 2, 1, 8, 3, 3, 3, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1], [6, 5, 7, 0, 0, 0, 5, 0, 7, 9]]
-2024-11-05 15:13:29,372 - INFO - The UAVs have expended [2495379.] energy in episode 9
-2024-11-05 15:13:29,388 - INFO - EPISODE FINISHED
-2024-11-05 15:13:29,388 - INFO - EPISODE START
-2024-11-05 15:14:27,919 - INFO - The episode has finished
-2024-11-05 15:14:27,935 - INFO - The total bits processed for episode 10 is: 7651373.0
-2024-11-05 15:14:27,935 - INFO - The total reward for episode 10 is: 546492860.0
-2024-11-05 15:14:27,935 - INFO - The UAVs have visited 38 nodes in episode 10
-2024-11-05 15:14:27,935 - INFO - The UAVs have visited the nodes: [[0, 1, 1, 6, 2, 7, 0, 8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [3, 8, 4, 7, 9], [6, 9]]
-2024-11-05 15:14:27,935 - INFO - The UAVs have expended [1951111.6] energy in episode 10
-2024-11-05 15:14:27,935 - INFO - EPISODE FINISHED
-2024-11-05 15:14:27,935 - INFO - EPISODE START
-2024-11-05 15:16:17,146 - INFO - The episode has finished
-2024-11-05 15:16:17,146 - INFO - The total bits processed for episode 11 is: 7018925.5
-2024-11-05 15:16:17,146 - INFO - The total reward for episode 11 is: 1068759700.0
-2024-11-05 15:16:17,146 - INFO - The UAVs have visited 64 nodes in episode 11
-2024-11-05 15:16:17,146 - INFO - The UAVs have visited the nodes: [[0, 7, 7, 5, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7], [3, 9], [6, 2, 7, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7]]
-2024-11-05 15:16:17,146 - INFO - The UAVs have expended [2230576.2] energy in episode 11
-2024-11-05 15:16:17,146 - INFO - EPISODE FINISHED
-2024-11-05 15:16:17,146 - INFO - EPISODE START
-2024-11-05 15:16:22,729 - INFO - The episode has finished
-2024-11-05 15:16:22,729 - INFO - The total bits processed for episode 12 is: 7611295.0
-2024-11-05 15:16:22,729 - INFO - The total reward for episode 12 is: 42662880.0
-2024-11-05 15:16:22,729 - INFO - The UAVs have visited 17 nodes in episode 12
-2024-11-05 15:16:22,729 - INFO - The UAVs have visited the nodes: [[0, 1, 8, 9], [3, 1, 8, 8, 6, 8, 9], [6, 4, 8, 5, 0, 9]]
-2024-11-05 15:16:22,729 - INFO - The UAVs have expended [2011987.5] energy in episode 12
-2024-11-05 15:16:22,729 - INFO - EPISODE FINISHED
-2024-11-05 15:16:22,729 - INFO - EPISODE START
-2024-11-05 15:17:57,913 - INFO - The episode has finished
-2024-11-05 15:17:57,913 - INFO - The total bits processed for episode 13 is: 7207726.0
-2024-11-05 15:17:57,913 - INFO - The total reward for episode 13 is: 891567740.0
-2024-11-05 15:17:57,913 - INFO - The UAVs have visited 69 nodes in episode 13
-2024-11-05 15:17:57,913 - INFO - The UAVs have visited the nodes: [[0, 7, 7, 1, 1, 2, 1, 3, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7], [3, 8, 2, 8, 2, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7], [6, 8, 4, 0, 3, 8, 9]]
-2024-11-05 15:17:57,913 - INFO - The UAVs have expended [2972367.8] energy in episode 13
-2024-11-05 15:17:57,913 - INFO - EPISODE FINISHED
-2024-11-05 15:17:57,913 - INFO - EPISODE START
-2024-11-05 15:20:04,319 - INFO - The episode has finished
-2024-11-05 15:20:04,319 - INFO - The total bits processed for episode 14 is: 6928501.0
-2024-11-05 15:20:04,319 - INFO - The total reward for episode 14 is: 1185431700.0
-2024-11-05 15:20:04,319 - INFO - The UAVs have visited 68 nodes in episode 14
-2024-11-05 15:20:04,319 - INFO - The UAVs have visited the nodes: [[0, 1, 0, 5, 5, 1, 7, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6], [3, 1, 3, 2, 0, 0, 0, 3, 7, 0, 0, 8, 8, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8], [6, 8, 2, 1, 8, 9]]
-2024-11-05 15:20:04,319 - INFO - The UAVs have expended [2931070.5] energy in episode 14
-2024-11-05 15:20:04,319 - INFO - EPISODE FINISHED
-2024-11-05 15:20:04,319 - INFO - EPISODE START
-2024-11-05 15:20:55,185 - INFO - The episode has finished
-2024-11-05 15:20:55,185 - INFO - The total bits processed for episode 15 is: 7236322.5
-2024-11-05 15:20:55,185 - INFO - The total reward for episode 15 is: 507849470.0
-2024-11-05 15:20:55,185 - INFO - The UAVs have visited 47 nodes in episode 15
-2024-11-05 15:20:55,185 - INFO - The UAVs have visited the nodes: [[0, 1, 7, 0, 9], [3, 4, 3, 1, 5, 7, 3, 1, 1, 1, 9], [6, 6, 2, 0, 3, 8, 7, 7, 7, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7]]
-2024-11-05 15:20:55,185 - INFO - The UAVs have expended [2617880.8] energy in episode 15
-2024-11-05 15:20:55,185 - INFO - EPISODE FINISHED
-2024-11-05 15:20:55,185 - INFO - EPISODE START
-2024-11-05 15:21:36,411 - INFO - The episode has finished
-2024-11-05 15:21:36,411 - INFO - The total bits processed for episode 16 is: 7510682.5
-2024-11-05 15:21:36,411 - INFO - The total reward for episode 16 is: 474746500.0
-2024-11-05 15:21:36,411 - INFO - The UAVs have visited 39 nodes in episode 16
-2024-11-05 15:21:36,411 - INFO - The UAVs have visited the nodes: [[0, 9], [3, 8, 4, 4, 4, 0, 8, 3, 5, 5, 5, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6], [6, 5, 7, 2, 7, 9]]
-2024-11-05 15:21:36,411 - INFO - The UAVs have expended [1824966.] energy in episode 16
-2024-11-05 15:21:36,411 - INFO - EPISODE FINISHED
-2024-11-05 15:21:36,411 - INFO - EPISODE START
-2024-11-05 15:23:37,043 - INFO - The episode has finished
-2024-11-05 15:23:37,043 - INFO - The total bits processed for episode 17 is: 7021556.0
-2024-11-05 15:23:37,043 - INFO - The total reward for episode 17 is: 1144027400.0
-2024-11-05 15:23:37,043 - INFO - The UAVs have visited 67 nodes in episode 17
-2024-11-05 15:23:37,043 - INFO - The UAVs have visited the nodes: [[0, 6, 8, 5, 3, 1, 1, 1, 3, 3, 1, 1, 1, 1, 3, 3, 3, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 1, 1, 1], [3, 3, 6, 7, 9], [6, 5, 5, 4, 6, 0, 1, 1, 1, 1, 3, 1, 1, 1, 3, 3, 3, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 1, 1]]
-2024-11-05 15:23:37,043 - INFO - The UAVs have expended [2600097.5] energy in episode 17
-2024-11-05 15:23:37,043 - INFO - EPISODE FINISHED
-2024-11-05 15:23:37,043 - INFO - EPISODE START
-2024-11-05 15:25:28,153 - INFO - The episode has finished
-2024-11-05 15:25:28,153 - INFO - The total bits processed for episode 18 is: 7002563.5
-2024-11-05 15:25:28,153 - INFO - The total reward for episode 18 is: 1055683460.0
-2024-11-05 15:25:28,153 - INFO - The UAVs have visited 66 nodes in episode 18
-2024-11-05 15:25:28,153 - INFO - The UAVs have visited the nodes: [[0, 7, 2, 1, 7, 7, 8, 0, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8], [3, 2, 1, 9], [6, 8, 3, 4, 2, 5, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]]
-2024-11-05 15:25:28,153 - INFO - The UAVs have expended [2622243.] energy in episode 18
-2024-11-05 15:25:28,153 - INFO - EPISODE FINISHED
-2024-11-05 15:25:28,153 - INFO - EPISODE START
-2024-11-05 15:27:11,026 - INFO - The episode has finished
-2024-11-05 15:27:11,026 - INFO - The total bits processed for episode 19 is: 7084967.5
-2024-11-05 15:27:11,026 - INFO - The total reward for episode 19 is: 1018371700.0
-2024-11-05 15:27:11,026 - INFO - The UAVs have visited 68 nodes in episode 19
-2024-11-05 15:27:11,026 - INFO - The UAVs have visited the nodes: [[0, 2, 2, 5, 3, 9], [3, 3, 4, 0, 4, 2, 6, 5, 5, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5], [6, 6, 7, 2, 8, 8, 1, 5, 6, 5, 5, 5, 5, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6]]
-2024-11-05 15:27:11,026 - INFO - The UAVs have expended [3072604.2] energy in episode 19
-2024-11-05 15:27:11,026 - INFO - EPISODE FINISHED
-2024-11-05 15:27:11,026 - INFO - The rewards per episode are: [Array(1.6108137e+10, dtype=float32), Array(2.2505981e+09, dtype=float32), Array(5.428039e+09, dtype=float32), Array(2.9459615e+09, dtype=float32), Array(6.3096045e+08, dtype=float32), Array(1.4717318e+09, dtype=float32), Array(31922708., dtype=float32), Array(6.234295e+08, dtype=float32), Array(2.4879741e+09, dtype=float32), Array(6.5309466e+08, dtype=float32), Array(5.4649286e+08, dtype=float32), Array(1.0687597e+09, dtype=float32), Array(42662880., dtype=float32), Array(8.9156774e+08, dtype=float32), Array(1.1854317e+09, dtype=float32), Array(5.0784947e+08, dtype=float32), Array(4.747465e+08, dtype=float32), Array(1.1440274e+09, dtype=float32), Array(1.05568346e+09, dtype=float32), Array(1.0183717e+09, dtype=float32)]
-2024-11-05 15:27:11,026 - INFO - Q Table is: [[90336880.  91002040.  88569072.  90373680.  84217624.  90229008.
-  89134968.  89689496.  90560880.  87069200. ]
- [89307480.  87117792.  89588720.  90188184.  89325440.  85876416.
-  88391040.  88011824.  89363176.  82812448. ]
- [75550840.  77324080.  75935144.  75960328.  72573288.  70173792.
-  74842944.  74015120.  76465240.  75161712. ]
- [97165328.  94007488.  93705800.  96414488.  81894880.  96598184.
-  97359184.  96817824.  96587696.  88057304. ]
- [25177294.  10191405.   7819553.  17719728.   6935034.5        0.
-   7842721.5 12886839.  22419008.   2618432.8]
- [57769376.  57926036.  57984444.  57885544.  56948612.  56565828.
-  60189444.  57630108.  58303848.  56804160. ]
- [79992432.  80375360.  79402432.  79325248.  79988216.  76970000.
-  80259384.  79963928.  79784872.  78936200. ]
- [74266024.  73229000.  74420608.  73802000.  75424776.  72613176.
-  74526400.  74530032.  75620592.  67095188. ]
- [88291064.  86471312.  86472336.  87934432.  86937568.  86481152.
-  86253784.  86357864.  87404368.  86073424. ]
- [17255692.   8839228.  18449120.  23413236.   2474935.         0.
-  18508238.  12349242.         0.         0. ]]
-2024-11-05 15:27:11,073 - INFO - Mean reward per episode: 2028372200.0
-2024-11-05 15:27:11,088 - INFO - Max reward: 16108137000.0
-2024-11-05 15:27:11,120 - INFO - Q-Brave Algorithm took: 1625.5427985191345 seconds
-2024-11-05 15:27:11,612 - INFO - Running the Multi-Agent Coop Q-Brave Algorithm
-2024-11-05 15:27:11,612 - INFO - EPISODE START
-2024-11-05 15:28:31,532 - INFO - The episode has finished
-2024-11-05 15:28:31,532 - INFO - The total reward for episode 0 is: 12174387000.0
-2024-11-05 15:28:31,532 - INFO - The UAVs have visited 46 nodes in episode 0
-2024-11-05 15:28:31,532 - INFO - The UAVs have visited the nodes: [[0, 4, 7, 8, 7, 5, 5, 5, 5, 7, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [3, 0, 5, 0, 1, 1, 4, 1, 1, 0, 9], [6, 1, 3, 9]]
-2024-11-05 15:28:31,532 - INFO - The UAVs have expended [2600035.] energy in episode 0
-2024-11-05 15:28:31,532 - INFO - EPISODE FINISHED
-2024-11-05 15:28:31,532 - INFO - EPISODE START
-2024-11-05 15:29:28,249 - INFO - The episode has finished
-2024-11-05 15:29:28,249 - INFO - The total reward for episode 1 is: 4896217000.0
-2024-11-05 15:29:28,249 - INFO - The UAVs have visited 39 nodes in episode 1
-2024-11-05 15:29:28,249 - INFO - The UAVs have visited the nodes: [[0, 9], [3, 5, 4, 7, 7, 9], [6, 5, 6, 3, 5, 1, 3, 3, 1, 1, 1, 1, 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1]]
-2024-11-05 15:29:28,249 - INFO - The UAVs have expended [2165675.5] energy in episode 1
-2024-11-05 15:29:28,249 - INFO - EPISODE FINISHED
-2024-11-05 15:29:28,249 - INFO - EPISODE START
-2024-11-05 15:30:31,873 - INFO - The episode has finished
-2024-11-05 15:30:31,873 - INFO - The total reward for episode 2 is: 3357491200.0
-2024-11-05 15:30:31,873 - INFO - The UAVs have visited 40 nodes in episode 2
-2024-11-05 15:30:31,873 - INFO - The UAVs have visited the nodes: [[0, 3, 3, 2, 2, 1, 4, 5, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7], [3, 8, 0, 0, 8, 9], [6, 5, 9]]
-2024-11-05 15:30:31,873 - INFO - The UAVs have expended [1552486.9] energy in episode 2
-2024-11-05 15:30:31,873 - INFO - EPISODE FINISHED
-2024-11-05 15:30:31,873 - INFO - EPISODE START
-2024-11-05 15:32:18,944 - INFO - The episode has finished
-2024-11-05 15:32:18,944 - INFO - The total reward for episode 3 is: 2803465200.0
-2024-11-05 15:32:18,944 - INFO - The UAVs have visited 66 nodes in episode 3
-2024-11-05 15:32:18,944 - INFO - The UAVs have visited the nodes: [[0, 3, 7, 9], [3, 1, 2, 8, 4, 1, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6], [6, 7, 7, 7, 0, 4, 8, 6, 6, 5, 5, 5, 6, 7, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]]
-2024-11-05 15:32:18,944 - INFO - The UAVs have expended [2601393.] energy in episode 3
-2024-11-05 15:32:18,944 - INFO - EPISODE FINISHED
-2024-11-05 15:32:18,944 - INFO - EPISODE START
-2024-11-05 15:35:11,149 - INFO - The episode has finished
-2024-11-05 15:35:11,149 - INFO - The total reward for episode 4 is: 4869632000.0
-2024-11-05 15:35:11,149 - INFO - The UAVs have visited 64 nodes in episode 4
-2024-11-05 15:35:11,149 - INFO - The UAVs have visited the nodes: [[0, 7, 0, 1, 6, 1, 3, 3, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1], [3, 9], [6, 2, 4, 4, 7, 5, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]]
-2024-11-05 15:35:11,149 - INFO - The UAVs have expended [2258535.2] energy in episode 4
-2024-11-05 15:35:11,149 - INFO - EPISODE FINISHED
-2024-11-05 15:35:11,149 - INFO - EPISODE START
-2024-11-05 15:36:08,281 - INFO - The episode has finished
-2024-11-05 15:36:08,281 - INFO - The total reward for episode 5 is: 1832824400.0
-2024-11-05 15:36:08,281 - INFO - The UAVs have visited 42 nodes in episode 5
-2024-11-05 15:36:08,281 - INFO - The UAVs have visited the nodes: [[0, 0, 5, 3, 4, 4, 3, 9], [3, 6, 9], [6, 3, 6, 5, 2, 2, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]]
-2024-11-05 15:36:08,281 - INFO - The UAVs have expended [2457039.] energy in episode 5
-2024-11-05 15:36:08,281 - INFO - EPISODE FINISHED
-2024-11-05 15:36:08,281 - INFO - EPISODE START
-2024-11-05 15:37:12,038 - INFO - The episode has finished
-2024-11-05 15:37:12,038 - INFO - The total reward for episode 6 is: 863489400.0
-2024-11-05 15:37:12,038 - INFO - The UAVs have visited 40 nodes in episode 6
-2024-11-05 15:37:12,038 - INFO - The UAVs have visited the nodes: [[0, 7, 8, 1, 4, 2, 5, 5, 6, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6], [3, 3, 0, 5, 0, 9], [6, 7, 9]]
-2024-11-05 15:37:12,038 - INFO - The UAVs have expended [1865928.4] energy in episode 6
-2024-11-05 15:37:12,038 - INFO - EPISODE FINISHED
-2024-11-05 15:37:12,038 - INFO - EPISODE START
-2024-11-05 15:37:17,086 - INFO - The episode has finished
-2024-11-05 15:37:17,086 - INFO - The total reward for episode 7 is: 40749380.0
-2024-11-05 15:37:17,086 - INFO - The UAVs have visited 13 nodes in episode 7
-2024-11-05 15:37:17,086 - INFO - The UAVs have visited the nodes: [[0, 9], [3, 7, 8, 9], [6, 0, 2, 4, 1, 8, 9]]
-2024-11-05 15:37:17,086 - INFO - The UAVs have expended [1471691.] energy in episode 7
-2024-11-05 15:37:17,086 - INFO - EPISODE FINISHED
-2024-11-05 15:37:17,086 - INFO - EPISODE START
-2024-11-05 15:37:33,142 - INFO - The episode has finished
-2024-11-05 15:37:33,142 - INFO - The total reward for episode 8 is: 277012670.0
-2024-11-05 15:37:33,142 - INFO - The UAVs have visited 21 nodes in episode 8
-2024-11-05 15:37:33,142 - INFO - The UAVs have visited the nodes: [[0, 9], [3, 0, 7, 2, 8, 9], [6, 7, 1, 4, 6, 8, 0, 0, 0, 0, 0, 0, 9]]
-2024-11-05 15:37:33,142 - INFO - The UAVs have expended [1974922.5] energy in episode 8
-2024-11-05 15:37:33,142 - INFO - EPISODE FINISHED
-2024-11-05 15:37:33,142 - INFO - EPISODE START
-2024-11-05 15:39:52,601 - INFO - The episode has finished
-2024-11-05 15:39:52,601 - INFO - The total reward for episode 9 is: 2099464700.0
-2024-11-05 15:39:52,601 - INFO - The UAVs have visited 66 nodes in episode 9
-2024-11-05 15:39:52,601 - INFO - The UAVs have visited the nodes: [[0, 1, 4, 7, 5, 3, 3, 4, 3, 3, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3], [3, 5, 7, 9], [6, 2, 3, 3, 1, 6, 0, 8, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
-2024-11-05 15:39:52,601 - INFO - The UAVs have expended [2628077.2] energy in episode 9
-2024-11-05 15:39:52,601 - INFO - EPISODE FINISHED
-2024-11-05 15:39:52,601 - INFO - EPISODE START
-2024-11-05 15:41:17,267 - INFO - The episode has finished
-2024-11-05 15:41:17,267 - INFO - The total reward for episode 10 is: 882774400.0
-2024-11-05 15:41:17,267 - INFO - The UAVs have visited 36 nodes in episode 10
-2024-11-05 15:41:17,267 - INFO - The UAVs have visited the nodes: [[0, 9], [3, 8, 9], [6, 8, 6, 4, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3]]
-2024-11-05 15:41:17,267 - INFO - The UAVs have expended [1397502.4] energy in episode 10
-2024-11-05 15:41:17,267 - INFO - EPISODE FINISHED
-2024-11-05 15:41:17,267 - INFO - EPISODE START
-2024-11-05 15:43:17,113 - INFO - The episode has finished
-2024-11-05 15:43:17,113 - INFO - The total reward for episode 11 is: 1103702400.0
-2024-11-05 15:43:17,113 - INFO - The UAVs have visited 67 nodes in episode 11
-2024-11-05 15:43:17,113 - INFO - The UAVs have visited the nodes: [[0, 4, 7, 6, 6, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [3, 3, 4, 5, 6, 1, 3, 4, 4, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [6, 5, 0, 8, 9]]
-2024-11-05 15:43:17,113 - INFO - The UAVs have expended [2380621.] energy in episode 11
-2024-11-05 15:43:17,113 - INFO - EPISODE FINISHED
-2024-11-05 15:43:17,113 - INFO - EPISODE START
-2024-11-05 15:45:12,623 - INFO - The episode has finished
-2024-11-05 15:45:12,623 - INFO - The total reward for episode 12 is: 1087539700.0
-2024-11-05 15:45:12,623 - INFO - The UAVs have visited 66 nodes in episode 12
-2024-11-05 15:45:12,623 - INFO - The UAVs have visited the nodes: [[0, 1, 3, 6, 7, 5, 4, 1, 3, 1, 1, 1, 3, 1, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3], [3, 7, 4, 9], [6, 3, 3, 7, 3, 1, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8]]
-2024-11-05 15:45:12,623 - INFO - The UAVs have expended [2923395.2] energy in episode 12
-2024-11-05 15:45:12,623 - INFO - EPISODE FINISHED
-2024-11-05 15:45:12,623 - INFO - EPISODE START
-2024-11-05 15:47:11,033 - INFO - The episode has finished
-2024-11-05 15:47:11,033 - INFO - The total reward for episode 13 is: 1109803900.0
-2024-11-05 15:47:11,033 - INFO - The UAVs have visited 67 nodes in episode 13
-2024-11-05 15:47:11,033 - INFO - The UAVs have visited the nodes: [[0, 2, 0, 2, 3, 8, 8, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8], [3, 8, 1, 6, 9], [6, 5, 4, 2, 6, 5, 6, 5, 6, 5, 5, 5, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6]]
-2024-11-05 15:47:11,033 - INFO - The UAVs have expended [2786983.2] energy in episode 13
-2024-11-05 15:47:11,033 - INFO - EPISODE FINISHED
-2024-11-05 15:47:11,033 - INFO - EPISODE START
-2024-11-05 15:47:14,837 - INFO - The episode has finished
-2024-11-05 15:47:14,837 - INFO - The total reward for episode 14 is: 25131270.0
-2024-11-05 15:47:14,837 - INFO - The UAVs have visited 11 nodes in episode 14
-2024-11-05 15:47:14,837 - INFO - The UAVs have visited the nodes: [[0, 3, 3, 4, 9], [3, 5, 9], [6, 5, 9]]
-2024-11-05 15:47:14,837 - INFO - The UAVs have expended [1235631.9] energy in episode 14
-2024-11-05 15:47:14,837 - INFO - EPISODE FINISHED
-2024-11-05 15:47:14,837 - INFO - EPISODE START
-2024-11-05 15:49:38,857 - INFO - The episode has finished
-2024-11-05 15:49:38,857 - INFO - The total reward for episode 15 is: 1341995000.0
-2024-11-05 15:49:38,857 - INFO - The UAVs have visited 93 nodes in episode 15
-2024-11-05 15:49:38,857 - INFO - The UAVs have visited the nodes: [[0, 7, 4, 4, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3], [3, 8, 2, 6, 7, 3, 3, 3, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 0, 0], [6, 5, 7, 7, 2, 7, 4, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]]
-2024-11-05 15:49:38,857 - INFO - The UAVs have expended [3108470.2] energy in episode 15
-2024-11-05 15:49:38,857 - INFO - EPISODE FINISHED
-2024-11-05 15:49:38,857 - INFO - EPISODE START
-2024-11-05 15:51:29,677 - INFO - The episode has finished
-2024-11-05 15:51:29,677 - INFO - The total reward for episode 16 is: 1042840450.0
-2024-11-05 15:51:29,677 - INFO - The UAVs have visited 65 nodes in episode 16
-2024-11-05 15:51:29,677 - INFO - The UAVs have visited the nodes: [[0, 0, 6, 4, 7, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [3, 4, 9], [6, 6, 7, 4, 1, 6, 5, 8, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0]]
-2024-11-05 15:51:29,677 - INFO - The UAVs have expended [2423527.] energy in episode 16
-2024-11-05 15:51:29,677 - INFO - EPISODE FINISHED
-2024-11-05 15:51:29,677 - INFO - EPISODE START
-2024-11-05 15:53:51,198 - INFO - The episode has finished
-2024-11-05 15:53:51,198 - INFO - The total reward for episode 17 is: 1319287800.0
-2024-11-05 15:53:51,198 - INFO - The UAVs have visited 93 nodes in episode 17
-2024-11-05 15:53:51,198 - INFO - The UAVs have visited the nodes: [[0, 1, 1, 3, 4, 1, 1, 6, 6, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1], [3, 6, 8, 4, 8, 8, 8, 8, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1], [6, 0, 5, 4, 4, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]]
-2024-11-05 15:53:51,198 - INFO - The UAVs have expended [3087977.] energy in episode 17
-2024-11-05 15:53:51,198 - INFO - EPISODE FINISHED
-2024-11-05 15:53:51,198 - INFO - EPISODE START
-2024-11-05 15:56:44,834 - INFO - The episode has finished
-2024-11-05 15:56:44,834 - INFO - The total reward for episode 18 is: 1621293600.0
-2024-11-05 15:56:44,834 - INFO - The UAVs have visited 93 nodes in episode 18
-2024-11-05 15:56:44,834 - INFO - The UAVs have visited the nodes: [[0, 0, 6, 8, 3, 6, 6, 7, 7, 7, 6, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6], [3, 4, 2, 5, 8, 3, 8, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3], [6, 0, 0, 5, 3, 7, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6]]
-2024-11-05 15:56:44,834 - INFO - The UAVs have expended [3122169.] energy in episode 18
-2024-11-05 15:56:44,834 - INFO - EPISODE FINISHED
-2024-11-05 15:56:44,834 - INFO - EPISODE START
-2024-11-05 15:56:48,009 - INFO - The episode has finished
-2024-11-05 15:56:48,009 - INFO - The total reward for episode 19 is: 18319802.0
-2024-11-05 15:56:48,009 - INFO - The UAVs have visited 8 nodes in episode 19
-2024-11-05 15:56:48,009 - INFO - The UAVs have visited the nodes: [[0, 5, 9], [3, 9], [6, 4, 9]]
-2024-11-05 15:56:48,009 - INFO - The UAVs have expended [1223450.2] energy in episode 19
-2024-11-05 15:56:48,009 - INFO - EPISODE FINISHED
-2024-11-05 15:56:48,009 - INFO - The rewards per episode are: [Array(1.2174387e+10, dtype=float32), Array(4.896217e+09, dtype=float32), Array(3.3574912e+09, dtype=float32), Array(2.8034652e+09, dtype=float32), Array(4.869632e+09, dtype=float32), Array(1.8328244e+09, dtype=float32), Array(8.634894e+08, dtype=float32), Array(40749380., dtype=float32), Array(2.7701267e+08, dtype=float32), Array(2.0994647e+09, dtype=float32), Array(8.827744e+08, dtype=float32), Array(1.1037024e+09, dtype=float32), Array(1.0875397e+09, dtype=float32), Array(1.1098039e+09, dtype=float32), Array(25131270., dtype=float32), Array(1.341995e+09, dtype=float32), Array(1.04284045e+09, dtype=float32), Array(1.3192878e+09, dtype=float32), Array(1.6212936e+09, dtype=float32), Array(18319802., dtype=float32)]
-2024-11-05 15:56:48,009 - INFO - Q Tables are: [Array([[1.6134438e+07, 1.4829239e+07, 1.7933224e+07, 1.3530468e+07,
-        1.6668850e+07, 3.6060012e+07, 1.9262990e+07, 2.4915724e+07,
-        1.8479736e+07, 1.7540844e+07],
-       [1.8881952e+07, 1.8694778e+07, 1.8055082e+07, 1.9467554e+07,
-        1.9325768e+07, 1.7661276e+07, 1.9268334e+07, 1.8384540e+07,
-        1.8457682e+07, 1.9547044e+07],
-       [2.8738554e+07, 2.8187180e+07, 2.9076076e+07, 2.8208434e+07,
-        2.8076690e+07, 2.8418916e+07, 2.8216092e+07, 2.7511960e+07,
-        2.9113460e+07, 2.7480602e+07],
-       [2.5995196e+07, 2.4120196e+07, 2.6273020e+07, 2.5784200e+07,
-        2.6179930e+07, 2.3733292e+07, 2.7518468e+07, 2.5847482e+07,
-        2.5793456e+07, 2.6208492e+07],
-       [6.7965200e+06, 1.5502915e+07, 9.9202530e+06, 1.3044631e+07,
-        1.4852057e+07, 3.3838832e+07, 6.7428850e+06, 1.9490576e+07,
-        1.1081114e+07, 6.9515720e+06],
-       [1.5780470e+08, 1.6819818e+08, 1.4178131e+08, 1.0652009e+08,
-        1.3174006e+08, 1.4426389e+08, 1.3081644e+08, 1.5964957e+08,
-        1.5338670e+08, 1.5635558e+08],
-       [3.7417240e+07, 3.5758848e+07, 3.2976420e+07, 3.6712124e+07,
-        4.0067968e+07, 4.2016648e+07, 3.6334104e+07, 3.8709816e+07,
-        3.0141376e+07, 3.6171472e+07],
-       [6.5326508e+07, 6.5682972e+07, 6.1959460e+07, 6.9918224e+07,
-        6.5447236e+07, 7.4385320e+07, 5.9549796e+07, 6.4000952e+07,
-        6.7750080e+07, 6.6039216e+07],
-       [4.8145545e+06, 3.0893565e+06, 2.7844288e+06, 5.3486980e+06,
-        3.9488232e+06, 2.3742875e+06, 2.6345902e+06, 3.2670025e+06,
-        4.1706218e+06, 3.8807022e+06],
-       [0.0000000e+00, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00,
-        0.0000000e+00, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00,
-        0.0000000e+00, 0.0000000e+00]], dtype=float32), Array([[20487680. , 19407316. , 20045668. , 20117988. , 18649706. ,
-        19008740. , 20377572. , 20450892. , 18979308. , 19968548. ],
-       [27230788. , 34081624. , 24545318. , 21617986. , 30259350. ,
-        28836842. , 25381744. , 24191390. , 24350710. , 28685486. ],
-       [63683628. , 63661748. , 63218864. , 63692936. , 62861460. ,
-        64512592. , 64330340. , 63069568. , 63580016. , 63501364. ],
-       [41541432. , 32475290. , 39720328. , 40207016. , 32182526. ,
-        38376672. , 40276760. , 39774624. , 42486352. , 43335452. ],
-       [40887272. , 39181728. , 42232148. , 42232744. , 42028480. ,
-        40488336. , 41640536. , 41337952. , 41277924. , 42134124. ],
-       [20847354. , 19936570. , 20481982. , 16805818. , 21012640. ,
-        19405138. , 20639736. , 18650070. , 19551444. , 20110202. ],
-       [27625852. , 27611562. , 27711566. , 27762078. , 29552464. ,
-        25171104. , 25330508. , 28576758. , 26483562. , 27650060. ],
-       [ 1406047.4,        0. , 11908849. ,        0. ,  3907499.2,
-         2262461. ,  2671587. ,  1244886.5,  1406047.4,  2228787. ],
-       [15654848. , 17601890. , 18457660. , 16697514. , 16502802. ,
-        17438478. , 16602226. , 17733206. , 18081600. , 16469675. ],
-       [       0. ,  6389669. ,  6385844.5,  5556055. ,  9242617. ,
-         1100456.8,        0. ,   517194.8,        0. ,  1149643.4]],      dtype=float32)]
-2024-11-05 15:56:48,009 - INFO - Mean reward per episode: 2138371100.0
-2024-11-05 15:56:48,009 - INFO - Max reward: 12174387000.0
-2024-11-05 15:56:48,025 - INFO - Q-Brave Algorithm took: 1776.4130058288574 seconds
-2024-11-05 15:56:48,512 - INFO - Running the Multi-Agent Coop Q-Brave Algorithm
-2024-11-05 15:56:48,512 - INFO - EPISODE START
-2024-11-05 15:57:51,347 - INFO - The episode has finished
-2024-11-05 15:57:51,347 - INFO - The total reward for episode 0 is: 7618518000.0
-2024-11-05 15:57:51,347 - INFO - The UAVs have visited 36 nodes in episode 0
-2024-11-05 15:57:51,347 - INFO - The UAVs have visited the nodes: [[0, 3, 4, 5, 4, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8], [3, 8, 9], [6, 9]]
-2024-11-05 15:57:51,347 - INFO - The UAVs have expended 1443717.4 energy in episode 0
-2024-11-05 15:57:51,347 - INFO - EPISODE FINISHED
-2024-11-05 15:57:51,347 - INFO - EPISODE START
-2024-11-05 15:59:04,319 - INFO - The episode has finished
-2024-11-05 15:59:04,319 - INFO - The total reward for episode 1 is: 7690582000.0
-2024-11-05 15:59:04,319 - INFO - The UAVs have visited 46 nodes in episode 1
-2024-11-05 15:59:04,319 - INFO - The UAVs have visited the nodes: [[0, 3, 3, 5, 9], [3, 6, 8, 3, 1, 4, 4, 4, 1, 9], [6, 4, 3, 2, 7, 6, 6, 5, 6, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]]
-2024-11-05 15:59:04,319 - INFO - The UAVs have expended [2747723.5] energy in episode 1
-2024-11-05 15:59:04,319 - INFO - EPISODE FINISHED
-2024-11-05 15:59:04,319 - INFO - EPISODE START
-2024-11-05 16:02:07,371 - INFO - The episode has finished
-2024-11-05 16:02:07,371 - INFO - The total reward for episode 2 is: 8538068000.0
-2024-11-05 16:02:07,371 - INFO - The UAVs have visited 69 nodes in episode 2
-2024-11-05 16:02:07,371 - INFO - The UAVs have visited the nodes: [[0, 4, 6, 2, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5], [3, 1, 7, 7, 4, 5, 9], [6, 6, 7, 2, 6, 1, 3, 1, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3]]
-2024-11-05 16:02:07,371 - INFO - The UAVs have expended [3166694.] energy in episode 2
-2024-11-05 16:02:07,371 - INFO - EPISODE FINISHED
-2024-11-05 16:02:07,371 - INFO - EPISODE START
-2024-11-05 16:02:11,361 - INFO - The episode has finished
-2024-11-05 16:02:11,361 - INFO - The total reward for episode 3 is: 39893710.0
-2024-11-05 16:02:11,361 - INFO - The UAVs have visited 12 nodes in episode 3
-2024-11-05 16:02:11,361 - INFO - The UAVs have visited the nodes: [[0, 7, 2, 9], [3, 4, 9], [6, 1, 2, 0, 9]]
-2024-11-05 16:02:11,361 - INFO - The UAVs have expended 1839164.2 energy in episode 3
-2024-11-05 16:02:11,361 - INFO - EPISODE FINISHED
-2024-11-05 16:02:11,361 - INFO - EPISODE START
-2024-11-05 16:03:13,690 - INFO - The episode has finished
-2024-11-05 16:03:13,690 - INFO - The total reward for episode 4 is: 707621900.0
-2024-11-05 16:03:13,690 - INFO - The UAVs have visited 42 nodes in episode 4
-2024-11-05 16:03:13,690 - INFO - The UAVs have visited the nodes: [[0, 5, 5, 8, 2, 8, 8, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1], [3, 1, 4, 0, 2, 8, 8, 9], [6, 8, 9]]
-2024-11-05 16:03:13,690 - INFO - The UAVs have expended [2232429.2] energy in episode 4
-2024-11-05 16:03:13,690 - INFO - EPISODE FINISHED
-2024-11-05 16:03:13,690 - INFO - EPISODE START
-2024-11-05 16:03:18,858 - INFO - The episode has finished
-2024-11-05 16:03:18,858 - INFO - The total reward for episode 5 is: 47070324.0
-2024-11-05 16:03:18,858 - INFO - The UAVs have visited 16 nodes in episode 5
-2024-11-05 16:03:18,858 - INFO - The UAVs have visited the nodes: [[0, 2, 4, 4, 4, 1, 3, 1, 8, 9], [3, 8, 9], [6, 7, 9]]
-2024-11-05 16:03:18,858 - INFO - The UAVs have expended [1095397.2] energy in episode 5
-2024-11-05 16:03:18,858 - INFO - EPISODE FINISHED
-2024-11-05 16:03:18,858 - INFO - EPISODE START
-2024-11-05 16:03:22,404 - INFO - The episode has finished
-2024-11-05 16:03:22,404 - INFO - The total reward for episode 6 is: 26083432.0
-2024-11-05 16:03:22,404 - INFO - The UAVs have visited 10 nodes in episode 6
-2024-11-05 16:03:22,404 - INFO - The UAVs have visited the nodes: [[0, 3, 9], [3, 7, 2, 9], [6, 1, 9]]
-2024-11-05 16:03:22,404 - INFO - The UAVs have expended [1575810.2] energy in episode 6
-2024-11-05 16:03:22,404 - INFO - EPISODE FINISHED
-2024-11-05 16:03:22,404 - INFO - EPISODE START
-2024-11-05 16:05:09,310 - INFO - The episode has finished
-2024-11-05 16:05:09,310 - INFO - The total reward for episode 7 is: 2074296800.0
-2024-11-05 16:05:09,310 - INFO - The UAVs have visited 67 nodes in episode 7
-2024-11-05 16:05:09,310 - INFO - The UAVs have visited the nodes: [[0, 2, 1, 8, 4, 2, 2, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [3, 3, 0, 7, 9], [6, 8, 3, 5, 1, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]]
-2024-11-05 16:05:09,310 - INFO - The UAVs have expended [2490926.5] energy in episode 7
-2024-11-05 16:05:09,310 - INFO - EPISODE FINISHED
-2024-11-05 16:05:09,310 - INFO - EPISODE START
-2024-11-05 16:06:18,029 - INFO - The episode has finished
-2024-11-05 16:06:18,029 - INFO - The total reward for episode 8 is: 719070000.0
-2024-11-05 16:06:18,029 - INFO - The UAVs have visited 39 nodes in episode 8
-2024-11-05 16:06:18,029 - INFO - The UAVs have visited the nodes: [[0, 5, 1, 9], [3, 5, 3, 9], [6, 3, 3, 6, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]]
-2024-11-05 16:06:18,029 - INFO - The UAVs have expended [2501952.] energy in episode 8
-2024-11-05 16:06:18,029 - INFO - EPISODE FINISHED
-2024-11-05 16:06:18,029 - INFO - EPISODE START
-2024-11-05 16:07:43,095 - INFO - The episode has finished
-2024-11-05 16:07:43,095 - INFO - The total reward for episode 9 is: 912759300.0
-2024-11-05 16:07:43,095 - INFO - The UAVs have visited 69 nodes in episode 9
-2024-11-05 16:07:43,095 - INFO - The UAVs have visited the nodes: [[0, 6, 8, 0, 8, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [3, 0, 7, 5, 6, 1, 9], [6, 6, 5, 3, 7, 5, 0, 1, 3, 1, 1, 3, 3, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1]]
-2024-11-05 16:07:43,095 - INFO - The UAVs have expended [2940561.8] energy in episode 9
-2024-11-05 16:07:43,095 - INFO - EPISODE FINISHED
-2024-11-05 16:07:43,095 - INFO - EPISODE START
-2024-11-05 16:09:40,142 - INFO - The episode has finished
-2024-11-05 16:09:40,142 - INFO - The total reward for episode 10 is: 1344331300.0
-2024-11-05 16:09:40,142 - INFO - The UAVs have visited 66 nodes in episode 10
-2024-11-05 16:09:40,142 - INFO - The UAVs have visited the nodes: [[0, 6, 2, 4, 0, 3, 3, 1, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [3, 6, 7, 3, 7, 0, 0, 0, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8], [6, 1, 3, 9]]
-2024-11-05 16:09:40,142 - INFO - The UAVs have expended [2584148.5] energy in episode 10
-2024-11-05 16:09:40,142 - INFO - EPISODE FINISHED
-2024-11-05 16:09:40,142 - INFO - EPISODE START
-2024-11-05 16:10:39,328 - INFO - The episode has finished
-2024-11-05 16:10:39,328 - INFO - The total reward for episode 11 is: 1116202900.0
-2024-11-05 16:10:39,328 - INFO - The UAVs have visited 40 nodes in episode 11
-2024-11-05 16:10:39,328 - INFO - The UAVs have visited the nodes: [[0, 0, 2, 6, 6, 3, 9], [3, 9], [6, 5, 4, 1, 4, 7, 5, 6, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]]
-2024-11-05 16:10:39,328 - INFO - The UAVs have expended [2223819.] energy in episode 11
-2024-11-05 16:10:39,328 - INFO - EPISODE FINISHED
-2024-11-05 16:10:39,328 - INFO - EPISODE START
-2024-11-05 16:11:57,744 - INFO - The episode has finished
-2024-11-05 16:11:57,744 - INFO - The total reward for episode 12 is: 750550460.0
-2024-11-05 16:11:57,744 - INFO - The UAVs have visited 65 nodes in episode 12
-2024-11-05 16:11:57,744 - INFO - The UAVs have visited the nodes: [[0, 7, 9], [3, 2, 3, 2, 5, 6, 5, 5, 5, 5, 5, 7, 7, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [6, 6, 7, 7, 5, 0, 1, 5, 1, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
-2024-11-05 16:11:57,744 - INFO - The UAVs have expended [2362293.8] energy in episode 12
-2024-11-05 16:11:57,744 - INFO - EPISODE FINISHED
-2024-11-05 16:11:57,760 - INFO - EPISODE START
-2024-11-05 16:13:35,102 - INFO - The episode has finished
-2024-11-05 16:13:35,102 - INFO - The total reward for episode 13 is: 932521340.0
-2024-11-05 16:13:35,102 - INFO - The UAVs have visited 65 nodes in episode 13
-2024-11-05 16:13:35,102 - INFO - The UAVs have visited the nodes: [[0, 7, 5, 4, 2, 8, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 3], [3, 4, 8, 4, 8, 8, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [6, 0, 9]]
-2024-11-05 16:13:35,102 - INFO - The UAVs have expended [2374305.2] energy in episode 13
-2024-11-05 16:13:35,102 - INFO - EPISODE FINISHED
-2024-11-05 16:13:35,102 - INFO - EPISODE START
-2024-11-05 16:14:07,580 - INFO - The episode has finished
-2024-11-05 16:14:07,595 - INFO - The total reward for episode 14 is: 292996640.0
-2024-11-05 16:14:07,595 - INFO - The UAVs have visited 39 nodes in episode 14
-2024-11-05 16:14:07,595 - INFO - The UAVs have visited the nodes: [[0, 4, 3, 4, 6, 8, 8, 8, 0, 8, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8], [3, 6, 6, 9], [6, 7, 0, 9]]
-2024-11-05 16:14:07,595 - INFO - The UAVs have expended [1821038.] energy in episode 14
-2024-11-05 16:14:07,595 - INFO - EPISODE FINISHED
-2024-11-05 16:14:07,595 - INFO - EPISODE START
-2024-11-05 16:15:00,967 - INFO - The episode has finished
-2024-11-05 16:15:00,969 - INFO - The total reward for episode 15 is: 495941920.0
-2024-11-05 16:15:00,969 - INFO - The UAVs have visited 47 nodes in episode 15
-2024-11-05 16:15:00,969 - INFO - The UAVs have visited the nodes: [[0, 5, 8, 2, 2, 3, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3], [3, 8, 1, 1, 5, 9], [6, 2, 7, 0, 1, 3, 1, 3, 8, 9]]
-2024-11-05 16:15:00,969 - INFO - The UAVs have expended [2758573.] energy in episode 15
-2024-11-05 16:15:00,969 - INFO - EPISODE FINISHED
-2024-11-05 16:15:00,969 - INFO - EPISODE START
-2024-11-05 16:15:54,447 - INFO - The episode has finished
-2024-11-05 16:15:54,463 - INFO - The total reward for episode 16 is: 493233950.0
-2024-11-05 16:15:54,463 - INFO - The UAVs have visited 39 nodes in episode 16
-2024-11-05 16:15:54,463 - INFO - The UAVs have visited the nodes: [[0, 1, 6, 9], [3, 8, 2, 3, 3, 1, 7, 0, 8, 8, 8, 0, 0, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8], [6, 5, 7, 9]]
-2024-11-05 16:15:54,463 - INFO - The UAVs have expended [1883977.6] energy in episode 16
-2024-11-05 16:15:54,463 - INFO - EPISODE FINISHED
-2024-11-05 16:15:54,463 - INFO - EPISODE START
-2024-11-05 16:17:39,406 - INFO - The episode has finished
-2024-11-05 16:17:39,406 - INFO - The total reward for episode 17 is: 977309100.0
-2024-11-05 16:17:39,406 - INFO - The UAVs have visited 67 nodes in episode 17
-2024-11-05 16:17:39,406 - INFO - The UAVs have visited the nodes: [[0, 8, 7, 0, 9], [3, 5, 5, 6, 5, 5, 7, 5, 8, 7, 5, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6], [6, 3, 5, 0, 8, 3, 1, 1, 3, 1, 3, 3, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1]]
-2024-11-05 16:17:39,406 - INFO - The UAVs have expended [2549249.5] energy in episode 17
-2024-11-05 16:17:39,406 - INFO - EPISODE FINISHED
-2024-11-05 16:17:39,406 - INFO - EPISODE START
-2024-11-05 16:18:08,407 - INFO - The episode has finished
-2024-11-05 16:18:08,407 - INFO - The total reward for episode 18 is: 310253000.0
-2024-11-05 16:18:08,407 - INFO - The UAVs have visited 39 nodes in episode 18
-2024-11-05 16:18:08,407 - INFO - The UAVs have visited the nodes: [[0, 0, 4, 3, 5, 9], [3, 9], [6, 2, 7, 1, 3, 3, 8, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8]]
-2024-11-05 16:18:08,407 - INFO - The UAVs have expended [2057271.5] energy in episode 18
-2024-11-05 16:18:08,407 - INFO - EPISODE FINISHED
-2024-11-05 16:18:08,407 - INFO - EPISODE START
-2024-11-05 16:19:10,563 - INFO - The episode has finished
-2024-11-05 16:19:10,564 - INFO - The total reward for episode 19 is: 1232471000.0
-2024-11-05 16:19:10,564 - INFO - The UAVs have visited 64 nodes in episode 19
-2024-11-05 16:19:10,564 - INFO - The UAVs have visited the nodes: [[0, 6, 1, 7, 3, 3, 1, 3, 1, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1], [3, 9], [6, 0, 8, 5, 2, 8, 0, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3]]
-2024-11-05 16:19:10,564 - INFO - The UAVs have expended [2315620.8] energy in episode 19
-2024-11-05 16:19:10,564 - INFO - EPISODE FINISHED
-2024-11-05 16:19:10,564 - INFO - EPISODE START
-2024-11-05 16:19:27,587 - INFO - The episode has finished
-2024-11-05 16:19:27,587 - INFO - The total reward for episode 20 is: 337083970.0
-2024-11-05 16:19:27,587 - INFO - The UAVs have visited 42 nodes in episode 20
-2024-11-05 16:19:27,587 - INFO - The UAVs have visited the nodes: [[0, 9], [3, 8, 4, 3, 3, 1, 4, 4, 9], [6, 6, 8, 5, 6, 4, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8]]
-2024-11-05 16:19:27,587 - INFO - The UAVs have expended [1938617.8] energy in episode 20
-2024-11-05 16:19:27,587 - INFO - EPISODE FINISHED
-2024-11-05 16:19:27,587 - INFO - EPISODE START
-2024-11-05 16:20:16,025 - INFO - The episode has finished
-2024-11-05 16:20:16,025 - INFO - The total reward for episode 21 is: 975201700.0
-2024-11-05 16:20:16,025 - INFO - The UAVs have visited 67 nodes in episode 21
-2024-11-05 16:20:16,025 - INFO - The UAVs have visited the nodes: [[0, 3, 7, 7, 6, 5, 4, 1, 1, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 0, 0], [3, 7, 4, 8, 9], [6, 7, 4, 0, 5, 6, 0, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8]]
-2024-11-05 16:20:16,025 - INFO - The UAVs have expended [2930217.2] energy in episode 21
-2024-11-05 16:20:16,025 - INFO - EPISODE FINISHED
-2024-11-05 16:20:16,025 - INFO - EPISODE START
-2024-11-05 16:20:20,214 - INFO - The episode has finished
-2024-11-05 16:20:20,214 - INFO - The total reward for episode 22 is: 72705220.0
-2024-11-05 16:20:20,214 - INFO - The UAVs have visited 27 nodes in episode 22
-2024-11-05 16:20:20,214 - INFO - The UAVs have visited the nodes: [[0, 7, 7, 4, 4, 1, 7, 8, 8, 8, 9], [3, 1, 8, 3, 1, 6, 7, 6, 8, 9], [6, 3, 4, 8, 0, 9]]
-2024-11-05 16:20:20,214 - INFO - The UAVs have expended [2725375.5] energy in episode 22
-2024-11-05 16:20:20,214 - INFO - EPISODE FINISHED
-2024-11-05 16:20:20,214 - INFO - EPISODE START
-2024-11-05 16:21:52,748 - INFO - The episode has finished
-2024-11-05 16:21:52,749 - INFO - The total reward for episode 23 is: 1879589400.0
-2024-11-05 16:21:52,749 - INFO - The UAVs have visited 93 nodes in episode 23
-2024-11-05 16:21:52,749 - INFO - The UAVs have visited the nodes: [[0, 6, 4, 3, 0, 4, 4, 1, 1, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 1], [3, 2, 4, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [6, 8, 1, 5, 5, 1, 1, 3, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0]]
-2024-11-05 16:21:52,749 - INFO - The UAVs have expended [3127833.5] energy in episode 23
-2024-11-05 16:21:52,750 - INFO - EPISODE FINISHED
-2024-11-05 16:21:52,750 - INFO - EPISODE START
-2024-11-05 16:22:49,351 - INFO - The episode has finished
-2024-11-05 16:22:49,352 - INFO - The total reward for episode 24 is: 1124451800.0
-2024-11-05 16:22:49,352 - INFO - The UAVs have visited 68 nodes in episode 24
-2024-11-05 16:22:49,352 - INFO - The UAVs have visited the nodes: [[0, 0, 6, 4, 4, 9], [3, 3, 3, 1, 2, 0, 5, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [6, 2, 3, 1, 0, 1, 1, 0, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7]]
-2024-11-05 16:22:49,352 - INFO - The UAVs have expended [2849913.8] energy in episode 24
-2024-11-05 16:22:49,352 - INFO - EPISODE FINISHED
-2024-11-05 16:22:49,353 - INFO - EPISODE START
-2024-11-05 16:23:24,075 - INFO - The episode has finished
-2024-11-05 16:23:24,077 - INFO - The total reward for episode 25 is: 682533000.0
-2024-11-05 16:23:24,077 - INFO - The UAVs have visited 67 nodes in episode 25
-2024-11-05 16:23:24,077 - INFO - The UAVs have visited the nodes: [[0, 7, 0, 4, 3, 5, 5, 6, 5, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [3, 2, 1, 7, 9], [6, 7, 1, 8, 8, 4, 3, 2, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]]
-2024-11-05 16:23:24,077 - INFO - The UAVs have expended [2807369.] energy in episode 25
-2024-11-05 16:23:24,077 - INFO - EPISODE FINISHED
-2024-11-05 16:23:24,077 - INFO - EPISODE START
-2024-11-05 16:23:49,431 - INFO - The episode has finished
-2024-11-05 16:23:49,433 - INFO - The total reward for episode 26 is: 483689760.0
-2024-11-05 16:23:49,433 - INFO - The UAVs have visited 36 nodes in episode 26
-2024-11-05 16:23:49,433 - INFO - The UAVs have visited the nodes: [[0, 4, 6, 5, 8, 8, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6], [3, 9], [6, 8, 9]]
-2024-11-05 16:23:49,433 - INFO - The UAVs have expended [1584426.1] energy in episode 26
-2024-11-05 16:23:49,433 - INFO - EPISODE FINISHED
-2024-11-05 16:23:49,433 - INFO - EPISODE START
-2024-11-05 16:24:20,149 - INFO - The episode has finished
-2024-11-05 16:24:20,149 - INFO - The total reward for episode 27 is: 599103800.0
-2024-11-05 16:24:20,149 - INFO - The UAVs have visited 45 nodes in episode 27
-2024-11-05 16:24:20,149 - INFO - The UAVs have visited the nodes: [[0, 8, 0, 0, 9], [3, 4, 7, 5, 4, 1, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3], [6, 5, 6, 0, 8, 4, 4, 4, 9]]
-2024-11-05 16:24:20,149 - INFO - The UAVs have expended [1975639.1] energy in episode 27
-2024-11-05 16:24:20,149 - INFO - EPISODE FINISHED
-2024-11-05 16:24:20,149 - INFO - EPISODE START
-2024-11-05 16:25:08,998 - INFO - The episode has finished
-2024-11-05 16:25:08,998 - INFO - The total reward for episode 28 is: 961951200.0
-2024-11-05 16:25:08,998 - INFO - The UAVs have visited 64 nodes in episode 28
-2024-11-05 16:25:08,998 - INFO - The UAVs have visited the nodes: [[0, 9], [3, 5, 2, 8, 8, 8, 4, 4, 4, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3], [6, 8, 1, 8, 0, 6, 2, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]]
-2024-11-05 16:25:08,998 - INFO - The UAVs have expended [2139303.5] energy in episode 28
-2024-11-05 16:25:08,998 - INFO - EPISODE FINISHED
-2024-11-05 16:25:08,998 - INFO - EPISODE START
-2024-11-05 16:25:10,966 - INFO - The episode has finished
-2024-11-05 16:25:10,968 - INFO - The total reward for episode 29 is: 27274894.0
-2024-11-05 16:25:10,968 - INFO - The UAVs have visited 12 nodes in episode 29
-2024-11-05 16:25:10,968 - INFO - The UAVs have visited the nodes: [[0, 6, 7, 3, 9], [3, 9], [6, 7, 7, 7, 9]]
-2024-11-05 16:25:10,968 - INFO - The UAVs have expended [1114493.2] energy in episode 29
-2024-11-05 16:25:10,968 - INFO - EPISODE FINISHED
-2024-11-05 16:25:10,968 - INFO - EPISODE START
-2024-11-05 16:25:13,659 - INFO - The episode has finished
-2024-11-05 16:25:13,660 - INFO - The total reward for episode 30 is: 43196136.0
-2024-11-05 16:25:13,660 - INFO - The UAVs have visited 13 nodes in episode 30
-2024-11-05 16:25:13,660 - INFO - The UAVs have visited the nodes: [[0, 9], [3, 2, 3, 0, 5, 0, 9], [6, 7, 4, 9]]
-2024-11-05 16:25:13,660 - INFO - The UAVs have expended [1741587.] energy in episode 30
-2024-11-05 16:25:13,660 - INFO - EPISODE FINISHED
-2024-11-05 16:25:13,661 - INFO - EPISODE START
-2024-11-05 16:25:16,178 - INFO - The episode has finished
-2024-11-05 16:25:16,178 - INFO - The total reward for episode 31 is: 43147810.0
-2024-11-05 16:25:16,178 - INFO - The UAVs have visited 18 nodes in episode 31
-2024-11-05 16:25:16,178 - INFO - The UAVs have visited the nodes: [[0, 0, 5, 8, 0, 1, 7, 9], [3, 3, 1, 6, 9], [6, 8, 4, 8, 9]]
-2024-11-05 16:25:16,178 - INFO - The UAVs have expended [2147003.8] energy in episode 31
-2024-11-05 16:25:16,178 - INFO - EPISODE FINISHED
-2024-11-05 16:25:16,178 - INFO - EPISODE START
-2024-11-05 16:25:42,023 - INFO - The episode has finished
-2024-11-05 16:25:42,023 - INFO - The total reward for episode 32 is: 513518800.0
-2024-11-05 16:25:42,023 - INFO - The UAVs have visited 39 nodes in episode 32
-2024-11-05 16:25:42,023 - INFO - The UAVs have visited the nodes: [[0, 3, 7, 8, 1, 9], [3, 9], [6, 7, 1, 2, 5, 8, 0, 8, 0, 0, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8]]
-2024-11-05 16:25:42,023 - INFO - The UAVs have expended [2103922.] energy in episode 32
-2024-11-05 16:25:42,023 - INFO - EPISODE FINISHED
-2024-11-05 16:25:42,023 - INFO - EPISODE START
-2024-11-05 16:26:28,155 - INFO - The episode has finished
-2024-11-05 16:26:28,155 - INFO - The total reward for episode 33 is: 935840300.0
-2024-11-05 16:26:28,155 - INFO - The UAVs have visited 64 nodes in episode 33
-2024-11-05 16:26:28,155 - INFO - The UAVs have visited the nodes: [[0, 9], [3, 8, 8, 0, 3, 7, 3, 1, 1, 1, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6], [6, 8, 0, 4, 1, 6, 7, 6, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]]
-2024-11-05 16:26:28,155 - INFO - The UAVs have expended [2150117.8] energy in episode 33
-2024-11-05 16:26:28,155 - INFO - EPISODE FINISHED
-2024-11-05 16:26:28,155 - INFO - EPISODE START
-2024-11-05 16:26:31,194 - INFO - The episode has finished
-2024-11-05 16:26:31,196 - INFO - The total reward for episode 34 is: 49957732.0
-2024-11-05 16:26:31,196 - INFO - The UAVs have visited 21 nodes in episode 34
-2024-11-05 16:26:31,196 - INFO - The UAVs have visited the nodes: [[0, 4, 1, 8, 1, 5, 6, 5, 5, 5, 9], [3, 3, 5, 6, 9], [6, 3, 5, 0, 9]]
-2024-11-05 16:26:31,196 - INFO - The UAVs have expended [2493530.2] energy in episode 34
-2024-11-05 16:26:31,196 - INFO - EPISODE FINISHED
-2024-11-05 16:26:31,196 - INFO - EPISODE START
-2024-11-05 16:27:15,531 - INFO - The episode has finished
-2024-11-05 16:27:15,531 - INFO - The total reward for episode 35 is: 874351100.0
-2024-11-05 16:27:15,531 - INFO - The UAVs have visited 64 nodes in episode 35
-2024-11-05 16:27:15,531 - INFO - The UAVs have visited the nodes: [[0, 7, 7, 7, 4, 2, 0, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5], [3, 9], [6, 3, 7, 7, 6, 8, 3, 1, 1, 1, 3, 1, 1, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1]]
-2024-11-05 16:27:15,531 - INFO - The UAVs have expended [2319233.5] energy in episode 35
-2024-11-05 16:27:15,531 - INFO - EPISODE FINISHED
-2024-11-05 16:27:15,531 - INFO - EPISODE START
-2024-11-05 16:28:21,872 - INFO - The episode has finished
-2024-11-05 16:28:21,888 - INFO - The total reward for episode 36 is: 1335182800.0
-2024-11-05 16:28:21,888 - INFO - The UAVs have visited 93 nodes in episode 36
-2024-11-05 16:28:21,888 - INFO - The UAVs have visited the nodes: [[0, 0, 7, 0, 1, 6, 3, 3, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3], [3, 7, 4, 0, 7, 6, 6, 6, 6, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5], [6, 1, 2, 0, 3, 3, 0, 8, 8, 8, 8, 0, 0, 0, 0, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8]]
-2024-11-05 16:28:21,888 - INFO - The UAVs have expended [3155331.2] energy in episode 36
-2024-11-05 16:28:21,888 - INFO - EPISODE FINISHED
-2024-11-05 16:28:21,888 - INFO - EPISODE START
-2024-11-05 16:29:15,650 - INFO - The episode has finished
-2024-11-05 16:29:15,650 - INFO - The total reward for episode 37 is: 1037719300.0
-2024-11-05 16:29:15,650 - INFO - The UAVs have visited 69 nodes in episode 37
-2024-11-05 16:29:15,650 - INFO - The UAVs have visited the nodes: [[0, 6, 3, 0, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 3], [3, 5, 2, 7, 0, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3], [6, 7, 4, 8, 4, 3, 9]]
-2024-11-05 16:29:15,650 - INFO - The UAVs have expended [3153884.2] energy in episode 37
-2024-11-05 16:29:15,650 - INFO - EPISODE FINISHED
-2024-11-05 16:29:15,650 - INFO - EPISODE START
-2024-11-05 16:30:09,376 - INFO - The episode has finished
-2024-11-05 16:30:09,376 - INFO - The total reward for episode 38 is: 1074172900.0
-2024-11-05 16:30:09,376 - INFO - The UAVs have visited 67 nodes in episode 38
-2024-11-05 16:30:09,376 - INFO - The UAVs have visited the nodes: [[0, 2, 6, 0, 6, 5, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5], [3, 6, 8, 8, 9], [6, 5, 1, 2, 1, 2, 2, 2, 2, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]]
-2024-11-05 16:30:09,376 - INFO - The UAVs have expended [2693091.] energy in episode 38
-2024-11-05 16:30:09,376 - INFO - EPISODE FINISHED
-2024-11-05 16:30:09,376 - INFO - EPISODE START
-2024-11-05 16:30:11,685 - INFO - The episode has finished
-2024-11-05 16:30:11,685 - INFO - The total reward for episode 39 is: 36335260.0
-2024-11-05 16:30:11,685 - INFO - The UAVs have visited 16 nodes in episode 39
-2024-11-05 16:30:11,685 - INFO - The UAVs have visited the nodes: [[0, 7, 9], [3, 0, 8, 2, 5, 9], [6, 7, 3, 6, 7, 5, 9]]
-2024-11-05 16:30:11,685 - INFO - The UAVs have expended [2045506.5] energy in episode 39
-2024-11-05 16:30:11,685 - INFO - EPISODE FINISHED
-2024-11-05 16:30:11,685 - INFO - The rewards per episode are: [Array(7.618518e+09, dtype=float32), Array(7.690582e+09, dtype=float32), Array(8.538068e+09, dtype=float32), Array(39893712., dtype=float32), Array(7.076219e+08, dtype=float32), Array(47070324., dtype=float32), Array(26083432., dtype=float32), Array(2.0742968e+09, dtype=float32), Array(7.1907e+08, dtype=float32), Array(9.127593e+08, dtype=float32), Array(1.3443313e+09, dtype=float32), Array(1.1162029e+09, dtype=float32), Array(7.5055046e+08, dtype=float32), Array(9.3252134e+08, dtype=float32), Array(2.9299664e+08, dtype=float32), Array(4.9594192e+08, dtype=float32), Array(4.9323395e+08, dtype=float32), Array(9.773091e+08, dtype=float32), Array(3.10253e+08, dtype=float32), Array(1.232471e+09, dtype=float32), Array(3.3708397e+08, dtype=float32), Array(9.752017e+08, dtype=float32), Array(72705216., dtype=float32), Array(1.8795894e+09, dtype=float32), Array(1.1244518e+09, dtype=float32), Array(6.82533e+08, dtype=float32), Array(4.8368976e+08, dtype=float32), Array(5.991038e+08, dtype=float32), Array(9.619512e+08, dtype=float32), Array(27274894., dtype=float32), Array(43196136., dtype=float32), Array(43147808., dtype=float32), Array(5.135188e+08, dtype=float32), Array(9.358403e+08, dtype=float32), Array(49957732., dtype=float32), Array(8.743511e+08, dtype=float32), Array(1.3351828e+09, dtype=float32), Array(1.0377193e+09, dtype=float32), Array(1.0741729e+09, dtype=float32), Array(36335260., dtype=float32)]
-2024-11-05 16:30:11,685 - INFO - Q Tables are: [Array([[37523324. , 39428416. , 38535044. , 39297408. , 38713276. ,
-        38207804. , 39824220. , 37821920. , 37859328. , 38039616. ],
-       [58486928. , 64704884. , 53061484. , 67524680. , 62215448. ,
-        63074432. , 66360180. , 63824536. , 58364552. , 62575712. ],
-       [11602502. , 10249506. ,  6203064.5,  9249418. , 15302562. ,
-         8845216. , 10906741. ,  8357574.5,  6499970.5,  9162359. ],
-       [68751312. , 72359208. , 71216960. , 74894192. , 72545176. ,
-        74642576. , 74647288. , 74983816. , 73436032. , 69739248. ],
-       [43563208. , 44578108. , 44969572. , 44840840. , 44896416. ,
-        45197180. , 45165580. , 43639248. , 42419688. , 43496612. ],
-       [23966072. , 35828004. , 37496896. , 47836716. , 36947552. ,
-        31778872. , 60325568. , 35547864. , 45025404. , 41310120. ],
-       [84291496. , 85123704. , 84029824. , 84351552. , 85599688. ,
-        83468888. , 87464104. , 70213192. , 79771344. , 82360856. ],
-       [22322598. , 29007364. , 22529482. , 30551396. , 26746610. ,
-        30742758. , 40386860. , 26739220. , 28281084. , 20671220. ],
-       [36726756. , 37014840. , 36971948. , 37892872. , 37084760. ,
-        38097684. , 41712704. , 36481144. , 35782224. , 35606312. ],
-       [ 4056598.5, 14256463. ,  3155555.5,        0. ,  7841765. ,
-               0. ,  8608406. ,  7852557. ,  9316832. ,  3340636.8]],      dtype=float32)]
-2024-11-05 16:30:11,726 - INFO - Mean reward per episode: 1235169500.0
-2024-11-05 16:30:11,740 - INFO - Max reward: 8538068000.0
-2024-11-05 16:30:11,759 - INFO - Q-Brave Algorithm took: 2003.2469131946564 seconds
-2024-11-05 16:30:11,994 - INFO - Running the Multi-Agent Coop Q-Brave Algorithm
-2024-11-05 16:30:11,994 - INFO - EPISODE START
-2024-11-05 16:31:22,476 - INFO - The episode has finished
-2024-11-05 16:31:22,476 - INFO - The total reward for episode 0 is: 19854766000.0
-2024-11-05 16:31:22,476 - INFO - The UAVs have visited 66 nodes in episode 0
-2024-11-05 16:31:22,476 - INFO - The UAVs have visited the nodes: [[0, 7, 6, 9], [3, 1, 0, 5, 8, 8, 5, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0], [6, 1, 5, 4, 4, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]]
-2024-11-05 16:31:22,476 - INFO - The UAVs have expended [2481141.] energy in episode 0
-2024-11-05 16:31:22,476 - INFO - EPISODE FINISHED
-2024-11-05 16:31:22,476 - INFO - EPISODE START
-2024-11-05 16:32:51,376 - INFO - The episode has finished
-2024-11-05 16:32:51,376 - INFO - The total reward for episode 1 is: 10069282000.0
-2024-11-05 16:32:51,376 - INFO - The UAVs have visited 93 nodes in episode 1
-2024-11-05 16:32:51,376 - INFO - The UAVs have visited the nodes: [[0, 6, 2, 4, 3, 4, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8], [3, 7, 7, 5, 3, 1, 1, 4, 2, 2, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [6, 4, 1, 4, 8, 0, 6, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5]]
-2024-11-05 16:32:51,376 - INFO - The UAVs have expended [3146979.5] energy in episode 1
-2024-11-05 16:32:51,376 - INFO - EPISODE FINISHED
-2024-11-05 16:32:51,376 - INFO - EPISODE START
-2024-11-05 16:33:53,633 - INFO - The episode has finished
-2024-11-05 16:33:53,633 - INFO - The total reward for episode 2 is: 4538090000.0
-2024-11-05 16:33:53,633 - INFO - The UAVs have visited 71 nodes in episode 2
-2024-11-05 16:33:53,633 - INFO - The UAVs have visited the nodes: [[0, 0, 6, 1, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1], [3, 3, 1, 0, 4, 0, 1, 7, 9], [6, 6, 4, 0, 4, 3, 3, 1, 1, 1, 1, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3]]
-2024-11-05 16:33:53,633 - INFO - The UAVs have expended [3098852.5] energy in episode 2
-2024-11-05 16:33:53,633 - INFO - EPISODE FINISHED
-2024-11-05 16:33:53,633 - INFO - EPISODE START
-2024-11-05 16:34:32,344 - INFO - The episode has finished
-2024-11-05 16:34:32,344 - INFO - The total reward for episode 3 is: 1674934300.0
-2024-11-05 16:34:32,344 - INFO - The UAVs have visited 39 nodes in episode 3
-2024-11-05 16:34:32,344 - INFO - The UAVs have visited the nodes: [[0, 4, 7, 6, 9], [3, 5, 9], [6, 5, 2, 8, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]]
-2024-11-05 16:34:32,344 - INFO - The UAVs have expended [2304495.] energy in episode 3
-2024-11-05 16:34:32,344 - INFO - EPISODE FINISHED
-2024-11-05 16:34:32,344 - INFO - EPISODE START
-2024-11-05 16:35:40,539 - INFO - The episode has finished
-2024-11-05 16:35:40,539 - INFO - The total reward for episode 4 is: 2277922000.0
-2024-11-05 16:35:40,539 - INFO - The UAVs have visited 93 nodes in episode 4
-2024-11-05 16:35:40,539 - INFO - The UAVs have visited the nodes: [[0, 4, 7, 2, 5, 5, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5], [3, 8, 1, 2, 6, 0, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8], [6, 6, 1, 7, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]]
-2024-11-05 16:35:40,539 - INFO - The UAVs have expended [3113359.2] energy in episode 4
-2024-11-05 16:35:40,539 - INFO - EPISODE FINISHED
-2024-11-05 16:35:40,539 - INFO - EPISODE START
+2024-11-06 15:50:38,788 - ERROR - Run 4 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:38,794 - ERROR - Run 5 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:38,794 - ERROR - Run 6 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:38,842 - ERROR - Run 8 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:38,871 - ERROR - Run 7 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:38,876 - ERROR - Run 13 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:38,881 - ERROR - Run 11 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:38,883 - ERROR - Run 15 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:38,884 - ERROR - Run 10 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:38,904 - ERROR - Run 19 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:38,904 - ERROR - Run 14 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:38,938 - ERROR - Run 18 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:38,940 - ERROR - Run 3 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:38,952 - ERROR - Run 9 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:38,952 - ERROR - Run 16 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:38,985 - ERROR - Run 2 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:38,987 - ERROR - Run 1 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,005 - ERROR - Run 21 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,032 - ERROR - Run 23 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,034 - ERROR - Run 12 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,092 - ERROR - Run 20 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,113 - ERROR - Run 22 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,117 - ERROR - Run 17 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,247 - ERROR - Run 25 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,247 - ERROR - Run 26 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,294 - ERROR - Run 24 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,300 - ERROR - Run 28 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,326 - ERROR - Run 33 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,326 - ERROR - Run 29 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,326 - ERROR - Run 31 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,342 - ERROR - Run 32 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,372 - ERROR - Run 27 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,406 - ERROR - Run 36 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,409 - ERROR - Run 38 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,420 - ERROR - Run 30 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,420 - ERROR - Run 39 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,420 - ERROR - Run 34 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,420 - ERROR - Run 41 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,435 - ERROR - Run 35 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,451 - ERROR - Run 40 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,467 - ERROR - Run 44 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,495 - ERROR - Run 37 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,545 - ERROR - Run 45 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,545 - ERROR - Run 42 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,561 - ERROR - Run 46 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,585 - ERROR - Run 43 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,669 - ERROR - Run 47 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,686 - ERROR - Run 48 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,716 - ERROR - Run 49 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,753 - ERROR - Run 51 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,764 - ERROR - Run 52 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,779 - ERROR - Run 55 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,779 - ERROR - Run 54 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,786 - ERROR - Run 53 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,845 - ERROR - Run 50 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,859 - ERROR - Run 57 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,860 - ERROR - Run 58 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,860 - ERROR - Run 61 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,876 - ERROR - Run 60 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,876 - ERROR - Run 62 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,889 - ERROR - Run 64 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,921 - ERROR - Run 65 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,935 - ERROR - Run 56 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,966 - ERROR - Run 59 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,987 - ERROR - Run 67 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:39,987 - ERROR - Run 63 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,013 - ERROR - Run 69 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,045 - ERROR - Run 66 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,107 - ERROR - Run 68 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,139 - ERROR - Run 72 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,155 - ERROR - Run 70 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,169 - ERROR - Run 73 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,201 - ERROR - Run 74 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,217 - ERROR - Run 75 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,234 - ERROR - Run 71 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,235 - ERROR - Run 76 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,238 - ERROR - Run 78 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,241 - ERROR - Run 77 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,294 - ERROR - Run 80 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,310 - ERROR - Run 81 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,310 - ERROR - Run 82 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,310 - ERROR - Run 83 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,326 - ERROR - Run 84 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,342 - ERROR - Run 85 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,370 - ERROR - Run 86 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,388 - ERROR - Run 79 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,447 - ERROR - Run 89 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,461 - ERROR - Run 91 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,474 - ERROR - Run 87 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,512 - ERROR - Run 88 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,551 - ERROR - Run 90 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,592 - ERROR - Run 94 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,592 - ERROR - Run 92 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,615 - ERROR - Run 96 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,670 - ERROR - Run 98 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,670 - ERROR - Run 100 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,670 - ERROR - Run 93 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,670 - ERROR - Run 101 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,670 - ERROR - Run 102 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,708 - ERROR - Run 95 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,708 - ERROR - Run 97 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,733 - ERROR - Run 103 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,767 - ERROR - Run 105 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,768 - ERROR - Run 107 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,769 - ERROR - Run 106 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,772 - ERROR - Run 104 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,781 - ERROR - Run 99 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,814 - ERROR - Run 108 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,842 - ERROR - Run 109 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,897 - ERROR - Run 111 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,913 - ERROR - Run 112 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,934 - ERROR - Run 113 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:40,948 - ERROR - Run 110 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,050 - ERROR - Run 116 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,056 - ERROR - Run 118 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,075 - ERROR - Run 114 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,122 - ERROR - Run 115 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,123 - ERROR - Run 120 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,139 - ERROR - Run 119 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,155 - ERROR - Run 122 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,155 - ERROR - Run 123 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,155 - ERROR - Run 117 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,193 - ERROR - Run 126 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,216 - ERROR - Run 129 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,216 - ERROR - Run 127 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,226 - ERROR - Run 130 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,226 - ERROR - Run 131 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,232 - ERROR - Run 128 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,257 - ERROR - Run 121 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,278 - ERROR - Run 124 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,278 - ERROR - Run 132 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,281 - ERROR - Run 125 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,342 - ERROR - Run 134 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,342 - ERROR - Run 135 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,385 - ERROR - Run 136 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,410 - ERROR - Run 133 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,495 - ERROR - Run 138 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,497 - ERROR - Run 139 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,504 - ERROR - Run 137 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,546 - ERROR - Run 140 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,576 - ERROR - Run 143 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,588 - ERROR - Run 144 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,593 - ERROR - Run 142 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,614 - ERROR - Run 145 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,638 - ERROR - Run 147 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,654 - ERROR - Run 148 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,654 - ERROR - Run 149 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,675 - ERROR - Run 150 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,675 - ERROR - Run 141 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,678 - ERROR - Run 152 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,717 - ERROR - Run 155 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,736 - ERROR - Run 146 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,778 - ERROR - Run 151 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,787 - ERROR - Run 157 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,794 - ERROR - Run 158 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,809 - ERROR - Run 153 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,831 - ERROR - Run 159 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,831 - ERROR - Run 154 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,831 - ERROR - Run 156 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,906 - ERROR - Run 160 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,934 - ERROR - Run 161 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,950 - ERROR - Run 162 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:41,990 - ERROR - Run 164 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,021 - ERROR - Run 166 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,029 - ERROR - Run 165 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,045 - ERROR - Run 167 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,059 - ERROR - Run 163 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,092 - ERROR - Run 169 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,108 - ERROR - Run 171 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,108 - ERROR - Run 172 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,123 - ERROR - Run 174 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,123 - ERROR - Run 170 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,166 - ERROR - Run 175 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,182 - ERROR - Run 168 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,216 - ERROR - Run 178 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,216 - ERROR - Run 173 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,248 - ERROR - Run 179 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,263 - ERROR - Run 176 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,281 - ERROR - Run 181 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,340 - ERROR - Run 177 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,340 - ERROR - Run 184 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,373 - ERROR - Run 180 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,390 - ERROR - Run 182 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,400 - ERROR - Run 185 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,404 - ERROR - Run 183 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,405 - ERROR - Run 186 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,440 - ERROR - Run 187 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,466 - ERROR - Run 188 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,485 - ERROR - Run 189 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,507 - ERROR - Run 190 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,559 - ERROR - Run 193 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,575 - ERROR - Run 196 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,575 - ERROR - Run 194 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,575 - ERROR - Run 195 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,608 - ERROR - Run 197 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,624 - ERROR - Run 191 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,659 - ERROR - Run 192 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,672 - ERROR - Run 199 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,700 - ERROR - Run 201 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,700 - ERROR - Run 202 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,716 - ERROR - Run 203 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,733 - ERROR - Run 198 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,782 - ERROR - Run 200 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,794 - ERROR - Run 205 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,847 - ERROR - Run 208 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,857 - ERROR - Run 209 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,873 - ERROR - Run 211 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,907 - ERROR - Run 204 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,929 - ERROR - Run 206 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,937 - ERROR - Run 212 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,943 - ERROR - Run 213 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,952 - ERROR - Run 207 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,956 - ERROR - Run 214 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:42,956 - ERROR - Run 210 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,017 - ERROR - Run 215 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,020 - ERROR - Run 216 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,024 - ERROR - Run 217 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,031 - ERROR - Run 218 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,065 - ERROR - Run 219 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,123 - ERROR - Run 222 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,154 - ERROR - Run 224 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,156 - ERROR - Run 223 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,183 - ERROR - Run 220 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,183 - ERROR - Run 225 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,211 - ERROR - Run 221 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,248 - ERROR - Run 228 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,303 - ERROR - Run 229 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,312 - ERROR - Run 226 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,324 - ERROR - Run 230 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,325 - ERROR - Run 227 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,340 - ERROR - Run 231 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,377 - ERROR - Run 232 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,377 - ERROR - Run 234 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,389 - ERROR - Run 235 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,405 - ERROR - Run 237 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,465 - ERROR - Run 240 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,482 - ERROR - Run 239 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,482 - ERROR - Run 242 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,502 - ERROR - Run 233 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,504 - ERROR - Run 236 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,513 - ERROR - Run 243 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,529 - ERROR - Run 238 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,583 - ERROR - Run 244 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,592 - ERROR - Run 241 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,604 - ERROR - Run 246 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,606 - ERROR - Run 245 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,654 - ERROR - Run 248 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,700 - ERROR - Run 250 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,731 - ERROR - Run 247 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,764 - ERROR - Run 251 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,764 - ERROR - Run 249 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,764 - ERROR - Run 253 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,797 - ERROR - Run 255 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,833 - ERROR - Run 257 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,843 - ERROR - Run 256 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,843 - ERROR - Run 258 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,862 - ERROR - Run 259 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,862 - ERROR - Run 252 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,889 - ERROR - Run 254 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,905 - ERROR - Run 260 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,919 - ERROR - Run 261 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,940 - ERROR - Run 262 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:43,995 - ERROR - Run 265 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,040 - ERROR - Run 267 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,071 - ERROR - Run 263 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,072 - ERROR - Run 270 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,072 - ERROR - Run 264 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,086 - ERROR - Run 269 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,103 - ERROR - Run 266 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,107 - ERROR - Run 271 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,140 - ERROR - Run 268 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,154 - ERROR - Run 272 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,228 - ERROR - Run 274 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,247 - ERROR - Run 276 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,263 - ERROR - Run 277 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,285 - ERROR - Run 279 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,294 - ERROR - Run 278 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,297 - ERROR - Run 273 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,298 - ERROR - Run 280 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,314 - ERROR - Run 281 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,338 - ERROR - Run 275 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,373 - ERROR - Run 284 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,388 - ERROR - Run 285 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,396 - ERROR - Run 286 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,423 - ERROR - Run 282 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,456 - ERROR - Run 287 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,481 - ERROR - Run 283 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,506 - ERROR - Run 288 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,529 - ERROR - Run 290 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,546 - ERROR - Run 292 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,578 - ERROR - Run 294 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,618 - ERROR - Run 296 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,635 - ERROR - Run 289 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,639 - ERROR - Run 291 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,653 - ERROR - Run 293 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,691 - ERROR - Run 297 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,701 - ERROR - Run 295 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,701 - ERROR - Run 298 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,716 - ERROR - Run 299 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,748 - ERROR - Run 301 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,763 - ERROR - Run 300 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,764 - ERROR - Run 303 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,784 - ERROR - Run 304 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,838 - ERROR - Run 306 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,854 - ERROR - Run 307 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,856 - ERROR - Run 302 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,856 - ERROR - Run 308 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,897 - ERROR - Run 305 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,920 - ERROR - Run 310 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,976 - ERROR - Run 312 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:44,999 - ERROR - Run 313 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,000 - ERROR - Run 309 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,028 - ERROR - Run 314 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,050 - ERROR - Run 311 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,065 - ERROR - Run 315 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,076 - ERROR - Run 316 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,153 - ERROR - Run 320 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,169 - ERROR - Run 322 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,184 - ERROR - Run 323 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,190 - ERROR - Run 317 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,201 - ERROR - Run 318 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,217 - ERROR - Run 324 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,217 - ERROR - Run 326 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,232 - ERROR - Run 325 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,244 - ERROR - Run 319 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,254 - ERROR - Run 327 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,281 - ERROR - Run 321 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,298 - ERROR - Run 328 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,312 - ERROR - Run 331 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,312 - ERROR - Run 329 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,403 - ERROR - Run 333 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,413 - ERROR - Run 330 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,439 - ERROR - Run 334 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,452 - ERROR - Run 332 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,467 - ERROR - Run 337 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,467 - ERROR - Run 335 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,540 - ERROR - Run 340 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,541 - ERROR - Run 339 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,564 - ERROR - Run 336 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,618 - ERROR - Run 338 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,623 - ERROR - Run 341 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,638 - ERROR - Run 342 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,653 - ERROR - Run 343 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,684 - ERROR - Run 346 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,700 - ERROR - Run 347 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,700 - ERROR - Run 348 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,725 - ERROR - Run 350 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,749 - ERROR - Run 344 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,764 - ERROR - Run 345 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,780 - ERROR - Run 352 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,780 - ERROR - Run 353 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,795 - ERROR - Run 354 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,810 - ERROR - Run 349 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,842 - ERROR - Run 351 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,858 - ERROR - Run 355 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,900 - ERROR - Run 357 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,935 - ERROR - Run 359 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,935 - ERROR - Run 360 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:45,981 - ERROR - Run 356 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,004 - ERROR - Run 361 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,004 - ERROR - Run 362 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,029 - ERROR - Run 358 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,122 - ERROR - Run 367 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,122 - ERROR - Run 365 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,138 - ERROR - Run 363 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,138 - ERROR - Run 366 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,160 - ERROR - Run 370 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,170 - ERROR - Run 364 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,200 - ERROR - Run 368 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,213 - ERROR - Run 369 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,230 - ERROR - Run 371 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,279 - ERROR - Run 375 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,279 - ERROR - Run 374 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,301 - ERROR - Run 376 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,335 - ERROR - Run 372 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,342 - ERROR - Run 373 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,381 - ERROR - Run 379 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,392 - ERROR - Run 377 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,413 - ERROR - Run 382 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,413 - ERROR - Run 380 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,415 - ERROR - Run 378 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,467 - ERROR - Run 381 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,520 - ERROR - Run 384 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,528 - ERROR - Run 385 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,545 - ERROR - Run 383 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,592 - ERROR - Run 386 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,615 - ERROR - Run 388 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,619 - ERROR - Run 390 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,627 - ERROR - Run 391 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,644 - ERROR - Run 387 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,670 - ERROR - Run 393 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,686 - ERROR - Run 394 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,701 - ERROR - Run 395 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,701 - ERROR - Run 389 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,753 - ERROR - Run 392 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,763 - ERROR - Run 396 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,763 - ERROR - Run 397 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,779 - ERROR - Run 398 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,866 - ERROR - Run 401 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,896 - ERROR - Run 404 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,912 - ERROR - Run 399 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,921 - ERROR - Run 400 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,924 - ERROR - Run 403 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,951 - ERROR - Run 406 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,967 - ERROR - Run 402 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:46,992 - ERROR - Run 407 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,004 - ERROR - Run 408 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,049 - ERROR - Run 405 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,083 - ERROR - Run 412 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,092 - ERROR - Run 411 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,123 - ERROR - Run 409 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,124 - ERROR - Run 414 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,138 - ERROR - Run 415 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,156 - ERROR - Run 413 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,158 - ERROR - Run 416 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,174 - ERROR - Run 417 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,233 - ERROR - Run 421 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,240 - ERROR - Run 420 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,252 - ERROR - Run 422 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,252 - ERROR - Run 410 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,345 - ERROR - Run 423 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,345 - ERROR - Run 419 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,360 - ERROR - Run 418 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,367 - ERROR - Run 424 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,403 - ERROR - Run 427 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,437 - ERROR - Run 428 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,470 - ERROR - Run 430 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,480 - ERROR - Run 431 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,498 - ERROR - Run 425 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,498 - ERROR - Run 426 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,561 - ERROR - Run 434 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,561 - ERROR - Run 433 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,592 - ERROR - Run 436 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,624 - ERROR - Run 429 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,625 - ERROR - Run 438 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,628 - ERROR - Run 439 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,638 - ERROR - Run 432 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,638 - ERROR - Run 437 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,638 - ERROR - Run 440 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,686 - ERROR - Run 435 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,704 - ERROR - Run 441 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,717 - ERROR - Run 442 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,720 - ERROR - Run 443 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,811 - ERROR - Run 445 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,811 - ERROR - Run 444 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,839 - ERROR - Run 448 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,872 - ERROR - Run 449 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,924 - ERROR - Run 450 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,925 - ERROR - Run 447 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,941 - ERROR - Run 451 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,982 - ERROR - Run 446 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:47,995 - ERROR - Run 452 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,034 - ERROR - Run 455 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,034 - ERROR - Run 456 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,066 - ERROR - Run 457 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,105 - ERROR - Run 459 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,112 - ERROR - Run 463 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,115 - ERROR - Run 460 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,115 - ERROR - Run 462 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,139 - ERROR - Run 453 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,139 - ERROR - Run 454 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,178 - ERROR - Run 465 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,195 - ERROR - Run 466 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,195 - ERROR - Run 458 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,198 - ERROR - Run 467 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,215 - ERROR - Run 461 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,295 - ERROR - Run 469 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,305 - ERROR - Run 470 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,337 - ERROR - Run 464 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,348 - ERROR - Run 468 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,352 - ERROR - Run 471 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,388 - ERROR - Run 472 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,405 - ERROR - Run 474 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,467 - ERROR - Run 475 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,501 - ERROR - Run 473 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,509 - ERROR - Run 478 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,513 - ERROR - Run 477 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,544 - ERROR - Run 479 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,544 - ERROR - Run 476 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,576 - ERROR - Run 483 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,576 - ERROR - Run 480 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,576 - ERROR - Run 481 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,576 - ERROR - Run 482 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,638 - ERROR - Run 486 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,638 - ERROR - Run 487 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,653 - ERROR - Run 489 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,653 - ERROR - Run 485 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,674 - ERROR - Run 484 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,691 - ERROR - Run 490 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,717 - ERROR - Run 488 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,738 - ERROR - Run 492 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,739 - ERROR - Run 491 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,760 - ERROR - Run 493 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,765 - ERROR - Run 495 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,781 - ERROR - Run 496 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,788 - ERROR - Run 494 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,796 - ERROR - Run 497 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,805 - ERROR - Run 498 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,810 - ERROR - Run 499 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:48,826 - ERROR - Run 500 generated an exception: 'NoneType' object has no attribute 'info'
+2024-11-06 15:50:49,358 - INFO - Final averages after 500 runs saved.
