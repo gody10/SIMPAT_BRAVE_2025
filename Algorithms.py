@@ -536,8 +536,18 @@ class Algorithms:
 			node_coords = generate_node_coordinates(key, nodes, min_distance_between_nodes)
 
 			# Determine bit size range for each node: 3 nodes with high bits, 2 nodes with low bits
-			if i in [1,2,4]:  # Nodes with a larger number of bits
-				bits_range = (max_bits * 0.85, max_bits)  # Upper range of bit capacity
+			if i == 0:  # Nodes with a larger number of bits
+				bits_range = (max_bits * 0.85, max_bits)
+			elif i == 1:
+				bits_range = (max_bits * 0.5, max_bits * 0.85)
+			elif i == 2:
+				bits_range = (min_bits * 0.0001, min_bits)
+			elif i == 3:
+				bits_range = (max_bits * 0.2, max_bits * 0.5)
+			elif i == 4:
+				bits_range = (min_bits * 0.001, min_bits)
+			elif i == 5:
+				bits_range = (min_bits * 0.0001, min_bits)  # Lower range of bit capacity
 			else:  # Nodes with a smaller number of bits
 				bits_range = (min_bits, min_bits * 1.2)  # Lower range of bit capacity
 
@@ -599,19 +609,19 @@ class Algorithms:
 
 		# Create the graph
 		self.graph = Graph(nodes=nodes, edges=edges)
-		self.graph.plot_3d_graph()
+		#self.graph.plot_3d_graph()
   
-		# Plot the sum of bits of each node
-		plt.figure(figsize=(10, 5))
+		# # Plot the sum of bits of each node
+		# plt.figure(figsize=(10, 5))
   
-		plt.bar(jnp.arange(number_of_nodes), sum_of_bits, color='skyblue')
+		# plt.bar(jnp.arange(number_of_nodes), sum_of_bits, color='skyblue')
   
-		plt.xlabel('Node ID')
-		plt.ylabel('Sum of Bits')
+		# plt.xlabel('Node ID')
+		# plt.ylabel('Sum of Bits')
   
-		plt.title('Sum of Bits of Each Node')
+		# plt.title('Sum of Bits of Each Node')
   
-		plt.savefig('sum_of_bits.png')
+		# plt.savefig('sum_of_bits.png')
   
 
 		initial_node = nodes[0]

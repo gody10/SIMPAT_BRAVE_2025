@@ -4,14 +4,15 @@ from Algorithms import Algorithms
 import pickle
 import time
 import matplotlib.pyplot as plt
-from plot_graphs import plot_graphs
-from Utility_functions import setup_logger, compute_average
+from Utility_functions import setup_logger
 from tqdm import tqdm
-import os
+import numpy as np
 import jax.numpy as jnp
 
-# Initialize timers for each method
-q_brave_time = 0
+# -------------------- Configuration --------------------
+
+# Number of runs
+NUM_RUNS = 500
 
 # Create N nodes with U users in them
 N = 6
@@ -32,7 +33,7 @@ ENERGY_LEVEL = 29000
 B = 0.74
 C = 0.00043
 MAX_ITER = 30
-NUMBER_OF_EPISODES = 50
+NUMBER_OF_EPISODES = 15
 
 # Initialize the main random key
 main_key = random.PRNGKey(10)
@@ -40,17 +41,26 @@ main_key = random.PRNGKey(10)
 # Initialize the logger
 q_brave_logger = setup_logger('q_learning_realistic_scenario', 'q_learning_realistic_scenario.log')
 
-# Initialize the algorithm
-algorithm = Algorithms(convergence_threshold= CONVERGENCE_THRESHOLD)
+# Initialize accumulators for metrics
+all_count_arrays = []
 
-# Setup subkeys
-subkeys = random.split(main_key, N)  # Split into as many subkeys as there are nodes
+# Initialize the algorithm once outside the loop
+algorithm = Algorithms(convergence_threshold=CONVERGENCE_THRESHOLD)
 
-# Generate a unique number of users for each node using the subkey
-U = [random.randint(subkey, (1,), 15, 15) for subkey in subkeys]
+# -------------------- Multiple Runs --------------------
 
-# Setup the algorithm 
-algorithm.setup_realistic_scenario(
+for run in tqdm(range(NUM_RUNS), desc="Running Q-Brave Algorithm"):
+    # Split the main key to get a new key for this run
+    main_key, run_key = random.split(main_key)
+    
+    # Setup subkeys for nodes
+    subkeys = random.split(run_key, N)  # Split into as many subkeys as there are nodes
+    
+    # Generate a unique number of users for each node using the subkey
+    U = [int(random.randint(main_key, (1,), 15, 15)) for subkey in subkeys]
+    
+    # Setup the algorithm for this run
+    algorithm.setup_realistic_scenario(
         number_of_nodes=N,
         number_of_users=U,
         node_radius=NODE_RADIUS,
@@ -68,61 +78,65 @@ algorithm.setup_realistic_scenario(
         distance_max=DISTANCE_MAX,
         energy_level=ENERGY_LEVEL
     )
-
-# -------------------- Q-Brave Algorithm --------------------
-start_time = time.time()
-
-# Run the Q-Brave Algorithm
-success_q_brave_ = algorithm.q_brave(
-    solving_method="scipy",
-    number_of_episodes=NUMBER_OF_EPISODES,
-    max_travels_per_episode=MAX_ITER,
-    b=B,
-    c=C,
-    logger=q_brave_logger
-)
-
-q_brave_logger.info("The UAV energy level is: %s", algorithm.get_uav().get_energy_level())
-q_brave_logger.info("The UAV processed in total: %s bits", algorithm.most_processed_bits)
-
-# Get UAV trajectory and the number of bits processed at each node
-processed_bits = algorithm.get_most_processed_bits()
-energy_expended = algorithm.get_most_expended_energy()
-total_visited_nodes = algorithm.get_most_visited_nodes()
-trajectory = algorithm.get_best_trajectory()
-trajectory.append(5)
-
-# End the timer for Q-Brave Algorithm
-q_brave_time = time.time() - start_time
-q_brave_logger.info("Q-Brave Algorithm took: %s seconds", q_brave_time)
-
-if success_q_brave_:
-    q_brave_logger.info("Q-Brave Algorithm has successfully reached the final node!")
-else:
-    q_brave_logger.info("Q-Brave Algorithm failed to reach the final node!")
     
-# Count how many times the UAV visited each node based on the trajectory
-count_arrays = jnp.zeros(N)
-
-# Count visits based on trajectory data
-for node in trajectory:
-    count_arrays = count_arrays.at[node].add(1)
+    # -------------------- Q-Brave Algorithm --------------------
+    # Run the Q-Brave Algorithm
+    success_q_brave = algorithm.q_brave(
+        solving_method="scipy",
+        number_of_episodes=NUMBER_OF_EPISODES,
+        max_travels_per_episode=MAX_ITER,
+        b=B,
+        c=C,
+        logger=q_brave_logger  # Disable logging for faster runs
+    )
     
-# Log the UAV trajectory
-q_brave_logger.info("The UAV trajectory is: %s", trajectory)
+    # Get UAV trajectory
+    trajectory = algorithm.get_best_trajectory()
+    trajectory.append(5)  # Assuming '5' is a special node or end point
+    
+    # Count how many times the UAV visited each node based on the trajectory
+    count_arrays = jnp.zeros(N)
+    for node in trajectory:
+        if 0 <= node < N:
+            count_arrays = count_arrays.at[node].add(1)
+        else:
+            pass  # Handle nodes outside the expected range if necessary
+    
+    # Append metrics to accumulators
+    all_count_arrays.append(np.array(count_arrays))
+    
+    # Reset the Algorithm object for the next run
+    algorithm.reset()
 
-# Plot as a histogram the number of times the UAV visited each node
-plt.figure()
+# -------------------- Compute Averages --------------------
 
-plt.bar(jnp.arange(0, N), count_arrays, color='blue')
+# Convert list to numpy array for easier computation
+all_count_arrays = np.array(all_count_arrays)  # Shape: (NUM_RUNS, N)
 
+# Compute averages
+average_count_arrays = np.mean(all_count_arrays, axis=0)
+
+# Save to pickle file
+with open('q_brave_visits_average.pkl', 'wb') as f:
+    pickle.dump(average_count_arrays, f)
+
+# -------------------- Logging Averages --------------------
+
+q_brave_logger.info("After %d runs:", NUM_RUNS)
+q_brave_logger.info("Average number of visits to each node: %s", average_count_arrays)
+
+# -------------------- Plotting Averages --------------------
+
+# Plot the average number of times the UAV visited each node
+plt.figure(figsize=(10, 6))
+plt.bar(np.arange(N), average_count_arrays, color='blue')
 plt.xlabel('Node ID')
-plt.ylabel('Number of Visits')
+plt.ylabel('Average Number of Visits')
+plt.title('Average Number of Visits to Each Node Over 500 Runs')
+plt.xticks(np.arange(N))
+plt.savefig('q_brave_visits_average.png')
+plt.close()
 
-plt.title('Number of Visits to Each Node')
-
-plt.savefig('q_brave_visits.png')
-
-
-# Reset the Algorithm object for the next run
-algorithm.reset()
+# -------------------- Summary --------------------
+print(f"Completed {NUM_RUNS} runs.")
+print(f"Average Number of Visits to Each Node: {average_count_arrays}")
