@@ -213,6 +213,9 @@ def main():
             for run in range(1, TOTAL_RUNS + 1)
         }
         
+        # Log amount of threads used
+        multi_q_learning_logger.info("Using %d threads for parallel execution.", os.cpu_count())
+        
         # Initialize a counter for checkpointing
         completed_runs = 0
         
@@ -224,6 +227,7 @@ def main():
             except Exception as e:
                 multi_q_learning_logger.error("Run %d generated an exception: %s", run, e)
                 continue
+            
             
             # Accumulate results for each algorithm
             for algo_name, metrics in result.items():

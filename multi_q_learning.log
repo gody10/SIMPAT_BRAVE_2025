@@ -1,6 +1,0 @@
-2024-11-08 15:43:54,694 - INFO - Run 20 - Q-Learning Common Table took: 2590.0632 seconds
-2024-11-08 15:43:54,694 - INFO - Run 20 - Q-Learning Individual Tables took: 3437.0931 seconds
-2024-11-08 15:43:54,694 - INFO - Run 20 - Q-Learning Individual Tables Double Episodes took: 9932.3731 seconds
-2024-11-08 16:08:45,590 - INFO - Run 11 - Q-Learning Common Table took: 2369.1623 seconds
-2024-11-08 16:08:45,590 - INFO - Run 11 - Q-Learning Individual Tables took: 3636.5209 seconds
-2024-11-08 16:08:45,590 - INFO - Run 11 - Q-Learning Individual Tables Double Episodes took: 11445.5264 seconds
