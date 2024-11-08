@@ -45,6 +45,9 @@ algorithm_names = [
     "Q-Learning Individual Tables Double Episodes",
 ]
 
+# Initialize the logger
+multi_q_learning_logger = setup_logger('multi_q_learning', 'multi_q_learning.log')
+
 # ------------------------------ Helper Functions ------------------------------ #
 
 def save_pickle(data, filename):
@@ -102,7 +105,7 @@ def run_single_experiment(run_number, key):
         max_travels_per_episode=MAX_ITER,
         b=B,
         c=C,
-        logger=None,  # Logging handled in main process
+        logger= multi_q_learning_logger,  # Logging handled in main process
     )
     
     processed_bits = algorithm.get_most_processed_bits()
@@ -131,7 +134,7 @@ def run_single_experiment(run_number, key):
         max_travels_per_episode=MAX_ITER,
         b=B,
         c=C,
-        logger=None,
+        logger= multi_q_learning_logger,
     )
     
     processed_bits = algorithm.get_most_processed_bits()
@@ -160,7 +163,7 @@ def run_single_experiment(run_number, key):
         max_travels_per_episode=MAX_ITER,
         b=B,
         c=C,
-        logger=None,
+        logger= multi_q_learning_logger,
     )
     
     processed_bits = algorithm.get_most_processed_bits()
@@ -252,10 +255,10 @@ def main():
                 create_directory(checkpoint_dir)
                 
                 # Save the averaged data to pickle files
-                save_pickle(avg_total_bits, os.path.join(checkpoint_dir, 'multi_q_learning_total_bits.pkl'))
-                save_pickle(avg_expended_energy, os.path.join(checkpoint_dir, 'multi_q_learning_expended_energy.pkl'))
-                save_pickle(avg_total_visited_nodes, os.path.join(checkpoint_dir, 'multi_q_learning_total_visited_nodes.pkl'))
-                save_pickle(avg_timers, os.path.join(checkpoint_dir, 'multi_q_learning_timers.pkl'))
+                save_pickle(avg_total_bits, 'multi_q_learning_total_bits.pkl')
+                save_pickle(avg_expended_energy, 'multi_q_learning_expended_energy.pkl')
+                save_pickle(avg_total_visited_nodes, 'multi_q_learning_total_visited_nodes.pkl')
+                save_pickle(avg_timers, 'multi_q_learning_timers.pkl')
                 
                 # Log checkpoint
                 multi_q_learning_logger.info("Checkpoint at run %d saved.", completed_runs)
@@ -275,11 +278,11 @@ def main():
     final_output_dir = f'final_results_{TOTAL_RUNS}/'
     create_directory(final_output_dir)
     
-    # Save the final averaged data to pickle files
-    save_pickle(final_avg_total_bits, os.path.join(final_output_dir, 'multi_q_learning_total_bits.pkl'))
-    save_pickle(final_avg_expended_energy, os.path.join(final_output_dir, 'multi_q_learning_expended_energy.pkl'))
-    save_pickle(final_avg_total_visited_nodes, os.path.join(final_output_dir, 'multi_q_learning_total_visited_nodes.pkl'))
-    save_pickle(final_avg_timers, os.path.join(final_output_dir, 'multi_q_learning_timers.pkl'))
+    # Save the averaged data to pickle files
+    save_pickle(final_avg_total_bits, 'multi_q_learning_total_bits.pkl')
+    save_pickle(final_avg_expended_energy, 'multi_q_learning_expended_energy.pkl')
+    save_pickle(final_avg_total_visited_nodes, 'multi_q_learning_total_visited_nodes.pkl')
+    save_pickle(final_avg_timers, 'multi_q_learning_timers.pkl')
     
     # Log final results
     multi_q_learning_logger.info("Final averages after %d runs saved.", TOTAL_RUNS)
