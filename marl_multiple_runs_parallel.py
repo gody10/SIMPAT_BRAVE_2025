@@ -34,7 +34,7 @@ MIN_BITS = 3 * 10**5
 ENERGY_LEVEL = 29000
 B = 0.74
 C = 0.00043
-MAX_ITER = 20
+MAX_ITER = 30
 NUMBER_OF_EPISODES = 15
 NUMBER_OF_UAVS = 3
 
@@ -209,7 +209,7 @@ def main():
     with ProcessPoolExecutor() as executor:
         # Submit all runs
         futures = {
-            executor.submit(run_single_experiment, run, keys[run]): run 
+            executor.submit(run_single_experiment, run, main_key): run 
             for run in range(1, TOTAL_RUNS + 1)
         }
         
