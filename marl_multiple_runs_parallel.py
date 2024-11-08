@@ -254,11 +254,23 @@ def main():
                 checkpoint_dir = f'checkpoints/run_{completed_runs}/'
                 create_directory(checkpoint_dir)
                 
+                # Delete the specific pickle files if they exist
+                os.remove('multi_q_learning_total_bits.pkl') if os.path.exists('multi_q_learning_total_bits.pkl') else None
+                os.remove('multi_q_learning_expended_energy.pkl') if os.path.exists('multi_q_learning_expended_energy.pkl') else None
+                os.remove('multi_q_learning_total_visited_nodes.pkl') if os.path.exists('multi_q_learning_total_visited_nodes.pkl') else None
+                os.remove('multi_q_learning_timers.pkl') if os.path.exists('multi_q_learning_timers.pkl') else None
+                
                 # Save the averaged data to pickle files
                 save_pickle(avg_total_bits, 'multi_q_learning_total_bits.pkl')
                 save_pickle(avg_expended_energy, 'multi_q_learning_expended_energy.pkl')
                 save_pickle(avg_total_visited_nodes, 'multi_q_learning_total_visited_nodes.pkl')
                 save_pickle(avg_timers, 'multi_q_learning_timers.pkl')
+                
+                # Save them also in the checkpoint directory
+                save_pickle(avg_total_bits, checkpoint_dir + 'multi_q_learning_total_bits.pkl')
+                save_pickle(avg_expended_energy, checkpoint_dir + 'multi_q_learning_expended_energy.pkl')
+                save_pickle(avg_total_visited_nodes, checkpoint_dir + 'multi_q_learning_total_visited_nodes.pkl')
+                save_pickle(avg_timers, checkpoint_dir + 'multi_q_learning_timers.pkl')
                 
                 # Log checkpoint
                 multi_q_learning_logger.info("Checkpoint at run %d saved.", completed_runs)
@@ -278,11 +290,23 @@ def main():
     final_output_dir = f'final_results_{TOTAL_RUNS}/'
     create_directory(final_output_dir)
     
+    # Delete the specific pickle files if they exist
+    os.remove('multi_q_learning_total_bits.pkl') if os.path.exists('multi_q_learning_total_bits.pkl') else None
+    os.remove('multi_q_learning_expended_energy.pkl') if os.path.exists('multi_q_learning_expended_energy.pkl') else None
+    os.remove('multi_q_learning_total_visited_nodes.pkl') if os.path.exists('multi_q_learning_total_visited_nodes.pkl') else None
+    os.remove('multi_q_learning_timers.pkl') if os.path.exists('multi_q_learning_timers.pkl') else None
+
     # Save the averaged data to pickle files
     save_pickle(final_avg_total_bits, 'multi_q_learning_total_bits.pkl')
     save_pickle(final_avg_expended_energy, 'multi_q_learning_expended_energy.pkl')
     save_pickle(final_avg_total_visited_nodes, 'multi_q_learning_total_visited_nodes.pkl')
     save_pickle(final_avg_timers, 'multi_q_learning_timers.pkl')
+    
+    # Save them also in the final output directory
+    save_pickle(final_avg_total_bits, final_output_dir + 'multi_q_learning_total_bits.pkl')
+    save_pickle(final_avg_expended_energy, final_output_dir + 'multi_q_learning_expended_energy.pkl')
+    save_pickle(final_avg_total_visited_nodes, final_output_dir + 'multi_q_learning_total_visited_nodes.pkl')
+    save_pickle(final_avg_timers, final_output_dir + 'multi_q_learning_timers.pkl')
     
     # Log final results
     multi_q_learning_logger.info("Final averages after %d runs saved.", TOTAL_RUNS)

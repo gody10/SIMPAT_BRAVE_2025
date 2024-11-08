@@ -222,13 +222,15 @@ class Multiagent_Qenv(gym.Env):
 				#logging.info("The UAV has reached the final node!")
 				available_uavs.append(self.uavs[i])
 			else:
-				print("UAV with id: ", self.uavs[i].get_uav_id(), " has reached the final node!")
+				#print("UAV with id: ", self.uavs[i].get_uav_id(), " has reached the final node!")
+				pass
 			
 		remaining_uavs = []
 		# Check if a UAV has run out of energy
 		for i in range(len(available_uavs)):
 			if (self.uavs[i].get_energy_level() <= 0):
-				print("UAV with id: ", self.uavs[i].get_uav_id(), " has run out of energy!")
+				#print("UAV with id: ", self.uavs[i].get_uav_id(), " has run out of energy!")
+				pass
 			else:
 				remaining_uavs.append(available_uavs[i])
 			
@@ -238,7 +240,8 @@ class Multiagent_Qenv(gym.Env):
 		# If the UAV has exceeded max_iter actions, end the episode
 		for i in range(len(available_uavs)):
 			if (self.uavs[i].get_number_of_actions() >= self.max_iter):
-				print("UAV with id: ", self.uavs[i].get_uav_id(), " has exceeded the maximum number of actions!")
+				#print("UAV with id: ", self.uavs[i].get_uav_id(), " has exceeded the maximum number of actions!")
+				pass
 			else:
 				remaining_uavs.append(available_uavs[i])
 		

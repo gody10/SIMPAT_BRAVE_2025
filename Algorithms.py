@@ -2098,7 +2098,7 @@ class Algorithms:
 				True if the UAV has reached the final node, False otherwise
 		"""
 		self.logger = logger
-		self.logger.info("Running the Multi-Agent Coop Q-Brave Algorithm")
+		#self.logger.info("Running the Multi-Agent Coop Q-Brave Algorithm")
 		uavs = self.get_uavs()
 		graph = self.get_graph()
 		U = self.get_number_of_users()
@@ -2135,9 +2135,10 @@ class Algorithms:
 		uav_trajectory_per_episode = []
     
 		#we iterate over episodes
-		for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Coop Algorithm"):
+		#for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Coop Algorithm"):
+		for e in range(number_of_episodes):
 
-			self.logger.info("EPISODE START")
+			#self.logger.info("EPISODE START")
 			self.reset()
 
 			uavs = self.get_uavs()
@@ -2197,7 +2198,7 @@ class Algorithms:
 				uavs = info['Available UAVs']
 				# If the episode is finished, we leave the for loop
 				if done:
-					logger.info("The episode has finished")
+					#logger.info("The episode has finished")
 					break
     
 			#We update the exploration proba using exponential decay formula
@@ -2230,22 +2231,22 @@ class Algorithms:
 			uav_visited_nodes_per_episode.append(total_visited_nodes)
 			uav_trajectory_per_episode.append(trajectories)
    
-			self.logger.info("The total bits processed for episode %d is: %s", e, total_bits_processed)
-			self.logger.info("The total reward for episode %d is: %s", e, total_episode_reward)
-			self.logger.info("The UAVs have visited %d nodes in episode %d", total_visited_nodes, e)
-			self.logger.info("The UAVs have visited the nodes: %s", trajectories)
-			self.logger.info("The UAVs have expended %s energy in episode %d", energy_expended, e)
-			self.logger.info("EPISODE FINISHED")
+			#self.logger.info("The total bits processed for episode %d is: %s", e, total_bits_processed)
+			#self.logger.info("The total reward for episode %d is: %s", e, total_episode_reward)
+			#self.logger.info("The UAVs have visited %d nodes in episode %d", total_visited_nodes, e)
+			#self.logger.info("The UAVs have visited the nodes: %s", trajectories)
+			#self.logger.info("The UAVs have expended %s energy in episode %d", energy_expended, e)
+			#self.logger.info("EPISODE FINISHED")
 			#print("EPISODE END")
 			
 		# print("The Q-table is: ", Q_table)
 		# print("The rewards per episode are: ", rewards_per_episode)
 		# print("Mean reward per episode: ", jnp.mean(jnp.array(rewards_per_episode)))
 		# print("Max reward: ", jnp.max(jnp.array(rewards_per_episode)))
-		self.logger.info("The rewards per episode are: %s", rewards_per_episode)
-		self.logger.info("Q Table is: %s", Q_table)
-		self.logger.info("Mean reward per episode: %s", jnp.mean(jnp.array(rewards_per_episode)))
-		self.logger.info("Max reward: %s", jnp.max(jnp.array(rewards_per_episode)))
+		#self.logger.info("The rewards per episode are: %s", rewards_per_episode)
+		#self.logger.info("Q Table is: %s", Q_table)
+		#self.logger.info("Mean reward per episode: %s", jnp.mean(jnp.array(rewards_per_episode)))
+		#self.logger.info("Max reward: %s", jnp.max(jnp.array(rewards_per_episode)))
   
 		# Find at which episode the Q-Learning algorithm had the best reward
 		best_episode = jnp.argmax(jnp.array(rewards_per_episode))
@@ -2274,7 +2275,7 @@ class Algorithms:
 				True if the UAV has reached the final node, False otherwise
 		"""
 		self.logger = logger
-		self.logger.info("Running the Multi-Agent Coop Q-Brave Algorithm")
+		#self.logger.info("Running the Multi-Agent Coop Q-Brave Algorithm")
 		uavs = self.get_uavs()
 		graph = self.get_graph()
 		U = self.get_number_of_users()
@@ -2318,11 +2319,12 @@ class Algorithms:
 		uav_trajectory_per_episode = []
     
 		#we iterate over episodes
-		for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Individual Algorithm"):
+		#for e in tqdm(range(number_of_episodes), desc= "Running Q-Brave Individual Algorithm"):
+		for e in range(number_of_episodes):
 
 			#we initialize the first state of the episode
 			#print("\nEPISODE START")
-			self.logger.info("EPISODE START")
+			#self.logger.info("EPISODE START")
 			self.reset()
 
 			uavs = self.get_uavs()
@@ -2394,7 +2396,7 @@ class Algorithms:
 					total_episode_reward = total_episode_reward + reward[j]
 				# If the episode is finished, we leave the for loop
 				if done:
-					logger.info("The episode has finished")
+					#logger.info("The episode has finished")
 					break
 				current_state = next_state
 				
@@ -2441,21 +2443,21 @@ class Algorithms:
 			uav_visited_nodes_per_episode.append(total_visited_nodes)
 			uav_trajectory_per_episode.append(trajectories)
    
-			self.logger.info("The total reward for episode %d is: %s", e, total_episode_reward)
-			self.logger.info("The UAVs have visited %d nodes in episode %d", total_visited_nodes, e)
-			self.logger.info("The UAVs have visited the nodes: %s", trajectories)
-			self.logger.info("The UAVs have expended %s energy in episode %d", energy_expended, e)
-			self.logger.info("EPISODE FINISHED")
+			#self.logger.info("The total reward for episode %d is: %s", e, total_episode_reward)
+			#self.logger.info("The UAVs have visited %d nodes in episode %d", total_visited_nodes, e)
+			#self.logger.info("The UAVs have visited the nodes: %s", trajectories)
+			#self.logger.info("The UAVs have expended %s energy in episode %d", energy_expended, e)
+			#self.logger.info("EPISODE FINISHED")
 			#print("EPISODE END")
 			
 		# print("The Q-table is: ", Q_table)
 		# print("The rewards per episode are: ", rewards_per_episode)
 		# print("Mean reward per episode: ", jnp.mean(jnp.array(rewards_per_episode)))
 		# print("Max reward: ", jnp.max(jnp.array(rewards_per_episode)))
-		self.logger.info("The rewards per episode are: %s", rewards_per_episode)
-		self.logger.info("Q Tables are: %s", Q_tables)
-		self.logger.info("Mean reward per episode: %s", jnp.mean(jnp.array(rewards_per_episode)))
-		self.logger.info("Max reward: %s", jnp.max(jnp.array(rewards_per_episode)))
+		#self.logger.info("The rewards per episode are: %s", rewards_per_episode)
+		#self.logger.info("Q Tables are: %s", Q_tables)
+		#self.logger.info("Mean reward per episode: %s", jnp.mean(jnp.array(rewards_per_episode)))
+		#self.logger.info("Max reward: %s", jnp.max(jnp.array(rewards_per_episode)))
   
 		# Find at which episode the Q-Learning algorithm had the best reward
 		best_episode = jnp.argmax(jnp.array(rewards_per_episode))
