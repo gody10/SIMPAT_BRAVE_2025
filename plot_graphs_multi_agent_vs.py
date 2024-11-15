@@ -28,7 +28,7 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") ->
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
                
-    algo_names = ['Coop Learning', 'Indi Learning', 'Indi Learning Double Ep']
+    algo_names = ['Coop Learning', 'Indi Learning', 'Indi Learning Double Ep', 'Indi Learning Triple Ep']
 
     # Get algorithm names
     algorithm_names = list(algorithms_total_bits_acc.keys())
@@ -37,7 +37,7 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") ->
     algorithm_names_plain = [name.replace("Total Bits", "") for name in algorithm_names]
     
     # Define the colors used
-    colors = ['blue', 'red', 'orange']
+    colors = ['blue', 'red', 'orange', 'green']
     
     # Set the width of the bars
     bar_width = 0.6

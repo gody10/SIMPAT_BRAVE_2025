@@ -35,7 +35,7 @@ ENERGY_LEVEL = 29000
 B = 0.74
 C = 0.00043
 MAX_ITER = 30
-NUMBER_OF_EPISODES = 8
+NUMBER_OF_EPISODES = 5
 NUMBER_OF_UAVS = 3
 
 # Algorithms
@@ -43,6 +43,7 @@ algorithm_names = [
     "Q-Learning Common Table",
     "Q-Learning Individual Tables",
     "Q-Learning Individual Tables Double Episodes",
+    "Q-Learning Individual Tables Triple Episodes"
 ]
 
 # Initialize the logger
@@ -178,6 +179,35 @@ def run_single_experiment(run_number, key):
         "Energy Level": energy_expended,
         "Total Visited Nodes": total_visited_nodes,
         "Time": q_individual_double_time,
+    }
+    
+    # Reset the Algorithm object for the next run
+    algorithm.reset()
+    
+    # -------------------- Q-Learning Individual Tables Triple Episodes --------------------
+    start_time = time.time()
+    
+    success_individual_triple = algorithm.multi_agent_q_learning_indi(
+        solving_method="scipy",
+        number_of_episodes=NUMBER_OF_EPISODES * 3,
+        max_travels_per_episode=MAX_ITER,
+        b=B,
+        c=C,
+        logger= multi_q_learning_logger,
+    )
+    
+    processed_bits = algorithm.get_most_processed_bits()
+    energy_expended = algorithm.get_most_expended_energy()
+    total_visited_nodes = algorithm.get_most_visited_nodes()
+    # trajectory = algorithm.get_best_trajectory()
+    
+    q_individual_triple_time = time.time() - start_time
+    
+    results["Q-Learning Individual Tables Triple Episodes"] = {
+        "Total Bits": processed_bits,
+        "Energy Level": energy_expended,
+        "Total Visited Nodes": total_visited_nodes,
+        "Time": q_individual_triple_time,
     }
     
     # Reset the Algorithm object for the next run
