@@ -53,7 +53,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	plt.grid(axis='y', linestyle='--', alpha=0.7)
 
 	# Set the y-tick parameters
-	plt.yticks(fontsize=30, fontweight='bold')
+	plt.yticks(fontsize=20, fontweight='bold')
 
 	# Remove the x-axis ticks and labels for a clean look
 	plt.xticks([])
@@ -65,7 +65,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	plt.grid(axis='y', linestyle='--', alpha=1)
 
 	# Set the y-axis label with appropriate formatting
-	plt.ylabel(r"UAV's Collected Data $\boldsymbol{B}_\boldsymbol{P}$ [MBits]", fontsize=30, fontweight='bold')
+	plt.ylabel(r"UAV's Collected Data $\boldsymbol{B}_\boldsymbol{P}$" '\n' r"[MBits]", fontsize=30, fontweight='bold')
  
 	# Add annotation "(a)" on the top-right of the plot
 	plt.text(0.65, 0.95, '(b)', transform=plt.gca().transAxes, fontsize=38, fontweight='bold', ha='right', va='top')
@@ -121,7 +121,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	plt.grid(axis='y', linestyle='--', alpha=0.7)
 
 	# Set the y-tick parameters
-	plt.yticks(fontsize=30, fontweight='bold')
+	plt.yticks(fontsize=20, fontweight='bold')
 
 	# Assign y_lim
 	plt.ylim(0.6, 1.1)
@@ -136,7 +136,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	plt.xticks([])
 
 	# Set the y-axis label
-	plt.ylabel(r"UAV's Consumed Energy $\boldsymbol{E}_\boldsymbol{P}$ [MJoules]", fontsize=27, fontweight='bold')
+	plt.ylabel(r"UAV's Consumed Energy $\boldsymbol{E}_\boldsymbol{P}$" + '\n' + r"[MJoules]", fontsize=27, fontweight='bold')
 
 	# Add a legend
 	plt.legend(bars, algorithms, fontsize=30, loc='upper left')
@@ -186,7 +186,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	plt.grid(axis='y', linestyle='--', alpha=0.7)
 
 	# Set the y-tick parameters
-	plt.yticks(fontsize=30, fontweight='bold')
+	plt.yticks(fontsize=20, fontweight='bold')
  
 	# Add annotation "(a)" on the top-right of the plot
 	plt.text(0.65, 0.95, '(c)', transform=plt.gca().transAxes, fontsize=38, fontweight='bold', ha='right', va='top')
@@ -201,7 +201,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	plt.grid(axis='y', linestyle='--', alpha=1)
 
 	# Set the y-axis label
-	plt.ylabel(r'Number of Visited AoIs $|\boldsymbol{P}|$', fontsize=38, fontweight='bold')
+	plt.ylabel(r"Number of Visited AoIs" + '\n' + r"$|\boldsymbol{P}|$", fontsize=28, fontweight='bold')
 
 	# Add a legend
 	plt.legend(bars, algorithms, fontsize=25, loc='upper left')
