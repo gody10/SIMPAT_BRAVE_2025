@@ -1,12 +1,13 @@
-2024-10-22 12:46:45,775 - INFO - Number of Nodes: 1
-2024-10-22 12:46:45,776 - INFO - Number of Edges: 0
-2024-10-22 12:46:45,776 - INFO - Number of Users: 10
-2024-10-22 12:46:45,776 - INFO - Running a Single Submodular Game
-2024-10-22 12:46:46,676 - INFO - The UAV has finished its business in the current node
-2024-10-22 12:46:46,676 - INFO - The strategies at node 0 have converged to: [0.8        0.2        0.2        0.2        0.06281871 0.02022496
- 0.00714101 0.00280007 0.0012288  0.001     ]
-2024-10-22 12:46:46,676 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-10-22 12:46:46,676 - INFO - Converged with strategy difference: 0.0 in 4 iterations
-2024-10-22 12:46:46,679 - INFO - Consumed Energy of each user  : [Array(1.4542744, dtype=float32), Array(0.4046175, dtype=float32), Array(0.94889235, dtype=float32), Array(2.926388, dtype=float32), Array(3.000893, dtype=float32), Array(3.0042882, dtype=float32), Array(3.0047655, dtype=float32), Array(2.999999, dtype=float32), Array(3.0015216, dtype=float32), Array(4.997585, dtype=float32)]
-2024-10-22 12:46:46,682 - INFO - Minimum distance of the users from the node : 10.0
-2024-10-22 12:46:46,682 - INFO - Maximum distance of the users from the node : 77.0
+2024-11-17 14:14:48,259 - INFO - Number of Nodes: 1
+2024-11-17 14:14:48,259 - INFO - Number of Edges: 0
+2024-11-17 14:14:48,259 - INFO - Number of Users: 10
+2024-11-17 14:14:48,259 - INFO - Running a Single Submodular Game
+2024-11-17 14:14:48,854 - INFO - The UAV has finished its business in the current node
+2024-11-17 14:14:48,854 - INFO - The strategies at node 0 have converged to: [0.25084838 0.8        0.2        0.2        0.06281871 0.02022496
+ 0.00714076 0.00282483 0.00121846 0.001     ]
+2024-11-17 14:14:48,854 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+2024-11-17 14:14:48,854 - INFO - Converged with strategy difference: 0.0 in 3 iterations
+2024-11-17 14:14:48,854 - INFO - Consumed Energy of each user  : [Array(0.45600227, dtype=float32), Array(1.6184676, dtype=float32), Array(0.94889104, dtype=float32), Array(2.926388, dtype=float32), Array(3.000893, dtype=float32), Array(3.0042882, dtype=float32), Array(3.0053973, dtype=float32), Array(3.0309901, dtype=float32), Array(3.0005658, dtype=float32), Array(5.129098, dtype=float32)]
+2024-11-17 14:14:48,854 - INFO - Minimum distance of the users from the node : 10.0
+2024-11-17 14:14:48,854 - INFO - Maximum distance of the users from the node : 77.0
+2024-11-17 14:14:48,854 - INFO - Time taken for the algorithm to run : 0.9043817520141602

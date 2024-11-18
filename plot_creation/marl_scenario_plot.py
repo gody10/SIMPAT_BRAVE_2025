@@ -134,7 +134,7 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results", fo
 
     # Set x-axis labels and other configurations with increased font size and bold
     plt.xlabel('Algorithm', fontsize=14, fontweight='bold')
-    plt.ylabel('Custom Metric', fontsize=14, fontweight='bold')
+    plt.ylabel('(B*AoI)/E', fontsize=14, fontweight='bold')
 
     # Remove x-ticks
     plt.xticks([])
@@ -210,4 +210,4 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results", fo
     plt.close()
     
 if __name__ == '__main__':
-    plot_graphs_multi_agent_vs(folder_path= 'multi_q_learning_results_8_ep', folder_to_load='final_results_500_8_ep')
+    plot_graphs_multi_agent_vs(folder_path= 'multi_q_learning_results_5_ep', folder_to_load='final_results_500_5_ep')

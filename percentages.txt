@@ -1,0 +1,57 @@
+################## Algorithm Comparison ##################
+
+Total Bits Processed:
+
+Q-BRAVE - > BRAVE-PRO: +187.57%
+Q-BRAVE - > BRAVE-EXPO: +186.19%
+Q-BRAVE - > BRAVE-GREEDY: +136.82%
+
+Energy Expended:
+
+Q-BRAVE - > BRAVE-PRO: +44.38%
+Q-BRAVE - > BRAVE-EXPO: +43.35%
+Q-BRAVE - > BRAVE-GREEDY: +24.35%
+
+Total Nodes Visited:
+
+Q-BRAVE - > BRAVE-PRO: +81.83%
+Q-BRAVE - > BRAVE-EXPO: +76.44%
+Q-BRAVE - > BRAVE-GREEDY: +73.31%
+
+Custom Metric:
+
+Q-BRAVE - > BRAVE-PRO: +262.16%
+Q-BRAVE - > BRAVE-EXPO: +252.25%
+Q-BRAVE - > BRAVE-GREEDY: +230.07%
+
+################## MARL Comparison ##################
+
+Total Bits Processed:
+
+MARL-COOP - > MARL-INDIVIDUAL: +1.26%
+MARL-COOP - > MARL-INDIVIDUAL-DOUBLE: +0.82%
+MARL-COOP - > MARL-INDIVIDUAL-TRIPLE: + 0.79%
+
+Energy Expended:
+
+MARL-COOP - > MARL-INDIVIDUAL: +0.65%
+MARL-COOP - > MARL-INDIVIDUAL-DOUBLE: +0.88%
+MARL-COOP - > MARL-INDIVIDUAL-TRIPLE: 0.90%
+
+Total Nodes Visited:
+
+MARL-COOP - > MARL-INDIVIDUAL: +1.59%
+MARL-COOP - > MARL-INDIVIDUAL-DOUBLE: +1.92%
+MARL-COOP - > MARL-INDIVIDUAL-TRIPLE: +1.84%
+
+Custom Metric:
+
+MARL-COOP - > MARL-INDIVIDUAL: +2.21%
+MARL-COOP - > MARL-INDIVIDUAL-DOUBLE: +1.86%
+MARL-COOP - > MARL-INDIVIDUAL-TRIPLE: +0.15%
+
+Time Take to Complete Experiment:
+
+MARL-COOP - > MARL-INDIVIDUAL: +0.37%
+MARL-COOP - > MARL-INDIVIDUAL-DOUBLE: -48.72%
+MARL-COOP - > MARL-INDIVIDUAL-TRIPLE: -63.86%

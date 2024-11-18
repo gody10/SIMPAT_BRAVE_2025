@@ -5,6 +5,7 @@ import jax.numpy as jnp
 import logging
 from plot_graphs import plot_graphs
 from Utility_functions import setup_logger
+import time
 
 system_logger = setup_logger('single_game', 'single_game.log')
 
@@ -35,6 +36,9 @@ B = 0.74
 C = 0.00043
 
 data_dict = {}
+
+# Start the timer
+start_time = time.time()
 
 # Create the algorithm object
 algorithm = Algorithms(convergence_threshold= CONVERGENCE_THRESHOLD)
@@ -93,13 +97,20 @@ data_dict["User Distance from Node"] = d
 system_logger.info("Minimum distance of the users from the node : {}".format(min(d)))
 system_logger.info("Maximum distance of the users from the node : {}".format(max(d)))
 
-# Dump the data dictionary to a pickle file
-with open('user_data_dict.pkl', 'wb') as handle:
-	pickle.dump(data_dict, handle)
+# End the timer
+end_time = time.time()
 
-# Dump the convergence history to a pickle file
-with open('convergence_history.pkl', 'wb') as handle:
-	pickle.dump(convergence_history, handle)
+# Print the time taken for the algorithm to run
+system_logger.info("Time taken for the algorithm to run : {}".format(end_time - start_time))
+print("Time taken for the algorithm to run: {}".format(end_time - start_time))
+
+# # Dump the data dictionary to a pickle file
+# with open('user_data_dict.pkl', 'wb') as handle:
+# 	pickle.dump(data_dict, handle)
+
+# # Dump the convergence history to a pickle file
+# with open('convergence_history.pkl', 'wb') as handle:
+# 	pickle.dump(convergence_history, handle)
  
 # Plot the graphs
 plot_graphs()

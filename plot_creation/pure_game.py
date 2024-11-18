@@ -23,6 +23,9 @@ def plot_results(folder_for_pure_game = 'pure_game'):
 	# Create the figure for user total bits
 	plt.figure(figsize=(12, 8))
 
+	# Divide user_bits by 1e6 to convert from bits to Mbits
+	user_bits = [bits / 1e6 for bits in user_bits]
+
 	# Plot the total bits of each user
 	plt.bar(user_ids, user_bits, color='blue', label='Total Bits')
 
@@ -33,16 +36,19 @@ def plot_results(folder_for_pure_game = 'pure_game'):
 	plt.xlabel('User IDs', fontsize=38, fontweight='bold')
 
 	# Set the y-axis label
-	plt.ylabel('Total Bits', fontsize=38, fontweight='bold')
+	plt.ylabel('Total Bits [MBits]', fontsize=38, fontweight='bold')
 
 	# Set the x-ticks
-	plt.xticks(fontsize=30, fontweight='bold')
+	plt.xticks(range(0, 10), labels= [i + 1 for i in range(0, 10)], fontsize=22, fontweight='bold')
 
 	# Set the y-ticks
-	plt.yticks(fontsize=30, fontweight='bold')
+	plt.yticks(fontsize=22, fontweight='bold')
+ 
+	# Add annotation "(a)" on the top-right of the plot
+	plt.text(0.25, 0.95, '(a)', transform=plt.gca().transAxes, fontsize=38, fontweight='bold', ha='right', va='top')
 
 	# Save the figure
-	plt.savefig(os.path.join(folder_for_pure_game, "user_total_bits.png"), bbox_inches='tight')
+	plt.savefig(os.path.join(folder_for_pure_game, "user_total_bits.png"))
 
 	# Show the plot
 	#plt.show()
@@ -50,8 +56,8 @@ def plot_results(folder_for_pure_game = 'pure_game'):
 	# Create the figure for user data offloaded
 	plt.figure(figsize=(12, 8))
 
-	# Apply log scale for better visualization
-	#plt.yscale('log')
+	# Divide user_data_offloaded by 1e6 to convert from bits to Mbits
+	user_data_offloaded = [data_offloaded / 1e6 for data_offloaded in user_data_offloaded]
 
 	# Plot the data offloaded by each user
 	plt.bar(user_ids, user_data_offloaded, color='red', label='Data Offloaded')
@@ -63,23 +69,29 @@ def plot_results(folder_for_pure_game = 'pure_game'):
 	plt.xlabel('User IDs', fontsize=38, fontweight='bold')
 
 	# Set the y-axis label
-	plt.ylabel('Data Offloaded', fontsize=38, fontweight='bold')
+	plt.ylabel('Data Offloaded [MBits]', fontsize=36, fontweight='bold')
 
 	# Set the x-ticks
-	plt.xticks(fontsize=30, fontweight='bold')
+	plt.xticks(range(0, 10), labels= [i + 1 for i in range(0, 10)], fontsize=22, fontweight='bold')
 
 	# Set the y-ticks
-	plt.yticks(fontsize=30, fontweight='bold')
+	plt.yticks(fontsize=22, fontweight='bold')
+ 
+	# Add annotation "(a)" on the top-right of the plot
+	plt.text(0.25, 0.95, '(a)', transform=plt.gca().transAxes, fontsize=38, fontweight='bold', ha='right', va='top')
 
 	# Save the figure
-	plt.savefig(os.path.join(folder_for_pure_game, "user_data_offloaded.png"), bbox_inches='tight')
+	plt.savefig(os.path.join(folder_for_pure_game, "user_data_offloaded.png"))
 
 	# Show the plot
 	#plt.show()
 
 	# Create the figure for user channel gain
 	plt.figure(figsize=(12, 8))
-
+ 
+	# Divide user_channel_gain by 1e-10
+	user_channel_gain = [channel_gain / 1e-10 for channel_gain in user_channel_gain]
+ 
 	# Plot the channel gain of each user
 	plt.bar(user_ids, user_channel_gain, color='green', label='Channel Gain')
 
@@ -90,22 +102,28 @@ def plot_results(folder_for_pure_game = 'pure_game'):
 	plt.xlabel('User IDs', fontsize=38, fontweight='bold')
 
 	# Set the y-axis label
-	plt.ylabel('Channel Gain', fontsize=38, fontweight='bold')
+	plt.ylabel('Channel Gain [dBm]', fontsize=38, fontweight='bold')
 
 	# Set the x-ticks
-	plt.xticks(fontsize=30, fontweight='bold')
+	plt.xticks(range(0, 10), labels= [i + 1 for i in range(0, 10)], fontsize=22, fontweight='bold')
 
 	# Set the y-ticks
-	plt.yticks(fontsize=30, fontweight='bold')
+	plt.yticks(fontsize=22, fontweight='bold')
+ 
+	# Add annotation "(a)" on the top-right of the plot
+	plt.text(0.25, 0.95, '(b)', transform=plt.gca().transAxes, fontsize=38, fontweight='bold', ha='right', va='top')
 
 	# Save the figure
-	plt.savefig(os.path.join(folder_for_pure_game, "user_channel_gain.png"), bbox_inches='tight')
+	plt.savefig(os.path.join(folder_for_pure_game, "user_channel_gain.png"))
 
 	# Show the plot
 	#plt.show()
 
 	# Create the figure for user data rate
 	plt.figure(figsize=(12, 8))
+ 
+	# Divide user_data_rate by 1e6 to convert from bits to Mbits
+	user_data_rate = [data_rate / 1e6 for data_rate in user_data_rate]
 
 	# Plot the data rate of each user
 	plt.bar(user_ids, user_data_rate, color='orange', label='Data Rate')
@@ -117,16 +135,19 @@ def plot_results(folder_for_pure_game = 'pure_game'):
 	plt.xlabel('User IDs', fontsize=38, fontweight='bold')
 
 	# Set the y-axis label
-	plt.ylabel('Data Rate', fontsize=38, fontweight='bold')
+	plt.ylabel('Data Rate [Mbits per sec]', fontsize=32, fontweight='bold')
 
 	# Set the x-ticks
-	plt.xticks(fontsize=30, fontweight='bold')
+	plt.xticks(range(0, 10), labels= [i + 1 for i in range(0, 10)], fontsize=22, fontweight='bold')
 
 	# Set the y-ticks
-	plt.yticks(fontsize=30, fontweight='bold')
+	plt.yticks(fontsize=22, fontweight='bold')
+ 
+ 	# Add annotation "(a)" on the top-right of the plot
+	plt.text(0.25, 0.95, '(a)', transform=plt.gca().transAxes, fontsize=38, fontweight='bold', ha='right', va='top')
 
 	# Save the figure
-	plt.savefig(os.path.join(folder_for_pure_game, "user_data_rate.png"), bbox_inches='tight')
+	plt.savefig(os.path.join(folder_for_pure_game, "user_data_rate.png"))
 
 	# Show the plot
 	#plt.show()
@@ -144,16 +165,19 @@ def plot_results(folder_for_pure_game = 'pure_game'):
 	plt.xlabel('User IDs', fontsize=38, fontweight='bold')
 
 	# Set the y-axis label
-	plt.ylabel('Distance', fontsize=38, fontweight='bold')
+	plt.ylabel('Distance [meters]', fontsize=38, fontweight='bold')
 
 	# Set the x-ticks
-	plt.xticks(fontsize=30, fontweight='bold')
+	plt.xticks(range(0, 10), labels= [i + 1 for i in range(0, 10)], fontsize=22, fontweight='bold')
 
 	# Set the y-ticks
-	plt.yticks(fontsize=30, fontweight='bold')
+	plt.yticks(fontsize=22, fontweight='bold')
+ 
+ 	# Add annotation "(a)" on the top-right of the plot
+	plt.text(0.25, 0.95, '(b)', transform=plt.gca().transAxes, fontsize=38, fontweight='bold', ha='right', va='top')
 
 	# Save the figure
-	plt.savefig(os.path.join(folder_for_pure_game, "user_distance_from_center.png"), bbox_inches='tight')
+	plt.savefig(os.path.join(folder_for_pure_game, "user_distance_from_center.png"))
 
 	# Show the plot
 	#plt.show()
@@ -177,16 +201,19 @@ def plot_results(folder_for_pure_game = 'pure_game'):
 	plt.xlabel('User IDs', fontsize=38, fontweight='bold')
 
 	# Set the y-axis label
-	plt.ylabel('Time Overhead', fontsize=38, fontweight='bold')
+	plt.ylabel('Time Overhead [sec]', fontsize=38, fontweight='bold')
 
 	# Set the x-ticks
-	plt.xticks(fontsize=30, fontweight='bold')
+	plt.xticks(range(0, 10), labels= [i + 1 for i in range(0, 10)], fontsize=22, fontweight='bold')
 
 	# Set the y-ticks
-	plt.yticks(fontsize=30, fontweight='bold')
+	plt.yticks(fontsize=22, fontweight='bold')
+ 
+	# Add annotation "(a)" on the top-right of the plot
+	plt.text(0.25, 0.95, '(a)', transform=plt.gca().transAxes, fontsize=38, fontweight='bold', ha='right', va='top')
 
 	# Save the figure
-	plt.savefig(os.path.join(folder_for_pure_game, "user_time_overhead.png"), bbox_inches='tight')
+	plt.savefig(os.path.join(folder_for_pure_game, "user_time_overhead.png"))
 
 	# Show the plot
 	#plt.show()
@@ -207,16 +234,19 @@ def plot_results(folder_for_pure_game = 'pure_game'):
 	plt.xlabel('User IDs', fontsize=38, fontweight='bold')
 
 	# Set the y-axis label
-	plt.ylabel('Total Overhead', fontsize=38, fontweight='bold')
+	plt.ylabel('Total Overhead [sec]', fontsize=38, fontweight='bold')
 
 	# Set the x-ticks
-	plt.xticks(fontsize=30, fontweight='bold')
+	plt.xticks(range(0, 10), labels= [i + 1 for i in range(0, 10)], fontsize=22, fontweight='bold')
 
 	# Set the y-ticks
-	plt.yticks(fontsize=30, fontweight='bold')
+	plt.yticks(fontsize=22, fontweight='bold')
+ 
+	# Add annotation "(a)" on the top-right of the plot
+	plt.text(0.25, 0.95, '(b)', transform=plt.gca().transAxes, fontsize=38, fontweight='bold', ha='right', va='top')
 
 	# Save the figure
-	plt.savefig(os.path.join(folder_for_pure_game, "user_total_overhead.png"), bbox_inches='tight')
+	plt.savefig(os.path.join(folder_for_pure_game, "user_total_overhead.png"))
 
 	# Show the plot
 	#plt.show()
@@ -237,16 +267,19 @@ def plot_results(folder_for_pure_game = 'pure_game'):
 	plt.xlabel('User IDs', fontsize=38, fontweight='bold')
 
 	# Set the y-axis label
-	plt.ylabel('Consumed Energy', fontsize=38, fontweight='bold')
+	plt.ylabel('Consumed Energy [kW]', fontsize=35, fontweight='bold')
 
 	# Set the x-ticks
-	plt.xticks(fontsize=30, fontweight='bold')
+	plt.xticks(range(0, 10), labels= [i + 1 for i in range(0, 10)], fontsize=22, fontweight='bold')
 
 	# Set the y-ticks
-	plt.yticks(fontsize=30, fontweight='bold')
+	plt.yticks(fontsize=22, fontweight='bold')
+ 
+	# Add annotation "(a)" on the top-right of the plot
+	plt.text(0.25, 0.95, '(b)', transform=plt.gca().transAxes, fontsize=38, fontweight='bold', ha='right', va='top')
 
 	# Save the figure
-	plt.savefig(os.path.join(folder_for_pure_game, "user_consumed_energy.png"), bbox_inches='tight')
+	plt.savefig(os.path.join(folder_for_pure_game, "user_consumed_energy.png"))
 
 	# Show the plot
 	#plt.show()
@@ -270,13 +303,16 @@ def plot_results(folder_for_pure_game = 'pure_game'):
 	plt.ylabel('Utility', fontsize=38, fontweight='bold')
 
 	# Set the x-ticks
-	plt.xticks(fontsize=30, fontweight='bold')
+	plt.xticks(range(0, 10), labels= [i + 1 for i in range(0, 10)], fontsize=22, fontweight='bold')
 
 	# Set the y-ticks
-	plt.yticks(fontsize=30, fontweight='bold')
+	plt.yticks(fontsize=22, fontweight='bold')
+ 
+	# Add annotation "(a)" on the top-right of the plot
+	plt.text(0.25, 0.95, '(a)', transform=plt.gca().transAxes, fontsize=38, fontweight='bold', ha='right', va='top')
 
 	# Save the figure
-	plt.savefig(os.path.join(folder_for_pure_game, "user_utility.png"), bbox_inches='tight')
+	plt.savefig(os.path.join(folder_for_pure_game, "user_utility.png"))
 
 	# Show the plot
 	#plt.show()
@@ -301,13 +337,16 @@ def plot_results(folder_for_pure_game = 'pure_game'):
 	plt.ylabel('Error', fontsize=38, fontweight='bold')
 
 	# Set the x-ticks
-	plt.xticks(fontsize=30, fontweight='bold')
+	plt.xticks(fontsize=22, fontweight='bold')
 
 	# Set the y-ticks
-	plt.yticks(fontsize=30, fontweight='bold')
+	plt.yticks(fontsize=22, fontweight='bold')
+ 
+	# Add annotation "(a)" on the top-right of the plot
+	plt.text(0.25, 0.95, '(b)', transform=plt.gca().transAxes, fontsize=38, fontweight='bold', ha='right', va='top')
 
 	# Save the figure
-	plt.savefig(os.path.join(folder_for_pure_game, "convergence_history.png"), bbox_inches='tight')
+	plt.savefig(os.path.join(folder_for_pure_game, "convergence_history.png"))
 
 	# Show the plot
 	#plt.show()
