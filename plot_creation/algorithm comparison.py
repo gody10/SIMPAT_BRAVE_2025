@@ -41,7 +41,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	colors = ['blue', 'green', 'red', 'grey']  # Customize colors as needed
 
 	# Create the figure
-	plt.figure(figsize=(12, 8))
+	plt.figure(figsize=(24, 16))
  
 	# Divide by 1e6 for better visualization
 	bits_processed_temp = [bits / 1e6 for bits in bits_processed]
@@ -53,7 +53,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	plt.grid(axis='y', linestyle='--', alpha=0.7)
 
 	# Set the y-tick parameters
-	plt.yticks(fontsize=20, fontweight='bold')
+	plt.yticks(fontsize=52, fontweight='bold')
 
 	# Remove the x-axis ticks and labels for a clean look
 	plt.xticks([])
@@ -65,13 +65,13 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	plt.grid(axis='y', linestyle='--', alpha=1)
 
 	# Set the y-axis label with appropriate formatting
-	plt.ylabel(r"UAV's Collected Data $\boldsymbol{B}_\boldsymbol{P}$" '\n' r"[MBits]", fontsize=30, fontweight='bold')
+	plt.ylabel(r"UAV's Collected" '\n' r"Data $\boldsymbol{B}_\boldsymbol{P}$ [MBits]", fontsize=58, fontweight='bold')
  
 	# Add annotation "(a)" on the top-right of the plot
-	plt.text(0.65, 0.95, '(b)', transform=plt.gca().transAxes, fontsize=38, fontweight='bold', ha='right', va='top')
+	plt.text(0.65, 0.95, '(b)', transform=plt.gca().transAxes, fontsize=68, fontweight='bold', ha='right', va='top')
 
 	# Add a legend
-	plt.legend(bars, algorithms, fontsize=30, loc='upper left')
+	plt.legend(bars, algorithms, fontsize=60, loc='upper left')
 
 	# Save the figure
 	plt.savefig(os.path.join(folder_for_pure_learning, "total_bits_processed.png"))
@@ -109,7 +109,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	colors = ['blue', 'green', 'red', 'grey']
 
 	# Create the figure
-	plt.figure(figsize=(12, 8))
+	plt.figure(figsize=(24, 16))
  
 	# Divide by 1e6 for better visualization
 	energy_temp = [e / 1e6 for e in energy]
@@ -121,7 +121,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	plt.grid(axis='y', linestyle='--', alpha=0.7)
 
 	# Set the y-tick parameters
-	plt.yticks(fontsize=20, fontweight='bold')
+	plt.yticks(fontsize=50, fontweight='bold')
 
 	# Assign y_lim
 	plt.ylim(0.6, 1.1)
@@ -136,13 +136,13 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	plt.xticks([])
 
 	# Set the y-axis label
-	plt.ylabel(r"UAV's Consumed Energy $\boldsymbol{E}_\boldsymbol{P}$" + '\n' + r"[MJoules]", fontsize=27, fontweight='bold')
+	plt.ylabel(r"UAV's Consumed Energy $\boldsymbol{E}_\boldsymbol{P}$" + '\n' + r"[MJoules]", fontsize=56, fontweight='bold')
 
 	# Add a legend
-	plt.legend(bars, algorithms, fontsize=30, loc='upper left')
+	plt.legend(bars, algorithms, fontsize=60, loc='upper left')
 
 	# Add annotation "(a)" on the top-right of the plot
-	plt.text(0.65, 0.95, '(a)', transform=plt.gca().transAxes, fontsize=38, fontweight='bold', ha='right', va='top')
+	plt.text(0.65, 0.95, '(a)', transform=plt.gca().transAxes, fontsize=68, fontweight='bold', ha='right', va='top')
 
 	# Save the figure
 	plt.savefig(os.path.join(folder_for_pure_learning, "energy_expended.png"))
@@ -177,7 +177,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	colors = ['blue', 'green', 'red', 'grey']
 
 	# Create the figure
-	plt.figure(figsize=(12, 8))
+	plt.figure(figsize=(24, 16))
 
 	# Create a bar plot
 	bars = plt.bar(algorithms, visited_nodes, color=colors)
@@ -186,10 +186,10 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	plt.grid(axis='y', linestyle='--', alpha=0.7)
 
 	# Set the y-tick parameters
-	plt.yticks(fontsize=20, fontweight='bold')
+	plt.yticks(fontsize=50, fontweight='bold')
  
 	# Add annotation "(a)" on the top-right of the plot
-	plt.text(0.65, 0.95, '(c)', transform=plt.gca().transAxes, fontsize=38, fontweight='bold', ha='right', va='top')
+	plt.text(0.65, 0.95, '(c)', transform=plt.gca().transAxes, fontsize=68, fontweight='bold', ha='right', va='top')
 
 	# Remove the x-axis ticks and labels
 	plt.xticks([])
@@ -201,10 +201,10 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	plt.grid(axis='y', linestyle='--', alpha=1)
 
 	# Set the y-axis label
-	plt.ylabel(r"Number of Visited AoIs" + '\n' + r"$|\boldsymbol{P}|$", fontsize=28, fontweight='bold')
+	plt.ylabel(r"Number of Visited AoIs" + '\n' + r"$|\boldsymbol{P}|$", fontsize=56, fontweight='bold')
 
 	# Add a legend
-	plt.legend(bars, algorithms, fontsize=25, loc='upper left')
+	plt.legend(bars, algorithms, fontsize=60, loc='upper left')
 
 	# Save the figure
 	plt.savefig(os.path.join(folder_for_pure_learning, "total_visited_nodes.png"))
@@ -220,7 +220,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	colors = ['blue', 'green', 'red', 'grey']
 
 	# Create the figure
-	plt.figure(figsize=(12, 8))
+	plt.figure(figsize=(24, 16))
  
 	# Create a bar plot
 	bars = plt.bar(algorithms, values, color=colors)
@@ -229,7 +229,7 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	plt.grid(axis='y', linestyle='--', alpha=0.7)
 
 	# Set the y-tick parameters
-	plt.yticks(fontsize=15, fontweight='bold')
+	plt.yticks(fontsize=50, fontweight='bold')
 
 	# Remove the x-axis ticks and labels
 	plt.xticks([])
@@ -243,12 +243,15 @@ def plot_graphs(folder_for_pure_learning= 'plots/pure_learning'):
 	# Set the y-axis label
 	plt.ylabel(
     r'Efficiency $\frac{\boldsymbol{B}_\boldsymbol{P} \cdot |\boldsymbol{P}|}{\boldsymbol{E}_\boldsymbol{P}}$',
-    fontsize=38,
+    fontsize=56,
     fontweight='bold'
-)
-
+    )
+ 
+    # Add annotation "(a)" on the top-right of the plot
+	plt.text(0.65, 0.95, '(d)', transform=plt.gca().transAxes, fontsize=68, fontweight='bold', ha='right', va='top')
+ 
 	# Add a legend
-	plt.legend(bars, algorithms, fontsize=30, loc='upper left')
+	plt.legend(bars, algorithms, fontsize=60, loc='upper left')
 
 	# Save the figure
 	plt.savefig(os.path.join(folder_for_pure_learning, "custom_metric.png"))
