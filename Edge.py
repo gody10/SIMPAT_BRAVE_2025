@@ -18,7 +18,7 @@ class Edge:
 		"""
 		self.user1 = user1
 		self.user2 = user2
-		self.w = self.get_distance()
+		self.w = weight
   
 	def get_distance(self)->float:
 		"""

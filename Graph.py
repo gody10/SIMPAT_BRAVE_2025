@@ -86,8 +86,41 @@ class Graph:
 
 		plt.title("3D Graph Visualization with Node Colors and Edge Weights")
 		#plt.show()
-		plt.savefig("3d_realistic_graph.png")
- 
+		plt.savefig("3d_realistic_graph_2.png")
+
+	def get_node_by_id(self, node_id):
+
+		"""
+		Returns the Node object with the given node_id.
+		Raises KeyError if not found.
+		"""
+		
+		# Loop through the nodes to find the node with the given node_id
+		for node in self.nodes:
+			if node.get_node_id() == node_id:
+				return node
+
+	def get_neighbors(self, node_id : int):
+		"""
+		Get the neighbors of a node in the graph
+		
+		Parameters:
+		node_id : int
+			ID of the node whose neighbors are to be found
+		
+		Returns:
+		list
+			List of edges of the neighbors of the node
+		"""
+		neighbors = []
+		for edge in self.edges:
+			if edge.user1.get_node_id() == node_id:
+				neighbors.append(edge)
+			# elif edge.user2.get_node_id() == node_id:
+			# 	neighbors.append(edge)
+		
+		return neighbors
+
 	def add_node(self, node : Node)->None:
 		"""
 		Add a node to the graph
@@ -150,6 +183,16 @@ class Graph:
 		for node in self.nodes:
 			num_users += len(node.user_list)
 		return num_users
+	
+	def get_edges(self)->List:
+		"""
+		Get the edges in the graph
+		
+		Returns:
+		list
+			List of edges in the graph
+		"""
+		return self.edges
 		
 	def __str__(self)->str:
 		return f"Nodes: {self.nodes}\nEdges: {self.edges}"

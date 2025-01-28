@@ -572,6 +572,89 @@ class AoiUser:
 		self.set_user_utility(maximized_utility)
 		
 		return (maximized_utility, solution)
+	
+	def play_sla_game(self, other_people_strategies: list, b: float, c: float, lr: float, uav_bandwidth: float, other_users_transmit_powers: list, other_users_channel_gains: list, 
+								   other_users_data_in_bits: list, uav_cpu_frequency: float, uav_total_data_processing_capacity: float, T: float, uav_coordinates: Tuple, uav_height: float,
+								   user_strategy_probabilities: list, selected_strategy: float, strategy_id: int, strategy_space: list)->float:
+		"""
+		Define the submodular game that the user will play with the other users
+		
+		Parameters:
+		other_people_strategies : list
+			List of the strategies of the other users
+		c : float
+		"""
+		#self.other_user_strategies = other_people_strategies
+		self.other_user_transmit_powers = other_users_transmit_powers
+		self.uav_total_capacity = uav_total_data_processing_capacity
+		self.T = T
+		self.other_user_strategies = user_strategy_probabilities
+		self.b = b
+		self.c = c
+		self.lr = lr
+
+		utility_experienced_per_strategy = jnp.zeros(len(strategy_space))
+		reward_experienced_per_strategy = jnp.zeros(len(strategy_space))
+		normalized_reward_experienced_per_strategy = jnp.zeros(len(strategy_space))
+
+		for i in range(len(strategy_space)):
+
+			# Set the strategy of the user
+			self.set_user_strategy(strategy_space[i])
+	
+			# Calculate channel gain of the user
+			self.calculate_channel_gain(uav_coordinates= uav_coordinates, uav_height= uav_height)
+			#print("Channel Gain: ", self.get_channel_gain())
+			
+			# Calculate the data rate of the user
+			self.calculate_data_rate(uav_bandwidth, other_users_transmit_powers, other_users_channel_gains)
+			#print("Data Rate: ", self.get_current_data_rate())
+			
+			# Calculate the consumed energy of the user
+			self.calculate_consumed_energy()
+	
+			# Calculate the time overhead of the user
+			self.calculate_time_overhead(other_people_strategies, other_users_data_in_bits, uav_total_data_processing_capacity, uav_cpu_frequency)
+			#print("Time Overhead: ", self.get_current_time_overhead())
+			
+			# Calculate the total overhead of the user
+			self.calculate_total_overhead(T)
+			#print(" Total Overhead: ", self.get_current_total_overhead())
+			
+			# Calculate utility of the user
+			self.user_utility = b * np.exp( selected_strategy / np.sum(other_people_strategies)) - c * np.exp( self.get_current_total_overhead())
+
+			if self.user_utility < 0:
+				self.user_utility = 0.05
+			elif self.user_utility > 10000:
+				self.user_utility = 1000
+
+			# Append the utility if the user had selected this strategy
+			utility_experienced_per_strategy = utility_experienced_per_strategy.at[i].set(self.user_utility)
+
+		for i in range(len(utility_experienced_per_strategy)):
+
+			reward = utility_experienced_per_strategy[i] / jnp.sum(utility_experienced_per_strategy)
+			reward_experienced_per_strategy = reward_experienced_per_strategy.at[i].set(reward)
+
+		for i in range(len(reward_experienced_per_strategy)):
+
+			normalized_reward = reward_experienced_per_strategy[i] / jnp.sum(reward_experienced_per_strategy)
+			normalized_reward_experienced_per_strategy = normalized_reward_experienced_per_strategy.at[i].set(normalized_reward)
+
+		for i in range(len(normalized_reward_experienced_per_strategy)):
+
+			# Update the probability of the user selecting this strategy
+			if i == strategy_id:
+				user_strategy_probabilities = user_strategy_probabilities.at[i].set(user_strategy_probabilities[i] + (lr * normalized_reward_experienced_per_strategy[i] * (1 - user_strategy_probabilities[i])))
+			else:
+				user_strategy_probabilities = user_strategy_probabilities.at[i].set(user_strategy_probabilities[i] - (lr * normalized_reward_experienced_per_strategy[i] * user_strategy_probabilities[i]))
+
+		# Check if the probabilities sum to 1 or close to 1
+		if jnp.sum(user_strategy_probabilities) > 1.1 or jnp.sum(user_strategy_probabilities) < 0.9:
+			print(f"User {self.get_user_id()} Probabilities do not sum to 1, they sum to: ", jnp.sum(user_strategy_probabilities))
+
+		return user_strategy_probabilities
 		
 	def __str__(self)->str:
 		return f"User ID: {self.user_id}, Data in Bits: {self.data_in_bits}, Transmit Power: {self.transmit_power}, Energy Level: {self.energy_level}, Task Intensity: {self.task_intensity}, Coordinates: {self.coordinates}, Carrier Frequency: {self.carrier_frequency}"

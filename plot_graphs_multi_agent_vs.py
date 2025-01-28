@@ -5,13 +5,13 @@ import os
 def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") -> None:
     
     # Import the data
-    with open('multi_q_learning_total_bits.pkl', 'rb') as f:
+    with open('multi_q_learning_total_bits_rebuttal.pkl', 'rb') as f:
         algorithms_total_bits_acc = pickle.load(f)
         
-    with open('multi_q_learning_expended_energy.pkl', 'rb') as f:
+    with open('multi_q_learning_expended_energy_rebuttal.pkl', 'rb') as f:
         algorithms_expended_energy_acc = pickle.load(f)
         
-    with open('multi_q_learning_total_visited_nodes.pkl', 'rb') as f:
+    with open('multi_q_learning_total_visited_nodes_rebuttal.pkl', 'rb') as f:
         algorithms_total_visited_nodes_acc = pickle.load(f)
         
     # Print all the values
@@ -28,7 +28,7 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") ->
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
                
-    algo_names = ['Coop Learning', 'Indi Learning', 'Indi Learning Double Ep', 'Indi Learning Triple Ep']
+    algo_names = ['SARSA', 'BRAVE-GREEDY','DIJKSTRA']
 
     # Get algorithm names
     algorithm_names = list(algorithms_total_bits_acc.keys())
@@ -37,7 +37,7 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") ->
     algorithm_names_plain = [name.replace("Total Bits", "") for name in algorithm_names]
     
     # Define the colors used
-    colors = ['blue', 'red', 'orange', 'green']
+    colors = ['blue', 'green', 'red']
     
     # Set the width of the bars
     bar_width = 0.6
@@ -156,7 +156,7 @@ def plot_graphs_multi_agent_vs(folder_path: str = "multi_q_learning_results") ->
     plt.savefig(os.path.join(folder_path, 'custom_metric.png'))
 
     # Import time dictionary
-    with open('multi_q_learning_timers.pkl', 'rb') as f:
+    with open('multi_q_learning_timers_rebuttal.pkl', 'rb') as f:
         timer_dict_acc = pickle.load(f)
 
     algorithm_names = list(timer_dict_acc.keys())

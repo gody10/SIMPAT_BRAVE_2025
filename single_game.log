@@ -1,13 +1,9 @@
-2024-11-17 14:14:48,259 - INFO - Number of Nodes: 1
-2024-11-17 14:14:48,259 - INFO - Number of Edges: 0
-2024-11-17 14:14:48,259 - INFO - Number of Users: 10
-2024-11-17 14:14:48,259 - INFO - Running a Single Submodular Game
-2024-11-17 14:14:48,854 - INFO - The UAV has finished its business in the current node
-2024-11-17 14:14:48,854 - INFO - The strategies at node 0 have converged to: [0.25084838 0.8        0.2        0.2        0.06281871 0.02022496
- 0.00714076 0.00282483 0.00121846 0.001     ]
-2024-11-17 14:14:48,854 - INFO - The task intensities of the users at node 0 are: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-2024-11-17 14:14:48,854 - INFO - Converged with strategy difference: 0.0 in 3 iterations
-2024-11-17 14:14:48,854 - INFO - Consumed Energy of each user  : [Array(0.45600227, dtype=float32), Array(1.6184676, dtype=float32), Array(0.94889104, dtype=float32), Array(2.926388, dtype=float32), Array(3.000893, dtype=float32), Array(3.0042882, dtype=float32), Array(3.0053973, dtype=float32), Array(3.0309901, dtype=float32), Array(3.0005658, dtype=float32), Array(5.129098, dtype=float32)]
-2024-11-17 14:14:48,854 - INFO - Minimum distance of the users from the node : 10.0
-2024-11-17 14:14:48,854 - INFO - Maximum distance of the users from the node : 77.0
-2024-11-17 14:14:48,854 - INFO - Time taken for the algorithm to run : 0.9043817520141602
+2025-01-24 13:19:02,497 - INFO - Number of Nodes: 1
+2025-01-24 13:19:02,498 - INFO - Number of Edges: 0
+2025-01-24 13:19:02,498 - INFO - Number of Users: 10
+2025-01-24 13:19:02,498 - INFO - Running a Single SLA Game
+2025-01-24 13:21:12,069 - INFO - The UAV has finished its business in the current node
+2025-01-24 13:21:12,071 - INFO - Consumed Energy of each user  : [Array(1.454454, dtype=float32), Array(1.6186699, dtype=float32), Array(3.7960386, dtype=float32), Array(11.707015, dtype=float32), Array(38.22133, dtype=float32), Array(118.84973, dtype=float32), Array(336.7453, dtype=float32), Array(858.49347, dtype=float32), Array(1970.3203, dtype=float32), Array(4103.791, dtype=float32)]
+2025-01-24 13:21:12,073 - INFO - Minimum distance of the users from the node : 10.0
+2025-01-24 13:21:12,073 - INFO - Maximum distance of the users from the node : 77.0
+2025-01-24 13:21:12,073 - INFO - Time taken for the algorithm to run : 129.8951575756073
